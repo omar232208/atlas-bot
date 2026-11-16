@@ -1,0 +1,246 @@
+{
+  "commands": {
+    "8ball": {
+      "description": "Pose une question à la boule magique",
+      "options": {
+        "question": "La question à poser"
+      }
+    },
+    "dice": {
+      "description": "Lance un ou plusieurs dés",
+      "options": {
+        "sides": "Nombre de faces par dé (2 à 1000, 6 par défaut)",
+        "count": "Nombre de dés (1 à 20, 1 par défaut)"
+      }
+    },
+    "game": {
+      "description": "Jeux de plateau et de mots",
+      "options": {
+        "tictactoe": {
+          "description": "Joue au morpion avec un autre membre",
+          "options": {
+            "opponent": "Membre à défier"
+          }
+        },
+        "connect4": {
+          "description": "Joue au Puissance 4 avec un autre membre",
+          "options": {
+            "opponent": "Membre à défier"
+          }
+        },
+        "rps": {
+          "description": "Joue à pierre-feuille-ciseaux contre le bot ou un membre",
+          "options": {
+            "opponent": "Membre à défier (vide = jouer contre le bot)"
+          }
+        },
+        "hangman": {
+          "description": "Joue seul au pendu"
+        },
+        "trivia": {
+          "description": "Réponds à une série de questions de culture générale",
+          "options": {
+            "count": "Nombre de questions (1 à 10, 5 par défaut)"
+          }
+        }
+      }
+    },
+    "fun": {
+      "description": "Petits utilitaires amusants",
+      "options": {
+        "choose": {
+          "description": "Laisse le bot choisir une option à ta place",
+          "options": {
+            "options": "Options séparées par | (ou par des virgules), 2 à 25"
+          }
+        },
+        "ship": {
+          "description": "Calcule la compatibilité amoureuse de deux membres",
+          "options": {
+            "first": "Premier membre",
+            "second": "Second membre"
+          }
+        },
+        "reverse": {
+          "description": "Inverse un texte",
+          "options": {
+            "text": "Le texte à inverser (500 caractères maximum)"
+          }
+        },
+        "emojify": {
+          "description": "Transforme un texte en lettres emoji",
+          "options": {
+            "text": "Le texte à convertir (150 caractères maximum)"
+          }
+        }
+      }
+    }
+  },
+  "eightball": {
+    "title": "Boule magique",
+    "question": "Question : {question}",
+    "answers": [
+      "C'est certain.",
+      "C'est décidément ainsi.",
+      "Sans aucun doute.",
+      "Oui, absolument.",
+      "Tu peux compter dessus.",
+      "D'après moi, oui.",
+      "Très probablement.",
+      "Les perspectives sont bonnes.",
+      "Oui.",
+      "Tout indique que oui.",
+      "Réponse floue, essaie encore.",
+      "Redemande plus tard.",
+      "Mieux vaut ne pas te le dire maintenant.",
+      "Impossible à prévoir pour l'instant.",
+      "Concentre-toi et redemande.",
+      "N'y compte pas trop.",
+      "Ma réponse est non.",
+      "Mes sources disent non.",
+      "Les perspectives ne sont pas très bonnes.",
+      "Très peu probable."
+    ]
+  },
+  "dice": {
+    "title": "Lancer de dés",
+    "result": "{count} dé(s) à {sides} faces",
+    "rolls": "Résultats : {rolls}",
+    "total": "Total : {total}"
+  },
+  "choose": {
+    "title": "Choix",
+    "result": "Je choisis : **{choice}**",
+    "among": "Parmi : {list}"
+  },
+  "ship": {
+    "title": "Calculateur d'amour",
+    "pair": "{first} et {second}",
+    "name": "Nom du couple : **{name}**",
+    "score": "Compatibilité : **{score} %**",
+    "verdicts": [
+      "Ce n'est pas fait pour être, du moins pas encore.",
+      "Quelques étincelles, il reste beaucoup à construire.",
+      "Prometteur, les bases sont là.",
+      "Un lien très fort.",
+      "Une combinaison parfaite !"
+    ]
+  },
+  "reverse": {
+    "title": "Texte inversé"
+  },
+  "emojify": {
+    "title": "Texte en emoji"
+  },
+  "games": {
+    "tictactoe": "le morpion",
+    "connect4": "le Puissance 4",
+    "rps": "pierre-feuille-ciseaux"
+  },
+  "challenge": {
+    "title": "Défi",
+    "description": "{challenger} défie {opponent} à {game}.\n{opponent}, accepte dans le délai pour commencer."
+  },
+  "ui": {
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "giveUp": "Abandonner",
+    "page": "Lettres {page}/{total}"
+  },
+  "errors": {
+    "expired": "Cette partie a expiré ou le bot a redémarré. Lance-en une nouvelle avec la commande.",
+    "generic": "Un problème est survenu pendant ce coup. Réessaie.",
+    "notPlayer": "Tu ne fais pas partie de cette partie.",
+    "notOpponent": "Seul le membre défié peut répondre à ce défi.",
+    "notTurn": "Ce n'est pas ton tour.",
+    "alreadyPlayed": "Tu as déjà joué ton coup.",
+    "cellTaken": "Cette case est déjà prise.",
+    "columnFull": "Cette colonne est pleine.",
+    "declined": "{opponent} a refusé le défi.",
+    "challengeExpired": "Le défi a expiré sans réponse.",
+    "missingOpponent": "Mentionne le membre que tu veux défier.",
+    "opponentBot": "Tu ne peux pas défier un bot. Laisse l'option vide pour jouer contre lui.",
+    "opponentSelf": "Tu ne peux pas te défier toi-même.",
+    "chooseFew": "Donne au moins deux options, séparées par | ou par des virgules.",
+    "chooseMany": "Donne au maximum 25 options.",
+    "tooLong": "Le texte peut contenir au maximum {max} caractères.",
+    "empty": "Écris d'abord un texte.",
+    "shipSelf": "Choisis deux membres différents."
+  },
+  "tictactoe": {
+    "title": "Morpion",
+    "turn": "{player} ({mark}) doit jouer.",
+    "win": "{player} ({mark}) gagne !",
+    "draw": "Match nul !",
+    "timeout": "La partie est terminée : personne n'a joué depuis trop longtemps."
+  },
+  "connect4": {
+    "title": "Puissance 4",
+    "turn": "{player} doit jouer. Choisis une colonne de 1 à 7.",
+    "win": "{player} gagne !",
+    "draw": "La grille est pleine. Match nul !",
+    "gaveUp": "{player} a abandonné.",
+    "timeout": "La partie est terminée : personne n'a joué depuis trop longtemps.",
+    "legend": "🔴 {red}   🟡 {yellow}"
+  },
+  "rps": {
+    "title": "Pierre-feuille-ciseaux",
+    "botTitle": "Pierre-feuille-ciseaux contre le bot",
+    "pick": "Choisis ton coup avec les boutons ci-dessous.",
+    "chosen": "{player} a choisi. En attente de l'autre joueur.",
+    "waiting": "En attente de : {players}",
+    "reveal": "{a} contre {b}",
+    "win": "{winner} gagne !",
+    "draw": "Égalité !",
+    "botWins": "Le bot gagne cette manche.",
+    "youWin": "Tu gagnes cette manche !",
+    "botChoice": "Le bot joue : {choice}",
+    "recorded": "Ton choix est enregistré.",
+    "timeout": "La partie est terminée : personne n'a joué depuis trop longtemps.",
+    "choices": {
+      "rock": "Pierre",
+      "paper": "Feuille",
+      "scissors": "Ciseaux"
+    }
+  },
+  "hangman": {
+    "title": "Pendu",
+    "word": "Mot",
+    "wrong": "Erreurs : {wrong}/{max}",
+    "guessed": "Lettres essayées : {letters}",
+    "hint": "Clique sur une lettre. Six erreurs et la partie est perdue.",
+    "won": "Bravo, le mot était **{word}** !",
+    "lost": "Plus de vies. Le mot était **{word}**.",
+    "gaveUp": "Tu as abandonné. Le mot était **{word}**.",
+    "timeout": "La partie est terminée : personne n'a joué depuis trop longtemps."
+  },
+  "trivia": {
+    "title": "Quiz",
+    "question": "Question {n}/{total}",
+    "timeLeft": "Tu as {seconds} secondes pour chaque question.",
+    "correct": "Bonne réponse !",
+    "wrong": "Mauvaise réponse. La bonne réponse était : **{answer}**",
+    "timeout": "Temps écoulé. La bonne réponse était : **{answer}**",
+    "score": "Score final : **{score}/{total}**",
+    "perfect": "Sans faute !",
+    "finished": "Quiz terminé"
+  },
+  "dashboard": {
+    "games": {
+      "title": "Jeux de plateau et de mots",
+      "description": "Délai avant qu'une partie se ferme faute de coup joué.",
+      "timeoutMinutes": {
+        "label": "Délai d'inactivité (minutes)",
+        "help": "Le morpion, le Puissance 4, pierre-feuille-ciseaux et le pendu se ferment après ce délai sans coup."
+      }
+    },
+    "trivia": {
+      "title": "Quiz",
+      "description": "Rythme des séries de questions.",
+      "questionSeconds": {
+        "label": "Secondes par question",
+        "help": "Passé ce délai, la question est comptée comme manquée et la suivante commence."
+      }
+    }
+  }
+}

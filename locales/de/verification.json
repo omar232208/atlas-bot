@@ -1,0 +1,130 @@
+{
+  "commands": {
+    "verification": {
+      "description": "Captcha-Verifizierung für neue Mitglieder",
+      "options": {
+        "setup": {
+          "description": "Verifizierung einrichten und das Panel posten",
+          "options": {
+            "role": "Rolle nach erfolgreicher Verifizierung",
+            "channel": "Kanal, in dem das Verifizierungs-Panel gepostet wird",
+            "kick_after": "Nicht Verifizierte kicken nach (z. B. 30m, 2h; 0 = nie)",
+            "unverified_role": "Rolle beim Beitritt, wird nach der Verifizierung entfernt",
+            "code_length": "Codelänge (4 bis 8)",
+            "attempts": "Erlaubte Fehler vor einer Sperre von 5 Minuten",
+            "message": "Text des Panels (\\n = Zeilenumbruch)"
+          }
+        },
+        "panel": { "description": "Das Verifizierungs-Panel erneut posten" },
+        "disable": { "description": "Verifizierung deaktivieren" },
+        "status": { "description": "Verifizierungs-Einstellungen anzeigen" }
+      }
+    }
+  },
+  "panel": {
+    "title": "Verifizierung",
+    "description": "Um Zugang zum Server zu erhalten, klicke auf den Button unten und gib den angezeigten Code ein. So schützen wir uns vor Bots und Raids.",
+    "button": "Verifizieren"
+  },
+  "modal": {
+    "title": "Verifizierung",
+    "label": "Gib diesen Code ein: {code}",
+    "placeholder": "Groß- oder Kleinschreibung, mit oder ohne Leerzeichen"
+  },
+  "verify": {
+    "title": "Verifizierung",
+    "disabled": "Die Verifizierung ist auf diesem Server deaktiviert.",
+    "noRole": "Die Verifizierungsrolle existiert nicht mehr. Bitte informiere einen Administrator.",
+    "already": "Du bist bereits verifiziert.",
+    "locked": "Zu viele Fehler. Versuche es in {time} erneut.",
+    "expired": "Dieser Code ist abgelaufen. Klicke erneut auf den Button für einen neuen.",
+    "wrong": "Falscher Code. Klicke erneut auf den Button für einen neuen Code ({left} Versuch(e) übrig).",
+    "grantFailed": "Richtiger Code, aber ich konnte dir die Rolle nicht geben. Bitte informiere einen Administrator (Berechtigungen oder Position der Bot-Rolle).",
+    "success": "Willkommen auf **{server}**! Du hast jetzt Zugang zum Server."
+  },
+  "reasons": {
+    "verified": "Verifizierung bestanden",
+    "unverified": "Neues Mitglied wartet auf Verifizierung",
+    "kick": "Nach {time} nicht verifiziert"
+  },
+  "kick": {
+    "dmTitle": "Von {server} gekickt",
+    "dm": "Du wurdest von **{server}** gekickt, weil du dich nicht innerhalb von {time} nach dem Beitritt verifiziert hast. Du kannst mit einer Einladung zurückkommen und auf den Verifizierungs-Button klicken."
+  },
+  "logs": {
+    "lockedTitle": "Verifizierung gesperrt",
+    "locked": "{user} hat zu oft einen falschen Code eingegeben und ist für 5 Minuten gesperrt.",
+    "verifiedTitle": "Mitglied verifiziert",
+    "verified": "{user} hat die Verifizierung bestanden.",
+    "kickedTitle": "Nicht Verifizierter gekickt",
+    "kicked": "{user} wurde gekickt: nach {time} nicht verifiziert."
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "badDuration": "Ungültige Dauer. Nutze zum Beispiel `10m`, `2h` oder `1d` (zwischen {min} und {max}) oder `0`, um nie zu kicken.",
+    "role": {
+      "managed": "{role} wird von einer Integration verwaltet und kann nicht vergeben werden.",
+      "everyone": "Die Rolle @everyone kann nicht verwendet werden.",
+      "hierarchy": "{role} steht über meiner höchsten Rolle: Schiebe meine Rolle in den Servereinstellungen nach oben.",
+      "noPermission": "Mir fehlt die Berechtigung „Rollen verwalten“."
+    },
+    "sameRole": "Die verifizierte und die nicht verifizierte Rolle müssen verschieden sein.",
+    "missingPerms": "Mir fehlen diese Berechtigungen in {channel}: {perms}.",
+    "panelFailed": "Das Panel konnte nicht gepostet werden. Prüfe, ob der Kanal existiert und ich dort schreiben und Links einbetten darf.",
+    "notEnabled": "Die Verifizierung ist nicht aktiviert. Nutze zuerst `/verification setup`."
+  },
+  "setup": {
+    "title": "Verifizierung aktiviert",
+    "done": "Das Panel ist gepostet: {url}",
+    "noKickPerm": "Achtung: Mir fehlt die Berechtigung „Mitglieder kicken“, nicht Verifizierte werden nicht gekickt.",
+    "channelTip": "Tipp: Entziehe @everyone in deinen Kanälen „Kanäle ansehen“ und gib es {role}, aber lass {channel} für alle sichtbar. Bereits vorhandene Mitglieder sind nicht betroffen.",
+    "reposted": "Das Panel wurde erneut gepostet: {url}"
+  },
+  "disable": {
+    "title": "Verifizierung deaktiviert",
+    "done": "Die Verifizierung ist deaktiviert und das Panel gelöscht. {count} geplante(r) Kick(s) abgebrochen."
+  },
+  "status": {
+    "on": "Aktiviert",
+    "off": "Deaktiviert",
+    "none": "Keine",
+    "title": "Verifizierungs-Einstellungen",
+    "state": "Status",
+    "role": "Verifizierte Rolle",
+    "unverifiedRole": "Nicht verifizierte Rolle",
+    "channel": "Panel-Kanal",
+    "kickAfter": "Kick nach",
+    "never": "Nie",
+    "code": "Code",
+    "codeValue": "{length} Zeichen, {attempts} Versuch(e)",
+    "pending": "Geplante Kicks"
+  },
+  "dashboard": {
+    "main": {
+      "title": "Verifizierung",
+      "description": "Neue Mitglieder klicken auf einen Button und geben einen Code ein, um Zugang zu erhalten. Nach einer Änderung von Kanal oder Text das Panel erneut posten."
+    },
+    "fields": {
+      "enabled": "Aktiviert",
+      "role": "Verifizierte Rolle",
+      "unverifiedRole": "Nicht verifizierte Rolle",
+      "channel": "Panel-Kanal",
+      "kickAfter": "Nicht Verifizierte kicken nach",
+      "codeLength": "Codelänge",
+      "maxAttempts": "Versuche vor der Sperre",
+      "panelMessage": "Text des Panels"
+    },
+    "help": {
+      "enabled": "Schaltet die Verifizierung für Neulinge ein.",
+      "role": "Wird nach bestandenem Captcha vergeben. Muss unter der Bot-Rolle stehen.",
+      "unverifiedRole": "Optional: beim Beitritt vergeben, nach der Verifizierung entfernt.",
+      "channel": "Für alle sichtbarer Kanal mit dem Button.",
+      "kickAfter": "0: nie. Sonst zwischen 1 Minute und 7 Tagen.",
+      "codeLength": "Zwischen 4 und 8 Zeichen.",
+      "maxAttempts": "Nach so vielen Fehlern wird das Mitglied 5 Minuten gesperrt.",
+      "panelMessage": "Leer: Standardtext."
+    },
+    "actions": { "panel": "Panel erneut posten" },
+    "results": { "posted": "Panel gepostet." }
+  }
+}

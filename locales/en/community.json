@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "locale": "en-US"
+  },
+  "common": {
+    "on": "Enabled",
+    "off": "Disabled",
+    "none": "None",
+    "state": "State"
+  },
+  "errors": {
+    "title": "Cannot do that",
+    "botMissing": "I am missing permissions: {perms} (channel: {channel}). Grant them to my role and try again.",
+    "memberMissing": "You need the {perms} permission to do this.",
+    "apiPermission": "Discord refused the action: I am missing a permission or my role is too low in the role list.",
+    "notFound": "This channel or message no longer exists.",
+    "unexpected": "Something unexpected went wrong. Please try again in a moment.",
+    "expired": "This button is no longer valid.",
+    "cooldown": "Slow down: you can do this again {time}.",
+    "roleTooHigh": "I cannot manage {role}: it is managed by an integration or placed above my role."
+  },
+  "commands": {
+    "suggest": {
+      "description": "Suggest an idea for the server",
+      "options": {
+        "idea": "Your idea, clearly explained",
+        "anonymous": "Hide your name on the suggestion"
+      }
+    },
+    "suggestion": {
+      "description": "Manage suggestions (staff)",
+      "options": {
+        "accept": {
+          "description": "Accept a suggestion",
+          "options": {
+            "id": "Suggestion number",
+            "reason": "Answer shown to everyone"
+          }
+        },
+        "deny": {
+          "description": "Deny a suggestion",
+          "options": {
+            "id": "Suggestion number",
+            "reason": "Answer shown to everyone"
+          }
+        },
+        "consider": {
+          "description": "Mark a suggestion as under consideration",
+          "options": {
+            "id": "Suggestion number",
+            "reason": "Answer shown to everyone"
+          }
+        },
+        "implement": {
+          "description": "Mark a suggestion as implemented",
+          "options": {
+            "id": "Suggestion number",
+            "reason": "Answer shown to everyone"
+          }
+        },
+        "delete": {
+          "description": "Delete a suggestion and its message",
+          "options": {
+            "id": "Suggestion number"
+          }
+        },
+        "list": {
+          "description": "List suggestions",
+          "options": {
+            "status": {
+              "description": "Filter by status",
+              "choices": {
+                "pending": "Pending",
+                "considered": "Under consideration",
+                "accepted": "Accepted",
+                "denied": "Denied",
+                "implemented": "Implemented"
+              }
+            }
+          }
+        },
+        "config": {
+          "description": "Configure suggestions",
+          "options": {
+            "channel": "Channel where suggestions are posted",
+            "anonymous": "Make every suggestion anonymous",
+            "threads": "Open a discussion thread for each suggestion",
+            "dm": "DM the author when staff answers",
+            "cooldown": "Delay between two suggestions from a member (seconds)"
+          }
+        }
+      }
+    },
+    "starboard": {
+      "description": "Configure the starboard",
+      "options": {
+        "set": {
+          "description": "Choose the starboard channel and rules",
+          "options": {
+            "channel": "Starboard channel",
+            "threshold": "Number of stars needed",
+            "emoji": "Emoji to count (default ⭐)",
+            "selfstar": "Count the message author's own star"
+          }
+        },
+        "ignore": {
+          "description": "Ignore or include a channel again",
+          "options": {
+            "channel": "Channel to ignore or include again"
+          }
+        },
+        "disable": {
+          "description": "Disable the starboard"
+        },
+        "status": {
+          "description": "Show the starboard settings"
+        }
+      }
+    },
+    "birthday": {
+      "description": "Member birthdays",
+      "options": {
+        "set": {
+          "description": "Save your birthday",
+          "options": {
+            "day": "Day (1-31)",
+            "month": "Month (1-12)",
+            "year": "Birth year (optional, kept private)",
+            "user": "Member concerned (staff only)"
+          }
+        },
+        "remove": {
+          "description": "Remove a birthday",
+          "options": {
+            "user": "Member concerned (staff only)"
+          }
+        },
+        "view": {
+          "description": "Show a member's birthday",
+          "options": {
+            "user": "Member to look up"
+          }
+        },
+        "list": {
+          "description": "Upcoming birthdays on the server"
+        },
+        "config": {
+          "description": "Configure birthday announcements (staff)",
+          "options": {
+            "enabled": "Turn announcements on or off",
+            "channel": "Announcement channel",
+            "role": "Role given during the birthday",
+            "clear-role": "Stop giving a role",
+            "hour": "Local hour of the announcement (0-23)",
+            "utc-offset": "Server time offset from UTC (e.g. -5 for New York in winter)",
+            "message": "Custom message ({user}, {username}, {age}, {server}) or - for the default"
+          }
+        }
+      }
+    },
+    "afk": {
+      "description": "Mark yourself as away (or come back)",
+      "options": {
+        "reason": "Reason shown to people who mention you"
+      }
+    },
+    "tag": {
+      "description": "Saved server replies",
+      "options": {
+        "use": {
+          "description": "Show a tag",
+          "options": {
+            "name": "Tag name",
+            "user": "Member to mention"
+          }
+        },
+        "create": {
+          "description": "Create a tag",
+          "options": {
+            "name": "Name of the new tag"
+          }
+        },
+        "edit": {
+          "description": "Edit a tag",
+          "options": {
+            "name": "Tag name"
+          }
+        },
+        "delete": {
+          "description": "Delete a tag",
+          "options": {
+            "name": "Tag name"
+          }
+        },
+        "info": {
+          "description": "Tag details",
+          "options": {
+            "name": "Tag name"
+          }
+        },
+        "list": {
+          "description": "List tags"
+        }
+      }
+    },
+    "tempvoice": {
+      "description": "Temporary voice channels",
+      "options": {
+        "setup": {
+          "description": "Create a \"join to create\" channel",
+          "options": {
+            "category": "Category of the created channels",
+            "name": "Name of the hub channel"
+          }
+        },
+        "remove": {
+          "description": "Remove a hub channel",
+          "options": {
+            "hub": "Hub channel",
+            "delete": "Also delete the channel (yes by default)"
+          }
+        },
+        "list": {
+          "description": "Show hub channels and active channels"
+        },
+        "panel": {
+          "description": "Show the control panel of your channel"
+        }
+      }
+    },
+    "community": {
+      "description": "Community tools: statistics channels, sticky messages, automatic replies",
+      "options": {
+        "stats": {
+          "description": "Voice channels showing server statistics",
+          "options": {
+            "add": {
+              "description": "Create a statistics channel",
+              "options": {
+                "type": {
+                  "description": "Value shown",
+                  "choices": {
+                    "members": "Members",
+                    "humans": "Humans",
+                    "bots": "Bots",
+                    "boosts": "Boosts",
+                    "tier": "Boost level",
+                    "channels": "Channels",
+                    "roles": "Roles"
+                  }
+                },
+                "template": "Channel name, with {count} for the value",
+                "category": "Category to create the channel in"
+              }
+            },
+            "remove": {
+              "description": "Stop a statistics channel",
+              "options": {
+                "channel": "Statistics channel",
+                "delete": "Also delete the channel (yes by default)"
+              }
+            },
+            "list": {
+              "description": "List statistics channels"
+            },
+            "refresh": {
+              "description": "Update the channels now"
+            }
+          }
+        },
+        "sticky": {
+          "description": "Messages kept at the bottom of a channel",
+          "options": {
+            "set": {
+              "description": "Create or edit the sticky message",
+              "options": {
+                "channel": "Channel (this one by default)"
+              }
+            },
+            "remove": {
+              "description": "Remove the sticky message",
+              "options": {
+                "channel": "Channel (this one by default)"
+              }
+            },
+            "list": {
+              "description": "List sticky messages"
+            }
+          }
+        },
+        "autoresponder": {
+          "description": "Automatic replies to keywords",
+          "options": {
+            "add": {
+              "description": "Add an automatic reply",
+              "options": {
+                "trigger": "Trigger text",
+                "response": "Reply ({user}, {server}, {channel}; \\n for a line break)",
+                "match": {
+                  "description": "How to compare (default: contains)",
+                  "choices": {
+                    "exact": "Exact message",
+                    "contains": "Contains",
+                    "startswith": "Starts with",
+                    "word": "Whole word"
+                  }
+                },
+                "channel": "Limit to one channel"
+              }
+            },
+            "remove": {
+              "description": "Remove an automatic reply",
+              "options": {
+                "id": "Reply number"
+              }
+            },
+            "list": {
+              "description": "List automatic replies"
+            },
+            "test": {
+              "description": "Test which trigger would answer a message",
+              "options": {
+                "message": "Message to test"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "suggestions": {
+    "status": {
+      "pending": "Pending",
+      "considered": "Under consideration",
+      "accepted": "Accepted",
+      "denied": "Denied",
+      "implemented": "Implemented"
+    },
+    "side": {
+      "up": "for",
+      "down": "against"
+    },
+    "buttons": {
+      "up": "For · {count}",
+      "down": "Against · {count}"
+    },
+    "embed": {
+      "title": "Suggestion #{number}",
+      "status": "Status",
+      "votes": "Votes",
+      "voteLine": "{up} for · {down} against\n{bar}",
+      "response": "Staff answer",
+      "responseLine": "{staff}: {reason}",
+      "by": "Suggested by {user}",
+      "anonymous": "Anonymous suggestion"
+    },
+    "noReason": "No details given.",
+    "notConfigured": "Suggestions are not set up. An administrator must use /suggestion config.",
+    "posted": "Suggestion #{number} posted",
+    "postedDesc": "Thank you! You can see it here: {url}",
+    "threadName": "Discussion – suggestion #{number}",
+    "notFound": "There is no suggestion #{number}.",
+    "closed": "Voting is closed: staff has already answered.",
+    "voteSaved": "\"{side}\" vote saved",
+    "voteRemoved": "\"{side}\" vote removed",
+    "decided": "Suggestion #{number}: {status}",
+    "decidedDesc": "The public message has been updated.",
+    "decidedNoMessage": "Status saved, but the public message no longer exists.",
+    "deleted": "Suggestion #{number} deleted",
+    "listEmpty": "No suggestions yet.",
+    "listTitle": "Suggestions ({count})",
+    "listLine": "**#{number}** · {status} · {up} for / {down} against — {text}",
+    "dm": {
+      "title": "Your suggestion #{number} on {server}",
+      "body": "New status: **{status}**\nAnswer: {reason}\n{url}"
+    },
+    "configTitle": "Suggestions configured",
+    "configChannel": "Channel",
+    "configAnonymous": "Forced anonymity",
+    "configThreads": "Discussion threads",
+    "configDm": "DM to the author",
+    "configCooldown": "Delay (s)"
+  },
+  "starboard": {
+    "header": "{emoji} **{count}** · {channel}",
+    "source": "Original message",
+    "jump": "[Jump to message]({url})",
+    "attachments": "Files",
+    "badEmoji": "This emoji is not valid. Use a standard emoji or an emoji from this server.",
+    "saved": "Starboard enabled",
+    "savedDesc": "Messages reaching {threshold} {emoji} will be copied to {channel}.",
+    "ignored": "Channel ignored",
+    "unignored": "Channel included again",
+    "alreadyOff": "The starboard is already disabled.",
+    "disabled": "Starboard disabled",
+    "statusTitle": "Starboard",
+    "channel": "Channel",
+    "threshold": "Threshold",
+    "emoji": "Emoji",
+    "selfStar": "Author's own star",
+    "posts": "Messages shown",
+    "ignoredList": "Ignored channels"
+  },
+  "birthdays": {
+    "noBots": "Bots do not have birthdays.",
+    "invalidDate": "This date does not exist. Check the day, month and year.",
+    "saved": "Birthday saved",
+    "savedDesc": "{user}: on {date}, in {days} day(s).",
+    "removed": "Birthday removed",
+    "none": "No birthday saved for {user}.",
+    "listEmpty": "No birthdays saved. Add yours with /birthday set.",
+    "listTitle": "Upcoming birthdays ({count})",
+    "listLine": "{user} · {date} · {when}{age}",
+    "today": "**today**",
+    "inDays": "in {days} d",
+    "ageSuffix": " · turns {age}",
+    "viewTitle": "Birthday",
+    "viewDesc": "{user} celebrates their birthday on **{date}**, in {days} day(s).",
+    "announceTitle": "Happy birthday!",
+    "announce": "Happy birthday {user}! Everyone at {server} wishes you a great day.",
+    "announceAge": "Happy birthday {user}, who turns {age} today!",
+    "configTitle": "Birthdays configured",
+    "configHelp": "Announcements go out every day at the chosen hour, using the server time offset.",
+    "channel": "Channel",
+    "role": "Birthday role",
+    "hour": "Hour",
+    "offset": "Time zone",
+    "message": "Message",
+    "defaultMessage": "Default message"
+  },
+  "stats": {
+    "types": {
+      "members": "Members",
+      "humans": "Humans",
+      "bots": "Bots",
+      "boosts": "Boosts",
+      "tier": "Boost level",
+      "channels": "Channels",
+      "roles": "Roles"
+    },
+    "defaults": {
+      "members": "Members: {count}",
+      "humans": "Humans: {count}",
+      "bots": "Bots: {count}",
+      "boosts": "Boosts: {count}",
+      "tier": "Level: {count}",
+      "channels": "Channels: {count}",
+      "roles": "Roles: {count}"
+    },
+    "tooMany": "You reached the limit of {max} statistics channels.",
+    "needCount": "The name must contain {count}, replaced by the value.",
+    "auditReason": "Statistics channel",
+    "added": "Statistics channel created",
+    "addedDesc": "{channel} will show \"{type}\". It updates by itself.",
+    "notStat": "This channel is not a statistics channel.",
+    "removed": "Statistics channel removed",
+    "listEmpty": "No statistics channels.",
+    "listTitle": "Statistics channels",
+    "listLine": "{channel} · {type} · `{template}`",
+    "rateNote": "Discord allows only 2 renames every 10 minutes per channel, so updates can take a few minutes.",
+    "refreshed": "Update started",
+    "refreshedDesc": "{count} channel(s) renamed.",
+    "refreshedWaiting": "{count} channel(s) renamed. The others are waiting for Discord's limit and will follow automatically."
+  },
+  "sticky": {
+    "footer": "Sticky message",
+    "modalTitle": "Sticky message",
+    "modalTitleField": "Title (optional)",
+    "modalContentField": "Content",
+    "badChannel": "Choose a text channel.",
+    "tooMany": "You reached the limit of {max} sticky messages.",
+    "saved": "Sticky message saved in {channel}",
+    "removed": "Sticky message removed from {channel}",
+    "none": "No sticky message in {channel}.",
+    "listEmpty": "No sticky messages.",
+    "listTitle": "Sticky messages ({count})"
+  },
+  "afk": {
+    "disabled": "AFK status is disabled on this server.",
+    "set": "You are AFK",
+    "setDesc": "Reason: {reason}\nYour nickname shows [AFK]. Send a message to come back.",
+    "setDescNoNick": "Reason: {reason}\nSend a message to come back.",
+    "cleared": "Welcome back, you are no longer AFK",
+    "backTitle": "Welcome back, {user}",
+    "backDesc": "Away since {since}. Mentions received: {count}.",
+    "pingLine": "{user} {time} · [view]({url})",
+    "noticeTitle": "Member away",
+    "isAfk": "{user} has been AFK since {since}.",
+    "isAfkReason": "{user} has been AFK since {since}: {reason}"
+  },
+  "tags": {
+    "badName": "Invalid name: 1 to 32 characters, lowercase letters, digits, - or _.",
+    "notFound": "No tag named \"{name}\".",
+    "exists": "The tag \"{name}\" already exists.",
+    "tooMany": "You reached the limit of {max} tags.",
+    "noPermission": "Managing tags requires the Manage Messages permission or the tag manager role.",
+    "modalTitle": {
+      "create": "New tag: {name}",
+      "edit": "Edit: {name}"
+    },
+    "modalField": "Tag content",
+    "modalPlaceholder": "Variables: {user} {target} {server} {channel} {membercount}",
+    "created": "Created",
+    "createdDesc": "Use it with /tag use name:{name}",
+    "edited": "Tag \"{name}\" edited",
+    "confirmDelete": "Permanently delete the tag \"{name}\"?",
+    "deleted": "Tag \"{name}\" deleted",
+    "footer": "Tag: {name}",
+    "listEmpty": "No tags yet.",
+    "listTitle": "Tags ({count})",
+    "listLine": "`{name}` · used {uses} time(s)",
+    "infoTitle": "Tag \"{name}\"",
+    "owner": "Created by",
+    "uses": "Uses",
+    "variables": "Variables",
+    "variablesList": "{user} {username} {displayname} {target} {server} {channel} {membercount}"
+  },
+  "tempvoice": {
+    "hubName": "Join to create",
+    "defaultName": "{user}'s channel",
+    "auditHub": "Temporary voice hub channel",
+    "auditCreate": "Temporary channel of {user}",
+    "auditDelete": "Empty temporary channel",
+    "tooManyHubs": "You reached the limit of {max} hub channels.",
+    "hubCreated": "Hub channel created",
+    "hubCreatedDesc": "Joining {channel} creates a personal voice channel, deleted once it is empty.",
+    "notHub": "This channel is not a hub channel.",
+    "hubRemoved": "Hub channel removed",
+    "noHubs": "No hub channels. Create one with /tempvoice setup.",
+    "listTitle": "Temporary voice channels",
+    "hubs": "Hub channels",
+    "active": "Active channels ({count})",
+    "notInTemp": "Join your temporary voice channel first.",
+    "notOwner": "Only the owner ({owner}) can do this.",
+    "alreadyOwner": "This channel is already yours.",
+    "joinFirst": "Join this voice channel to claim it.",
+    "ownerPresent": "The owner is still in the channel.",
+    "claimed": "{user} now owns this channel",
+    "gone": "This temporary channel no longer exists.",
+    "panelTitle": "Your voice channel",
+    "panelDesc": "Owner: {owner}\nUse the buttons to manage this channel. It is deleted once everyone has left.",
+    "buttons": {
+      "rename": "Rename",
+      "limit": "Limit",
+      "lock": "Lock",
+      "hide": "Hide",
+      "permit": "Allow",
+      "kick": "Kick",
+      "claim": "Claim"
+    },
+    "renameTitle": "Rename the channel",
+    "renameLabel": "New name",
+    "limitTitle": "Member limit",
+    "limitLabel": "Maximum number (0 = unlimited)",
+    "badName": "The name cannot be empty.",
+    "badLimit": "Enter a number between 0 and 99.",
+    "renameLimit": "Discord only allows 2 renames per 10 minutes. Try again {time}.",
+    "renamed": "Channel renamed to \"{name}\"",
+    "limitSet": "Limit set to {limit} member(s)",
+    "limitRemoved": "Limit removed",
+    "locked": {
+      "on": "Channel locked: only allowed members can join",
+      "off": "Channel unlocked"
+    },
+    "hidden": {
+      "on": "Channel hidden",
+      "off": "Channel visible again"
+    },
+    "permitPrompt": "Choose the members allowed to join.",
+    "kickPrompt": "Choose the members to kick from the channel.",
+    "selectUsers": "Choose members",
+    "permitted": "Allowed: {users}",
+    "kicked": "Kicked: {users}"
+  },
+  "autoresponder": {
+    "modes": {
+      "exact": "exact message",
+      "contains": "contains",
+      "startswith": "starts with",
+      "word": "whole word"
+    },
+    "tooMany": "You reached the limit of {max} automatic replies.",
+    "tooShort": "The trigger must be at least 2 characters long.",
+    "duplicate": "This trigger already exists with the same mode.",
+    "added": "Automatic reply #{id} added",
+    "addedDesc": "Trigger: \"{trigger}\" ({mode}).",
+    "notFound": "There is no automatic reply #{id}.",
+    "removed": "Automatic reply #{id} removed",
+    "listEmpty": "No automatic replies.",
+    "listTitle": "Automatic replies ({count})",
+    "listLine": "**#{id}** · {mode} · `{trigger}` · {where}\n→ {response}",
+    "everywhere": "everywhere",
+    "noMatch": "No trigger matches this message.",
+    "match": "Match found",
+    "matchDesc": "Reply #{id} (\"{trigger}\") would be sent."
+  },
+  "dashboard": {
+    "suggestions": {
+      "title": "Suggestions",
+      "description": "Ideas proposed by members, with votes."
+    },
+    "starboard": {
+      "title": "Starboard",
+      "description": "Highlight the messages that get the most stars."
+    },
+    "birthdays": {
+      "title": "Birthdays",
+      "description": "Daily announcement and birthday role."
+    },
+    "afk": {
+      "title": "AFK",
+      "description": "Away status shown when someone mentions you."
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "Saved replies used with /tag use."
+    },
+    "sticky": {
+      "title": "Sticky messages",
+      "description": "Messages posted again at the bottom of chosen channels."
+    },
+    "tempvoice": {
+      "title": "Temporary voice",
+      "description": "Voice channels created on demand."
+    },
+    "autoresponder": {
+      "title": "Automatic replies",
+      "description": "Replies sent when a message contains a trigger."
+    },
+    "fields": {
+      "suggestionsChannel": {
+        "label": "Suggestions channel",
+        "help": "Channel where /suggest posts ideas."
+      },
+      "suggestionsAnonymous": {
+        "label": "Forced anonymity",
+        "help": "Hides the author of every suggestion."
+      },
+      "suggestionsThreads": {
+        "label": "Discussion threads",
+        "help": "Opens a thread under each suggestion."
+      },
+      "suggestionsDm": {
+        "label": "Notify the author",
+        "help": "DMs the author when staff changes the status."
+      },
+      "suggestionsCooldown": {
+        "label": "Delay between suggestions (s)",
+        "help": "0 for no delay."
+      },
+      "starboardEnabled": {
+        "label": "Starboard enabled",
+        "help": "Copies popular messages to the starboard channel."
+      },
+      "starboardChannel": {
+        "label": "Starboard channel",
+        "help": "Channel where messages are copied."
+      },
+      "starboardThreshold": {
+        "label": "Star threshold",
+        "help": "Number of reactions needed."
+      },
+      "starboardEmoji": {
+        "label": "Emoji",
+        "help": "Standard emoji, or server emoji as <:name:id>."
+      },
+      "starboardSelfStar": {
+        "label": "Author's own star",
+        "help": "Count the author's reaction on their own message."
+      },
+      "starboardIgnored": {
+        "label": "Ignored channels",
+        "help": "Messages from these channels never reach the starboard."
+      },
+      "birthdaysEnabled": {
+        "label": "Announcements enabled",
+        "help": "Announces member birthdays every day."
+      },
+      "birthdaysChannel": {
+        "label": "Announcement channel",
+        "help": "Channel where birthdays are celebrated."
+      },
+      "birthdaysRole": {
+        "label": "Birthday role",
+        "help": "Role given during the birthday, then removed."
+      },
+      "birthdaysHour": {
+        "label": "Announcement hour",
+        "help": "Local hour, from 0 to 23."
+      },
+      "birthdaysOffset": {
+        "label": "UTC offset",
+        "help": "For example 0 for London in winter, 1 in summer, -5 for New York."
+      },
+      "birthdaysMessage": {
+        "label": "Custom message",
+        "help": "Variables: {user} {username} {age} {server}. Empty for the default message."
+      },
+      "afkEnabled": {
+        "label": "AFK enabled",
+        "help": "Allows using /afk."
+      },
+      "afkNickname": {
+        "label": "[AFK] prefix",
+        "help": "Adds [AFK] to the nickname while away."
+      },
+      "tagsManager": {
+        "label": "Tag manager role",
+        "help": "This role can create and edit tags without the Manage Messages permission."
+      },
+      "stickyDelay": {
+        "label": "Delay before reposting (s)",
+        "help": "Wait after the last message before reposting, from 2 to 60."
+      },
+      "tempvoiceLimit": {
+        "label": "Default limit",
+        "help": "Maximum members in a new channel (0 = unlimited)."
+      },
+      "tempvoiceName": {
+        "label": "Channel name",
+        "help": "Use {user} for the nickname. Empty for the default name."
+      },
+      "autoresponderEnabled": {
+        "label": "Automatic replies enabled",
+        "help": "Requires the Message Content intent."
+      },
+      "autoresponderCooldown": {
+        "label": "Delay per channel (s)",
+        "help": "Minimum time between two identical replies in a channel."
+      }
+    },
+    "actions": {
+      "refreshStats": {
+        "label": "Update statistics channels",
+        "none": "No statistics channel configured.",
+        "done": "Statistics channels updated.",
+        "waiting": "Partly updated; the rest will follow after Discord's limit."
+      },
+      "clearAfk": {
+        "label": "Clear every AFK status",
+        "done": "Every AFK status has been cleared."
+      },
+      "cleanupTempvoice": {
+        "label": "Clean up temporary voice channels",
+        "done": "Empty temporary channels have been deleted."
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "نسخ احتياطية للسيرفر (رتب، قنوات، إعدادات)",
+      "options": {
+        "create": { "description": "نسخ السيرفر الآن", "options": { "name": "اسم النسخة" } },
+        "list": { "description": "عرض النسخ الاحتياطية" },
+        "info": { "description": "تفاصيل نسخة", "options": { "id": "النسخة" } },
+        "load": {
+          "description": "استعادة نسخة على هذا السيرفر",
+          "options": {
+            "id": "النسخة",
+            "mode": { "description": "استبدال كل شيء أو إضافة لما يوجد", "choices": { "replace": "استبدال", "merge": "دمج" } }
+          }
+        },
+        "delete": { "description": "حذف نسخة", "options": { "id": "النسخة" } },
+        "auto": {
+          "description": "نسخ احتياطية تلقائية",
+          "options": { "interval": "فترة (مثال: 1d، 12h) أو \"off\"", "keep": "عدد النسخ التلقائية المحفوظة" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "لا يمكن فعل ذلك",
+    "ownerOnly": "المالك فقط (أو صاحب البوت) يستطيع إدارة النسخ الاحتياطية.",
+    "corrupted": "هذه النسخة غير قابلة للقراءة أو بصيغة مجهولة.",
+    "loading": "استعادة قيد التشغيل بالفعل على هذا السيرفر.",
+    "botMissing": "أفتقر لهذه الصلاحيات: {perms}.",
+    "badInterval": "فترة غير صالحة: بين 6 ساعات و 30 يوماً (مثال: 12h، 1d، 1w)، أو \"off\".",
+    "unknown": "النسخة غير موجودة."
+  },
+  "info": {
+    "id": "الآيدي",
+    "server": "السيرفر",
+    "created": "أُنشئت",
+    "author": "المؤلف",
+    "type": "النوع",
+    "auto": "تلقائية",
+    "manual": "يدوية",
+    "size": "الحجم",
+    "content": "المحتوى",
+    "contentValue": "{roles} رتبة(ات)، {categories} فئة(ئات)، {text} قناة(ات) نصية، {voice} قناة(ات) صوتية"
+  },
+  "log": {
+    "createdTitle": "نسخة أُنشئت",
+    "created": "{user} أنشأ نسخة `{id}`.",
+    "loadedTitle": "نسخة استُعيدت",
+    "loaded": "{user} استعاد نسخة `{id}` (وضع {mode})."
+  },
+  "create": { "title": "تم إنشاء نسخة", "done": "النسخة `{id}` حُفظت." },
+  "load": {
+    "confirmTitle": "استعادة النسخة؟",
+    "confirm": {
+      "replace": "النسخة `{id}` ({server}) ستستبدل **هذا السيرفر**: كل قناة (ما عدا هذه) وكل رتبة أستطيع إدارتها ستُحذف، ثم ستُعاد {roles} رتبة(ات)، {categories} فئة(ئات)، {text} نصية و {voice} صوتية. الحالة الحالية تُنسخ أولاً.",
+      "merge": "النسخة `{id}` ({server}) ستُدمج: الرتب والقنوات بنفس الاسم تُحدث، الباقي يُنشأ ({roles} رتبة(ات)، {categories} فئة(ئات)، {text} نصية و {voice} صوتية). لا شيء يُحذف."
+    },
+    "safetyName": "قبل الاستعادة",
+    "auditReason": "استعادة نسخة {id} بواسطة {user}",
+    "progressTitle": "جاري الاستعادة",
+    "progress": "{phase}: {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "حذف الإعداد الحالي",
+      "settings": "إعدادات السيرفر",
+      "roles": "الرتب",
+      "channels": "القنوات",
+      "finish": "الإنهاء"
+    },
+    "result": "الرتب: {rolesCreated} أُنشئت، {rolesUpdated} حُدثت.\nالقنوات: {channelsCreated} أُنشئت، {channelsUpdated} حُدثت.\nمُحذوف: {deleted}. إخفاقات: {errors}.",
+    "safety": "الحالة السابقة حُفظت كـ `{id}`.",
+    "doneTitle": "انتهت الاستعادة"
+  },
+  "auto": {
+    "title": "نسخ تلقائية",
+    "disabled": "النسخ التلقائية معطلة.",
+    "enabled": "نسخة تلقائية ستُصنع كل {interval}؛ أحدث {keep} تُحفظ.",
+    "name": "تلقائية"
+  },
+  "list": {
+    "title": "النسخ الاحتياطية",
+    "empty": "لا نسخة بعد. أنشئ واحدة بـ /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "بلا اسم",
+    "autoTag": "(تلقائية)"
+  },
+  "delete": { "confirm": "حذف النسخة `{id}` نهائياً؟", "title": "نسخة حُذفت", "done": "النسخة `{id}` حُذفت." },
+  "dashboard": {
+    "general": { "title": "النسخ الاحتياطية", "description": "الحدود والنسخ التلقائية للسيرفر." },
+    "fields": {
+      "maxBackups": "نسخ يدوية محفوظة",
+      "autoInterval": "فترة النسخ التلقائي",
+      "autoKeep": "نسخ تلقائية محفوظة"
+    },
+    "help": {
+      "maxBackups": "ما زاد عن هذا، الأقدم يُحذف.",
+      "autoInterval": "0 للتعطيل. الحد الأدنى 6 ساعات، الأقصى 30 يوماً."
+    },
+    "actions": {
+      "createNow": "إنشاء نسخة الآن",
+      "createNowDone": "تم إنشاء النسخة.",
+      "ownerOnly": "المالك فقط يستطيع إنشاء نسخة."
+    }
+  }
+}

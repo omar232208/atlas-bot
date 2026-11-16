@@ -1,0 +1,1107 @@
+{
+  "dashboard": {
+    "overview": {
+      "title": "General Settings",
+      "description": "Settings that apply to all bot commands.",
+      "globalEnabled": "Enable command system",
+      "globalEnabledHelp": "Disabling this turns off all bot commands in the server (except owner commands).",
+      "bypassOwner": "Bypass server owner",
+      "bypassOwnerHelp": "Server owner can use all commands even if disabled or role-restricted.",
+      "bypassAdmin": "Bypass administrators",
+      "bypassAdminHelp": "Members with Manage Server permission can use all admin commands even if restricted."
+    },
+    "categories": {
+      "core": {
+        "name": "Core",
+        "description": "Basic bot commands: help, ping, info, config, dashboard."
+      },
+      "admin": {
+        "name": "Administration",
+        "description": "Moderator commands: ban, kick, timeout, purge, roles, polls, embeds..."
+      },
+      "protection": {
+        "name": "Protection",
+        "description": "Anti-nuke, anti-raid, automod, verification, lockdown..."
+      },
+      "logs": {
+        "name": "Logs",
+        "description": "Configure log channels for moderation actions."
+      },
+      "tickets": {
+        "name": "Tickets",
+        "description": "Support ticket system."
+      },
+      "welcome": {
+        "name": "Welcome & Goodbye",
+        "description": "Welcome messages, goodbye messages, auto-roles on join."
+      },
+      "economy": {
+        "name": "Economy",
+        "description": "Money, bank, role shop, gambling, daily/weekly, robbery."
+      },
+      "levels": {
+        "name": "Levels",
+        "description": "XP system, leaderboard, role rewards on level up."
+      },
+      "giveaways": {
+        "name": "Giveaways",
+        "description": "Create giveaways with buttons, requirements, random winners."
+      },
+      "fun": {
+        "name": "Fun",
+        "description": "Games: tic-tac-toe, connect4, RPS, hangman, trivia, dice, 8ball."
+      },
+      "community": {
+        "name": "Community",
+        "description": "Suggestions, starboard, tags, AFK, temp voice, auto-replies."
+      },
+      "music": {
+        "name": "Music",
+        "description": "Play music, radio and manage the queue."
+      },
+      "backup": {
+        "name": "Backup",
+        "description": "Save and restore server roles, channels, settings."
+      }
+    },
+    "commands": {
+      "help": {
+        "label": "Help",
+        "description": "List commands of all modules or show one command details"
+      },
+      "ping": {
+        "label": "Ping",
+        "description": "Show bot latency"
+      },
+      "botinfo": {
+        "label": "Bot Info",
+        "description": "Bot statistics, version, server count"
+      },
+      "config": {
+        "label": "Config",
+        "description": "Change bot language, show settings, reset"
+      },
+      "setup": {
+        "label": "Guided Setup",
+        "description": "First-time bot setup wizard"
+      },
+      "dashboard": {
+        "label": "Dashboard",
+        "description": "Open server web dashboard"
+      },
+      "ban": {
+        "label": "Ban",
+        "description": "Ban a member (temporary or permanent)"
+      },
+      "kick": {
+        "label": "Kick",
+        "description": "Kick a member from the server"
+      },
+      "timeout": {
+        "label": "Timeout",
+        "description": "Prevent member from talking/joining voice temporarily"
+      },
+      "unban": {
+        "label": "Unban",
+        "description": "Unban a banned user"
+      },
+      "warn": {
+        "label": "Warn",
+        "description": "Warn a member (thresholds can sanction automatically)"
+      },
+      "case": {
+        "label": "Cases",
+        "description": "View, edit or delete a moderation case"
+      },
+      "purge": {
+        "label": "Purge",
+        "description": "Bulk delete messages with filters: user, bots, links, files..."
+      },
+      "slowmode": {
+        "label": "Slowmode",
+        "description": "Set cooldown between messages in a channel"
+      },
+      "lock": {
+        "label": "Lock Channel",
+        "description": "Prevent @everyone from sending in a channel"
+      },
+      "mod": {
+        "label": "Advanced Mod",
+        "description": "Clear warns, config, history, massban, nick, unlock, untimeout, unwarn..."
+      },
+      "role": {
+        "label": "Manage Roles",
+        "description": "Add/remove roles, temp roles, role info"
+      },
+      "rolemenu": {
+        "label": "Role Menus",
+        "description": "Create self-service role menus with buttons or dropdowns"
+      },
+      "autorole": {
+        "label": "Autoroles",
+        "description": "Roles for humans, roles for bots, list"
+      },
+      "whitelist": {
+        "label": "Whitelist",
+        "description": "Users exempt from antinuke and automod"
+      },
+      "say": {
+        "label": "Say",
+        "description": "Make the bot send a message in a channel"
+      },
+      "embed": {
+        "label": "Embed",
+        "description": "Create and send a custom embed message"
+      },
+      "poll": {
+        "label": "Poll",
+        "description": "Create a poll with buttons and live vote counts"
+      },
+      "remind": {
+        "label": "Remind",
+        "description": "Set a reminder for later"
+      },
+      "snipe": {
+        "label": "Snipe",
+        "description": "Read last deleted message in channel (opt-in)"
+      },
+      "info": {
+        "label": "Info",
+        "description": "Info about user, server, role, channel, invites, members"
+      },
+      "antinuke": {
+        "label": "Anti-nuke",
+        "description": "Protection against mass deletions: channels, roles, bans, emojis..."
+      },
+      "panic": {
+        "label": "Panic Mode",
+        "description": "Toggle panic mode: blocks all dangerous actions"
+      },
+      "antiraid": {
+        "label": "Anti-raid",
+        "description": "Detect join waves and auto-enable raid mode"
+      },
+      "raidmode": {
+        "label": "Raid Mode",
+        "description": "Manually enable/disable raid mode"
+      },
+      "lockdown": {
+        "label": "Lockdown",
+        "description": "Lock/unlock all public channels in the server"
+      },
+      "automod": {
+        "label": "Automod",
+        "description": "Auto filters: words, links, invites, spam, mentions, caps..."
+      },
+      "badwords": {
+        "label": "Banned Words",
+        "description": "Add/remove/list banned words"
+      },
+      "links": {
+        "label": "Link Filter",
+        "description": "Allowed/blocked domains for links"
+      },
+      "verification": {
+        "label": "Verification",
+        "description": "Button captcha for new members before server access"
+      },
+      "logs": {
+        "label": "Logs",
+        "description": "Set channels for each log type: messages, members, moderation, voice, invites, protection"
+      },
+      "ticket": {
+        "label": "Tickets",
+        "description": "Ticket panel, close, add/remove members, transcript, settings"
+      },
+      "welcome": {
+        "label": "Welcome",
+        "description": "Enable, channel, message, embed, DM, test"
+      },
+      "goodbye": {
+        "label": "Goodbye",
+        "description": "Enable, channel, message, test"
+      },
+      "balance": {
+        "label": "Balance",
+        "description": "Show wallet and bank of a member"
+      },
+      "work": {
+        "label": "Work",
+        "description": "Earn money once per hour"
+      },
+      "pay": {
+        "label": "Pay",
+        "description": "Send money from your wallet to another member"
+      },
+      "bank": {
+        "label": "Bank",
+        "description": "Deposit to bank, withdraw from bank"
+      },
+      "shop": {
+        "label": "Shop",
+        "description": "Browse, buy, add, remove items (grant roles)"
+      },
+      "gamble": {
+        "label": "Gamble",
+        "description": "Coinflip, slots, blackjack"
+      },
+      "eco": {
+        "label": "Economy Config",
+        "description": "Daily, weekly, rob, inventory, richest, currency settings"
+      },
+      "rank": {
+        "label": "Rank",
+        "description": "Show your level, rank, XP"
+      },
+      "leaderboard": {
+        "label": "Leaderboard",
+        "description": "Top 10 members by XP"
+      },
+      "levels": {
+        "label": "Levels Config",
+        "description": "Enable/disable, XP settings, role rewards, level-up announce"
+      },
+      "giveaway": {
+        "label": "Giveaways",
+        "description": "Start, end, reroll, cancel, list giveaways"
+      },
+      "8ball": {
+        "label": "8ball",
+        "description": "Ask the magic 8-ball a question"
+      },
+      "dice": {
+        "label": "Dice",
+        "description": "Roll dice with custom sides"
+      },
+      "game": {
+        "label": "Games",
+        "description": "Tic-tac-toe, Connect 4, RPS, Hangman, Trivia"
+      },
+      "fun": {
+        "label": "Fun Tools",
+        "description": "Random choice, ship, reverse text, emojify"
+      },
+      "afk": {
+        "label": "AFK",
+        "description": "Set away status with reason"
+      },
+      "birthday": {
+        "label": "Birthday",
+        "description": "Set, remove, view, list, config birthdays"
+      },
+      "starboard": {
+        "label": "Starboard",
+        "description": "Set channel, threshold, emoji, ignored channels"
+      },
+      "suggest": {
+        "label": "Suggest",
+        "description": "Submit an anonymous or public suggestion"
+      },
+      "suggestion": {
+        "label": "Manage Suggestions",
+        "description": "Accept, deny, consider, implement, delete, list, config"
+      },
+      "tag": {
+        "label": "Tags",
+        "description": "Create, edit, delete, view, list, use saved replies"
+      },
+      "tempvoice": {
+        "label": "Temp Voice",
+        "description": "Setup, remove, list, panel for temporary voice channels"
+      },
+      "community": {
+        "label": "Community Tools",
+        "description": "Stat channels, sticky messages, auto-replies"
+      },
+      "backup": {
+        "label": "Backup",
+        "description": "Create, list, info, load, delete, auto backup"
+      },
+      "play": {
+        "label": "Play",
+        "description": "Play an audio URL, a radio or a file"
+      },
+      "pause": {
+        "label": "Pause",
+        "description": "Pause the current playback"
+      },
+      "resume": {
+        "label": "Resume",
+        "description": "Resume the current playback"
+      },
+      "skip": {
+        "label": "Skip",
+        "description": "Skip the current track"
+      },
+      "stop": {
+        "label": "Stop",
+        "description": "Stop playback and leave the queue"
+      },
+      "nowplaying": {
+        "label": "Now Playing",
+        "description": "Show the track playing now"
+      },
+      "queue": {
+        "label": "Queue",
+        "description": "View and manage the music queue"
+      },
+      "loop": {
+        "label": "Loop",
+        "description": "Loop the current track or the whole queue"
+      },
+      "seek": {
+        "label": "Seek",
+        "description": "Jump to a position in the current track"
+      },
+      "volume": {
+        "label": "Volume",
+        "description": "Change the playback volume"
+      },
+      "radio": {
+        "label": "Radio",
+        "description": "Play one of the built-in radio stations"
+      },
+      "music": {
+        "label": "Music",
+        "description": "Music controls and settings"
+      }
+    },
+    "fields": {
+      "ban": {
+        "enabled": "Enable ban command",
+        "enabledHelp": "Disabling prevents /ban usage in this server.",
+        "allowedRoles": "Roles allowed to ban",
+        "allowedRolesHelp": "Leave empty to allow anyone with ban permission. Add roles to restrict.",
+        "keywords": "Auto-ban keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where ban is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "kick": {
+        "enabled": "Enable kick command",
+        "enabledHelp": "Disabling prevents /kick usage in this server.",
+        "allowedRoles": "Roles allowed to kick",
+        "allowedRolesHelp": "Leave empty to allow anyone with kick permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where kick is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "timeout": {
+        "enabled": "Enable timeout command",
+        "enabledHelp": "Disabling prevents /timeout usage in this server.",
+        "allowedRoles": "Roles allowed to timeout",
+        "allowedRolesHelp": "Leave empty to allow anyone with moderation permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where timeout is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "unban": {
+        "enabled": "Enable unban command",
+        "enabledHelp": "Disabling prevents /unban usage in this server.",
+        "allowedRoles": "Roles allowed to unban",
+        "allowedRolesHelp": "Leave empty to allow anyone with ban permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where unban is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "warn": {
+        "enabled": "Enable warn command",
+        "enabledHelp": "Disabling prevents /warn usage in this server.",
+        "allowedRoles": "Roles allowed to warn",
+        "allowedRolesHelp": "Leave empty to allow anyone with moderation permission.",
+        "keywords": "Auto-warn keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where warn is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "case": {
+        "enabled": "Enable cases command",
+        "enabledHelp": "Disabling prevents /case usage in this server.",
+        "allowedRoles": "Roles allowed to manage cases",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where cases is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "purge": {
+        "enabled": "Enable purge command",
+        "enabledHelp": "Disabling prevents /purge usage in this server.",
+        "allowedRoles": "Roles allowed to purge",
+        "allowedRolesHelp": "Leave empty to allow anyone with manage messages permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where purge is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "slowmode": {
+        "enabled": "Enable slowmode command",
+        "enabledHelp": "Disabling prevents /slowmode usage in this server.",
+        "allowedRoles": "Roles allowed to change slowmode",
+        "allowedRolesHelp": "Leave empty to allow anyone with manage channels permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where slowmode is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "lock": {
+        "enabled": "Enable lock command",
+        "enabledHelp": "Disabling prevents /lock usage in this server.",
+        "allowedRoles": "Roles allowed to lock channels",
+        "allowedRolesHelp": "Leave empty to allow anyone with manage channels permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where lock is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "mod": {
+        "enabled": "Enable advanced mod commands",
+        "enabledHelp": "Disabling prevents /mod usage in this server.",
+        "allowedRoles": "Roles allowed to use advanced mod",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where mod is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "role": {
+        "enabled": "Enable role management",
+        "enabledHelp": "Disabling prevents /role usage in this server.",
+        "allowedRoles": "Roles allowed to manage roles",
+        "allowedRolesHelp": "Leave empty to allow anyone with manage roles permission.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where role is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "rolemenu": {
+        "enabled": "Enable role menus",
+        "enabledHelp": "Disabling prevents /rolemenu usage in this server.",
+        "allowedRoles": "Roles allowed to create role menus",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where rolemenu is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "autorole": {
+        "enabled": "Enable autorole command",
+        "enabledHelp": "Disabling prevents /autorole usage in this server.",
+        "allowedRoles": "Roles allowed to manage autoroles",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where autorole is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "whitelist": {
+        "enabled": "Enable whitelist command",
+        "enabledHelp": "Disabling prevents /whitelist usage in this server.",
+        "allowedRoles": "Roles allowed to manage whitelist",
+        "allowedRolesHelp": "Leave empty to allow owner only.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where whitelist is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "say": {
+        "enabled": "Enable say command",
+        "enabledHelp": "Disabling prevents /say usage in this server.",
+        "allowedRoles": "Roles allowed to use say",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where say is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "embed": {
+        "enabled": "Enable embed command",
+        "enabledHelp": "Disabling prevents /embed usage in this server.",
+        "allowedRoles": "Roles allowed to use embed",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where embed is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "poll": {
+        "enabled": "Enable poll command",
+        "enabledHelp": "Disabling prevents /poll usage in this server.",
+        "allowedRoles": "Roles allowed to create polls",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where poll is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "remind": {
+        "enabled": "Enable remind command",
+        "enabledHelp": "Disabling prevents /remind usage in this server.",
+        "allowedRoles": "Roles allowed to use remind",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where remind is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "snipe": {
+        "enabled": "Enable snipe command",
+        "enabledHelp": "Disabling prevents /snipe usage in this server.",
+        "allowedRoles": "Roles allowed to use snipe",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where snipe is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "info": {
+        "enabled": "Enable info command",
+        "enabledHelp": "Disabling prevents /info usage in this server.",
+        "allowedRoles": "Roles allowed to use info",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where info is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "antinuke": {
+        "enabled": "Enable antinuke command",
+        "enabledHelp": "Disabling prevents /antinuke usage in this server.",
+        "allowedRoles": "Roles allowed to manage antinuke",
+        "allowedRolesHelp": "Leave empty to allow owner only.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where antinuke is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "panic": {
+        "enabled": "Enable panic command",
+        "enabledHelp": "Disabling prevents /panic usage in this server.",
+        "allowedRoles": "Roles allowed to trigger panic",
+        "allowedRolesHelp": "Leave empty to allow owner only.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where panic is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "antiraid": {
+        "enabled": "Enable antiraid command",
+        "enabledHelp": "Disabling prevents /antiraid usage in this server.",
+        "allowedRoles": "Roles allowed to manage antiraid",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where antiraid is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "raidmode": {
+        "enabled": "Enable raidmode command",
+        "enabledHelp": "Disabling prevents /raidmode usage in this server.",
+        "allowedRoles": "Roles allowed to toggle raid mode",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where raidmode is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "lockdown": {
+        "enabled": "Enable lockdown command",
+        "enabledHelp": "Disabling prevents /lockdown usage in this server.",
+        "allowedRoles": "Roles allowed to lockdown",
+        "allowedRolesHelp": "Leave empty to allow owner only.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where lockdown is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "automod": {
+        "enabled": "Enable automod command",
+        "enabledHelp": "Disabling prevents /automod usage in this server.",
+        "allowedRoles": "Roles allowed to manage automod",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where automod is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "badwords": {
+        "enabled": "Enable badwords command",
+        "enabledHelp": "Disabling prevents /badwords usage in this server.",
+        "allowedRoles": "Roles allowed to manage banned words",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where badwords is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "links": {
+        "enabled": "Enable links command",
+        "enabledHelp": "Disabling prevents /links usage in this server.",
+        "allowedRoles": "Roles allowed to manage link filter",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where links is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "verification": {
+        "enabled": "Enable verification command",
+        "enabledHelp": "Disabling prevents /verification usage in this server.",
+        "allowedRoles": "Roles allowed to manage verification",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where verification is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "logs": {
+        "enabled": "Enable logs command",
+        "enabledHelp": "Disabling prevents /logs usage in this server.",
+        "allowedRoles": "Roles allowed to manage logs",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where logs is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "ticket": {
+        "enabled": "Enable ticket command",
+        "enabledHelp": "Disabling prevents /ticket usage in this server.",
+        "allowedRoles": "Roles allowed to manage tickets",
+        "allowedRolesHelp": "Leave empty to allow staff.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where ticket is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "welcome": {
+        "enabled": "Enable welcome command",
+        "enabledHelp": "Disabling prevents /welcome usage in this server.",
+        "allowedRoles": "Roles allowed to manage welcome",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where welcome is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "goodbye": {
+        "enabled": "Enable goodbye command",
+        "enabledHelp": "Disabling prevents /goodbye usage in this server.",
+        "allowedRoles": "Roles allowed to manage goodbye",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where goodbye is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "balance": {
+        "enabled": "Enable balance command",
+        "enabledHelp": "Disabling prevents /balance usage in this server.",
+        "allowedRoles": "Roles allowed to view balances",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where balance is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "work": {
+        "enabled": "Enable work command",
+        "enabledHelp": "Disabling prevents /work usage in this server.",
+        "allowedRoles": "Roles allowed to work",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where work is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "pay": {
+        "enabled": "Enable pay command",
+        "enabledHelp": "Disabling prevents /pay usage in this server.",
+        "allowedRoles": "Roles allowed to pay",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where pay is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "bank": {
+        "enabled": "Enable bank command",
+        "enabledHelp": "Disabling prevents /bank usage in this server.",
+        "allowedRoles": "Roles allowed to use bank",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where bank is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "shop": {
+        "enabled": "Enable shop command",
+        "enabledHelp": "Disabling prevents /shop usage in this server.",
+        "allowedRoles": "Roles allowed to use shop",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where shop is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "gamble": {
+        "enabled": "Enable gamble command",
+        "enabledHelp": "Disabling prevents /gamble usage in this server.",
+        "allowedRoles": "Roles allowed to gamble",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where gamble is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "eco": {
+        "enabled": "Enable economy config command",
+        "enabledHelp": "Disabling prevents /eco usage in this server.",
+        "allowedRoles": "Roles allowed to manage economy",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where eco is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "rank": {
+        "enabled": "Enable rank command",
+        "enabledHelp": "Disabling prevents /rank usage in this server.",
+        "allowedRoles": "Roles allowed to view ranks",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where rank is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "leaderboard": {
+        "enabled": "Enable leaderboard command",
+        "enabledHelp": "Disabling prevents /leaderboard usage in this server.",
+        "allowedRoles": "Roles allowed to view leaderboard",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where leaderboard is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "levels": {
+        "enabled": "Enable levels config command",
+        "enabledHelp": "Disabling prevents /levels usage in this server.",
+        "allowedRoles": "Roles allowed to manage levels",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where levels is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "giveaway": {
+        "enabled": "Enable giveaway command",
+        "enabledHelp": "Disabling prevents /giveaway usage in this server.",
+        "allowedRoles": "Roles allowed to manage giveaways",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where giveaway is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "8ball": {
+        "enabled": "Enable 8ball command",
+        "enabledHelp": "Disabling prevents /8ball usage in this server.",
+        "allowedRoles": "Roles allowed to use 8ball",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where 8ball is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "dice": {
+        "enabled": "Enable dice command",
+        "enabledHelp": "Disabling prevents /dice usage in this server.",
+        "allowedRoles": "Roles allowed to use dice",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where dice is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "game": {
+        "enabled": "Enable games command",
+        "enabledHelp": "Disabling prevents /game usage in this server.",
+        "allowedRoles": "Roles allowed to play games",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where game is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "fun": {
+        "enabled": "Enable fun command",
+        "enabledHelp": "Disabling prevents /fun usage in this server.",
+        "allowedRoles": "Roles allowed to use fun tools",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where fun is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "afk": {
+        "enabled": "Enable afk command",
+        "enabledHelp": "Disabling prevents /afk usage in this server.",
+        "allowedRoles": "Roles allowed to use afk",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where afk is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "birthday": {
+        "enabled": "Enable birthday command",
+        "enabledHelp": "Disabling prevents /birthday usage in this server.",
+        "allowedRoles": "Roles allowed to manage birthdays",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where birthday is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "starboard": {
+        "enabled": "Enable starboard command",
+        "enabledHelp": "Disabling prevents /starboard usage in this server.",
+        "allowedRoles": "Roles allowed to manage starboard",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where starboard is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "suggest": {
+        "enabled": "Enable suggest command",
+        "enabledHelp": "Disabling prevents /suggest usage in this server.",
+        "allowedRoles": "Roles allowed to suggest",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where suggest is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "suggestion": {
+        "enabled": "Enable suggestion management",
+        "enabledHelp": "Disabling prevents /suggestion usage in this server.",
+        "allowedRoles": "Roles allowed to manage suggestions",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where suggestion is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "tag": {
+        "enabled": "Enable tags command",
+        "enabledHelp": "Disabling prevents /tag usage in this server.",
+        "allowedRoles": "Roles allowed to manage tags",
+        "allowedRolesHelp": "Leave empty to allow everyone.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where tag is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "tempvoice": {
+        "enabled": "Enable tempvoice command",
+        "enabledHelp": "Disabling prevents /tempvoice usage in this server.",
+        "allowedRoles": "Roles allowed to manage temp voice",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where tempvoice is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "community": {
+        "enabled": "Enable community tools",
+        "enabledHelp": "Disabling prevents /community usage in this server.",
+        "allowedRoles": "Roles allowed to use community tools",
+        "allowedRolesHelp": "Leave empty to allow moderators.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where community is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "backup": {
+        "enabled": "Enable backup command",
+        "enabledHelp": "Disabling prevents /backup usage in this server.",
+        "allowedRoles": "Roles allowed to manage backups",
+        "allowedRolesHelp": "Leave empty to allow owner only.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where backup is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "play": {
+        "allowedRoles": "Roles allowed to use /play",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /play is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "pause": {
+        "allowedRoles": "Roles allowed to use /pause",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /pause is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "resume": {
+        "allowedRoles": "Roles allowed to use /resume",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /resume is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "skip": {
+        "allowedRoles": "Roles allowed to use /skip",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /skip is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "stop": {
+        "allowedRoles": "Roles allowed to use /stop",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /stop is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "nowplaying": {
+        "allowedRoles": "Roles allowed to use /nowplaying",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /nowplaying is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "queue": {
+        "allowedRoles": "Roles allowed to use /queue",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /queue is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "loop": {
+        "allowedRoles": "Roles allowed to use /loop",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /loop is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "seek": {
+        "allowedRoles": "Roles allowed to use /seek",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /seek is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "volume": {
+        "allowedRoles": "Roles allowed to use /volume",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /volume is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "radio": {
+        "allowedRoles": "Roles allowed to use /radio",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /radio is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "music": {
+        "allowedRoles": "Roles allowed to use /music",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /music is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "help": {
+        "allowedRoles": "Roles allowed to use /help",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /help is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "ping": {
+        "allowedRoles": "Roles allowed to use /ping",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /ping is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "botinfo": {
+        "allowedRoles": "Roles allowed to use /botinfo",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /botinfo is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "config": {
+        "allowedRoles": "Roles allowed to use /config",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /config is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "setup": {
+        "allowedRoles": "Roles allowed to use /setup",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /setup is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "dashboard": {
+        "allowedRoles": "Roles allowed to use /dashboard",
+        "allowedRolesHelp": "Leave empty to allow everyone (Discord permissions still apply).",
+        "keywords": "Keywords",
+        "keywordsHelp": "Words that make the bot reply with a clickable mention of this command.",
+        "allowedChannels": "Channels where /dashboard is allowed",
+        "allowedChannelsHelp": "Leave empty to allow in all channels."
+      },
+      "subcommandHelp": "Switch for this subcommand only; it works only while the command itself is enabled."
+    },
+    "actions": {
+      "resetAll": "Reset all command settings",
+      "resetAllDone": "All command settings reset to defaults.",
+      "enableAll": "Enable all commands",
+      "enableAllDone": "All bot commands enabled.",
+      "disableAll": "Disable all commands",
+      "disableAllDone": "All bot commands disabled."
+    }
+  },
+  "errors": {
+    "disabled": "The command system is disabled in this server.",
+    "cmdDisabled": "The command {cmd} is disabled in this server.",
+    "noRole": "You need one of these roles to use this command: {roles}",
+    "wrongChannel": "This command can only be used in: {channels}"
+  },
+  "usage": {
+    "title": "Incomplete command — {command}",
+    "command": "Command",
+    "keyword": "Keyword",
+    "subs": "Subcommands"
+  }
+}

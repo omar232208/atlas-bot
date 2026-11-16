@@ -1,0 +1,363 @@
+{
+  "commands": {
+    "play": {
+      "description": "Play an audio URL, a radio or a file",
+      "options": {
+        "url": "Direct audio URL (mp3, ogg, flac, wav, m3u, pls, radio stream) or radio name",
+        "file": "Audio file to play",
+        "next": "Play right after the current track"
+      }
+    },
+    "radio": {
+      "description": "Listen to a built-in web radio (no argument: the list)",
+      "options": {
+        "station": "Station name or genre",
+        "next": "Play right after the current track"
+      }
+    },
+    "pause": {
+      "description": "Pause the music"
+    },
+    "resume": {
+      "description": "Resume the music"
+    },
+    "skip": {
+      "description": "Skip the current track",
+      "options": {
+        "to": "Jump straight to this queue position"
+      }
+    },
+    "stop": {
+      "description": "Stop the music and clear the queue"
+    },
+    "queue": {
+      "description": "Show or edit the queue",
+      "options": {
+        "view": {
+          "description": "Show the queue"
+        },
+        "remove": {
+          "description": "Remove a track from the queue",
+          "options": {
+            "position": "Position in the queue"
+          }
+        },
+        "move": {
+          "description": "Move a track in the queue",
+          "options": {
+            "from": "Current position",
+            "to": "New position"
+          }
+        },
+        "clear": {
+          "description": "Clear the upcoming tracks"
+        },
+        "shuffle": {
+          "description": "Shuffle the queue"
+        }
+      }
+    },
+    "nowplaying": {
+      "description": "Show the current track with controls"
+    },
+    "loop": {
+      "description": "Repeat the track or the queue",
+      "options": {
+        "mode": {
+          "description": "Loop mode",
+          "choices": {
+            "off": "Off",
+            "track": "Track",
+            "queue": "Whole queue"
+          }
+        }
+      }
+    },
+    "volume": {
+      "description": "Show or change the volume",
+      "options": {
+        "level": "Volume in percent (0-150)"
+      }
+    },
+    "seek": {
+      "description": "Go to a position in the track",
+      "options": {
+        "position": "For example 1:30, 90, 2m10s, +30 or -10"
+      }
+    },
+    "music": {
+      "description": "Voice connection and music settings",
+      "options": {
+        "join": {
+          "description": "Bring the bot into your voice channel"
+        },
+        "leave": {
+          "description": "Disconnect the bot from voice"
+        },
+        "show": {
+          "description": "Show the music settings"
+        },
+        "config": {
+          "description": "Change the music settings",
+          "options": {
+            "dj_role": "Role allowed to skip, stop and edit the queue",
+            "remove_dj_role": "Remove the DJ role: everyone in the channel can control",
+            "max_queue": "Maximum number of tracks in the queue",
+            "default_volume": "Volume when the bot joins (0-150)",
+            "stay_247": "Stay in the voice channel 24/7",
+            "announce": "Announce every new track",
+            "announce_channel": "Channel for announcements",
+            "announce_here": "Announce where the track was requested",
+            "allow_files": "Allow playing attached files"
+          }
+        },
+        "reset": {
+          "description": "Restore the default settings"
+        }
+      }
+    }
+  },
+  "genres": {
+    "eclectic": "Eclectic",
+    "chill": "Chill",
+    "rock": "Rock",
+    "world": "World music",
+    "jazz": "Jazz",
+    "electronic": "Electronic",
+    "hiphop": "Hip-hop",
+    "metal": "Metal",
+    "pop": "Pop",
+    "reggae": "Reggae",
+    "classical": "Classical",
+    "indie": "Indie",
+    "vaporwave": "Vaporwave",
+    "synthwave": "Synthwave"
+  },
+  "loopModes": {
+    "off": "off",
+    "track": "track",
+    "queue": "queue"
+  },
+  "ui": {
+    "live": "Live",
+    "unknownDuration": "unknown length",
+    "queueLine": "`{index}.` {title} · {duration} · {user}",
+    "onAir": "On air: {title}",
+    "requestedBy": "Requested by",
+    "volume": "Volume",
+    "loop": "Loop",
+    "duration": "Length",
+    "upNext": "Up next",
+    "inQueue": "{count} in queue",
+    "queueEmpty": "The queue is empty.",
+    "buttons": {
+      "pause": "Pause",
+      "resume": "Resume",
+      "skip": "Skip",
+      "stop": "Stop",
+      "loop": "Loop: {mode}",
+      "refresh": "Refresh"
+    }
+  },
+  "nowplaying": {
+    "title": "Now playing",
+    "pausedTitle": "Paused"
+  },
+  "queue": {
+    "title": "Queue",
+    "current": "**Now playing:** {title} · {duration}",
+    "summary": "{count} upcoming track(s) · {duration} · loop {loop}",
+    "remove": {
+      "done": "Track removed",
+      "details": "{title} (position {position}) was removed from the queue."
+    },
+    "move": {
+      "done": "Track moved",
+      "details": "{title} moved from position {from} to {to}."
+    },
+    "clear": {
+      "done": "Queue cleared",
+      "details": "{count} track(s) removed. The current track keeps playing."
+    },
+    "shuffle": {
+      "done": "Queue shuffled",
+      "details": "{count} tracks were shuffled."
+    }
+  },
+  "play": {
+    "addedTitle": "Added to the queue",
+    "added": "{title} · {duration}\nQueue position: **{position}**",
+    "addedPlaylist": "**{count}** tracks added from position **{position}**.",
+    "addedMany": "+ {count} more track(s) added to the queue",
+    "truncatedTitle": "Queue full",
+    "truncated": "{count} track(s) not added: the queue is limited to {max}."
+  },
+  "radio": {
+    "listTitle": "Built-in radios",
+    "listHelp": "{count} free public radios. Start one with `/radio station:` (autocomplete searches by name or genre)."
+  },
+  "pause": {
+    "done": "Music paused",
+    "hint": "Use `/resume` or the Resume button to continue."
+  },
+  "resume": {
+    "done": "Playback resumed"
+  },
+  "skip": {
+    "done": "Track skipped",
+    "next": "{skipped} was skipped.\nNow: {next}",
+    "end": "{skipped} was skipped. The queue is over.",
+    "queueEnded": "The queue is over."
+  },
+  "stop": {
+    "done": "Music stopped",
+    "details": "The queue was cleared ({count} track(s) removed).",
+    "by": "Stopped by {user}. The queue was cleared."
+  },
+  "loop": {
+    "done": "Loop changed",
+    "off": "Loop is off.",
+    "track": "The current track will repeat.",
+    "queue": "The whole queue will repeat."
+  },
+  "volume": {
+    "title": "Volume",
+    "current": "Volume is at **{volume}%**.",
+    "set": "Volume set to **{volume}%**."
+  },
+  "seek": {
+    "done": "Position changed",
+    "details": "Playing from **{position}**."
+  },
+  "join": {
+    "done": "Connected",
+    "details": "I am in {channel}. Start some music with `/play` or `/radio`."
+  },
+  "leave": {
+    "done": "Left the voice channel"
+  },
+  "player": {
+    "errorTitle": "Cannot play",
+    "infoTitle": "Music",
+    "trackFailed": "**{title}**: {reason}",
+    "leftIdle": "No music for 2 minutes, so I left the voice channel. Turn on 24/7 mode with `/music config` to keep me there.",
+    "leftAlone": "Nobody had been listening for 2 minutes, so I left the voice channel."
+  },
+  "config": {
+    "title": "Music settings",
+    "saved": "Settings saved",
+    "resetDone": "Settings restored to defaults",
+    "yes": "Yes",
+    "no": "No",
+    "noDj": "None (everyone in the channel controls)",
+    "sameChannel": "Channel of the command",
+    "footer": "Members with Manage Server always have DJ rights.",
+    "fields": {
+      "djRole": "DJ role",
+      "maxQueue": "Max queue",
+      "defaultVolume": "Default volume",
+      "stay247": "24/7 mode",
+      "announce": "Announcements",
+      "announceChannel": "Announcement channel",
+      "allowFiles": "Attached files"
+    }
+  },
+  "errors": {
+    "title": "Music",
+    "unexpected": "Something unexpected went wrong. Try again in a moment.",
+    "discordPermissions": "Discord refused the action: I am missing a permission in this channel.",
+    "unavailable": "The music module is disabled on this bot (voice dependencies missing).",
+    "notInVoice": "Join a voice channel first.",
+    "sameChannel": "You must be in my voice channel ({channel}) to control the music.",
+    "nothingPlaying": "Nothing is playing.",
+    "notConnected": "I am not connected to any voice channel.",
+    "djOnly": "This action is reserved for the {role} role or members who can manage the server.",
+    "manageGuild": "You need the Manage Server permission to change the music settings.",
+    "botMissing": "I am missing permissions in {channel}: {perms}.",
+    "channelFull": "The channel {channel} is full.",
+    "connectFailed": "I could not connect to the voice channel. Try again in a moment.",
+    "playUsage": "Give a song name, an audio URL (`url:`) or attach a file (`file:`). For the built-in radios, use `/radio`.",
+    "notUrl": "I could not find anything for that. Try a different song name or a direct audio link.",
+    "invalidUrl": "This URL is not valid.",
+    "protocol": "Only http and https URLs are accepted.",
+    "blocked": "This address is not allowed (local or private network).",
+    "dns": "This domain name could not be found.",
+    "network": "The audio server is not responding properly ({reason}).",
+    "timeout": "The audio server took too long to answer.",
+    "aborted": "Playback was interrupted.",
+    "http": "The audio server answered with HTTP error {status}.",
+    "redirects": "Too many redirects for this URL.",
+    "notAudio": "This link does not point to audio (received type: {type}). It must be a direct link to a file or stream, not a web page.",
+    "notAudioFile": "The file {name} is not an audio file.",
+    "filesDisabled": "Playing attached files is disabled on this server.",
+    "hls": "HLS streams (m3u8 split into segments) are not supported. Use the radio's direct MP3 or AAC URL.",
+    "emptyPlaylist": "This playlist contains no playable link.",
+    "playlistTooBig": "This playlist is too large.",
+    "decode": "The audio could not be decoded (unsupported format or empty stream).",
+    "tooManyFailures": "Several tracks in a row could not be played, so the queue was stopped.",
+    "radioNotFound": "No radio matches \"{query}\". Type `/radio` without argument to see the list.",
+    "queueFull": "The queue is full ({max} tracks maximum).",
+    "queueEmpty": "There are no upcoming tracks in the queue.",
+    "queueTooShort": "At least 2 upcoming tracks are needed to shuffle.",
+    "badPosition": "Invalid position. The queue has {max} upcoming track(s).",
+    "alreadyPaused": "The music is already paused.",
+    "notPaused": "The music is not paused.",
+    "seekLive": "You cannot seek in a live stream.",
+    "badTime": "Invalid position. Examples: 1:30, 90, 2m10s, +30, -10.",
+    "seekBeyond": "This position is past the end of the track ({duration}).",
+    "noResults": "No song found for that search. Try different words or a direct audio link.",
+    "searchFailed": "YouTube search is unavailable right now. Try again later or use a direct audio link."
+  },
+  "dashboard": {
+    "controls": {
+      "title": "Music control",
+      "description": "Who can drive the music and how it is played."
+    },
+    "presence": {
+      "title": "Presence and announcements",
+      "description": "How the bot behaves in the voice channel and the \"now playing\" messages."
+    },
+    "fields": {
+      "djRole": {
+        "label": "DJ role",
+        "help": "Reserved to this role: skip, stop, loop, volume, seek and queue edits. Empty: everyone in the voice channel can."
+      },
+      "maxQueue": {
+        "label": "Maximum queue size",
+        "help": "Maximum number of waiting tracks (1 to 1000)."
+      },
+      "defaultVolume": {
+        "label": "Default volume (%)",
+        "help": "Volume used when the bot joins a channel (0 to 150)."
+      },
+      "allowFiles": {
+        "label": "Allow attached files",
+        "help": "Allows `/play file:` with an audio file uploaded to Discord."
+      },
+      "stay247": {
+        "label": "24/7 mode",
+        "help": "The bot stays in the channel even alone or without music, and resumes the radio after a restart."
+      },
+      "announce": {
+        "label": "Announce every track",
+        "help": "Posts a \"now playing\" message with buttons for every new track."
+      },
+      "announceChannel": {
+        "label": "Announcement channel",
+        "help": "Empty: announcements go to the channel where the track was requested."
+      }
+    },
+    "actions": {
+      "unavailable": "The music module is disabled (voice dependencies missing).",
+      "disconnect": {
+        "label": "Stop the music and disconnect the bot",
+        "done": "Music stopped, bot disconnected from voice.",
+        "notConnected": "The bot is not connected to any voice channel on this server."
+      }
+    }
+  },
+  "console": {
+    "disabled": "Music module disabled: the dependency \"{dependency}\" could not be loaded ({reason}). Run \"npm install\" to install the optional dependencies (@discordjs/voice, prism-media, ffmpeg-static). The rest of the bot works normally.",
+    "noVoiceIntent": "Music module: the GuildVoiceStates intent is not enabled, so the bot cannot see who is in voice channels and music will not work."
+  }
+}

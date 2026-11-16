@@ -1,0 +1,496 @@
+{
+  "commands": {
+    "ban": {
+      "description": "Banir um usuário, se quiser por um tempo limitado",
+      "options": {
+        "user": "Usuário a banir",
+        "reason": "Motivo do banimento",
+        "duration": "Duração de um banimento temporário, ex. 7d (vazio = permanente)",
+        "delete_messages": {
+          "description": "Apagar as mensagens recentes dele",
+          "choices": {
+            "0": "Não apagar nada",
+            "3600": "Última hora",
+            "21600": "Últimas 6 horas",
+            "43200": "Últimas 12 horas",
+            "86400": "Últimas 24 horas",
+            "259200": "Últimos 3 dias",
+            "604800": "Últimos 7 dias"
+          }
+        },
+        "silent": "Não enviar DM ao usuário"
+      }
+    },
+    "kick": {
+      "description": "Expulsar um membro do servidor",
+      "options": {
+        "user": "Membro a expulsar",
+        "reason": "Motivo da expulsão",
+        "silent": "Não enviar DM ao usuário"
+      }
+    },
+    "timeout": {
+      "description": "Castigar um membro (sem mensagens, sem voz)",
+      "options": {
+        "user": "Membro a castigar",
+        "duration": "Duração, ex. 10m, 2h, 7d (até 365d)",
+        "reason": "Motivo do castigo",
+        "silent": "Não enviar DM ao usuário"
+      }
+    },
+    "warn": {
+      "description": "Advertir um membro (os limites podem punir automaticamente)",
+      "options": {
+        "user": "Membro a advertir",
+        "reason": "Motivo da advertência",
+        "silent": "Não enviar DM ao usuário"
+      }
+    },
+    "unban": {
+      "description": "Desbanir um usuário",
+      "options": {
+        "user": "Usuário banido (digite um nome ou um ID)",
+        "reason": "Motivo do desbanimento"
+      }
+    },
+    "case": {
+      "description": "Ver, editar ou apagar um caso de moderação",
+      "options": {
+        "view": {
+          "description": "Mostrar um caso",
+          "options": {
+            "number": "Número do caso"
+          }
+        },
+        "edit": {
+          "description": "Mudar o motivo ou a duração de um banimento temporário",
+          "options": {
+            "number": "Número do caso",
+            "reason": "Novo motivo",
+            "duration": "Nova duração do banimento temporário, contada a partir do banimento"
+          }
+        },
+        "delete": {
+          "description": "Apagar um caso",
+          "options": {
+            "number": "Número do caso"
+          }
+        }
+      }
+    },
+    "purge": {
+      "description": "Apagar mensagens recentes, com filtros opcionais",
+      "options": {
+        "amount": "Quantas mensagens apagar (1-100)",
+        "user": "Só mensagens deste usuário",
+        "bots": "Só mensagens de bots",
+        "humans": "Só mensagens de pessoas",
+        "links": "Só mensagens com um link",
+        "attachments": "Só mensagens com arquivos",
+        "embeds": "Só mensagens com embeds",
+        "contains": "Só mensagens que contêm este texto"
+      }
+    },
+    "slowmode": {
+      "description": "Definir o modo lento de um canal",
+      "options": {
+        "duration": "Intervalo entre mensagens, ex. 10s, 5m (máx. 6h), ou \"off\"",
+        "channel": "Canal (padrão: este)"
+      }
+    },
+    "lock": {
+      "description": "Impedir que @everyone fale em um canal",
+      "options": {
+        "channel": "Canal (padrão: este)",
+        "reason": "Motivo, mostrado no canal"
+      }
+    },
+    "mod": {
+      "description": "Mais ferramentas e configurações de moderação",
+      "options": {
+        "clearwarns": {
+          "description": "Remover todas as advertências ativas de um membro",
+          "options": {
+            "user": "Membro",
+            "reason": "Motivo"
+          }
+        },
+        "config": {
+          "description": "Configurações de moderação",
+          "options": {
+            "show": {
+              "description": "Mostrar as configurações de moderação"
+            },
+            "dm": {
+              "description": "Enviar DM aos membros quando forem punidos",
+              "options": {
+                "enabled": "Enviar a DM",
+                "show_moderator": "Mostrar o moderador na DM"
+              }
+            },
+            "appeal": {
+              "description": "Texto adicionado às DMs de punição (como recorrer)",
+              "options": {
+                "text": "Texto (deixe vazio para remover)"
+              }
+            },
+            "reason": {
+              "description": "Exigir um motivo para cada punição",
+              "options": {
+                "required": "Motivo obrigatório"
+              }
+            },
+            "warnexpiry": {
+              "description": "As advertências deixam de contar depois deste tempo",
+              "options": {
+                "duration": "ex. 30d, ou \"off\" para nunca expirar"
+              }
+            }
+          }
+        },
+        "history": {
+          "description": "Mostrar todos os casos de moderação de um usuário",
+          "options": {
+            "user": "Usuário",
+            "type": {
+              "description": "Só um tipo de caso",
+              "choices": {
+                "warn": "Advertências",
+                "unwarn": "Advertências removidas",
+                "clearwarns": "Advertências limpas",
+                "timeout": "Castigos",
+                "untimeout": "Castigos removidos",
+                "kick": "Expulsões",
+                "softban": "Softbans",
+                "ban": "Banimentos",
+                "tempban": "Banimentos temporários",
+                "unban": "Desbanimentos"
+              }
+            }
+          }
+        },
+        "massban": {
+          "description": "Banir vários usuários de uma vez por ID (raids)",
+          "options": {
+            "ids": "IDs ou menções de usuários, separados por espaços",
+            "reason": "Motivo dos banimentos",
+            "delete_messages": {
+              "description": "Apagar as mensagens recentes deles",
+              "choices": {
+                "0": "Não apagar nada",
+                "3600": "Última hora",
+                "21600": "Últimas 6 horas",
+                "43200": "Últimas 12 horas",
+                "86400": "Últimas 24 horas",
+                "259200": "Últimos 3 dias",
+                "604800": "Últimos 7 dias"
+              }
+            }
+          }
+        },
+        "nick": {
+          "description": "Mudar ou redefinir o apelido de um membro",
+          "options": {
+            "user": "Membro",
+            "nickname": "Novo apelido (vazio para redefinir)"
+          }
+        },
+        "softban": {
+          "description": "Banir e desbanir um membro para apagar as mensagens recentes dele",
+          "options": {
+            "user": "Membro para o softban",
+            "reason": "Motivo do softban",
+            "delete_messages": {
+              "description": "Mensagens a apagar (padrão: 24 horas)",
+              "choices": {
+                "3600": "Última hora",
+                "21600": "Últimas 6 horas",
+                "43200": "Últimas 12 horas",
+                "86400": "Últimas 24 horas",
+                "259200": "Últimos 3 dias",
+                "604800": "Últimos 7 dias"
+              }
+            },
+            "silent": "Não enviar DM ao usuário"
+          }
+        },
+        "unlock": {
+          "description": "Desbloquear um canal bloqueado com /lock",
+          "options": {
+            "channel": "Canal (padrão: este)",
+            "reason": "Motivo, mostrado no canal"
+          }
+        },
+        "untimeout": {
+          "description": "Remover o castigo de um membro",
+          "options": {
+            "user": "Membro a liberar",
+            "reason": "Motivo"
+          }
+        },
+        "unwarn": {
+          "description": "Remover uma advertência pelo número do caso",
+          "options": {
+            "case": "Número do caso da advertência",
+            "reason": "Motivo"
+          }
+        },
+        "warnconfig": {
+          "description": "Punições automáticas quando um membro atinge um número de advertências",
+          "options": {
+            "add": {
+              "description": "Adicionar ou substituir um limite",
+              "options": {
+                "warns": "Número de advertências ativas",
+                "action": {
+                  "description": "Punição a aplicar",
+                  "choices": {
+                    "timeout": "Castigo",
+                    "kick": "Expulsão",
+                    "softban": "Softban",
+                    "ban": "Banimento"
+                  }
+                },
+                "duration": "Duração de um castigo (padrão 1h) ou de um banimento temporário"
+              }
+            },
+            "remove": {
+              "description": "Remover um limite",
+              "options": {
+                "warns": "Número de advertências do limite"
+              }
+            },
+            "list": {
+              "description": "Mostrar os limites"
+            }
+          }
+        },
+        "warnings": {
+          "description": "Listar as advertências ativas de um membro",
+          "options": {
+            "user": "Membro"
+          }
+        }
+      }
+    }
+  },
+  "perms": {
+    "Administrator": "Administrador",
+    "BanMembers": "Banir membros",
+    "KickMembers": "Expulsar membros",
+    "ModerateMembers": "Castigar membros",
+    "ManageMessages": "Gerenciar mensagens",
+    "ReadMessageHistory": "Ver histórico de mensagens",
+    "ManageChannels": "Gerenciar canais",
+    "ManageRoles": "Gerenciar permissões",
+    "ManageNicknames": "Gerenciar apelidos",
+    "ManageGuild": "Gerenciar servidor"
+  },
+  "types": {
+    "warn": "Advertência",
+    "unwarn": "Advertência removida",
+    "clearwarns": "Advertências limpas",
+    "timeout": "Castigo",
+    "untimeout": "Castigo removido",
+    "kick": "Expulsão",
+    "softban": "Softban",
+    "ban": "Banimento",
+    "tempban": "Banimento temporário",
+    "unban": "Desbanimento"
+  },
+  "case": {
+    "title": "Caso #{id} · {type}",
+    "user": "Usuário",
+    "moderator": "Moderador",
+    "automatic": "automático",
+    "reason": "Motivo",
+    "noReason": "Nenhum motivo informado",
+    "duration": "Duração",
+    "expires": "Termina",
+    "status": "Status",
+    "active": "Ativo",
+    "removed": "Removido",
+    "edited": "Editado",
+    "created": "Criado",
+    "editedTitle": "Caso #{id} atualizado",
+    "deleteConfirm": "Apagar o caso #{id} ({type})? Isso não pode ser desfeito.",
+    "deleted": "Caso #{id} apagado",
+    "deletedText": "O caso foi removido do histórico.",
+    "deletedTempban": "O desbanimento programado foi cancelado: o usuário continua banido até /unban."
+  },
+  "errors": {
+    "title": "Ação impossível",
+    "botMissing": "Está faltando a permissão **{perm}**. Dê essa permissão ao meu cargo em Configurações do servidor > Cargos e tente de novo.",
+    "unknownUser": "Este usuário não existe ou não foi encontrado.",
+    "notBanned": "Este usuário não está banido.",
+    "unexpected": "O Discord recusou a ação: {message}",
+    "self": "Você não pode fazer isso consigo mesmo.",
+    "selfBot": "Não posso fazer isso comigo mesmo.",
+    "owner": "O dono do servidor não pode ser punido.",
+    "hierarchyUser": "Este membro tem um cargo igual ou acima do seu cargo mais alto.",
+    "hierarchyBot": "Este membro tem um cargo igual ou acima do meu cargo mais alto. Suba meu cargo em Configurações do servidor > Cargos.",
+    "reasonRequired": "Neste servidor é obrigatório informar um motivo (veja /mod config reason).",
+    "notMember": "Este usuário não é membro do servidor.",
+    "notTimedOut": "Este membro não está de castigo.",
+    "badDuration": "Duração inválida. Exemplos: 30m, 2h, 7d, 1w2d.",
+    "badTimeout": "Duração de castigo inválida: entre 5 segundos e 365 dias (no máximo 28 dias para um limite de advertências). Exemplos: 10m, 2h, 7d.",
+    "alreadyBanned": "Este usuário já está banido.",
+    "badId": "Nenhum ID de usuário válido encontrado.",
+    "notAWarn": "O caso #{id} não é uma advertência.",
+    "warnInactive": "A advertência #{id} já foi removida.",
+    "noWarns": "Este membro não tem nenhuma advertência ativa.",
+    "noCase": "O caso #{id} não existe.",
+    "nothingToEdit": "Informe um novo motivo ou uma nova duração.",
+    "durationOnlyTempban": "Só a duração de um banimento temporário pode ser alterada.",
+    "tempbanOver": "Este banimento temporário já terminou.",
+    "badChannel": "Este comando não funciona neste tipo de canal.",
+    "badSlowmode": "Modo lento inválido: entre 1 segundo e 6 horas, ou \"off\". Exemplos: 10s, 5m, 1h.",
+    "alreadyLocked": "Este canal já está bloqueado.",
+    "notLocked": "Este canal não está bloqueado.",
+    "tooManyIds": "IDs demais: no máximo {max} por comando.",
+    "noValidIds": "Você não pode banir nenhum destes usuários (você mesmo, eu, o dono ou cargos mais altos).",
+    "tooManyThresholds": "No máximo {max} limites. Remova um antes.",
+    "noThreshold": "Não há nenhum limite em {count} advertências.",
+    "userMissing": "Você precisa da permissão **{perm}** para usar este comando."
+  },
+  "dm": {
+    "title": {
+      "warn": "Você recebeu uma advertência em {server}",
+      "timeout": "Você foi castigado em {server}",
+      "kick": "Você foi expulso de {server}",
+      "softban": "Você foi expulso de {server} e suas mensagens recentes foram apagadas",
+      "ban": "Você foi banido de {server}"
+    },
+    "appeal": "Recurso"
+  },
+  "auto": {
+    "threshold": "Punição automática: {count} advertências ativas",
+    "tempbanExpired": "Banimento temporário expirado (caso #{id})",
+    "timeoutContinued": "Castigo longo prolongado até {until}"
+  },
+  "done": {
+    "case": "Caso #{id} criado.",
+    "warn": "{user} foi advertido",
+    "unwarn": "Advertência de {user} removida",
+    "unwarnText": "A advertência #{id} não conta mais (caso #{case}).",
+    "clearwarns": "Advertências de {user} limpas",
+    "clearwarnsText": "{count} advertência(s) removida(s) (caso #{case}).",
+    "timeout": "{user} foi castigado",
+    "untimeout": "Castigo de {user} removido",
+    "kick": "{user} foi expulso",
+    "softban": "{user} recebeu um softban",
+    "ban": "{user} foi banido",
+    "tempban": "{user} foi banido temporariamente",
+    "unban": "{user} foi desbanido",
+    "dm": "Mensagem direta",
+    "dmSent": "Enviada",
+    "dmFailed": "Não entregue (DMs fechadas)",
+    "dmSilent": "Não enviada (silencioso)",
+    "dmDisabled": "Desativada neste servidor",
+    "warnCount": "Advertências ativas",
+    "followUp": "Punição automática",
+    "followUpText": "Limite atingido: {type} (caso #{id})."
+  },
+  "warnings": {
+    "title": "Advertências de {user} ({count})",
+    "none": "Nenhuma advertência ativa.",
+    "expiry": "As advertências expiram depois de {duration}",
+    "next": "Próxima punição com {count} advertências: {type}"
+  },
+  "history": {
+    "title": "Histórico de {user} ({count} casos)",
+    "none": "Nenhum caso para este usuário."
+  },
+  "clearwarns": {
+    "confirm": "Remover a(s) {count} advertência(s) ativa(s) de {user}?"
+  },
+  "purge": {
+    "none": "Nenhuma mensagem recente corresponde a estes filtros.",
+    "done": "{count} mensagem(ns) apagada(s)",
+    "oldNote": "O Discord não permite apagar em massa mensagens com mais de 14 dias, então elas foram ignoradas.",
+    "logTitle": "Mensagens apagadas",
+    "channel": "Canal",
+    "count": "Apagadas"
+  },
+  "slowmode": {
+    "title": "Modo lento",
+    "set": "Modo lento de {channel} definido para {duration}.",
+    "off": "Modo lento de {channel} desativado."
+  },
+  "nick": {
+    "title": "Apelido",
+    "set": "Apelido de {user} alterado para **{nick}**.",
+    "reset": "Apelido de {user} redefinido.",
+    "before": "Antes: {nick}"
+  },
+  "lock": {
+    "title": "Canal bloqueado",
+    "done": "{channel} está bloqueado: os membros não podem mais enviar mensagens.",
+    "notice": "Este canal foi bloqueado pelos moderadores.",
+    "reasonLine": "Motivo: {reason}"
+  },
+  "unlock": {
+    "title": "Canal desbloqueado",
+    "done": "{channel} está desbloqueado: as permissões anteriores foram restauradas.",
+    "notice": "Este canal está desbloqueado."
+  },
+  "massban": {
+    "confirm": "Banir {count} usuário(s)? {skipped} ID(s) que você não pode banir serão ignorados.",
+    "done": "{count} usuário(s) banido(s)",
+    "doneText": "Falhas: {failed} · ignorados: {skipped}.",
+    "logTitle": "Banimento em massa",
+    "banned": "Banidos",
+    "failed": "Com falha ou ignorados"
+  },
+  "warnconfig": {
+    "title": "Limites de advertências",
+    "line": "**{count}** advertências → {type}{duration}",
+    "empty": "Nenhum limite: as advertências nunca punem automaticamente. Adicione um com /mod warnconfig add."
+  },
+  "modconfig": {
+    "title": "Configurações de moderação",
+    "saved": "Configurações salvas.",
+    "on": "Ativado",
+    "off": "Desativado",
+    "dm": "DM ao punir",
+    "showModerator": "Moderador mostrado na DM",
+    "requireReason": "Motivo obrigatório",
+    "warnExpiry": "As advertências expiram depois de",
+    "never": "Nunca",
+    "appeal": "Texto de recurso",
+    "none": "Nenhum",
+    "thresholds": "Limites de advertências"
+  },
+  "dashboard": {
+    "sanctions": {
+      "title": "Punições",
+      "description": "O que os membros recebem quando são punidos e o que os moderadores precisam informar."
+    },
+    "warnings": {
+      "title": "Advertências",
+      "description": "Os limites são definidos com /mod warnconfig; aqui, por quanto tempo uma advertência continua contando."
+    },
+    "fields": {
+      "dm": {
+        "label": "DM antes de uma punição",
+        "help": "O membro recebe o motivo por mensagem direta antes de a punição ser aplicada."
+      },
+      "dmShowModerator": {
+        "label": "Mostrar o moderador na DM",
+        "help": "Desativado por padrão, para que os moderadores não sejam assediados."
+      },
+      "appeal": {
+        "label": "Texto de recurso",
+        "help": "Adicionado a cada DM de punição, por exemplo um link de formulário ou um endereço de e-mail."
+      },
+      "requireReason": {
+        "label": "Motivo obrigatório",
+        "help": "Recusar punições sem motivo."
+      },
+      "warnExpiry": {
+        "label": "As advertências expiram depois de",
+        "help": "0 = as advertências nunca expiram. As expiradas continuam no histórico, mas não contam mais para os limites."
+      }
+    }
+  }
+}

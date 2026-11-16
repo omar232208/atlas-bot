@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "Server-Backups (Rollen, Kanäle, Einstellungen)",
+      "options": {
+        "create": { "description": "Den Server jetzt sichern", "options": { "name": "Name des Backups" } },
+        "list": { "description": "Backups auflisten" },
+        "info": { "description": "Details eines Backups", "options": { "id": "Backup" } },
+        "load": {
+          "description": "Ein Backup auf diesem Server wiederherstellen",
+          "options": {
+            "id": "Backup",
+            "mode": { "description": "Alles ersetzen oder Bestehendes ergänzen", "choices": { "replace": "Ersetzen", "merge": "Zusammenführen" } }
+          }
+        },
+        "delete": { "description": "Ein Backup löschen", "options": { "id": "Backup" } },
+        "auto": {
+          "description": "Automatische Backups",
+          "options": { "interval": "Intervall (z. B. 1d, 12h) oder \"off\"", "keep": "Anzahl behaltener automatischer Backups" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "ownerOnly": "Nur der Servereigentümer (oder ein Bot-Eigentümer) kann Backups verwalten.",
+    "corrupted": "Dieses Backup ist unlesbar oder hat ein unbekanntes Format.",
+    "loading": "Auf diesem Server läuft bereits eine Wiederherstellung.",
+    "botMissing": "Mir fehlen diese Berechtigungen: {perms}.",
+    "badInterval": "Ungültiges Intervall: zwischen 6 Stunden und 30 Tagen (z. B. 12h, 1d, 1w) oder \"off\".",
+    "unknown": "Backup nicht gefunden."
+  },
+  "info": {
+    "id": "ID",
+    "server": "Server",
+    "created": "Erstellt am",
+    "author": "Autor",
+    "type": "Typ",
+    "auto": "Automatisch",
+    "manual": "Manuell",
+    "size": "Größe",
+    "content": "Inhalt",
+    "contentValue": "{roles} Rolle(n), {categories} Kategorie(n), {text} Textkanal/-kanäle, {voice} Sprachkanal/-kanäle"
+  },
+  "log": {
+    "createdTitle": "Backup erstellt",
+    "created": "{user} hat das Backup `{id}` erstellt.",
+    "loadedTitle": "Backup wiederhergestellt",
+    "loaded": "{user} hat das Backup `{id}` wiederhergestellt (Modus {mode})."
+  },
+  "create": { "title": "Backup erstellt", "done": "Backup `{id}` gespeichert." },
+  "load": {
+    "confirmTitle": "Backup wiederherstellen?",
+    "confirm": {
+      "replace": "Das Backup `{id}` ({server}) wird diesen Server **ersetzen**: Alle Kanäle (außer diesem) und alle Rollen, die ich verwalten kann, werden gelöscht, dann werden {roles} Rolle(n), {categories} Kategorie(n), {text} Text- und {voice} Sprachkanal/-kanäle neu erstellt. Der aktuelle Zustand wird vorher gesichert.",
+      "merge": "Das Backup `{id}` ({server}) wird **zusammengeführt**: Rollen und Kanäle mit gleichem Namen werden aktualisiert, die übrigen erstellt ({roles} Rolle(n), {categories} Kategorie(n), {text} Text- und {voice} Sprachkanal/-kanäle). Nichts wird gelöscht."
+    },
+    "safetyName": "Vor der Wiederherstellung",
+    "auditReason": "Wiederherstellung des Backups {id} durch {user}",
+    "progressTitle": "Wiederherstellung läuft",
+    "progress": "{phase}: {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "Bestehendes wird gelöscht",
+      "settings": "Servereinstellungen",
+      "roles": "Rollen",
+      "channels": "Kanäle",
+      "finish": "Abschluss"
+    },
+    "result": "Rollen: {rolesCreated} erstellt, {rolesUpdated} aktualisiert.\nKanäle: {channelsCreated} erstellt, {channelsUpdated} aktualisiert.\nGelöscht: {deleted}. Fehlgeschlagen: {errors}.",
+    "safety": "Der vorherige Zustand wurde als `{id}` gesichert.",
+    "doneTitle": "Wiederherstellung abgeschlossen"
+  },
+  "auto": {
+    "title": "Automatische Backups",
+    "disabled": "Automatische Backups deaktiviert.",
+    "enabled": "Alle {interval} wird ein automatisches Backup erstellt; die {keep} neuesten werden behalten.",
+    "name": "Automatisch"
+  },
+  "list": {
+    "title": "Backups",
+    "empty": "Noch kein Backup. Erstelle eines mit /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "Ohne Namen",
+    "autoTag": "(auto)"
+  },
+  "delete": { "confirm": "Backup `{id}` endgültig löschen?", "title": "Backup gelöscht", "done": "Das Backup `{id}` wurde gelöscht." },
+  "dashboard": {
+    "general": { "title": "Backups", "description": "Grenzen und automatische Backups des Servers." },
+    "fields": {
+      "maxBackups": "Behaltene manuelle Backups",
+      "autoInterval": "Intervall der automatischen Backups",
+      "autoKeep": "Behaltene automatische Backups"
+    },
+    "help": {
+      "maxBackups": "Darüber hinaus werden die ältesten gelöscht.",
+      "autoInterval": "0 zum Deaktivieren. Mindestens 6 Stunden, höchstens 30 Tage."
+    },
+    "actions": {
+      "createNow": "Jetzt ein Backup erstellen",
+      "createNowDone": "Backup erstellt.",
+      "ownerOnly": "Nur der Servereigentümer kann ein Backup erstellen."
+    }
+  }
+}

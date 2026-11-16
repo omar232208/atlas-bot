@@ -1,0 +1,122 @@
+{
+  "errors": {
+    "title": "Erreur",
+    "adminOnly": "Cette action demande la permission Gérer le serveur.",
+    "badDuration": "Durée invalide. Exemples : 30m, 2h, 1d 12h.",
+    "tooShort": "La durée minimale est d'une minute.",
+    "tooLong": "La durée maximale est de {max} jours.",
+    "notFound": "Ce concours n'existe pas.",
+    "notActive": "Ce concours n'est plus actif.",
+    "notEnded": "Seul un concours terminé peut être relancé.",
+    "noAlternative": "Il n'y a personne d'autre à tirer au sort.",
+    "botMissing": "Il me manque une permission dans ce salon : {perms}.",
+    "postFailed": "Je n'ai pas pu publier le concours dans ce salon."
+  },
+  "start": {
+    "title": "Concours lancé",
+    "done": "Le concours est publié ({link}). Fin {time}. Identifiant : `{id}`."
+  },
+  "end": {
+    "title": "Concours terminé",
+    "done": "« {prize} » est terminé. Les gagnants ont été annoncés."
+  },
+  "reroll": {
+    "title": "Nouveau tirage",
+    "done": "Nouveaux gagnants : {winners}"
+  },
+  "cancel": {
+    "title": "Concours annulé",
+    "done": "« {prize} » est annulé. Personne ne gagne."
+  },
+  "list": {
+    "title": "Concours",
+    "empty": "Aucun concours sur ce serveur.",
+    "entries": "{count} participant(s)"
+  },
+  "status": {
+    "active": "en cours",
+    "ended": "terminé",
+    "cancelled": "annulé"
+  },
+  "embed": {
+    "host": "Organisé par",
+    "winners": "Gagnants",
+    "entries": "Participants",
+    "requirements": "Conditions",
+    "requireRole": "Avoir le rôle {role}",
+    "requireAge": "Compte créé il y a au moins {days} jour(s)",
+    "instructions": "Clique sur le bouton pour participer. Clique à nouveau pour te retirer.",
+    "ends": "Fin {time}",
+    "ended": "Gagnant(s) : {winners}",
+    "cancelled": "Ce concours a été annulé."
+  },
+  "buttons": {
+    "enter": "Participer ({count})",
+    "over": "Concours terminé"
+  },
+  "entry": {
+    "joined": "Tu participes au concours. Bonne chance !",
+    "left": "Tu ne participes plus à ce concours.",
+    "needRole": "Il faut avoir le rôle {role} pour participer.",
+    "needAge": "Ton compte doit avoir au moins {days} jour(s) pour participer."
+  },
+  "ended": {
+    "announce": "Félicitations pour « {prize} » : {winners} !",
+    "noWinners": "Personne n'a participé à « {prize} ».",
+    "dmTitle": "Tu as gagné !",
+    "dm": "Tu as gagné « {prize} » sur le serveur. Contacte les organisateurs pour récupérer ton lot."
+  },
+  "dashboard": {
+    "general": {
+      "title": "Concours",
+      "description": "Règles appliquées à tous les concours du serveur.",
+      "maxDays": {
+        "label": "Durée maximale (jours)",
+        "help": "Un concours ne peut pas durer plus longtemps."
+      },
+      "dmWinners": {
+        "label": "Prévenir les gagnants en message privé",
+        "help": "Envoie aussi un message privé à chaque gagnant."
+      }
+    }
+  },
+  "commands": {
+    "giveaway": {
+      "description": "Organiser des concours",
+      "options": {
+        "start": {
+          "description": "Lance un concours",
+          "options": {
+            "prize": "Ce qui est offert",
+            "duration": "Durée, ex. 1h ou 2d 4h",
+            "winners": "Nombre de gagnants",
+            "channel": "Salon du concours",
+            "role": "Rôle requis pour participer",
+            "min_account_days": "Âge minimum du compte (jours)"
+          }
+        },
+        "end": {
+          "description": "Termine un concours maintenant et tire les gagnants",
+          "options": {
+            "id": "Concours"
+          }
+        },
+        "reroll": {
+          "description": "Tire de nouveaux gagnants pour un concours terminé",
+          "options": {
+            "id": "Concours"
+          }
+        },
+        "cancel": {
+          "description": "Annule un concours sans gagnant",
+          "options": {
+            "id": "Concours"
+          }
+        },
+        "list": {
+          "description": "Liste les concours récents"
+        }
+      }
+    }
+  }
+}

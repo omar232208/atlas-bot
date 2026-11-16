@@ -1,0 +1,246 @@
+{
+  "commands": {
+    "8ball": {
+      "description": "Stell der Zauberkugel eine Frage",
+      "options": {
+        "question": "Die Frage"
+      }
+    },
+    "dice": {
+      "description": "Wirf einen oder mehrere Würfel",
+      "options": {
+        "sides": "Anzahl der Seiten pro Würfel (2 bis 1000, Standard 6)",
+        "count": "Anzahl der Würfel (1 bis 20, Standard 1)"
+      }
+    },
+    "game": {
+      "description": "Brett- und Wortspiele",
+      "options": {
+        "tictactoe": {
+          "description": "Spiel Tic-Tac-Toe mit einem anderen Mitglied",
+          "options": {
+            "opponent": "Herausgefordertes Mitglied"
+          }
+        },
+        "connect4": {
+          "description": "Spiel vier gewinnt mit einem anderen Mitglied",
+          "options": {
+            "opponent": "Herausgefordertes Mitglied"
+          }
+        },
+        "rps": {
+          "description": "Spiel Schere, Stein, Papier gegen den Bot oder ein Mitglied",
+          "options": {
+            "opponent": "Herausgefordertes Mitglied (leer = gegen den Bot)"
+          }
+        },
+        "hangman": {
+          "description": "Spiel Galgenmännchen allein"
+        },
+        "trivia": {
+          "description": "Beantworte eine Runde Allgemeinwissen",
+          "options": {
+            "count": "Anzahl der Fragen (1 bis 10, Standard 5)"
+          }
+        }
+      }
+    },
+    "fun": {
+      "description": "Kleine Spaß-Werkzeuge",
+      "options": {
+        "choose": {
+          "description": "Lass den Bot eine Option für dich wählen",
+          "options": {
+            "options": "Optionen, getrennt durch | (oder durch Kommas), 2 bis 25"
+          }
+        },
+        "ship": {
+          "description": "Berechnet die Liebeskompatibilität zweier Mitglieder",
+          "options": {
+            "first": "Erstes Mitglied",
+            "second": "Zweites Mitglied"
+          }
+        },
+        "reverse": {
+          "description": "Kehrt einen Text um",
+          "options": {
+            "text": "Der Text (höchstens 500 Zeichen)"
+          }
+        },
+        "emojify": {
+          "description": "Verwandelt einen Text in Emoji-Buchstaben",
+          "options": {
+            "text": "Der Text (höchstens 150 Zeichen)"
+          }
+        }
+      }
+    }
+  },
+  "eightball": {
+    "title": "Magische Kugel",
+    "question": "Frage: {question}",
+    "answers": [
+      "Es ist sicher.",
+      "Es ist entschieden so.",
+      "Ohne Zweifel.",
+      "Ja, auf jeden Fall.",
+      "Du kannst dich darauf verlassen.",
+      "Soweit ich sehe, ja.",
+      "Höchstwahrscheinlich.",
+      "Die Aussichten sind gut.",
+      "Ja.",
+      "Alles deutet auf ja hin.",
+      "Unklar, frag noch einmal.",
+      "Frag später noch einmal.",
+      "Sag ich dir jetzt besser nicht.",
+      "Jetzt nicht vorhersagbar.",
+      "Konzentrier dich und frag erneut.",
+      "Rechne nicht damit.",
+      "Meine Antwort ist nein.",
+      "Meine Quellen sagen nein.",
+      "Die Aussichten sind nicht so gut.",
+      "Sehr zweifelhaft."
+    ]
+  },
+  "dice": {
+    "title": "Würfelwurf",
+    "result": "{count} Würfel mit {sides} Seiten",
+    "rolls": "Ergebnisse: {rolls}",
+    "total": "Gesamt: {total}"
+  },
+  "choose": {
+    "title": "Auswahl",
+    "result": "Ich wähle: **{choice}**",
+    "among": "Zur Auswahl: {list}"
+  },
+  "ship": {
+    "title": "Liebesrechner",
+    "pair": "{first} und {second}",
+    "name": "Paarname: **{name}**",
+    "score": "Kompatibilität: **{score} %**",
+    "verdicts": [
+      "Das ist nicht füreinander bestimmt, zumindest noch nicht.",
+      "Ein paar Funken, es gibt noch viel aufzubauen.",
+      "Vielversprechend, die Grundlagen sind da.",
+      "Eine sehr starke Verbindung.",
+      "Ein perfektes Paar!"
+    ]
+  },
+  "reverse": {
+    "title": "Umgekehrter Text"
+  },
+  "emojify": {
+    "title": "Emoji-Text"
+  },
+  "games": {
+    "tictactoe": "Tic-Tac-Toe",
+    "connect4": "Vier gewinnt",
+    "rps": "Schere, Stein, Papier"
+  },
+  "challenge": {
+    "title": "Herausforderung",
+    "description": "{challenger} fordert {opponent} zu {game} heraus.\n{opponent}, nimm innerhalb der Frist an, um zu starten."
+  },
+  "ui": {
+    "accept": "Annehmen",
+    "decline": "Ablehnen",
+    "giveUp": "Aufgeben",
+    "page": "Buchstaben {page}/{total}"
+  },
+  "errors": {
+    "expired": "Diese Partie ist abgelaufen oder der Bot wurde neu gestartet. Starte eine neue mit dem Befehl.",
+    "generic": "Bei diesem Zug ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+    "notPlayer": "Du bist kein Teilnehmer dieser Partie.",
+    "notOpponent": "Nur das herausgeforderte Mitglied kann auf diese Herausforderung antworten.",
+    "notTurn": "Du bist nicht am Zug.",
+    "alreadyPlayed": "Du hast bereits gezogen.",
+    "cellTaken": "Dieses Feld ist bereits belegt.",
+    "columnFull": "Diese Spalte ist voll.",
+    "declined": "{opponent} hat die Herausforderung abgelehnt.",
+    "challengeExpired": "Die Herausforderung ist ohne Antwort abgelaufen.",
+    "missingOpponent": "Erwähne das Mitglied, das du herausfordern willst.",
+    "opponentBot": "Du kannst keinen Bot herausfordern. Lass die Option leer, um gegen ihn zu spielen.",
+    "opponentSelf": "Du kannst dich nicht selbst herausfordern.",
+    "chooseFew": "Gib mindestens zwei Optionen an, getrennt durch | oder Kommas.",
+    "chooseMany": "Gib höchstens 25 Optionen an.",
+    "tooLong": "Der Text darf höchstens {max} Zeichen haben.",
+    "empty": "Schreib zuerst einen Text.",
+    "shipSelf": "Wähle zwei verschiedene Mitglieder."
+  },
+  "tictactoe": {
+    "title": "Tic-Tac-Toe",
+    "turn": "{player} ({mark}) ist am Zug.",
+    "win": "{player} ({mark}) gewinnt!",
+    "draw": "Unentschieden!",
+    "timeout": "Die Partie ist beendet: Zu lange hat niemand gezogen."
+  },
+  "connect4": {
+    "title": "Vier gewinnt",
+    "turn": "{player} ist am Zug. Wähle eine Spalte von 1 bis 7.",
+    "win": "{player} gewinnt!",
+    "draw": "Das Feld ist voll. Unentschieden!",
+    "gaveUp": "{player} hat aufgegeben.",
+    "timeout": "Die Partie ist beendet: Zu lange hat niemand gezogen.",
+    "legend": "🔴 {red}   🟡 {yellow}"
+  },
+  "rps": {
+    "title": "Schere, Stein, Papier",
+    "botTitle": "Schere, Stein, Papier gegen den Bot",
+    "pick": "Wähle deinen Zug mit den Knöpfen unten.",
+    "chosen": "{player} hat gewählt. Warten auf den anderen Spieler.",
+    "waiting": "Warten auf: {players}",
+    "reveal": "{a} gegen {b}",
+    "win": "{winner} gewinnt!",
+    "draw": "Unentschieden!",
+    "botWins": "Der Bot gewinnt diese Runde.",
+    "youWin": "Du gewinnst diese Runde!",
+    "botChoice": "Der Bot wählt: {choice}",
+    "recorded": "Deine Wahl ist gespeichert.",
+    "timeout": "Die Partie ist beendet: Zu lange hat niemand gezogen.",
+    "choices": {
+      "rock": "Stein",
+      "paper": "Papier",
+      "scissors": "Schere"
+    }
+  },
+  "hangman": {
+    "title": "Galgenmännchen",
+    "word": "Wort",
+    "wrong": "Fehler: {wrong}/{max}",
+    "guessed": "Ausprobierte Buchstaben: {letters}",
+    "hint": "Klick auf einen Buchstaben. Sechs Fehler und die Partie ist verloren.",
+    "won": "Gut gemacht, das Wort war **{word}**!",
+    "lost": "Keine Versuche mehr. Das Wort war **{word}**.",
+    "gaveUp": "Du hast aufgegeben. Das Wort war **{word}**.",
+    "timeout": "Die Partie ist beendet: Zu lange hat niemand gezogen."
+  },
+  "trivia": {
+    "title": "Quiz",
+    "question": "Frage {n}/{total}",
+    "timeLeft": "Du hast {seconds} Sekunden pro Frage.",
+    "correct": "Richtig!",
+    "wrong": "Falsch. Die richtige Antwort war: **{answer}**",
+    "timeout": "Die Zeit ist um. Die richtige Antwort war: **{answer}**",
+    "score": "Endergebnis: **{score}/{total}**",
+    "perfect": "Fehlerfrei!",
+    "finished": "Quiz beendet"
+  },
+  "dashboard": {
+    "games": {
+      "title": "Brett- und Wortspiele",
+      "description": "Wie lange eine Partie auf einen Zug wartet, bevor sie geschlossen wird.",
+      "timeoutMinutes": {
+        "label": "Inaktivitäts-Timeout (Minuten)",
+        "help": "Tic-Tac-Toe, Vier gewinnt, Schere-Stein-Papier und Galgenmännchen schließen nach dieser Zeit ohne Zug."
+      }
+    },
+    "trivia": {
+      "title": "Quiz",
+      "description": "Tempo der Quizrunden.",
+      "questionSeconds": {
+        "label": "Sekunden pro Frage",
+        "help": "Nach dieser Zeit gilt die Frage als verpasst und die nächste beginnt."
+      }
+    }
+  }
+}

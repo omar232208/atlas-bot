@@ -1,0 +1,316 @@
+{
+  "defaults": {
+    "currency": "Münzen"
+  },
+  "errors": {
+    "title": "Fehler",
+    "botTarget": "Bots haben kein Guthaben.",
+    "notEnough": "Dafür hast du nicht genug Münzen.",
+    "invalidAmount": "Ungültiger Betrag. Gib eine positive ganze Zahl oder \"all\" an.",
+    "cooldown": "Du musst noch {time} warten.",
+    "alreadyPlaying": "Du hast bereits ein laufendes Blackjack-Spiel. Beende es zuerst.",
+    "gameExpired": "Dieses Spiel gibt es nicht mehr.",
+    "notYourGame": "Dieser Tisch gehört dir nicht. Starte deinen eigenen mit /blackjack.",
+    "adminOnly": "Für diese Aktion brauchst du die Berechtigung Server verwalten."
+  },
+  "balance": {
+    "title": "Guthaben von {user}",
+    "wallet": "Geldbörse",
+    "bank": "Bank",
+    "total": "Gesamt"
+  },
+  "daily": {
+    "title": "Tägliche Belohnung",
+    "done": "Du erhältst {amount}.",
+    "streak": "Serie (Tage)"
+  },
+  "weekly": {
+    "title": "Wöchentliche Belohnung",
+    "done": "Du erhältst {amount}. Komm in 7 Tagen wieder."
+  },
+  "work": {
+    "title": "Arbeitstag",
+    "jobs": {
+      "0": "Du hast den ganzen Tag Pakete ausgeliefert: {amount}.",
+      "1": "Du hast das Fahrrad eines Nachbarn repariert: {amount}.",
+      "2": "Du hast an der Theke Kaffee serviert: {amount}.",
+      "3": "Du hast auf einer Baustelle ausgeholfen: {amount}.",
+      "4": "Du hast die Katze einer Familie gehütet: {amount}."
+    }
+  },
+  "pay": {
+    "title": "Überweisung",
+    "done": "Du hast {amount} an {user} geschickt.",
+    "self": "Du kannst dir selbst kein Geld schicken."
+  },
+  "deposit": {
+    "title": "Einzahlung",
+    "done": "{amount} sind jetzt auf der Bank."
+  },
+  "withdraw": {
+    "title": "Abhebung",
+    "done": "{amount} sind jetzt in deiner Geldbörse."
+  },
+  "rob": {
+    "title": "Raub",
+    "self": "Du kannst dich nicht selbst ausrauben.",
+    "tooPoor": "Du brauchst mindestens {min} in deiner Geldbörse, um einen Raub zu versuchen.",
+    "victimBroke": "{user} hat nichts in der Geldbörse, was man stehlen könnte.",
+    "success": "Du bist mit {amount} von {user} entkommen.",
+    "failed": "Du wurdest erwischt und zahlst eine Strafe von {amount}."
+  },
+  "shop": {
+    "title": "Shop",
+    "empty": "Der Shop ist leer. Ein Administrator kann mit /shop add Artikel hinzufügen.",
+    "givesRole": "Gibt die Rolle {role}",
+    "added": "Artikel hinzugefügt",
+    "addedText": "\"{name}\" wird jetzt verkauft.",
+    "badName": "Dieser Name enthält keine brauchbaren Buchstaben oder Ziffern.",
+    "exists": "Ein Artikel namens \"{name}\" existiert bereits.",
+    "full": "Der Shop ist voll (höchstens {max} Artikel).",
+    "roleUnusable": "Diese Rolle kann nicht vergeben werden (von einer Integration verwaltet oder @everyone).",
+    "botNeedsRoles": "Mir fehlt die Berechtigung Rollen verwalten.",
+    "roleTooHigh": "Ich kann {role} nicht vergeben: sie steht über meiner höchsten Rolle.",
+    "notFound": "Dieser Artikel existiert nicht (mehr).",
+    "removed": "Artikel entfernt",
+    "removedText": "\"{name}\" wird nicht mehr verkauft. Wer ihn schon gekauft hat, behält ihn.",
+    "roleMissing": "Die Rolle dieses Artikels wurde gelöscht. Bitte einen Administrator, den Artikel zu korrigieren.",
+    "roleFailed": "Ich konnte dir die Rolle nicht geben. Dein Kauf wurde erstattet.",
+    "alreadyOwned": "Du besitzt \"{name}\" bereits.",
+    "bought": "Kauf abgeschlossen",
+    "boughtText": "Du hast \"{name}\" für {amount} gekauft."
+  },
+  "inventory": {
+    "title": "Inventar",
+    "empty": "Du hast noch nichts gekauft. Probiere /shop list.",
+    "removed": "Artikel entfernt ×{qty}"
+  },
+  "richest": {
+    "title": "Die Reichsten",
+    "empty": "Auf diesem Server hat noch niemand Münzen."
+  },
+  "coinflip": {
+    "title": "Münzwurf",
+    "won": "Die Münze landet auf {result}. Du gewinnst {amount}.",
+    "lost": "Die Münze landet auf {result}. Du verlierst {amount}.",
+    "sides": {
+      "heads": "Kopf",
+      "tails": "Zahl"
+    }
+  },
+  "slots": {
+    "title": "Spielautomat",
+    "reels": "Walzen",
+    "won": "Du gewinnst {amount}.",
+    "even": "Du bekommst deinen Einsatz zurück.",
+    "lost": "Du verlierst {amount}."
+  },
+  "blackjack": {
+    "title": "Blackjack",
+    "turn": "Ziehen, halten oder deinen Einsatz verdoppeln.",
+    "dealer": "Dealer",
+    "you": "Du",
+    "bet": "Einsatz",
+    "buttons": {
+      "hit": "Ziehen",
+      "stand": "Halten",
+      "double": "Verdoppeln"
+    },
+    "outcome": {
+      "blackjack": {
+        "title": "Blackjack!",
+        "text": "Du gewinnst {amount}. Auszahlung 3 zu 2."
+      },
+      "win": {
+        "title": "Gewonnen",
+        "text": "Du gewinnst {amount}."
+      },
+      "push": {
+        "title": "Unentschieden",
+        "text": "Dein Einsatz wird zurückgegeben."
+      },
+      "lose": {
+        "title": "Verloren",
+        "text": "Du verlierst {amount}."
+      },
+      "bust": {
+        "title": "Überkauft",
+        "text": "Über 21: du verlierst {amount}."
+      }
+    }
+  },
+  "config": {
+    "title": "Wirtschaftseinstellungen",
+    "saved": "Einstellungen gespeichert",
+    "minAboveMax": "Der Mindestlohn der Arbeit darf nicht über dem Höchstlohn liegen.",
+    "currency": "Währung",
+    "symbol": "Symbol",
+    "daily": "Täglich",
+    "weekly": "Wöchentlich",
+    "work": "Arbeit",
+    "robFail": "Fehlschlag eines Raubs"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Wirtschaft",
+      "description": "Beträge der Belohnungen und Regeln der Währung.",
+      "currency": {
+        "label": "Name der Währung",
+        "help": "Leer = Standardname in der Serversprache."
+      },
+      "symbol": {
+        "label": "Symbol",
+        "help": "Wird nach jedem Betrag angezeigt."
+      },
+      "daily": {
+        "label": "Tägliche Belohnung",
+        "help": "Betrag von /daily, vor dem Serienbonus."
+      },
+      "weekly": {
+        "label": "Wöchentliche Belohnung",
+        "help": "Betrag von /weekly."
+      },
+      "workMin": {
+        "label": "Arbeit: Mindestlohn",
+        "help": "Untergrenze von /work."
+      },
+      "workMax": {
+        "label": "Arbeit: Höchstlohn",
+        "help": "Obergrenze von /work."
+      },
+      "robFailPercent": {
+        "label": "Fehlgeschlagene Raube (%)",
+        "help": "Chance, dass ein Raub scheitert und eine Strafe kostet."
+      }
+    }
+  },
+  "commands": {
+    "balance": {
+      "description": "Zeigt deine Geldbörse und dein Bankguthaben",
+      "options": {
+        "user": "Mitglied, das angezeigt werden soll"
+      }
+    },
+    "work": {
+      "description": "Arbeite für Geld (einmal pro Stunde)"
+    },
+    "pay": {
+      "description": "Schick Münzen aus deiner Geldbörse an ein anderes Mitglied",
+      "options": {
+        "user": "Empfänger",
+        "amount": "Betrag, oder \"all\""
+      }
+    },
+    "shop": {
+      "description": "Artikel ansehen und kaufen",
+      "options": {
+        "list": {
+          "description": "Zeigt die Artikel im Shop"
+        },
+        "buy": {
+          "description": "Einen Artikel kaufen",
+          "options": {
+            "item": "Artikel zum Kauf"
+          }
+        },
+        "add": {
+          "description": "Fügt dem Shop einen Artikel hinzu (Server verwalten)",
+          "options": {
+            "name": "Name des Artikels",
+            "price": "Preis",
+            "description": "Kurze Beschreibung",
+            "role": "Rolle, die beim Kauf vergeben wird"
+          }
+        },
+        "remove": {
+          "description": "Entfernt einen Artikel aus dem Shop (Server verwalten)",
+          "options": {
+            "item": "Zu entfernender Artikel"
+          }
+        }
+      }
+    },
+    "bank": {
+      "description": "Münzen einzahlen und abheben",
+      "options": {
+        "deposit": {
+          "description": "Verschiebe Münzen von der Geldbörse auf die Bank",
+          "options": {
+            "amount": "Betrag, oder \"all\""
+          }
+        },
+        "withdraw": {
+          "description": "Verschiebe Münzen von der Bank in die Geldbörse",
+          "options": {
+            "amount": "Betrag, oder \"all\""
+          }
+        }
+      }
+    },
+    "gamble": {
+      "description": "Glücksspiele",
+      "options": {
+        "coinflip": {
+          "description": "Wette auf Kopf oder Zahl (50/50)",
+          "options": {
+            "amount": "Einsatz, oder \"all\"",
+            "side": {
+              "description": "Deine Wahl",
+              "choices": {
+                "heads": "Kopf",
+                "tails": "Zahl"
+              }
+            }
+          }
+        },
+        "slots": {
+          "description": "Dreh am Spielautomaten",
+          "options": {
+            "amount": "Einsatz, oder \"all\""
+          }
+        },
+        "blackjack": {
+          "description": "Spiel Blackjack gegen den Dealer",
+          "options": {
+            "amount": "Einsatz, oder \"all\""
+          }
+        }
+      }
+    },
+    "eco": {
+      "description": "Wirtschaft: Belohnungen, Raube, Inventar und Einstellungen",
+      "options": {
+        "daily": {
+          "description": "Hol dir deine tägliche Belohnung"
+        },
+        "weekly": {
+          "description": "Hol dir deine wöchentliche Belohnung"
+        },
+        "rob": {
+          "description": "Versuche, ein anderes Mitglied auszurauben (riskant)",
+          "options": {
+            "user": "Mitglied, das ausgeraubt wird"
+          }
+        },
+        "inventory": {
+          "description": "Zeigt die Artikel, die du gekauft hast"
+        },
+        "richest": {
+          "description": "Zeigt die reichsten Mitglieder"
+        },
+        "config": {
+          "description": "Zeigt oder ändert die Einstellungen (Server verwalten)",
+          "options": {
+            "currency": "Name der Währung",
+            "symbol": "Symbol der Währung",
+            "daily": "Tägliche Belohnung",
+            "weekly": "Wöchentliche Belohnung",
+            "work_min": "Mindestlohn der Arbeit",
+            "work_max": "Höchstlohn der Arbeit",
+            "rob_fail": "Chance (%), dass ein Raub scheitert"
+          }
+        }
+      }
+    }
+  }
+}

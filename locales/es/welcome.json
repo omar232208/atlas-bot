@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "Configurar el mensaje de bienvenida",
+      "options": {
+        "set": { "description": "Elegir el canal de bienvenida y activarla", "options": { "channel": "Canal donde se recibe a los nuevos miembros" } },
+        "message": { "description": "Cambiar el mensaje de bienvenida", "options": { "text": "Plantilla: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = salto de línea", "embed": "Enviar en un embed (sí por defecto)" } },
+        "dm": { "description": "Mensaje de bienvenida privado", "options": { "enabled": "Enviar un mensaje privado a los nuevos miembros", "text": "Plantilla del mensaje privado (mismas variables)" } },
+        "test": { "description": "Probar el mensaje contigo" },
+        "show": { "description": "Mostrar la configuración de bienvenida" },
+        "disable": { "description": "Desactivar los mensajes de bienvenida" }
+      }
+    },
+    "goodbye": {
+      "description": "Configurar el mensaje de despedida",
+      "options": {
+        "set": { "description": "Elegir el canal de despedidas y activarlas", "options": { "channel": "Canal donde se anuncian las salidas" } },
+        "message": { "description": "Cambiar el mensaje de despedida", "options": { "text": "Plantilla: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = salto de línea", "embed": "Enviar en un embed (sí por defecto)" } },
+        "test": { "description": "Probar el mensaje contigo" },
+        "show": { "description": "Mostrar la configuración de despedidas" },
+        "disable": { "description": "Desactivar los mensajes de despedida" }
+      }
+    },
+    "autorole": {
+      "description": "Roles dados automáticamente al entrar",
+      "options": {
+        "add": { "description": "Añadir un rol automático", "options": { "role": "Rol que dar", "type": { "description": "Miembros afectados (humanos por defecto)", "choices": { "humans": "Humanos", "bots": "Bots" } } } },
+        "remove": { "description": "Quitar un rol automático", "options": { "role": "Rol que quitar", "type": { "description": "Miembros afectados (ambos por defecto)", "choices": { "humans": "Humanos", "bots": "Bots" } } } },
+        "list": { "description": "Listar los roles automáticos" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "¡Bienvenido/a {user} a **{server}**! Ya somos {count}.",
+    "goodbye": "**{username}** ha salido de **{server}**. Ahora somos {count}.",
+    "dm": "¡Bienvenido/a a **{server}**, {displayname}! No olvides leer las normas del servidor."
+  },
+  "welcome": {
+    "setTitle": "Bienvenida activada",
+    "setDone": "Los nuevos miembros serán recibidos en {channel}. Personaliza el texto con `/welcome message`.",
+    "messageTitle": "Mensaje de bienvenida cambiado",
+    "messageDone": "Así se verá.",
+    "showTitle": "Configuración de bienvenida",
+    "disabledTitle": "Bienvenida desactivada",
+    "disabledDone": "Ya no se enviará ningún mensaje de bienvenida (canal ni privado).",
+    "dmTitle": "Mensaje privado",
+    "dmOn": "Los nuevos miembros recibirán este mensaje en privado (si aceptan mensajes privados del servidor).",
+    "dmOff": "El mensaje de bienvenida privado está desactivado."
+  },
+  "goodbye": {
+    "setTitle": "Despedidas activadas",
+    "setDone": "Las salidas se anunciarán en {channel}. Personaliza el texto con `/goodbye message`.",
+    "messageTitle": "Mensaje de despedida cambiado",
+    "messageDone": "Así se verá.",
+    "showTitle": "Configuración de despedidas",
+    "disabledTitle": "Despedidas desactivadas",
+    "disabledDone": "Ya no se enviará ningún mensaje de despedida."
+  },
+  "common": {
+    "preview": "Vista previa",
+    "unknownVars": "Variables desconocidas (se dejan tal cual)",
+    "variables": "Variables disponibles",
+    "testTitle": "Prueba enviada",
+    "testSent": "El mensaje se envió a {channel}.",
+    "testDmSent": "Se te ha enviado el mensaje privado.",
+    "testDmFailed": "No se pudo enviar el mensaje privado: seguramente tienes los mensajes privados cerrados.",
+    "testDisabledNote": "Atención: este mensaje está desactivado, los nuevos miembros reales no lo recibirán.",
+    "on": "Activado",
+    "off": "Desactivado",
+    "status": "Estado",
+    "channel": "Canal",
+    "embed": "Embed",
+    "template": "Plantilla",
+    "none": "Ninguno"
+  },
+  "errors": {
+    "title": "No es posible",
+    "missingPerms": "Me faltan estos permisos en {channel}: {perms}. Añádelos y vuelve a intentarlo.",
+    "noChannel": "No hay ningún canal configurado (o fue borrado). Usa primero `{command}`.",
+    "sendFailed": "No se pudo enviar el mensaje. Revisa mis permisos en el canal configurado."
+  },
+  "autorole": {
+    "reason": "Rol automático al entrar",
+    "types": { "humans": "Humanos", "bots": "Bots" },
+    "deletedRole": "Rol borrado (`{id}`)",
+    "problems": {
+      "managed": "Este rol lo gestiona una integración (bot, mejora) y no se puede dar.",
+      "everyone": "El rol @everyone no se puede dar.",
+      "hierarchy": "Este rol está por encima de mi rol más alto: sube mi rol en los ajustes del servidor.",
+      "noPermission": "Me falta el permiso «Gestionar roles»."
+    },
+    "listTitle": "Roles automáticos",
+    "listDesc": "Se dan en cada entrada (tras aceptar las normas si el filtro de miembros está activo).",
+    "title": "Roles automáticos",
+    "dangerous": "{role} da permisos de moderación o administración: dárselo a cada recién llegado sería peligroso.",
+    "already": "{role} ya se da a: {type}.",
+    "limit": "Como máximo {max} roles automáticos por tipo.",
+    "added": "{role} se dará automáticamente a: {type}.",
+    "notFound": "{role} no es un rol automático.",
+    "removed": "{role} ya no se da automáticamente."
+  },
+  "dashboard": {
+    "welcome": { "title": "Bienvenida", "description": "Mensaje enviado cuando un miembro entra al servidor. Variables: {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "Despedidas" },
+    "autorole": { "title": "Roles automáticos", "description": "Roles dados al entrar. Deben estar por debajo del rol del bot." },
+    "fields": {
+      "enabled": "Activado",
+      "channel": "Canal",
+      "message": "Mensaje",
+      "messageHelp": "Vacío: mensaje por defecto. Variables: {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "Enviar en un embed",
+      "dmEnabled": "Mensaje privado de bienvenida",
+      "dmMessage": "Texto del mensaje privado",
+      "humans": "Roles para humanos",
+      "bots": "Roles para bots"
+    },
+    "actions": { "test": "Probar el mensaje de bienvenida" },
+    "results": {
+      "notMember": "No eres miembro de este servidor.",
+      "noChannel": "No hay ningún canal de bienvenida configurado.",
+      "failed": "No se pudo enviar el mensaje: revisa los permisos del bot.",
+      "sent": "Mensaje de prueba enviado."
+    }
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "locale": "fr-FR"
+  },
+  "common": {
+    "on": "Activé",
+    "off": "Désactivé",
+    "none": "Aucun",
+    "state": "État"
+  },
+  "errors": {
+    "title": "Action impossible",
+    "botMissing": "Il me manque des permissions : {perms} (salon : {channel}). Donnez-les à mon rôle puis réessayez.",
+    "memberMissing": "Vous avez besoin de la permission {perms} pour faire cela.",
+    "apiPermission": "Discord a refusé l'action : il me manque une permission ou mon rôle est trop bas dans la liste des rôles.",
+    "notFound": "Ce salon ou ce message n'existe plus.",
+    "unexpected": "Une erreur inattendue est survenue. Réessayez dans un instant.",
+    "expired": "Ce bouton n'est plus valide.",
+    "cooldown": "Doucement : vous pourrez recommencer {time}.",
+    "roleTooHigh": "Je ne peux pas gérer le rôle {role} : il est géré par une intégration ou placé au-dessus du mien."
+  },
+  "commands": {
+    "suggest": {
+      "description": "Proposer une idée pour le serveur",
+      "options": {
+        "idea": "Votre idée, expliquée clairement",
+        "anonymous": "Masquer votre nom sur la suggestion"
+      }
+    },
+    "suggestion": {
+      "description": "Gérer les suggestions (équipe)",
+      "options": {
+        "accept": {
+          "description": "Accepter une suggestion",
+          "options": {
+            "id": "Numéro de la suggestion",
+            "reason": "Réponse visible par tous"
+          }
+        },
+        "deny": {
+          "description": "Refuser une suggestion",
+          "options": {
+            "id": "Numéro de la suggestion",
+            "reason": "Réponse visible par tous"
+          }
+        },
+        "consider": {
+          "description": "Marquer une suggestion à l'étude",
+          "options": {
+            "id": "Numéro de la suggestion",
+            "reason": "Réponse visible par tous"
+          }
+        },
+        "implement": {
+          "description": "Marquer une suggestion comme réalisée",
+          "options": {
+            "id": "Numéro de la suggestion",
+            "reason": "Réponse visible par tous"
+          }
+        },
+        "delete": {
+          "description": "Supprimer une suggestion et son message",
+          "options": {
+            "id": "Numéro de la suggestion"
+          }
+        },
+        "list": {
+          "description": "Lister les suggestions",
+          "options": {
+            "status": {
+              "description": "Filtrer par statut",
+              "choices": {
+                "pending": "En attente",
+                "considered": "À l'étude",
+                "accepted": "Acceptée",
+                "denied": "Refusée",
+                "implemented": "Réalisée"
+              }
+            }
+          }
+        },
+        "config": {
+          "description": "Configurer les suggestions",
+          "options": {
+            "channel": "Salon où publier les suggestions",
+            "anonymous": "Rendre toutes les suggestions anonymes",
+            "threads": "Ouvrir un fil de discussion par suggestion",
+            "dm": "Prévenir l'auteur en MP quand l'équipe répond",
+            "cooldown": "Délai entre deux suggestions d'un membre (secondes)"
+          }
+        }
+      }
+    },
+    "starboard": {
+      "description": "Configurer le starboard",
+      "options": {
+        "set": {
+          "description": "Choisir le salon et les règles du starboard",
+          "options": {
+            "channel": "Salon du starboard",
+            "threshold": "Nombre d'étoiles nécessaires",
+            "emoji": "Emoji compté (par défaut ⭐)",
+            "selfstar": "Compter l'étoile de l'auteur du message"
+          }
+        },
+        "ignore": {
+          "description": "Ignorer ou réintégrer un salon",
+          "options": {
+            "channel": "Salon à ignorer ou réintégrer"
+          }
+        },
+        "disable": {
+          "description": "Désactiver le starboard"
+        },
+        "status": {
+          "description": "Voir la configuration du starboard"
+        }
+      }
+    },
+    "birthday": {
+      "description": "Anniversaires des membres",
+      "options": {
+        "set": {
+          "description": "Enregistrer votre anniversaire",
+          "options": {
+            "day": "Jour (1-31)",
+            "month": "Mois (1-12)",
+            "year": "Année de naissance (facultatif, reste privée)",
+            "user": "Membre concerné (équipe uniquement)"
+          }
+        },
+        "remove": {
+          "description": "Supprimer un anniversaire",
+          "options": {
+            "user": "Membre concerné (équipe uniquement)"
+          }
+        },
+        "view": {
+          "description": "Voir l'anniversaire d'un membre",
+          "options": {
+            "user": "Membre à consulter"
+          }
+        },
+        "list": {
+          "description": "Prochains anniversaires du serveur"
+        },
+        "config": {
+          "description": "Configurer les annonces d'anniversaire (équipe)",
+          "options": {
+            "enabled": "Activer ou désactiver les annonces",
+            "channel": "Salon des annonces",
+            "role": "Rôle donné pendant la journée d'anniversaire",
+            "clear-role": "Ne plus donner de rôle",
+            "hour": "Heure locale de l'annonce (0-23)",
+            "utc-offset": "Décalage horaire du serveur par rapport à UTC (ex. 1 pour Paris en hiver)",
+            "message": "Message personnalisé ({user}, {username}, {age}, {server}) ou - pour le message par défaut"
+          }
+        }
+      }
+    },
+    "afk": {
+      "description": "Vous déclarer absent (ou revenir)",
+      "options": {
+        "reason": "Raison affichée à ceux qui vous mentionnent"
+      }
+    },
+    "tag": {
+      "description": "Réponses enregistrées du serveur",
+      "options": {
+        "use": {
+          "description": "Afficher un tag",
+          "options": {
+            "name": "Nom du tag",
+            "user": "Membre à mentionner"
+          }
+        },
+        "create": {
+          "description": "Créer un tag",
+          "options": {
+            "name": "Nom du nouveau tag"
+          }
+        },
+        "edit": {
+          "description": "Modifier un tag",
+          "options": {
+            "name": "Nom du tag"
+          }
+        },
+        "delete": {
+          "description": "Supprimer un tag",
+          "options": {
+            "name": "Nom du tag"
+          }
+        },
+        "info": {
+          "description": "Détails d'un tag",
+          "options": {
+            "name": "Nom du tag"
+          }
+        },
+        "list": {
+          "description": "Lister les tags"
+        }
+      }
+    },
+    "tempvoice": {
+      "description": "Salons vocaux temporaires",
+      "options": {
+        "setup": {
+          "description": "Créer un salon « rejoindre pour créer »",
+          "options": {
+            "category": "Catégorie des salons créés",
+            "name": "Nom du salon d'accueil"
+          }
+        },
+        "remove": {
+          "description": "Retirer un salon d'accueil",
+          "options": {
+            "hub": "Salon d'accueil",
+            "delete": "Supprimer aussi le salon (oui par défaut)"
+          }
+        },
+        "list": {
+          "description": "Voir les salons d'accueil et les salons actifs"
+        },
+        "panel": {
+          "description": "Afficher le panneau de contrôle de votre salon"
+        }
+      }
+    },
+    "community": {
+      "description": "Outils communautaires : salons de statistique, messages collants, réponses automatiques",
+      "options": {
+        "stats": {
+          "description": "Salons vocaux affichant des statistiques",
+          "options": {
+            "add": {
+              "description": "Créer un salon de statistique",
+              "options": {
+                "type": {
+                  "description": "Valeur affichée",
+                  "choices": {
+                    "members": "Membres",
+                    "humans": "Humains",
+                    "bots": "Bots",
+                    "boosts": "Boosts",
+                    "tier": "Niveau de boost",
+                    "channels": "Salons",
+                    "roles": "Rôles"
+                  }
+                },
+                "template": "Nom du salon, avec {count} pour la valeur",
+                "category": "Catégorie où créer le salon"
+              }
+            },
+            "remove": {
+              "description": "Arrêter un salon de statistique",
+              "options": {
+                "channel": "Salon de statistique",
+                "delete": "Supprimer aussi le salon (oui par défaut)"
+              }
+            },
+            "list": {
+              "description": "Lister les salons de statistique"
+            },
+            "refresh": {
+              "description": "Mettre à jour les salons maintenant"
+            }
+          }
+        },
+        "sticky": {
+          "description": "Messages épinglés en bas d'un salon",
+          "options": {
+            "set": {
+              "description": "Créer ou modifier le message collant",
+              "options": {
+                "channel": "Salon (par défaut celui-ci)"
+              }
+            },
+            "remove": {
+              "description": "Supprimer le message collant",
+              "options": {
+                "channel": "Salon (par défaut celui-ci)"
+              }
+            },
+            "list": {
+              "description": "Lister les messages collants"
+            }
+          }
+        },
+        "autoresponder": {
+          "description": "Réponses automatiques à des mots-clés",
+          "options": {
+            "add": {
+              "description": "Ajouter une réponse automatique",
+              "options": {
+                "trigger": "Texte déclencheur",
+                "response": "Réponse ({user}, {server}, {channel} ; \\n pour un retour à la ligne)",
+                "match": {
+                  "description": "Façon de comparer (par défaut : contient)",
+                  "choices": {
+                    "exact": "Message exact",
+                    "contains": "Contient",
+                    "startswith": "Commence par",
+                    "word": "Mot entier"
+                  }
+                },
+                "channel": "Limiter à un salon"
+              }
+            },
+            "remove": {
+              "description": "Supprimer une réponse automatique",
+              "options": {
+                "id": "Numéro de la réponse"
+              }
+            },
+            "list": {
+              "description": "Lister les réponses automatiques"
+            },
+            "test": {
+              "description": "Tester quel déclencheur répondrait à un message",
+              "options": {
+                "message": "Message à tester"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "suggestions": {
+    "status": {
+      "pending": "En attente",
+      "considered": "À l'étude",
+      "accepted": "Acceptée",
+      "denied": "Refusée",
+      "implemented": "Réalisée"
+    },
+    "side": {
+      "up": "pour",
+      "down": "contre"
+    },
+    "buttons": {
+      "up": "Pour · {count}",
+      "down": "Contre · {count}"
+    },
+    "embed": {
+      "title": "Suggestion n°{number}",
+      "status": "Statut",
+      "votes": "Votes",
+      "voteLine": "{up} pour · {down} contre\n{bar}",
+      "response": "Réponse de l'équipe",
+      "responseLine": "{staff} : {reason}",
+      "by": "Proposée par {user}",
+      "anonymous": "Suggestion anonyme"
+    },
+    "noReason": "Aucune précision.",
+    "notConfigured": "Les suggestions ne sont pas configurées. Un administrateur doit utiliser /suggestion config.",
+    "posted": "Suggestion n°{number} publiée",
+    "postedDesc": "Merci ! Elle est visible ici : {url}",
+    "threadName": "Discussion – suggestion n°{number}",
+    "notFound": "Aucune suggestion n°{number}.",
+    "closed": "Les votes sont fermés : l'équipe a déjà répondu.",
+    "voteSaved": "Vote « {side} » enregistré",
+    "voteRemoved": "Vote « {side} » retiré",
+    "decided": "Suggestion n°{number} : {status}",
+    "decidedDesc": "Le message public a été mis à jour.",
+    "decidedNoMessage": "Statut enregistré, mais le message public n'existe plus.",
+    "deleted": "Suggestion n°{number} supprimée",
+    "listEmpty": "Aucune suggestion pour le moment.",
+    "listTitle": "Suggestions ({count})",
+    "listLine": "**n°{number}** · {status} · {up} pour / {down} contre — {text}",
+    "dm": {
+      "title": "Votre suggestion n°{number} sur {server}",
+      "body": "Nouveau statut : **{status}**\nRéponse : {reason}\n{url}"
+    },
+    "configTitle": "Suggestions configurées",
+    "configChannel": "Salon",
+    "configAnonymous": "Anonymat forcé",
+    "configThreads": "Fils de discussion",
+    "configDm": "MP à l'auteur",
+    "configCooldown": "Délai (s)"
+  },
+  "starboard": {
+    "header": "{emoji} **{count}** · {channel}",
+    "source": "Message d'origine",
+    "jump": "[Aller au message]({url})",
+    "attachments": "Fichiers",
+    "badEmoji": "Cet emoji n'est pas valide. Utilisez un emoji standard ou un emoji de ce serveur.",
+    "saved": "Starboard activé",
+    "savedDesc": "Les messages qui atteignent {threshold} {emoji} seront copiés dans {channel}.",
+    "ignored": "Salon ignoré",
+    "unignored": "Salon réintégré",
+    "alreadyOff": "Le starboard est déjà désactivé.",
+    "disabled": "Starboard désactivé",
+    "statusTitle": "Starboard",
+    "channel": "Salon",
+    "threshold": "Seuil",
+    "emoji": "Emoji",
+    "selfStar": "Étoile de l'auteur",
+    "posts": "Messages affichés",
+    "ignoredList": "Salons ignorés"
+  },
+  "birthdays": {
+    "noBots": "Les bots n'ont pas d'anniversaire.",
+    "invalidDate": "Cette date n'existe pas. Vérifiez le jour, le mois et l'année.",
+    "saved": "Anniversaire enregistré",
+    "savedDesc": "{user} : le {date}, dans {days} jour(s).",
+    "removed": "Anniversaire supprimé",
+    "none": "Aucun anniversaire enregistré pour {user}.",
+    "listEmpty": "Aucun anniversaire enregistré. Ajoutez le vôtre avec /birthday set.",
+    "listTitle": "Prochains anniversaires ({count})",
+    "listLine": "{user} · {date} · {when}{age}",
+    "today": "**aujourd'hui**",
+    "inDays": "dans {days} j",
+    "ageSuffix": " · {age} ans",
+    "viewTitle": "Anniversaire",
+    "viewDesc": "{user} fête son anniversaire le **{date}**, dans {days} jour(s).",
+    "announceTitle": "Joyeux anniversaire !",
+    "announce": "Joyeux anniversaire {user} ! Toute l'équipe de {server} te souhaite une belle journée.",
+    "announceAge": "Joyeux anniversaire {user}, qui fête ses {age} ans aujourd'hui !",
+    "configTitle": "Anniversaires configurés",
+    "configHelp": "Les annonces partent chaque jour à l'heure choisie, selon le décalage horaire du serveur.",
+    "channel": "Salon",
+    "role": "Rôle du jour",
+    "hour": "Heure",
+    "offset": "Fuseau",
+    "message": "Message",
+    "defaultMessage": "Message par défaut"
+  },
+  "stats": {
+    "types": {
+      "members": "Membres",
+      "humans": "Humains",
+      "bots": "Bots",
+      "boosts": "Boosts",
+      "tier": "Niveau de boost",
+      "channels": "Salons",
+      "roles": "Rôles"
+    },
+    "defaults": {
+      "members": "Membres : {count}",
+      "humans": "Humains : {count}",
+      "bots": "Bots : {count}",
+      "boosts": "Boosts : {count}",
+      "tier": "Niveau : {count}",
+      "channels": "Salons : {count}",
+      "roles": "Rôles : {count}"
+    },
+    "tooMany": "Vous avez atteint la limite de {max} salons de statistique.",
+    "needCount": "Le nom doit contenir {count}, remplacé par la valeur.",
+    "auditReason": "Salon de statistique",
+    "added": "Salon de statistique créé",
+    "addedDesc": "{channel} affichera « {type} ». Il se met à jour tout seul.",
+    "notStat": "Ce salon n'est pas un salon de statistique.",
+    "removed": "Salon de statistique retiré",
+    "listEmpty": "Aucun salon de statistique.",
+    "listTitle": "Salons de statistique",
+    "listLine": "{channel} · {type} · `{template}`",
+    "rateNote": "Discord limite le renommage à 2 fois toutes les 10 minutes par salon : les mises à jour peuvent prendre quelques minutes.",
+    "refreshed": "Mise à jour lancée",
+    "refreshedDesc": "{count} salon(s) renommé(s).",
+    "refreshedWaiting": "{count} salon(s) renommé(s). Les autres attendent la limite de Discord et suivront automatiquement."
+  },
+  "sticky": {
+    "footer": "Message collant",
+    "modalTitle": "Message collant",
+    "modalTitleField": "Titre (facultatif)",
+    "modalContentField": "Contenu",
+    "badChannel": "Choisissez un salon textuel.",
+    "tooMany": "Vous avez atteint la limite de {max} messages collants.",
+    "saved": "Message collant enregistré dans {channel}",
+    "removed": "Message collant retiré de {channel}",
+    "none": "Aucun message collant dans {channel}.",
+    "listEmpty": "Aucun message collant.",
+    "listTitle": "Messages collants ({count})"
+  },
+  "afk": {
+    "disabled": "Le statut AFK est désactivé sur ce serveur.",
+    "set": "Vous êtes AFK",
+    "setDesc": "Raison : {reason}\nVotre pseudo affiche [AFK]. Écrivez un message pour revenir.",
+    "setDescNoNick": "Raison : {reason}\nÉcrivez un message pour revenir.",
+    "cleared": "Bon retour, vous n'êtes plus AFK",
+    "backTitle": "Bon retour, {user}",
+    "backDesc": "Absent depuis {since}. Mentions reçues : {count}.",
+    "pingLine": "{user} {time} · [voir]({url})",
+    "noticeTitle": "Membre absent",
+    "isAfk": "{user} est AFK depuis {since}.",
+    "isAfkReason": "{user} est AFK depuis {since} : {reason}"
+  },
+  "tags": {
+    "badName": "Nom invalide : 1 à 32 caractères, lettres minuscules, chiffres, - ou _.",
+    "notFound": "Aucun tag nommé « {name} ».",
+    "exists": "Le tag « {name} » existe déjà.",
+    "tooMany": "Vous avez atteint la limite de {max} tags.",
+    "noPermission": "Gérer les tags demande la permission Gérer les messages ou le rôle de gestion des tags.",
+    "modalTitle": {
+      "create": "Nouveau tag : {name}",
+      "edit": "Modifier : {name}"
+    },
+    "modalField": "Contenu du tag",
+    "modalPlaceholder": "Variables : {user} {target} {server} {channel} {membercount}",
+    "created": "Créé",
+    "createdDesc": "Utilisez-le avec /tag use name:{name}",
+    "edited": "Tag « {name} » modifié",
+    "confirmDelete": "Supprimer définitivement le tag « {name} » ?",
+    "deleted": "Tag « {name} » supprimé",
+    "footer": "Tag : {name}",
+    "listEmpty": "Aucun tag pour le moment.",
+    "listTitle": "Tags ({count})",
+    "listLine": "`{name}` · {uses} utilisation(s)",
+    "infoTitle": "Tag « {name} »",
+    "owner": "Créé par",
+    "uses": "Utilisations",
+    "variables": "Variables",
+    "variablesList": "{user} {username} {displayname} {target} {server} {channel} {membercount}"
+  },
+  "tempvoice": {
+    "hubName": "Rejoindre pour créer",
+    "defaultName": "Salon de {user}",
+    "auditHub": "Salon d'accueil des vocaux temporaires",
+    "auditCreate": "Salon temporaire de {user}",
+    "auditDelete": "Salon temporaire vide",
+    "tooManyHubs": "Vous avez atteint la limite de {max} salons d'accueil.",
+    "hubCreated": "Salon d'accueil créé",
+    "hubCreatedDesc": "Rejoindre {channel} crée un salon vocal personnel, supprimé quand il se vide.",
+    "notHub": "Ce salon n'est pas un salon d'accueil.",
+    "hubRemoved": "Salon d'accueil retiré",
+    "noHubs": "Aucun salon d'accueil. Créez-en un avec /tempvoice setup.",
+    "listTitle": "Vocaux temporaires",
+    "hubs": "Salons d'accueil",
+    "active": "Salons actifs ({count})",
+    "notInTemp": "Rejoignez d'abord votre salon vocal temporaire.",
+    "notOwner": "Seul le propriétaire ({owner}) peut faire cela.",
+    "alreadyOwner": "Ce salon est déjà le vôtre.",
+    "joinFirst": "Rejoignez ce salon vocal pour le récupérer.",
+    "ownerPresent": "Le propriétaire est encore dans le salon.",
+    "claimed": "{user} est maintenant propriétaire du salon",
+    "gone": "Ce salon temporaire n'existe plus.",
+    "panelTitle": "Votre salon vocal",
+    "panelDesc": "Propriétaire : {owner}\nUtilisez les boutons pour gérer ce salon. Il sera supprimé quand tout le monde sera parti.",
+    "buttons": {
+      "rename": "Renommer",
+      "limit": "Limite",
+      "lock": "Verrouiller",
+      "hide": "Masquer",
+      "permit": "Autoriser",
+      "kick": "Expulser",
+      "claim": "Récupérer"
+    },
+    "renameTitle": "Renommer le salon",
+    "renameLabel": "Nouveau nom",
+    "limitTitle": "Limite de membres",
+    "limitLabel": "Nombre maximum (0 = illimité)",
+    "badName": "Le nom ne peut pas être vide.",
+    "badLimit": "Entrez un nombre entre 0 et 99.",
+    "renameLimit": "Discord n'autorise que 2 renommages par 10 minutes. Réessayez {time}.",
+    "renamed": "Salon renommé en « {name} »",
+    "limitSet": "Limite fixée à {limit} membre(s)",
+    "limitRemoved": "Limite retirée",
+    "locked": {
+      "on": "Salon verrouillé : seuls les membres autorisés peuvent entrer",
+      "off": "Salon déverrouillé"
+    },
+    "hidden": {
+      "on": "Salon masqué",
+      "off": "Salon de nouveau visible"
+    },
+    "permitPrompt": "Choisissez les membres autorisés à rejoindre.",
+    "kickPrompt": "Choisissez les membres à expulser du salon.",
+    "selectUsers": "Choisir des membres",
+    "permitted": "Autorisés : {users}",
+    "kicked": "Expulsés : {users}"
+  },
+  "autoresponder": {
+    "modes": {
+      "exact": "message exact",
+      "contains": "contient",
+      "startswith": "commence par",
+      "word": "mot entier"
+    },
+    "tooMany": "Vous avez atteint la limite de {max} réponses automatiques.",
+    "tooShort": "Le déclencheur doit faire au moins 2 caractères.",
+    "duplicate": "Ce déclencheur existe déjà avec le même mode.",
+    "added": "Réponse automatique n°{id} ajoutée",
+    "addedDesc": "Déclencheur : « {trigger} » ({mode}).",
+    "notFound": "Aucune réponse automatique n°{id}.",
+    "removed": "Réponse automatique n°{id} supprimée",
+    "listEmpty": "Aucune réponse automatique.",
+    "listTitle": "Réponses automatiques ({count})",
+    "listLine": "**n°{id}** · {mode} · `{trigger}` · {where}\n→ {response}",
+    "everywhere": "partout",
+    "noMatch": "Aucun déclencheur ne correspond à ce message.",
+    "match": "Correspondance trouvée",
+    "matchDesc": "La réponse n°{id} (« {trigger} ») serait envoyée."
+  },
+  "dashboard": {
+    "suggestions": {
+      "title": "Suggestions",
+      "description": "Idées proposées par les membres avec votes."
+    },
+    "starboard": {
+      "title": "Starboard",
+      "description": "Mettre en avant les messages qui reçoivent le plus d'étoiles."
+    },
+    "birthdays": {
+      "title": "Anniversaires",
+      "description": "Annonce quotidienne et rôle du jour."
+    },
+    "afk": {
+      "title": "AFK",
+      "description": "Statut d'absence affiché quand on vous mentionne."
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "Réponses enregistrées utilisables avec /tag use."
+    },
+    "sticky": {
+      "title": "Messages collants",
+      "description": "Messages republiés en bas des salons choisis."
+    },
+    "tempvoice": {
+      "title": "Vocaux temporaires",
+      "description": "Salons vocaux créés à la demande."
+    },
+    "autoresponder": {
+      "title": "Réponses automatiques",
+      "description": "Réponses envoyées quand un message contient un déclencheur."
+    },
+    "fields": {
+      "suggestionsChannel": {
+        "label": "Salon des suggestions",
+        "help": "Salon où /suggest publie les idées."
+      },
+      "suggestionsAnonymous": {
+        "label": "Anonymat forcé",
+        "help": "Masque le nom de l'auteur de toutes les suggestions."
+      },
+      "suggestionsThreads": {
+        "label": "Fils de discussion",
+        "help": "Ouvre un fil sous chaque suggestion."
+      },
+      "suggestionsDm": {
+        "label": "Prévenir l'auteur",
+        "help": "Envoie un MP à l'auteur quand l'équipe change le statut."
+      },
+      "suggestionsCooldown": {
+        "label": "Délai entre deux suggestions (s)",
+        "help": "0 pour aucun délai."
+      },
+      "starboardEnabled": {
+        "label": "Starboard actif",
+        "help": "Copie les messages populaires dans le salon du starboard."
+      },
+      "starboardChannel": {
+        "label": "Salon du starboard",
+        "help": "Salon où les messages sont copiés."
+      },
+      "starboardThreshold": {
+        "label": "Seuil d'étoiles",
+        "help": "Nombre de réactions nécessaires."
+      },
+      "starboardEmoji": {
+        "label": "Emoji",
+        "help": "Emoji standard, ou emoji du serveur au format <:nom:id>."
+      },
+      "starboardSelfStar": {
+        "label": "Étoile de l'auteur",
+        "help": "Compter la réaction de l'auteur sur son propre message."
+      },
+      "starboardIgnored": {
+        "label": "Salons ignorés",
+        "help": "Les messages de ces salons ne vont jamais au starboard."
+      },
+      "birthdaysEnabled": {
+        "label": "Annonces actives",
+        "help": "Annonce chaque jour les anniversaires des membres."
+      },
+      "birthdaysChannel": {
+        "label": "Salon des annonces",
+        "help": "Salon où les anniversaires sont souhaités."
+      },
+      "birthdaysRole": {
+        "label": "Rôle du jour",
+        "help": "Rôle donné pendant la journée d'anniversaire, puis retiré."
+      },
+      "birthdaysHour": {
+        "label": "Heure de l'annonce",
+        "help": "Heure locale, de 0 à 23."
+      },
+      "birthdaysOffset": {
+        "label": "Décalage UTC",
+        "help": "Par exemple 1 pour Paris en hiver, 2 en été, -5 pour New York."
+      },
+      "birthdaysMessage": {
+        "label": "Message personnalisé",
+        "help": "Variables : {user} {username} {age} {server}. Vide pour le message par défaut."
+      },
+      "afkEnabled": {
+        "label": "AFK actif",
+        "help": "Permet d'utiliser /afk."
+      },
+      "afkNickname": {
+        "label": "Préfixe [AFK]",
+        "help": "Ajoute [AFK] au pseudo pendant l'absence."
+      },
+      "tagsManager": {
+        "label": "Rôle de gestion des tags",
+        "help": "Ce rôle peut créer et modifier des tags sans la permission Gérer les messages."
+      },
+      "stickyDelay": {
+        "label": "Délai avant repost (s)",
+        "help": "Attente après le dernier message avant de reposter, de 2 à 60."
+      },
+      "tempvoiceLimit": {
+        "label": "Limite par défaut",
+        "help": "Nombre maximum de membres dans un nouveau salon (0 = illimité)."
+      },
+      "tempvoiceName": {
+        "label": "Nom des salons",
+        "help": "Utilisez {user} pour le pseudo. Vide pour le nom par défaut."
+      },
+      "autoresponderEnabled": {
+        "label": "Réponses automatiques actives",
+        "help": "Nécessite l'intent Message Content."
+      },
+      "autoresponderCooldown": {
+        "label": "Délai par salon (s)",
+        "help": "Temps minimum entre deux réponses identiques dans un salon."
+      }
+    },
+    "actions": {
+      "refreshStats": {
+        "label": "Mettre à jour les salons de statistique",
+        "none": "Aucun salon de statistique configuré.",
+        "done": "Salons de statistique mis à jour.",
+        "waiting": "Mise à jour faite en partie ; le reste suivra après la limite de Discord."
+      },
+      "clearAfk": {
+        "label": "Effacer tous les statuts AFK",
+        "done": "Tous les statuts AFK ont été effacés."
+      },
+      "cleanupTempvoice": {
+        "label": "Nettoyer les vocaux temporaires",
+        "done": "Les salons temporaires vides ont été supprimés."
+      }
+    }
+  }
+}

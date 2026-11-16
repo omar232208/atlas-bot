@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "Willkommensnachricht einrichten",
+      "options": {
+        "set": { "description": "Willkommenskanal wählen und aktivieren", "options": { "channel": "Kanal, in dem neue Mitglieder begrüßt werden" } },
+        "message": { "description": "Willkommensnachricht ändern", "options": { "text": "Vorlage: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = Zeilenumbruch", "embed": "Als Embed senden (standardmäßig ja)" } },
+        "dm": { "description": "Private Willkommensnachricht", "options": { "enabled": "Neuen Mitgliedern eine Privatnachricht senden", "text": "Vorlage der Privatnachricht (gleiche Variablen)" } },
+        "test": { "description": "Nachricht an dir selbst testen" },
+        "show": { "description": "Willkommens-Einstellungen anzeigen" },
+        "disable": { "description": "Willkommensnachrichten deaktivieren" }
+      }
+    },
+    "goodbye": {
+      "description": "Abschiedsnachricht einrichten",
+      "options": {
+        "set": { "description": "Abschiedskanal wählen und aktivieren", "options": { "channel": "Kanal, in dem Austritte angekündigt werden" } },
+        "message": { "description": "Abschiedsnachricht ändern", "options": { "text": "Vorlage: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = Zeilenumbruch", "embed": "Als Embed senden (standardmäßig ja)" } },
+        "test": { "description": "Nachricht an dir selbst testen" },
+        "show": { "description": "Abschieds-Einstellungen anzeigen" },
+        "disable": { "description": "Abschiedsnachrichten deaktivieren" }
+      }
+    },
+    "autorole": {
+      "description": "Rollen, die beim Beitritt automatisch vergeben werden",
+      "options": {
+        "add": { "description": "Automatische Rolle hinzufügen", "options": { "role": "Zu vergebende Rolle", "type": { "description": "Betroffene Mitglieder (standardmäßig Menschen)", "choices": { "humans": "Menschen", "bots": "Bots" } } } },
+        "remove": { "description": "Automatische Rolle entfernen", "options": { "role": "Zu entfernende Rolle", "type": { "description": "Betroffene Mitglieder (standardmäßig beide)", "choices": { "humans": "Menschen", "bots": "Bots" } } } },
+        "list": { "description": "Automatische Rollen auflisten" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "Willkommen {user} auf **{server}**! Wir sind jetzt {count}.",
+    "goodbye": "**{username}** hat **{server}** verlassen. Wir sind jetzt {count}.",
+    "dm": "Willkommen auf **{server}**, {displayname}! Denk daran, die Serverregeln zu lesen."
+  },
+  "welcome": {
+    "setTitle": "Willkommen aktiviert",
+    "setDone": "Neue Mitglieder werden in {channel} begrüßt. Passe den Text mit `/welcome message` an.",
+    "messageTitle": "Willkommensnachricht geändert",
+    "messageDone": "So wird sie aussehen.",
+    "showTitle": "Willkommens-Einstellungen",
+    "disabledTitle": "Willkommen deaktiviert",
+    "disabledDone": "Es werden keine Willkommensnachrichten (Kanal und privat) mehr gesendet.",
+    "dmTitle": "Privatnachricht",
+    "dmOn": "Neue Mitglieder erhalten diese Nachricht privat (wenn sie Privatnachrichten vom Server zulassen).",
+    "dmOff": "Die private Willkommensnachricht ist deaktiviert."
+  },
+  "goodbye": {
+    "setTitle": "Abschied aktiviert",
+    "setDone": "Austritte werden in {channel} angekündigt. Passe den Text mit `/goodbye message` an.",
+    "messageTitle": "Abschiedsnachricht geändert",
+    "messageDone": "So wird sie aussehen.",
+    "showTitle": "Abschieds-Einstellungen",
+    "disabledTitle": "Abschied deaktiviert",
+    "disabledDone": "Es werden keine Abschiedsnachrichten mehr gesendet."
+  },
+  "common": {
+    "preview": "Vorschau",
+    "unknownVars": "Unbekannte Variablen (bleiben unverändert)",
+    "variables": "Verfügbare Variablen",
+    "testTitle": "Test gesendet",
+    "testSent": "Die Nachricht wurde in {channel} gesendet.",
+    "testDmSent": "Die Privatnachricht wurde dir gesendet.",
+    "testDmFailed": "Die Privatnachricht konnte nicht gesendet werden: Deine Privatnachrichten sind wohl geschlossen.",
+    "testDisabledNote": "Hinweis: Diese Nachricht ist deaktiviert, echte neue Mitglieder erhalten sie nicht.",
+    "on": "Aktiviert",
+    "off": "Deaktiviert",
+    "status": "Status",
+    "channel": "Kanal",
+    "embed": "Embed",
+    "template": "Vorlage",
+    "none": "Keiner"
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "missingPerms": "Mir fehlen diese Berechtigungen in {channel}: {perms}. Füge sie hinzu und versuche es erneut.",
+    "noChannel": "Es ist kein Kanal eingerichtet (oder er wurde gelöscht). Nutze zuerst `{command}`.",
+    "sendFailed": "Die Nachricht konnte nicht gesendet werden. Prüfe meine Berechtigungen im eingerichteten Kanal."
+  },
+  "autorole": {
+    "reason": "Automatische Rolle beim Beitritt",
+    "types": { "humans": "Menschen", "bots": "Bots" },
+    "deletedRole": "Gelöschte Rolle (`{id}`)",
+    "problems": {
+      "managed": "Diese Rolle wird von einer Integration (Bot, Boost) verwaltet und kann nicht vergeben werden.",
+      "everyone": "Die Rolle @everyone kann nicht vergeben werden.",
+      "hierarchy": "Diese Rolle steht über meiner höchsten Rolle: Schiebe meine Rolle in den Servereinstellungen nach oben.",
+      "noPermission": "Mir fehlt die Berechtigung „Rollen verwalten“."
+    },
+    "listTitle": "Automatische Rollen",
+    "listDesc": "Werden bei jedem Beitritt vergeben (nach Annahme der Regeln, falls die Mitgliederprüfung aktiv ist).",
+    "title": "Automatische Rollen",
+    "dangerous": "{role} gewährt Moderations- oder Adminrechte: Sie jedem Neuling zu geben, wäre gefährlich.",
+    "already": "{role} wird bereits vergeben an: {type}.",
+    "limit": "Höchstens {max} automatische Rollen pro Typ.",
+    "added": "{role} wird automatisch vergeben an: {type}.",
+    "notFound": "{role} ist keine automatische Rolle.",
+    "removed": "{role} wird nicht mehr automatisch vergeben."
+  },
+  "dashboard": {
+    "welcome": { "title": "Willkommen", "description": "Nachricht, wenn ein Mitglied dem Server beitritt. Variablen: {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "Abschied" },
+    "autorole": { "title": "Automatische Rollen", "description": "Rollen beim Beitritt. Sie müssen unter der Rolle des Bots stehen." },
+    "fields": {
+      "enabled": "Aktiviert",
+      "channel": "Kanal",
+      "message": "Nachricht",
+      "messageHelp": "Leer: Standardnachricht. Variablen: {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "Als Embed senden",
+      "dmEnabled": "Private Willkommensnachricht",
+      "dmMessage": "Text der Privatnachricht",
+      "humans": "Rollen für Menschen",
+      "bots": "Rollen für Bots"
+    },
+    "actions": { "test": "Willkommensnachricht testen" },
+    "results": {
+      "notMember": "Du bist kein Mitglied dieses Servers.",
+      "noChannel": "Es ist kein Willkommenskanal eingerichtet.",
+      "failed": "Die Nachricht konnte nicht gesendet werden: Prüfe die Berechtigungen des Bots.",
+      "sent": "Testnachricht gesendet."
+    }
+  }
+}

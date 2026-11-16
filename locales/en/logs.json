@@ -1,0 +1,272 @@
+{
+  "commands": {
+    "logs": {
+      "description": "Configure log channels",
+      "options": {
+        "set": {
+          "description": "Send a log category to a channel",
+          "options": {
+            "category": {
+              "description": "Log category",
+              "choices": {
+                "all": "All categories",
+                "messages": "Messages",
+                "members": "Members",
+                "moderation": "Moderation",
+                "server": "Server",
+                "voice": "Voice",
+                "invites": "Invites",
+                "protection": "Protection",
+                "tickets": "Tickets"
+              }
+            },
+            "channel": "Channel that receives the logs"
+          }
+        },
+        "disable": {
+          "description": "Stop logging a category",
+          "options": {
+            "category": {
+              "description": "Log category",
+              "choices": {
+                "all": "All categories",
+                "messages": "Messages",
+                "members": "Members",
+                "moderation": "Moderation",
+                "server": "Server",
+                "voice": "Voice",
+                "invites": "Invites",
+                "protection": "Protection",
+                "tickets": "Tickets"
+              }
+            }
+          }
+        },
+        "ignore": {
+          "description": "Ignore a channel, or watch it again",
+          "options": {
+            "channel": "Channel or category to ignore (or stop ignoring)"
+          }
+        },
+        "bots": {
+          "description": "Log messages from bots or not",
+          "options": {
+            "enabled": "Log bot messages"
+          }
+        },
+        "status": {
+          "description": "Show the log configuration"
+        }
+      }
+    }
+  },
+  "categories": {
+    "all": "all categories",
+    "messages": "Messages",
+    "members": "Members",
+    "moderation": "Moderation",
+    "server": "Server",
+    "voice": "Voice",
+    "invites": "Invites",
+    "protection": "Protection",
+    "tickets": "Tickets"
+  },
+  "status": {
+    "title": "Log configuration",
+    "description": "Channel used for each category. Protection and Tickets use the Moderation channel when they have none of their own.",
+    "off": "Disabled",
+    "fallback": "{channel} (via Moderation)",
+    "ignored": "Ignored channels",
+    "none": "None",
+    "bots": "Bot messages",
+    "botsIgnored": "Ignored",
+    "botsLogged": "Logged"
+  },
+  "errors": {
+    "title": "Not possible",
+    "missingPerms": "I am missing these permissions in {channel}: {perms}. Add them and run the command again."
+  },
+  "set": {
+    "title": "Logs configured",
+    "done": "\"{category}\" logs will be sent to {channel}."
+  },
+  "disable": {
+    "title": "Logs disabled",
+    "done": "\"{category}\" logs are disabled."
+  },
+  "ignore": {
+    "title": "Ignored channels",
+    "added": "{channel} is now ignored: its messages and voice activity will no longer be logged.",
+    "removed": "{channel} is no longer ignored."
+  },
+  "bots": {
+    "title": "Bot messages",
+    "on": "Bot messages will be logged.",
+    "off": "Bot messages will no longer be logged."
+  },
+  "test": {
+    "title": "Log test",
+    "description": "This channel receives logs correctly (category {category}).",
+    "none": "No log channel is configured.",
+    "ok": "A test message was sent to every log channel.",
+    "partial": "Some channels did not get the test: check my permissions (view channel, send messages, embed links)."
+  },
+  "dashboard": {
+    "channels": {
+      "title": "Log channels",
+      "description": "Choose where each kind of event goes. Leave empty to disable."
+    },
+    "help": {
+      "messages": "Edited and deleted messages, bulk deletions (with a text file).",
+      "members": "Joins, leaves, nicknames, roles and boosts.",
+      "moderation": "Bans, kicks, timeouts and sanctions made by the bot.",
+      "server": "Channels, roles, emojis and server settings.",
+      "voice": "Voice joins, leaves, moves and server mutes.",
+      "invites": "Invites created and deleted, and the invite each newcomer used.",
+      "protection": "Antiraid, antinuke and automod alerts. Empty: Moderation channel.",
+      "tickets": "Ticket openings, closings and transcripts. Empty: Moderation channel."
+    },
+    "filters": {
+      "title": "Filters",
+      "ignored": "Ignored channels",
+      "ignoredHelp": "Messages and voice activity in these channels (or categories) are not logged.",
+      "ignoreBots": "Ignore bot messages",
+      "ignoreBotsHelp": "Recommended: bots often edit their own messages."
+    },
+    "actions": {
+      "test": "Send a test log"
+    }
+  },
+  "events": {
+    "empty": "*(empty)*",
+    "ids": "User {user} · Message {message}",
+    "unknown": "unknown",
+    "none": "None",
+    "noReason": "No reason",
+    "before": "Before",
+    "after": "After",
+    "unlimited": "Unlimited",
+    "never": "Never",
+    "messages": {
+      "attachments": "Attachments",
+      "edited": "Message edited",
+      "editedDesc": "{user} edited a message in {channel} — [jump to message]({url})",
+      "before": "Before",
+      "after": "After",
+      "deleted": "Message deleted",
+      "deletedUncached": "An old message was deleted in {channel} (`{id}`). Its content was not in memory.",
+      "deletedDesc": "Message by {user} deleted in {channel}",
+      "content": "Content",
+      "bulk": "Bulk deletion",
+      "bulkDesc": "{count} messages deleted in {channel}. {known} are in the attached file."
+    },
+    "members": {
+      "created": "Account created",
+      "count": "Members",
+      "warning": "Warning",
+      "newAccount": "New account: created {age} ago.",
+      "botJoined": "Bot added",
+      "joined": "Member joined",
+      "joinedAt": "Joined on",
+      "roles": "Roles",
+      "left": "Member left",
+      "nickname": "Nickname changed",
+      "rolesAdded": "Roles added",
+      "rolesRemoved": "Roles removed",
+      "rolesChanged": "Roles changed",
+      "boost": "New server boost"
+    },
+    "moderation": {
+      "kick": "Member kicked",
+      "target": "Member",
+      "by": "By",
+      "reason": "Reason",
+      "until": "Until",
+      "timeout": "Member timed out",
+      "untimeout": "Timeout removed",
+      "ban": "Member banned",
+      "unban": "Member unbanned"
+    },
+    "invites": {
+      "usedInvite": "{user} joined with invite `{code}` from {inviter} ({uses} uses).",
+      "usedVanity": "{user} joined with the vanity link `{code}` ({uses} uses).",
+      "untracked": "{user} joined, but I cannot read invites: I need the \"Manage Server\" permission.",
+      "unknownInvite": "{user} joined, but the invite used could not be determined.",
+      "inviterTotal": "Inviter total: {joins} joins, {left} left, {net} net.",
+      "joinTitle": "Invite used",
+      "leaveTitle": "Invited member left",
+      "leftInvited": "{user} left. They had been invited by {inviter} (`{code}`).",
+      "code": "Code",
+      "channel": "Channel",
+      "maxUses": "Max uses",
+      "expires": "Expires",
+      "creator": "Created by",
+      "created": "Invite created",
+      "deleted": "Invite deleted"
+    },
+    "voice": {
+      "join": "Voice join",
+      "joinDesc": "{user} joined {channel}",
+      "leave": "Voice leave",
+      "leaveDesc": "{user} left {channel}",
+      "move": "Voice channel change",
+      "moveDesc": "{user} moved from {from} to {to}",
+      "mute": "Server muted",
+      "muteDesc": "{user} was muted in {channel}",
+      "unmute": "Server unmuted",
+      "unmuteDesc": "{user} is no longer muted in {channel}",
+      "deaf": "Server deafened",
+      "deafDesc": "{user} was deafened in {channel}",
+      "undeaf": "Server undeafened",
+      "undeafDesc": "{user} is no longer deafened in {channel}"
+    },
+    "server": {
+      "channelCreate": "Channel created",
+      "channelDesc": "{channel} · {name} ({type})",
+      "channelDelete": "Channel deleted",
+      "channelUpdate": "Channel updated",
+      "overwritesChanged": "**Permissions**: changed",
+      "permsAdded": "Permissions granted",
+      "permsRemoved": "Permissions revoked",
+      "roleCreate": "Role created",
+      "roleDelete": "Role deleted",
+      "roleUpdate": "Role updated",
+      "emojiCreate": "Emoji added",
+      "emojiDelete": "Emoji deleted",
+      "emojiUpdate": "Emoji renamed",
+      "guildUpdate": "Server updated"
+    }
+  },
+  "fields": {
+    "name": "Name",
+    "topic": "Topic",
+    "nsfw": "NSFW",
+    "slowmode": "Slowmode (s)",
+    "category": "Category",
+    "bitrate": "Bitrate",
+    "userLimit": "User limit",
+    "color": "Colour",
+    "hoist": "Displayed separately",
+    "mentionable": "Mentionable",
+    "icon": "Icon",
+    "banner": "Banner",
+    "vanity": "Vanity link",
+    "verificationLevel": "Verification level",
+    "owner": "Owner",
+    "afkChannel": "AFK channel",
+    "systemChannel": "System channel"
+  },
+  "channelTypes": {
+    "GuildText": "text",
+    "GuildVoice": "voice",
+    "GuildCategory": "category",
+    "GuildAnnouncement": "announcement",
+    "GuildStageVoice": "stage",
+    "GuildForum": "forum",
+    "GuildMedia": "media",
+    "PublicThread": "public thread",
+    "PrivateThread": "private thread",
+    "AnnouncementThread": "announcement thread",
+    "Other": "other"
+  }
+}

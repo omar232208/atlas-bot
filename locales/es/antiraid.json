@@ -1,0 +1,189 @@
+{
+  "commands": {
+    "antiraid": {
+      "description": "Configurar la protección antirraid",
+      "options": {
+        "status": { "description": "Mostrar los ajustes antirraid" },
+        "enable": { "description": "Activar la protección antirraid" },
+        "disable": { "description": "Desactivar la protección antirraid" },
+        "set": {
+          "description": "Cambiar los ajustes antirraid",
+          "options": {
+            "join_threshold": "Número de entradas que activa el modo raid",
+            "join_window": "Ventana de detección en segundos",
+            "raid_action": { "description": "Sanción a quienes entran durante el modo raid", "choices": { "kick": "Expulsar", "ban": "Banear", "timeout": "Aislar temporalmente" } },
+            "timeout_minutes": "Duración del aislamiento en minutos",
+            "raid_duration": "Duración del modo raid en minutos",
+            "punish_burst": "Sancionar también las entradas que activaron la detección",
+            "auto_lockdown": "Bloquear los canales cuando empieza un raid",
+            "min_account_age": "Antigüedad mínima de la cuenta (ej. 7d, 0 = desactivado)",
+            "no_avatar": "Filtrar cuentas sin avatar",
+            "filter_action": { "description": "Sanción a las cuentas filtradas", "choices": { "kick": "Expulsar", "ban": "Banear", "timeout": "Aislar temporalmente" } },
+            "anti_bot": "Expulsar bots añadidos por un miembro no autorizado",
+            "allow_verified_bots": "Dejar entrar a los bots verificados",
+            "bot_adder_action": { "description": "Sanción a quien añadió el bot", "choices": { "none": "Ninguna", "strip": "Quitarle los roles", "kick": "Expulsar", "ban": "Banear" } },
+            "dm_notice": "Enviar un mensaje privado antes de expulsar o banear"
+          }
+        }
+      }
+    },
+    "raidmode": {
+      "description": "Activar o desactivar el modo raid a mano",
+      "options": {
+        "on": { "description": "Activar el modo raid", "options": { "duration": "Duración (ej. 30m, 2h)" } },
+        "off": { "description": "Desactivar el modo raid" }
+      }
+    },
+    "lockdown": {
+      "description": "Bloquear o desbloquear todos los canales públicos",
+      "options": {
+        "start": { "description": "Bloquear todos los canales públicos", "options": { "reason": "Motivo mostrado en los registros", "announce": "Publicar un aviso en cada canal de texto bloqueado" } },
+        "end": { "description": "Restaurar los permisos de los canales como estaban" }
+      }
+    }
+  },
+  "perms": {
+    "ManageChannels": "Gestionar canales",
+    "ManageRoles": "Gestionar roles",
+    "BanMembers": "Banear miembros",
+    "KickMembers": "Expulsar miembros",
+    "ModerateMembers": "Aislar temporalmente a miembros"
+  },
+  "actions": {
+    "kick": "Expulsión",
+    "ban": "Baneo",
+    "timeout": "Aislamiento temporal",
+    "none": "Ninguna",
+    "strip": "Retirada de roles"
+  },
+  "reasons": {
+    "raid": "Antirraid: entrada durante un raid",
+    "accountAge": "Antirraid: cuenta demasiado reciente",
+    "noAvatar": "Antirraid: cuenta sin avatar",
+    "bot": "Antirraid: bot añadido sin autorización"
+  },
+  "dm": {
+    "title": "Mensaje de {server}",
+    "kick": "La protección del servidor te ha expulsado automáticamente ({reason}). Podrás volver un poco más tarde.",
+    "ban": "La protección del servidor te ha baneado automáticamente ({reason}). Contacta con el equipo si es un error."
+  },
+  "raid": {
+    "startTitle": "Modo raid activado",
+    "endTitle": "Modo raid terminado",
+    "detected": "{count} entradas en {seconds} segundos: raid detectado. Los nuevos miembros se sancionan automáticamente.",
+    "manual": "Modo raid activado por {user}. Los nuevos miembros se sancionan automáticamente.",
+    "onReply": "Modo raid activado durante {duration}. Sanción a quienes entran: {action}. Usa /raidmode off para pararlo antes.",
+    "ends": "Fin prevista",
+    "since": "Inicio",
+    "punished": "Entradas sancionadas",
+    "endedBy": "Modo raid detenido por {user}.",
+    "expired": "El modo raid ha llegado a su fin.",
+    "noLockdown": "No",
+    "auditReason": "Antirraid: modo raid",
+    "notActive": "El modo raid no está activo.",
+    "alreadyActive": "El modo raid ya está activo."
+  },
+  "filter": {
+    "title": "Entrada filtrada",
+    "description": "{user} ha sido sancionado al entrar.\nMotivo: {reason}\nSanción: {action}"
+  },
+  "bot": {
+    "title": "Bot no autorizado",
+    "description": "El bot {bot} fue añadido por {adder}, que no está en la lista blanca.",
+    "botField": "Bot",
+    "adderField": "Añadido por",
+    "kicked": "Expulsado",
+    "kickFailed": "No se pudo expulsar (permisos o jerarquía)",
+    "adderUnknown": "Desconocido (registro de auditoría no disponible)",
+    "adderNone": "Sin sanción",
+    "adderFailed": "No se pudo sancionar (permisos o jerarquía)"
+  },
+  "lockdown": {
+    "title": "Bloqueo",
+    "startTitle": "Servidor bloqueado",
+    "endTitle": "Bloqueo terminado",
+    "summary": "{locked} canales bloqueados, {failed} fallos.",
+    "endHint": "Usa /lockdown end para dejarlo todo como estaba.",
+    "endSummary": "{restored} canales restaurados, {failed} fallos, {missing} canales eliminados mientras tanto.",
+    "startLog": "Bloqueo iniciado por {user}.\nMotivo: {reason}\n{locked} canales bloqueados, {failed} fallos.",
+    "endLog": "Bloqueo levantado por {user}. {restored} canales restaurados, {failed} fallos.",
+    "noticeTitle": "Canal bloqueado",
+    "notice": "El equipo ha bloqueado el servidor temporalmente. Gracias por tu paciencia.",
+    "noticeReason": "El equipo ha bloqueado el servidor temporalmente.\nMotivo: {reason}",
+    "auditStart": "Bloqueo por {user}",
+    "auditEnd": "Fin del bloqueo por {user}",
+    "auditDashboard": "Fin del bloqueo desde el panel",
+    "notActive": "No hay ningún bloqueo en curso.",
+    "alreadyActive": "Ya hay un bloqueo en curso. Usa /lockdown end para levantarlo."
+  },
+  "status": {
+    "title": "Protección antirraid",
+    "enabled": "La protección está activada.",
+    "disabled": "La protección está desactivada. El modo raid manual y el bloqueo siguen disponibles.",
+    "on": "Sí",
+    "off": "No",
+    "detection": "Detección",
+    "detectionValue": "{count} entradas en {seconds} s",
+    "raidAction": "Sanción en modo raid",
+    "raidDuration": "Duración del modo raid",
+    "punishBurst": "Sancionar la oleada",
+    "autoLockdown": "Bloqueo automático",
+    "dmNotice": "Mensaje privado",
+    "accountAge": "Antigüedad mínima",
+    "noAvatar": "Filtro sin avatar",
+    "filterAction": "Sanción de los filtros",
+    "antiBot": "Antibot",
+    "verifiedBots": "Bots verificados permitidos",
+    "botAdder": "Sanción a quien añade",
+    "raidMode": "Modo raid",
+    "raidActive": "Activo, termina {until}",
+    "lockActive": "Activo ({count} canales)"
+  },
+  "set": {
+    "enabled": "Antirraid activado",
+    "enabledHelp": "Las entradas están vigiladas. Revisa los ajustes con /antiraid status.",
+    "disabled": "Antirraid desactivado",
+    "disabledHelp": "Ya no hay detección automática. El modo raid manual sigue siendo posible.",
+    "saved": "Ajustes guardados",
+    "nothing": "No se ha indicado ningún ajuste."
+  },
+  "errors": {
+    "badDuration": "Duración no válida",
+    "badDurationHelp": "Ejemplos válidos: 30m, 2h, 7d, 1w. Pon 0 para desactivar.",
+    "missingPerms": "Falta un permiso",
+    "missingPermsHelp": "Me falta: {perms}. Dame estos permisos en los ajustes del servidor."
+  },
+  "dashboard": {
+    "detection": { "title": "Detección de raids", "description": "Detecta oleadas de entradas y activa el modo raid." },
+    "filters": { "title": "Filtros de entrada", "description": "Aparta las cuentas sospechosas incluso fuera de un raid." },
+    "bots": { "title": "Protección contra bots", "description": "Impide que miembros no autorizados añadan bots." },
+    "fields": {
+      "enabled": { "label": "Protección activada", "help": "Activa la detección, los filtros y el antibot." },
+      "joinThreshold": { "label": "Umbral de entradas", "help": "Número de entradas en la ventana que activa el modo raid." },
+      "joinWindowSec": { "label": "Ventana de detección (segundos)", "help": "Periodo en el que se cuentan las entradas." },
+      "raidAction": { "label": "Sanción en modo raid", "help": "Se aplica a cada nuevo miembro mientras dura el modo raid." },
+      "timeoutMinutes": { "label": "Duración del aislamiento (minutos)", "help": "Se usa cuando la sanción es un aislamiento temporal." },
+      "raidDurationMin": { "label": "Duración del modo raid (minutos)", "help": "El modo raid se detiene solo tras este plazo." },
+      "punishBurst": { "label": "Sancionar la oleada", "help": "Sanciona también las cuentas que entraron justo antes de la detección." },
+      "autoLockdown": { "label": "Bloqueo automático", "help": "Bloquea los canales públicos durante el raid y luego los restaura." },
+      "dmNotice": { "label": "Mensaje privado antes de sancionar", "help": "Explica a la persona por qué se la expulsa o banea." },
+      "minAccountAgeMs": { "label": "Antigüedad mínima de la cuenta", "help": "Las cuentas más recientes se sancionan al entrar. 0 para desactivar." },
+      "noAvatar": { "label": "Filtrar cuentas sin avatar", "help": "Muchas cuentas de raid no tienen avatar." },
+      "filterAction": { "label": "Sanción de los filtros", "help": "Se aplica a las cuentas demasiado recientes o sin avatar." },
+      "antiBot": { "label": "Antibot", "help": "Expulsa un bot añadido por alguien que no está en la lista blanca." },
+      "allowVerifiedBots": { "label": "Permitir bots verificados", "help": "Los bots verificados por Discord pueden entrar sin control." },
+      "botAdderAction": { "label": "Sanción a quien añade", "help": "Lo que le pasa a la persona que añadió el bot." }
+    },
+    "actions": {
+      "raidOn": "Activar el modo raid",
+      "raidOff": "Detener el modo raid",
+      "lockdownEnd": "Levantar el bloqueo"
+    },
+    "results": {
+      "raidOn": "Modo raid activado.",
+      "raidOff": "Modo raid detenido.",
+      "lockdownEnd": "Bloqueo levantado, permisos restaurados.",
+      "lockdownPartial": "Bloqueo levantado en parte: algunos canales no se pudieron restaurar, inténtalo de nuevo."
+    }
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "commands": {
+    "ticket": {
+      "description": "Sistema de tickets: panel, gestión y configuración",
+      "options": {
+        "panel": {
+          "description": "Publicar el panel para abrir tickets",
+          "options": {
+            "channel": "Canal donde publicar el panel (por defecto: este)",
+            "title": "Título del panel",
+            "description": "Texto del panel"
+          }
+        },
+        "close": { "description": "Cerrar el ticket de este canal", "options": { "reason": "Motivo del cierre" } },
+        "add": { "description": "Añadir un miembro a este ticket", "options": { "user": "Miembro que añadir" } },
+        "remove": { "description": "Quitar un miembro de este ticket", "options": { "user": "Miembro que quitar" } },
+        "claim": { "description": "Encargarse de este ticket (o liberarlo)" },
+        "rename": { "description": "Renombrar el canal del ticket", "options": { "name": "Nuevo nombre" } },
+        "transcript": { "description": "Recibir la transcripción de este ticket en privado" },
+        "config": {
+          "description": "Configurar los tickets",
+          "options": {
+            "show": { "description": "Mostrar la configuración y las estadísticas" },
+            "staff": {
+              "description": "Añadir o quitar un rol del equipo",
+              "options": {
+                "role": "Rol del equipo",
+                "action": { "description": "Añadir o quitar", "choices": { "add": "Añadir", "remove": "Quitar" } }
+              }
+            },
+            "logs": { "description": "Canal de registros y transcripciones", "options": { "channel": "Canal (vacío para desactivar)" } },
+            "parent": { "description": "Categoría de Discord donde crear los tickets", "options": { "category": "Categoría (vacío para ninguna)" } },
+            "limit": { "description": "Máximo de tickets abiertos por miembro", "options": { "max": "Máximo (1 a 10)" } },
+            "options": {
+              "description": "Opciones del sistema de tickets",
+              "options": {
+                "ratings": "Pedir una valoración tras el cierre",
+                "dm_transcript": "Enviar la transcripción por MD al autor",
+                "ask_reason": "Pedir el motivo antes de abrir",
+                "owner_close": "El autor puede cerrar su ticket",
+                "name_format": "Formato del nombre: {number}, {user}, {category}",
+                "welcome_message": "Mensaje de bienvenida ({user}), \"-\" para el predeterminado"
+              }
+            }
+          }
+        },
+        "category": {
+          "description": "Gestionar las categorías de tickets",
+          "options": {
+            "add": {
+              "description": "Añadir una categoría",
+              "options": {
+                "name": "Nombre de la categoría",
+                "description": "Descripción breve",
+                "emoji": "Emoji que se muestra en el menú",
+                "parent": "Categoría de Discord dedicada",
+                "staff_role": "Rol del equipo dedicado"
+              }
+            },
+            "remove": { "description": "Eliminar una categoría", "options": { "name": "Categoría que eliminar" } },
+            "list": { "description": "Listar las categorías" }
+          }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "No se puede hacer",
+    "discordPermission": "Discord rechazó la acción: comprueba que mi rol está bastante alto y que tengo los permisos necesarios en este canal.",
+    "unexpected": "Ha ocurrido un error inesperado. Inténtalo de nuevo en un momento.",
+    "botMissing": "Me faltan estos permisos: {perms}.",
+    "categoryGone": "Esta categoría ya no existe. Pide al equipo que vuelva a publicar el panel.",
+    "tooMany": "Ya tienes {max} ticket(s) abierto(s): {channels}",
+    "notTicket": "Este canal no es un ticket.",
+    "alreadyClosed": "Este ticket ya está cerrado.",
+    "alreadyOpen": "Este ticket ya está abierto.",
+    "notAllowedClose": "Solo el equipo puede cerrar este ticket.",
+    "staffOnly": "Esta acción está reservada al equipo.",
+    "claimedByOther": "{user} ya se encarga de este ticket.",
+    "notSelf": "Ya formo parte del ticket.",
+    "cannotRemoveOwner": "No se puede quitar al autor del ticket.",
+    "alreadyIn": "{user} ya tiene acceso a este ticket.",
+    "notIn": "{user} no fue añadido a este ticket.",
+    "ratingExpired": "Esta solicitud de valoración ya no es válida.",
+    "manageGuild": "Necesitas el permiso Gestionar servidor.",
+    "everyoneRole": "El rol @everyone no puede ser un rol del equipo.",
+    "nothingChanged": "No se indicó ninguna opción: no ha cambiado nada.",
+    "tooManyCategories": "Máximo {max} categorías (límite de un menú de Discord).",
+    "categoryExists": "La categoría «{name}» ya existe.",
+    "badEmoji": "Emoji no válido: usa un emoji estándar o uno de este servidor.",
+    "categoryUnknown": "No hay ninguna categoría «{name}»."
+  },
+  "panel": {
+    "defaultTitle": "¿Necesitas ayuda?",
+    "defaultDescription": "Haz clic abajo para abrir un ticket privado con el equipo.",
+    "button": "Abrir un ticket",
+    "select": "Elige el tema de tu solicitud",
+    "postedTitle": "Panel publicado",
+    "posted": "El panel de tickets está activo en {channel}."
+  },
+  "modal": {
+    "title": "Abrir un ticket",
+    "label": "¿Cuál es tu solicitud?",
+    "placeholder": "Describe tu problema en pocas frases"
+  },
+  "channel": {
+    "topic": "Ticket n.º {number} de {user} ({id})",
+    "auditReason": "Ticket abierto por {user}"
+  },
+  "welcome": {
+    "title": "Ticket n.º {number}",
+    "description": "Gracias por abrir un ticket. Describe tu solicitud y un miembro del equipo te responderá.",
+    "owner": "Autor",
+    "category": "Categoría",
+    "reason": "Motivo"
+  },
+  "buttons": {
+    "close": "Cerrar",
+    "claim": "Encargarse",
+    "reopen": "Reabrir",
+    "transcript": "Transcripción",
+    "delete": "Eliminar",
+    "confirmClose": "Sí, cerrar",
+    "cancel": "Cancelar"
+  },
+  "open": { "title": "Ticket abierto", "done": "Tu ticket está listo: {channel}" },
+  "close": {
+    "confirmTitle": "¿Cerrar el ticket?",
+    "confirm": "El canal se ocultará al autor y se guardará una transcripción.",
+    "cancelled": "Cierre cancelado.",
+    "auditReason": "Ticket cerrado",
+    "closedTitle": "Ticket cerrado",
+    "closed": "Cerrado por {user}.\nMotivo: {reason}",
+    "doneTitle": "Ticket cerrado",
+    "done": "El ticket está cerrado y su transcripción guardada."
+  },
+  "reopen": { "title": "Ticket reabierto", "done": "Reabierto por {user}.", "ok": "El ticket vuelve a estar accesible." },
+  "delete": { "title": "Eliminación", "soon": "Este canal se eliminará en {seconds} segundos.", "auditReason": "Ticket eliminado por {user}" },
+  "claim": {
+    "title": "Encargado",
+    "claimed": "{user} se encarga de este ticket.",
+    "released": "{user} ha liberado este ticket.",
+    "claimedSelf": "Te encargas de este ticket.",
+    "releasedSelf": "Has liberado este ticket."
+  },
+  "members": { "title": "Miembros del ticket", "added": "{by} ha añadido a {user}.", "removed": "{by} ha quitado a {user}." },
+  "rename": { "title": "Ticket renombrado", "done": "Nuevo nombre: {name}" },
+  "transcript": {
+    "title": "Transcripción del ticket",
+    "server": "Servidor",
+    "channel": "Canal",
+    "opened": "Abierto el",
+    "closed": "Cerrado el",
+    "owner": "Autor",
+    "category": "Categoría",
+    "claimed": "Encargado",
+    "reason": "Motivo",
+    "messages": "Mensajes",
+    "attachment": "Archivo adjunto",
+    "embed": "Inserción",
+    "none": "Ninguno",
+    "readyTitle": "Transcripción",
+    "ready": "Esta es la transcripción actual del ticket."
+  },
+  "dm": {
+    "title": "Ticket cerrado",
+    "closed": "Tu ticket n.º {number} en **{server}** ha sido cerrado.\nMotivo: {reason}",
+    "rate": "¿Qué tal fue? Valora tu experiencia de 1 a 5 estrellas."
+  },
+  "rating": { "thanksTitle": "Gracias", "thanks": "Tu valoración ({stars}) se ha guardado." },
+  "log": {
+    "openedTitle": "Ticket abierto",
+    "opened": "{user} abrió el ticket n.º {number}: {channel}",
+    "closedTitle": "Ticket n.º {number} cerrado",
+    "closedBy": "Cerrado por",
+    "claimedBy": "Encargado",
+    "deletedTitle": "Ticket eliminado",
+    "deleted": "{user} eliminó el ticket n.º {number}.",
+    "ratedTitle": "Nueva valoración",
+    "rated": "{user} valoró el ticket n.º {number}: {stars}"
+  },
+  "config": {
+    "title": "Configuración de tickets",
+    "yes": "Sí",
+    "no": "No",
+    "fields": {
+      "staff": "Roles del equipo",
+      "logs": "Canal de registros",
+      "parent": "Categoría de Discord",
+      "limit": "Tickets máx. por miembro",
+      "ratings": "Valoraciones",
+      "dmTranscript": "Transcripción por MD",
+      "askReason": "Motivo solicitado",
+      "ownerClose": "El autor puede cerrar",
+      "nameFormat": "Formato del nombre",
+      "categories": "Categorías",
+      "stats": "Estadísticas"
+    },
+    "statsValue": "{open} abierto(s) ahora, {opened} abierto(s) en total, {closed} cerrado(s). Valoración media: {avg} ({count} opiniones).",
+    "staffAdded": "{role} forma parte ahora del equipo de tickets.",
+    "staffRemoved": "{role} ya no forma parte del equipo de tickets.",
+    "logsSet": "Los registros y transcripciones irán a {channel}.",
+    "logsCleared": "Canal de registros quitado: se usará el canal de registros general si existe.",
+    "parentSet": "Los tickets se crearán en la categoría {category}.",
+    "parentCleared": "Los tickets se crearán fuera de cualquier categoría.",
+    "limitSet": "Cada miembro puede tener {max} ticket(s) abierto(s).",
+    "optionsSaved": "{count} opción(es) guardada(s)."
+  },
+  "category": {
+    "title": "Categorías",
+    "listTitle": "Categorías de tickets",
+    "empty": "Sin categorías: el panel muestra un solo botón.",
+    "added": "Categoría «{name}» añadida. Vuelve a publicar el panel para mostrarla.",
+    "removed": "Categoría «{name}» eliminada. Vuelve a publicar el panel para quitarla."
+  },
+  "dashboard": {
+    "general": { "title": "Tickets", "description": "Equipo, canales y límites del sistema de tickets." },
+    "behaviour": { "title": "Comportamiento" },
+    "fields": {
+      "staffRoleIds": "Roles del equipo",
+      "logChannelId": "Canal de registros",
+      "parentId": "Categoría de Discord de los tickets",
+      "maxOpen": "Máx. de tickets abiertos por miembro",
+      "nameFormat": "Formato del nombre de los canales",
+      "askReason": "Pedir el motivo al abrir",
+      "ownerCanClose": "El autor puede cerrar su ticket",
+      "dmTranscript": "Transcripción enviada por MD",
+      "ratings": "Valoraciones tras el cierre",
+      "welcomeMessage": "Mensaje de bienvenida"
+    },
+    "help": {
+      "staffRoleIds": "Estos roles ven todos los tickets y pueden gestionarlos.",
+      "logChannelId": "Recibe aperturas, cierres, valoraciones y transcripciones .txt.",
+      "parentId": "Déjalo vacío para crear los tickets fuera de cualquier categoría.",
+      "nameFormat": "Variables: {number}, {user}, {category}.",
+      "ratings": "El autor recibe por MD botones de 1 a 5 estrellas.",
+      "welcomeMessage": "Vacío para el mensaje predeterminado. Variable: {user}."
+    },
+    "actions": { "resetStats": "Reiniciar las estadísticas", "resetStatsDone": "Estadísticas y valoraciones borradas." }
+  }
+}

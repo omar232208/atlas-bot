@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "Copias de seguridad del servidor (roles, canales, ajustes)",
+      "options": {
+        "create": { "description": "Hacer una copia del servidor ahora", "options": { "name": "Nombre de la copia" } },
+        "list": { "description": "Listar las copias" },
+        "info": { "description": "Detalles de una copia", "options": { "id": "Copia" } },
+        "load": {
+          "description": "Restaurar una copia en este servidor",
+          "options": {
+            "id": "Copia",
+            "mode": { "description": "Reemplazar todo o completar lo existente", "choices": { "replace": "Reemplazar", "merge": "Fusionar" } }
+          }
+        },
+        "delete": { "description": "Eliminar una copia", "options": { "id": "Copia" } },
+        "auto": {
+          "description": "Copias automáticas",
+          "options": { "interval": "Intervalo (p. ej. 1d, 12h) u \"off\"", "keep": "Número de copias automáticas conservadas" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "No se puede hacer",
+    "ownerOnly": "Solo el propietario del servidor (o un propietario del bot) puede gestionar las copias.",
+    "corrupted": "Esta copia no se puede leer o tiene un formato desconocido.",
+    "loading": "Ya hay una restauración en curso en este servidor.",
+    "botMissing": "Me faltan estos permisos: {perms}.",
+    "badInterval": "Intervalo no válido: entre 6 horas y 30 días (p. ej. 12h, 1d, 1w), u \"off\".",
+    "unknown": "Copia no encontrada."
+  },
+  "info": {
+    "id": "ID",
+    "server": "Servidor",
+    "created": "Creada el",
+    "author": "Autor",
+    "type": "Tipo",
+    "auto": "Automática",
+    "manual": "Manual",
+    "size": "Tamaño",
+    "content": "Contenido",
+    "contentValue": "{roles} rol(es), {categories} categoría(s), {text} canal(es) de texto, {voice} canal(es) de voz"
+  },
+  "log": {
+    "createdTitle": "Copia creada",
+    "created": "{user} creó la copia `{id}`.",
+    "loadedTitle": "Copia restaurada",
+    "loaded": "{user} restauró la copia `{id}` (modo {mode})."
+  },
+  "create": { "title": "Copia creada", "done": "Copia `{id}` guardada." },
+  "load": {
+    "confirmTitle": "¿Restaurar la copia?",
+    "confirm": {
+      "replace": "La copia `{id}` ({server}) va a **reemplazar** este servidor: se eliminarán todos los canales (salvo este) y los roles que puedo gestionar, y luego se recrearán {roles} rol(es), {categories} categoría(s), {text} canal(es) de texto y {voice} de voz. Antes se guarda el estado actual.",
+      "merge": "La copia `{id}` ({server}) se va a **fusionar**: los roles y canales con el mismo nombre se actualizan y los demás se crean ({roles} rol(es), {categories} categoría(s), {text} canal(es) de texto, {voice} de voz). No se elimina nada."
+    },
+    "safetyName": "Antes de restaurar",
+    "auditReason": "Restauración de la copia {id} por {user}",
+    "progressTitle": "Restaurando",
+    "progress": "{phase}: {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "Eliminando lo existente",
+      "settings": "Ajustes del servidor",
+      "roles": "Roles",
+      "channels": "Canales",
+      "finish": "Finalizando"
+    },
+    "result": "Roles: {rolesCreated} creado(s), {rolesUpdated} actualizado(s).\nCanales: {channelsCreated} creado(s), {channelsUpdated} actualizado(s).\nEliminados: {deleted}. Fallos: {errors}.",
+    "safety": "El estado anterior se guardó como `{id}`.",
+    "doneTitle": "Restauración terminada"
+  },
+  "auto": {
+    "title": "Copias automáticas",
+    "disabled": "Copias automáticas desactivadas.",
+    "enabled": "Se hará una copia automática cada {interval}; se conservan las {keep} más recientes.",
+    "name": "Automática"
+  },
+  "list": {
+    "title": "Copias de seguridad",
+    "empty": "No hay copias. Crea una con /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "Sin nombre",
+    "autoTag": "(auto)"
+  },
+  "delete": { "confirm": "¿Eliminar definitivamente la copia `{id}`?", "title": "Copia eliminada", "done": "La copia `{id}` se ha eliminado." },
+  "dashboard": {
+    "general": { "title": "Copias de seguridad", "description": "Límites y copias automáticas del servidor." },
+    "fields": {
+      "maxBackups": "Copias manuales conservadas",
+      "autoInterval": "Intervalo de las copias automáticas",
+      "autoKeep": "Copias automáticas conservadas"
+    },
+    "help": {
+      "maxBackups": "Por encima, se eliminan las más antiguas.",
+      "autoInterval": "0 para desactivar. Mínimo 6 horas, máximo 30 días."
+    },
+    "actions": {
+      "createNow": "Crear una copia ahora",
+      "createNowDone": "Copia creada.",
+      "ownerOnly": "Solo el propietario del servidor puede crear una copia."
+    }
+  }
+}

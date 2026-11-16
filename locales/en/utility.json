@@ -1,0 +1,261 @@
+{
+  "commands": {
+    "info": {
+      "description": "Information about members, roles, channels and the server",
+      "options": {
+        "user": {
+          "description": "Show information about a member",
+          "options": {
+            "user": "The member to inspect (you by default)"
+          }
+        },
+        "server": {
+          "description": "Show information about this server"
+        },
+        "avatar": {
+          "description": "Show a member's avatar at full size",
+          "options": {
+            "user": "The member (you by default)"
+          }
+        },
+        "role": {
+          "description": "Show information about a role",
+          "options": {
+            "role": "The role to inspect"
+          }
+        },
+        "channel": {
+          "description": "Show information about a channel",
+          "options": {
+            "channel": "The channel (this one by default)"
+          }
+        },
+        "members": {
+          "description": "Count the members of this server"
+        },
+        "invites": {
+          "description": "Leaderboard of the members who invited the most people",
+          "options": {
+            "user": "Show this member's count too"
+          }
+        }
+      }
+    },
+    "poll": {
+      "description": "Start a poll with buttons and live counts",
+      "options": {
+        "question": "The question",
+        "options": "Options separated by | (2 to 5)",
+        "duration": "How long it stays open, e.g. 30m, 2h, 1d (max 7d, default 1d)"
+      }
+    },
+    "remind": {
+      "description": "Be reminded of something later",
+      "options": {
+        "delay": "When, e.g. 10m, 2h30m or 3d",
+        "text": "What to remind you of"
+      }
+    },
+    "say": {
+      "description": "Make the bot post a message",
+      "options": {
+        "message": "The message to post (mentions are disabled)",
+        "channel": "Channel to post in (this one by default)"
+      }
+    },
+    "embed": {
+      "description": "Write and post an embed with a form",
+      "options": {
+        "channel": "Channel to post in (this one by default)"
+      }
+    },
+    "snipe": {
+      "description": "Read messages deleted recently (off by default)",
+      "options": {
+        "show": {
+          "description": "Show a recently deleted message",
+          "options": {
+            "channel": "Channel to look in (this one by default)",
+            "index": "1 = most recent"
+          }
+        },
+        "enable": {
+          "description": "Keep deleted messages for /snipe (Manage Server)"
+        },
+        "disable": {
+          "description": "Stop keeping deleted messages (Manage Server)"
+        }
+      }
+    }
+  },
+  "userinfo": {
+    "title": "User: {name}",
+    "id": "ID",
+    "type": "Type",
+    "bot": "Bot",
+    "human": "Human",
+    "created": "Account created",
+    "joined": "Joined the server",
+    "topRole": "Top role",
+    "roles": "Roles ({count})",
+    "none": "None",
+    "notMember": "Not a member of this server"
+  },
+  "serverinfo": {
+    "title": "Server: {name}",
+    "id": "ID",
+    "owner": "Owner",
+    "created": "Created",
+    "members": "Members",
+    "humans": "Humans (cached)",
+    "bots": "Bots (cached)",
+    "channels": "Channels",
+    "roles": "Roles",
+    "boosts": "Boosts",
+    "boostLevel": "Level {level}",
+    "verification": "Verification",
+    "verificationLevels": {
+      "0": "None",
+      "1": "Low",
+      "2": "Medium",
+      "3": "High",
+      "4": "Very high"
+    }
+  },
+  "avatar": {
+    "title": "Avatar of {name}",
+    "open": "Open the full image"
+  },
+  "roleinfo": {
+    "title": "Role: {name}",
+    "id": "ID",
+    "color": "Colour",
+    "position": "Position",
+    "members": "Members (cached)",
+    "mentionable": "Mentionable",
+    "hoisted": "Shown separately",
+    "admin": "Administrator",
+    "permissions": "Permissions granted",
+    "created": "Created",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "channelinfo": {
+    "title": "Channel: {name}",
+    "id": "ID",
+    "type": "Type",
+    "types": {
+      "text": "Text",
+      "voice": "Voice",
+      "category": "Category",
+      "announcement": "Announcement",
+      "forum": "Forum",
+      "stage": "Stage",
+      "thread": "Thread",
+      "other": "Other"
+    },
+    "category": "Category",
+    "position": "Position",
+    "created": "Created",
+    "nsfw": "NSFW",
+    "slowmode": "Slowmode",
+    "seconds": "{count} s",
+    "topic": "Topic",
+    "yes": "Yes",
+    "no": "No",
+    "none": "None"
+  },
+  "membercount": {
+    "title": "Members of {name}",
+    "total": "Total",
+    "humans": "Humans",
+    "bots": "Bots",
+    "partial": "Humans and bots are counted from the members the bot has cached, so they may be below the total."
+  },
+  "invites": {
+    "title": "Invite leaderboard",
+    "empty": "No invite link has been used yet.",
+    "entry": "{rank}. {user}: **{count}** invite(s)",
+    "yours": "{user} brought **{count}** member(s) with the active links."
+  },
+  "poll": {
+    "ends": "Ends <t:{unix}:R>",
+    "noVotes": "nobody voted",
+    "tie": "tie",
+    "winner": "leading option: {option}",
+    "results": "Result",
+    "totalVotes": "Total votes: {total}",
+    "recorded": "Vote recorded",
+    "yourChoice": "You voted for **{option}**. Click another option to change your vote."
+  },
+  "remind": {
+    "title": "Reminder set",
+    "set": "I will remind you <t:{when}:R>: {text}",
+    "reminderTitle": "Reminder",
+    "ping": "{user}, here is your reminder."
+  },
+  "say": {
+    "title": "Message posted",
+    "sent": "Message posted in {channel}."
+  },
+  "embed": {
+    "modalTitle": "Build an embed",
+    "fields": {
+      "title": "Title",
+      "description": "Description",
+      "color": "Colour (hex, e.g. #3b6fd4)",
+      "footer": "Footer",
+      "image": "Image link (https://)"
+    },
+    "title": "Embed posted",
+    "sent": "Embed posted in {channel}."
+  },
+  "snipe": {
+    "title": "Deleted message",
+    "author": "Author",
+    "when": "Deleted",
+    "attachments": "Attachments ({count})",
+    "noText": "(no text)",
+    "none": "No deleted message in the last 10 minutes.",
+    "off": "Snipe is off on this server. Turn it on with /snipe enable.",
+    "enabled": "Snipe is on: deleted messages are kept in memory for 10 minutes.",
+    "disabled": "Snipe is off. Deleted messages are no longer kept.",
+    "position": "Message {index}/{total} in #{channel}"
+  },
+  "errors": {
+    "missingBotPerm": "I need the permission **{perm}** to do that.",
+    "missingUserPerm": "You need the permission **{perm}** to do that.",
+    "permSendMessages": "Send Messages",
+    "permEmbedLinks": "Embed Links",
+    "permManageGuild": "Manage Server",
+    "inviteFetch": "I could not read the invite links of this server.",
+    "pollClosed": "This poll is closed.",
+    "pollDuplicate": "Two options are identical.",
+    "pollOptionLong": "Each option can have at most {max} characters.",
+    "pollOptions": "Give between 2 and {max} options, separated by |.",
+    "pollTooLong": "A poll can last at most 7 days.",
+    "invalidDuration": "Invalid duration. Examples: 10m, 2h30m, 1d.",
+    "remindTooLong": "A reminder can be set at most {max} days ahead.",
+    "embedEmpty": "The embed needs a title or a description.",
+    "invalidColor": "Invalid colour. Use #RRGGBB.",
+    "invalidUrl": "Invalid image link. It must start with https://."
+  },
+  "dashboard": {
+    "snipe": {
+      "title": "Deleted messages (/snipe)",
+      "description": "Deleted messages are kept in memory for 10 minutes so moderators can read them.",
+      "enabled": {
+        "label": "Keep deleted messages",
+        "help": "Off by default for privacy. When off, nothing is kept."
+      }
+    },
+    "remind": {
+      "title": "Reminders",
+      "description": "How far ahead a reminder can be set.",
+      "maxDays": {
+        "label": "Maximum reminder delay (days)",
+        "help": "Reminders beyond this delay are refused."
+      }
+    }
+  }
+}

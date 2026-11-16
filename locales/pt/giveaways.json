@@ -1,0 +1,122 @@
+{
+  "errors": {
+    "title": "Erro",
+    "adminOnly": "Esta ação precisa da permissão Gerir servidor.",
+    "badDuration": "Duração inválida. Exemplos: 30m, 2h, 1d 12h.",
+    "tooShort": "A duração mínima é de um minuto.",
+    "tooLong": "A duração máxima é de {max} dias.",
+    "notFound": "Este sorteio não existe.",
+    "notActive": "Este sorteio já não está ativo.",
+    "notEnded": "Só se pode voltar a sortear um sorteio terminado.",
+    "noAlternative": "Não há mais ninguém para sortear.",
+    "botMissing": "Falta-me uma permissão nesse canal: {perms}.",
+    "postFailed": "Não consegui publicar o sorteio nesse canal."
+  },
+  "start": {
+    "title": "Sorteio iniciado",
+    "done": "O sorteio está publicado ({link}). Termina {time}. Identificador: `{id}`."
+  },
+  "end": {
+    "title": "Sorteio terminado",
+    "done": "\"{prize}\" terminou. Os vencedores foram anunciados."
+  },
+  "reroll": {
+    "title": "Novo sorteio",
+    "done": "Novos vencedores: {winners}"
+  },
+  "cancel": {
+    "title": "Sorteio cancelado",
+    "done": "\"{prize}\" foi cancelado. Ninguém ganha."
+  },
+  "list": {
+    "title": "Sorteios",
+    "empty": "Não há sorteios neste servidor.",
+    "entries": "{count} participante(s)"
+  },
+  "status": {
+    "active": "a decorrer",
+    "ended": "terminado",
+    "cancelled": "cancelado"
+  },
+  "embed": {
+    "host": "Organizado por",
+    "winners": "Vencedores",
+    "entries": "Participantes",
+    "requirements": "Requisitos",
+    "requireRole": "Ter o cargo {role}",
+    "requireAge": "Conta com pelo menos {days} dia(s)",
+    "instructions": "Carrega no botão para participar. Carrega outra vez para sair.",
+    "ends": "Termina {time}",
+    "ended": "Vencedor(es): {winners}",
+    "cancelled": "Este sorteio foi cancelado."
+  },
+  "buttons": {
+    "enter": "Participar ({count})",
+    "over": "Sorteio terminado"
+  },
+  "entry": {
+    "joined": "Já estás a participar no sorteio. Boa sorte!",
+    "left": "Já não participas neste sorteio.",
+    "needRole": "Precisas do cargo {role} para participar.",
+    "needAge": "A tua conta tem de ter pelo menos {days} dia(s) para participar."
+  },
+  "ended": {
+    "announce": "Parabéns por \"{prize}\": {winners}!",
+    "noWinners": "Ninguém participou em \"{prize}\".",
+    "dmTitle": "Ganhaste!",
+    "dm": "Ganhaste \"{prize}\" no servidor. Contacta os organizadores para receber o prémio."
+  },
+  "dashboard": {
+    "general": {
+      "title": "Sorteios",
+      "description": "Regras aplicadas a todos os sorteios do servidor.",
+      "maxDays": {
+        "label": "Duração máxima (dias)",
+        "help": "Um sorteio não pode durar mais do que isto."
+      },
+      "dmWinners": {
+        "label": "Avisar os vencedores por mensagem privada",
+        "help": "Envia também uma mensagem privada a cada vencedor no fim."
+      }
+    }
+  },
+  "commands": {
+    "giveaway": {
+      "description": "Organizar sorteios",
+      "options": {
+        "start": {
+          "description": "Inicia um sorteio",
+          "options": {
+            "prize": "O que se sorteia",
+            "duration": "Duração, ex. 1h ou 2d 4h",
+            "winners": "Número de vencedores",
+            "channel": "Canal do sorteio",
+            "role": "Cargo necessário para participar",
+            "min_account_days": "Idade mínima da conta (dias)"
+          }
+        },
+        "end": {
+          "description": "Termina um sorteio agora e escolhe os vencedores",
+          "options": {
+            "id": "Sorteio"
+          }
+        },
+        "reroll": {
+          "description": "Escolhe novos vencedores de um sorteio terminado",
+          "options": {
+            "id": "Sorteio"
+          }
+        },
+        "cancel": {
+          "description": "Cancela um sorteio sem vencedores",
+          "options": {
+            "id": "Sorteio"
+          }
+        },
+        "list": {
+          "description": "Lista os sorteios recentes"
+        }
+      }
+    }
+  }
+}

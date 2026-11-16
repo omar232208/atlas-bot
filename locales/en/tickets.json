@@ -1,0 +1,241 @@
+{
+  "commands": {
+    "ticket": {
+      "description": "Ticket system: panel, management and settings",
+      "options": {
+        "panel": {
+          "description": "Post the ticket opening panel",
+          "options": {
+            "channel": "Channel to post the panel in (default: this one)",
+            "title": "Panel title",
+            "description": "Panel text"
+          }
+        },
+        "close": { "description": "Close the ticket of this channel", "options": { "reason": "Reason for closing" } },
+        "add": { "description": "Add a member to this ticket", "options": { "user": "Member to add" } },
+        "remove": { "description": "Remove a member from this ticket", "options": { "user": "Member to remove" } },
+        "claim": { "description": "Claim this ticket (or release it)" },
+        "rename": { "description": "Rename the ticket channel", "options": { "name": "New name" } },
+        "transcript": { "description": "Get the transcript of this ticket privately" },
+        "config": {
+          "description": "Configure tickets",
+          "options": {
+            "show": { "description": "Show the settings and statistics" },
+            "staff": {
+              "description": "Add or remove a staff role",
+              "options": {
+                "role": "Staff role",
+                "action": { "description": "Add or remove", "choices": { "add": "Add", "remove": "Remove" } }
+              }
+            },
+            "logs": { "description": "Channel for logs and transcripts", "options": { "channel": "Channel (empty to disable)" } },
+            "parent": { "description": "Discord category where tickets are created", "options": { "category": "Category (empty for none)" } },
+            "limit": { "description": "Maximum open tickets per member", "options": { "max": "Maximum (1 to 10)" } },
+            "options": {
+              "description": "Ticket system options",
+              "options": {
+                "ratings": "Ask for a rating after closing",
+                "dm_transcript": "DM the transcript to the author",
+                "ask_reason": "Ask for a reason before opening",
+                "owner_close": "The author can close their ticket",
+                "name_format": "Name format: {number}, {user}, {category}",
+                "welcome_message": "Welcome message ({user}), \"-\" for the default"
+              }
+            }
+          }
+        },
+        "category": {
+          "description": "Manage ticket categories",
+          "options": {
+            "add": {
+              "description": "Add a category",
+              "options": {
+                "name": "Category name",
+                "description": "Short description",
+                "emoji": "Emoji shown in the menu",
+                "parent": "Dedicated Discord category",
+                "staff_role": "Dedicated staff role"
+              }
+            },
+            "remove": { "description": "Delete a category", "options": { "name": "Category to delete" } },
+            "list": { "description": "List categories" }
+          }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "Cannot do that",
+    "discordPermission": "Discord refused the action: check that my role is high enough and that I have the needed permissions in this channel.",
+    "unexpected": "Something unexpected went wrong. Please try again in a moment.",
+    "botMissing": "I am missing these permissions: {perms}.",
+    "categoryGone": "This category no longer exists. Ask the staff to post the panel again.",
+    "tooMany": "You already have {max} open ticket(s): {channels}",
+    "notTicket": "This channel is not a ticket.",
+    "alreadyClosed": "This ticket is already closed.",
+    "alreadyOpen": "This ticket is already open.",
+    "notAllowedClose": "Only staff can close this ticket.",
+    "staffOnly": "Only staff can do this.",
+    "claimedByOther": "This ticket is already claimed by {user}.",
+    "notSelf": "I am already part of the ticket.",
+    "cannotRemoveOwner": "The ticket author cannot be removed.",
+    "alreadyIn": "{user} already has access to this ticket.",
+    "notIn": "{user} was not added to this ticket.",
+    "ratingExpired": "This rating request is no longer valid.",
+    "manageGuild": "You need the Manage Server permission.",
+    "everyoneRole": "The @everyone role cannot be a staff role.",
+    "nothingChanged": "No option given: nothing changed.",
+    "tooManyCategories": "At most {max} categories (a Discord menu limit).",
+    "categoryExists": "The category \"{name}\" already exists.",
+    "badEmoji": "Invalid emoji: use a standard emoji or one from this server.",
+    "categoryUnknown": "No category \"{name}\"."
+  },
+  "panel": {
+    "defaultTitle": "Need help?",
+    "defaultDescription": "Click below to open a private ticket with the staff.",
+    "button": "Open a ticket",
+    "select": "Choose the topic of your request",
+    "postedTitle": "Panel posted",
+    "posted": "The ticket panel is live in {channel}."
+  },
+  "modal": {
+    "title": "Open a ticket",
+    "label": "What is your request?",
+    "placeholder": "Describe your issue in a few sentences"
+  },
+  "channel": {
+    "topic": "Ticket #{number} by {user} ({id})",
+    "auditReason": "Ticket opened by {user}"
+  },
+  "welcome": {
+    "title": "Ticket #{number}",
+    "description": "Thanks for opening a ticket. Describe your request and a staff member will answer you.",
+    "owner": "Author",
+    "category": "Category",
+    "reason": "Reason"
+  },
+  "buttons": {
+    "close": "Close",
+    "claim": "Claim",
+    "reopen": "Reopen",
+    "transcript": "Transcript",
+    "delete": "Delete",
+    "confirmClose": "Yes, close",
+    "cancel": "Cancel"
+  },
+  "open": { "title": "Ticket opened", "done": "Your ticket is ready: {channel}" },
+  "close": {
+    "confirmTitle": "Close the ticket?",
+    "confirm": "The channel will be hidden from the author and a transcript will be saved.",
+    "cancelled": "Closing cancelled.",
+    "auditReason": "Ticket closed",
+    "closedTitle": "Ticket closed",
+    "closed": "Closed by {user}.\nReason: {reason}",
+    "doneTitle": "Ticket closed",
+    "done": "The ticket is closed and its transcript saved."
+  },
+  "reopen": { "title": "Ticket reopened", "done": "Reopened by {user}.", "ok": "The ticket is accessible again." },
+  "delete": { "title": "Deleting", "soon": "This channel will be deleted in {seconds} seconds.", "auditReason": "Ticket deleted by {user}" },
+  "claim": {
+    "title": "Claim",
+    "claimed": "{user} is handling this ticket.",
+    "released": "{user} released this ticket.",
+    "claimedSelf": "You claimed this ticket.",
+    "releasedSelf": "You released this ticket."
+  },
+  "members": { "title": "Ticket members", "added": "{user} was added by {by}.", "removed": "{user} was removed by {by}." },
+  "rename": { "title": "Ticket renamed", "done": "New name: {name}" },
+  "transcript": {
+    "title": "Ticket transcript",
+    "server": "Server",
+    "channel": "Channel",
+    "opened": "Opened",
+    "closed": "Closed",
+    "owner": "Author",
+    "category": "Category",
+    "claimed": "Claimed by",
+    "reason": "Reason",
+    "messages": "Messages",
+    "attachment": "Attachment",
+    "embed": "Embed",
+    "none": "None",
+    "readyTitle": "Transcript",
+    "ready": "Here is the current transcript of the ticket."
+  },
+  "dm": {
+    "title": "Ticket closed",
+    "closed": "Your ticket #{number} on **{server}** was closed.\nReason: {reason}",
+    "rate": "How did it go? Rate your experience from 1 to 5 stars."
+  },
+  "rating": { "thanksTitle": "Thank you", "thanks": "Your rating ({stars}) has been saved." },
+  "log": {
+    "openedTitle": "Ticket opened",
+    "opened": "{user} opened ticket #{number}: {channel}",
+    "closedTitle": "Ticket #{number} closed",
+    "closedBy": "Closed by",
+    "claimedBy": "Claimed by",
+    "deletedTitle": "Ticket deleted",
+    "deleted": "Ticket #{number} was deleted by {user}.",
+    "ratedTitle": "New rating",
+    "rated": "{user} rated ticket #{number}: {stars}"
+  },
+  "config": {
+    "title": "Ticket settings",
+    "yes": "Yes",
+    "no": "No",
+    "fields": {
+      "staff": "Staff roles",
+      "logs": "Log channel",
+      "parent": "Discord category",
+      "limit": "Max tickets per member",
+      "ratings": "Ratings",
+      "dmTranscript": "Transcript by DM",
+      "askReason": "Reason asked",
+      "ownerClose": "Author can close",
+      "nameFormat": "Name format",
+      "categories": "Categories",
+      "stats": "Statistics"
+    },
+    "statsValue": "{open} open now, {opened} opened in total, {closed} closed. Average rating: {avg} ({count} reviews).",
+    "staffAdded": "{role} is now part of the ticket staff.",
+    "staffRemoved": "{role} is no longer part of the ticket staff.",
+    "logsSet": "Logs and transcripts will go to {channel}.",
+    "logsCleared": "Log channel removed: the general log channel will be used if there is one.",
+    "parentSet": "Tickets will be created in the {category} category.",
+    "parentCleared": "Tickets will be created outside any category.",
+    "limitSet": "Each member can have {max} open ticket(s).",
+    "optionsSaved": "{count} option(s) saved."
+  },
+  "category": {
+    "title": "Categories",
+    "listTitle": "Ticket categories",
+    "empty": "No category: the panel shows a single button.",
+    "added": "Category \"{name}\" added. Post the panel again to show it.",
+    "removed": "Category \"{name}\" deleted. Post the panel again to remove it."
+  },
+  "dashboard": {
+    "general": { "title": "Tickets", "description": "Staff, channels and limits of the ticket system." },
+    "behaviour": { "title": "Behaviour" },
+    "fields": {
+      "staffRoleIds": "Staff roles",
+      "logChannelId": "Log channel",
+      "parentId": "Discord category for tickets",
+      "maxOpen": "Max open tickets per member",
+      "nameFormat": "Channel name format",
+      "askReason": "Ask for a reason when opening",
+      "ownerCanClose": "The author can close their ticket",
+      "dmTranscript": "Transcript sent by DM",
+      "ratings": "Ratings after closing",
+      "welcomeMessage": "Welcome message"
+    },
+    "help": {
+      "staffRoleIds": "These roles see every ticket and can manage them.",
+      "logChannelId": "Receives openings, closings, ratings and .txt transcripts.",
+      "parentId": "Leave empty to create tickets outside any category.",
+      "nameFormat": "Variables: {number}, {user}, {category}.",
+      "ratings": "The author gets 1 to 5 star buttons by DM.",
+      "welcomeMessage": "Empty for the default message. Variable: {user}."
+    },
+    "actions": { "resetStats": "Reset statistics", "resetStatsDone": "Statistics and ratings cleared." }
+  }
+}

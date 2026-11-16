@@ -1,0 +1,246 @@
+{
+  "commands": {
+    "8ball": {
+      "description": "Ask the magic 8-ball a question",
+      "options": {
+        "question": "The question to ask"
+      }
+    },
+    "dice": {
+      "description": "Roll one or more dice",
+      "options": {
+        "sides": "Number of faces per die (2 to 1000, default 6)",
+        "count": "Number of dice (1 to 20, default 1)"
+      }
+    },
+    "game": {
+      "description": "Board and word games",
+      "options": {
+        "tictactoe": {
+          "description": "Play tic-tac-toe with another member",
+          "options": {
+            "opponent": "Member to challenge"
+          }
+        },
+        "connect4": {
+          "description": "Play Connect 4 with another member",
+          "options": {
+            "opponent": "Member to challenge"
+          }
+        },
+        "rps": {
+          "description": "Play rock-paper-scissors against the bot or a member",
+          "options": {
+            "opponent": "Member to challenge (leave empty to play the bot)"
+          }
+        },
+        "hangman": {
+          "description": "Play hangman alone"
+        },
+        "trivia": {
+          "description": "Answer a trivia round",
+          "options": {
+            "count": "Number of questions (1 to 10, default 5)"
+          }
+        }
+      }
+    },
+    "fun": {
+      "description": "Fun little tools",
+      "options": {
+        "choose": {
+          "description": "Let the bot pick one option for you",
+          "options": {
+            "options": "Options separated by | (or by commas), 2 to 25 of them"
+          }
+        },
+        "ship": {
+          "description": "Compute the love compatibility of two members",
+          "options": {
+            "first": "First member",
+            "second": "Second member"
+          }
+        },
+        "reverse": {
+          "description": "Reverse a text",
+          "options": {
+            "text": "The text to reverse (500 characters max)"
+          }
+        },
+        "emojify": {
+          "description": "Turn a text into regional-indicator emoji letters",
+          "options": {
+            "text": "The text to convert (150 characters max)"
+          }
+        }
+      }
+    }
+  },
+  "eightball": {
+    "title": "Magic 8-ball",
+    "question": "Question: {question}",
+    "answers": [
+      "It is certain.",
+      "It is decidedly so.",
+      "Without a doubt.",
+      "Yes, definitely.",
+      "You may rely on it.",
+      "As I see it, yes.",
+      "Most likely.",
+      "Outlook good.",
+      "Yes.",
+      "Signs point to yes.",
+      "Reply hazy, try again.",
+      "Ask again later.",
+      "Better not tell you now.",
+      "Cannot predict now.",
+      "Concentrate and ask again.",
+      "Don't count on it.",
+      "My reply is no.",
+      "My sources say no.",
+      "Outlook not so good.",
+      "Very doubtful."
+    ]
+  },
+  "dice": {
+    "title": "Dice roll",
+    "result": "{count} die(s) with {sides} faces",
+    "rolls": "Rolls: {rolls}",
+    "total": "Total: {total}"
+  },
+  "choose": {
+    "title": "Choice",
+    "result": "I choose: **{choice}**",
+    "among": "Among: {list}"
+  },
+  "ship": {
+    "title": "Love calculator",
+    "pair": "{first} and {second}",
+    "name": "Couple name: **{name}**",
+    "score": "Compatibility: **{score}%**",
+    "verdicts": [
+      "Not meant to be, at least not yet.",
+      "Some sparks, a lot of work to do.",
+      "Promising, the foundations are there.",
+      "Very strong connection.",
+      "A perfect match!"
+    ]
+  },
+  "reverse": {
+    "title": "Reversed text"
+  },
+  "emojify": {
+    "title": "Emoji text"
+  },
+  "games": {
+    "tictactoe": "tic-tac-toe",
+    "connect4": "Connect 4",
+    "rps": "rock-paper-scissors"
+  },
+  "challenge": {
+    "title": "Challenge",
+    "description": "{challenger} challenges {opponent} to {game}.\n{opponent}, accept within the time limit to start."
+  },
+  "ui": {
+    "accept": "Accept",
+    "decline": "Decline",
+    "giveUp": "Give up",
+    "page": "Letters {page}/{total}"
+  },
+  "errors": {
+    "expired": "This game has expired or the bot restarted. Start a new one with the command.",
+    "generic": "Something went wrong while handling that move. Please try again.",
+    "notPlayer": "You are not a player in this game.",
+    "notOpponent": "Only the challenged member can answer this challenge.",
+    "notTurn": "It is not your turn.",
+    "alreadyPlayed": "You already made your move.",
+    "cellTaken": "This cell is already taken.",
+    "columnFull": "This column is full.",
+    "declined": "{opponent} declined the challenge.",
+    "challengeExpired": "The challenge expired without an answer.",
+    "missingOpponent": "Mention the member you want to challenge.",
+    "opponentBot": "You cannot challenge a bot. Play the bot by leaving the option empty.",
+    "opponentSelf": "You cannot challenge yourself.",
+    "chooseFew": "Give at least two options, separated by | or by commas.",
+    "chooseMany": "Give at most 25 options.",
+    "tooLong": "The text can have at most {max} characters.",
+    "empty": "Write some text first.",
+    "shipSelf": "Pick two different members."
+  },
+  "tictactoe": {
+    "title": "Tic-tac-toe",
+    "turn": "{player} ({mark}) to play.",
+    "win": "{player} ({mark}) wins!",
+    "draw": "Draw!",
+    "timeout": "The game ended: nobody played for too long."
+  },
+  "connect4": {
+    "title": "Connect 4",
+    "turn": "{player} to play. Choose a column from 1 to 7.",
+    "win": "{player} wins!",
+    "draw": "The board is full. Draw!",
+    "gaveUp": "{player} gave up.",
+    "timeout": "The game ended: nobody played for too long.",
+    "legend": "🔴 {red}   🟡 {yellow}"
+  },
+  "rps": {
+    "title": "Rock-paper-scissors",
+    "botTitle": "Rock-paper-scissors against the bot",
+    "pick": "Pick your move with the buttons below.",
+    "chosen": "{player} has chosen. Waiting for the other player.",
+    "waiting": "Waiting for: {players}",
+    "reveal": "{a} against {b}",
+    "win": "{winner} wins!",
+    "draw": "Draw!",
+    "botWins": "The bot wins this round.",
+    "youWin": "You win this round!",
+    "botChoice": "The bot plays: {choice}",
+    "recorded": "Your choice is recorded.",
+    "timeout": "The game ended: nobody played for too long.",
+    "choices": {
+      "rock": "Rock",
+      "paper": "Paper",
+      "scissors": "Scissors"
+    }
+  },
+  "hangman": {
+    "title": "Hangman",
+    "word": "Word",
+    "wrong": "Mistakes: {wrong}/{max}",
+    "guessed": "Letters tried: {letters}",
+    "hint": "Click a letter. Six mistakes and the game is lost.",
+    "won": "Well done, the word was **{word}**!",
+    "lost": "Out of mistakes. The word was **{word}**.",
+    "gaveUp": "You gave up. The word was **{word}**.",
+    "timeout": "The game ended: nobody played for too long."
+  },
+  "trivia": {
+    "title": "Trivia",
+    "question": "Question {n}/{total}",
+    "timeLeft": "You have {seconds} seconds for each question.",
+    "correct": "Correct!",
+    "wrong": "Wrong. The answer was: **{answer}**",
+    "timeout": "Time is up. The answer was: **{answer}**",
+    "score": "Final score: **{score}/{total}**",
+    "perfect": "Flawless round!",
+    "finished": "Round finished"
+  },
+  "dashboard": {
+    "games": {
+      "title": "Board and word games",
+      "description": "How long a game waits for a move before it is closed.",
+      "timeoutMinutes": {
+        "label": "Inactivity timeout (minutes)",
+        "help": "Tic-tac-toe, Connect 4, rock-paper-scissors and hangman close after this long without a move."
+      }
+    },
+    "trivia": {
+      "title": "Trivia",
+      "description": "Pace of the trivia rounds.",
+      "questionSeconds": {
+        "label": "Seconds per question",
+        "help": "After this delay the question is marked as missed and the next one starts."
+      }
+    }
+  }
+}

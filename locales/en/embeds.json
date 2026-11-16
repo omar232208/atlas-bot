@@ -1,0 +1,41 @@
+{
+  "dashboard": {
+    "title": "Embeds",
+    "appearance": {
+      "title": "Embed Appearance",
+      "description": "Restyle every embed Atlas sends in this server. Leave a field empty to keep the default Atlas design. Colours accept hex values like #3b82f6."
+    },
+    "fields": {
+      "accentColor": "Accent colour",
+      "accentColorHelp": "Primary colour for informational embeds. Hex format, e.g. #3b82f6.",
+      "colorInfo": "Info colour",
+      "colorInfoHelp": "Colour for neutral/informational embeds. Empty = accent colour.",
+      "colorSuccess": "Success colour",
+      "colorSuccessHelp": "Colour for successful operations. Empty = default green.",
+      "colorError": "Error colour",
+      "colorErrorHelp": "Colour for errors and failures. Empty = default red.",
+      "colorWarn": "Warning colour",
+      "colorWarnHelp": "Colour for cautions and moderation alerts. Empty = default orange.",
+      "colorLog": "Log colour",
+      "colorLogHelp": "Colour for audit/log embeds. Empty = default slate blue.",
+      "footerText": "Footer text",
+      "footerTextHelp": "Replaces the footer of every embed. Leave empty for the default 'Atlas' branding.",
+      "footerIcon": "Footer icon URL",
+      "footerIconHelp": "Image shown next to the footer text. Must be a direct https image URL.",
+      "authorName": "Author name",
+      "authorNameHelp": "Shows an author line at the top of every embed. Leave empty to disable.",
+      "authorIcon": "Author icon URL",
+      "authorIconHelp": "Small image next to the author name.",
+      "authorUrl": "Author link",
+      "authorUrlHelp": "Optional link the author name points to.",
+      "showBranding": "Atlas branding",
+      "showBrandingHelp": "Adds a small 'Atlas' footer to embeds that have none.",
+      "showTimestamp": "Timestamps",
+      "showTimestampHelp": "Keep timestamps on embeds that have them. Turn off to hide them."
+    },
+    "actions": {
+      "reset": "Reset embed settings",
+      "resetDone": "Embed settings restored to defaults."
+    }
+  }
+}

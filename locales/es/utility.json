@@ -1,0 +1,261 @@
+{
+  "commands": {
+    "info": {
+      "description": "Información sobre miembros, roles, canales y el servidor",
+      "options": {
+        "user": {
+          "description": "Muestra la información de un miembro",
+          "options": {
+            "user": "El miembro a consultar (tú por defecto)"
+          }
+        },
+        "server": {
+          "description": "Muestra la información de este servidor"
+        },
+        "avatar": {
+          "description": "Muestra el avatar de un miembro a tamaño completo",
+          "options": {
+            "user": "El miembro (tú por defecto)"
+          }
+        },
+        "role": {
+          "description": "Muestra la información de un rol",
+          "options": {
+            "role": "El rol a consultar"
+          }
+        },
+        "channel": {
+          "description": "Muestra la información de un canal",
+          "options": {
+            "channel": "El canal (este por defecto)"
+          }
+        },
+        "members": {
+          "description": "Cuenta los miembros de este servidor"
+        },
+        "invites": {
+          "description": "Clasificación de los miembros que más personas han invitado",
+          "options": {
+            "user": "Muestra también el total de este miembro"
+          }
+        }
+      }
+    },
+    "poll": {
+      "description": "Crea una encuesta con botones y recuentos en vivo",
+      "options": {
+        "question": "La pregunta",
+        "options": "Opciones separadas por | (de 2 a 5)",
+        "duration": "Cuánto tiempo sigue abierta, ej. 30m, 2h, 1d (máximo 7d, 1d por defecto)"
+      }
+    },
+    "remind": {
+      "description": "Recibe un recordatorio más tarde",
+      "options": {
+        "delay": "Cuándo, ej. 10m, 2h30m o 3d",
+        "text": "De qué quieres que te recuerde"
+      }
+    },
+    "say": {
+      "description": "Hace que el bot publique un mensaje",
+      "options": {
+        "message": "El mensaje a publicar (las menciones están desactivadas)",
+        "channel": "Canal donde publicar (este por defecto)"
+      }
+    },
+    "embed": {
+      "description": "Escribe y publica un embed con un formulario",
+      "options": {
+        "channel": "Canal donde publicar (este por defecto)"
+      }
+    },
+    "snipe": {
+      "description": "Lee los mensajes borrados recientemente (desactivado por defecto)",
+      "options": {
+        "show": {
+          "description": "Muestra un mensaje borrado recientemente",
+          "options": {
+            "channel": "Canal donde buscar (este por defecto)",
+            "index": "1 = el más reciente"
+          }
+        },
+        "enable": {
+          "description": "Guardar los mensajes borrados para /snipe (Gestionar servidor)"
+        },
+        "disable": {
+          "description": "Dejar de guardar los mensajes borrados (Gestionar servidor)"
+        }
+      }
+    }
+  },
+  "userinfo": {
+    "title": "Usuario: {name}",
+    "id": "ID",
+    "type": "Tipo",
+    "bot": "Bot",
+    "human": "Humano",
+    "created": "Cuenta creada",
+    "joined": "Se unió al servidor",
+    "topRole": "Rol principal",
+    "roles": "Roles ({count})",
+    "none": "Ninguno",
+    "notMember": "No es miembro de este servidor"
+  },
+  "serverinfo": {
+    "title": "Servidor: {name}",
+    "id": "ID",
+    "owner": "Propietario",
+    "created": "Creado",
+    "members": "Miembros",
+    "humans": "Humanos (en caché)",
+    "bots": "Bots (en caché)",
+    "channels": "Canales",
+    "roles": "Roles",
+    "boosts": "Mejoras",
+    "boostLevel": "Nivel {level}",
+    "verification": "Verificación",
+    "verificationLevels": {
+      "0": "Ninguna",
+      "1": "Baja",
+      "2": "Media",
+      "3": "Alta",
+      "4": "Muy alta"
+    }
+  },
+  "avatar": {
+    "title": "Avatar de {name}",
+    "open": "Abrir la imagen completa"
+  },
+  "roleinfo": {
+    "title": "Rol: {name}",
+    "id": "ID",
+    "color": "Color",
+    "position": "Posición",
+    "members": "Miembros (en caché)",
+    "mentionable": "Mencionable",
+    "hoisted": "Mostrado aparte",
+    "admin": "Administrador",
+    "permissions": "Permisos concedidos",
+    "created": "Creado",
+    "yes": "Sí",
+    "no": "No"
+  },
+  "channelinfo": {
+    "title": "Canal: {name}",
+    "id": "ID",
+    "type": "Tipo",
+    "types": {
+      "text": "Texto",
+      "voice": "Voz",
+      "category": "Categoría",
+      "announcement": "Anuncios",
+      "forum": "Foro",
+      "stage": "Escenario",
+      "thread": "Hilo",
+      "other": "Otro"
+    },
+    "category": "Categoría",
+    "position": "Posición",
+    "created": "Creado",
+    "nsfw": "NSFW",
+    "slowmode": "Modo lento",
+    "seconds": "{count} s",
+    "topic": "Tema",
+    "yes": "Sí",
+    "no": "No",
+    "none": "Ninguno"
+  },
+  "membercount": {
+    "title": "Miembros de {name}",
+    "total": "Total",
+    "humans": "Humanos",
+    "bots": "Bots",
+    "partial": "Humanos y bots se cuentan entre los miembros en caché del bot, así que el desglose puede ser menor que el total."
+  },
+  "invites": {
+    "title": "Clasificación de invitaciones",
+    "empty": "Todavía no se ha usado ningún enlace de invitación.",
+    "entry": "{rank}. {user}: **{count}** invitación(es)",
+    "yours": "{user} ha traído **{count}** miembro(s) con los enlaces activos."
+  },
+  "poll": {
+    "ends": "Termina <t:{unix}:R>",
+    "noVotes": "nadie votó",
+    "tie": "empate",
+    "winner": "opción ganadora: {option}",
+    "results": "Resultado",
+    "totalVotes": "Votos totales: {total}",
+    "recorded": "Voto registrado",
+    "yourChoice": "Has votado por **{option}**. Haz clic en otra opción para cambiar tu voto."
+  },
+  "remind": {
+    "title": "Recordatorio programado",
+    "set": "Te recordaré <t:{when}:R>: {text}",
+    "reminderTitle": "Recordatorio",
+    "ping": "{user}, aquí tienes tu recordatorio."
+  },
+  "say": {
+    "title": "Mensaje publicado",
+    "sent": "Mensaje publicado en {channel}."
+  },
+  "embed": {
+    "modalTitle": "Crear un embed",
+    "fields": {
+      "title": "Título",
+      "description": "Descripción",
+      "color": "Color (hex, ej. #3b6fd4)",
+      "footer": "Pie de página",
+      "image": "Enlace de la imagen (https://)"
+    },
+    "title": "Embed publicado",
+    "sent": "Embed publicado en {channel}."
+  },
+  "snipe": {
+    "title": "Mensaje borrado",
+    "author": "Autor",
+    "when": "Borrado",
+    "attachments": "Adjuntos ({count})",
+    "noText": "(sin texto)",
+    "none": "No hay ningún mensaje borrado en los últimos 10 minutos.",
+    "off": "Snipe está desactivado en este servidor. Actívalo con /snipe enable.",
+    "enabled": "Snipe está activado: los mensajes borrados se guardan en memoria durante 10 minutos.",
+    "disabled": "Snipe está desactivado. Ya no se guardan los mensajes borrados.",
+    "position": "Mensaje {index}/{total} en #{channel}"
+  },
+  "errors": {
+    "missingBotPerm": "Necesito el permiso **{perm}** para hacer eso.",
+    "missingUserPerm": "Necesitas el permiso **{perm}** para hacer eso.",
+    "permSendMessages": "Enviar mensajes",
+    "permEmbedLinks": "Insertar enlaces",
+    "permManageGuild": "Gestionar servidor",
+    "inviteFetch": "No he podido leer los enlaces de invitación de este servidor.",
+    "pollClosed": "Esta encuesta está cerrada.",
+    "pollDuplicate": "Dos opciones son idénticas.",
+    "pollOptionLong": "Cada opción puede tener como máximo {max} caracteres.",
+    "pollOptions": "Indica entre 2 y {max} opciones, separadas por |.",
+    "pollTooLong": "Una encuesta puede durar como máximo 7 días.",
+    "invalidDuration": "Duración no válida. Ejemplos: 10m, 2h30m, 1d.",
+    "remindTooLong": "Un recordatorio puede programarse como máximo con {max} días de antelación.",
+    "embedEmpty": "El embed necesita un título o una descripción.",
+    "invalidColor": "Color no válido. Usa #RRGGBB.",
+    "invalidUrl": "Enlace de imagen no válido. Debe empezar por https://."
+  },
+  "dashboard": {
+    "snipe": {
+      "title": "Mensajes borrados (/snipe)",
+      "description": "Los mensajes borrados se guardan en memoria 10 minutos para que los moderadores puedan leerlos.",
+      "enabled": {
+        "label": "Guardar los mensajes borrados",
+        "help": "Desactivado por defecto, por privacidad. Si está desactivado, no se guarda nada."
+      }
+    },
+    "remind": {
+      "title": "Recordatorios",
+      "description": "Con cuánta antelación se puede programar un recordatorio.",
+      "maxDays": {
+        "label": "Retraso máximo de un recordatorio (días)",
+        "help": "Los recordatorios más lejanos se rechazan."
+      }
+    }
+  }
+}

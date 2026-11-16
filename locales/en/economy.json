@@ -1,0 +1,316 @@
+{
+  "defaults": {
+    "currency": "coins"
+  },
+  "errors": {
+    "title": "Error",
+    "botTarget": "Bots do not have a wallet.",
+    "notEnough": "You do not have enough coins for this.",
+    "invalidAmount": "Invalid amount. Use a positive whole number or \"all\".",
+    "cooldown": "Wait {time} more.",
+    "alreadyPlaying": "You already have a blackjack game running. Finish it first.",
+    "gameExpired": "This game no longer exists.",
+    "notYourGame": "This table is not yours. Start your own with /blackjack.",
+    "adminOnly": "This action needs the Manage Server permission."
+  },
+  "balance": {
+    "title": "{user}'s balance",
+    "wallet": "Wallet",
+    "bank": "Bank",
+    "total": "Total"
+  },
+  "daily": {
+    "title": "Daily reward",
+    "done": "You receive {amount}.",
+    "streak": "Streak (days)"
+  },
+  "weekly": {
+    "title": "Weekly reward",
+    "done": "You receive {amount}. Come back in 7 days."
+  },
+  "work": {
+    "title": "Work day",
+    "jobs": {
+      "0": "You delivered parcels all day: {amount}.",
+      "1": "You fixed a neighbour's bike: {amount}.",
+      "2": "You served coffee at the counter: {amount}.",
+      "3": "You helped out on a building site: {amount}.",
+      "4": "You looked after a family's cat: {amount}."
+    }
+  },
+  "pay": {
+    "title": "Transfer",
+    "done": "You sent {amount} to {user}.",
+    "self": "You cannot send coins to yourself."
+  },
+  "deposit": {
+    "title": "Deposit",
+    "done": "{amount} moved to your bank."
+  },
+  "withdraw": {
+    "title": "Withdrawal",
+    "done": "{amount} moved to your wallet."
+  },
+  "rob": {
+    "title": "Robbery",
+    "self": "You cannot rob yourself.",
+    "tooPoor": "You need at least {min} in your wallet to attempt a robbery.",
+    "victimBroke": "{user} has nothing in their wallet to steal.",
+    "success": "You got away with {amount} from {user}.",
+    "failed": "You got caught and pay a fine of {amount}."
+  },
+  "shop": {
+    "title": "Shop",
+    "empty": "The shop is empty. An administrator can add items with /shop add.",
+    "givesRole": "Grants the role {role}",
+    "added": "Item added",
+    "addedText": "\"{name}\" is now for sale.",
+    "badName": "This name has no usable letters or digits.",
+    "exists": "An item called \"{name}\" already exists.",
+    "full": "The shop is full ({max} items at most).",
+    "roleUnusable": "This role cannot be given (managed by an integration, or @everyone).",
+    "botNeedsRoles": "I am missing the Manage Roles permission.",
+    "roleTooHigh": "I cannot give {role}: it is above my highest role.",
+    "notFound": "This item does not exist (any more).",
+    "removed": "Item removed",
+    "removedText": "\"{name}\" is no longer for sale. People who already bought it keep it.",
+    "roleMissing": "The role of this item was deleted. Ask an administrator to fix the item.",
+    "roleFailed": "I could not give you the role. Your purchase has been refunded.",
+    "alreadyOwned": "You already own \"{name}\".",
+    "bought": "Purchase complete",
+    "boughtText": "You bought \"{name}\" for {amount}."
+  },
+  "inventory": {
+    "title": "Inventory",
+    "empty": "You have not bought anything yet. Try /shop list.",
+    "removed": "Item removed ×{qty}"
+  },
+  "richest": {
+    "title": "Richest members",
+    "empty": "Nobody has any coins on this server yet."
+  },
+  "coinflip": {
+    "title": "Coinflip",
+    "won": "The coin lands on {result}. You win {amount}.",
+    "lost": "The coin lands on {result}. You lose {amount}.",
+    "sides": {
+      "heads": "heads",
+      "tails": "tails"
+    }
+  },
+  "slots": {
+    "title": "Slot machine",
+    "reels": "Reels",
+    "won": "You win {amount}.",
+    "even": "You get your stake back.",
+    "lost": "You lose {amount}."
+  },
+  "blackjack": {
+    "title": "Blackjack",
+    "turn": "Hit, stand, or double your bet.",
+    "dealer": "Dealer",
+    "you": "You",
+    "bet": "Bet",
+    "buttons": {
+      "hit": "Hit",
+      "stand": "Stand",
+      "double": "Double"
+    },
+    "outcome": {
+      "blackjack": {
+        "title": "Blackjack!",
+        "text": "You win {amount}. Pays 3 to 2."
+      },
+      "win": {
+        "title": "You win",
+        "text": "You win {amount}."
+      },
+      "push": {
+        "title": "Push",
+        "text": "Your bet is returned."
+      },
+      "lose": {
+        "title": "You lose",
+        "text": "You lose {amount}."
+      },
+      "bust": {
+        "title": "Bust",
+        "text": "Over 21: you lose {amount}."
+      }
+    }
+  },
+  "config": {
+    "title": "Economy settings",
+    "saved": "Settings saved",
+    "minAboveMax": "The minimum work pay cannot be above the maximum.",
+    "currency": "Currency",
+    "symbol": "Symbol",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "work": "Work",
+    "robFail": "Robbery failure"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Economy",
+      "description": "Reward amounts and currency rules.",
+      "currency": {
+        "label": "Currency name",
+        "help": "Empty = the default name in the server language."
+      },
+      "symbol": {
+        "label": "Symbol",
+        "help": "Shown after each amount."
+      },
+      "daily": {
+        "label": "Daily reward",
+        "help": "Amount of /daily, before the streak bonus."
+      },
+      "weekly": {
+        "label": "Weekly reward",
+        "help": "Amount of /weekly."
+      },
+      "workMin": {
+        "label": "Work: minimum pay",
+        "help": "Lower bound of /work."
+      },
+      "workMax": {
+        "label": "Work: maximum pay",
+        "help": "Upper bound of /work."
+      },
+      "robFailPercent": {
+        "label": "Failed robberies (%)",
+        "help": "Chance that a robbery fails and costs a fine."
+      }
+    }
+  },
+  "commands": {
+    "balance": {
+      "description": "Show your wallet and bank balance",
+      "options": {
+        "user": "Member to look up"
+      }
+    },
+    "work": {
+      "description": "Work for some money (once an hour)"
+    },
+    "pay": {
+      "description": "Give coins from your wallet to another member",
+      "options": {
+        "user": "Recipient",
+        "amount": "Amount, or \"all\""
+      }
+    },
+    "shop": {
+      "description": "Browse and buy items",
+      "options": {
+        "list": {
+          "description": "List the shop items"
+        },
+        "buy": {
+          "description": "Buy an item",
+          "options": {
+            "item": "Item to buy"
+          }
+        },
+        "add": {
+          "description": "Add an item to the shop (Manage Server)",
+          "options": {
+            "name": "Item name",
+            "price": "Price",
+            "description": "Short description",
+            "role": "Role given when bought"
+          }
+        },
+        "remove": {
+          "description": "Remove an item from the shop (Manage Server)",
+          "options": {
+            "item": "Item to remove"
+          }
+        }
+      }
+    },
+    "bank": {
+      "description": "Deposit and withdraw coins",
+      "options": {
+        "deposit": {
+          "description": "Move coins from your wallet to your bank",
+          "options": {
+            "amount": "Amount, or \"all\""
+          }
+        },
+        "withdraw": {
+          "description": "Move coins from your bank to your wallet",
+          "options": {
+            "amount": "Amount, or \"all\""
+          }
+        }
+      }
+    },
+    "gamble": {
+      "description": "Gambling games",
+      "options": {
+        "coinflip": {
+          "description": "Bet on heads or tails (50/50)",
+          "options": {
+            "amount": "Bet, or \"all\"",
+            "side": {
+              "description": "Your pick",
+              "choices": {
+                "heads": "Heads",
+                "tails": "Tails"
+              }
+            }
+          }
+        },
+        "slots": {
+          "description": "Spin the slot machine",
+          "options": {
+            "amount": "Bet, or \"all\""
+          }
+        },
+        "blackjack": {
+          "description": "Play blackjack against the dealer",
+          "options": {
+            "amount": "Bet, or \"all\""
+          }
+        }
+      }
+    },
+    "eco": {
+      "description": "Economy: rewards, robbery, inventory and settings",
+      "options": {
+        "daily": {
+          "description": "Claim your daily reward"
+        },
+        "weekly": {
+          "description": "Claim your weekly reward"
+        },
+        "rob": {
+          "description": "Try to rob another member (risky)",
+          "options": {
+            "user": "Member to rob"
+          }
+        },
+        "inventory": {
+          "description": "Show the items you bought"
+        },
+        "richest": {
+          "description": "Show the richest members"
+        },
+        "config": {
+          "description": "Show or change the settings (Manage Server)",
+          "options": {
+            "currency": "Currency name",
+            "symbol": "Currency symbol",
+            "daily": "Daily reward",
+            "weekly": "Weekly reward",
+            "work_min": "Minimum work pay",
+            "work_max": "Maximum work pay",
+            "rob_fail": "Chance (%) that a robbery fails"
+          }
+        }
+      }
+    }
+  }
+}

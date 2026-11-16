@@ -1,0 +1,246 @@
+{
+  "commands": {
+    "8ball": {
+      "description": "Haz una pregunta a la bola mágica",
+      "options": {
+        "question": "La pregunta a hacer"
+      }
+    },
+    "dice": {
+      "description": "Lanza uno o varios dados",
+      "options": {
+        "sides": "Número de caras por dado (2 a 1000, 6 por defecto)",
+        "count": "Número de dados (1 a 20, 1 por defecto)"
+      }
+    },
+    "game": {
+      "description": "Juegos de tablero y de palabras",
+      "options": {
+        "tictactoe": {
+          "description": "Juega al tres en raya con otro miembro",
+          "options": {
+            "opponent": "Miembro a desafiar"
+          }
+        },
+        "connect4": {
+          "description": "Juega a Conecta 4 con otro miembro",
+          "options": {
+            "opponent": "Miembro a desafiar"
+          }
+        },
+        "rps": {
+          "description": "Juega piedra, papel o tijera contra el bot o un miembro",
+          "options": {
+            "opponent": "Miembro a desafiar (vacío = jugar contra el bot)"
+          }
+        },
+        "hangman": {
+          "description": "Juega al ahorcado tú solo"
+        },
+        "trivia": {
+          "description": "Responde una ronda de preguntas de cultura general",
+          "options": {
+            "count": "Número de preguntas (1 a 10, 5 por defecto)"
+          }
+        }
+      }
+    },
+    "fun": {
+      "description": "Pequeñas utilidades divertidas",
+      "options": {
+        "choose": {
+          "description": "Deja que el bot elija una opción por ti",
+          "options": {
+            "options": "Opciones separadas por | (o por comas), de 2 a 25"
+          }
+        },
+        "ship": {
+          "description": "Calcula la compatibilidad amorosa de dos miembros",
+          "options": {
+            "first": "Primer miembro",
+            "second": "Segundo miembro"
+          }
+        },
+        "reverse": {
+          "description": "Invierte un texto",
+          "options": {
+            "text": "El texto a invertir (500 caracteres como máximo)"
+          }
+        },
+        "emojify": {
+          "description": "Convierte un texto en letras emoji",
+          "options": {
+            "text": "El texto a convertir (150 caracteres como máximo)"
+          }
+        }
+      }
+    }
+  },
+  "eightball": {
+    "title": "Bola mágica",
+    "question": "Pregunta: {question}",
+    "answers": [
+      "Es cierto.",
+      "Sin duda.",
+      "Sin ninguna duda.",
+      "Sí, definitivamente.",
+      "Puedes confiar en ello.",
+      "Por lo que veo, sí.",
+      "Lo más probable.",
+      "Las perspectivas son buenas.",
+      "Sí.",
+      "Todo indica que sí.",
+      "Respuesta confusa, inténtalo de nuevo.",
+      "Pregunta más tarde.",
+      "Mejor no te lo digo ahora.",
+      "No se puede predecir ahora.",
+      "Concéntrate y pregunta otra vez.",
+      "No cuentes con ello.",
+      "Mi respuesta es no.",
+      "Mis fuentes dicen que no.",
+      "Las perspectivas no son muy buenas.",
+      "Muy dudoso."
+    ]
+  },
+  "dice": {
+    "title": "Tirada de dados",
+    "result": "{count} dado(s) de {sides} caras",
+    "rolls": "Resultados: {rolls}",
+    "total": "Total: {total}"
+  },
+  "choose": {
+    "title": "Elección",
+    "result": "Elijo: **{choice}**",
+    "among": "Entre: {list}"
+  },
+  "ship": {
+    "title": "Calculadora de amor",
+    "pair": "{first} y {second}",
+    "name": "Nombre de la pareja: **{name}**",
+    "score": "Compatibilidad: **{score} %**",
+    "verdicts": [
+      "No está hecho para ser, al menos todavía.",
+      "Algunas chispas, aún queda mucho por construir.",
+      "Prometedor, las bases están ahí.",
+      "Una conexión muy fuerte.",
+      "¡Una pareja perfecta!"
+    ]
+  },
+  "reverse": {
+    "title": "Texto invertido"
+  },
+  "emojify": {
+    "title": "Texto en emoji"
+  },
+  "games": {
+    "tictactoe": "el tres en raya",
+    "connect4": "Conecta 4",
+    "rps": "piedra, papel o tijera"
+  },
+  "challenge": {
+    "title": "Desafío",
+    "description": "{challenger} desafía a {opponent} a {game}.\n{opponent}, acepta dentro del plazo para empezar."
+  },
+  "ui": {
+    "accept": "Aceptar",
+    "decline": "Rechazar",
+    "giveUp": "Rendirse",
+    "page": "Letras {page}/{total}"
+  },
+  "errors": {
+    "expired": "Esta partida ha caducado o el bot se ha reiniciado. Empieza una nueva con el comando.",
+    "generic": "Ha ocurrido un problema con esta jugada. Inténtalo de nuevo.",
+    "notPlayer": "No eres jugador de esta partida.",
+    "notOpponent": "Solo el miembro desafiado puede responder a este desafío.",
+    "notTurn": "No es tu turno.",
+    "alreadyPlayed": "Ya has hecho tu jugada.",
+    "cellTaken": "Esta casilla ya está ocupada.",
+    "columnFull": "Esta columna está llena.",
+    "declined": "{opponent} ha rechazado el desafío.",
+    "challengeExpired": "El desafío ha caducado sin respuesta.",
+    "missingOpponent": "Menciona al miembro que quieres desafiar.",
+    "opponentBot": "No puedes desafiar a un bot. Deja la opción vacía para jugar contra él.",
+    "opponentSelf": "No puedes desafiarte a ti mismo.",
+    "chooseFew": "Indica al menos dos opciones, separadas por | o por comas.",
+    "chooseMany": "Indica como máximo 25 opciones.",
+    "tooLong": "El texto puede tener como máximo {max} caracteres.",
+    "empty": "Escribe primero un texto.",
+    "shipSelf": "Elige dos miembros diferentes."
+  },
+  "tictactoe": {
+    "title": "Tres en raya",
+    "turn": "Le toca a {player} ({mark}).",
+    "win": "¡{player} ({mark}) gana!",
+    "draw": "¡Empate!",
+    "timeout": "La partida ha terminado: nadie jugó durante demasiado tiempo."
+  },
+  "connect4": {
+    "title": "Conecta 4",
+    "turn": "Le toca a {player}. Elige una columna del 1 al 7.",
+    "win": "¡{player} gana!",
+    "draw": "El tablero está lleno. ¡Empate!",
+    "gaveUp": "{player} se ha rendido.",
+    "timeout": "La partida ha terminado: nadie jugó durante demasiado tiempo.",
+    "legend": "🔴 {red}   🟡 {yellow}"
+  },
+  "rps": {
+    "title": "Piedra, papel o tijera",
+    "botTitle": "Piedra, papel o tijera contra el bot",
+    "pick": "Elige tu jugada con los botones de abajo.",
+    "chosen": "{player} ha elegido. Esperando al otro jugador.",
+    "waiting": "Esperando a: {players}",
+    "reveal": "{a} contra {b}",
+    "win": "¡{winner} gana!",
+    "draw": "¡Empate!",
+    "botWins": "El bot gana esta ronda.",
+    "youWin": "¡Ganas esta ronda!",
+    "botChoice": "El bot juega: {choice}",
+    "recorded": "Tu elección está registrada.",
+    "timeout": "La partida ha terminado: nadie jugó durante demasiado tiempo.",
+    "choices": {
+      "rock": "Piedra",
+      "paper": "Papel",
+      "scissors": "Tijera"
+    }
+  },
+  "hangman": {
+    "title": "Ahorcado",
+    "word": "Palabra",
+    "wrong": "Fallos: {wrong}/{max}",
+    "guessed": "Letras probadas: {letters}",
+    "hint": "Haz clic en una letra. Seis fallos y pierdes la partida.",
+    "won": "¡Muy bien, la palabra era **{word}**!",
+    "lost": "Sin vidas. La palabra era **{word}**.",
+    "gaveUp": "Te has rendido. La palabra era **{word}**.",
+    "timeout": "La partida ha terminado: nadie jugó durante demasiado tiempo."
+  },
+  "trivia": {
+    "title": "Preguntas",
+    "question": "Pregunta {n}/{total}",
+    "timeLeft": "Tienes {seconds} segundos por pregunta.",
+    "correct": "¡Respuesta correcta!",
+    "wrong": "Respuesta incorrecta. La respuesta era: **{answer}**",
+    "timeout": "Se acabó el tiempo. La respuesta era: **{answer}**",
+    "score": "Puntuación final: **{score}/{total}**",
+    "perfect": "¡Sin fallos!",
+    "finished": "Ronda terminada"
+  },
+  "dashboard": {
+    "games": {
+      "title": "Juegos de tablero y de palabras",
+      "description": "Tiempo que espera una partida antes de cerrarse sin jugadas.",
+      "timeoutMinutes": {
+        "label": "Tiempo de inactividad (minutos)",
+        "help": "El tres en raya, Conecta 4, piedra-papel-tijera y el ahorcado se cierran tras este tiempo sin jugadas."
+      }
+    },
+    "trivia": {
+      "title": "Preguntas",
+      "description": "Ritmo de las rondas de preguntas.",
+      "questionSeconds": {
+        "label": "Segundos por pregunta",
+        "help": "Pasado este tiempo, la pregunta cuenta como fallada y empieza la siguiente."
+      }
+    }
+  }
+}

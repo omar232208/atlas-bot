@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "Backups do servidor (cargos, canais, configurações)",
+      "options": {
+        "create": { "description": "Fazer backup do servidor agora", "options": { "name": "Nome do backup" } },
+        "list": { "description": "Listar os backups" },
+        "info": { "description": "Detalhes de um backup", "options": { "id": "Backup" } },
+        "load": {
+          "description": "Restaurar um backup neste servidor",
+          "options": {
+            "id": "Backup",
+            "mode": { "description": "Substituir tudo ou completar o que existe", "choices": { "replace": "Substituir", "merge": "Mesclar" } }
+          }
+        },
+        "delete": { "description": "Excluir um backup", "options": { "id": "Backup" } },
+        "auto": {
+          "description": "Backups automáticos",
+          "options": { "interval": "Intervalo (ex.: 1d, 12h) ou \"off\"", "keep": "Quantidade de backups automáticos mantidos" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "Não é possível",
+    "ownerOnly": "Só o dono do servidor (ou um dono do bot) pode gerenciar os backups.",
+    "corrupted": "Este backup está ilegível ou tem um formato desconhecido.",
+    "loading": "Já há uma restauração em andamento neste servidor.",
+    "botMissing": "Estão faltando estas permissões: {perms}.",
+    "badInterval": "Intervalo inválido: entre 6 horas e 30 dias (ex.: 12h, 1d, 1w) ou \"off\".",
+    "unknown": "Backup não encontrado."
+  },
+  "info": {
+    "id": "ID",
+    "server": "Servidor",
+    "created": "Criado em",
+    "author": "Autor",
+    "type": "Tipo",
+    "auto": "Automático",
+    "manual": "Manual",
+    "size": "Tamanho",
+    "content": "Conteúdo",
+    "contentValue": "{roles} cargo(s), {categories} categoria(s), {text} canal(is) de texto, {voice} canal(is) de voz"
+  },
+  "log": {
+    "createdTitle": "Backup criado",
+    "created": "{user} criou o backup `{id}`.",
+    "loadedTitle": "Backup restaurado",
+    "loaded": "{user} restaurou o backup `{id}` (modo {mode})."
+  },
+  "create": { "title": "Backup criado", "done": "Backup `{id}` salvo." },
+  "load": {
+    "confirmTitle": "Restaurar o backup?",
+    "confirm": {
+      "replace": "O backup `{id}` ({server}) vai **substituir** este servidor: todos os canais (exceto este) e os cargos que posso gerenciar serão excluídos, depois {roles} cargo(s), {categories} categoria(s), {text} canal(is) de texto e {voice} de voz serão recriados. O estado atual é salvo antes.",
+      "merge": "O backup `{id}` ({server}) será **mesclado**: cargos e canais com o mesmo nome são atualizados e os outros criados ({roles} cargo(s), {categories} categoria(s), {text} canal(is) de texto, {voice} de voz). Nada é excluído."
+    },
+    "safetyName": "Antes da restauração",
+    "auditReason": "Restauração do backup {id} por {user}",
+    "progressTitle": "Restaurando",
+    "progress": "{phase}: {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "Excluindo o que existe",
+      "settings": "Configurações do servidor",
+      "roles": "Cargos",
+      "channels": "Canais",
+      "finish": "Finalizando"
+    },
+    "result": "Cargos: {rolesCreated} criado(s), {rolesUpdated} atualizado(s).\nCanais: {channelsCreated} criado(s), {channelsUpdated} atualizado(s).\nExcluídos: {deleted}. Falhas: {errors}.",
+    "safety": "O estado anterior foi salvo como `{id}`.",
+    "doneTitle": "Restauração concluída"
+  },
+  "auto": {
+    "title": "Backups automáticos",
+    "disabled": "Backups automáticos desativados.",
+    "enabled": "Um backup automático será feito a cada {interval}; os {keep} mais recentes são mantidos.",
+    "name": "Automático"
+  },
+  "list": {
+    "title": "Backups",
+    "empty": "Nenhum backup ainda. Crie um com /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "Sem nome",
+    "autoTag": "(auto)"
+  },
+  "delete": { "confirm": "Excluir definitivamente o backup `{id}`?", "title": "Backup excluído", "done": "O backup `{id}` foi excluído." },
+  "dashboard": {
+    "general": { "title": "Backups", "description": "Limites e backups automáticos do servidor." },
+    "fields": {
+      "maxBackups": "Backups manuais mantidos",
+      "autoInterval": "Intervalo dos backups automáticos",
+      "autoKeep": "Backups automáticos mantidos"
+    },
+    "help": {
+      "maxBackups": "Acima disso, os mais antigos são excluídos.",
+      "autoInterval": "0 para desativar. Mínimo 6 horas, máximo 30 dias."
+    },
+    "actions": {
+      "createNow": "Criar um backup agora",
+      "createNowDone": "Backup criado.",
+      "ownerOnly": "Só o dono do servidor pode criar um backup."
+    }
+  }
+}

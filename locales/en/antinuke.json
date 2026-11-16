@@ -1,0 +1,381 @@
+{
+  "commands": {
+    "antinuke": {
+      "description": "Configure nuke protection",
+      "options": {
+        "status": {
+          "description": "Show nuke protection settings"
+        },
+        "enable": {
+          "description": "Enable nuke protection"
+        },
+        "disable": {
+          "description": "Disable nuke protection"
+        },
+        "limit": {
+          "description": "Set the limit of an action",
+          "options": {
+            "action": {
+              "description": "Watched action",
+              "choices": {
+                "channelDelete": "Channel deletion",
+                "channelCreate": "Channel creation",
+                "roleDelete": "Role deletion",
+                "roleCreate": "Role creation",
+                "rolePermGrant": "Dangerous permission given to a role",
+                "memberRoleGrant": "Dangerous role given to a member",
+                "ban": "Bans",
+                "kick": "Kicks",
+                "prune": "Member prune",
+                "webhookCreate": "Webhook creation",
+                "webhookSpam": "Webhook spam",
+                "guildUpdate": "Server settings change",
+                "vanity": "Vanity URL change",
+                "emojiDelete": "Emoji deletion",
+                "stickerDelete": "Sticker deletion"
+              }
+            },
+            "limit": "Actions allowed inside the window",
+            "window": "Window in seconds"
+          }
+        },
+        "punishment": {
+          "description": "Choose the punishment",
+          "options": {
+            "type": {
+              "description": "Punishment",
+              "choices": {
+                "quarantine": "Quarantine (roles removed + quarantine role)",
+                "strip": "Remove roles",
+                "kick": "Kick",
+                "ban": "Ban",
+                "timeout": "Timeout and remove roles"
+              }
+            },
+            "quarantine_role": "Role given in quarantine",
+            "timeout_minutes": "Timeout length in minutes"
+          }
+        },
+        "settings": {
+          "description": "Restore and panic options",
+          "options": {
+            "restore": "Undo what was done",
+            "auto_panic": "Start panic mode when a nuke is caught",
+            "panic_minutes": "Default panic mode length",
+            "panic_strip_roles": "Remove dangerous permissions from roles during panic"
+          }
+        },
+        "release": {
+          "description": "Give back the roles removed from a member",
+          "options": {
+            "user": "Member"
+          }
+        },
+        "quarantined": {
+          "description": "List members whose roles were removed"
+        }
+      }
+    },
+    "whitelist": {
+      "description": "Trusted users exempt from antinuke and automod",
+      "options": {
+        "add": {
+          "description": "Trust a user or a bot",
+          "options": {
+            "user": "User or bot (an ID works too)"
+          }
+        },
+        "remove": {
+          "description": "Stop trusting a user",
+          "options": {
+            "user": "User"
+          }
+        },
+        "list": {
+          "description": "Show trusted users"
+        }
+      }
+    },
+    "panic": {
+      "description": "Panic mode: block everything from the first suspicious action",
+      "options": {
+        "on": {
+          "description": "Turn panic mode on",
+          "options": {
+            "minutes": "Panic mode length in minutes"
+          }
+        },
+        "off": {
+          "description": "Stop panic mode"
+        }
+      }
+    }
+  },
+  "actions": {
+    "channelDelete": "Channel deletion",
+    "channelCreate": "Channel creation",
+    "roleDelete": "Role deletion",
+    "roleCreate": "Role creation",
+    "rolePermGrant": "Dangerous permission given to a role",
+    "memberRoleGrant": "Dangerous role given to a member",
+    "ban": "Bans",
+    "kick": "Kicks",
+    "prune": "Member prune",
+    "webhookCreate": "Webhook creation",
+    "webhookSpam": "Webhook spam",
+    "guildUpdate": "Server settings change",
+    "vanity": "Vanity URL change",
+    "emojiDelete": "Emoji deletion",
+    "stickerDelete": "Sticker deletion"
+  },
+  "punishments": {
+    "quarantine": "Quarantine (roles removed + quarantine role)",
+    "strip": "Remove roles",
+    "kick": "Kick",
+    "ban": "Ban",
+    "timeout": "Timeout and remove roles"
+  },
+  "perms": {
+    "ViewAuditLog": "View Audit Log",
+    "ManageRoles": "Manage Roles",
+    "ManageChannels": "Manage Channels",
+    "BanMembers": "Ban Members",
+    "KickMembers": "Kick Members",
+    "ModerateMembers": "Timeout Members",
+    "ManageWebhooks": "Manage Webhooks",
+    "ManageGuildExpressions": "Manage Expressions"
+  },
+  "reason": "Antinuke: {action}",
+  "alert": {
+    "title": "Nuke blocked",
+    "description": "{user} went over the limit: {action}.\n{count} actions in {seconds} s (limit: {limit}).",
+    "punishment": "Punishment",
+    "restore": "Restore",
+    "panic": "Panic mode",
+    "panicNo": "No",
+    "panicAlready": "Already on",
+    "panicStarted": "Turned on automatically",
+    "restoreValue": "{restored} of {total} undone, {failed} failed",
+    "restoreOff": "Off"
+  },
+  "punish": {
+    "results": {
+      "ban": "Banned",
+      "kick": "Kicked",
+      "timeout": "Timed out, roles removed",
+      "quarantine": "Quarantined",
+      "strip": "Roles removed",
+      "partial": "Roles partly removed: a role above mine still has dangerous permissions",
+      "failed": "Impossible: move my role to the top of the list",
+      "gone": "Already left the server",
+      "fallbackStrip": "Punishment impossible, roles removed instead"
+    }
+  },
+  "panic": {
+    "startTitle": "Panic mode on",
+    "endTitle": "Panic mode ended",
+    "auto": "Turned on automatically after a nuke ({reason}). Any sensitive action by an untrusted member is blocked from the first one.",
+    "manual": "Turned on by {user}. Any sensitive action by an untrusted member is blocked from the first one.",
+    "onReply": "Any sensitive action by a member outside the whitelist is now blocked from the first one. Use /panic off to stop.",
+    "ends": "Ends",
+    "rolesField": "Roles",
+    "rolesValue": "{stripped} roles lost their dangerous permissions, {failed} failed.",
+    "restoredValue": "{restored} roles got their permissions back, {failed} failed.",
+    "endedBy": "Panic mode stopped by {user}.",
+    "expired": "Panic mode reached its end.",
+    "auditStart": "Antinuke: panic mode",
+    "auditEnd": "Antinuke: panic mode ended",
+    "notActive": "Panic mode is not on.",
+    "alreadyActive": "Panic mode is already on."
+  },
+  "webhook": {
+    "title": "Webhook spam blocked",
+    "description": "The webhook {name} sent {count} messages in {seconds} s in {channel}.",
+    "deleted": "Webhook deleted",
+    "removed": "Messages removed",
+    "yes": "Yes",
+    "no": "No (missing Manage Webhooks permission?)"
+  },
+  "status": {
+    "title": "Nuke protection",
+    "enabled": "Protection is enabled.",
+    "disabled": "Protection is disabled.",
+    "on": "Yes",
+    "off": "No",
+    "punishment": "Punishment",
+    "restore": "Restore",
+    "autoPanic": "Auto panic",
+    "panic": "Panic mode",
+    "panicActive": "On, ends {until}",
+    "whitelist": "Trusted users",
+    "limits": "Limits (actions allowed / window)",
+    "limitLine": "{action}: {limit} / {seconds} s",
+    "missing": "Missing permissions",
+    "missingValue": "I am missing: {perms}. The protection cannot block everything without them.",
+    "tip": "Tip",
+    "tipValue": "Move my role to the very top of the role list: I can only punish members whose role is below mine."
+  },
+  "set": {
+    "saved": "Settings saved",
+    "enabled": "Antinuke enabled",
+    "enabledHelp": "Sensitive actions by members outside the whitelist are now watched. Add your trusted staff with /whitelist add.",
+    "disabled": "Antinuke disabled",
+    "disabledHelp": "No action is watched anymore.",
+    "limitDone": "{action}: {limit} allowed per {seconds} s.",
+    "punishmentDone": "Punishment: {punishment}.",
+    "nothing": "No setting given."
+  },
+  "errors": {
+    "ownerOnly": "Owner only",
+    "ownerOnlyHelp": "Only the server owner can change the antinuke and the whitelist, so a hacked admin account cannot turn them off.",
+    "badRole": "Unusable role",
+    "badRoleHelp": "Pick a normal role placed below mine.",
+    "needRole": "Quarantine role missing",
+    "needRoleHelp": "Set quarantine_role: a role without permissions that only sees an explanation channel."
+  },
+  "release": {
+    "audit": "Antinuke: roles given back by {user}",
+    "none": "{user} has no saved roles to give back.",
+    "gone": "{user} is no longer on the server.",
+    "title": "Roles given back",
+    "done": "{user} got {restored} roles back ({failed} could not be given back).",
+    "empty": "No member in quarantine.",
+    "line": "- {user}: {roles} roles removed {at}",
+    "listTitle": "Members in quarantine"
+  },
+  "whitelist": {
+    "title": "Whitelist",
+    "ownerLine": "- {user} (owner, always trusted)",
+    "empty": "Nobody else yet.",
+    "footer": "{count} / {max} users",
+    "isOwner": "The owner is always trusted.",
+    "already": "{user} is already whitelisted.",
+    "full": "The whitelist is full ({max} users).",
+    "added": "{user} is now trusted",
+    "addedHelp": "Their actions are no longer checked by antinuke and automod. Only grant this to people you are sure of.",
+    "notIn": "{user} is not whitelisted.",
+    "removed": "{user} is no longer trusted"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Antinuke",
+      "description": "Blocks mass deletions and changes made by untrusted members."
+    },
+    "panic": {
+      "title": "Panic mode",
+      "description": "Locks everything down as soon as a nuke is detected."
+    },
+    "limits": {
+      "title": "Limits per action",
+      "description": "Actions allowed inside the window; one more triggers the protection."
+    },
+    "fields": {
+      "enabled": {
+        "label": "Protection enabled",
+        "help": "Watches sensitive actions by members outside the whitelist."
+      },
+      "punishment": {
+        "label": "Punishment",
+        "help": "Applied to whoever goes over a limit."
+      },
+      "quarantineRoleId": {
+        "label": "Quarantine role",
+        "help": "Given in quarantine: a role without permissions that only sees one channel."
+      },
+      "timeoutMinutes": {
+        "label": "Timeout length (minutes)",
+        "help": "Used when the punishment is a timeout."
+      },
+      "restore": {
+        "label": "Automatic restore",
+        "help": "Re-creates deleted channels and roles, unbans, deletes what was created."
+      },
+      "whitelist": {
+        "label": "Whitelist (IDs)",
+        "help": "Trusted users, exempt. Keep this for the owner."
+      },
+      "autoPanic": {
+        "label": "Auto panic",
+        "help": "Starts panic mode as soon as a nuke is blocked."
+      },
+      "panicMinutes": {
+        "label": "Panic length (minutes)",
+        "help": "Panic mode stops by itself after this delay."
+      },
+      "panicStripRoles": {
+        "label": "Remove dangerous permissions",
+        "help": "During panic, roles lose their dangerous permissions, given back at the end."
+      }
+    },
+    "actions": {
+      "panicOn": "Turn panic mode on",
+      "panicOff": "Stop panic mode"
+    },
+    "results": {
+      "panicOn": "Panic mode turned on.",
+      "panicOff": "Panic mode stopped."
+    },
+    "limitFields": {
+      "channelDelete": {
+        "limit": "Channel deletion: actions allowed",
+        "window": "Channel deletion: window (seconds)"
+      },
+      "channelCreate": {
+        "limit": "Channel creation: actions allowed",
+        "window": "Channel creation: window (seconds)"
+      },
+      "roleDelete": {
+        "limit": "Role deletion: actions allowed",
+        "window": "Role deletion: window (seconds)"
+      },
+      "roleCreate": {
+        "limit": "Role creation: actions allowed",
+        "window": "Role creation: window (seconds)"
+      },
+      "rolePermGrant": {
+        "limit": "Dangerous permission given to a role: actions allowed",
+        "window": "Dangerous permission given to a role: window (seconds)"
+      },
+      "memberRoleGrant": {
+        "limit": "Dangerous role given to a member: actions allowed",
+        "window": "Dangerous role given to a member: window (seconds)"
+      },
+      "ban": {
+        "limit": "Bans: actions allowed",
+        "window": "Bans: window (seconds)"
+      },
+      "kick": {
+        "limit": "Kicks: actions allowed",
+        "window": "Kicks: window (seconds)"
+      },
+      "prune": {
+        "limit": "Member prune: actions allowed",
+        "window": "Member prune: window (seconds)"
+      },
+      "webhookCreate": {
+        "limit": "Webhook creation: actions allowed",
+        "window": "Webhook creation: window (seconds)"
+      },
+      "webhookSpam": {
+        "limit": "Webhook spam: actions allowed",
+        "window": "Webhook spam: window (seconds)"
+      },
+      "guildUpdate": {
+        "limit": "Server settings change: actions allowed",
+        "window": "Server settings change: window (seconds)"
+      },
+      "vanity": {
+        "limit": "Vanity URL change: actions allowed",
+        "window": "Vanity URL change: window (seconds)"
+      },
+      "emojiDelete": {
+        "limit": "Emoji deletion: actions allowed",
+        "window": "Emoji deletion: window (seconds)"
+      },
+      "stickerDelete": {
+        "limit": "Sticker deletion: actions allowed",
+        "window": "Sticker deletion: window (seconds)"
+      }
+    }
+  }
+}

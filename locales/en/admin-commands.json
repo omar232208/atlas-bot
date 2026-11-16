@@ -1,0 +1,9 @@
+{
+  "dashboard": {
+    "requiredRoles": {
+      "title": "Required Roles",
+      "description": "Pick one role per command: only members holding it may run the command (like a Pro Bot). Leave empty for no extra restriction.",
+      "help": "Members must have this role to use the command, on top of Discord permissions and the role/channel lists in Commands Manager."
+    }
+  }
+}

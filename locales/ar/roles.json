@@ -1,0 +1,190 @@
+{
+  "commands": {
+    "rolemenu": {
+      "description": "قوائم رتب ذاتية الخدمة (أزرار أو قائمة منسدلة)",
+      "options": {
+        "create": {
+          "description": "إنشاء قائمة رتب",
+          "options": {
+            "name": "اسم القائمة الداخلي",
+            "type": { "description": "أزرار أو قائمة منسدلة", "choices": { "buttons": "أزرار", "select": "قائمة منسدلة" } },
+            "mode": { "description": "سلوك القائمة", "choices": { "toggle": "إضافة وإزالة", "unique": "رتبة واحدة فقط", "add": "إضافة فقط", "remove": "إزالة فقط" } },
+            "title": "العنوان المعروض",
+            "description": "نص يُعرض فوق الرتب",
+            "required_role": "رتبة مطلوبة لاستخدام القائمة",
+            "max": "أقصى رتب يتم اختيارها دفعة واحدة (قائمة منسدلة)"
+          }
+        },
+        "add": {
+          "description": "إضافة رتبة لقائمة",
+          "options": {
+            "menu": "القائمة",
+            "role": "الرتبة المراد عرضها",
+            "label": "نص الزر أو الخيار",
+            "emoji": "إيموجي",
+            "description": "وصف (قائمة منسدلة)",
+            "style": { "description": "لون الزر", "choices": { "primary": "أزرق", "secondary": "رمادي", "success": "أخضر", "danger": "أحمر" } }
+          }
+        },
+        "remove": { "description": "إزالة رتبة من قائمة", "options": { "menu": "القائمة", "role": "الرتبة للإزالة" } },
+        "edit": {
+          "description": "تعديل قائمة",
+          "options": {
+            "menu": "القائمة",
+            "title": "عنوان جديد (\"-\" للمسح)",
+            "description": "نص جديد (\"-\" للمسح)",
+            "mode": { "description": "سلوك جديد", "choices": { "toggle": "إضافة وإزالة", "unique": "رتبة واحدة فقط", "add": "إضافة فقط", "remove": "إزالة فقط" } },
+            "required_role": "رتبة مطلوبة جديدة",
+            "clear_required": "إزالة الرتبة المطلوبة",
+            "max": "أقصى رتب يتم اختيارها دفعة واحدة (قائمة منسدلة)"
+          }
+        },
+        "post": { "description": "نشر قائمة في قناة", "options": { "menu": "القائمة", "channel": "القناة (افتراضي: هذه)" } },
+        "list": { "description": "عرض قوائم الرتب" },
+        "delete": { "description": "حذف قائمة ورسائلها", "options": { "menu": "القائمة" } }
+      }
+    },
+    "role": {
+      "description": "إدارة رتب الأعضاء",
+      "options": {
+        "add": {
+          "description": "إعطاء رتبة، اختيارياً مؤقتة",
+          "options": { "member": "العضو", "role": "الرتبة", "duration": "مدة (مثال: 2h، 7d) لرتبة مؤقتة", "reason": "السبب" }
+        },
+        "remove": { "description": "إزالة رتبة", "options": { "member": "العضو", "role": "الرتبة", "reason": "السبب" } },
+        "all": {
+          "description": "إعطاء أو إزالة رتبة للسيرفر كامل",
+          "options": {
+            "role": "الرتبة",
+            "action": { "description": "إعطاء أو إزالة", "choices": { "add": "إعطاء", "remove": "إزالة" } },
+            "target": { "description": "الأعضاء المستهدفون", "choices": { "all": "الجميع", "humans": "البشر", "bots": "البوتات" } }
+          }
+        },
+        "info": { "description": "معلومات عن رتبة", "options": { "role": "الرتبة" } },
+        "temp": { "description": "عرض الرتب المؤقتة الجارية", "options": { "member": "تصفية بالعضو" } }
+      }
+    }
+  },
+  "errors": {
+    "title": "لا يمكن فعل ذلك",
+    "roleGone": "هذه الرتبة لم تعد موجودة.",
+    "everyone": "رتبة @everyone لا يمكن استخدامها هنا.",
+    "managed": "{role} تدار بتكامل ولا يمكن تعيينها.",
+    "botHierarchy": "{role} فوق رتبتي: انقل رتبتي لأعلى في إعدادات السيرفر.",
+    "userHierarchy": "{role} فوق أعلى رتبتك.",
+    "dangerous": "{role} تعطي صلاحيات مودراشن أو مدير: لا يمكن أن تكون ذاتية الخدمة.",
+    "discordPermission": "ديسكورد رفض الإجراء: تحقق أن لدي إدارة الرتب وأن رتبتي عالية بما يكفي.",
+    "unexpected": "حدث خطأ غير متوقع. حاول مرة أخرى بعد لحظة.",
+    "botMissing": "أفتقر لهذه الصلاحيات: {perms}.",
+    "tooManyMenus": "{max} قوائم كحد أقصى لكل سيرفر.",
+    "menuExists": "قائمة بهذا الاسم موجودة بالفعل.",
+    "menuGone": "هذه القائمة حُذفت.",
+    "requiredRole": "تحتاج رتبة {role} لاستخدام هذه القائمة.",
+    "menuUnknown": "قائمة غير موجودة.",
+    "tooManyItems": "القائمة تحوي {max} رتب كحد أقصى.",
+    "itemExists": "{role} موجودة بالفعل في هذه القائمة.",
+    "badEmoji": "إيموجي غير صالح: استخدم إيموجي قياسي أو من هذا السيرفر.",
+    "itemUnknown": "{role} ليست في هذه القائمة.",
+    "nothingChanged": "لم يُعطَ خيار: لم يتغير شيء.",
+    "emptyMenu": "هذه القائمة بلا رتب بعد: أضف بعضها بـ /rolemenu add.",
+    "notMember": "هذا العضو ليس في السيرفر.",
+    "badDuration": "مدة غير صالحة: بين دقيقة و 366 يوماً (مثال: 30m، 2h، 7d).",
+    "alreadyHas": "{user} لديه {role} بالفعل.",
+    "doesNotHave": "{user} ليس لديه {role}.",
+    "manageGuild": "تحتاج لصلاحية إدارة السيرفر.",
+    "massRunning": "إجراء جماعي قيد التشغيل بالفعل في هذا السيرفر."
+  },
+  "menu": {
+    "hint": {
+      "toggle": "اضغط للحصول على رتبة، اضغط مجدداً لإزالتها.",
+      "unique": "يمكنك الحصول على واحدة فقط من هذه الرتب.",
+      "add": "اضغط للحصول على رتبة.",
+      "remove": "اضغط لإزالة رتبة."
+    },
+    "requires": "مقتصرة على رتبة {role}",
+    "placeholder": "اختر رتبك",
+    "auditReason": "قائمة رتب \"{menu}\"",
+    "added": "أضيفت: {roles}",
+    "removed": "أُزيلت: {roles}",
+    "skipped": "لا أستطيع إدارة: {roles}",
+    "nothing": "لا تغيير.",
+    "updatedTitle": "تم تحديث الرتب"
+  },
+  "log": {
+    "menuTitle": "قائمة رتب",
+    "menu": "{user} عبر \"{menu}\" - أضيفت: {added}; أُزيلت: {removed}",
+    "expiredTitle": "انتهت رتبة مؤقتة",
+    "expired": "{role} أُزيلت من {user}.",
+    "roleTitle": "تغيّرت رتبة",
+    "by": "بواسطة {user}",
+    "massTitle": "رتبة جماعية"
+  },
+  "temp": {
+    "auditReason": "انتهت رتبة مؤقتة",
+    "dmTitle": "انتهت رتبة",
+    "dm": "رتبتك \"{role}\" في **{server}** انتهت.",
+    "listTitle": "الرتب المؤقتة",
+    "empty": "لا رتبة مؤقتة جارية.",
+    "line": "{user} - {role} - تنتهي {when}",
+    "more": "… و {count} أخرى"
+  },
+  "rolemenu": {
+    "title": "قوائم الرتب",
+    "refreshed": "تم تحديث {count} رسالة(ات) منشورة.",
+    "listTitle": "قوائم الرتب",
+    "empty": "لا قوائم بعد. أنشئ واحدة بـ /rolemenu create.",
+    "listLine": "**{name}** - {type}, {mode} - {count} رتبة(ات)، {posts} منشور(ات)",
+    "types": { "buttons": "أزرار", "select": "قائمة منسدلة" },
+    "modes": { "toggle": "إضافة وإزالة", "unique": "رتبة واحدة فقط", "add": "إضافة فقط", "remove": "إزالة فقط" },
+    "created": "قائمة \"{name}\" أُنشئت. أضف رتب بـ /rolemenu add، ثم انشرها بـ /rolemenu post.",
+    "itemAdded": "{role} أُضيفت لقائمة \"{name}\".",
+    "itemRemoved": "{role} أُزيلت من قائمة \"{name}\".",
+    "edited": "قائمة \"{name}\" حُدثت.",
+    "deleted": "قائمة \"{name}\" حُذفت مع رسائلها.",
+    "posted": "قائمة \"{name}\" نُشرت في {channel}."
+  },
+  "role": {
+    "title": "الرتب",
+    "auditReason": "طُلب بواسطة {user}",
+    "added": "أُعطي {role} لـ {user}.",
+    "addedTemp": "أُعطي {role} لـ {user} لـ {duration} (تُزال {when}).",
+    "removed": "أُزيل {role} من {user}."
+  },
+  "mass": {
+    "title": "رتبة جماعية",
+    "nobody": "لا عضو معني.",
+    "confirmTitle": "تأكيد الإجراء الجماعي",
+    "confirm": {
+      "add": "إعطاء {role} لـ {count} عضو(ين)؟",
+      "remove": "إزالة {role} من {count} عضو(ين)؟"
+    },
+    "auditReason": "إجراء جماعي بواسطة {user}",
+    "progress": "{done} / {total}\n{bar}",
+    "done": "انتهى لـ {role}: {done} نجح، {failed} فشل."
+  },
+  "info": {
+    "title": "رتبة {name}",
+    "id": "الآيدي",
+    "color": "اللون",
+    "position": "الموقع",
+    "members": "الأعضاء",
+    "hoist": "معروض منفصل",
+    "mentionable": "قابل للمنشنة",
+    "managed": "مُدارت بتكامل",
+    "created": "أُنشئت",
+    "temps": "منح مؤقتة",
+    "permissions": "الصلاحيات",
+    "yes": "نعم",
+    "no": "لا",
+    "none": "لا شيء"
+  },
+  "dashboard": {
+    "general": { "title": "الرتب", "description": "قوائم الرتب والرتب المؤقتة." },
+    "fields": { "tempRoleDm": "رسالة خاصة للعضو عند انتهاء رتبة", "logChanges": "تسجيل تغييرات الرتب" },
+    "help": {
+      "tempRoleDm": "العضو يحصل على رسالة خاصة عند إزالة رتبته المؤقتة.",
+      "logChanges": "ترسل نقرات القوائم، الرتب المؤقتة والإجراءات الجماعية لسجلات الأعضاء."
+    },
+    "actions": { "refreshMenus": "تحديث القوائم المنشورة", "refreshMenusDone": "تم تحديث القوائم المنشورة." }
+  }
+}

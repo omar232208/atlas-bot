@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "Server backups (roles, channels, settings)",
+      "options": {
+        "create": { "description": "Back up the server now", "options": { "name": "Backup name" } },
+        "list": { "description": "List backups" },
+        "info": { "description": "Details of a backup", "options": { "id": "Backup" } },
+        "load": {
+          "description": "Restore a backup on this server",
+          "options": {
+            "id": "Backup",
+            "mode": { "description": "Replace everything or add to what exists", "choices": { "replace": "Replace", "merge": "Merge" } }
+          }
+        },
+        "delete": { "description": "Delete a backup", "options": { "id": "Backup" } },
+        "auto": {
+          "description": "Automatic backups",
+          "options": { "interval": "Interval (e.g. 1d, 12h) or \"off\"", "keep": "Number of automatic backups kept" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "Cannot do that",
+    "ownerOnly": "Only the server owner (or a bot owner) can manage backups.",
+    "corrupted": "This backup is unreadable or has an unknown format.",
+    "loading": "A restore is already running on this server.",
+    "botMissing": "I am missing these permissions: {perms}.",
+    "badInterval": "Invalid interval: between 6 hours and 30 days (e.g. 12h, 1d, 1w), or \"off\".",
+    "unknown": "Backup not found."
+  },
+  "info": {
+    "id": "ID",
+    "server": "Server",
+    "created": "Created",
+    "author": "Author",
+    "type": "Type",
+    "auto": "Automatic",
+    "manual": "Manual",
+    "size": "Size",
+    "content": "Content",
+    "contentValue": "{roles} role(s), {categories} category(ies), {text} text channel(s), {voice} voice channel(s)"
+  },
+  "log": {
+    "createdTitle": "Backup created",
+    "created": "{user} created backup `{id}`.",
+    "loadedTitle": "Backup restored",
+    "loaded": "{user} restored backup `{id}` ({mode} mode)."
+  },
+  "create": { "title": "Backup created", "done": "Backup `{id}` saved." },
+  "load": {
+    "confirmTitle": "Restore the backup?",
+    "confirm": {
+      "replace": "Backup `{id}` ({server}) will **replace** this server: every channel (except this one) and every role I can manage will be deleted, then {roles} role(s), {categories} category(ies), {text} text and {voice} voice channel(s) will be recreated. The current state is backed up first.",
+      "merge": "Backup `{id}` ({server}) will be **merged**: roles and channels with the same name are updated, the others created ({roles} role(s), {categories} category(ies), {text} text and {voice} voice channel(s)). Nothing is deleted."
+    },
+    "safetyName": "Before restore",
+    "auditReason": "Restore of backup {id} by {user}",
+    "progressTitle": "Restoring",
+    "progress": "{phase}: {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "Deleting the current setup",
+      "settings": "Server settings",
+      "roles": "Roles",
+      "channels": "Channels",
+      "finish": "Finishing"
+    },
+    "result": "Roles: {rolesCreated} created, {rolesUpdated} updated.\nChannels: {channelsCreated} created, {channelsUpdated} updated.\nDeleted: {deleted}. Failures: {errors}.",
+    "safety": "The previous state was saved as `{id}`.",
+    "doneTitle": "Restore finished"
+  },
+  "auto": {
+    "title": "Automatic backups",
+    "disabled": "Automatic backups disabled.",
+    "enabled": "An automatic backup will be made every {interval}; the {keep} most recent are kept.",
+    "name": "Automatic"
+  },
+  "list": {
+    "title": "Backups",
+    "empty": "No backup yet. Create one with /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "Unnamed",
+    "autoTag": "(auto)"
+  },
+  "delete": { "confirm": "Permanently delete backup `{id}`?", "title": "Backup deleted", "done": "Backup `{id}` was deleted." },
+  "dashboard": {
+    "general": { "title": "Backups", "description": "Limits and automatic backups of the server." },
+    "fields": {
+      "maxBackups": "Manual backups kept",
+      "autoInterval": "Automatic backup interval",
+      "autoKeep": "Automatic backups kept"
+    },
+    "help": {
+      "maxBackups": "Beyond this, the oldest are deleted.",
+      "autoInterval": "0 to disable. Minimum 6 hours, maximum 30 days."
+    },
+    "actions": {
+      "createNow": "Create a backup now",
+      "createNowDone": "Backup created.",
+      "ownerOnly": "Only the server owner can create a backup."
+    }
+  }
+}

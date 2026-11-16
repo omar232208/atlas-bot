@@ -1,0 +1,272 @@
+{
+  "commands": {
+    "logs": {
+      "description": "Configurar los canales de registros",
+      "options": {
+        "set": {
+          "description": "Enviar una categoría de registros a un canal",
+          "options": {
+            "category": {
+              "description": "Categoría de registros",
+              "choices": {
+                "all": "Todas las categorías",
+                "messages": "Mensajes",
+                "members": "Miembros",
+                "moderation": "Moderación",
+                "server": "Servidor",
+                "voice": "Voz",
+                "invites": "Invitaciones",
+                "protection": "Protección",
+                "tickets": "Tickets"
+              }
+            },
+            "channel": "Canal que recibe los registros"
+          }
+        },
+        "disable": {
+          "description": "Dejar de registrar una categoría",
+          "options": {
+            "category": {
+              "description": "Categoría de registros",
+              "choices": {
+                "all": "Todas las categorías",
+                "messages": "Mensajes",
+                "members": "Miembros",
+                "moderation": "Moderación",
+                "server": "Servidor",
+                "voice": "Voz",
+                "invites": "Invitaciones",
+                "protection": "Protección",
+                "tickets": "Tickets"
+              }
+            }
+          }
+        },
+        "ignore": {
+          "description": "Ignorar un canal o volver a vigilarlo",
+          "options": {
+            "channel": "Canal o categoría que ignorar (o dejar de ignorar)"
+          }
+        },
+        "bots": {
+          "description": "Registrar o no los mensajes de bots",
+          "options": {
+            "enabled": "Registrar los mensajes de bots"
+          }
+        },
+        "status": {
+          "description": "Mostrar la configuración de registros"
+        }
+      }
+    }
+  },
+  "categories": {
+    "all": "todas las categorías",
+    "messages": "Mensajes",
+    "members": "Miembros",
+    "moderation": "Moderación",
+    "server": "Servidor",
+    "voice": "Voz",
+    "invites": "Invitaciones",
+    "protection": "Protección",
+    "tickets": "Tickets"
+  },
+  "status": {
+    "title": "Configuración de registros",
+    "description": "Canal usado para cada categoría. Protección y Tickets usan el canal de Moderación si no tienen uno propio.",
+    "off": "Desactivado",
+    "fallback": "{channel} (vía Moderación)",
+    "ignored": "Canales ignorados",
+    "none": "Ninguno",
+    "bots": "Mensajes de bots",
+    "botsIgnored": "Ignorados",
+    "botsLogged": "Registrados"
+  },
+  "errors": {
+    "title": "No es posible",
+    "missingPerms": "Me faltan estos permisos en {channel}: {perms}. Añádelos y vuelve a usar el comando."
+  },
+  "set": {
+    "title": "Registros configurados",
+    "done": "Los registros «{category}» se enviarán a {channel}."
+  },
+  "disable": {
+    "title": "Registros desactivados",
+    "done": "Los registros «{category}» están desactivados."
+  },
+  "ignore": {
+    "title": "Canales ignorados",
+    "added": "{channel} ahora se ignora: sus mensajes y su actividad de voz ya no se registrarán.",
+    "removed": "{channel} ya no se ignora."
+  },
+  "bots": {
+    "title": "Mensajes de bots",
+    "on": "Los mensajes de bots se registrarán.",
+    "off": "Los mensajes de bots ya no se registrarán."
+  },
+  "test": {
+    "title": "Prueba de registros",
+    "description": "Este canal recibe bien los registros (categoría {category}).",
+    "none": "No hay ningún canal de registros configurado.",
+    "ok": "Se ha enviado un mensaje de prueba a cada canal de registros.",
+    "partial": "Algunos canales no recibieron la prueba: revisa mis permisos (ver canal, enviar mensajes, insertar enlaces)."
+  },
+  "dashboard": {
+    "channels": {
+      "title": "Canales de registros",
+      "description": "Elige adónde va cada tipo de evento. Déjalo vacío para desactivarlo."
+    },
+    "help": {
+      "messages": "Mensajes editados y borrados, borrados masivos (con archivo de texto).",
+      "members": "Entradas, salidas, apodos, roles y mejoras.",
+      "moderation": "Baneos, expulsiones, aislamientos y sanciones del bot.",
+      "server": "Canales, roles, emojis y ajustes del servidor.",
+      "voice": "Entradas, salidas, cambios de canal de voz y silencios del servidor.",
+      "invites": "Invitaciones creadas y borradas, y la invitación usada por cada recién llegado.",
+      "protection": "Alertas de antiraid, antinuke y automod. Vacío: canal de Moderación.",
+      "tickets": "Apertura, cierre y transcripciones de tickets. Vacío: canal de Moderación."
+    },
+    "filters": {
+      "title": "Filtros",
+      "ignored": "Canales ignorados",
+      "ignoredHelp": "No se registran los mensajes ni la actividad de voz de estos canales (o categorías).",
+      "ignoreBots": "Ignorar los mensajes de bots",
+      "ignoreBotsHelp": "Recomendado: los bots editan a menudo sus propios mensajes."
+    },
+    "actions": {
+      "test": "Enviar un registro de prueba"
+    }
+  },
+  "events": {
+    "empty": "*(vacío)*",
+    "ids": "Usuario {user} · Mensaje {message}",
+    "unknown": "desconocido",
+    "none": "Ninguno",
+    "noReason": "Sin motivo",
+    "before": "Antes",
+    "after": "Después",
+    "unlimited": "Ilimitado",
+    "never": "Nunca",
+    "messages": {
+      "attachments": "Archivos adjuntos",
+      "edited": "Mensaje editado",
+      "editedDesc": "{user} editó un mensaje en {channel} — [ir al mensaje]({url})",
+      "before": "Antes",
+      "after": "Después",
+      "deleted": "Mensaje borrado",
+      "deletedUncached": "Se borró un mensaje antiguo en {channel} (`{id}`). Su contenido no estaba en memoria.",
+      "deletedDesc": "Mensaje de {user} borrado en {channel}",
+      "content": "Contenido",
+      "bulk": "Borrado masivo",
+      "bulkDesc": "{count} mensajes borrados en {channel}. {known} están en el archivo adjunto."
+    },
+    "members": {
+      "created": "Cuenta creada",
+      "count": "Miembros",
+      "warning": "Atención",
+      "newAccount": "Cuenta reciente: creada hace {age}.",
+      "botJoined": "Bot añadido",
+      "joined": "Miembro nuevo",
+      "joinedAt": "Llegó el",
+      "roles": "Roles",
+      "left": "Miembro salió",
+      "nickname": "Apodo cambiado",
+      "rolesAdded": "Roles añadidos",
+      "rolesRemoved": "Roles quitados",
+      "rolesChanged": "Roles modificados",
+      "boost": "Nueva mejora del servidor"
+    },
+    "moderation": {
+      "kick": "Miembro expulsado",
+      "target": "Miembro",
+      "by": "Por",
+      "reason": "Motivo",
+      "until": "Hasta",
+      "timeout": "Miembro aislado",
+      "untimeout": "Aislamiento retirado",
+      "ban": "Miembro baneado",
+      "unban": "Miembro desbaneado"
+    },
+    "invites": {
+      "usedInvite": "{user} entró con la invitación `{code}` de {inviter} ({uses} usos).",
+      "usedVanity": "{user} entró con el enlace personalizado `{code}` ({uses} usos).",
+      "untracked": "{user} entró, pero no puedo leer las invitaciones: necesito el permiso «Gestionar servidor».",
+      "unknownInvite": "{user} entró, pero no se pudo saber qué invitación usó.",
+      "inviterTotal": "Total del invitador: {joins} entradas, {left} salidas, {net} netas.",
+      "joinTitle": "Invitación usada",
+      "leaveTitle": "Salió un invitado",
+      "leftInvited": "{user} salió. Lo había invitado {inviter} (`{code}`).",
+      "code": "Código",
+      "channel": "Canal",
+      "maxUses": "Usos máximos",
+      "expires": "Caduca",
+      "creator": "Creada por",
+      "created": "Invitación creada",
+      "deleted": "Invitación borrada"
+    },
+    "voice": {
+      "join": "Entrada en voz",
+      "joinDesc": "{user} entró en {channel}",
+      "leave": "Salida de voz",
+      "leaveDesc": "{user} salió de {channel}",
+      "move": "Cambio de canal de voz",
+      "moveDesc": "{user} pasó de {from} a {to}",
+      "mute": "Silenciado por el servidor",
+      "muteDesc": "{user} fue silenciado en {channel}",
+      "unmute": "Silencio retirado por el servidor",
+      "unmuteDesc": "{user} ya no está silenciado en {channel}",
+      "deaf": "Ensordecido por el servidor",
+      "deafDesc": "{user} fue ensordecido en {channel}",
+      "undeaf": "Sonido restablecido por el servidor",
+      "undeafDesc": "{user} ya no está ensordecido en {channel}"
+    },
+    "server": {
+      "channelCreate": "Canal creado",
+      "channelDesc": "{channel} · {name} ({type})",
+      "channelDelete": "Canal borrado",
+      "channelUpdate": "Canal modificado",
+      "overwritesChanged": "**Permisos**: modificados",
+      "permsAdded": "Permisos concedidos",
+      "permsRemoved": "Permisos retirados",
+      "roleCreate": "Rol creado",
+      "roleDelete": "Rol borrado",
+      "roleUpdate": "Rol modificado",
+      "emojiCreate": "Emoji añadido",
+      "emojiDelete": "Emoji borrado",
+      "emojiUpdate": "Emoji renombrado",
+      "guildUpdate": "Servidor modificado"
+    }
+  },
+  "fields": {
+    "name": "Nombre",
+    "topic": "Tema",
+    "nsfw": "NSFW",
+    "slowmode": "Modo lento (s)",
+    "category": "Categoría",
+    "bitrate": "Tasa de bits",
+    "userLimit": "Límite de usuarios",
+    "color": "Color",
+    "hoist": "Mostrado por separado",
+    "mentionable": "Mencionable",
+    "icon": "Icono",
+    "banner": "Banner",
+    "vanity": "Enlace personalizado",
+    "verificationLevel": "Nivel de verificación",
+    "owner": "Propietario",
+    "afkChannel": "Canal AFK",
+    "systemChannel": "Canal del sistema"
+  },
+  "channelTypes": {
+    "GuildText": "texto",
+    "GuildVoice": "voz",
+    "GuildCategory": "categoría",
+    "GuildAnnouncement": "anuncios",
+    "GuildStageVoice": "escenario",
+    "GuildForum": "foro",
+    "GuildMedia": "multimedia",
+    "PublicThread": "hilo público",
+    "PrivateThread": "hilo privado",
+    "AnnouncementThread": "hilo de anuncios",
+    "Other": "otro"
+  }
+}

@@ -1,0 +1,519 @@
+{
+  "commands": {
+    "automod": {
+      "description": "Automatic moderation filters",
+      "options": {
+        "status": {
+          "description": "Show the automod configuration"
+        },
+        "enable": {
+          "description": "Turn automod on"
+        },
+        "disable": {
+          "description": "Turn automod off"
+        },
+        "filter": {
+          "description": "Turn one filter on or off",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Banned words",
+                "invites": "Invites",
+                "links": "Links",
+                "mentions": "Mass mentions",
+                "spam": "Message spam",
+                "duplicates": "Repeated messages",
+                "attachments": "File spam",
+                "zalgo": "Zalgo text",
+                "caps": "Capitals",
+                "emojis": "Emoji spam",
+                "newlines": "Line spam"
+              }
+            },
+            "enabled": "On or off"
+          }
+        },
+        "action": {
+          "description": "Choose what a filter does",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Banned words",
+                "invites": "Invites",
+                "links": "Links",
+                "mentions": "Mass mentions",
+                "spam": "Message spam",
+                "duplicates": "Repeated messages",
+                "attachments": "File spam",
+                "zalgo": "Zalgo text",
+                "caps": "Capitals",
+                "emojis": "Emoji spam",
+                "newlines": "Line spam"
+              }
+            },
+            "action": {
+              "description": "Action",
+              "choices": {
+                "delete": "Delete the message",
+                "warn": "Delete and warn",
+                "timeout": "Delete and time out",
+                "kick": "Delete and kick",
+                "ban": "Delete and ban"
+              }
+            },
+            "duration": "For a timeout or a temporary ban, e.g. 10m (empty ban = permanent)"
+          }
+        },
+        "set": {
+          "description": "Tune the thresholds of a filter",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Banned words",
+                "invites": "Invites",
+                "links": "Links",
+                "mentions": "Mass mentions",
+                "spam": "Message spam",
+                "duplicates": "Repeated messages",
+                "attachments": "File spam",
+                "zalgo": "Zalgo text",
+                "caps": "Capitals",
+                "emojis": "Emoji spam",
+                "newlines": "Line spam"
+              }
+            },
+            "limit": "Limit (meaning depends on the filter, see /automod status)",
+            "seconds": "Time window in seconds (spam, duplicates, files)",
+            "percent": "Percentage of capitals (caps)",
+            "min_length": "Minimum letters before checking capitals (caps)",
+            "allow_own": "Allow invites to this server (invites)"
+          }
+        },
+        "exempt": {
+          "description": "Exempt a role or channel, from all filters or from one",
+          "options": {
+            "mode": {
+              "description": "Add or remove",
+              "choices": {
+                "add": "Add",
+                "remove": "Remove"
+              }
+            },
+            "role": "Role",
+            "channel": "Channel or category",
+            "filter": {
+              "description": "Only for this filter (empty = all filters)",
+              "choices": {
+                "badwords": "Banned words",
+                "invites": "Invites",
+                "links": "Links",
+                "mentions": "Mass mentions",
+                "spam": "Message spam",
+                "duplicates": "Repeated messages",
+                "attachments": "File spam",
+                "zalgo": "Zalgo text",
+                "caps": "Capitals",
+                "emojis": "Emoji spam",
+                "newlines": "Line spam"
+              }
+            }
+          }
+        },
+        "settings": {
+          "description": "General automod settings",
+          "options": {
+            "notify": "Post a short notice in the channel",
+            "ignore_staff": "Ignore members who can manage messages",
+            "strike_window": "How long a strike counts, e.g. 24h, or \"off\" for ever"
+          }
+        },
+        "test": {
+          "description": "Check which filters a text would trigger",
+          "options": {
+            "text": "Text to test"
+          }
+        },
+        "escalation": {
+          "description": "Harsher actions after repeated strikes",
+          "options": {
+            "add": {
+              "description": "Add or replace a step",
+              "options": {
+                "strikes": "Number of strikes",
+                "action": {
+                  "description": "Sanction",
+                  "choices": {
+                    "warn": "Delete and warn",
+                    "timeout": "Delete and time out",
+                    "kick": "Delete and kick",
+                    "ban": "Delete and ban"
+                  }
+                },
+                "duration": "For a timeout (default 10m) or a temporary ban"
+              }
+            },
+            "remove": {
+              "description": "Remove a step",
+              "options": {
+                "strikes": "Number of strikes"
+              }
+            }
+          }
+        },
+        "strikes": {
+          "description": "Strikes of a member",
+          "options": {
+            "view": {
+              "description": "Show the strikes of a member",
+              "options": {
+                "user": "Member"
+              }
+            },
+            "reset": {
+              "description": "Reset the strikes of a member",
+              "options": {
+                "user": "Member"
+              }
+            }
+          }
+        }
+      }
+    },
+    "badwords": {
+      "description": "Banned words of automod",
+      "options": {
+        "add": {
+          "description": "Add words (comma separated, * = wildcard)",
+          "options": {
+            "words": "e.g. word, word*, *word*"
+          }
+        },
+        "remove": {
+          "description": "Remove words (comma separated)",
+          "options": {
+            "words": "Words to remove"
+          }
+        },
+        "list": {
+          "description": "Show the banned words (only to you)"
+        },
+        "clear": {
+          "description": "Remove every banned word"
+        }
+      }
+    },
+    "links": {
+      "description": "Allowed and blocked domains of the links filter",
+      "options": {
+        "allow": {
+          "description": "Allow a domain and its subdomains",
+          "options": {
+            "domain": "e.g. youtube.com"
+          }
+        },
+        "deny": {
+          "description": "Always block a domain and its subdomains",
+          "options": {
+            "domain": "e.g. example.com"
+          }
+        },
+        "remove": {
+          "description": "Remove a domain from both lists",
+          "options": {
+            "domain": "Domain"
+          }
+        },
+        "mode": {
+          "description": "Block every link except allowed ones, or only blocked ones",
+          "options": {
+            "mode": {
+              "description": "Mode",
+              "choices": {
+                "allowlist": "Allow list (every other link is blocked)",
+                "denylist": "Block list (only listed domains are blocked)"
+              }
+            }
+          }
+        },
+        "list": {
+          "description": "Show both lists"
+        }
+      }
+    }
+  },
+  "filters": {
+    "badwords": {
+      "name": "Banned words",
+      "description": "Words from /badwords, with * wildcards. Accents, leet speak (b4d) and spaced letters (b a d) are caught.",
+      "threshold": "list from /badwords"
+    },
+    "invites": {
+      "name": "Invites",
+      "description": "Discord invites to other servers, even written \"discord . gg / code\".",
+      "threshold": "own server allowed: {allowOwn}"
+    },
+    "links": {
+      "name": "Links",
+      "description": "Links, depending on the allowed and blocked domains of /links.",
+      "threshold": "see /links"
+    },
+    "mentions": {
+      "name": "Mass mentions",
+      "description": "Limit = users and roles pinged in one message.",
+      "threshold": "{limit} mentions"
+    },
+    "spam": {
+      "name": "Message spam",
+      "description": "Limit = messages sent within the time window.",
+      "threshold": "{limit} messages / {seconds} s"
+    },
+    "duplicates": {
+      "name": "Repeated messages",
+      "description": "Limit = identical messages within the time window.",
+      "threshold": "{limit} copies / {seconds} s"
+    },
+    "attachments": {
+      "name": "File spam",
+      "description": "Limit = files and stickers sent within the time window.",
+      "threshold": "{limit} files / {seconds} s"
+    },
+    "zalgo": {
+      "name": "Zalgo text",
+      "description": "Limit = stacked accent marks on one character.",
+      "threshold": "{limit} stacked marks"
+    },
+    "caps": {
+      "name": "Capitals",
+      "description": "Share of capital letters, checked once the message has enough letters.",
+      "threshold": "{percent}% from {minLength} letters"
+    },
+    "emojis": {
+      "name": "Emoji spam",
+      "description": "Limit = emojis in one message.",
+      "threshold": "{limit} emojis"
+    },
+    "newlines": {
+      "name": "Line spam",
+      "description": "Limit = line breaks in one message.",
+      "threshold": "{limit} lines"
+    }
+  },
+  "reasons": {
+    "badwords": "Banned word",
+    "invites": "Invite to another server ({codes})",
+    "links": "Link not allowed ({domains})",
+    "mentions": "Too many mentions ({count})",
+    "spam": "Spam: {count} messages in {seconds} s",
+    "duplicates": "Same message repeated {count} times",
+    "attachments": "Too many files: {count} in {seconds} s",
+    "zalgo": "Zalgo text",
+    "caps": "Too many capitals ({percent}%)",
+    "emojis": "Too many emojis ({count})",
+    "newlines": "Too many lines ({count})"
+  },
+  "actions": {
+    "delete": "Delete",
+    "warn": "Delete + warning",
+    "timeout": "Delete + timeout",
+    "kick": "Delete + kick",
+    "ban": "Delete + ban"
+  },
+  "linkModes": {
+    "allowlist": "Allow list (every other link is blocked)",
+    "denylist": "Block list (only listed domains are blocked)"
+  },
+  "notice": {
+    "title": "Message removed",
+    "delete": "{user}, your message was removed: {reason}.",
+    "warn": "{user}, your message was removed and you received a warning: {reason}.",
+    "timeout": "{user} was timed out: {reason}.",
+    "kick": "{user} was kicked: {reason}.",
+    "ban": "{user} was banned: {reason}."
+  },
+  "status": {
+    "title": "Automod",
+    "enabled": "Automod is **on**.",
+    "disabled": "Automod is **off**: turn it on with /automod enable.",
+    "filters": "Filters",
+    "on": "on",
+    "off": "off",
+    "escalation": "Escalation",
+    "step": "{strikes} strikes → {action}",
+    "strikeWindow": "Strikes count for",
+    "never": "Forever",
+    "ignoreStaff": "Staff ignored",
+    "notify": "Channel notice",
+    "yes": "Yes",
+    "no": "No",
+    "none": "None",
+    "exemptRoles": "Exempt roles",
+    "exemptChannels": "Exempt channels",
+    "exemptCount": "{count} exemption(s)",
+    "lists": "Lists",
+    "listsValue": "{words} banned word(s) · {allow} allowed domain(s) · {deny} blocked domain(s) · mode: {mode}"
+  },
+  "errors": {
+    "title": "Action impossible",
+    "badDuration": "Invalid duration. Examples: 10m, 2h, 7d (28 days at most for a timeout).",
+    "noStep": "There is no step at {count} strikes.",
+    "tooManySteps": "At most {max} steps. Remove one first.",
+    "exemptNothing": "Choose a role or a channel.",
+    "setNothing": "Give at least one value to change.",
+    "setWrongParam": "This filter has no \"{param}\" setting. Filters that have it: {filters}.",
+    "setRange": "\"{param}\" must be between {min} and {max}.",
+    "noWords": "No valid word. Words are separated by commas and are {max} characters at most.",
+    "tooManyWords": "At most {max} banned words.",
+    "badDomain": "This is not a valid domain. Example: youtube.com",
+    "domainUnknown": "{domain} is in neither list.",
+    "tooManyDomains": "At most {max} domains per list."
+  },
+  "strikes": {
+    "title": "Strikes",
+    "count": "{user} has **{count}** active strike(s).",
+    "last": "Last strike: {when}",
+    "next": "Next step at {count} strikes: {action}",
+    "reset": "Strikes of {user} reset."
+  },
+  "test": {
+    "title": "Automod test",
+    "clean": "This text triggers no filter.",
+    "disabled": "filter off",
+    "note": "Rate filters (spam, repeated messages, files) need several messages and are not tested here."
+  },
+  "badwords": {
+    "title": "Banned words",
+    "added": "{count} word(s) added ({total} in total).",
+    "removed": "{count} word(s) removed ({total} left).",
+    "empty": "The list is empty.",
+    "listTitle": "Banned words ({count})",
+    "help": "word = whole word · word* = starts with · *word* = anywhere",
+    "clearConfirm": "Remove all {count} banned words?",
+    "cleared": "The list is now empty.",
+    "filterOff": "The banned words filter is off: /automod filter badwords on."
+  },
+  "links": {
+    "title": "Links filter",
+    "mode": "Mode",
+    "allowed": "Allowed domains ({count})",
+    "denied": "Blocked domains ({count})",
+    "saved": "Lists updated.",
+    "filterOff": "The links filter is off: /automod filter links on.",
+    "modeHelp": {
+      "allowlist": "Every link is blocked except the allowed domains.",
+      "denylist": "Only the blocked domains are removed; other links pass."
+    }
+  },
+  "log": {
+    "title": "Automod",
+    "user": "User",
+    "channel": "Channel",
+    "filter": "Filter",
+    "action": "Action",
+    "strikes": "Strikes",
+    "strikesShort": "strike {count}",
+    "escalated": "escalated",
+    "reason": "Reason",
+    "content": "Message"
+  },
+  "dashboard": {
+    "general": {
+      "title": "General",
+      "description": "Master switch, who is ignored, and how long strikes last."
+    },
+    "lists": {
+      "title": "Lists",
+      "description": "Banned words and link domains."
+    },
+    "fields": {
+      "enabled": {
+        "label": "Automod enabled",
+        "help": "Master switch of every filter."
+      },
+      "ignoreStaff": {
+        "label": "Ignore staff",
+        "help": "Members with Manage Messages, Manage Server or Administrator are never checked."
+      },
+      "notify": {
+        "label": "Channel notice",
+        "help": "A short message, deleted after a few seconds, tells the member why their message was removed."
+      },
+      "exemptRoles": {
+        "label": "Exempt roles",
+        "help": "Members with one of these roles are never checked."
+      },
+      "exemptChannels": {
+        "label": "Exempt channels",
+        "help": "Channels or categories where automod does nothing."
+      },
+      "strikeWindow": {
+        "label": "Strikes count for",
+        "help": "Each violation adds a strike; escalation steps use the strikes within this time. 0 = forever."
+      },
+      "badwords": {
+        "label": "Banned words",
+        "help": "One per entry. word = whole word, word* = starts with, *word* = anywhere."
+      },
+      "linkMode": {
+        "label": "Links mode",
+        "help": "Allow list blocks every link except allowed domains; block list blocks only listed domains."
+      },
+      "linkAllow": {
+        "label": "Allowed domains",
+        "help": "Subdomains are included (youtube.com covers m.youtube.com)."
+      },
+      "linkDeny": {
+        "label": "Blocked domains",
+        "help": "Always blocked, whatever the mode."
+      }
+    },
+    "filter": {
+      "enabled": {
+        "label": "Enabled",
+        "help": "Turn this filter on."
+      },
+      "action": {
+        "label": "Action",
+        "help": "The message is always deleted; the action can add a sanction."
+      },
+      "duration": {
+        "label": "Duration",
+        "help": "Length of a timeout or temporary ban. 0 for a ban = permanent."
+      },
+      "allowOwn": {
+        "label": "Allow own invites",
+        "help": "Invites to this server are not removed."
+      },
+      "limit": {
+        "label": "Limit",
+        "help": "Triggers when this number is reached (see the description above)."
+      },
+      "seconds": {
+        "label": "Time window (seconds)",
+        "help": "Messages counted over this many seconds."
+      },
+      "percent": {
+        "label": "Capitals (%)",
+        "help": "Share of capital letters that triggers the filter."
+      },
+      "minLength": {
+        "label": "Minimum letters",
+        "help": "Short messages (\"OK\", \"LOL\") are not checked."
+      },
+      "exemptRoles": {
+        "label": "Exempt roles",
+        "help": "Roles this filter ignores."
+      },
+      "exemptChannels": {
+        "label": "Exempt channels",
+        "help": "Channels or categories this filter ignores."
+      }
+    },
+    "actions": {
+      "resetStrikes": "Reset all strikes",
+      "resetStrikesDone": "All strikes were reset."
+    }
+  }
+}

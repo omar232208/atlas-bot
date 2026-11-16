@@ -1,0 +1,162 @@
+{
+  "commands": {
+    "dashboard": {
+      "description": "Ouvrir le tableau de bord web du serveur"
+    }
+  },
+  "command": {
+    "title": "Tableau de bord",
+    "noPermission": "Il faut la permission Gérer le serveur pour ouvrir le tableau de bord.",
+    "notRunning": "Le tableau de bord web n'est pas activé. Définissez la variable DASHBOARD_PORT (ou PORT) dans le fichier .env puis redémarrez le bot.",
+    "noUrl": "Le tableau de bord tourne sur le port {port}, mais son adresse publique est inconnue. Ajoutez DASHBOARD_URL dans le fichier .env (sur ACLClouds : copiez l'adresse HTTPS de l'onglet « Port / Adresse »), ou ouvrez cette adresse une fois dans votre navigateur, puis relancez /dashboard.",
+    "body": "[Ouvrir le tableau de bord]({url})\n\nCe lien est personnel, à usage unique et expire dans 10 minutes. Ne le partagez pas.",
+    "button": "Ouvrir le tableau de bord",
+    "footer": "Connexion valable 7 jours sur ce navigateur"
+  },
+  "console": {
+    "disabled": "Tableau de bord web désactivé : définissez DASHBOARD_PORT (ou PORT) dans .env pour l'activer.",
+    "listenFailed": "Le tableau de bord n'a pas pu écouter sur le port {port} : {error}",
+    "started": "Tableau de bord web en ligne sur le port {port} : {url}",
+    "startedNoUrl": "Tableau de bord web en ligne sur le port {port}. Définissez DASHBOARD_URL pour que /dashboard puisse envoyer des liens de connexion."
+  },
+  "log": {
+    "none": "aucun",
+    "on": "activé",
+    "off": "désactivé",
+    "more": "et {count} autres changements",
+    "configTitle": "Réglages modifiés depuis le tableau de bord",
+    "by": "Par {user} ({tag})",
+    "actionTitle": "Action lancée depuis le tableau de bord",
+    "actionBy": "{user} ({tag}) a lancé « {action} »."
+  },
+  "api": {
+    "actionFailed": "L'action a échoué. Vérifiez les permissions du bot puis réessayez.",
+    "actionDone": "Action effectuée.",
+    "ownerOnly": "Seul le propriétaire du serveur (ou un propriétaire du bot) peut modifier ces réglages."
+  },
+  "modules": {
+    "core-commands": "Général",
+    "antiraid": "Anti-raid",
+    "antinuke": "Anti-nuke",
+    "automod": "Automodération",
+    "moderation": "Modération",
+    "logs": "Journaux",
+    "welcome": "Bienvenue",
+    "verification": "Vérification",
+    "tickets": "Tickets",
+    "roles": "Rôles",
+    "utility": "Utilitaires",
+    "giveaways": "Concours",
+    "levels": "Niveaux",
+    "backup": "Sauvegardes",
+    "economy": "Économie",
+    "fun": "Jeux",
+    "community": "Communauté",
+    "music": "Musique",
+    "dashboard": "Tableau de bord"
+  },
+  "ui": {
+    "title": "Tableau de bord ACLClouds Bot",
+    "server": "Serveur",
+    "chooseServer": "Choisir un serveur",
+    "language": "Langue",
+    "menu": "Menu",
+    "logout": "Se déconnecter",
+    "navigation": "Navigation",
+    "overview": "Vue d'ensemble",
+    "modules": "Modules",
+    "enableModule": "Activer {module}",
+    "hostedBy": "Hébergé gratuitement sur",
+    "unsavedRegion": "Modifications non enregistrées",
+    "unsavedOne": "1 modification non enregistrée",
+    "unsavedMany": "{count} modifications non enregistrées",
+    "reset": "Annuler",
+    "save": "Enregistrer",
+    "saved": "Modifications enregistrées.",
+    "saveFailed": "Certaines valeurs sont invalides. Corrigez-les puis réessayez.",
+    "discardTitle": "Abandonner les modifications ?",
+    "discardBody": "Les modifications non enregistrées de ce serveur seront perdues.",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "enabled": "Activé",
+    "disabled": "Désactivé",
+    "protections": "Protections",
+    "noProtections": "Aucun module de protection n'est chargé.",
+    "recentChanges": "Modifications récentes",
+    "otherModules": "Autres modules",
+    "members": "{count} membres",
+    "stats": {
+      "members": "Membres",
+      "channels": "Salons",
+      "roles": "Rôles",
+      "tickets": "Tickets ouverts"
+    },
+    "history": {
+      "config": "{user} a modifié {module}",
+      "action": "{user} a lancé une action dans {module}",
+      "empty": "Aucune modification pour le moment."
+    },
+    "actions": "Actions",
+    "actionConfirm": "Cette action ne peut pas être annulée. Voulez-vous continuer ?",
+    "actionDone": "Action effectuée.",
+    "actionFailed": "L'action a échoué.",
+    "moduleOff": "Ce module est désactivé. Vos réglages sont conservés.",
+    "notFound": "Cette page n'existe pas.",
+    "loading": "Chargement...",
+    "forbidden": "Vous n'avez plus accès à ce serveur. Il faut la permission Gérer le serveur.",
+    "loadFailed": "Impossible de charger ce serveur.",
+    "retry": "Réessayer",
+    "picker": {
+      "title": "Vos serveurs",
+      "subtitle": "Choisissez le serveur à configurer.",
+      "empty": "Aucun serveur disponible. Tapez cette commande dans votre serveur pour recevoir un lien de connexion :"
+    },
+    "login": {
+      "title": "Connexion au tableau de bord",
+      "signingIn": "Connexion en cours...",
+      "howTo": "Tapez cette commande dans votre serveur Discord pour recevoir un lien de connexion personnel :",
+      "or": "ou",
+      "discord": "Se connecter avec Discord",
+      "linkInvalid": "Ce lien a expiré ou a déjà été utilisé. Relancez /dashboard pour en obtenir un nouveau.",
+      "rateLimited": "Trop de tentatives. Patientez une minute puis réessayez.",
+      "oauthFailed": "La connexion avec Discord a échoué. Réessayez."
+    },
+    "field": {
+      "voice": "vocal",
+      "none": "Aucun",
+      "missing": "Introuvable (supprimé ?)",
+      "emptyList": "Aucun élément",
+      "remove": "Retirer",
+      "add": "Ajouter",
+      "addChannel": "Ajouter un salon...",
+      "addRole": "Ajouter un rôle...",
+      "addItem": "Nouvel élément",
+      "unit": "Unité",
+      "units": {
+        "d": "jours",
+        "h": "heures",
+        "m": "minutes",
+        "s": "secondes"
+      }
+    },
+    "errors": {
+      "type": "Valeur invalide.",
+      "required": "Ce champ est obligatoire.",
+      "min": "La valeur minimale est {min}.",
+      "max": "La valeur maximale est {max}.",
+      "maxLength": "{max} caractères au maximum.",
+      "minLength": "{min} caractères au minimum.",
+      "option": "Choix invalide.",
+      "unknownChannel": "Ce salon n'existe plus.",
+      "wrongChannelType": "Ce type de salon n'est pas accepté ici.",
+      "unknownRole": "Ce rôle n'existe plus.",
+      "tooMany": "{max} éléments au maximum.",
+      "tooFew": "{min} éléments au minimum.",
+      "unknownField": "Ce réglage n'existe plus.",
+      "empty": "Rien à enregistrer.",
+      "rateLimited": "Trop de requêtes. Patientez une minute.",
+      "ownerOnly": "Réservé au propriétaire du serveur."
+    },
+    "ownerOnly": "Réservé au propriétaire du serveur."
+  }
+}

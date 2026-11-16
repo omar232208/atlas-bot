@@ -1,0 +1,496 @@
+{
+  "commands": {
+    "ban": {
+      "description": "Ban a user, optionally for a limited time",
+      "options": {
+        "user": "User to ban",
+        "reason": "Reason of the ban",
+        "duration": "Temporary ban length, e.g. 7d (empty = permanent)",
+        "delete_messages": {
+          "description": "Delete their recent messages",
+          "choices": {
+            "0": "Do not delete",
+            "3600": "Last hour",
+            "21600": "Last 6 hours",
+            "43200": "Last 12 hours",
+            "86400": "Last 24 hours",
+            "259200": "Last 3 days",
+            "604800": "Last 7 days"
+          }
+        },
+        "silent": "Do not send a DM to the user"
+      }
+    },
+    "kick": {
+      "description": "Kick a member from the server",
+      "options": {
+        "user": "Member to kick",
+        "reason": "Reason of the kick",
+        "silent": "Do not send a DM to the user"
+      }
+    },
+    "timeout": {
+      "description": "Time out a member (no messages, no voice)",
+      "options": {
+        "user": "Member to time out",
+        "duration": "Length, e.g. 10m, 2h, 7d (up to 365d)",
+        "reason": "Reason of the timeout",
+        "silent": "Do not send a DM to the user"
+      }
+    },
+    "warn": {
+      "description": "Warn a member (thresholds can sanction automatically)",
+      "options": {
+        "user": "Member to warn",
+        "reason": "Reason of the warning",
+        "silent": "Do not send a DM to the user"
+      }
+    },
+    "unban": {
+      "description": "Unban a user",
+      "options": {
+        "user": "Banned user (type a name or an ID)",
+        "reason": "Reason of the unban"
+      }
+    },
+    "case": {
+      "description": "View, edit or delete a moderation case",
+      "options": {
+        "view": {
+          "description": "Show a case",
+          "options": {
+            "number": "Case number"
+          }
+        },
+        "edit": {
+          "description": "Change the reason or the length of a temporary ban",
+          "options": {
+            "number": "Case number",
+            "reason": "New reason",
+            "duration": "New temporary ban length, counted from the ban"
+          }
+        },
+        "delete": {
+          "description": "Delete a case",
+          "options": {
+            "number": "Case number"
+          }
+        }
+      }
+    },
+    "purge": {
+      "description": "Delete recent messages, with optional filters",
+      "options": {
+        "amount": "How many messages to delete (1-100)",
+        "user": "Only messages from this user",
+        "bots": "Only messages from bots",
+        "humans": "Only messages from humans",
+        "links": "Only messages containing a link",
+        "attachments": "Only messages with files",
+        "embeds": "Only messages with embeds",
+        "contains": "Only messages containing this text"
+      }
+    },
+    "slowmode": {
+      "description": "Set the slowmode of a channel",
+      "options": {
+        "duration": "Delay between messages, e.g. 10s, 5m (max 6h), or \"off\"",
+        "channel": "Channel (default: this one)"
+      }
+    },
+    "lock": {
+      "description": "Prevent @everyone from talking in a channel",
+      "options": {
+        "channel": "Channel (default: this one)",
+        "reason": "Reason, shown in the channel"
+      }
+    },
+    "mod": {
+      "description": "More moderation tools and settings",
+      "options": {
+        "clearwarns": {
+          "description": "Remove every active warning of a member",
+          "options": {
+            "user": "Member",
+            "reason": "Reason"
+          }
+        },
+        "config": {
+          "description": "Moderation settings",
+          "options": {
+            "show": {
+              "description": "Show the moderation settings"
+            },
+            "dm": {
+              "description": "DM members when they are sanctioned",
+              "options": {
+                "enabled": "Send the DM",
+                "show_moderator": "Name the moderator in the DM"
+              }
+            },
+            "appeal": {
+              "description": "Text added to sanction DMs (how to appeal)",
+              "options": {
+                "text": "Text (leave empty to remove)"
+              }
+            },
+            "reason": {
+              "description": "Require a reason for every sanction",
+              "options": {
+                "required": "Reason required"
+              }
+            },
+            "warnexpiry": {
+              "description": "Warnings stop counting after this time",
+              "options": {
+                "duration": "e.g. 30d, or \"off\" to never expire"
+              }
+            }
+          }
+        },
+        "history": {
+          "description": "Show every moderation case of a user",
+          "options": {
+            "user": "User",
+            "type": {
+              "description": "Only one type of case",
+              "choices": {
+                "warn": "Warnings",
+                "unwarn": "Removed warnings",
+                "clearwarns": "Cleared warnings",
+                "timeout": "Timeouts",
+                "untimeout": "Timeouts removed",
+                "kick": "Kicks",
+                "softban": "Softbans",
+                "ban": "Bans",
+                "tempban": "Temporary bans",
+                "unban": "Unbans"
+              }
+            }
+          }
+        },
+        "massban": {
+          "description": "Ban many users at once by ID (raids)",
+          "options": {
+            "ids": "User IDs or mentions, separated by spaces",
+            "reason": "Reason of the bans",
+            "delete_messages": {
+              "description": "Delete their recent messages",
+              "choices": {
+                "0": "Do not delete",
+                "3600": "Last hour",
+                "21600": "Last 6 hours",
+                "43200": "Last 12 hours",
+                "86400": "Last 24 hours",
+                "259200": "Last 3 days",
+                "604800": "Last 7 days"
+              }
+            }
+          }
+        },
+        "nick": {
+          "description": "Change or reset the nickname of a member",
+          "options": {
+            "user": "Member",
+            "nickname": "New nickname (empty to reset)"
+          }
+        },
+        "softban": {
+          "description": "Ban then unban a member to wipe their recent messages",
+          "options": {
+            "user": "Member to softban",
+            "reason": "Reason of the softban",
+            "delete_messages": {
+              "description": "Messages to delete (default: 24 hours)",
+              "choices": {
+                "3600": "Last hour",
+                "21600": "Last 6 hours",
+                "43200": "Last 12 hours",
+                "86400": "Last 24 hours",
+                "259200": "Last 3 days",
+                "604800": "Last 7 days"
+              }
+            },
+            "silent": "Do not send a DM to the user"
+          }
+        },
+        "unlock": {
+          "description": "Unlock a channel locked with /lock",
+          "options": {
+            "channel": "Channel (default: this one)",
+            "reason": "Reason, shown in the channel"
+          }
+        },
+        "untimeout": {
+          "description": "Remove the timeout of a member",
+          "options": {
+            "user": "Member to release",
+            "reason": "Reason"
+          }
+        },
+        "unwarn": {
+          "description": "Remove one warning by its case number",
+          "options": {
+            "case": "Case number of the warning",
+            "reason": "Reason"
+          }
+        },
+        "warnconfig": {
+          "description": "Automatic sanctions when a member reaches a number of warnings",
+          "options": {
+            "add": {
+              "description": "Add or replace a threshold",
+              "options": {
+                "warns": "Number of active warnings",
+                "action": {
+                  "description": "Sanction to apply",
+                  "choices": {
+                    "timeout": "Timeout",
+                    "kick": "Kick",
+                    "softban": "Softban",
+                    "ban": "Ban"
+                  }
+                },
+                "duration": "Length for a timeout (default 1h) or a temporary ban"
+              }
+            },
+            "remove": {
+              "description": "Remove a threshold",
+              "options": {
+                "warns": "Number of warnings of the threshold"
+              }
+            },
+            "list": {
+              "description": "Show the thresholds"
+            }
+          }
+        },
+        "warnings": {
+          "description": "List the active warnings of a member",
+          "options": {
+            "user": "Member"
+          }
+        }
+      }
+    }
+  },
+  "perms": {
+    "Administrator": "Administrator",
+    "BanMembers": "Ban Members",
+    "KickMembers": "Kick Members",
+    "ModerateMembers": "Timeout Members",
+    "ManageMessages": "Manage Messages",
+    "ReadMessageHistory": "Read Message History",
+    "ManageChannels": "Manage Channels",
+    "ManageRoles": "Manage Permissions",
+    "ManageNicknames": "Manage Nicknames",
+    "ManageGuild": "Manage Server"
+  },
+  "types": {
+    "warn": "Warning",
+    "unwarn": "Warning removed",
+    "clearwarns": "Warnings cleared",
+    "timeout": "Timeout",
+    "untimeout": "Timeout removed",
+    "kick": "Kick",
+    "softban": "Softban",
+    "ban": "Ban",
+    "tempban": "Temporary ban",
+    "unban": "Unban"
+  },
+  "case": {
+    "title": "Case #{id} · {type}",
+    "user": "User",
+    "moderator": "Moderator",
+    "automatic": "automatic",
+    "reason": "Reason",
+    "noReason": "No reason given",
+    "duration": "Duration",
+    "expires": "Ends",
+    "status": "Status",
+    "active": "Active",
+    "removed": "Removed",
+    "edited": "Edited",
+    "created": "Created",
+    "editedTitle": "Case #{id} updated",
+    "deleteConfirm": "Delete case #{id} ({type})? This cannot be undone.",
+    "deleted": "Case #{id} deleted",
+    "deletedText": "The case was removed from the history.",
+    "deletedTempban": "The scheduled unban was cancelled: the user stays banned until /unban."
+  },
+  "errors": {
+    "title": "Action impossible",
+    "botMissing": "I am missing the **{perm}** permission. Give it to my role in Server Settings > Roles, then try again.",
+    "unknownUser": "This user does not exist or cannot be found.",
+    "notBanned": "This user is not banned.",
+    "unexpected": "Discord refused the action: {message}",
+    "self": "You cannot do this to yourself.",
+    "selfBot": "I cannot do this to myself.",
+    "owner": "The server owner cannot be sanctioned.",
+    "hierarchyUser": "This member has a role equal to or above your highest role.",
+    "hierarchyBot": "This member has a role equal to or above my highest role. Move my role higher in Server Settings > Roles.",
+    "reasonRequired": "A reason is required on this server (see /mod config reason).",
+    "notMember": "This user is not a member of the server.",
+    "notTimedOut": "This member is not timed out.",
+    "badDuration": "Invalid duration. Examples: 30m, 2h, 7d, 1w2d.",
+    "badTimeout": "Invalid timeout length: between 5 seconds and 365 days (28 days at most for a warn threshold). Examples: 10m, 2h, 7d.",
+    "alreadyBanned": "This user is already banned.",
+    "badId": "No valid user ID found.",
+    "notAWarn": "Case #{id} is not a warning.",
+    "warnInactive": "Warning #{id} was already removed.",
+    "noWarns": "This member has no active warning.",
+    "noCase": "Case #{id} does not exist.",
+    "nothingToEdit": "Give a new reason or a new duration.",
+    "durationOnlyTempban": "Only the length of a temporary ban can be changed.",
+    "tempbanOver": "This temporary ban is already over.",
+    "badChannel": "This command does not work in this kind of channel.",
+    "badSlowmode": "Invalid slowmode: between 1 second and 6 hours, or \"off\". Examples: 10s, 5m, 1h.",
+    "alreadyLocked": "This channel is already locked.",
+    "notLocked": "This channel is not locked.",
+    "tooManyIds": "Too many IDs: {max} at most per command.",
+    "noValidIds": "None of these users can be banned by you (yourself, me, the owner or higher roles).",
+    "tooManyThresholds": "At most {max} thresholds. Remove one first.",
+    "noThreshold": "There is no threshold at {count} warnings.",
+    "userMissing": "You need the **{perm}** permission to use this command."
+  },
+  "dm": {
+    "title": {
+      "warn": "You received a warning on {server}",
+      "timeout": "You were timed out on {server}",
+      "kick": "You were kicked from {server}",
+      "softban": "You were kicked from {server} and your recent messages were deleted",
+      "ban": "You were banned from {server}"
+    },
+    "appeal": "Appeal"
+  },
+  "auto": {
+    "threshold": "Automatic sanction: {count} active warnings",
+    "tempbanExpired": "Temporary ban expired (case #{id})",
+    "timeoutContinued": "Long timeout continued until {until}"
+  },
+  "done": {
+    "case": "Case #{id} created.",
+    "warn": "{user} was warned",
+    "unwarn": "Warning of {user} removed",
+    "unwarnText": "Warning #{id} no longer counts (case #{case}).",
+    "clearwarns": "Warnings of {user} cleared",
+    "clearwarnsText": "{count} warning(s) removed (case #{case}).",
+    "timeout": "{user} was timed out",
+    "untimeout": "Timeout of {user} removed",
+    "kick": "{user} was kicked",
+    "softban": "{user} was softbanned",
+    "ban": "{user} was banned",
+    "tempban": "{user} was temporarily banned",
+    "unban": "{user} was unbanned",
+    "dm": "Direct message",
+    "dmSent": "Sent",
+    "dmFailed": "Not delivered (DMs closed)",
+    "dmSilent": "Not sent (silent)",
+    "dmDisabled": "Disabled on this server",
+    "warnCount": "Active warnings",
+    "followUp": "Automatic sanction",
+    "followUpText": "Threshold reached: {type} (case #{id})."
+  },
+  "warnings": {
+    "title": "Warnings of {user} ({count})",
+    "none": "No active warning.",
+    "expiry": "Warnings expire after {duration}",
+    "next": "Next sanction at {count} warnings: {type}"
+  },
+  "history": {
+    "title": "History of {user} ({count} cases)",
+    "none": "No case for this user."
+  },
+  "clearwarns": {
+    "confirm": "Remove the {count} active warning(s) of {user}?"
+  },
+  "purge": {
+    "none": "No recent message matches these filters.",
+    "done": "{count} message(s) deleted",
+    "oldNote": "Messages older than 14 days cannot be bulk deleted by Discord and were skipped.",
+    "logTitle": "Messages purged",
+    "channel": "Channel",
+    "count": "Deleted"
+  },
+  "slowmode": {
+    "title": "Slowmode",
+    "set": "Slowmode of {channel} set to {duration}.",
+    "off": "Slowmode of {channel} disabled."
+  },
+  "nick": {
+    "title": "Nickname",
+    "set": "Nickname of {user} changed to **{nick}**.",
+    "reset": "Nickname of {user} reset.",
+    "before": "Before: {nick}"
+  },
+  "lock": {
+    "title": "Channel locked",
+    "done": "{channel} is locked: members can no longer send messages.",
+    "notice": "This channel is locked by the moderators.",
+    "reasonLine": "Reason: {reason}"
+  },
+  "unlock": {
+    "title": "Channel unlocked",
+    "done": "{channel} is unlocked: its previous permissions are restored.",
+    "notice": "This channel is unlocked."
+  },
+  "massban": {
+    "confirm": "Ban {count} user(s)? {skipped} ID(s) you cannot ban will be skipped.",
+    "done": "{count} user(s) banned",
+    "doneText": "Failed: {failed} · skipped: {skipped}.",
+    "logTitle": "Mass ban",
+    "banned": "Banned",
+    "failed": "Failed or skipped"
+  },
+  "warnconfig": {
+    "title": "Warn thresholds",
+    "line": "**{count}** warnings → {type}{duration}",
+    "empty": "No threshold: warnings never sanction automatically. Add one with /mod warnconfig add."
+  },
+  "modconfig": {
+    "title": "Moderation settings",
+    "saved": "Settings saved.",
+    "on": "On",
+    "off": "Off",
+    "dm": "DM on sanction",
+    "showModerator": "Moderator named in DM",
+    "requireReason": "Reason required",
+    "warnExpiry": "Warnings expire after",
+    "never": "Never",
+    "appeal": "Appeal text",
+    "none": "None",
+    "thresholds": "Warn thresholds"
+  },
+  "dashboard": {
+    "sanctions": {
+      "title": "Sanctions",
+      "description": "What members are told when they are sanctioned, and what moderators must provide."
+    },
+    "warnings": {
+      "title": "Warnings",
+      "description": "Thresholds are set with /mod warnconfig; here, how long a warning keeps counting."
+    },
+    "fields": {
+      "dm": {
+        "label": "DM before a sanction",
+        "help": "The member receives the reason in a private message before the sanction is applied."
+      },
+      "dmShowModerator": {
+        "label": "Name the moderator in the DM",
+        "help": "Off by default, so moderators are not harassed."
+      },
+      "appeal": {
+        "label": "Appeal text",
+        "help": "Added to every sanction DM, for example a form link or an e-mail address."
+      },
+      "requireReason": {
+        "label": "Reason required",
+        "help": "Refuse sanctions without a reason."
+      },
+      "warnExpiry": {
+        "label": "Warnings expire after",
+        "help": "0 = warnings never expire. Expired warnings stay in the history but no longer count for thresholds."
+      }
+    }
+  }
+}

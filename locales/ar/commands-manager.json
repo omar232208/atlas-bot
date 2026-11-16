@@ -1,0 +1,1107 @@
+{
+  "dashboard": {
+    "overview": {
+      "title": "إعدادات عامة",
+      "description": "إعدادات تطبق على كل أوامر البوت.",
+      "globalEnabled": "تفعيل نظام الأوامر",
+      "globalEnabledHelp": "إيقاف هذا يعطل كل أوامر البوت في السيرفر (ما عدا أوامر المالك).",
+      "bypassOwner": "تخطي مالك السيرفر",
+      "bypassOwnerHelp": "مالك السيرفر يستخدم كل الأوامر حتى لو معطلة أو مقيدة برولات.",
+      "bypassAdmin": "تخطي المشرفين",
+      "bypassAdminHelp": "الأعضاء بصلاحية \"إدارة السيرفر\" يستخدمون كل أوامر الإدارة حتى لو مقيدة."
+    },
+    "categories": {
+      "core": {
+        "name": "الأساسية",
+        "description": "أوامر البوت الأساسية: مساعدة، بينغ، معلومات، إعدادات، داشبورد."
+      },
+      "admin": {
+        "name": "الإدارة",
+        "description": "أوامر المشرفين: حظر، طرد، تايم آوت، حذف رسائل، رتب، استطلاعات، إمبدز..."
+      },
+      "protection": {
+        "name": "الحماية",
+        "description": "أنتي نيوك، أنتي رايد، أوتو مود، تحقق بالكابتشا، قفل القنوات..."
+      },
+      "logs": {
+        "name": "السجلات",
+        "description": "إعداد قنوات سجلات المودراشن (حظر، طرد، رسائل محذوفة...)."
+      },
+      "tickets": {
+        "name": "التذاكر",
+        "description": "نظام تذاكر الدعم الفني."
+      },
+      "welcome": {
+        "name": "الترحيب والوداع",
+        "description": "رسائل ترحيب، رسائل وداع، رتب تلقائية عند الانضمام."
+      },
+      "economy": {
+        "name": "الاقتصاد",
+        "description": "فلوس، بنك، متجر رتب، قمار، مكافآت يومية/أسبوعية، سرقة."
+      },
+      "levels": {
+        "name": "المستويات",
+        "description": "نظام خبرة، ليدربورد، رتب مكافآت عند الوصول لمستوى معين."
+      },
+      "giveaways": {
+        "name": "الهدايا",
+        "description": "إنشاء هدايا بزر، متطلبات دخول، فائزين عشوائيين."
+      },
+      "fun": {
+        "name": "الترفيه",
+        "description": "ألعاب: تيك تاك تو، كونكت 4، حجر ورقة مقص، شنق، ترافيا، نرد، كرة الثماني."
+      },
+      "community": {
+        "name": "المجتمع",
+        "description": "اقتراحات، ستاربورد، تاجز، AFK، قنوات صوتية مؤقتة، ردود تلقائية."
+      },
+      "music": {
+        "name": "الموسيقى",
+        "description": "تشغيل موسيقى وراديو وإدارة قائمة الانتظار."
+      },
+      "backup": {
+        "name": "النسخ الاحتياطي",
+        "description": "حفظ واستعادة رتب، قنوات، إعدادات السيرفر."
+      }
+    },
+    "commands": {
+      "help": {
+        "label": "المساعدة",
+        "description": "عرض أوامر كل الوحدات أو تفاصيل أمر واحد"
+      },
+      "ping": {
+        "label": "بينغ",
+        "description": "عرض سرعة استجابة البوت"
+      },
+      "botinfo": {
+        "label": "معلومات البوت",
+        "description": "إحصائيات البوت، الإصدار، عدد السيرفرات"
+      },
+      "config": {
+        "label": "الإعدادات",
+        "description": "تغيير لغة البوت، عرض الإعدادات، إعادة تعيين"
+      },
+      "setup": {
+        "label": "الإعداد الموجه",
+        "description": "تهيئة سريعة للبوت في السيرفر"
+      },
+      "dashboard": {
+        "label": "الداشبورد",
+        "description": "فتح لوحة تحكم الويب للسيرفر"
+      },
+      "ban": {
+        "label": "حظر",
+        "description": "حظر عضو من السيرفر (مؤقت أو دائم)"
+      },
+      "kick": {
+        "label": "طرد",
+        "description": "طرد عضو من السيرفر"
+      },
+      "timeout": {
+        "label": "تايم آوت",
+        "description": "منع عضو من الكلام والدخول للصوت مؤقتاً"
+      },
+      "unban": {
+        "label": "إلغاء الحظر",
+        "description": "إلغاء حظر مستخدم محظور"
+      },
+      "warn": {
+        "label": "تحذير",
+        "description": "إعطاء تحذير لعضو (قد يؤدي لعقوبات تلقائية)"
+      },
+      "case": {
+        "label": "القضايا",
+        "description": "عرض، تعديل أو حذف قضية مودراشن"
+      },
+      "purge": {
+        "label": "تنظيف",
+        "description": "حذف رسائل بالجملة مع فلاتر: مستخدم، بوتات، روابط، ملفات..."
+      },
+      "slowmode": {
+        "label": "الوضع البطيء",
+        "description": "تعيين وقت انتظار بين رسائل الأعضاء في قناة"
+      },
+      "lock": {
+        "label": "قفل القناة",
+        "description": "منع @everyone من الإرسال في قناة"
+      },
+      "mod": {
+        "label": "مودراشن متقدم",
+        "description": "مسح تحذيرات، إعدادات، تاريخ، حظر جماعي، تغيير لقب، فتح قفل..."
+      },
+      "role": {
+        "label": "إدارة الرتب",
+        "description": "إضافة/إزالة رتب، رتب مؤقتة، معلومات رتبة"
+      },
+      "rolemenu": {
+        "label": "قوائم الرتب",
+        "description": "إنشاء قوائم رتب بأزرار أو قوائم منسدلة"
+      },
+      "autorole": {
+        "label": "الأوتو رول",
+        "description": "رتب للبشر، رتب للبوتات، قائمة"
+      },
+      "whitelist": {
+        "label": "القائمة البيضاء",
+        "description": "مستخدمون معفيون من أنتي نيوك وأوتو مود"
+      },
+      "say": {
+        "label": "قل",
+        "description": "جعل البوت يرسل رسالة في قناة محددة"
+      },
+      "embed": {
+        "label": "إمبد",
+        "description": "إنشاء وإرسال رسالة إمبد مخصصة"
+      },
+      "poll": {
+        "label": "استطلاع",
+        "description": "إنشاء استطلاع رأي بأزرار وعداد أصوات"
+      },
+      "remind": {
+        "label": "تذكير",
+        "description": "ضبط تذكير يرسله البوت لاحقاً"
+      },
+      "snipe": {
+        "label": "سناب",
+        "description": "قراءة آخر رسالة محذوفة في القناة (مفعل يدوياً)"
+      },
+      "info": {
+        "label": "معلومات",
+        "description": "معلومات عن عضو، سيرفر، رتبة، قناة، دعوات، أعضاء"
+      },
+      "antinuke": {
+        "label": "أنتي نيوك",
+        "description": "حماية من الحذف الجماعي: قنوات، رتب، حظر، إيموجيز..."
+      },
+      "panic": {
+        "label": "وضع الذعر",
+        "description": "تفعيل/إيقاف وضع الذعر: يمنع كل الإجراءات الخطيرة"
+      },
+      "antiraid": {
+        "label": "أنتي رايد",
+        "description": "كشف موجات انضمام وتفعيل وضع الرايد تلقائياً"
+      },
+      "raidmode": {
+        "label": "وضع الرايد",
+        "description": "تفعيل/إيقاف وضع الرايد يدوياً"
+      },
+      "lockdown": {
+        "label": "إقفال شامل",
+        "description": "قفل/فتح كل القنوات العامة في السيرفر"
+      },
+      "automod": {
+        "label": "أوتو مود",
+        "description": "فلاتر تلقائية: كلمات، روابط، دعوات، سبام، منشنز، حروف كبيرة..."
+      },
+      "badwords": {
+        "label": "الكلمات المحظورة",
+        "description": "إضافة/إزالة/عرض قائمة الكلمات المحظورة"
+      },
+      "links": {
+        "label": "فلترة الروابط",
+        "description": "قائمة نطاقات مسموحة/محظورة للروابط"
+      },
+      "verification": {
+        "label": "التحقق",
+        "description": "كابتشا بالزر للأعضاء الجدد قبل دخول السيرفر"
+      },
+      "logs": {
+        "label": "السجلات",
+        "description": "تعيين قنوات لكل نوع سجلات: رسائل، أعضاء، مودراشن، صوت، دعوات، حماية"
+      },
+      "ticket": {
+        "label": "التذاكر",
+        "description": "لوحة تذاكر، إغلاق، إضافة/إزالة أعضاء، ترانسكريبت، إعدادات"
+      },
+      "welcome": {
+        "label": "الترحيب",
+        "description": "تفعيل، قناة، رسالة، إمبد، رسالة خاصة، اختبار"
+      },
+      "goodbye": {
+        "label": "الوداع",
+        "description": "تفعيل، قناة، رسالة، اختبار"
+      },
+      "balance": {
+        "label": "الرصيد",
+        "description": "عرض محفظة وبنك عضو"
+      },
+      "work": {
+        "label": "عمل",
+        "description": "كسب فلوس مرة كل ساعة"
+      },
+      "pay": {
+        "label": "تحويل",
+        "description": "إرسال فلوس من محفظتك لعضو آخر"
+      },
+      "bank": {
+        "label": "البنك",
+        "description": "إيداع في البنك، سحب من البنك"
+      },
+      "shop": {
+        "label": "المتجر",
+        "description": "عرض، شراء، إضافة، إزالة عناصر (تمنح رتب)"
+      },
+      "gamble": {
+        "label": "القمار",
+        "description": "كوين فليب، سلوتس، بلاك جاك"
+      },
+      "eco": {
+        "label": "إعدادات الاقتصاد",
+        "description": "يومي، أسبوعي، سرقة، مخزن، أغنى، إعدادات العملة"
+      },
+      "rank": {
+        "label": "الرتبة",
+        "description": "عرض مستواك، رتبتك، خبرتك"
+      },
+      "leaderboard": {
+        "label": "الليدر بورد",
+        "description": "أكثر 10 أعضاء خبرة في السيرفر"
+      },
+      "levels": {
+        "label": "إعدادات المستويات",
+        "description": "تفعيل/تعطيل، إعدادات XP، رتب مكافآت، إعلان ليفل أب"
+      },
+      "giveaway": {
+        "label": "الهدايا",
+        "description": "بدء، إنهاء، إعادة سحب، إلغاء، قائمة الهدايا"
+      },
+      "8ball": {
+        "label": "كرة الثماني",
+        "description": "سؤال كرة الثماني السحرية"
+      },
+      "dice": {
+        "label": "النرد",
+        "description": "رمي نرد بعدد أوجه محدد"
+      },
+      "game": {
+        "label": "الألعاب",
+        "description": "تيك تاك تو، كونكت 4، حجر ورقة مقص، شنق، ترافيا"
+      },
+      "fun": {
+        "label": "ترفيه",
+        "description": "اختيار عشوائي، شيب، عكس نص، إيموجيفي"
+      },
+      "afk": {
+        "label": "AFK",
+        "description": "تعيين حالة غياب مع سبب"
+      },
+      "birthday": {
+        "label": "عيد الميلاد",
+        "description": "تعيين، إزالة، عرض، قائمة، إعدادات أعياد الميلاد"
+      },
+      "starboard": {
+        "label": "الستاربورد",
+        "description": "تعيين قناة، عتبة، إيموجي، قنوات متجاهلة"
+      },
+      "suggest": {
+        "label": "اقتراح",
+        "description": "إرسال اقتراح مجهول أو علني"
+      },
+      "suggestion": {
+        "label": "إدارة الاقتراحات",
+        "description": "قبول، رفض، نظر، تنفيذ، حذف، قائمة، إعدادات"
+      },
+      "tag": {
+        "label": "التاجز",
+        "description": "إنشاء، تعديل، حذف، عرض، قائمة، استخدام ردود محفوظة"
+      },
+      "tempvoice": {
+        "label": "صوتيات مؤقتة",
+        "description": "إعداد، إزالة، قائمة، لوحة إنشاء قنوات صوتية"
+      },
+      "community": {
+        "label": "أدوات المجتمع",
+        "description": "قنوات إحصائيات، رسائل لاصقة، ردود تلقائية"
+      },
+      "backup": {
+        "label": "النسخ الاحتياطي",
+        "description": "إنشاء، قائمة، معلومات، استعادة، حذف، نسخ تلقائي"
+      },
+      "play": {
+        "label": "Play",
+        "description": "Play an audio URL, a radio or a file"
+      },
+      "pause": {
+        "label": "Pause",
+        "description": "Pause the current playback"
+      },
+      "resume": {
+        "label": "Resume",
+        "description": "Resume the current playback"
+      },
+      "skip": {
+        "label": "Skip",
+        "description": "Skip the current track"
+      },
+      "stop": {
+        "label": "Stop",
+        "description": "Stop playback and leave the queue"
+      },
+      "nowplaying": {
+        "label": "Now Playing",
+        "description": "Show the track playing now"
+      },
+      "queue": {
+        "label": "Queue",
+        "description": "View and manage the music queue"
+      },
+      "loop": {
+        "label": "Loop",
+        "description": "Loop the current track or the whole queue"
+      },
+      "seek": {
+        "label": "Seek",
+        "description": "Jump to a position in the current track"
+      },
+      "volume": {
+        "label": "Volume",
+        "description": "Change the playback volume"
+      },
+      "radio": {
+        "label": "Radio",
+        "description": "Play one of the built-in radio stations"
+      },
+      "music": {
+        "label": "Music",
+        "description": "Music controls and settings"
+      }
+    },
+    "fields": {
+      "ban": {
+        "enabled": "تفعيل أمر الحظر",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /ban في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالحظر",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية الحظر. أضف رولات لتحديد من يستخدم الأمر.",
+        "keywords": "كلمات مفتاحية للحظر التلقائي",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالحظر",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "kick": {
+        "enabled": "تفعيل أمر الطرد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /kick في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالطرد",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية الطرد.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالطرد",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "timeout": {
+        "enabled": "تفعيل أمر التايم آوت",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /timeout في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالتايم آوت",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية الاعتدال.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالتايم آوت",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "unban": {
+        "enabled": "تفعيل أمر إلغاء الحظر",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /unban في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإلغاء الحظر",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية الحظر.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بإلغاء الحظر",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "warn": {
+        "enabled": "تفعيل أمر التحذير",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /warn في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالتحذير",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية الاعتدال.",
+        "keywords": "كلمات مفتاحية للتحذير التلقائي",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالتحذير",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "case": {
+        "enabled": "تفعيل أمر القضايا",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /case في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة القضايا",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالقضايا",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "purge": {
+        "enabled": "تفعيل أمر التنظيف",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /purge في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالتنظيف",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية إدارة الرسائل.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالتنظيف",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "slowmode": {
+        "enabled": "تفعيل أمر الوضع البطيء",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /slowmode في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بتغيير الوضع البطيء",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية إدارة القنوات.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالوضع البطيء",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "lock": {
+        "enabled": "تفعيل أمر القفل",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /lock في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بقفل القنوات",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية إدارة القنوات.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بالقفل",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "mod": {
+        "enabled": "تفعيل أوامر المودراشن المتقدمة",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /mod في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بأوامر المودراشن المتقدمة",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "role": {
+        "enabled": "تفعيل أمر إدارة الرتب",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /role في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الرتب",
+        "allowedRolesHelp": "اتركها فارغة للسماح لكل من لديه صلاحية إدارة الرتب.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "rolemenu": {
+        "enabled": "تفعيل أمر قوائم الرتب",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /rolemenu في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإنشاء قوائم رتب",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "autorole": {
+        "enabled": "تفعيل أمر الأوتو رول",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /autorole في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الأوتو رول",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "whitelist": {
+        "enabled": "تفعيل أمر القائمة البيضاء",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /whitelist في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة القائمة البيضاء",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمالك فقط.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "say": {
+        "enabled": "تفعيل أمر قل",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /say في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /say",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "embed": {
+        "enabled": "تفعيل أمر الإمبد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /embed في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /embed",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "poll": {
+        "enabled": "تفعيل أمر الاستطلاع",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /poll في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإنشاء استطلاعات",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "remind": {
+        "enabled": "تفعيل أمر التذكير",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /remind في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /remind",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "snipe": {
+        "enabled": "تفعيل أمر السناب",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /snipe في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /snipe",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "info": {
+        "enabled": "تفعيل أمر المعلومات",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /info في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /info",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "antinuke": {
+        "enabled": "تفعيل أمر أنتي نيوك",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /antinuke في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة أنتي نيوك",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمالك فقط.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "panic": {
+        "enabled": "تفعيل أمر الذعر",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /panic في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بتفعيل الذعر",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمالك فقط.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "antiraid": {
+        "enabled": "تفعيل أمر أنتي رايد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /antiraid في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة أنتي رايد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "raidmode": {
+        "enabled": "تفعيل أمر وضع الرايد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /raidmode في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بتفعيل وضع الرايد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "lockdown": {
+        "enabled": "تفعيل أمر الإقفال الشامل",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /lockdown في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالإقفال الشامل",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمالك فقط.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "automod": {
+        "enabled": "تفعيل أمر أوتو مود",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /automod في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة أوتو مود",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "badwords": {
+        "enabled": "تفعيل أمر الكلمات المحظورة",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /badwords في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الكلمات المحظورة",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "links": {
+        "enabled": "تفعيل أمر فلترة الروابط",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /links في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة فلترة الروابط",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "verification": {
+        "enabled": "تفعيل أمر التحقق",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /verification في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة التحقق",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "logs": {
+        "enabled": "تفعيل أمر السجلات",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /logs في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة السجلات",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "ticket": {
+        "enabled": "تفعيل أمر التذاكر",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /ticket في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة التذاكر",
+        "allowedRolesHelp": "اتركها فارغة للسماح للموظفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "welcome": {
+        "enabled": "تفعيل أمر الترحيب",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /welcome في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الترحيب",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "goodbye": {
+        "enabled": "تفعيل أمر الوداع",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /goodbye في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الوداع",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "balance": {
+        "enabled": "تفعيل أمر الرصيد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /balance في السيرفر.",
+        "allowedRoles": "رولات مسموح لها برؤية الأرصدة",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "work": {
+        "enabled": "تفعيل أمر العمل",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /work في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالعمل",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "pay": {
+        "enabled": "تفعيل أمر التحويل",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /pay في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالتحويل",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "bank": {
+        "enabled": "تفعيل أمر البنك",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /bank في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالبنك",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "shop": {
+        "enabled": "تفعيل أمر المتجر",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /shop في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالمتجر",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "gamble": {
+        "enabled": "تفعيل أمر القمار",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /gamble في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالقمار",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "eco": {
+        "enabled": "تفعيل أمر إعدادات الاقتصاد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /eco في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإعدادات الاقتصاد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "rank": {
+        "enabled": "تفعيل أمر الرتبة",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /rank في السيرفر.",
+        "allowedRoles": "رولات مسموح لها برؤية الرتب",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "leaderboard": {
+        "enabled": "تفعيل أمر الليدر بورد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /leaderboard في السيرفر.",
+        "allowedRoles": "رولات مسموح لها برؤية الليدر بورد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "levels": {
+        "enabled": "تفعيل أمر إعدادات المستويات",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /levels في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإعدادات المستويات",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "giveaway": {
+        "enabled": "تفعيل أمر الهدايا",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /giveaway في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الهدايا",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "8ball": {
+        "enabled": "تفعيل أمر كرة الثماني",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /8ball في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /8ball",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "dice": {
+        "enabled": "تفعيل أمر النرد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /dice في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /dice",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "game": {
+        "enabled": "تفعيل أمر الألعاب",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /game في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالألعاب",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "fun": {
+        "enabled": "تفعيل أمر الترفيه",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /fun في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بأدوات الترفيه",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "afk": {
+        "enabled": "تفعيل أمر AFK",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /afk في السيرفر.",
+        "allowedRoles": "رولات مسموح لها باستخدام /afk",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "birthday": {
+        "enabled": "تفعيل أمر عيد الميلاد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /birthday في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة أعياد الميلاد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "starboard": {
+        "enabled": "تفعيل أمر الستاربورد",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /starboard في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الستاربورد",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "suggest": {
+        "enabled": "تفعيل أمر الاقتراح",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /suggest في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالاقتراح",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "suggestion": {
+        "enabled": "تفعيل أمر إدارة الاقتراحات",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /suggestion في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الاقتراحات",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "tag": {
+        "enabled": "تفعيل أمر التاجز",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /tag في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة التاجز",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "tempvoice": {
+        "enabled": "تفعيل أمر الصوتيات المؤقتة",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /tempvoice في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بإدارة الصوتيات المؤقتة",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "community": {
+        "enabled": "تفعيل أمر أدوات المجتمع",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /community في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بأدوات المجتمع",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمشرفين.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "backup": {
+        "enabled": "تفعيل أمر النسخ الاحتياطي",
+        "enabledHelp": "إيقاف هذا يمنع استخدام /backup في السيرفر.",
+        "allowedRoles": "رولات مسموح لها بالنسخ الاحتياطي",
+        "allowedRolesHelp": "اتركها فارغة للسماح للمالك فقط.",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "play": {
+        "allowedRoles": "رولات مسموح لها باستخدام /play",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /play",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "pause": {
+        "allowedRoles": "رولات مسموح لها باستخدام /pause",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /pause",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "resume": {
+        "allowedRoles": "رولات مسموح لها باستخدام /resume",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /resume",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "skip": {
+        "allowedRoles": "رولات مسموح لها باستخدام /skip",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /skip",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "stop": {
+        "allowedRoles": "رولات مسموح لها باستخدام /stop",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /stop",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "nowplaying": {
+        "allowedRoles": "رولات مسموح لها باستخدام /nowplaying",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /nowplaying",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "queue": {
+        "allowedRoles": "رولات مسموح لها باستخدام /queue",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /queue",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "loop": {
+        "allowedRoles": "رولات مسموح لها باستخدام /loop",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /loop",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "seek": {
+        "allowedRoles": "رولات مسموح لها باستخدام /seek",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /seek",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "volume": {
+        "allowedRoles": "رولات مسموح لها باستخدام /volume",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /volume",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "radio": {
+        "allowedRoles": "رولات مسموح لها باستخدام /radio",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /radio",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "music": {
+        "allowedRoles": "رولات مسموح لها باستخدام /music",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /music",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "help": {
+        "allowedRoles": "رولات مسموح لها باستخدام /help",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /help",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "ping": {
+        "allowedRoles": "رولات مسموح لها باستخدام /ping",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /ping",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "botinfo": {
+        "allowedRoles": "رولات مسموح لها باستخدام /botinfo",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /botinfo",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "config": {
+        "allowedRoles": "رولات مسموح لها باستخدام /config",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /config",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "setup": {
+        "allowedRoles": "رولات مسموح لها باستخدام /setup",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /setup",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "dashboard": {
+        "allowedRoles": "رولات مسموح لها باستخدام /dashboard",
+        "allowedRolesHelp": "اتركها فارغة للسماح للجميع (صلاحيات ديسكورد تظل سارية).",
+        "keywords": "كلمات مفتاحية",
+        "keywordsHelp": "كلمات تجعل البوت يرد بمنشن قابل للضغط للأمر.",
+        "allowedChannels": "قنوات مسموح فيها بـ /dashboard",
+        "allowedChannelsHelp": "اتركها فارغة للسماح في كل القنوات."
+      },
+      "subcommandHelp": "مفتاح هذا الأمر الفرعي فقط؛ يعمل فقط ما دام الأمر الرئيسي مفعلاً."
+    },
+    "actions": {
+      "resetAll": "إعادة تعيين كل إعدادات الأوامر",
+      "resetAllDone": "تم إعادة تعيين كل إعدادات الأوامر للقيم الافتراضية.",
+      "enableAll": "تفعيل كل الأوامر",
+      "enableAllDone": "تم تفعيل كل أوامر البوت.",
+      "disableAll": "تعطيل كل الأوامر",
+      "disableAllDone": "تم تعطيل كل أوامر البوت."
+    }
+  },
+  "errors": {
+    "disabled": "نظام الأوامر معطل في هذا السيرفر.",
+    "cmdDisabled": "الأمر {cmd} معطل في هذا السيرفر.",
+    "noRole": "تحتاج إحدى هذه الرولات لاستخدام هذا الأمر: {roles}",
+    "wrongChannel": "لا يمكن استخدام هذا الأمر إلا في: {channels}"
+  },
+  "usage": {
+    "title": "أمر غير مكتمل — {command}",
+    "command": "الأمر",
+    "keyword": "الكلمة",
+    "subs": "الأوامر الفرعية"
+  }
+}

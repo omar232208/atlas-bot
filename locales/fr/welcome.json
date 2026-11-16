@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "Configurer le message de bienvenue",
+      "options": {
+        "set": { "description": "Choisir le salon de bienvenue et activer", "options": { "channel": "Salon où accueillir les nouveaux membres" } },
+        "message": { "description": "Modifier le message de bienvenue", "options": { "text": "Modèle : {user} {username} {displayname} {userid} {server} {count} {created}, \\n = retour à la ligne", "embed": "Envoyer dans un embed (oui par défaut)" } },
+        "dm": { "description": "Message de bienvenue en privé", "options": { "enabled": "Envoyer un message privé aux nouveaux membres", "text": "Modèle du message privé (mêmes variables)" } },
+        "test": { "description": "Tester le message avec vous-même" },
+        "show": { "description": "Afficher la configuration de bienvenue" },
+        "disable": { "description": "Désactiver les messages de bienvenue" }
+      }
+    },
+    "goodbye": {
+      "description": "Configurer le message de départ",
+      "options": {
+        "set": { "description": "Choisir le salon des départs et activer", "options": { "channel": "Salon où annoncer les départs" } },
+        "message": { "description": "Modifier le message de départ", "options": { "text": "Modèle : {user} {username} {displayname} {userid} {server} {count} {created}, \\n = retour à la ligne", "embed": "Envoyer dans un embed (oui par défaut)" } },
+        "test": { "description": "Tester le message avec vous-même" },
+        "show": { "description": "Afficher la configuration des départs" },
+        "disable": { "description": "Désactiver les messages de départ" }
+      }
+    },
+    "autorole": {
+      "description": "Rôles donnés automatiquement à l'arrivée",
+      "options": {
+        "add": { "description": "Ajouter un rôle automatique", "options": { "role": "Rôle à donner", "type": { "description": "Membres concernés (humains par défaut)", "choices": { "humans": "Humains", "bots": "Bots" } } } },
+        "remove": { "description": "Retirer un rôle automatique", "options": { "role": "Rôle à retirer", "type": { "description": "Membres concernés (les deux par défaut)", "choices": { "humans": "Humains", "bots": "Bots" } } } },
+        "list": { "description": "Lister les rôles automatiques" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "Bienvenue {user} sur **{server}** ! Nous sommes maintenant {count}.",
+    "goodbye": "**{username}** a quitté **{server}**. Nous sommes maintenant {count}.",
+    "dm": "Bienvenue sur **{server}**, {displayname} ! Pense à lire les règles du serveur."
+  },
+  "welcome": {
+    "setTitle": "Bienvenue activée",
+    "setDone": "Les nouveaux membres seront accueillis dans {channel}. Personnalisez le texte avec `/welcome message`.",
+    "messageTitle": "Message de bienvenue modifié",
+    "messageDone": "Voici à quoi il ressemblera.",
+    "showTitle": "Configuration de bienvenue",
+    "disabledTitle": "Bienvenue désactivée",
+    "disabledDone": "Plus aucun message de bienvenue (salon et privé) ne sera envoyé.",
+    "dmTitle": "Message privé",
+    "dmOn": "Les nouveaux membres recevront ce message en privé (s'ils acceptent les messages privés du serveur).",
+    "dmOff": "Le message de bienvenue privé est désactivé."
+  },
+  "goodbye": {
+    "setTitle": "Départs activés",
+    "setDone": "Les départs seront annoncés dans {channel}. Personnalisez le texte avec `/goodbye message`.",
+    "messageTitle": "Message de départ modifié",
+    "messageDone": "Voici à quoi il ressemblera.",
+    "showTitle": "Configuration des départs",
+    "disabledTitle": "Départs désactivés",
+    "disabledDone": "Plus aucun message de départ ne sera envoyé."
+  },
+  "common": {
+    "preview": "Aperçu",
+    "unknownVars": "Variables inconnues (laissées telles quelles)",
+    "variables": "Variables disponibles",
+    "testTitle": "Test envoyé",
+    "testSent": "Le message a été envoyé dans {channel}.",
+    "testDmSent": "Le message privé vous a été envoyé.",
+    "testDmFailed": "Le message privé n'a pas pu être envoyé : vos messages privés sont sans doute fermés.",
+    "testDisabledNote": "Attention : ce message est désactivé, il ne sera pas envoyé aux vrais nouveaux membres.",
+    "on": "Activé",
+    "off": "Désactivé",
+    "status": "État",
+    "channel": "Salon",
+    "embed": "Embed",
+    "template": "Modèle",
+    "none": "Aucun"
+  },
+  "errors": {
+    "title": "Impossible",
+    "missingPerms": "Il me manque ces permissions dans {channel} : {perms}. Ajoutez-les puis réessayez.",
+    "noChannel": "Aucun salon n'est configuré (ou il a été supprimé). Utilisez d'abord `{command}`.",
+    "sendFailed": "Le message n'a pas pu être envoyé. Vérifiez mes permissions dans le salon configuré."
+  },
+  "autorole": {
+    "reason": "Rôle automatique à l'arrivée",
+    "types": { "humans": "Humains", "bots": "Bots" },
+    "deletedRole": "Rôle supprimé (`{id}`)",
+    "problems": {
+      "managed": "Ce rôle est géré par une intégration (bot, boost) et ne peut pas être donné.",
+      "everyone": "Le rôle @everyone ne peut pas être donné.",
+      "hierarchy": "Ce rôle est au-dessus de mon rôle le plus haut : placez mon rôle plus haut dans les paramètres du serveur.",
+      "noPermission": "Il me manque la permission « Gérer les rôles »."
+    },
+    "listTitle": "Rôles automatiques",
+    "listDesc": "Donnés à chaque arrivée (après l'acceptation des règles si le filtrage des membres est actif).",
+    "title": "Rôles automatiques",
+    "dangerous": "{role} donne des permissions de modération ou d'administration : le donner à chaque arrivant serait dangereux.",
+    "already": "{role} est déjà donné aux {type}.",
+    "limit": "Maximum {max} rôles automatiques par type.",
+    "added": "{role} sera donné automatiquement aux {type}.",
+    "notFound": "{role} n'est pas un rôle automatique.",
+    "removed": "{role} n'est plus donné automatiquement."
+  },
+  "dashboard": {
+    "welcome": { "title": "Bienvenue", "description": "Message envoyé quand un membre rejoint le serveur. Variables : {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "Départs" },
+    "autorole": { "title": "Rôles automatiques", "description": "Rôles donnés à l'arrivée. Ils doivent être sous le rôle du bot." },
+    "fields": {
+      "enabled": "Activé",
+      "channel": "Salon",
+      "message": "Message",
+      "messageHelp": "Vide : message par défaut. Variables : {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "Envoyer dans un embed",
+      "dmEnabled": "Message privé de bienvenue",
+      "dmMessage": "Texte du message privé",
+      "humans": "Rôles pour les humains",
+      "bots": "Rôles pour les bots"
+    },
+    "actions": { "test": "Tester le message de bienvenue" },
+    "results": {
+      "notMember": "Vous n'êtes pas membre de ce serveur.",
+      "noChannel": "Aucun salon de bienvenue n'est configuré.",
+      "failed": "Le message n'a pas pu être envoyé : vérifiez les permissions du bot.",
+      "sent": "Message de test envoyé."
+    }
+  }
+}

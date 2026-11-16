@@ -1,0 +1,272 @@
+{
+  "commands": {
+    "logs": {
+      "description": "Log-Kanäle einrichten",
+      "options": {
+        "set": {
+          "description": "Eine Log-Kategorie in einen Kanal senden",
+          "options": {
+            "category": {
+              "description": "Log-Kategorie",
+              "choices": {
+                "all": "Alle Kategorien",
+                "messages": "Nachrichten",
+                "members": "Mitglieder",
+                "moderation": "Moderation",
+                "server": "Server",
+                "voice": "Sprachkanäle",
+                "invites": "Einladungen",
+                "protection": "Schutz",
+                "tickets": "Tickets"
+              }
+            },
+            "channel": "Kanal, der die Logs erhält"
+          }
+        },
+        "disable": {
+          "description": "Eine Kategorie nicht mehr loggen",
+          "options": {
+            "category": {
+              "description": "Log-Kategorie",
+              "choices": {
+                "all": "Alle Kategorien",
+                "messages": "Nachrichten",
+                "members": "Mitglieder",
+                "moderation": "Moderation",
+                "server": "Server",
+                "voice": "Sprachkanäle",
+                "invites": "Einladungen",
+                "protection": "Schutz",
+                "tickets": "Tickets"
+              }
+            }
+          }
+        },
+        "ignore": {
+          "description": "Einen Kanal ignorieren oder wieder überwachen",
+          "options": {
+            "channel": "Kanal oder Kategorie, die ignoriert (oder nicht mehr ignoriert) wird"
+          }
+        },
+        "bots": {
+          "description": "Nachrichten von Bots loggen oder nicht",
+          "options": {
+            "enabled": "Bot-Nachrichten loggen"
+          }
+        },
+        "status": {
+          "description": "Log-Einstellungen anzeigen"
+        }
+      }
+    }
+  },
+  "categories": {
+    "all": "alle Kategorien",
+    "messages": "Nachrichten",
+    "members": "Mitglieder",
+    "moderation": "Moderation",
+    "server": "Server",
+    "voice": "Sprachkanäle",
+    "invites": "Einladungen",
+    "protection": "Schutz",
+    "tickets": "Tickets"
+  },
+  "status": {
+    "title": "Log-Einstellungen",
+    "description": "Kanal je Kategorie. Schutz und Tickets nutzen den Moderationskanal, wenn sie keinen eigenen haben.",
+    "off": "Deaktiviert",
+    "fallback": "{channel} (über Moderation)",
+    "ignored": "Ignorierte Kanäle",
+    "none": "Keine",
+    "bots": "Bot-Nachrichten",
+    "botsIgnored": "Ignoriert",
+    "botsLogged": "Geloggt"
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "missingPerms": "Mir fehlen diese Berechtigungen in {channel}: {perms}. Füge sie hinzu und führe den Befehl erneut aus."
+  },
+  "set": {
+    "title": "Logs eingerichtet",
+    "done": "Logs der Kategorie „{category}“ werden in {channel} gesendet."
+  },
+  "disable": {
+    "title": "Logs deaktiviert",
+    "done": "Logs der Kategorie „{category}“ sind deaktiviert."
+  },
+  "ignore": {
+    "title": "Ignorierte Kanäle",
+    "added": "{channel} wird jetzt ignoriert: Nachrichten und Sprachaktivität dort werden nicht mehr geloggt.",
+    "removed": "{channel} wird nicht mehr ignoriert."
+  },
+  "bots": {
+    "title": "Bot-Nachrichten",
+    "on": "Bot-Nachrichten werden geloggt.",
+    "off": "Bot-Nachrichten werden nicht mehr geloggt."
+  },
+  "test": {
+    "title": "Log-Test",
+    "description": "Dieser Kanal empfängt die Logs korrekt (Kategorie {category}).",
+    "none": "Es ist kein Log-Kanal eingerichtet.",
+    "ok": "In jeden Log-Kanal wurde eine Testnachricht gesendet.",
+    "partial": "Einige Kanäle haben den Test nicht erhalten: Prüfe meine Berechtigungen (Kanal ansehen, Nachrichten senden, Links einbetten)."
+  },
+  "dashboard": {
+    "channels": {
+      "title": "Log-Kanäle",
+      "description": "Wähle, wohin jede Art von Ereignis geht. Leer lassen zum Deaktivieren."
+    },
+    "help": {
+      "messages": "Bearbeitete und gelöschte Nachrichten, Massenlöschungen (mit Textdatei).",
+      "members": "Beitritte, Austritte, Spitznamen, Rollen und Boosts.",
+      "moderation": "Banns, Kicks, Timeouts und Sanktionen des Bots.",
+      "server": "Kanäle, Rollen, Emojis und Servereinstellungen.",
+      "voice": "Beitreten, Verlassen und Wechseln von Sprachkanälen, Server-Stummschaltungen.",
+      "invites": "Erstellte und gelöschte Einladungen sowie die von jedem Neuling genutzte Einladung.",
+      "protection": "Antiraid-, Antinuke- und Automod-Warnungen. Leer: Moderationskanal.",
+      "tickets": "Öffnen, Schließen und Protokolle von Tickets. Leer: Moderationskanal."
+    },
+    "filters": {
+      "title": "Filter",
+      "ignored": "Ignorierte Kanäle",
+      "ignoredHelp": "Nachrichten und Sprachaktivität in diesen Kanälen (oder Kategorien) werden nicht geloggt.",
+      "ignoreBots": "Bot-Nachrichten ignorieren",
+      "ignoreBotsHelp": "Empfohlen: Bots bearbeiten ihre Nachrichten oft selbst."
+    },
+    "actions": {
+      "test": "Test-Log senden"
+    }
+  },
+  "events": {
+    "empty": "*(leer)*",
+    "ids": "Nutzer {user} · Nachricht {message}",
+    "unknown": "unbekannt",
+    "none": "Keiner",
+    "noReason": "Kein Grund",
+    "before": "Vorher",
+    "after": "Nachher",
+    "unlimited": "Unbegrenzt",
+    "never": "Nie",
+    "messages": {
+      "attachments": "Anhänge",
+      "edited": "Nachricht bearbeitet",
+      "editedDesc": "{user} hat eine Nachricht in {channel} bearbeitet — [zur Nachricht]({url})",
+      "before": "Vorher",
+      "after": "Nachher",
+      "deleted": "Nachricht gelöscht",
+      "deletedUncached": "Eine ältere Nachricht wurde in {channel} gelöscht (`{id}`). Ihr Inhalt war nicht im Speicher.",
+      "deletedDesc": "Nachricht von {user} in {channel} gelöscht",
+      "content": "Inhalt",
+      "bulk": "Massenlöschung",
+      "bulkDesc": "{count} Nachrichten in {channel} gelöscht. {known} davon stehen in der angehängten Datei."
+    },
+    "members": {
+      "created": "Konto erstellt",
+      "count": "Mitglieder",
+      "warning": "Achtung",
+      "newAccount": "Neues Konto: vor {age} erstellt.",
+      "botJoined": "Bot hinzugefügt",
+      "joined": "Mitglied beigetreten",
+      "joinedAt": "Beigetreten am",
+      "roles": "Rollen",
+      "left": "Mitglied ausgetreten",
+      "nickname": "Spitzname geändert",
+      "rolesAdded": "Rollen hinzugefügt",
+      "rolesRemoved": "Rollen entfernt",
+      "rolesChanged": "Rollen geändert",
+      "boost": "Neuer Server-Boost"
+    },
+    "moderation": {
+      "kick": "Mitglied gekickt",
+      "target": "Mitglied",
+      "by": "Von",
+      "reason": "Grund",
+      "until": "Bis",
+      "timeout": "Mitglied im Timeout",
+      "untimeout": "Timeout aufgehoben",
+      "ban": "Mitglied gebannt",
+      "unban": "Bann aufgehoben"
+    },
+    "invites": {
+      "usedInvite": "{user} ist über die Einladung `{code}` von {inviter} beigetreten ({uses} Nutzungen).",
+      "usedVanity": "{user} ist über den Vanity-Link `{code}` beigetreten ({uses} Nutzungen).",
+      "untracked": "{user} ist beigetreten, aber ich kann keine Einladungen lesen: Ich brauche die Berechtigung „Server verwalten“.",
+      "unknownInvite": "{user} ist beigetreten, aber die genutzte Einladung ließ sich nicht bestimmen.",
+      "inviterTotal": "Bilanz des Einladenden: {joins} Beitritte, {left} Austritte, {net} netto.",
+      "joinTitle": "Einladung genutzt",
+      "leaveTitle": "Eingeladenes Mitglied ausgetreten",
+      "leftInvited": "{user} ist ausgetreten. Eingeladen von {inviter} (`{code}`).",
+      "code": "Code",
+      "channel": "Kanal",
+      "maxUses": "Max. Nutzungen",
+      "expires": "Läuft ab",
+      "creator": "Erstellt von",
+      "created": "Einladung erstellt",
+      "deleted": "Einladung gelöscht"
+    },
+    "voice": {
+      "join": "Sprachkanal betreten",
+      "joinDesc": "{user} hat {channel} betreten",
+      "leave": "Sprachkanal verlassen",
+      "leaveDesc": "{user} hat {channel} verlassen",
+      "move": "Sprachkanal gewechselt",
+      "moveDesc": "{user} ist von {from} nach {to} gewechselt",
+      "mute": "Vom Server stummgeschaltet",
+      "muteDesc": "{user} wurde in {channel} stummgeschaltet",
+      "unmute": "Stummschaltung aufgehoben",
+      "unmuteDesc": "{user} ist in {channel} nicht mehr stummgeschaltet",
+      "deaf": "Vom Server taubgeschaltet",
+      "deafDesc": "{user} wurde in {channel} taubgeschaltet",
+      "undeaf": "Taubschaltung aufgehoben",
+      "undeafDesc": "{user} ist in {channel} nicht mehr taubgeschaltet"
+    },
+    "server": {
+      "channelCreate": "Kanal erstellt",
+      "channelDesc": "{channel} · {name} ({type})",
+      "channelDelete": "Kanal gelöscht",
+      "channelUpdate": "Kanal geändert",
+      "overwritesChanged": "**Berechtigungen**: geändert",
+      "permsAdded": "Berechtigungen erteilt",
+      "permsRemoved": "Berechtigungen entzogen",
+      "roleCreate": "Rolle erstellt",
+      "roleDelete": "Rolle gelöscht",
+      "roleUpdate": "Rolle geändert",
+      "emojiCreate": "Emoji hinzugefügt",
+      "emojiDelete": "Emoji gelöscht",
+      "emojiUpdate": "Emoji umbenannt",
+      "guildUpdate": "Server geändert"
+    }
+  },
+  "fields": {
+    "name": "Name",
+    "topic": "Thema",
+    "nsfw": "NSFW",
+    "slowmode": "Slowmode (s)",
+    "category": "Kategorie",
+    "bitrate": "Bitrate",
+    "userLimit": "Nutzerlimit",
+    "color": "Farbe",
+    "hoist": "Separat angezeigt",
+    "mentionable": "Erwähnbar",
+    "icon": "Symbol",
+    "banner": "Banner",
+    "vanity": "Vanity-Link",
+    "verificationLevel": "Verifizierungsstufe",
+    "owner": "Eigentümer",
+    "afkChannel": "AFK-Kanal",
+    "systemChannel": "Systemkanal"
+  },
+  "channelTypes": {
+    "GuildText": "Text",
+    "GuildVoice": "Sprache",
+    "GuildCategory": "Kategorie",
+    "GuildAnnouncement": "Ankündigungen",
+    "GuildStageVoice": "Stage",
+    "GuildForum": "Forum",
+    "GuildMedia": "Medien",
+    "PublicThread": "öffentlicher Thread",
+    "PrivateThread": "privater Thread",
+    "AnnouncementThread": "Ankündigungs-Thread",
+    "Other": "anderer"
+  }
+}

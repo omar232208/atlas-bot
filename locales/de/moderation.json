@@ -1,0 +1,496 @@
+{
+  "commands": {
+    "ban": {
+      "description": "Einen Nutzer bannen, auf Wunsch zeitlich begrenzt",
+      "options": {
+        "user": "Zu bannender Nutzer",
+        "reason": "Grund für den Bann",
+        "duration": "Dauer eines temporären Banns, z. B. 7d (leer = dauerhaft)",
+        "delete_messages": {
+          "description": "Seine letzten Nachrichten löschen",
+          "choices": {
+            "0": "Nichts löschen",
+            "3600": "Letzte Stunde",
+            "21600": "Letzte 6 Stunden",
+            "43200": "Letzte 12 Stunden",
+            "86400": "Letzte 24 Stunden",
+            "259200": "Letzte 3 Tage",
+            "604800": "Letzte 7 Tage"
+          }
+        },
+        "silent": "Dem Nutzer keine Direktnachricht senden"
+      }
+    },
+    "kick": {
+      "description": "Ein Mitglied vom Server kicken",
+      "options": {
+        "user": "Zu kickendes Mitglied",
+        "reason": "Grund für den Kick",
+        "silent": "Dem Nutzer keine Direktnachricht senden"
+      }
+    },
+    "timeout": {
+      "description": "Ein Mitglied in Timeout setzen (keine Nachrichten, kein Sprachchat)",
+      "options": {
+        "user": "Mitglied für den Timeout",
+        "duration": "Dauer, z. B. 10m, 2h, 7d (bis zu 365d)",
+        "reason": "Grund für den Timeout",
+        "silent": "Dem Nutzer keine Direktnachricht senden"
+      }
+    },
+    "warn": {
+      "description": "Ein Mitglied verwarnen (Schwellen können automatisch bestrafen)",
+      "options": {
+        "user": "Zu verwarnendes Mitglied",
+        "reason": "Grund für die Verwarnung",
+        "silent": "Dem Nutzer keine Direktnachricht senden"
+      }
+    },
+    "unban": {
+      "description": "Einen Nutzer entbannen",
+      "options": {
+        "user": "Gebannter Nutzer (Name oder ID eingeben)",
+        "reason": "Grund für die Entbannung"
+      }
+    },
+    "case": {
+      "description": "Einen Moderationsfall ansehen, bearbeiten oder löschen",
+      "options": {
+        "view": {
+          "description": "Einen Fall anzeigen",
+          "options": {
+            "number": "Fallnummer"
+          }
+        },
+        "edit": {
+          "description": "Den Grund oder die Dauer eines temporären Banns ändern",
+          "options": {
+            "number": "Fallnummer",
+            "reason": "Neuer Grund",
+            "duration": "Neue Dauer des temporären Banns, ab dem Bann gerechnet"
+          }
+        },
+        "delete": {
+          "description": "Einen Fall löschen",
+          "options": {
+            "number": "Fallnummer"
+          }
+        }
+      }
+    },
+    "purge": {
+      "description": "Letzte Nachrichten löschen, optional mit Filtern",
+      "options": {
+        "amount": "Wie viele Nachrichten gelöscht werden sollen (1-100)",
+        "user": "Nur Nachrichten dieses Nutzers",
+        "bots": "Nur Nachrichten von Bots",
+        "humans": "Nur Nachrichten von Menschen",
+        "links": "Nur Nachrichten mit einem Link",
+        "attachments": "Nur Nachrichten mit Dateien",
+        "embeds": "Nur Nachrichten mit Embeds",
+        "contains": "Nur Nachrichten, die diesen Text enthalten"
+      }
+    },
+    "slowmode": {
+      "description": "Den Slow-Modus eines Kanals festlegen",
+      "options": {
+        "duration": "Abstand zwischen Nachrichten, z. B. 10s, 5m (max. 6h), oder \"off\"",
+        "channel": "Kanal (Standard: dieser)"
+      }
+    },
+    "lock": {
+      "description": "@everyone daran hindern, in einem Kanal zu schreiben",
+      "options": {
+        "channel": "Kanal (Standard: dieser)",
+        "reason": "Grund, wird im Kanal angezeigt"
+      }
+    },
+    "mod": {
+      "description": "Weitere Moderationswerkzeuge und Einstellungen",
+      "options": {
+        "clearwarns": {
+          "description": "Alle aktiven Verwarnungen eines Mitglieds entfernen",
+          "options": {
+            "user": "Mitglied",
+            "reason": "Grund"
+          }
+        },
+        "config": {
+          "description": "Moderationseinstellungen",
+          "options": {
+            "show": {
+              "description": "Die Moderationseinstellungen anzeigen"
+            },
+            "dm": {
+              "description": "Mitgliedern bei einer Strafe eine Direktnachricht senden",
+              "options": {
+                "enabled": "Die Direktnachricht senden",
+                "show_moderator": "Den Moderator in der Direktnachricht nennen"
+              }
+            },
+            "appeal": {
+              "description": "Text in Straf-Direktnachrichten (wie man Einspruch einlegt)",
+              "options": {
+                "text": "Text (leer lassen zum Entfernen)"
+              }
+            },
+            "reason": {
+              "description": "Für jede Strafe einen Grund verlangen",
+              "options": {
+                "required": "Grund erforderlich"
+              }
+            },
+            "warnexpiry": {
+              "description": "Verwarnungen zählen nach dieser Zeit nicht mehr",
+              "options": {
+                "duration": "z. B. 30d, oder \"off\", damit sie nie ablaufen"
+              }
+            }
+          }
+        },
+        "history": {
+          "description": "Alle Moderationsfälle eines Nutzers anzeigen",
+          "options": {
+            "user": "Nutzer",
+            "type": {
+              "description": "Nur eine Art von Fall",
+              "choices": {
+                "warn": "Verwarnungen",
+                "unwarn": "Entfernte Verwarnungen",
+                "clearwarns": "Gelöschte Verwarnungen",
+                "timeout": "Timeouts",
+                "untimeout": "Aufgehobene Timeouts",
+                "kick": "Kicks",
+                "softban": "Softbans",
+                "ban": "Banns",
+                "tempban": "Temporäre Banns",
+                "unban": "Entbannungen"
+              }
+            }
+          }
+        },
+        "massban": {
+          "description": "Viele Nutzer auf einmal per ID bannen (Raids)",
+          "options": {
+            "ids": "Nutzer-IDs oder Erwähnungen, durch Leerzeichen getrennt",
+            "reason": "Grund für die Banns",
+            "delete_messages": {
+              "description": "Ihre letzten Nachrichten löschen",
+              "choices": {
+                "0": "Nichts löschen",
+                "3600": "Letzte Stunde",
+                "21600": "Letzte 6 Stunden",
+                "43200": "Letzte 12 Stunden",
+                "86400": "Letzte 24 Stunden",
+                "259200": "Letzte 3 Tage",
+                "604800": "Letzte 7 Tage"
+              }
+            }
+          }
+        },
+        "nick": {
+          "description": "Den Nickname eines Mitglieds ändern oder zurücksetzen",
+          "options": {
+            "user": "Mitglied",
+            "nickname": "Neuer Nickname (leer zum Zurücksetzen)"
+          }
+        },
+        "softban": {
+          "description": "Ein Mitglied bannen und sofort entbannen, um seine letzten Nachrichten zu löschen",
+          "options": {
+            "user": "Mitglied für den Softban",
+            "reason": "Grund für den Softban",
+            "delete_messages": {
+              "description": "Zu löschende Nachrichten (Standard: 24 Stunden)",
+              "choices": {
+                "3600": "Letzte Stunde",
+                "21600": "Letzte 6 Stunden",
+                "43200": "Letzte 12 Stunden",
+                "86400": "Letzte 24 Stunden",
+                "259200": "Letzte 3 Tage",
+                "604800": "Letzte 7 Tage"
+              }
+            },
+            "silent": "Dem Nutzer keine Direktnachricht senden"
+          }
+        },
+        "unlock": {
+          "description": "Einen mit /lock gesperrten Kanal entsperren",
+          "options": {
+            "channel": "Kanal (Standard: dieser)",
+            "reason": "Grund, wird im Kanal angezeigt"
+          }
+        },
+        "untimeout": {
+          "description": "Den Timeout eines Mitglieds aufheben",
+          "options": {
+            "user": "Freizugebendes Mitglied",
+            "reason": "Grund"
+          }
+        },
+        "unwarn": {
+          "description": "Eine Verwarnung anhand ihrer Fallnummer entfernen",
+          "options": {
+            "case": "Fallnummer der Verwarnung",
+            "reason": "Grund"
+          }
+        },
+        "warnconfig": {
+          "description": "Automatische Strafen, wenn ein Mitglied eine Anzahl Verwarnungen erreicht",
+          "options": {
+            "add": {
+              "description": "Eine Schwelle hinzufügen oder ersetzen",
+              "options": {
+                "warns": "Anzahl aktiver Verwarnungen",
+                "action": {
+                  "description": "Anzuwendende Strafe",
+                  "choices": {
+                    "timeout": "Timeout",
+                    "kick": "Kick",
+                    "softban": "Softban",
+                    "ban": "Bann"
+                  }
+                },
+                "duration": "Dauer für einen Timeout (Standard 1h) oder einen temporären Bann"
+              }
+            },
+            "remove": {
+              "description": "Eine Schwelle entfernen",
+              "options": {
+                "warns": "Anzahl Verwarnungen der Schwelle"
+              }
+            },
+            "list": {
+              "description": "Die Schwellen anzeigen"
+            }
+          }
+        },
+        "warnings": {
+          "description": "Die aktiven Verwarnungen eines Mitglieds anzeigen",
+          "options": {
+            "user": "Mitglied"
+          }
+        }
+      }
+    }
+  },
+  "perms": {
+    "Administrator": "Administrator",
+    "BanMembers": "Mitglieder bannen",
+    "KickMembers": "Mitglieder kicken",
+    "ModerateMembers": "Timeout für Mitglieder",
+    "ManageMessages": "Nachrichten verwalten",
+    "ReadMessageHistory": "Nachrichtenverlauf lesen",
+    "ManageChannels": "Kanäle verwalten",
+    "ManageRoles": "Berechtigungen verwalten",
+    "ManageNicknames": "Nicknames verwalten",
+    "ManageGuild": "Server verwalten"
+  },
+  "types": {
+    "warn": "Verwarnung",
+    "unwarn": "Verwarnung entfernt",
+    "clearwarns": "Verwarnungen gelöscht",
+    "timeout": "Timeout",
+    "untimeout": "Timeout aufgehoben",
+    "kick": "Kick",
+    "softban": "Softban",
+    "ban": "Bann",
+    "tempban": "Temporärer Bann",
+    "unban": "Entbannung"
+  },
+  "case": {
+    "title": "Fall #{id} · {type}",
+    "user": "Nutzer",
+    "moderator": "Moderator",
+    "automatic": "automatisch",
+    "reason": "Grund",
+    "noReason": "Kein Grund angegeben",
+    "duration": "Dauer",
+    "expires": "Endet",
+    "status": "Status",
+    "active": "Aktiv",
+    "removed": "Entfernt",
+    "edited": "Bearbeitet",
+    "created": "Erstellt",
+    "editedTitle": "Fall #{id} aktualisiert",
+    "deleteConfirm": "Fall #{id} ({type}) löschen? Das kann nicht rückgängig gemacht werden.",
+    "deleted": "Fall #{id} gelöscht",
+    "deletedText": "Der Fall wurde aus dem Verlauf entfernt.",
+    "deletedTempban": "Die geplante Entbannung wurde abgebrochen: Der Nutzer bleibt bis /unban gebannt."
+  },
+  "errors": {
+    "title": "Aktion nicht möglich",
+    "botMissing": "Mir fehlt die Berechtigung **{perm}**. Gib sie meiner Rolle unter Servereinstellungen > Rollen und versuche es dann erneut.",
+    "unknownUser": "Dieser Nutzer existiert nicht oder wurde nicht gefunden.",
+    "notBanned": "Dieser Nutzer ist nicht gebannt.",
+    "unexpected": "Discord hat die Aktion abgelehnt: {message}",
+    "self": "Das kannst du nicht mit dir selbst machen.",
+    "selfBot": "Das kann ich nicht mit mir selbst machen.",
+    "owner": "Der Servereigentümer kann nicht bestraft werden.",
+    "hierarchyUser": "Dieses Mitglied hat eine Rolle, die gleich hoch oder höher als deine höchste Rolle ist.",
+    "hierarchyBot": "Dieses Mitglied hat eine Rolle, die gleich hoch oder höher als meine höchste Rolle ist. Schiebe meine Rolle unter Servereinstellungen > Rollen weiter nach oben.",
+    "reasonRequired": "Auf diesem Server ist ein Grund erforderlich (siehe /mod config reason).",
+    "notMember": "Dieser Nutzer ist kein Mitglied des Servers.",
+    "notTimedOut": "Dieses Mitglied ist nicht im Timeout.",
+    "badDuration": "Ungültige Dauer. Beispiele: 30m, 2h, 7d, 1w2d.",
+    "badTimeout": "Ungültige Timeout-Dauer: zwischen 5 Sekunden und 365 Tagen (höchstens 28 Tage für eine Verwarnungsschwelle). Beispiele: 10m, 2h, 7d.",
+    "alreadyBanned": "Dieser Nutzer ist bereits gebannt.",
+    "badId": "Keine gültige Nutzer-ID gefunden.",
+    "notAWarn": "Fall #{id} ist keine Verwarnung.",
+    "warnInactive": "Verwarnung #{id} wurde bereits entfernt.",
+    "noWarns": "Dieses Mitglied hat keine aktive Verwarnung.",
+    "noCase": "Fall #{id} existiert nicht.",
+    "nothingToEdit": "Gib einen neuen Grund oder eine neue Dauer an.",
+    "durationOnlyTempban": "Nur die Dauer eines temporären Banns kann geändert werden.",
+    "tempbanOver": "Dieser temporäre Bann ist bereits abgelaufen.",
+    "badChannel": "Dieser Befehl funktioniert in dieser Art von Kanal nicht.",
+    "badSlowmode": "Ungültiger Slow-Modus: zwischen 1 Sekunde und 6 Stunden, oder \"off\". Beispiele: 10s, 5m, 1h.",
+    "alreadyLocked": "Dieser Kanal ist bereits gesperrt.",
+    "notLocked": "Dieser Kanal ist nicht gesperrt.",
+    "tooManyIds": "Zu viele IDs: höchstens {max} pro Befehl.",
+    "noValidIds": "Keinen dieser Nutzer kannst du bannen (du selbst, ich, der Eigentümer oder höhere Rollen).",
+    "tooManyThresholds": "Höchstens {max} Schwellen. Entferne zuerst eine.",
+    "noThreshold": "Es gibt keine Schwelle bei {count} Verwarnungen.",
+    "userMissing": "Du brauchst die Berechtigung **{perm}**, um diesen Befehl zu nutzen."
+  },
+  "dm": {
+    "title": {
+      "warn": "Du hast auf {server} eine Verwarnung erhalten",
+      "timeout": "Du wurdest auf {server} in Timeout gesetzt",
+      "kick": "Du wurdest von {server} gekickt",
+      "softban": "Du wurdest von {server} gekickt und deine letzten Nachrichten wurden gelöscht",
+      "ban": "Du wurdest von {server} gebannt"
+    },
+    "appeal": "Einspruch"
+  },
+  "auto": {
+    "threshold": "Automatische Strafe: {count} aktive Verwarnungen",
+    "tempbanExpired": "Temporärer Bann abgelaufen (Fall #{id})",
+    "timeoutContinued": "Langer Timeout verlängert bis {until}"
+  },
+  "done": {
+    "case": "Fall #{id} erstellt.",
+    "warn": "{user} wurde verwarnt",
+    "unwarn": "Verwarnung von {user} entfernt",
+    "unwarnText": "Verwarnung #{id} zählt nicht mehr (Fall #{case}).",
+    "clearwarns": "Verwarnungen von {user} gelöscht",
+    "clearwarnsText": "{count} Verwarnung(en) entfernt (Fall #{case}).",
+    "timeout": "{user} wurde in Timeout gesetzt",
+    "untimeout": "Timeout von {user} aufgehoben",
+    "kick": "{user} wurde gekickt",
+    "softban": "{user} wurde gesoftbannt",
+    "ban": "{user} wurde gebannt",
+    "tempban": "{user} wurde temporär gebannt",
+    "unban": "{user} wurde entbannt",
+    "dm": "Direktnachricht",
+    "dmSent": "Gesendet",
+    "dmFailed": "Nicht zugestellt (Direktnachrichten geschlossen)",
+    "dmSilent": "Nicht gesendet (still)",
+    "dmDisabled": "Auf diesem Server deaktiviert",
+    "warnCount": "Aktive Verwarnungen",
+    "followUp": "Automatische Strafe",
+    "followUpText": "Schwelle erreicht: {type} (Fall #{id})."
+  },
+  "warnings": {
+    "title": "Verwarnungen von {user} ({count})",
+    "none": "Keine aktive Verwarnung.",
+    "expiry": "Verwarnungen laufen nach {duration} ab",
+    "next": "Nächste Strafe bei {count} Verwarnungen: {type}"
+  },
+  "history": {
+    "title": "Verlauf von {user} ({count} Fälle)",
+    "none": "Kein Fall für diesen Nutzer."
+  },
+  "clearwarns": {
+    "confirm": "Die {count} aktive(n) Verwarnung(en) von {user} entfernen?"
+  },
+  "purge": {
+    "none": "Keine aktuelle Nachricht passt zu diesen Filtern.",
+    "done": "{count} Nachricht(en) gelöscht",
+    "oldNote": "Nachrichten, die älter als 14 Tage sind, kann Discord nicht gesammelt löschen. Sie wurden übersprungen.",
+    "logTitle": "Nachrichten gelöscht",
+    "channel": "Kanal",
+    "count": "Gelöscht"
+  },
+  "slowmode": {
+    "title": "Slow-Modus",
+    "set": "Slow-Modus von {channel} auf {duration} gesetzt.",
+    "off": "Slow-Modus von {channel} deaktiviert."
+  },
+  "nick": {
+    "title": "Nickname",
+    "set": "Nickname von {user} in **{nick}** geändert.",
+    "reset": "Nickname von {user} zurückgesetzt.",
+    "before": "Vorher: {nick}"
+  },
+  "lock": {
+    "title": "Kanal gesperrt",
+    "done": "{channel} ist gesperrt: Mitglieder können keine Nachrichten mehr senden.",
+    "notice": "Dieser Kanal wurde von den Moderatoren gesperrt.",
+    "reasonLine": "Grund: {reason}"
+  },
+  "unlock": {
+    "title": "Kanal entsperrt",
+    "done": "{channel} ist entsperrt: Die vorherigen Berechtigungen sind wiederhergestellt.",
+    "notice": "Dieser Kanal ist entsperrt."
+  },
+  "massban": {
+    "confirm": "{count} Nutzer bannen? {skipped} ID(s), die du nicht bannen kannst, werden übersprungen.",
+    "done": "{count} Nutzer gebannt",
+    "doneText": "Fehlgeschlagen: {failed} · übersprungen: {skipped}.",
+    "logTitle": "Massenbann",
+    "banned": "Gebannt",
+    "failed": "Fehlgeschlagen oder übersprungen"
+  },
+  "warnconfig": {
+    "title": "Verwarnungsschwellen",
+    "line": "**{count}** Verwarnungen → {type}{duration}",
+    "empty": "Keine Schwelle: Verwarnungen führen nie automatisch zu einer Strafe. Füge eine mit /mod warnconfig add hinzu."
+  },
+  "modconfig": {
+    "title": "Moderationseinstellungen",
+    "saved": "Einstellungen gespeichert.",
+    "on": "An",
+    "off": "Aus",
+    "dm": "Direktnachricht bei Strafe",
+    "showModerator": "Moderator in der Direktnachricht genannt",
+    "requireReason": "Grund erforderlich",
+    "warnExpiry": "Verwarnungen laufen ab nach",
+    "never": "Nie",
+    "appeal": "Einspruchstext",
+    "none": "Keiner",
+    "thresholds": "Verwarnungsschwellen"
+  },
+  "dashboard": {
+    "sanctions": {
+      "title": "Strafen",
+      "description": "Was Mitglieder bei einer Strafe erfahren und was Moderatoren angeben müssen."
+    },
+    "warnings": {
+      "title": "Verwarnungen",
+      "description": "Die Schwellen werden mit /mod warnconfig festgelegt; hier, wie lange eine Verwarnung zählt."
+    },
+    "fields": {
+      "dm": {
+        "label": "Direktnachricht vor einer Strafe",
+        "help": "Das Mitglied erhält den Grund per Direktnachricht, bevor die Strafe angewendet wird."
+      },
+      "dmShowModerator": {
+        "label": "Den Moderator in der Direktnachricht nennen",
+        "help": "Standardmäßig aus, damit Moderatoren nicht belästigt werden."
+      },
+      "appeal": {
+        "label": "Einspruchstext",
+        "help": "Wird jeder Straf-Direktnachricht angehängt, zum Beispiel ein Formularlink oder eine E-Mail-Adresse."
+      },
+      "requireReason": {
+        "label": "Grund erforderlich",
+        "help": "Strafen ohne Grund ablehnen."
+      },
+      "warnExpiry": {
+        "label": "Verwarnungen laufen ab nach",
+        "help": "0 = Verwarnungen laufen nie ab. Abgelaufene Verwarnungen bleiben im Verlauf, zählen aber nicht mehr für die Schwellen."
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "commands": {
+    "antiraid": {
+      "description": "Configurer la protection anti-raid",
+      "options": {
+        "status": { "description": "Afficher les réglages anti-raid" },
+        "enable": { "description": "Activer la protection anti-raid" },
+        "disable": { "description": "Désactiver la protection anti-raid" },
+        "set": {
+          "description": "Modifier les réglages anti-raid",
+          "options": {
+            "join_threshold": "Nombre d'arrivées qui déclenche le mode raid",
+            "join_window": "Fenêtre de détection en secondes",
+            "raid_action": { "description": "Sanction des arrivants pendant le mode raid", "choices": { "kick": "Expulser", "ban": "Bannir", "timeout": "Exclure temporairement" } },
+            "timeout_minutes": "Durée de l'exclusion temporaire en minutes",
+            "raid_duration": "Durée du mode raid en minutes",
+            "punish_burst": "Sanctionner aussi les arrivées qui ont déclenché la détection",
+            "auto_lockdown": "Verrouiller les salons quand un raid commence",
+            "min_account_age": "Âge minimum du compte (ex. 7d, 0 = désactivé)",
+            "no_avatar": "Filtrer les comptes sans avatar",
+            "filter_action": { "description": "Sanction des comptes filtrés", "choices": { "kick": "Expulser", "ban": "Bannir", "timeout": "Exclure temporairement" } },
+            "anti_bot": "Expulser les bots ajoutés par un membre non autorisé",
+            "allow_verified_bots": "Laisser entrer les bots vérifiés",
+            "bot_adder_action": { "description": "Sanction de la personne qui a ajouté le bot", "choices": { "none": "Aucune", "strip": "Retirer ses rôles", "kick": "Expulser", "ban": "Bannir" } },
+            "dm_notice": "Envoyer un message privé avant l'expulsion ou le bannissement"
+          }
+        }
+      }
+    },
+    "raidmode": {
+      "description": "Activer ou désactiver le mode raid à la main",
+      "options": {
+        "on": { "description": "Activer le mode raid", "options": { "duration": "Durée (ex. 30m, 2h)" } },
+        "off": { "description": "Désactiver le mode raid" }
+      }
+    },
+    "lockdown": {
+      "description": "Verrouiller ou déverrouiller tous les salons publics",
+      "options": {
+        "start": { "description": "Verrouiller tous les salons publics", "options": { "reason": "Raison affichée dans les logs", "announce": "Publier un avis dans chaque salon textuel verrouillé" } },
+        "end": { "description": "Rétablir les permissions des salons comme avant" }
+      }
+    }
+  },
+  "perms": {
+    "ManageChannels": "Gérer les salons",
+    "ManageRoles": "Gérer les rôles",
+    "BanMembers": "Bannir des membres",
+    "KickMembers": "Expulser des membres",
+    "ModerateMembers": "Exclure temporairement des membres"
+  },
+  "actions": {
+    "kick": "Expulsion",
+    "ban": "Bannissement",
+    "timeout": "Exclusion temporaire",
+    "none": "Aucune",
+    "strip": "Retrait des rôles"
+  },
+  "reasons": {
+    "raid": "Anti-raid : arrivée pendant un raid",
+    "accountAge": "Anti-raid : compte trop récent",
+    "noAvatar": "Anti-raid : compte sans avatar",
+    "bot": "Anti-raid : bot ajouté sans autorisation"
+  },
+  "dm": {
+    "title": "Message de {server}",
+    "kick": "Tu as été expulsé automatiquement par la protection du serveur ({reason}). Tu pourras revenir un peu plus tard.",
+    "ban": "Tu as été banni automatiquement par la protection du serveur ({reason}). Contacte l'équipe si c'est une erreur."
+  },
+  "raid": {
+    "startTitle": "Mode raid activé",
+    "endTitle": "Mode raid terminé",
+    "detected": "{count} arrivées en {seconds} secondes : raid détecté. Les nouveaux arrivants sont sanctionnés automatiquement.",
+    "manual": "Mode raid activé par {user}. Les nouveaux arrivants sont sanctionnés automatiquement.",
+    "onReply": "Mode raid activé pour {duration}. Sanction des arrivants : {action}. Utilise /raidmode off pour l'arrêter plus tôt.",
+    "ends": "Fin prévue",
+    "since": "Début",
+    "punished": "Arrivants sanctionnés",
+    "endedBy": "Mode raid arrêté par {user}.",
+    "expired": "Le mode raid est arrivé à son terme.",
+    "noLockdown": "Non",
+    "auditReason": "Anti-raid : mode raid",
+    "notActive": "Le mode raid n'est pas actif.",
+    "alreadyActive": "Le mode raid est déjà actif."
+  },
+  "filter": {
+    "title": "Arrivée filtrée",
+    "description": "{user} a été sanctionné à son arrivée.\nMotif : {reason}\nSanction : {action}"
+  },
+  "bot": {
+    "title": "Bot non autorisé",
+    "description": "Le bot {bot} a été ajouté par {adder}, qui n'est pas dans la liste blanche.",
+    "botField": "Bot",
+    "adderField": "Personne qui l'a ajouté",
+    "kicked": "Expulsé",
+    "kickFailed": "Impossible de l'expulser (permissions ou hiérarchie)",
+    "adderUnknown": "Inconnue (journal d'audit indisponible)",
+    "adderNone": "Aucune sanction",
+    "adderFailed": "Sanction impossible (permissions ou hiérarchie)"
+  },
+  "lockdown": {
+    "title": "Verrouillage",
+    "startTitle": "Serveur verrouillé",
+    "endTitle": "Verrouillage terminé",
+    "summary": "{locked} salons verrouillés, {failed} échecs.",
+    "endHint": "Utilise /lockdown end pour tout rétablir comme avant.",
+    "endSummary": "{restored} salons rétablis, {failed} échecs, {missing} salons supprimés entre-temps.",
+    "startLog": "Verrouillage lancé par {user}.\nRaison : {reason}\n{locked} salons verrouillés, {failed} échecs.",
+    "endLog": "Verrouillage levé par {user}. {restored} salons rétablis, {failed} échecs.",
+    "noticeTitle": "Salon verrouillé",
+    "notice": "Le serveur est temporairement verrouillé par l'équipe. Merci de patienter.",
+    "noticeReason": "Le serveur est temporairement verrouillé par l'équipe.\nRaison : {reason}",
+    "auditStart": "Verrouillage par {user}",
+    "auditEnd": "Fin du verrouillage par {user}",
+    "auditDashboard": "Fin du verrouillage depuis le tableau de bord",
+    "notActive": "Aucun verrouillage en cours.",
+    "alreadyActive": "Un verrouillage est déjà en cours. Utilise /lockdown end pour le lever."
+  },
+  "status": {
+    "title": "Protection anti-raid",
+    "enabled": "La protection est activée.",
+    "disabled": "La protection est désactivée. Le mode raid manuel et le verrouillage restent disponibles.",
+    "on": "Oui",
+    "off": "Non",
+    "detection": "Détection",
+    "detectionValue": "{count} arrivées en {seconds} s",
+    "raidAction": "Sanction en mode raid",
+    "raidDuration": "Durée du mode raid",
+    "punishBurst": "Sanctionner la vague",
+    "autoLockdown": "Verrouillage auto",
+    "dmNotice": "Message privé",
+    "accountAge": "Âge minimum du compte",
+    "noAvatar": "Filtre sans avatar",
+    "filterAction": "Sanction des filtres",
+    "antiBot": "Anti-bot",
+    "verifiedBots": "Bots vérifiés autorisés",
+    "botAdder": "Sanction de l'ajouteur",
+    "raidMode": "Mode raid",
+    "raidActive": "Actif, fin {until}",
+    "lockActive": "Actif ({count} salons)"
+  },
+  "set": {
+    "enabled": "Anti-raid activé",
+    "enabledHelp": "Les arrivées sont surveillées. Vérifie les réglages avec /antiraid status.",
+    "disabled": "Anti-raid désactivé",
+    "disabledHelp": "Plus aucune détection automatique. Le mode raid manuel reste possible.",
+    "saved": "Réglages enregistrés",
+    "nothing": "Aucun réglage fourni."
+  },
+  "errors": {
+    "badDuration": "Durée invalide",
+    "badDurationHelp": "Exemples valides : 30m, 2h, 7d, 1w. Mets 0 pour désactiver.",
+    "missingPerms": "Permission manquante",
+    "missingPermsHelp": "Il me manque : {perms}. Donne-moi ces permissions dans les réglages du serveur."
+  },
+  "dashboard": {
+    "detection": { "title": "Détection de raid", "description": "Repère les vagues d'arrivées et active le mode raid." },
+    "filters": { "title": "Filtres d'arrivée", "description": "Écarte les comptes suspects même hors raid." },
+    "bots": { "title": "Protection contre les bots", "description": "Empêche l'ajout de bots par des membres non autorisés." },
+    "fields": {
+      "enabled": { "label": "Protection activée", "help": "Active la détection, les filtres et l'anti-bot." },
+      "joinThreshold": { "label": "Seuil d'arrivées", "help": "Nombre d'arrivées dans la fenêtre qui déclenche le mode raid." },
+      "joinWindowSec": { "label": "Fenêtre de détection (secondes)", "help": "Durée sur laquelle les arrivées sont comptées." },
+      "raidAction": { "label": "Sanction en mode raid", "help": "Appliquée à chaque arrivant tant que le mode raid est actif." },
+      "timeoutMinutes": { "label": "Durée de l'exclusion temporaire (minutes)", "help": "Utilisée quand la sanction est l'exclusion temporaire." },
+      "raidDurationMin": { "label": "Durée du mode raid (minutes)", "help": "Le mode raid s'arrête tout seul après ce délai." },
+      "punishBurst": { "label": "Sanctionner la vague", "help": "Sanctionne aussi les comptes arrivés juste avant la détection." },
+      "autoLockdown": { "label": "Verrouillage automatique", "help": "Verrouille les salons publics pendant le raid puis les rétablit." },
+      "dmNotice": { "label": "Message privé avant sanction", "help": "Explique à la personne pourquoi elle est expulsée ou bannie." },
+      "minAccountAgeMs": { "label": "Âge minimum du compte", "help": "Les comptes plus récents sont sanctionnés à l'arrivée. 0 pour désactiver." },
+      "noAvatar": { "label": "Filtrer les comptes sans avatar", "help": "Beaucoup de comptes de raid n'ont pas d'avatar." },
+      "filterAction": { "label": "Sanction des filtres", "help": "Appliquée aux comptes trop récents ou sans avatar." },
+      "antiBot": { "label": "Anti-bot", "help": "Expulse un bot ajouté par quelqu'un qui n'est pas dans la liste blanche." },
+      "allowVerifiedBots": { "label": "Autoriser les bots vérifiés", "help": "Les bots vérifiés par Discord peuvent entrer sans contrôle." },
+      "botAdderAction": { "label": "Sanction de l'ajouteur", "help": "Ce qui arrive à la personne qui a ajouté le bot." }
+    },
+    "actions": {
+      "raidOn": "Activer le mode raid",
+      "raidOff": "Arrêter le mode raid",
+      "lockdownEnd": "Lever le verrouillage"
+    },
+    "results": {
+      "raidOn": "Mode raid activé.",
+      "raidOff": "Mode raid arrêté.",
+      "lockdownEnd": "Verrouillage levé, permissions rétablies.",
+      "lockdownPartial": "Verrouillage levé en partie : certains salons n'ont pas pu être rétablis, réessaie."
+    }
+  }
+}

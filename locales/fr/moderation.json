@@ -1,0 +1,496 @@
+{
+  "commands": {
+    "ban": {
+      "description": "Bannir un utilisateur, éventuellement pour une durée limitée",
+      "options": {
+        "user": "Utilisateur à bannir",
+        "reason": "Raison du bannissement",
+        "duration": "Durée d'un ban temporaire, ex. 7d (vide = définitif)",
+        "delete_messages": {
+          "description": "Supprimer ses messages récents",
+          "choices": {
+            "0": "Ne rien supprimer",
+            "3600": "Dernière heure",
+            "21600": "6 dernières heures",
+            "43200": "12 dernières heures",
+            "86400": "Dernières 24 heures",
+            "259200": "3 derniers jours",
+            "604800": "7 derniers jours"
+          }
+        },
+        "silent": "Ne pas prévenir l'utilisateur en MP"
+      }
+    },
+    "kick": {
+      "description": "Expulser un membre du serveur",
+      "options": {
+        "user": "Membre à expulser",
+        "reason": "Raison de l'expulsion",
+        "silent": "Ne pas prévenir l'utilisateur en MP"
+      }
+    },
+    "timeout": {
+      "description": "Exclure temporairement un membre (ni messages, ni vocal)",
+      "options": {
+        "user": "Membre à exclure",
+        "duration": "Durée, ex. 10m, 2h, 7d (jusqu'à 365d)",
+        "reason": "Raison de l'exclusion",
+        "silent": "Ne pas prévenir l'utilisateur en MP"
+      }
+    },
+    "warn": {
+      "description": "Avertir un membre (les paliers peuvent sanctionner automatiquement)",
+      "options": {
+        "user": "Membre à avertir",
+        "reason": "Raison de l'avertissement",
+        "silent": "Ne pas prévenir l'utilisateur en MP"
+      }
+    },
+    "unban": {
+      "description": "Débannir un utilisateur",
+      "options": {
+        "user": "Utilisateur banni (tapez un nom ou un ID)",
+        "reason": "Raison du débannissement"
+      }
+    },
+    "case": {
+      "description": "Voir, modifier ou supprimer un dossier de modération",
+      "options": {
+        "view": {
+          "description": "Afficher un dossier",
+          "options": {
+            "number": "Numéro du dossier"
+          }
+        },
+        "edit": {
+          "description": "Changer la raison ou la durée d'un ban temporaire",
+          "options": {
+            "number": "Numéro du dossier",
+            "reason": "Nouvelle raison",
+            "duration": "Nouvelle durée du ban temporaire, comptée depuis le ban"
+          }
+        },
+        "delete": {
+          "description": "Supprimer un dossier",
+          "options": {
+            "number": "Numéro du dossier"
+          }
+        }
+      }
+    },
+    "purge": {
+      "description": "Supprimer des messages récents, avec filtres facultatifs",
+      "options": {
+        "amount": "Nombre de messages à supprimer (1-100)",
+        "user": "Seulement les messages de cet utilisateur",
+        "bots": "Seulement les messages des bots",
+        "humans": "Seulement les messages des humains",
+        "links": "Seulement les messages avec un lien",
+        "attachments": "Seulement les messages avec fichiers",
+        "embeds": "Seulement les messages avec embeds",
+        "contains": "Seulement les messages contenant ce texte"
+      }
+    },
+    "slowmode": {
+      "description": "Régler le mode lent d'un salon",
+      "options": {
+        "duration": "Délai entre deux messages, ex. 10s, 5m (max 6h), ou \"off\"",
+        "channel": "Salon (par défaut : celui-ci)"
+      }
+    },
+    "lock": {
+      "description": "Empêcher @everyone de parler dans un salon",
+      "options": {
+        "channel": "Salon (par défaut : celui-ci)",
+        "reason": "Raison, affichée dans le salon"
+      }
+    },
+    "mod": {
+      "description": "Autres outils et réglages de modération",
+      "options": {
+        "clearwarns": {
+          "description": "Retirer tous les avertissements actifs d'un membre",
+          "options": {
+            "user": "Membre",
+            "reason": "Raison"
+          }
+        },
+        "config": {
+          "description": "Réglages de la modération",
+          "options": {
+            "show": {
+              "description": "Afficher les réglages de modération"
+            },
+            "dm": {
+              "description": "Prévenir les membres en MP quand ils sont sanctionnés",
+              "options": {
+                "enabled": "Envoyer le MP",
+                "show_moderator": "Nommer le modérateur dans le MP"
+              }
+            },
+            "appeal": {
+              "description": "Texte ajouté aux MP de sanction (comment faire appel)",
+              "options": {
+                "text": "Texte (vide pour retirer)"
+              }
+            },
+            "reason": {
+              "description": "Exiger une raison pour chaque sanction",
+              "options": {
+                "required": "Raison obligatoire"
+              }
+            },
+            "warnexpiry": {
+              "description": "Les avertissements ne comptent plus après ce délai",
+              "options": {
+                "duration": "ex. 30d, ou \"off\" pour ne jamais expirer"
+              }
+            }
+          }
+        },
+        "history": {
+          "description": "Afficher tous les dossiers de modération d'un utilisateur",
+          "options": {
+            "user": "Utilisateur",
+            "type": {
+              "description": "Un seul type de dossier",
+              "choices": {
+                "warn": "Avertissements",
+                "unwarn": "Avertissements retirés",
+                "clearwarns": "Avertissements effacés",
+                "timeout": "Exclusions",
+                "untimeout": "Exclusions levées",
+                "kick": "Expulsions",
+                "softban": "Softbans",
+                "ban": "Bannissements",
+                "tempban": "Bans temporaires",
+                "unban": "Débannissements"
+              }
+            }
+          }
+        },
+        "massban": {
+          "description": "Bannir de nombreux utilisateurs d'un coup par ID (raids)",
+          "options": {
+            "ids": "ID ou mentions des utilisateurs, séparés par des espaces",
+            "reason": "Raison des bannissements",
+            "delete_messages": {
+              "description": "Supprimer leurs messages récents",
+              "choices": {
+                "0": "Ne rien supprimer",
+                "3600": "Dernière heure",
+                "21600": "6 dernières heures",
+                "43200": "12 dernières heures",
+                "86400": "Dernières 24 heures",
+                "259200": "3 derniers jours",
+                "604800": "7 derniers jours"
+              }
+            }
+          }
+        },
+        "nick": {
+          "description": "Changer ou réinitialiser le pseudo d'un membre",
+          "options": {
+            "user": "Membre",
+            "nickname": "Nouveau pseudo (vide pour réinitialiser)"
+          }
+        },
+        "softban": {
+          "description": "Bannir puis débannir un membre pour effacer ses messages récents",
+          "options": {
+            "user": "Membre à softban",
+            "reason": "Raison du softban",
+            "delete_messages": {
+              "description": "Messages à supprimer (par défaut : 24 heures)",
+              "choices": {
+                "3600": "Dernière heure",
+                "21600": "6 dernières heures",
+                "43200": "12 dernières heures",
+                "86400": "Dernières 24 heures",
+                "259200": "3 derniers jours",
+                "604800": "7 derniers jours"
+              }
+            },
+            "silent": "Ne pas prévenir l'utilisateur en MP"
+          }
+        },
+        "unlock": {
+          "description": "Déverrouiller un salon verrouillé avec /lock",
+          "options": {
+            "channel": "Salon (par défaut : celui-ci)",
+            "reason": "Raison, affichée dans le salon"
+          }
+        },
+        "untimeout": {
+          "description": "Lever l'exclusion temporaire d'un membre",
+          "options": {
+            "user": "Membre à libérer",
+            "reason": "Raison"
+          }
+        },
+        "unwarn": {
+          "description": "Retirer un avertissement par son numéro de dossier",
+          "options": {
+            "case": "Numéro de dossier de l'avertissement",
+            "reason": "Raison"
+          }
+        },
+        "warnconfig": {
+          "description": "Sanctions automatiques quand un membre atteint un nombre d'avertissements",
+          "options": {
+            "add": {
+              "description": "Ajouter ou remplacer un palier",
+              "options": {
+                "warns": "Nombre d'avertissements actifs",
+                "action": {
+                  "description": "Sanction à appliquer",
+                  "choices": {
+                    "timeout": "Exclusion temporaire",
+                    "kick": "Expulsion",
+                    "softban": "Softban",
+                    "ban": "Bannissement"
+                  }
+                },
+                "duration": "Durée d'une exclusion (1h par défaut) ou d'un ban temporaire"
+              }
+            },
+            "remove": {
+              "description": "Supprimer un palier",
+              "options": {
+                "warns": "Nombre d'avertissements du palier"
+              }
+            },
+            "list": {
+              "description": "Afficher les paliers"
+            }
+          }
+        },
+        "warnings": {
+          "description": "Lister les avertissements actifs d'un membre",
+          "options": {
+            "user": "Membre"
+          }
+        }
+      }
+    }
+  },
+  "perms": {
+    "Administrator": "Administrateur",
+    "BanMembers": "Bannir des membres",
+    "KickMembers": "Expulser des membres",
+    "ModerateMembers": "Exclure temporairement des membres",
+    "ManageMessages": "Gérer les messages",
+    "ReadMessageHistory": "Voir les anciens messages",
+    "ManageChannels": "Gérer les salons",
+    "ManageRoles": "Gérer les permissions",
+    "ManageNicknames": "Gérer les pseudos",
+    "ManageGuild": "Gérer le serveur"
+  },
+  "types": {
+    "warn": "Avertissement",
+    "unwarn": "Avertissement retiré",
+    "clearwarns": "Avertissements effacés",
+    "timeout": "Exclusion temporaire",
+    "untimeout": "Exclusion levée",
+    "kick": "Expulsion",
+    "softban": "Softban",
+    "ban": "Bannissement",
+    "tempban": "Ban temporaire",
+    "unban": "Débannissement"
+  },
+  "case": {
+    "title": "Dossier #{id} · {type}",
+    "user": "Utilisateur",
+    "moderator": "Modérateur",
+    "automatic": "automatique",
+    "reason": "Raison",
+    "noReason": "Aucune raison donnée",
+    "duration": "Durée",
+    "expires": "Fin",
+    "status": "Statut",
+    "active": "Actif",
+    "removed": "Retiré",
+    "edited": "Modifié",
+    "created": "Créé le",
+    "editedTitle": "Dossier #{id} mis à jour",
+    "deleteConfirm": "Supprimer le dossier #{id} ({type}) ? C'est définitif.",
+    "deleted": "Dossier #{id} supprimé",
+    "deletedText": "Le dossier a été retiré de l'historique.",
+    "deletedTempban": "Le débannissement prévu est annulé : l'utilisateur reste banni jusqu'à un /unban."
+  },
+  "errors": {
+    "title": "Action impossible",
+    "botMissing": "Il me manque la permission **{perm}**. Donnez-la à mon rôle dans Paramètres du serveur > Rôles, puis réessayez.",
+    "unknownUser": "Cet utilisateur n'existe pas ou est introuvable.",
+    "notBanned": "Cet utilisateur n'est pas banni.",
+    "unexpected": "Discord a refusé l'action : {message}",
+    "self": "Vous ne pouvez pas faire ça sur vous-même.",
+    "selfBot": "Je ne peux pas faire ça sur moi-même.",
+    "owner": "Le propriétaire du serveur ne peut pas être sanctionné.",
+    "hierarchyUser": "Ce membre a un rôle égal ou supérieur à votre rôle le plus haut.",
+    "hierarchyBot": "Ce membre a un rôle égal ou supérieur à mon rôle le plus haut. Montez mon rôle dans Paramètres du serveur > Rôles.",
+    "reasonRequired": "Une raison est obligatoire sur ce serveur (voir /mod config reason).",
+    "notMember": "Cet utilisateur n'est pas membre du serveur.",
+    "notTimedOut": "Ce membre n'est pas exclu temporairement.",
+    "badDuration": "Durée invalide. Exemples : 30m, 2h, 7d, 1w2d.",
+    "badTimeout": "Durée d'exclusion invalide : entre 5 secondes et 365 jours (28 jours maximum pour un palier). Exemples : 10m, 2h, 7d.",
+    "alreadyBanned": "Cet utilisateur est déjà banni.",
+    "badId": "Aucun ID d'utilisateur valide trouvé.",
+    "notAWarn": "Le dossier #{id} n'est pas un avertissement.",
+    "warnInactive": "L'avertissement #{id} a déjà été retiré.",
+    "noWarns": "Ce membre n'a aucun avertissement actif.",
+    "noCase": "Le dossier #{id} n'existe pas.",
+    "nothingToEdit": "Indiquez une nouvelle raison ou une nouvelle durée.",
+    "durationOnlyTempban": "Seule la durée d'un ban temporaire peut être modifiée.",
+    "tempbanOver": "Ce ban temporaire est déjà terminé.",
+    "badChannel": "Cette commande ne fonctionne pas dans ce type de salon.",
+    "badSlowmode": "Mode lent invalide : entre 1 seconde et 6 heures, ou \"off\". Exemples : 10s, 5m, 1h.",
+    "alreadyLocked": "Ce salon est déjà verrouillé.",
+    "notLocked": "Ce salon n'est pas verrouillé.",
+    "tooManyIds": "Trop d'ID : {max} au maximum par commande.",
+    "noValidIds": "Vous ne pouvez bannir aucun de ces utilisateurs (vous-même, moi, le propriétaire ou des rôles plus hauts).",
+    "tooManyThresholds": "{max} paliers au maximum. Supprimez-en un d'abord.",
+    "noThreshold": "Aucun palier à {count} avertissements.",
+    "userMissing": "Il vous faut la permission **{perm}** pour utiliser cette commande."
+  },
+  "dm": {
+    "title": {
+      "warn": "Vous avez reçu un avertissement sur {server}",
+      "timeout": "Vous avez été exclu temporairement de {server}",
+      "kick": "Vous avez été expulsé de {server}",
+      "softban": "Vous avez été expulsé de {server} et vos messages récents ont été supprimés",
+      "ban": "Vous avez été banni de {server}"
+    },
+    "appeal": "Faire appel"
+  },
+  "auto": {
+    "threshold": "Sanction automatique : {count} avertissements actifs",
+    "tempbanExpired": "Fin du ban temporaire (dossier #{id})",
+    "timeoutContinued": "Exclusion longue prolongée jusqu'au {until}"
+  },
+  "done": {
+    "case": "Dossier #{id} créé.",
+    "warn": "{user} a été averti",
+    "unwarn": "Avertissement de {user} retiré",
+    "unwarnText": "L'avertissement #{id} ne compte plus (dossier #{case}).",
+    "clearwarns": "Avertissements de {user} effacés",
+    "clearwarnsText": "{count} avertissement(s) retiré(s) (dossier #{case}).",
+    "timeout": "{user} a été exclu temporairement",
+    "untimeout": "Exclusion de {user} levée",
+    "kick": "{user} a été expulsé",
+    "softban": "{user} a été softban",
+    "ban": "{user} a été banni",
+    "tempban": "{user} a été banni temporairement",
+    "unban": "{user} a été débanni",
+    "dm": "Message privé",
+    "dmSent": "Envoyé",
+    "dmFailed": "Non reçu (MP fermés)",
+    "dmSilent": "Non envoyé (silencieux)",
+    "dmDisabled": "Désactivé sur ce serveur",
+    "warnCount": "Avertissements actifs",
+    "followUp": "Sanction automatique",
+    "followUpText": "Palier atteint : {type} (dossier #{id})."
+  },
+  "warnings": {
+    "title": "Avertissements de {user} ({count})",
+    "none": "Aucun avertissement actif.",
+    "expiry": "Les avertissements expirent après {duration}",
+    "next": "Prochaine sanction à {count} avertissements : {type}"
+  },
+  "history": {
+    "title": "Historique de {user} ({count} dossiers)",
+    "none": "Aucun dossier pour cet utilisateur."
+  },
+  "clearwarns": {
+    "confirm": "Retirer les {count} avertissement(s) actif(s) de {user} ?"
+  },
+  "purge": {
+    "none": "Aucun message récent ne correspond à ces filtres.",
+    "done": "{count} message(s) supprimé(s)",
+    "oldNote": "Les messages de plus de 14 jours ne peuvent pas être supprimés en masse par Discord et ont été ignorés.",
+    "logTitle": "Messages purgés",
+    "channel": "Salon",
+    "count": "Supprimés"
+  },
+  "slowmode": {
+    "title": "Mode lent",
+    "set": "Mode lent de {channel} réglé sur {duration}.",
+    "off": "Mode lent de {channel} désactivé."
+  },
+  "nick": {
+    "title": "Pseudo",
+    "set": "Le pseudo de {user} est maintenant **{nick}**.",
+    "reset": "Le pseudo de {user} a été réinitialisé.",
+    "before": "Avant : {nick}"
+  },
+  "lock": {
+    "title": "Salon verrouillé",
+    "done": "{channel} est verrouillé : les membres ne peuvent plus envoyer de messages.",
+    "notice": "Ce salon est verrouillé par la modération.",
+    "reasonLine": "Raison : {reason}"
+  },
+  "unlock": {
+    "title": "Salon déverrouillé",
+    "done": "{channel} est déverrouillé : ses permissions d'avant sont rétablies.",
+    "notice": "Ce salon est déverrouillé."
+  },
+  "massban": {
+    "confirm": "Bannir {count} utilisateur(s) ? {skipped} ID que vous ne pouvez pas bannir seront ignorés.",
+    "done": "{count} utilisateur(s) banni(s)",
+    "doneText": "Échecs : {failed} · ignorés : {skipped}.",
+    "logTitle": "Bannissement de masse",
+    "banned": "Bannis",
+    "failed": "Échecs ou ignorés"
+  },
+  "warnconfig": {
+    "title": "Paliers d'avertissements",
+    "line": "**{count}** avertissements → {type}{duration}",
+    "empty": "Aucun palier : les avertissements ne sanctionnent jamais automatiquement. Ajoutez-en un avec /mod warnconfig add."
+  },
+  "modconfig": {
+    "title": "Réglages de modération",
+    "saved": "Réglages enregistrés.",
+    "on": "Activé",
+    "off": "Désactivé",
+    "dm": "MP lors d'une sanction",
+    "showModerator": "Modérateur nommé dans le MP",
+    "requireReason": "Raison obligatoire",
+    "warnExpiry": "Expiration des avertissements",
+    "never": "Jamais",
+    "appeal": "Texte d'appel",
+    "none": "Aucun",
+    "thresholds": "Paliers d'avertissements"
+  },
+  "dashboard": {
+    "sanctions": {
+      "title": "Sanctions",
+      "description": "Ce que les membres reçoivent quand ils sont sanctionnés, et ce que les modérateurs doivent indiquer."
+    },
+    "warnings": {
+      "title": "Avertissements",
+      "description": "Les paliers se règlent avec /mod warnconfig ; ici, combien de temps un avertissement compte."
+    },
+    "fields": {
+      "dm": {
+        "label": "MP avant une sanction",
+        "help": "Le membre reçoit la raison en message privé avant que la sanction soit appliquée."
+      },
+      "dmShowModerator": {
+        "label": "Nommer le modérateur dans le MP",
+        "help": "Désactivé par défaut, pour éviter que les modérateurs soient harcelés."
+      },
+      "appeal": {
+        "label": "Texte d'appel",
+        "help": "Ajouté à chaque MP de sanction, par exemple un lien de formulaire ou une adresse e-mail."
+      },
+      "requireReason": {
+        "label": "Raison obligatoire",
+        "help": "Refuser les sanctions sans raison."
+      },
+      "warnExpiry": {
+        "label": "Expiration des avertissements",
+        "help": "0 = les avertissements n'expirent jamais. Expirés, ils restent dans l'historique mais ne comptent plus pour les paliers."
+      }
+    }
+  }
+}

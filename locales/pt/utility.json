@@ -1,0 +1,261 @@
+{
+  "commands": {
+    "info": {
+      "description": "Informações sobre membros, cargos, canais e o servidor",
+      "options": {
+        "user": {
+          "description": "Mostra informações sobre um membro",
+          "options": {
+            "user": "O membro a consultar (você por padrão)"
+          }
+        },
+        "server": {
+          "description": "Mostra informações sobre este servidor"
+        },
+        "avatar": {
+          "description": "Mostra o avatar de um membro em tamanho original",
+          "options": {
+            "user": "O membro (você por padrão)"
+          }
+        },
+        "role": {
+          "description": "Mostra informações sobre um cargo",
+          "options": {
+            "role": "O cargo a consultar"
+          }
+        },
+        "channel": {
+          "description": "Mostra informações sobre um canal",
+          "options": {
+            "channel": "O canal (este por padrão)"
+          }
+        },
+        "members": {
+          "description": "Conta os membros deste servidor"
+        },
+        "invites": {
+          "description": "Ranking dos membros que mais trouxeram pessoas",
+          "options": {
+            "user": "Mostra também o total deste membro"
+          }
+        }
+      }
+    },
+    "poll": {
+      "description": "Cria uma enquete com botões e contagem ao vivo",
+      "options": {
+        "question": "A pergunta",
+        "options": "Opções separadas por | (de 2 a 5)",
+        "duration": "Tempo aberta, ex. 30m, 2h, 1d (máximo 7d, 1d por padrão)"
+      }
+    },
+    "remind": {
+      "description": "Seja lembrado de algo mais tarde",
+      "options": {
+        "delay": "Quando, ex. 10m, 2h30m ou 3d",
+        "text": "Do que você quer ser lembrado"
+      }
+    },
+    "say": {
+      "description": "Faz o bot publicar uma mensagem",
+      "options": {
+        "message": "A mensagem a publicar (menções desativadas)",
+        "channel": "Canal onde publicar (este por padrão)"
+      }
+    },
+    "embed": {
+      "description": "Escreve e publica um embed com um formulário",
+      "options": {
+        "channel": "Canal onde publicar (este por padrão)"
+      }
+    },
+    "snipe": {
+      "description": "Lê mensagens apagadas recentemente (desligado por padrão)",
+      "options": {
+        "show": {
+          "description": "Mostra uma mensagem apagada recentemente",
+          "options": {
+            "channel": "Canal onde procurar (este por padrão)",
+            "index": "1 = a mais recente"
+          }
+        },
+        "enable": {
+          "description": "Guardar as mensagens apagadas para /snipe (Gerenciar servidor)"
+        },
+        "disable": {
+          "description": "Parar de guardar as mensagens apagadas (Gerenciar servidor)"
+        }
+      }
+    }
+  },
+  "userinfo": {
+    "title": "Usuário: {name}",
+    "id": "ID",
+    "type": "Tipo",
+    "bot": "Bot",
+    "human": "Humano",
+    "created": "Conta criada",
+    "joined": "Entrou no servidor",
+    "topRole": "Cargo mais alto",
+    "roles": "Cargos ({count})",
+    "none": "Nenhum",
+    "notMember": "Não é membro deste servidor"
+  },
+  "serverinfo": {
+    "title": "Servidor: {name}",
+    "id": "ID",
+    "owner": "Dono",
+    "created": "Criado em",
+    "members": "Membros",
+    "humans": "Humanos (em cache)",
+    "bots": "Bots (em cache)",
+    "channels": "Canais",
+    "roles": "Cargos",
+    "boosts": "Boosts",
+    "boostLevel": "Nível {level}",
+    "verification": "Verificação",
+    "verificationLevels": {
+      "0": "Nenhuma",
+      "1": "Baixa",
+      "2": "Média",
+      "3": "Alta",
+      "4": "Muito alta"
+    }
+  },
+  "avatar": {
+    "title": "Avatar de {name}",
+    "open": "Abrir a imagem completa"
+  },
+  "roleinfo": {
+    "title": "Cargo: {name}",
+    "id": "ID",
+    "color": "Cor",
+    "position": "Posição",
+    "members": "Membros (em cache)",
+    "mentionable": "Mencionável",
+    "hoisted": "Exibido separadamente",
+    "admin": "Administrador",
+    "permissions": "Permissões concedidas",
+    "created": "Criado em",
+    "yes": "Sim",
+    "no": "Não"
+  },
+  "channelinfo": {
+    "title": "Canal: {name}",
+    "id": "ID",
+    "type": "Tipo",
+    "types": {
+      "text": "Texto",
+      "voice": "Voz",
+      "category": "Categoria",
+      "announcement": "Anúncios",
+      "forum": "Fórum",
+      "stage": "Palco",
+      "thread": "Tópico",
+      "other": "Outro"
+    },
+    "category": "Categoria",
+    "position": "Posição",
+    "created": "Criado em",
+    "nsfw": "NSFW",
+    "slowmode": "Modo lento",
+    "seconds": "{count} s",
+    "topic": "Tópico do canal",
+    "yes": "Sim",
+    "no": "Não",
+    "none": "Nenhum"
+  },
+  "membercount": {
+    "title": "Membros de {name}",
+    "total": "Total",
+    "humans": "Humanos",
+    "bots": "Bots",
+    "partial": "Humanos e bots são contados entre os membros em cache do bot, então a divisão pode ser menor que o total."
+  },
+  "invites": {
+    "title": "Ranking de convites",
+    "empty": "Nenhum link de convite foi usado ainda.",
+    "entry": "{rank}. {user}: **{count}** convite(s)",
+    "yours": "{user} trouxe **{count}** membro(s) com os links ativos."
+  },
+  "poll": {
+    "ends": "Termina <t:{unix}:R>",
+    "noVotes": "ninguém votou",
+    "tie": "empate",
+    "winner": "opção em primeiro: {option}",
+    "results": "Resultado",
+    "totalVotes": "Votos no total: {total}",
+    "recorded": "Voto registrado",
+    "yourChoice": "Você votou em **{option}**. Clique em outra opção para mudar o seu voto."
+  },
+  "remind": {
+    "title": "Lembrete criado",
+    "set": "Vou lembrar você <t:{when}:R>: {text}",
+    "reminderTitle": "Lembrete",
+    "ping": "{user}, aqui está o seu lembrete."
+  },
+  "say": {
+    "title": "Mensagem publicada",
+    "sent": "Mensagem publicada em {channel}."
+  },
+  "embed": {
+    "modalTitle": "Criar um embed",
+    "fields": {
+      "title": "Título",
+      "description": "Descrição",
+      "color": "Cor (hex, ex. #3b6fd4)",
+      "footer": "Rodapé",
+      "image": "Link da imagem (https://)"
+    },
+    "title": "Embed publicado",
+    "sent": "Embed publicado em {channel}."
+  },
+  "snipe": {
+    "title": "Mensagem apagada",
+    "author": "Autor",
+    "when": "Apagada",
+    "attachments": "Anexos ({count})",
+    "noText": "(sem texto)",
+    "none": "Nenhuma mensagem apagada nos últimos 10 minutos.",
+    "off": "O snipe está desligado neste servidor. Ligue com /snipe enable.",
+    "enabled": "O snipe está ligado: mensagens apagadas ficam na memória por 10 minutos.",
+    "disabled": "O snipe está desligado. As mensagens apagadas não são mais guardadas.",
+    "position": "Mensagem {index}/{total} em #{channel}"
+  },
+  "errors": {
+    "missingBotPerm": "Preciso da permissão **{perm}** para fazer isso.",
+    "missingUserPerm": "Você precisa da permissão **{perm}** para fazer isso.",
+    "permSendMessages": "Enviar mensagens",
+    "permEmbedLinks": "Inserir links",
+    "permManageGuild": "Gerenciar servidor",
+    "inviteFetch": "Não consegui ler os links de convite deste servidor.",
+    "pollClosed": "Esta enquete está encerrada.",
+    "pollDuplicate": "Duas opções são idênticas.",
+    "pollOptionLong": "Cada opção pode ter no máximo {max} caracteres.",
+    "pollOptions": "Informe entre 2 e {max} opções, separadas por |.",
+    "pollTooLong": "Uma enquete pode durar no máximo 7 dias.",
+    "invalidDuration": "Duração inválida. Exemplos: 10m, 2h30m, 1d.",
+    "remindTooLong": "Um lembrete pode ser criado com no máximo {max} dias de antecedência.",
+    "embedEmpty": "O embed precisa de um título ou de uma descrição.",
+    "invalidColor": "Cor inválida. Use #RRGGBB.",
+    "invalidUrl": "Link de imagem inválido. Deve começar com https://."
+  },
+  "dashboard": {
+    "snipe": {
+      "title": "Mensagens apagadas (/snipe)",
+      "description": "As mensagens apagadas ficam na memória por 10 minutos para que a moderação possa lê-las.",
+      "enabled": {
+        "label": "Guardar mensagens apagadas",
+        "help": "Desligado por padrão, por privacidade. Desligado, nada é guardado."
+      }
+    },
+    "remind": {
+      "title": "Lembretes",
+      "description": "Com quanta antecedência um lembrete pode ser criado.",
+      "maxDays": {
+        "label": "Atraso máximo de um lembrete (dias)",
+        "help": "Lembretes mais distantes são recusados."
+      }
+    }
+  }
+}

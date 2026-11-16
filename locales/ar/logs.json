@@ -1,0 +1,272 @@
+{
+  "commands": {
+    "logs": {
+      "description": "إعداد قنوات السجلات",
+      "options": {
+        "set": {
+          "description": "إرسال فئة سجلات لقناة",
+          "options": {
+            "category": {
+              "description": "فئة السجلات",
+              "choices": {
+                "all": "كل الفئات",
+                "messages": "الرسائل",
+                "members": "الأعضاء",
+                "moderation": "المودراشن",
+                "server": "السيرفر",
+                "voice": "الصوت",
+                "invites": "الدعوات",
+                "protection": "الحماية",
+                "tickets": "التذاكر"
+              }
+            },
+            "channel": "القناة التي تستقبل السجلات"
+          }
+        },
+        "disable": {
+          "description": "إيقاف تسجيل فئة",
+          "options": {
+            "category": {
+              "description": "فئة السجلات",
+              "choices": {
+                "all": "كل الفئات",
+                "messages": "الرسائل",
+                "members": "الأعضاء",
+                "moderation": "المودراشن",
+                "server": "السيرفر",
+                "voice": "الصوت",
+                "invites": "الدعوات",
+                "protection": "الحماية",
+                "tickets": "التذاكر"
+              }
+            }
+          }
+        },
+        "ignore": {
+          "description": "تجاهل قناة، أو مراقبتها مجدداً",
+          "options": {
+            "channel": "القناة أو الفئة للتجاهل (أو إيقاف التجاهل)"
+          }
+        },
+        "bots": {
+          "description": "تسجيل رسائل البوتات أم لا",
+          "options": {
+            "enabled": "تسجيل رسائل البوتات"
+          }
+        },
+        "status": {
+          "description": "عرض إعدادات السجلات"
+        }
+      }
+    }
+  },
+  "categories": {
+    "all": "كل الفئات",
+    "messages": "الرسائل",
+    "members": "الأعضاء",
+    "moderation": "المودراشن",
+    "server": "السيرفر",
+    "voice": "الصوت",
+    "invites": "الدعوات",
+    "protection": "الحماية",
+    "tickets": "التذاكر"
+  },
+  "status": {
+    "title": "إعدادات السجلات",
+    "description": "القناة المستخدمة لكل فئة. الحماية والتذاكر تستخدم قناة المودراشن عندما لا تملك قنوات خاصة.",
+    "off": "معطل",
+    "fallback": "{channel} (عبر المودراشن)",
+    "ignored": "القنوات المتجاهلة",
+    "none": "لا شيء",
+    "bots": "رسائل البوتات",
+    "botsIgnored": "متجاهلة",
+    "botsLogged": "مُسجلة"
+  },
+  "errors": {
+    "title": "غير ممكن",
+    "missingPerms": "أفتقر لهذه الصلاحيات في {channel}: {perms}. أضفها وشغل الأمر مرة أخرى."
+  },
+  "set": {
+    "title": "تم إعداد السجلات",
+    "done": "ستُرسل سجلات \"{category}\" لـ {channel}."
+  },
+  "disable": {
+    "title": "تم تعطيل السجلات",
+    "done": "سجلات \"{category}\" معطلة."
+  },
+  "ignore": {
+    "title": "قنوات متجاهلة",
+    "added": "تم تجاهل {channel}: رسائلها ونشاطها الصوتي لن تُسجل.",
+    "removed": "{channel} لم تعد متجاهلة."
+  },
+  "bots": {
+    "title": "رسائل البوتات",
+    "on": "رسائل البوتات ستُسجل.",
+    "off": "رسائل البوتات لن تُسجل بعد الآن."
+  },
+  "test": {
+    "title": "اختبار السجلات",
+    "description": "هذه القناة تستقبل السجلات بشكل صحيح (فئة {category}).",
+    "none": "لا قناة سجلات مضبوطة.",
+    "ok": "تم إرسال رسالة اختبار لكل قنوات السجلات.",
+    "partial": "بعض القنوات لم تستقبل الاختبار: تحقق من صلاحياتي (عرض القناة، إرسال رسائل، تضمين روابط)."
+  },
+  "dashboard": {
+    "channels": {
+      "title": "قنوات السجلات",
+      "description": "اختر أين تذهب كل نوع من الأحداث. اتركه فارغاً للتعطيل."
+    },
+    "help": {
+      "messages": "الرسائل المعدلة والمحفوظة، الحذف الجماعي (مع ملف نصي).",
+      "members": "انضمامات، مغادرات، ألقاب، رتب وبوستات.",
+      "moderation": "حظر، طرد، تايم آوت وعقوبات البوت.",
+      "server": "قنوات، رتب، إيموجيز وإعدادات السيرفر.",
+      "voice": "انضمامات، مغادرات، تنقلات وكتمات صوتية.",
+      "invites": "الدعوات المنشأة والمحذوفة، والدعوة التي استخدمها كل وافد.",
+      "protection": "تنبيهات أنتي رايد، أنتي نيوك وأوتو مود. فارغ: قناة المودراشن.",
+      "tickets": "فتحات، إغلاقات وترانسكريبتس التذاكر. فارغ: قناة المودراشن."
+    },
+    "filters": {
+      "title": "الفلاتر",
+      "ignored": "القنوات المتجاهلة",
+      "ignoredHelp": "الرسائل والنشاط الصوتي في هذه القنوات (أو الفئات) لا تُسجل.",
+      "ignoreBots": "تجاهل رسائل البوتات",
+      "ignoreBotsHelp": "موصى به: البوتات غالباً تعدل رسائلها."
+    },
+    "actions": {
+      "test": "إرسال سجل اختبار"
+    }
+  },
+  "events": {
+    "empty": "*(فارغ)*",
+    "ids": "المستخدم {user} · الرسالة {message}",
+    "unknown": "غير معروف",
+    "none": "لا شيء",
+    "noReason": "لا سبب",
+    "before": "قبل",
+    "after": "بعد",
+    "unlimited": "غير محدود",
+    "never": "أبداً",
+    "messages": {
+      "attachments": "مرفقات",
+      "edited": "رسالة عُدلت",
+      "editedDesc": "{user} عدل رسالة في {channel} — [الانتقال للرسالة]({url})",
+      "before": "قبل",
+      "after": "بعد",
+      "deleted": "رسالة حُذفت",
+      "deletedUncached": "رسالة قديمة حُذفت في {channel} (`{id}`). محتواها لم يكن في الذاكرة.",
+      "deletedDesc": "رسالة بواسطة {user} حُذفت في {channel}",
+      "content": "المحتوى",
+      "bulk": "حذف جماعي",
+      "bulkDesc": "{count} رسائل حُذفت في {channel}. {known} في الملف المرفق."
+    },
+    "members": {
+      "created": "الحساب أُنشئ",
+      "count": "الأعضاء",
+      "warning": "تحذير",
+      "newAccount": "حساب جديد: أُنشئ منذ {age}.",
+      "botJoined": "بوت أُضيف",
+      "joined": "عضو انضم",
+      "joinedAt": "انضم في",
+      "roles": "الرتب",
+      "left": "عضو غادر",
+      "nickname": "اللقب تغير",
+      "rolesAdded": "رتب أُضيفت",
+      "rolesRemoved": "رتب أُزيلت",
+      "rolesChanged": "الرتب تغيرت",
+      "boost": "بوست جديد للسيرفر"
+    },
+    "moderation": {
+      "kick": "طرد عضو",
+      "target": "العضو",
+      "by": "بواسطة",
+      "reason": "السبب",
+      "until": "حتى",
+      "timeout": "تايم آوت عضو",
+      "untimeout": "إزالة تايم آوت",
+      "ban": "حظر عضو",
+      "unban": "إلغاء حظر عضو"
+    },
+    "invites": {
+      "usedInvite": "{user} انضم بدعوة `{code}` من {inviter} ({uses} استخدامات).",
+      "usedVanity": "{user} انضم بالرابط المخصص `{code}` ({uses} استخدامات).",
+      "untracked": "{user} انضم، لكن لا أستطيع قراءة الدعوات: أحتاج صلاحية \"إدارة السيرفر\".",
+      "unknownInvite": "{user} انضم، لكن الدعوة المستخدمة لم تُحدد.",
+      "inviterTotal": "إجمالي الداعي: {joins} انضمام، {left} مغادرة، {net} صافي.",
+      "joinTitle": "دعوة استُخدمت",
+      "leaveTitle": "عضو مدعو غادر",
+      "leftInvited": "{user} غادر. كان مدعواً من {inviter} (`{code}`).",
+      "code": "الكود",
+      "channel": "القناة",
+      "maxUses": "أقصى استخدامات",
+      "expires": "تنتهي",
+      "creator": "أُنشئت بواسطة",
+      "created": "دعوة أُنشئت",
+      "deleted": "دعوة حُذفت"
+    },
+    "voice": {
+      "join": "انضمام صوتي",
+      "joinDesc": "{user} انضم لـ {channel}",
+      "leave": "مغادرة صوتية",
+      "leaveDesc": "{user} غادر {channel}",
+      "move": "تغيير قناة صوتية",
+      "moveDesc": "{user} انتقل من {from} إلى {to}",
+      "mute": "كتم سيرفر",
+      "muteDesc": "{user} كُتم في {channel}",
+      "unmute": "إلغاء كتم سيرفر",
+      "unmuteDesc": "{user} لم يعد مكتوماً في {channel}",
+      "deaf": "إصماع سيرفر",
+      "deafDesc": "{user} أُصمع في {channel}",
+      "undeaf": "إلغاء إصماع سيرفر",
+      "undeafDesc": "{user} لم يعد مُصمعاً في {channel}"
+    },
+    "server": {
+      "channelCreate": "قناة أُنشئت",
+      "channelDesc": "{channel} · {name} ({type})",
+      "channelDelete": "قناة حُذفت",
+      "channelUpdate": "قناة حُدثت",
+      "overwritesChanged": "**الصلاحيات**: تغيرت",
+      "permsAdded": "صلاحيات مُنحت",
+      "permsRemoved": "صلاحيات سُحبت",
+      "roleCreate": "رتبة أُنشئت",
+      "roleDelete": "رتبة حُذفت",
+      "roleUpdate": "رتبة حُدثت",
+      "emojiCreate": "إيموجي أُضيف",
+      "emojiDelete": "إيموجي حُذف",
+      "emojiUpdate": "إيموجي أعيد تسميته",
+      "guildUpdate": "سيرفر حُدث"
+    }
+  },
+  "fields": {
+    "name": "الاسم",
+    "topic": "الموضوع",
+    "nsfw": "NSFW",
+    "slowmode": "الوضع البطيء (ث)",
+    "category": "الفئة",
+    "bitrate": "معدل البت",
+    "userLimit": "حد المستخدمين",
+    "color": "اللون",
+    "hoist": "معروض منفصل",
+    "mentionable": "قابل للمنشنة",
+    "icon": "أيقونة",
+    "banner": "بانر",
+    "vanity": "رابط مخصص",
+    "verificationLevel": "مستوى التحقق",
+    "owner": "المالك",
+    "afkChannel": "قناة AFK",
+    "systemChannel": "قناة النظام"
+  },
+  "channelTypes": {
+    "GuildText": "نصية",
+    "GuildVoice": "صوتية",
+    "GuildCategory": "فئة",
+    "GuildAnnouncement": "إعلانات",
+    "GuildStageVoice": "ستيج",
+    "GuildForum": "منتدى",
+    "GuildMedia": "ميديا",
+    "PublicThread": "ثريد عام",
+    "PrivateThread": "ثريد خاص",
+    "AnnouncementThread": "ثريد إعلانات",
+    "Other": "أخرى"
+  }
+}

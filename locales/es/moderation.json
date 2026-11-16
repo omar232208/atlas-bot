@@ -1,0 +1,496 @@
+{
+  "commands": {
+    "ban": {
+      "description": "Banear a un usuario, si quieres por un tiempo limitado",
+      "options": {
+        "user": "Usuario a banear",
+        "reason": "Motivo del baneo",
+        "duration": "Duración de un baneo temporal, p. ej. 7d (vacío = permanente)",
+        "delete_messages": {
+          "description": "Eliminar sus mensajes recientes",
+          "choices": {
+            "0": "No eliminar nada",
+            "3600": "Última hora",
+            "21600": "Últimas 6 horas",
+            "43200": "Últimas 12 horas",
+            "86400": "Últimas 24 horas",
+            "259200": "Últimos 3 días",
+            "604800": "Últimos 7 días"
+          }
+        },
+        "silent": "No enviar un MD al usuario"
+      }
+    },
+    "kick": {
+      "description": "Expulsar a un miembro del servidor",
+      "options": {
+        "user": "Miembro a expulsar",
+        "reason": "Motivo de la expulsión",
+        "silent": "No enviar un MD al usuario"
+      }
+    },
+    "timeout": {
+      "description": "Aislar temporalmente a un miembro (sin mensajes ni voz)",
+      "options": {
+        "user": "Miembro a aislar",
+        "duration": "Duración, p. ej. 10m, 2h, 7d (hasta 365d)",
+        "reason": "Motivo del aislamiento",
+        "silent": "No enviar un MD al usuario"
+      }
+    },
+    "warn": {
+      "description": "Advertir a un miembro (los umbrales pueden sancionar automáticamente)",
+      "options": {
+        "user": "Miembro a advertir",
+        "reason": "Motivo de la advertencia",
+        "silent": "No enviar un MD al usuario"
+      }
+    },
+    "unban": {
+      "description": "Desbanear a un usuario",
+      "options": {
+        "user": "Usuario baneado (escribe un nombre o un ID)",
+        "reason": "Motivo del desbaneo"
+      }
+    },
+    "case": {
+      "description": "Ver, editar o eliminar un caso de moderación",
+      "options": {
+        "view": {
+          "description": "Mostrar un caso",
+          "options": {
+            "number": "Número de caso"
+          }
+        },
+        "edit": {
+          "description": "Cambiar el motivo o la duración de un baneo temporal",
+          "options": {
+            "number": "Número de caso",
+            "reason": "Nuevo motivo",
+            "duration": "Nueva duración del baneo temporal, contada desde el baneo"
+          }
+        },
+        "delete": {
+          "description": "Eliminar un caso",
+          "options": {
+            "number": "Número de caso"
+          }
+        }
+      }
+    },
+    "purge": {
+      "description": "Eliminar mensajes recientes, con filtros opcionales",
+      "options": {
+        "amount": "Cuántos mensajes eliminar (1-100)",
+        "user": "Solo mensajes de este usuario",
+        "bots": "Solo mensajes de bots",
+        "humans": "Solo mensajes de personas",
+        "links": "Solo mensajes que contengan un enlace",
+        "attachments": "Solo mensajes con archivos",
+        "embeds": "Solo mensajes con contenido insertado",
+        "contains": "Solo mensajes que contengan este texto"
+      }
+    },
+    "slowmode": {
+      "description": "Configurar el modo pausado de un canal",
+      "options": {
+        "duration": "Espera entre mensajes, p. ej. 10s, 5m (máx. 6h), o \"off\"",
+        "channel": "Canal (por defecto: este)"
+      }
+    },
+    "lock": {
+      "description": "Impedir que @everyone escriba en un canal",
+      "options": {
+        "channel": "Canal (por defecto: este)",
+        "reason": "Motivo, se muestra en el canal"
+      }
+    },
+    "mod": {
+      "description": "Más herramientas y ajustes de moderación",
+      "options": {
+        "clearwarns": {
+          "description": "Retirar todas las advertencias activas de un miembro",
+          "options": {
+            "user": "Miembro",
+            "reason": "Motivo"
+          }
+        },
+        "config": {
+          "description": "Ajustes de moderación",
+          "options": {
+            "show": {
+              "description": "Mostrar los ajustes de moderación"
+            },
+            "dm": {
+              "description": "Enviar un MD a los miembros cuando se les sanciona",
+              "options": {
+                "enabled": "Enviar el MD",
+                "show_moderator": "Indicar el moderador en el MD"
+              }
+            },
+            "appeal": {
+              "description": "Texto añadido a los MD de sanción (cómo apelar)",
+              "options": {
+                "text": "Texto (déjalo vacío para quitarlo)"
+              }
+            },
+            "reason": {
+              "description": "Exigir un motivo para cada sanción",
+              "options": {
+                "required": "Motivo obligatorio"
+              }
+            },
+            "warnexpiry": {
+              "description": "Las advertencias dejan de contar pasado este tiempo",
+              "options": {
+                "duration": "p. ej. 30d, o \"off\" para que nunca caduquen"
+              }
+            }
+          }
+        },
+        "history": {
+          "description": "Mostrar todos los casos de moderación de un usuario",
+          "options": {
+            "user": "Usuario",
+            "type": {
+              "description": "Solo un tipo de caso",
+              "choices": {
+                "warn": "Advertencias",
+                "unwarn": "Advertencias retiradas",
+                "clearwarns": "Advertencias borradas",
+                "timeout": "Aislamientos",
+                "untimeout": "Aislamientos retirados",
+                "kick": "Expulsiones",
+                "softban": "Softbans",
+                "ban": "Baneos",
+                "tempban": "Baneos temporales",
+                "unban": "Desbaneos"
+              }
+            }
+          }
+        },
+        "massban": {
+          "description": "Banear a muchos usuarios a la vez por ID (raids)",
+          "options": {
+            "ids": "IDs o menciones de usuarios, separados por espacios",
+            "reason": "Motivo de los baneos",
+            "delete_messages": {
+              "description": "Eliminar sus mensajes recientes",
+              "choices": {
+                "0": "No eliminar nada",
+                "3600": "Última hora",
+                "21600": "Últimas 6 horas",
+                "43200": "Últimas 12 horas",
+                "86400": "Últimas 24 horas",
+                "259200": "Últimos 3 días",
+                "604800": "Últimos 7 días"
+              }
+            }
+          }
+        },
+        "nick": {
+          "description": "Cambiar o restablecer el apodo de un miembro",
+          "options": {
+            "user": "Miembro",
+            "nickname": "Nuevo apodo (vacío para restablecer)"
+          }
+        },
+        "softban": {
+          "description": "Banear y desbanear a un miembro para borrar sus mensajes recientes",
+          "options": {
+            "user": "Miembro al que aplicar el softban",
+            "reason": "Motivo del softban",
+            "delete_messages": {
+              "description": "Mensajes a eliminar (por defecto: 24 horas)",
+              "choices": {
+                "3600": "Última hora",
+                "21600": "Últimas 6 horas",
+                "43200": "Últimas 12 horas",
+                "86400": "Últimas 24 horas",
+                "259200": "Últimos 3 días",
+                "604800": "Últimos 7 días"
+              }
+            },
+            "silent": "No enviar un MD al usuario"
+          }
+        },
+        "unlock": {
+          "description": "Desbloquear un canal bloqueado con /lock",
+          "options": {
+            "channel": "Canal (por defecto: este)",
+            "reason": "Motivo, se muestra en el canal"
+          }
+        },
+        "untimeout": {
+          "description": "Quitar el aislamiento temporal de un miembro",
+          "options": {
+            "user": "Miembro a liberar",
+            "reason": "Motivo"
+          }
+        },
+        "unwarn": {
+          "description": "Retirar una advertencia por su número de caso",
+          "options": {
+            "case": "Número de caso de la advertencia",
+            "reason": "Motivo"
+          }
+        },
+        "warnconfig": {
+          "description": "Sanciones automáticas cuando un miembro llega a un número de advertencias",
+          "options": {
+            "add": {
+              "description": "Añadir o reemplazar un umbral",
+              "options": {
+                "warns": "Número de advertencias activas",
+                "action": {
+                  "description": "Sanción a aplicar",
+                  "choices": {
+                    "timeout": "Aislamiento temporal",
+                    "kick": "Expulsión",
+                    "softban": "Softban",
+                    "ban": "Baneo"
+                  }
+                },
+                "duration": "Duración de un aislamiento (por defecto 1h) o de un baneo temporal"
+              }
+            },
+            "remove": {
+              "description": "Quitar un umbral",
+              "options": {
+                "warns": "Número de advertencias del umbral"
+              }
+            },
+            "list": {
+              "description": "Mostrar los umbrales"
+            }
+          }
+        },
+        "warnings": {
+          "description": "Ver las advertencias activas de un miembro",
+          "options": {
+            "user": "Miembro"
+          }
+        }
+      }
+    }
+  },
+  "perms": {
+    "Administrator": "Administrador",
+    "BanMembers": "Banear miembros",
+    "KickMembers": "Expulsar miembros",
+    "ModerateMembers": "Aislar temporalmente a miembros",
+    "ManageMessages": "Gestionar mensajes",
+    "ReadMessageHistory": "Leer el historial de mensajes",
+    "ManageChannels": "Gestionar canales",
+    "ManageRoles": "Gestionar permisos",
+    "ManageNicknames": "Gestionar apodos",
+    "ManageGuild": "Gestionar servidor"
+  },
+  "types": {
+    "warn": "Advertencia",
+    "unwarn": "Advertencia retirada",
+    "clearwarns": "Advertencias borradas",
+    "timeout": "Aislamiento temporal",
+    "untimeout": "Aislamiento retirado",
+    "kick": "Expulsión",
+    "softban": "Softban",
+    "ban": "Baneo",
+    "tempban": "Baneo temporal",
+    "unban": "Desbaneo"
+  },
+  "case": {
+    "title": "Caso #{id} · {type}",
+    "user": "Usuario",
+    "moderator": "Moderador",
+    "automatic": "automático",
+    "reason": "Motivo",
+    "noReason": "Sin motivo",
+    "duration": "Duración",
+    "expires": "Termina",
+    "status": "Estado",
+    "active": "Activo",
+    "removed": "Retirado",
+    "edited": "Editado",
+    "created": "Creado",
+    "editedTitle": "Caso #{id} actualizado",
+    "deleteConfirm": "¿Eliminar el caso #{id} ({type})? No se puede deshacer.",
+    "deleted": "Caso #{id} eliminado",
+    "deletedText": "El caso se ha quitado del historial.",
+    "deletedTempban": "Se ha cancelado el desbaneo programado: el usuario sigue baneado hasta que uses /unban."
+  },
+  "errors": {
+    "title": "Acción imposible",
+    "botMissing": "Me falta el permiso **{perm}**. Dáselo a mi rol en Ajustes del servidor > Roles y vuelve a intentarlo.",
+    "unknownUser": "Este usuario no existe o no se encuentra.",
+    "notBanned": "Este usuario no está baneado.",
+    "unexpected": "Discord ha rechazado la acción: {message}",
+    "self": "No puedes hacerte esto a ti mismo.",
+    "selfBot": "No puedo hacerme esto a mí mismo.",
+    "owner": "No se puede sancionar al propietario del servidor.",
+    "hierarchyUser": "Este miembro tiene un rol igual o superior a tu rol más alto.",
+    "hierarchyBot": "Este miembro tiene un rol igual o superior a mi rol más alto. Sube mi rol en Ajustes del servidor > Roles.",
+    "reasonRequired": "En este servidor es obligatorio indicar un motivo (mira /mod config reason).",
+    "notMember": "Este usuario no es miembro del servidor.",
+    "notTimedOut": "Este miembro no está aislado.",
+    "badDuration": "Duración no válida. Ejemplos: 30m, 2h, 7d, 1w2d.",
+    "badTimeout": "Duración de aislamiento no válida: entre 5 segundos y 365 días (28 días como máximo para un umbral de advertencias). Ejemplos: 10m, 2h, 7d.",
+    "alreadyBanned": "Este usuario ya está baneado.",
+    "badId": "No se ha encontrado ningún ID de usuario válido.",
+    "notAWarn": "El caso #{id} no es una advertencia.",
+    "warnInactive": "La advertencia #{id} ya se había retirado.",
+    "noWarns": "Este miembro no tiene ninguna advertencia activa.",
+    "noCase": "El caso #{id} no existe.",
+    "nothingToEdit": "Indica un nuevo motivo o una nueva duración.",
+    "durationOnlyTempban": "Solo se puede cambiar la duración de un baneo temporal.",
+    "tempbanOver": "Este baneo temporal ya ha terminado.",
+    "badChannel": "Este comando no funciona en este tipo de canal.",
+    "badSlowmode": "Modo pausado no válido: entre 1 segundo y 6 horas, o \"off\". Ejemplos: 10s, 5m, 1h.",
+    "alreadyLocked": "Este canal ya está bloqueado.",
+    "notLocked": "Este canal no está bloqueado.",
+    "tooManyIds": "Demasiados IDs: {max} como máximo por comando.",
+    "noValidIds": "No puedes banear a ninguno de estos usuarios (tú mismo, yo, el propietario o roles superiores).",
+    "tooManyThresholds": "{max} umbrales como máximo. Quita uno antes.",
+    "noThreshold": "No hay ningún umbral en {count} advertencias.",
+    "userMissing": "Necesitas el permiso **{perm}** para usar este comando."
+  },
+  "dm": {
+    "title": {
+      "warn": "Has recibido una advertencia en {server}",
+      "timeout": "Te han aislado temporalmente en {server}",
+      "kick": "Te han expulsado de {server}",
+      "softban": "Te han expulsado de {server} y se han eliminado tus mensajes recientes",
+      "ban": "Te han baneado de {server}"
+    },
+    "appeal": "Apelación"
+  },
+  "auto": {
+    "threshold": "Sanción automática: {count} advertencias activas",
+    "tempbanExpired": "Baneo temporal terminado (caso #{id})",
+    "timeoutContinued": "Aislamiento largo prolongado hasta {until}"
+  },
+  "done": {
+    "case": "Caso #{id} creado.",
+    "warn": "{user} ha recibido una advertencia",
+    "unwarn": "Advertencia de {user} retirada",
+    "unwarnText": "La advertencia #{id} ya no cuenta (caso #{case}).",
+    "clearwarns": "Advertencias de {user} borradas",
+    "clearwarnsText": "{count} advertencia(s) retirada(s) (caso #{case}).",
+    "timeout": "{user} ha sido aislado temporalmente",
+    "untimeout": "Aislamiento de {user} retirado",
+    "kick": "{user} ha sido expulsado",
+    "softban": "{user} ha recibido un softban",
+    "ban": "{user} ha sido baneado",
+    "tempban": "{user} ha sido baneado temporalmente",
+    "unban": "{user} ha sido desbaneado",
+    "dm": "Mensaje directo",
+    "dmSent": "Enviado",
+    "dmFailed": "No entregado (MD cerrados)",
+    "dmSilent": "No enviado (silencioso)",
+    "dmDisabled": "Desactivado en este servidor",
+    "warnCount": "Advertencias activas",
+    "followUp": "Sanción automática",
+    "followUpText": "Umbral alcanzado: {type} (caso #{id})."
+  },
+  "warnings": {
+    "title": "Advertencias de {user} ({count})",
+    "none": "Ninguna advertencia activa.",
+    "expiry": "Las advertencias caducan tras {duration}",
+    "next": "Próxima sanción a las {count} advertencias: {type}"
+  },
+  "history": {
+    "title": "Historial de {user} ({count} casos)",
+    "none": "Ningún caso para este usuario."
+  },
+  "clearwarns": {
+    "confirm": "¿Retirar las {count} advertencia(s) activa(s) de {user}?"
+  },
+  "purge": {
+    "none": "Ningún mensaje reciente coincide con estos filtros.",
+    "done": "{count} mensaje(s) eliminado(s)",
+    "oldNote": "Discord no permite eliminar en bloque los mensajes de más de 14 días, así que se han omitido.",
+    "logTitle": "Mensajes eliminados",
+    "channel": "Canal",
+    "count": "Eliminados"
+  },
+  "slowmode": {
+    "title": "Modo pausado",
+    "set": "Modo pausado de {channel} configurado en {duration}.",
+    "off": "Modo pausado de {channel} desactivado."
+  },
+  "nick": {
+    "title": "Apodo",
+    "set": "Apodo de {user} cambiado a **{nick}**.",
+    "reset": "Apodo de {user} restablecido.",
+    "before": "Antes: {nick}"
+  },
+  "lock": {
+    "title": "Canal bloqueado",
+    "done": "{channel} está bloqueado: los miembros ya no pueden enviar mensajes.",
+    "notice": "Los moderadores han bloqueado este canal.",
+    "reasonLine": "Motivo: {reason}"
+  },
+  "unlock": {
+    "title": "Canal desbloqueado",
+    "done": "{channel} está desbloqueado: se han restaurado sus permisos anteriores.",
+    "notice": "Este canal está desbloqueado."
+  },
+  "massban": {
+    "confirm": "¿Banear a {count} usuario(s)? Se omitirán {skipped} ID(s) que no puedes banear.",
+    "done": "{count} usuario(s) baneado(s)",
+    "doneText": "Fallidos: {failed} · omitidos: {skipped}.",
+    "logTitle": "Baneo masivo",
+    "banned": "Baneados",
+    "failed": "Fallidos u omitidos"
+  },
+  "warnconfig": {
+    "title": "Umbrales de advertencias",
+    "line": "**{count}** advertencias → {type}{duration}",
+    "empty": "Ningún umbral: las advertencias nunca sancionan automáticamente. Añade uno con /mod warnconfig add."
+  },
+  "modconfig": {
+    "title": "Ajustes de moderación",
+    "saved": "Ajustes guardados.",
+    "on": "Activado",
+    "off": "Desactivado",
+    "dm": "MD al sancionar",
+    "showModerator": "Moderador indicado en el MD",
+    "requireReason": "Motivo obligatorio",
+    "warnExpiry": "Las advertencias caducan tras",
+    "never": "Nunca",
+    "appeal": "Texto de apelación",
+    "none": "Ninguno",
+    "thresholds": "Umbrales de advertencias"
+  },
+  "dashboard": {
+    "sanctions": {
+      "title": "Sanciones",
+      "description": "Lo que se comunica a los miembros cuando se les sanciona y lo que deben indicar los moderadores."
+    },
+    "warnings": {
+      "title": "Advertencias",
+      "description": "Los umbrales se configuran con /mod warnconfig; aquí, cuánto tiempo sigue contando una advertencia."
+    },
+    "fields": {
+      "dm": {
+        "label": "MD antes de una sanción",
+        "help": "El miembro recibe el motivo por mensaje directo antes de que se aplique la sanción."
+      },
+      "dmShowModerator": {
+        "label": "Indicar el moderador en el MD",
+        "help": "Desactivado por defecto, para que no acosen a los moderadores."
+      },
+      "appeal": {
+        "label": "Texto de apelación",
+        "help": "Se añade a cada MD de sanción, por ejemplo un enlace a un formulario o una dirección de correo."
+      },
+      "requireReason": {
+        "label": "Motivo obligatorio",
+        "help": "Rechazar las sanciones sin motivo."
+      },
+      "warnExpiry": {
+        "label": "Las advertencias caducan tras",
+        "help": "0 = las advertencias nunca caducan. Las caducadas siguen en el historial, pero ya no cuentan para los umbrales."
+      }
+    }
+  }
+}

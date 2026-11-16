@@ -1,0 +1,189 @@
+{
+  "commands": {
+    "antiraid": {
+      "description": "Raid-Schutz einrichten",
+      "options": {
+        "status": { "description": "Raid-Schutz-Einstellungen anzeigen" },
+        "enable": { "description": "Raid-Schutz aktivieren" },
+        "disable": { "description": "Raid-Schutz deaktivieren" },
+        "set": {
+          "description": "Raid-Schutz-Einstellungen ändern",
+          "options": {
+            "join_threshold": "Anzahl Beitritte, die den Raid-Modus auslöst",
+            "join_window": "Erkennungsfenster in Sekunden",
+            "raid_action": { "description": "Maßnahme gegen Beitretende im Raid-Modus", "choices": { "kick": "Kicken", "ban": "Bannen", "timeout": "Timeout" } },
+            "timeout_minutes": "Timeout-Dauer in Minuten",
+            "raid_duration": "Dauer des Raid-Modus in Minuten",
+            "punish_burst": "Auch die Beitritte bestrafen, die die Erkennung ausgelöst haben",
+            "auto_lockdown": "Kanäle sperren, wenn ein Raid beginnt",
+            "min_account_age": "Mindestalter des Kontos (z. B. 7d, 0 = aus)",
+            "no_avatar": "Konten ohne Avatar filtern",
+            "filter_action": { "description": "Maßnahme gegen gefilterte Konten", "choices": { "kick": "Kicken", "ban": "Bannen", "timeout": "Timeout" } },
+            "anti_bot": "Bots kicken, die ein nicht vertrauenswürdiges Mitglied hinzugefügt hat",
+            "allow_verified_bots": "Verifizierte Bots hereinlassen",
+            "bot_adder_action": { "description": "Maßnahme gegen die Person, die den Bot hinzugefügt hat", "choices": { "none": "Keine", "strip": "Rollen entfernen", "kick": "Kicken", "ban": "Bannen" } },
+            "dm_notice": "Vor Kick oder Bann eine Direktnachricht senden"
+          }
+        }
+      }
+    },
+    "raidmode": {
+      "description": "Raid-Modus von Hand ein- oder ausschalten",
+      "options": {
+        "on": { "description": "Raid-Modus einschalten", "options": { "duration": "Dauer (z. B. 30m, 2h)" } },
+        "off": { "description": "Raid-Modus ausschalten" }
+      }
+    },
+    "lockdown": {
+      "description": "Alle öffentlichen Kanäle sperren oder entsperren",
+      "options": {
+        "start": { "description": "Alle öffentlichen Kanäle sperren", "options": { "reason": "Grund für die Logs", "announce": "In jedem gesperrten Textkanal einen Hinweis posten" } },
+        "end": { "description": "Kanalberechtigungen wie vorher wiederherstellen" }
+      }
+    }
+  },
+  "perms": {
+    "ManageChannels": "Kanäle verwalten",
+    "ManageRoles": "Rollen verwalten",
+    "BanMembers": "Mitglieder bannen",
+    "KickMembers": "Mitglieder kicken",
+    "ModerateMembers": "Mitglieder in Timeout setzen"
+  },
+  "actions": {
+    "kick": "Kick",
+    "ban": "Bann",
+    "timeout": "Timeout",
+    "none": "Keine",
+    "strip": "Rollen entfernen"
+  },
+  "reasons": {
+    "raid": "Antiraid: Beitritt während eines Raids",
+    "accountAge": "Antiraid: Konto zu neu",
+    "noAvatar": "Antiraid: Konto ohne Avatar",
+    "bot": "Antiraid: Bot ohne Erlaubnis hinzugefügt"
+  },
+  "dm": {
+    "title": "Nachricht von {server}",
+    "kick": "Du wurdest vom Serverschutz automatisch gekickt ({reason}). Du kannst etwas später wiederkommen.",
+    "ban": "Du wurdest vom Serverschutz automatisch gebannt ({reason}). Wende dich an das Team, falls das ein Fehler ist."
+  },
+  "raid": {
+    "startTitle": "Raid-Modus aktiv",
+    "endTitle": "Raid-Modus beendet",
+    "detected": "{count} Beitritte in {seconds} Sekunden: Raid erkannt. Neue Mitglieder werden automatisch bestraft.",
+    "manual": "Raid-Modus von {user} eingeschaltet. Neue Mitglieder werden automatisch bestraft.",
+    "onReply": "Raid-Modus für {duration} aktiv. Maßnahme gegen Beitretende: {action}. Mit /raidmode off früher beenden.",
+    "ends": "Endet",
+    "since": "Begonnen",
+    "punished": "Bestrafte Beitritte",
+    "endedBy": "Raid-Modus von {user} beendet.",
+    "expired": "Der Raid-Modus ist abgelaufen.",
+    "noLockdown": "Nein",
+    "auditReason": "Antiraid: Raid-Modus",
+    "notActive": "Der Raid-Modus ist nicht aktiv.",
+    "alreadyActive": "Der Raid-Modus ist bereits aktiv."
+  },
+  "filter": {
+    "title": "Beitritt gefiltert",
+    "description": "{user} wurde beim Beitritt bestraft.\nGrund: {reason}\nMaßnahme: {action}"
+  },
+  "bot": {
+    "title": "Nicht erlaubter Bot",
+    "description": "Der Bot {bot} wurde von {adder} hinzugefügt, der nicht auf der Whitelist steht.",
+    "botField": "Bot",
+    "adderField": "Hinzugefügt von",
+    "kicked": "Gekickt",
+    "kickFailed": "Konnte nicht gekickt werden (Berechtigungen oder Hierarchie)",
+    "adderUnknown": "Unbekannt (Audit-Log nicht verfügbar)",
+    "adderNone": "Keine Maßnahme",
+    "adderFailed": "Bestrafung nicht möglich (Berechtigungen oder Hierarchie)"
+  },
+  "lockdown": {
+    "title": "Sperre",
+    "startTitle": "Server gesperrt",
+    "endTitle": "Sperre beendet",
+    "summary": "{locked} Kanäle gesperrt, {failed} fehlgeschlagen.",
+    "endHint": "Mit /lockdown end wird alles wie vorher wiederhergestellt.",
+    "endSummary": "{restored} Kanäle wiederhergestellt, {failed} fehlgeschlagen, {missing} Kanäle inzwischen gelöscht.",
+    "startLog": "Sperre von {user} gestartet.\nGrund: {reason}\n{locked} Kanäle gesperrt, {failed} fehlgeschlagen.",
+    "endLog": "Sperre von {user} aufgehoben. {restored} Kanäle wiederhergestellt, {failed} fehlgeschlagen.",
+    "noticeTitle": "Kanal gesperrt",
+    "notice": "Der Server wurde vom Team vorübergehend gesperrt. Bitte etwas Geduld.",
+    "noticeReason": "Der Server wurde vom Team vorübergehend gesperrt.\nGrund: {reason}",
+    "auditStart": "Sperre durch {user}",
+    "auditEnd": "Sperre aufgehoben durch {user}",
+    "auditDashboard": "Sperre über das Dashboard aufgehoben",
+    "notActive": "Keine Sperre aktiv.",
+    "alreadyActive": "Es läuft bereits eine Sperre. Mit /lockdown end aufheben."
+  },
+  "status": {
+    "title": "Raid-Schutz",
+    "enabled": "Der Schutz ist aktiviert.",
+    "disabled": "Der Schutz ist deaktiviert. Manueller Raid-Modus und Sperre bleiben verfügbar.",
+    "on": "Ja",
+    "off": "Nein",
+    "detection": "Erkennung",
+    "detectionValue": "{count} Beitritte in {seconds} s",
+    "raidAction": "Maßnahme im Raid-Modus",
+    "raidDuration": "Dauer des Raid-Modus",
+    "punishBurst": "Welle bestrafen",
+    "autoLockdown": "Automatische Sperre",
+    "dmNotice": "Direktnachricht",
+    "accountAge": "Mindestalter des Kontos",
+    "noAvatar": "Filter ohne Avatar",
+    "filterAction": "Maßnahme der Filter",
+    "antiBot": "Anti-Bot",
+    "verifiedBots": "Verifizierte Bots erlaubt",
+    "botAdder": "Maßnahme gegen Hinzufügende",
+    "raidMode": "Raid-Modus",
+    "raidActive": "Aktiv, endet {until}",
+    "lockActive": "Aktiv ({count} Kanäle)"
+  },
+  "set": {
+    "enabled": "Antiraid aktiviert",
+    "enabledHelp": "Beitritte werden jetzt überwacht. Einstellungen mit /antiraid status prüfen.",
+    "disabled": "Antiraid deaktiviert",
+    "disabledHelp": "Keine automatische Erkennung mehr. Der manuelle Raid-Modus bleibt möglich.",
+    "saved": "Einstellungen gespeichert",
+    "nothing": "Keine Einstellung angegeben."
+  },
+  "errors": {
+    "badDuration": "Ungültige Dauer",
+    "badDurationHelp": "Gültige Beispiele: 30m, 2h, 7d, 1w. 0 zum Ausschalten.",
+    "missingPerms": "Fehlende Berechtigung",
+    "missingPermsHelp": "Mir fehlt: {perms}. Gib mir diese Berechtigungen in den Servereinstellungen."
+  },
+  "dashboard": {
+    "detection": { "title": "Raid-Erkennung", "description": "Erkennt Beitrittswellen und schaltet den Raid-Modus ein." },
+    "filters": { "title": "Beitrittsfilter", "description": "Hält verdächtige Konten fern, auch ohne Raid." },
+    "bots": { "title": "Bot-Schutz", "description": "Verhindert, dass nicht vertrauenswürdige Mitglieder Bots hinzufügen." },
+    "fields": {
+      "enabled": { "label": "Schutz aktiviert", "help": "Schaltet Erkennung, Filter und Anti-Bot ein." },
+      "joinThreshold": { "label": "Beitrittsschwelle", "help": "Anzahl Beitritte im Fenster, die den Raid-Modus auslöst." },
+      "joinWindowSec": { "label": "Erkennungsfenster (Sekunden)", "help": "Zeitraum, in dem Beitritte gezählt werden." },
+      "raidAction": { "label": "Maßnahme im Raid-Modus", "help": "Gilt für jedes neue Mitglied, solange der Raid-Modus aktiv ist." },
+      "timeoutMinutes": { "label": "Timeout-Dauer (Minuten)", "help": "Wird genutzt, wenn die Maßnahme ein Timeout ist." },
+      "raidDurationMin": { "label": "Dauer des Raid-Modus (Minuten)", "help": "Der Raid-Modus endet nach dieser Zeit von selbst." },
+      "punishBurst": { "label": "Welle bestrafen", "help": "Bestraft auch die Konten, die kurz vor der Erkennung beigetreten sind." },
+      "autoLockdown": { "label": "Automatische Sperre", "help": "Sperrt öffentliche Kanäle während des Raids und stellt sie danach wieder her." },
+      "dmNotice": { "label": "Direktnachricht vor der Strafe", "help": "Erklärt der Person, warum sie gekickt oder gebannt wird." },
+      "minAccountAgeMs": { "label": "Mindestalter des Kontos", "help": "Neuere Konten werden beim Beitritt bestraft. 0 zum Ausschalten." },
+      "noAvatar": { "label": "Konten ohne Avatar filtern", "help": "Viele Raid-Konten haben keinen Avatar." },
+      "filterAction": { "label": "Maßnahme der Filter", "help": "Gilt für zu neue Konten oder Konten ohne Avatar." },
+      "antiBot": { "label": "Anti-Bot", "help": "Kickt einen Bot, den jemand ohne Whitelist-Eintrag hinzugefügt hat." },
+      "allowVerifiedBots": { "label": "Verifizierte Bots erlauben", "help": "Von Discord verifizierte Bots dürfen ohne Prüfung beitreten." },
+      "botAdderAction": { "label": "Maßnahme gegen Hinzufügende", "help": "Was mit der Person passiert, die den Bot hinzugefügt hat." }
+    },
+    "actions": {
+      "raidOn": "Raid-Modus einschalten",
+      "raidOff": "Raid-Modus beenden",
+      "lockdownEnd": "Sperre aufheben"
+    },
+    "results": {
+      "raidOn": "Raid-Modus eingeschaltet.",
+      "raidOff": "Raid-Modus beendet.",
+      "lockdownEnd": "Sperre aufgehoben, Berechtigungen wiederhergestellt.",
+      "lockdownPartial": "Sperre teilweise aufgehoben: einige Kanäle konnten nicht wiederhergestellt werden, bitte erneut versuchen."
+    }
+  }
+}

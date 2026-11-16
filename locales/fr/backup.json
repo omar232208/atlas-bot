@@ -1,0 +1,104 @@
+{
+  "commands": {
+    "backup": {
+      "description": "Sauvegardes du serveur (rôles, salons, paramètres)",
+      "options": {
+        "create": { "description": "Sauvegarder le serveur maintenant", "options": { "name": "Nom de la sauvegarde" } },
+        "list": { "description": "Lister les sauvegardes" },
+        "info": { "description": "Détails d'une sauvegarde", "options": { "id": "Sauvegarde" } },
+        "load": {
+          "description": "Restaurer une sauvegarde sur ce serveur",
+          "options": {
+            "id": "Sauvegarde",
+            "mode": { "description": "Remplacer tout ou compléter l'existant", "choices": { "replace": "Remplacer", "merge": "Fusionner" } }
+          }
+        },
+        "delete": { "description": "Supprimer une sauvegarde", "options": { "id": "Sauvegarde" } },
+        "auto": {
+          "description": "Sauvegardes automatiques",
+          "options": { "interval": "Intervalle (ex. 1d, 12h) ou « off »", "keep": "Nombre de sauvegardes automatiques gardées" }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "Action impossible",
+    "ownerOnly": "Seul le propriétaire du serveur (ou un propriétaire du bot) peut gérer les sauvegardes.",
+    "corrupted": "Cette sauvegarde est illisible ou d'un format inconnu.",
+    "loading": "Une restauration est déjà en cours sur ce serveur.",
+    "botMissing": "Il me manque ces permissions : {perms}.",
+    "badInterval": "Intervalle invalide : entre 6 heures et 30 jours (ex. 12h, 1d, 1w), ou « off ».",
+    "unknown": "Sauvegarde introuvable."
+  },
+  "info": {
+    "id": "Identifiant",
+    "server": "Serveur",
+    "created": "Créée le",
+    "author": "Auteur",
+    "type": "Type",
+    "auto": "Automatique",
+    "manual": "Manuelle",
+    "size": "Taille",
+    "content": "Contenu",
+    "contentValue": "{roles} rôle(s), {categories} catégorie(s), {text} salon(s) textuel(s), {voice} salon(s) vocal(aux)"
+  },
+  "log": {
+    "createdTitle": "Sauvegarde créée",
+    "created": "{user} a créé la sauvegarde `{id}`.",
+    "loadedTitle": "Sauvegarde restaurée",
+    "loaded": "{user} a restauré la sauvegarde `{id}` (mode {mode})."
+  },
+  "create": { "title": "Sauvegarde créée", "done": "Sauvegarde `{id}` enregistrée." },
+  "load": {
+    "confirmTitle": "Restaurer la sauvegarde ?",
+    "confirm": {
+      "replace": "La sauvegarde `{id}` ({server}) va **remplacer** ce serveur : tous les salons (sauf celui-ci) et les rôles que je peux gérer seront supprimés, puis {roles} rôle(s), {categories} catégorie(s), {text} salon(s) textuel(s) et {voice} vocal(aux) seront recréés. L'état actuel est sauvegardé avant.",
+      "merge": "La sauvegarde `{id}` ({server}) va être **fusionnée** : les rôles et salons du même nom sont mis à jour, les autres créés ({roles} rôle(s), {categories} catégorie(s), {text} salon(s) textuel(s), {voice} vocal(aux)). Rien n'est supprimé."
+    },
+    "safetyName": "Avant restauration",
+    "auditReason": "Restauration de la sauvegarde {id} par {user}",
+    "progressTitle": "Restauration en cours",
+    "progress": "{phase} : {done} / {total}\n{bar}",
+    "phases": {
+      "delete": "Suppression de l'existant",
+      "settings": "Paramètres du serveur",
+      "roles": "Rôles",
+      "channels": "Salons",
+      "finish": "Finalisation"
+    },
+    "result": "Rôles : {rolesCreated} créé(s), {rolesUpdated} mis à jour.\nSalons : {channelsCreated} créé(s), {channelsUpdated} mis à jour.\nSupprimés : {deleted}. Échecs : {errors}.",
+    "safety": "L'état précédent a été sauvegardé sous `{id}`.",
+    "doneTitle": "Restauration terminée"
+  },
+  "auto": {
+    "title": "Sauvegardes automatiques",
+    "disabled": "Sauvegardes automatiques désactivées.",
+    "enabled": "Une sauvegarde automatique sera faite toutes les {interval} ; les {keep} plus récentes sont gardées.",
+    "name": "Automatique"
+  },
+  "list": {
+    "title": "Sauvegardes",
+    "empty": "Aucune sauvegarde. Créez-en une avec /backup create.",
+    "line": "`{id}` - **{name}**{auto} - {server} - {date}",
+    "unnamed": "Sans nom",
+    "autoTag": "(auto)"
+  },
+  "delete": { "confirm": "Supprimer définitivement la sauvegarde `{id}` ?", "title": "Sauvegarde supprimée", "done": "La sauvegarde `{id}` a été supprimée." },
+  "dashboard": {
+    "general": { "title": "Sauvegardes", "description": "Limites et sauvegardes automatiques du serveur." },
+    "fields": {
+      "maxBackups": "Sauvegardes manuelles gardées",
+      "autoInterval": "Intervalle des sauvegardes automatiques",
+      "autoKeep": "Sauvegardes automatiques gardées"
+    },
+    "help": {
+      "maxBackups": "Au-delà, les plus anciennes sont supprimées.",
+      "autoInterval": "0 pour désactiver. Minimum 6 heures, maximum 30 jours."
+    },
+    "actions": {
+      "createNow": "Créer une sauvegarde maintenant",
+      "createNowDone": "Sauvegarde créée.",
+      "ownerOnly": "Seul le propriétaire du serveur peut créer une sauvegarde."
+    }
+  }
+}

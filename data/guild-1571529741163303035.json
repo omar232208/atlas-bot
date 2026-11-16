@@ -1,0 +1,131 @@
+{
+  "invites": {
+    "members": {
+      "1449795610927435840": {
+        "inviterId": "1366747566020231168",
+        "code": "GKRHWr2n",
+        "type": "invite",
+        "at": 1794752373165
+      }
+    },
+    "stats": {
+      "1366747566020231168": {
+        "joins": 1,
+        "left": 0
+      }
+    }
+  },
+  "automod": {
+    "enabled": true,
+    "filters": {
+      "spam": {
+        "limit": 3
+      }
+    },
+    "strikes": {
+      "1449795610927435840": [
+        1794752438292,
+        1794752863100,
+        1794752884144
+      ]
+    }
+  },
+  "dashboard": {
+    "history": [
+      {
+        "at": 1794752672912,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "tickets"
+        ],
+        "action": "resetStats"
+      },
+      {
+        "at": 1794752669746,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "tickets"
+        ],
+        "paths": [
+          "tickets.config.askReason",
+          "tickets.config.ratings"
+        ]
+      },
+      {
+        "at": 1794752431929,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.filters.spam.limit"
+        ]
+      },
+      {
+        "at": 1794752414440,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.enabled"
+        ]
+      }
+    ]
+  },
+  "moderation": {
+    "nextCase": 2,
+    "cases": {
+      "1": {
+        "id": 1,
+        "type": "timeout",
+        "userId": "1449795610927435840",
+        "userTag": "ww10j",
+        "moderatorId": "1571515067856322592",
+        "moderatorTag": "Omar Bot#0581",
+        "reason": "Spam: 3 messages in 5 s · strike 1",
+        "createdAt": 1794752442872,
+        "duration": 300000,
+        "expiresAt": 1794752742872,
+        "auto": true
+      },
+      "2": {
+        "id": 2,
+        "type": "timeout",
+        "userId": "1449795610927435840",
+        "userTag": "ww10j",
+        "moderatorId": "1571515067856322592",
+        "moderatorTag": "Omar Bot#0581",
+        "reason": "Same message repeated 4 times · strike 3",
+        "createdAt": 1794752885792,
+        "duration": 600000,
+        "expiresAt": 1794753485792,
+        "auto": true
+      }
+    }
+  },
+  "tickets": {
+    "config": {
+      "askReason": true,
+      "ratings": true
+    }
+  },
+  "community": {
+    "afk": {
+      "users": {}
+    }
+  },
+  "commands": {
+    "globalEnabled": true,
+    "bypassOwner": true,
+    "bypassAdmin": true
+  }
+}

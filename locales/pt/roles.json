@@ -1,0 +1,190 @@
+{
+  "commands": {
+    "rolemenu": {
+      "description": "Menus de cargos de autoatendimento (botões ou lista)",
+      "options": {
+        "create": {
+          "description": "Criar um menu de cargos",
+          "options": {
+            "name": "Nome interno do menu",
+            "type": { "description": "Botões ou lista suspensa", "choices": { "buttons": "Botões", "select": "Lista suspensa" } },
+            "mode": { "description": "Comportamento do menu", "choices": { "toggle": "Adicionar e remover", "unique": "Um só cargo", "add": "Só adicionar", "remove": "Só remover" } },
+            "title": "Título exibido",
+            "description": "Texto exibido acima dos cargos",
+            "required_role": "Cargo necessário para usar o menu",
+            "max": "Máximo de cargos escolhidos de uma vez (lista)"
+          }
+        },
+        "add": {
+          "description": "Adicionar um cargo a um menu",
+          "options": {
+            "menu": "Menu",
+            "role": "Cargo a oferecer",
+            "label": "Texto do botão ou da opção",
+            "emoji": "Emoji",
+            "description": "Descrição (lista suspensa)",
+            "style": { "description": "Cor do botão", "choices": { "primary": "Azul", "secondary": "Cinza", "success": "Verde", "danger": "Vermelho" } }
+          }
+        },
+        "remove": { "description": "Remover um cargo de um menu", "options": { "menu": "Menu", "role": "Cargo a remover" } },
+        "edit": {
+          "description": "Editar um menu",
+          "options": {
+            "menu": "Menu",
+            "title": "Novo título (\"-\" para apagar)",
+            "description": "Novo texto (\"-\" para apagar)",
+            "mode": { "description": "Novo comportamento", "choices": { "toggle": "Adicionar e remover", "unique": "Um só cargo", "add": "Só adicionar", "remove": "Só remover" } },
+            "required_role": "Novo cargo necessário",
+            "clear_required": "Remover o cargo necessário",
+            "max": "Máximo de cargos escolhidos de uma vez (lista)"
+          }
+        },
+        "post": { "description": "Publicar um menu em um canal", "options": { "menu": "Menu", "channel": "Canal (padrão: este)" } },
+        "list": { "description": "Listar os menus de cargos" },
+        "delete": { "description": "Excluir um menu e suas mensagens", "options": { "menu": "Menu" } }
+      }
+    },
+    "role": {
+      "description": "Gerenciar os cargos dos membros",
+      "options": {
+        "add": {
+          "description": "Dar um cargo, temporário se quiser",
+          "options": { "member": "Membro", "role": "Cargo", "duration": "Duração (ex.: 2h, 7d) para um cargo temporário", "reason": "Motivo" }
+        },
+        "remove": { "description": "Remover um cargo", "options": { "member": "Membro", "role": "Cargo", "reason": "Motivo" } },
+        "all": {
+          "description": "Dar ou remover um cargo do servidor inteiro",
+          "options": {
+            "role": "Cargo",
+            "action": { "description": "Dar ou remover", "choices": { "add": "Dar", "remove": "Remover" } },
+            "target": { "description": "Membros afetados", "choices": { "all": "Todos", "humans": "Humanos", "bots": "Bots" } }
+          }
+        },
+        "info": { "description": "Informações sobre um cargo", "options": { "role": "Cargo" } },
+        "temp": { "description": "Listar os cargos temporários em andamento", "options": { "member": "Filtrar por membro" } }
+      }
+    }
+  },
+  "errors": {
+    "title": "Não é possível",
+    "roleGone": "Este cargo não existe mais.",
+    "everyone": "O cargo @everyone não pode ser usado aqui.",
+    "managed": "{role} é gerenciado por uma integração e não pode ser atribuído.",
+    "botHierarchy": "{role} está acima do meu cargo: suba meu cargo nas configurações do servidor.",
+    "userHierarchy": "{role} está acima do seu cargo mais alto.",
+    "dangerous": "{role} dá permissões de moderação ou administração: não pode ser de autoatendimento.",
+    "discordPermission": "O Discord recusou a ação: verifique se tenho Gerenciar cargos e se meu cargo está alto o bastante.",
+    "unexpected": "Ocorreu um erro inesperado. Tente de novo em instantes.",
+    "botMissing": "Estão faltando estas permissões: {perms}.",
+    "tooManyMenus": "No máximo {max} menus por servidor.",
+    "menuExists": "Já existe um menu com esse nome.",
+    "menuGone": "Este menu foi excluído.",
+    "requiredRole": "Você precisa do cargo {role} para usar este menu.",
+    "menuUnknown": "Menu não encontrado.",
+    "tooManyItems": "Um menu tem no máximo {max} cargos.",
+    "itemExists": "{role} já está neste menu.",
+    "badEmoji": "Emoji inválido: use um emoji padrão ou um deste servidor.",
+    "itemUnknown": "{role} não está neste menu.",
+    "nothingChanged": "Nenhuma opção informada: nada mudou.",
+    "emptyMenu": "Este menu ainda não tem cargos: adicione com /rolemenu add.",
+    "notMember": "Este membro não está no servidor.",
+    "badDuration": "Duração inválida: entre 1 minuto e 366 dias (ex.: 30m, 2h, 7d).",
+    "alreadyHas": "{user} já tem {role}.",
+    "doesNotHave": "{user} não tem {role}.",
+    "manageGuild": "Você precisa da permissão Gerenciar servidor.",
+    "massRunning": "Já há uma ação em massa em andamento neste servidor."
+  },
+  "menu": {
+    "hint": {
+      "toggle": "Clique para receber um cargo e clique de novo para removê-lo.",
+      "unique": "Você só pode ter um destes cargos.",
+      "add": "Clique para receber um cargo.",
+      "remove": "Clique para remover um cargo."
+    },
+    "requires": "Reservado ao cargo {role}",
+    "placeholder": "Escolha seus cargos",
+    "auditReason": "Menu de cargos \"{menu}\"",
+    "added": "Adicionado: {roles}",
+    "removed": "Removido: {roles}",
+    "skipped": "Não consigo gerenciar: {roles}",
+    "nothing": "Nenhuma mudança.",
+    "updatedTitle": "Cargos atualizados"
+  },
+  "log": {
+    "menuTitle": "Menu de cargos",
+    "menu": "{user} pelo \"{menu}\" - adicionado: {added}; removido: {removed}",
+    "expiredTitle": "Cargo temporário expirado",
+    "expired": "{role} foi removido de {user}.",
+    "roleTitle": "Cargo alterado",
+    "by": "Por {user}",
+    "massTitle": "Cargo em massa"
+  },
+  "temp": {
+    "auditReason": "Cargo temporário expirado",
+    "dmTitle": "Cargo expirado",
+    "dm": "Seu cargo \"{role}\" em **{server}** expirou.",
+    "listTitle": "Cargos temporários",
+    "empty": "Nenhum cargo temporário em andamento.",
+    "line": "{user} - {role} - expira {when}",
+    "more": "… e mais {count}"
+  },
+  "rolemenu": {
+    "title": "Menus de cargos",
+    "refreshed": "{count} mensagem(ns) publicada(s) atualizada(s).",
+    "listTitle": "Menus de cargos",
+    "empty": "Nenhum menu ainda. Crie um com /rolemenu create.",
+    "listLine": "**{name}** - {type}, {mode} - {count} cargo(s), {posts} publicação(ões)",
+    "types": { "buttons": "botões", "select": "lista" },
+    "modes": { "toggle": "adicionar e remover", "unique": "um só cargo", "add": "só adicionar", "remove": "só remover" },
+    "created": "Menu \"{name}\" criado. Adicione cargos com /rolemenu add e publique com /rolemenu post.",
+    "itemAdded": "{role} adicionado ao menu \"{name}\".",
+    "itemRemoved": "{role} removido do menu \"{name}\".",
+    "edited": "Menu \"{name}\" alterado.",
+    "deleted": "Menu \"{name}\" excluído junto com suas mensagens.",
+    "posted": "Menu \"{name}\" publicado em {channel}."
+  },
+  "role": {
+    "title": "Cargos",
+    "auditReason": "Pedido por {user}",
+    "added": "{role} dado a {user}.",
+    "addedTemp": "{role} dado a {user} por {duration} (removido {when}).",
+    "removed": "{role} removido de {user}."
+  },
+  "mass": {
+    "title": "Cargo em massa",
+    "nobody": "Nenhum membro é afetado.",
+    "confirmTitle": "Confirmar a ação em massa",
+    "confirm": {
+      "add": "Dar {role} a {count} membro(s)?",
+      "remove": "Remover {role} de {count} membro(s)?"
+    },
+    "auditReason": "Ação em massa por {user}",
+    "progress": "{done} / {total}\n{bar}",
+    "done": "Concluído para {role}: {done} com sucesso, {failed} com falha."
+  },
+  "info": {
+    "title": "Cargo {name}",
+    "id": "ID",
+    "color": "Cor",
+    "position": "Posição",
+    "members": "Membros",
+    "hoist": "Exibido separadamente",
+    "mentionable": "Mencionável",
+    "managed": "Gerenciado por uma integração",
+    "created": "Criado em",
+    "temps": "Atribuições temporárias",
+    "permissions": "Permissões",
+    "yes": "Sim",
+    "no": "Não",
+    "none": "Nenhuma"
+  },
+  "dashboard": {
+    "general": { "title": "Cargos", "description": "Menus de cargos e cargos temporários." },
+    "fields": { "tempRoleDm": "Avisar por DM ao expirar", "logChanges": "Registrar as mudanças de cargos" },
+    "help": {
+      "tempRoleDm": "O membro recebe uma DM quando o cargo temporário é removido.",
+      "logChanges": "Envia cliques nos menus, cargos temporários e ações em massa para os registros de membros."
+    },
+    "actions": { "refreshMenus": "Atualizar os menus publicados", "refreshMenusDone": "Menus publicados atualizados." }
+  }
+}

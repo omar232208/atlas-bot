@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "locale": "de-DE"
+  },
+  "common": {
+    "on": "Aktiviert",
+    "off": "Deaktiviert",
+    "none": "Keine",
+    "state": "Status"
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "botMissing": "Mir fehlen Berechtigungen: {perms} (Kanal: {channel}). Gib sie meiner Rolle und versuche es erneut.",
+    "memberMissing": "Dafür brauchst du die Berechtigung {perms}.",
+    "apiPermission": "Discord hat die Aktion abgelehnt: Mir fehlt eine Berechtigung oder meine Rolle steht in der Rollenliste zu weit unten.",
+    "notFound": "Dieser Kanal oder diese Nachricht existiert nicht mehr.",
+    "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Versuche es gleich noch einmal.",
+    "expired": "Dieser Button ist nicht mehr gültig.",
+    "cooldown": "Langsam: Du kannst das {time} wieder tun.",
+    "roleTooHigh": "Ich kann die Rolle {role} nicht verwalten: Sie wird von einer Integration verwaltet oder steht über meiner."
+  },
+  "commands": {
+    "suggest": {
+      "description": "Eine Idee für den Server vorschlagen",
+      "options": {
+        "idea": "Deine Idee, klar beschrieben",
+        "anonymous": "Deinen Namen beim Vorschlag ausblenden"
+      }
+    },
+    "suggestion": {
+      "description": "Vorschläge verwalten (Team)",
+      "options": {
+        "accept": {
+          "description": "Einen Vorschlag annehmen",
+          "options": {
+            "id": "Nummer des Vorschlags",
+            "reason": "Für alle sichtbare Antwort"
+          }
+        },
+        "deny": {
+          "description": "Einen Vorschlag ablehnen",
+          "options": {
+            "id": "Nummer des Vorschlags",
+            "reason": "Für alle sichtbare Antwort"
+          }
+        },
+        "consider": {
+          "description": "Einen Vorschlag als in Prüfung markieren",
+          "options": {
+            "id": "Nummer des Vorschlags",
+            "reason": "Für alle sichtbare Antwort"
+          }
+        },
+        "implement": {
+          "description": "Einen Vorschlag als umgesetzt markieren",
+          "options": {
+            "id": "Nummer des Vorschlags",
+            "reason": "Für alle sichtbare Antwort"
+          }
+        },
+        "delete": {
+          "description": "Einen Vorschlag und seine Nachricht löschen",
+          "options": {
+            "id": "Nummer des Vorschlags"
+          }
+        },
+        "list": {
+          "description": "Vorschläge auflisten",
+          "options": {
+            "status": {
+              "description": "Nach Status filtern",
+              "choices": {
+                "pending": "Offen",
+                "considered": "In Prüfung",
+                "accepted": "Angenommen",
+                "denied": "Abgelehnt",
+                "implemented": "Umgesetzt"
+              }
+            }
+          }
+        },
+        "config": {
+          "description": "Vorschläge einrichten",
+          "options": {
+            "channel": "Kanal, in dem Vorschläge erscheinen",
+            "anonymous": "Alle Vorschläge anonym machen",
+            "threads": "Für jeden Vorschlag einen Diskussions-Thread öffnen",
+            "dm": "Den Autor per DM informieren, wenn das Team antwortet",
+            "cooldown": "Wartezeit zwischen zwei Vorschlägen eines Mitglieds (Sekunden)"
+          }
+        }
+      }
+    },
+    "starboard": {
+      "description": "Das Starboard einrichten",
+      "options": {
+        "set": {
+          "description": "Kanal und Regeln des Starboards festlegen",
+          "options": {
+            "channel": "Starboard-Kanal",
+            "threshold": "Benötigte Anzahl Sterne",
+            "emoji": "Gezähltes Emoji (Standard ⭐)",
+            "selfstar": "Den Stern des Nachrichtenautors mitzählen"
+          }
+        },
+        "ignore": {
+          "description": "Einen Kanal ignorieren oder wieder aufnehmen",
+          "options": {
+            "channel": "Zu ignorierender oder wieder aufzunehmender Kanal"
+          }
+        },
+        "disable": {
+          "description": "Das Starboard deaktivieren"
+        },
+        "status": {
+          "description": "Die Starboard-Einstellungen anzeigen"
+        }
+      }
+    },
+    "birthday": {
+      "description": "Geburtstage der Mitglieder",
+      "options": {
+        "set": {
+          "description": "Deinen Geburtstag speichern",
+          "options": {
+            "day": "Tag (1-31)",
+            "month": "Monat (1-12)",
+            "year": "Geburtsjahr (optional, bleibt privat)",
+            "user": "Betroffenes Mitglied (nur Team)"
+          }
+        },
+        "remove": {
+          "description": "Einen Geburtstag entfernen",
+          "options": {
+            "user": "Betroffenes Mitglied (nur Team)"
+          }
+        },
+        "view": {
+          "description": "Den Geburtstag eines Mitglieds anzeigen",
+          "options": {
+            "user": "Anzuzeigendes Mitglied"
+          }
+        },
+        "list": {
+          "description": "Nächste Geburtstage auf dem Server"
+        },
+        "config": {
+          "description": "Geburtstagsankündigungen einrichten (Team)",
+          "options": {
+            "enabled": "Ankündigungen ein- oder ausschalten",
+            "channel": "Kanal für Ankündigungen",
+            "role": "Rolle für den Geburtstag",
+            "clear-role": "Keine Rolle mehr vergeben",
+            "hour": "Lokale Uhrzeit der Ankündigung (0-23)",
+            "utc-offset": "Zeitverschiebung des Servers gegenüber UTC (z. B. 1 für Berlin im Winter)",
+            "message": "Eigene Nachricht ({user}, {username}, {age}, {server}) oder - für die Standardnachricht"
+          }
+        }
+      }
+    },
+    "afk": {
+      "description": "Dich als abwesend markieren (oder zurückkehren)",
+      "options": {
+        "reason": "Grund, der Leuten angezeigt wird, die dich erwähnen"
+      }
+    },
+    "tag": {
+      "description": "Gespeicherte Antworten des Servers",
+      "options": {
+        "use": {
+          "description": "Einen Tag anzeigen",
+          "options": {
+            "name": "Name des Tags",
+            "user": "Zu erwähnendes Mitglied"
+          }
+        },
+        "create": {
+          "description": "Einen Tag erstellen",
+          "options": {
+            "name": "Name des neuen Tags"
+          }
+        },
+        "edit": {
+          "description": "Einen Tag bearbeiten",
+          "options": {
+            "name": "Name des Tags"
+          }
+        },
+        "delete": {
+          "description": "Einen Tag löschen",
+          "options": {
+            "name": "Name des Tags"
+          }
+        },
+        "info": {
+          "description": "Details zu einem Tag",
+          "options": {
+            "name": "Name des Tags"
+          }
+        },
+        "list": {
+          "description": "Tags auflisten"
+        }
+      }
+    },
+    "tempvoice": {
+      "description": "Temporäre Sprachkanäle",
+      "options": {
+        "setup": {
+          "description": "Einen „Beitreten zum Erstellen“-Kanal anlegen",
+          "options": {
+            "category": "Kategorie der erstellten Kanäle",
+            "name": "Name des Einstiegskanals"
+          }
+        },
+        "remove": {
+          "description": "Einen Einstiegskanal entfernen",
+          "options": {
+            "hub": "Einstiegskanal",
+            "delete": "Den Kanal auch löschen (standardmäßig ja)"
+          }
+        },
+        "list": {
+          "description": "Einstiegskanäle und aktive Kanäle anzeigen"
+        },
+        "panel": {
+          "description": "Das Bedienfeld deines Kanals anzeigen"
+        }
+      }
+    },
+    "community": {
+      "description": "Community-Werkzeuge: Statistikkanäle, Sticky-Nachrichten, automatische Antworten",
+      "options": {
+        "stats": {
+          "description": "Sprachkanäle mit Serverstatistiken",
+          "options": {
+            "add": {
+              "description": "Einen Statistikkanal erstellen",
+              "options": {
+                "type": {
+                  "description": "Angezeigter Wert",
+                  "choices": {
+                    "members": "Mitglieder",
+                    "humans": "Menschen",
+                    "bots": "Bots",
+                    "boosts": "Boosts",
+                    "tier": "Boost-Stufe",
+                    "channels": "Kanäle",
+                    "roles": "Rollen"
+                  }
+                },
+                "template": "Kanalname, mit {count} für den Wert",
+                "category": "Kategorie, in der der Kanal erstellt wird"
+              }
+            },
+            "remove": {
+              "description": "Einen Statistikkanal beenden",
+              "options": {
+                "channel": "Statistikkanal",
+                "delete": "Den Kanal auch löschen (standardmäßig ja)"
+              }
+            },
+            "list": {
+              "description": "Statistikkanäle auflisten"
+            },
+            "refresh": {
+              "description": "Die Kanäle jetzt aktualisieren"
+            }
+          }
+        },
+        "sticky": {
+          "description": "Nachrichten, die unten im Kanal bleiben",
+          "options": {
+            "set": {
+              "description": "Die Sticky-Nachricht erstellen oder bearbeiten",
+              "options": {
+                "channel": "Kanal (standardmäßig dieser)"
+              }
+            },
+            "remove": {
+              "description": "Die Sticky-Nachricht entfernen",
+              "options": {
+                "channel": "Kanal (standardmäßig dieser)"
+              }
+            },
+            "list": {
+              "description": "Sticky-Nachrichten auflisten"
+            }
+          }
+        },
+        "autoresponder": {
+          "description": "Automatische Antworten auf Stichwörter",
+          "options": {
+            "add": {
+              "description": "Eine automatische Antwort hinzufügen",
+              "options": {
+                "trigger": "Auslösender Text",
+                "response": "Antwort ({user}, {server}, {channel}; \\n für einen Zeilenumbruch)",
+                "match": {
+                  "description": "Vergleichsart (Standard: enthält)",
+                  "choices": {
+                    "exact": "Genaue Nachricht",
+                    "contains": "Enthält",
+                    "startswith": "Beginnt mit",
+                    "word": "Ganzes Wort"
+                  }
+                },
+                "channel": "Auf einen Kanal beschränken"
+              }
+            },
+            "remove": {
+              "description": "Eine automatische Antwort löschen",
+              "options": {
+                "id": "Nummer der Antwort"
+              }
+            },
+            "list": {
+              "description": "Automatische Antworten auflisten"
+            },
+            "test": {
+              "description": "Testen, welcher Auslöser auf eine Nachricht antworten würde",
+              "options": {
+                "message": "Zu testende Nachricht"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "suggestions": {
+    "status": {
+      "pending": "Offen",
+      "considered": "In Prüfung",
+      "accepted": "Angenommen",
+      "denied": "Abgelehnt",
+      "implemented": "Umgesetzt"
+    },
+    "side": {
+      "up": "dafür",
+      "down": "dagegen"
+    },
+    "buttons": {
+      "up": "Dafür · {count}",
+      "down": "Dagegen · {count}"
+    },
+    "embed": {
+      "title": "Vorschlag Nr. {number}",
+      "status": "Status",
+      "votes": "Stimmen",
+      "voteLine": "{up} dafür · {down} dagegen\n{bar}",
+      "response": "Antwort des Teams",
+      "responseLine": "{staff}: {reason}",
+      "by": "Vorgeschlagen von {user}",
+      "anonymous": "Anonymer Vorschlag"
+    },
+    "noReason": "Keine Angaben.",
+    "notConfigured": "Vorschläge sind nicht eingerichtet. Ein Administrator muss /suggestion config verwenden.",
+    "posted": "Vorschlag Nr. {number} veröffentlicht",
+    "postedDesc": "Danke! Du findest ihn hier: {url}",
+    "threadName": "Diskussion – Vorschlag Nr. {number}",
+    "notFound": "Es gibt keinen Vorschlag Nr. {number}.",
+    "closed": "Die Abstimmung ist geschlossen: Das Team hat bereits geantwortet.",
+    "voteSaved": "Stimme „{side}“ gespeichert",
+    "voteRemoved": "Stimme „{side}“ entfernt",
+    "decided": "Vorschlag Nr. {number}: {status}",
+    "decidedDesc": "Die öffentliche Nachricht wurde aktualisiert.",
+    "decidedNoMessage": "Status gespeichert, aber die öffentliche Nachricht existiert nicht mehr.",
+    "deleted": "Vorschlag Nr. {number} gelöscht",
+    "listEmpty": "Noch keine Vorschläge.",
+    "listTitle": "Vorschläge ({count})",
+    "listLine": "**Nr. {number}** · {status} · {up} dafür / {down} dagegen — {text}",
+    "dm": {
+      "title": "Dein Vorschlag Nr. {number} auf {server}",
+      "body": "Neuer Status: **{status}**\nAntwort: {reason}\n{url}"
+    },
+    "configTitle": "Vorschläge eingerichtet",
+    "configChannel": "Kanal",
+    "configAnonymous": "Erzwungene Anonymität",
+    "configThreads": "Diskussions-Threads",
+    "configDm": "DM an den Autor",
+    "configCooldown": "Wartezeit (s)"
+  },
+  "starboard": {
+    "header": "{emoji} **{count}** · {channel}",
+    "source": "Ursprüngliche Nachricht",
+    "jump": "[Zur Nachricht]({url})",
+    "attachments": "Dateien",
+    "badEmoji": "Dieses Emoji ist ungültig. Verwende ein Standard-Emoji oder ein Emoji dieses Servers.",
+    "saved": "Starboard aktiviert",
+    "savedDesc": "Nachrichten mit {threshold} {emoji} werden nach {channel} kopiert.",
+    "ignored": "Kanal wird ignoriert",
+    "unignored": "Kanal wieder aufgenommen",
+    "alreadyOff": "Das Starboard ist bereits deaktiviert.",
+    "disabled": "Starboard deaktiviert",
+    "statusTitle": "Starboard",
+    "channel": "Kanal",
+    "threshold": "Schwelle",
+    "emoji": "Emoji",
+    "selfStar": "Eigener Stern des Autors",
+    "posts": "Angezeigte Nachrichten",
+    "ignoredList": "Ignorierte Kanäle"
+  },
+  "birthdays": {
+    "noBots": "Bots haben keinen Geburtstag.",
+    "invalidDate": "Dieses Datum existiert nicht. Prüfe Tag, Monat und Jahr.",
+    "saved": "Geburtstag gespeichert",
+    "savedDesc": "{user}: am {date}, in {days} Tag(en).",
+    "removed": "Geburtstag entfernt",
+    "none": "Für {user} ist kein Geburtstag gespeichert.",
+    "listEmpty": "Keine Geburtstage gespeichert. Füge deinen mit /birthday set hinzu.",
+    "listTitle": "Nächste Geburtstage ({count})",
+    "listLine": "{user} · {date} · {when}{age}",
+    "today": "**heute**",
+    "inDays": "in {days} T.",
+    "ageSuffix": " · wird {age}",
+    "viewTitle": "Geburtstag",
+    "viewDesc": "{user} hat am **{date}** Geburtstag, in {days} Tag(en).",
+    "announceTitle": "Alles Gute zum Geburtstag!",
+    "announce": "Alles Gute zum Geburtstag, {user}! Ganz {server} wünscht dir einen schönen Tag.",
+    "announceAge": "Alles Gute zum Geburtstag, {user}, der/die heute {age} wird!",
+    "configTitle": "Geburtstage eingerichtet",
+    "configHelp": "Ankündigungen erscheinen täglich zur gewählten Uhrzeit, nach der Zeitverschiebung des Servers.",
+    "channel": "Kanal",
+    "role": "Geburtstagsrolle",
+    "hour": "Uhrzeit",
+    "offset": "Zeitzone",
+    "message": "Nachricht",
+    "defaultMessage": "Standardnachricht"
+  },
+  "stats": {
+    "types": {
+      "members": "Mitglieder",
+      "humans": "Menschen",
+      "bots": "Bots",
+      "boosts": "Boosts",
+      "tier": "Boost-Stufe",
+      "channels": "Kanäle",
+      "roles": "Rollen"
+    },
+    "defaults": {
+      "members": "Mitglieder: {count}",
+      "humans": "Menschen: {count}",
+      "bots": "Bots: {count}",
+      "boosts": "Boosts: {count}",
+      "tier": "Stufe: {count}",
+      "channels": "Kanäle: {count}",
+      "roles": "Rollen: {count}"
+    },
+    "tooMany": "Du hast das Limit von {max} Statistikkanälen erreicht.",
+    "needCount": "Der Name muss {count} enthalten, das durch den Wert ersetzt wird.",
+    "auditReason": "Statistikkanal",
+    "added": "Statistikkanal erstellt",
+    "addedDesc": "{channel} zeigt „{type}“ an und aktualisiert sich selbst.",
+    "notStat": "Dieser Kanal ist kein Statistikkanal.",
+    "removed": "Statistikkanal entfernt",
+    "listEmpty": "Keine Statistikkanäle.",
+    "listTitle": "Statistikkanäle",
+    "listLine": "{channel} · {type} · `{template}`",
+    "rateNote": "Discord erlaubt pro Kanal nur 2 Umbenennungen alle 10 Minuten, Aktualisierungen können daher einige Minuten dauern.",
+    "refreshed": "Aktualisierung gestartet",
+    "refreshedDesc": "{count} Kanal/Kanäle umbenannt.",
+    "refreshedWaiting": "{count} Kanal/Kanäle umbenannt. Die übrigen warten auf das Discord-Limit und folgen automatisch."
+  },
+  "sticky": {
+    "footer": "Sticky-Nachricht",
+    "modalTitle": "Sticky-Nachricht",
+    "modalTitleField": "Titel (optional)",
+    "modalContentField": "Inhalt",
+    "badChannel": "Wähle einen Textkanal.",
+    "tooMany": "Du hast das Limit von {max} Sticky-Nachrichten erreicht.",
+    "saved": "Sticky-Nachricht in {channel} gespeichert",
+    "removed": "Sticky-Nachricht aus {channel} entfernt",
+    "none": "Keine Sticky-Nachricht in {channel}.",
+    "listEmpty": "Keine Sticky-Nachrichten.",
+    "listTitle": "Sticky-Nachrichten ({count})"
+  },
+  "afk": {
+    "disabled": "Der AFK-Status ist auf diesem Server deaktiviert.",
+    "set": "Du bist AFK",
+    "setDesc": "Grund: {reason}\nDein Nickname zeigt [AFK]. Schreibe eine Nachricht, um zurückzukehren.",
+    "setDescNoNick": "Grund: {reason}\nSchreibe eine Nachricht, um zurückzukehren.",
+    "cleared": "Willkommen zurück, du bist nicht mehr AFK",
+    "backTitle": "Willkommen zurück, {user}",
+    "backDesc": "Abwesend seit {since}. Erhaltene Erwähnungen: {count}.",
+    "pingLine": "{user} {time} · [ansehen]({url})",
+    "noticeTitle": "Mitglied abwesend",
+    "isAfk": "{user} ist seit {since} AFK.",
+    "isAfkReason": "{user} ist seit {since} AFK: {reason}"
+  },
+  "tags": {
+    "badName": "Ungültiger Name: 1 bis 32 Zeichen, Kleinbuchstaben, Ziffern, - oder _.",
+    "notFound": "Kein Tag namens „{name}“.",
+    "exists": "Der Tag „{name}“ existiert bereits.",
+    "tooMany": "Du hast das Limit von {max} Tags erreicht.",
+    "noPermission": "Zum Verwalten von Tags brauchst du die Berechtigung Nachrichten verwalten oder die Tag-Verwaltungsrolle.",
+    "modalTitle": {
+      "create": "Neuer Tag: {name}",
+      "edit": "Bearbeiten: {name}"
+    },
+    "modalField": "Inhalt des Tags",
+    "modalPlaceholder": "Variablen: {user} {target} {server} {channel} {membercount}",
+    "created": "Erstellt",
+    "createdDesc": "Verwende ihn mit /tag use name:{name}",
+    "edited": "Tag „{name}“ bearbeitet",
+    "confirmDelete": "Den Tag „{name}“ endgültig löschen?",
+    "deleted": "Tag „{name}“ gelöscht",
+    "footer": "Tag: {name}",
+    "listEmpty": "Noch keine Tags.",
+    "listTitle": "Tags ({count})",
+    "listLine": "`{name}` · {uses}× verwendet",
+    "infoTitle": "Tag „{name}“",
+    "owner": "Erstellt von",
+    "uses": "Verwendungen",
+    "variables": "Variablen",
+    "variablesList": "{user} {username} {displayname} {target} {server} {channel} {membercount}"
+  },
+  "tempvoice": {
+    "hubName": "Beitreten zum Erstellen",
+    "defaultName": "Kanal von {user}",
+    "auditHub": "Einstiegskanal für temporäre Sprachkanäle",
+    "auditCreate": "Temporärer Kanal von {user}",
+    "auditDelete": "Leerer temporärer Kanal",
+    "tooManyHubs": "Du hast das Limit von {max} Einstiegskanälen erreicht.",
+    "hubCreated": "Einstiegskanal erstellt",
+    "hubCreatedDesc": "Wer {channel} beitritt, bekommt einen eigenen Sprachkanal, der gelöscht wird, sobald er leer ist.",
+    "notHub": "Dieser Kanal ist kein Einstiegskanal.",
+    "hubRemoved": "Einstiegskanal entfernt",
+    "noHubs": "Keine Einstiegskanäle. Erstelle einen mit /tempvoice setup.",
+    "listTitle": "Temporäre Sprachkanäle",
+    "hubs": "Einstiegskanäle",
+    "active": "Aktive Kanäle ({count})",
+    "notInTemp": "Tritt zuerst deinem temporären Sprachkanal bei.",
+    "notOwner": "Nur der Besitzer ({owner}) kann das tun.",
+    "alreadyOwner": "Dieser Kanal gehört bereits dir.",
+    "joinFirst": "Tritt diesem Sprachkanal bei, um ihn zu übernehmen.",
+    "ownerPresent": "Der Besitzer ist noch im Kanal.",
+    "claimed": "{user} ist jetzt Besitzer des Kanals",
+    "gone": "Dieser temporäre Kanal existiert nicht mehr.",
+    "panelTitle": "Dein Sprachkanal",
+    "panelDesc": "Besitzer: {owner}\nVerwalte diesen Kanal mit den Buttons. Er wird gelöscht, sobald alle gegangen sind.",
+    "buttons": {
+      "rename": "Umbenennen",
+      "limit": "Limit",
+      "lock": "Sperren",
+      "hide": "Verstecken",
+      "permit": "Erlauben",
+      "kick": "Rauswerfen",
+      "claim": "Übernehmen"
+    },
+    "renameTitle": "Kanal umbenennen",
+    "renameLabel": "Neuer Name",
+    "limitTitle": "Mitgliederlimit",
+    "limitLabel": "Höchstzahl (0 = unbegrenzt)",
+    "badName": "Der Name darf nicht leer sein.",
+    "badLimit": "Gib eine Zahl zwischen 0 und 99 ein.",
+    "renameLimit": "Discord erlaubt nur 2 Umbenennungen pro 10 Minuten. Versuche es {time} erneut.",
+    "renamed": "Kanal in „{name}“ umbenannt",
+    "limitSet": "Limit auf {limit} Mitglied(er) gesetzt",
+    "limitRemoved": "Limit entfernt",
+    "locked": {
+      "on": "Kanal gesperrt: Nur erlaubte Mitglieder können beitreten",
+      "off": "Kanal entsperrt"
+    },
+    "hidden": {
+      "on": "Kanal versteckt",
+      "off": "Kanal wieder sichtbar"
+    },
+    "permitPrompt": "Wähle die Mitglieder, die beitreten dürfen.",
+    "kickPrompt": "Wähle die Mitglieder, die aus dem Kanal geworfen werden.",
+    "selectUsers": "Mitglieder wählen",
+    "permitted": "Erlaubt: {users}",
+    "kicked": "Rausgeworfen: {users}"
+  },
+  "autoresponder": {
+    "modes": {
+      "exact": "genaue Nachricht",
+      "contains": "enthält",
+      "startswith": "beginnt mit",
+      "word": "ganzes Wort"
+    },
+    "tooMany": "Du hast das Limit von {max} automatischen Antworten erreicht.",
+    "tooShort": "Der Auslöser muss mindestens 2 Zeichen lang sein.",
+    "duplicate": "Dieser Auslöser existiert bereits mit demselben Modus.",
+    "added": "Automatische Antwort Nr. {id} hinzugefügt",
+    "addedDesc": "Auslöser: „{trigger}“ ({mode}).",
+    "notFound": "Es gibt keine automatische Antwort Nr. {id}.",
+    "removed": "Automatische Antwort Nr. {id} gelöscht",
+    "listEmpty": "Keine automatischen Antworten.",
+    "listTitle": "Automatische Antworten ({count})",
+    "listLine": "**Nr. {id}** · {mode} · `{trigger}` · {where}\n→ {response}",
+    "everywhere": "überall",
+    "noMatch": "Kein Auslöser passt zu dieser Nachricht.",
+    "match": "Treffer gefunden",
+    "matchDesc": "Antwort Nr. {id} („{trigger}“) würde gesendet."
+  },
+  "dashboard": {
+    "suggestions": {
+      "title": "Vorschläge",
+      "description": "Ideen der Mitglieder mit Abstimmung."
+    },
+    "starboard": {
+      "title": "Starboard",
+      "description": "Die Nachrichten mit den meisten Sternen hervorheben."
+    },
+    "birthdays": {
+      "title": "Geburtstage",
+      "description": "Tägliche Ankündigung und Geburtstagsrolle."
+    },
+    "afk": {
+      "title": "AFK",
+      "description": "Abwesenheitsstatus, der bei Erwähnungen angezeigt wird."
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "Gespeicherte Antworten für /tag use."
+    },
+    "sticky": {
+      "title": "Sticky-Nachrichten",
+      "description": "Nachrichten, die unten in ausgewählten Kanälen neu gepostet werden."
+    },
+    "tempvoice": {
+      "title": "Temporäre Sprachkanäle",
+      "description": "Sprachkanäle, die bei Bedarf erstellt werden."
+    },
+    "autoresponder": {
+      "title": "Automatische Antworten",
+      "description": "Antworten, wenn eine Nachricht einen Auslöser enthält."
+    },
+    "fields": {
+      "suggestionsChannel": {
+        "label": "Vorschlagskanal",
+        "help": "Kanal, in dem /suggest Ideen veröffentlicht."
+      },
+      "suggestionsAnonymous": {
+        "label": "Erzwungene Anonymität",
+        "help": "Blendet den Autor aller Vorschläge aus."
+      },
+      "suggestionsThreads": {
+        "label": "Diskussions-Threads",
+        "help": "Öffnet unter jedem Vorschlag einen Thread."
+      },
+      "suggestionsDm": {
+        "label": "Autor benachrichtigen",
+        "help": "Schickt dem Autor eine DM, wenn das Team den Status ändert."
+      },
+      "suggestionsCooldown": {
+        "label": "Wartezeit zwischen Vorschlägen (s)",
+        "help": "0 für keine Wartezeit."
+      },
+      "starboardEnabled": {
+        "label": "Starboard aktiv",
+        "help": "Kopiert beliebte Nachrichten in den Starboard-Kanal."
+      },
+      "starboardChannel": {
+        "label": "Starboard-Kanal",
+        "help": "Kanal, in den Nachrichten kopiert werden."
+      },
+      "starboardThreshold": {
+        "label": "Sternschwelle",
+        "help": "Benötigte Anzahl Reaktionen."
+      },
+      "starboardEmoji": {
+        "label": "Emoji",
+        "help": "Standard-Emoji oder Server-Emoji im Format <:name:id>."
+      },
+      "starboardSelfStar": {
+        "label": "Eigener Stern des Autors",
+        "help": "Die Reaktion des Autors auf seine eigene Nachricht mitzählen."
+      },
+      "starboardIgnored": {
+        "label": "Ignorierte Kanäle",
+        "help": "Nachrichten aus diesen Kanälen landen nie im Starboard."
+      },
+      "birthdaysEnabled": {
+        "label": "Ankündigungen aktiv",
+        "help": "Kündigt täglich die Geburtstage der Mitglieder an."
+      },
+      "birthdaysChannel": {
+        "label": "Ankündigungskanal",
+        "help": "Kanal, in dem gratuliert wird."
+      },
+      "birthdaysRole": {
+        "label": "Geburtstagsrolle",
+        "help": "Rolle für den Geburtstag, danach wieder entfernt."
+      },
+      "birthdaysHour": {
+        "label": "Uhrzeit der Ankündigung",
+        "help": "Lokale Stunde, von 0 bis 23."
+      },
+      "birthdaysOffset": {
+        "label": "UTC-Verschiebung",
+        "help": "Zum Beispiel 1 für Berlin im Winter, 2 im Sommer."
+      },
+      "birthdaysMessage": {
+        "label": "Eigene Nachricht",
+        "help": "Variablen: {user} {username} {age} {server}. Leer für die Standardnachricht."
+      },
+      "afkEnabled": {
+        "label": "AFK aktiv",
+        "help": "Erlaubt die Nutzung von /afk."
+      },
+      "afkNickname": {
+        "label": "Präfix [AFK]",
+        "help": "Setzt während der Abwesenheit [AFK] vor den Nickname."
+      },
+      "tagsManager": {
+        "label": "Tag-Verwaltungsrolle",
+        "help": "Diese Rolle kann Tags ohne die Berechtigung Nachrichten verwalten erstellen und bearbeiten."
+      },
+      "stickyDelay": {
+        "label": "Wartezeit vor dem Neuposten (s)",
+        "help": "Wartezeit nach der letzten Nachricht, von 2 bis 60."
+      },
+      "tempvoiceLimit": {
+        "label": "Standardlimit",
+        "help": "Höchstzahl an Mitgliedern in einem neuen Kanal (0 = unbegrenzt)."
+      },
+      "tempvoiceName": {
+        "label": "Kanalname",
+        "help": "Verwende {user} für den Nickname. Leer für den Standardnamen."
+      },
+      "autoresponderEnabled": {
+        "label": "Automatische Antworten aktiv",
+        "help": "Benötigt den Message-Content-Intent."
+      },
+      "autoresponderCooldown": {
+        "label": "Wartezeit pro Kanal (s)",
+        "help": "Mindestzeit zwischen zwei gleichen Antworten in einem Kanal."
+      }
+    },
+    "actions": {
+      "refreshStats": {
+        "label": "Statistikkanäle aktualisieren",
+        "none": "Kein Statistikkanal eingerichtet.",
+        "done": "Statistikkanäle aktualisiert.",
+        "waiting": "Teilweise aktualisiert; der Rest folgt nach dem Discord-Limit."
+      },
+      "clearAfk": {
+        "label": "Alle AFK-Status löschen",
+        "done": "Alle AFK-Status wurden gelöscht."
+      },
+      "cleanupTempvoice": {
+        "label": "Temporäre Sprachkanäle aufräumen",
+        "done": "Leere temporäre Kanäle wurden gelöscht."
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "commands": {
+    "help": {
+      "description": "Lista os comandos de cada módulo",
+      "options": {
+        "command": "Mostra os detalhes de um comando"
+      }
+    },
+    "ping": {
+      "description": "Mostra a latência do bot"
+    },
+    "botinfo": {
+      "description": "Mostra informações sobre o bot"
+    },
+    "config": {
+      "description": "Configurações do bot neste servidor",
+      "options": {
+        "language": {
+          "description": "Muda o idioma do bot neste servidor",
+          "options": {
+            "value": "Idioma"
+          }
+        },
+        "show": {
+          "description": "Mostra as configurações atuais"
+        },
+        "reset": {
+          "description": "Redefine todas as configurações deste servidor"
+        }
+      }
+    },
+    "setup": {
+      "description": "Configuração guiada do bot"
+    }
+  },
+  "modules": {
+    "core-commands": {
+      "name": "Geral",
+      "description": "Ajuda, latência, informações e configurações do bot"
+    },
+    "antiraid": {
+      "name": "Antirraid",
+      "description": "Detecção de ondas de contas, modo raid e bloqueio"
+    },
+    "antinuke": {
+      "name": "Antinuke",
+      "description": "Impede exclusões em massa e restaura o servidor"
+    },
+    "automod": {
+      "name": "Automod",
+      "description": "Filtros de links, convites, spam, maiúsculas e palavras proibidas"
+    },
+    "moderation": {
+      "name": "Moderação",
+      "description": "Punições, advertências, limpeza e histórico de casos"
+    },
+    "logs": {
+      "name": "Logs",
+      "description": "Logs de mensagens, membros, punições, servidor e voz"
+    },
+    "welcome": {
+      "name": "Boas-vindas",
+      "description": "Mensagens de entrada e saída, cargos automáticos"
+    },
+    "verification": {
+      "name": "Verificação",
+      "description": "Captcha por botão antes de acessar o servidor"
+    },
+    "tickets": {
+      "name": "Tickets",
+      "description": "Suporte por canais privados com transcrição"
+    },
+    "roles": {
+      "name": "Cargos",
+      "description": "Menus de cargos, cargos temporários e gestão"
+    },
+    "utility": {
+      "name": "Utilidades",
+      "description": "Informações, enquetes, lembretes, embeds e convites"
+    },
+    "giveaways": {
+      "name": "Sorteios",
+      "description": "Sorteios com participação por botão e requisitos"
+    },
+    "levels": {
+      "name": "Níveis",
+      "description": "Experiência, ranking e cargos de recompensa"
+    },
+    "backup": {
+      "name": "Backups",
+      "description": "Salva e restaura cargos e canais"
+    },
+    "economy": {
+      "name": "Economia",
+      "description": "Moeda, loja, trabalho e jogos de cassino"
+    },
+    "fun": {
+      "name": "Diversão",
+      "description": "Minijogos com botões, quiz e comandos divertidos"
+    },
+    "community": {
+      "name": "Comunidade",
+      "description": "Sugestões, starboard, aniversários, tags e voz temporária"
+    },
+    "music": {
+      "name": "Música",
+      "description": "Rádios web, links de áudio e arquivos na voz"
+    },
+    "dashboard": {
+      "name": "Painel",
+      "description": "Configurações do servidor pelo navegador"
+    }
+  },
+  "help": {
+    "title": "Ajuda",
+    "intro": "Escolha um módulo no menu para ver os comandos, ou use `/help command:<nome>` para os detalhes de um comando.",
+    "footer": "{count} comandos disponíveis",
+    "placeholder": "Escolha um módulo",
+    "commandCount": "{count} comando(s)",
+    "moduleTitle": "Módulo {module}",
+    "noCommands": "Este módulo não tem comandos.",
+    "home": "Início",
+    "module": "Módulo",
+    "permissions": "Permissão necessária",
+    "cooldown": "Tempo de espera",
+    "required": "obrigatório",
+    "optional": "opcional",
+    "options": "Opções",
+    "subcommands": "Subcomandos",
+    "notFound": "Nenhum comando chamado `{name}`."
+  },
+  "ping": {
+    "measuring": "Medindo…",
+    "title": "Pong",
+    "ms": "{value} ms",
+    "roundTrip": "Ida e volta",
+    "gateway": "Gateway do Discord"
+  },
+  "botinfo": {
+    "title": "{name}",
+    "description": "Bot de Discord de código aberto e multifuncional: proteção, moderação, tickets, música, níveis, economia e mais.",
+    "uptime": "Tempo online",
+    "memory": "Memória",
+    "memoryValue": "{rss} MB (heap: {heap} MB)",
+    "latency": "Latência",
+    "servers": "Servidores",
+    "members": "Membros",
+    "modules": "Módulos",
+    "modulesValue": "{modules} módulos, {commands} comandos",
+    "versions": "Versões",
+    "hosting": "Hospedagem",
+    "hostingValue": "Quer sua própria cópia? Hospede de graça na ACLClouds: https://aclclouds.com",
+    "footer": "ACLClouds Bot, software livre sob licença MIT"
+  },
+  "config": {
+    "showTitle": "Configurações de {server}",
+    "language": "Idioma",
+    "default": "padrão",
+    "whitelist": "Lista de confiança",
+    "whitelistValue": "{count} membro(s)",
+    "setup": "Configuração guiada",
+    "setupDone": "Feita em {date} por {user}",
+    "setupNever": "Ainda não feita: use /setup",
+    "logs": "Canais de logs",
+    "protections": "Proteções",
+    "dashboard": "Painel web",
+    "languageSetTitle": "Idioma alterado",
+    "languageSet": "O bot agora fala {language} neste servidor. As descrições dos comandos seguem o idioma do Discord de cada usuário.",
+    "resetConfirm": "Todas as configurações deste servidor serão apagadas (idioma, logs, proteções, lista de confiança, dados dos módulos). Não é possível desfazer.",
+    "resetTitle": "Configurações redefinidas",
+    "resetDone": "O servidor recomeça do zero. Use /setup para configurá-lo de novo."
+  },
+  "protections": {
+    "antiraid": "Antirraid",
+    "antinuke": "Antinuke",
+    "automod": "Automod"
+  },
+  "protectionsHelp": {
+    "antiraid": "Detecta ondas de entradas e bloqueia contas novas",
+    "antinuke": "Pune exclusões em massa de canais e cargos",
+    "automod": "Filtra spam, convites e links"
+  },
+  "setup": {
+    "step": "Etapa {step} de {total}",
+    "languageTitle": "Idioma do bot",
+    "languageIntro": "Bem-vindo! Esta configuração leva um minuto. Primeiro escolha o idioma que o bot usa neste servidor.",
+    "languagePlaceholder": "Escolha um idioma",
+    "logsTitle": "Canal de logs",
+    "logsIntro": "Escolha o canal onde o bot registra o que acontece (punições, proteções, mensagens apagadas…). Você pode separar as categorias depois com /logs set.",
+    "logsPlaceholder": "Escolha um canal",
+    "protectionsTitle": "Proteções",
+    "protectionsIntro": "Marque as proteções que deseja ativar. Os padrões servem para a maioria dos servidores; cada módulo pode ser ajustado depois com o próprio comando.",
+    "protectionsPlaceholder": "Proteções a ativar",
+    "doneTitle": "Configuração concluída",
+    "doneIntro": "O bot está pronto neste servidor.",
+    "doneLanguage": "Idioma: {language}",
+    "doneLogs": "Logs: {channel}",
+    "doneProtections": "Proteções ativas: {list}",
+    "doneNext": "Coloque meu cargo acima dos cargos dos membros para que as proteções funcionem. Depois: /help para conhecer os comandos, /config show para rever estas configurações."
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "pt": "Português"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Geral",
+      "description": "Configurações básicas do bot neste servidor.",
+      "language": "Idioma do bot",
+      "languageHelp": "Idioma das respostas, mensagens automáticas e logs."
+    },
+    "actions": {
+      "reset": "Redefinir todas as configurações",
+      "resetDone": "Todas as configurações do servidor foram apagadas."
+    }
+  }
+}

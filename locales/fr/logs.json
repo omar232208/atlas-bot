@@ -1,0 +1,272 @@
+{
+  "commands": {
+    "logs": {
+      "description": "Configurer les salons de logs",
+      "options": {
+        "set": {
+          "description": "Envoyer une catégorie de logs dans un salon",
+          "options": {
+            "category": {
+              "description": "Catégorie de logs",
+              "choices": {
+                "all": "Toutes les catégories",
+                "messages": "Messages",
+                "members": "Membres",
+                "moderation": "Modération",
+                "server": "Serveur",
+                "voice": "Vocal",
+                "invites": "Invitations",
+                "protection": "Protection",
+                "tickets": "Tickets"
+              }
+            },
+            "channel": "Salon où envoyer les logs"
+          }
+        },
+        "disable": {
+          "description": "Arrêter les logs d'une catégorie",
+          "options": {
+            "category": {
+              "description": "Catégorie de logs",
+              "choices": {
+                "all": "Toutes les catégories",
+                "messages": "Messages",
+                "members": "Membres",
+                "moderation": "Modération",
+                "server": "Serveur",
+                "voice": "Vocal",
+                "invites": "Invitations",
+                "protection": "Protection",
+                "tickets": "Tickets"
+              }
+            }
+          }
+        },
+        "ignore": {
+          "description": "Ignorer un salon, ou le surveiller à nouveau",
+          "options": {
+            "channel": "Salon ou catégorie à ignorer (ou à ne plus ignorer)"
+          }
+        },
+        "bots": {
+          "description": "Enregistrer ou non les messages des bots",
+          "options": {
+            "enabled": "Enregistrer les messages des bots"
+          }
+        },
+        "status": {
+          "description": "Afficher la configuration des logs"
+        }
+      }
+    }
+  },
+  "categories": {
+    "all": "toutes les catégories",
+    "messages": "Messages",
+    "members": "Membres",
+    "moderation": "Modération",
+    "server": "Serveur",
+    "voice": "Vocal",
+    "invites": "Invitations",
+    "protection": "Protection",
+    "tickets": "Tickets"
+  },
+  "status": {
+    "title": "Configuration des logs",
+    "description": "Salon utilisé pour chaque catégorie. Les catégories Protection et Tickets utilisent le salon Modération si elles n'ont pas le leur.",
+    "off": "Désactivé",
+    "fallback": "{channel} (via Modération)",
+    "ignored": "Salons ignorés",
+    "none": "Aucun",
+    "bots": "Messages des bots",
+    "botsIgnored": "Ignorés",
+    "botsLogged": "Enregistrés"
+  },
+  "errors": {
+    "title": "Impossible",
+    "missingPerms": "Il me manque ces permissions dans {channel} : {perms}. Ajoutez-les puis relancez la commande."
+  },
+  "set": {
+    "title": "Logs configurés",
+    "done": "Les logs « {category} » seront envoyés dans {channel}."
+  },
+  "disable": {
+    "title": "Logs désactivés",
+    "done": "Les logs « {category} » sont désactivés."
+  },
+  "ignore": {
+    "title": "Salons ignorés",
+    "added": "{channel} est maintenant ignoré : ses messages et son activité vocale ne seront plus enregistrés.",
+    "removed": "{channel} n'est plus ignoré."
+  },
+  "bots": {
+    "title": "Messages des bots",
+    "on": "Les messages des bots seront enregistrés.",
+    "off": "Les messages des bots ne seront plus enregistrés."
+  },
+  "test": {
+    "title": "Test des logs",
+    "description": "Ce salon reçoit bien les logs (catégorie {category}).",
+    "none": "Aucun salon de logs n'est configuré.",
+    "ok": "Un message de test a été envoyé dans chaque salon de logs.",
+    "partial": "Certains salons n'ont pas reçu le test : vérifiez mes permissions (voir le salon, envoyer des messages, intégrer des liens)."
+  },
+  "dashboard": {
+    "channels": {
+      "title": "Salons de logs",
+      "description": "Choisissez où envoyer chaque type d'événement. Laissez vide pour désactiver."
+    },
+    "help": {
+      "messages": "Messages modifiés, supprimés et suppressions en masse (avec fichier texte).",
+      "members": "Arrivées, départs, pseudos, rôles et boosts.",
+      "moderation": "Bannissements, expulsions, exclusions temporaires et sanctions du bot.",
+      "server": "Salons, rôles, émojis et paramètres du serveur.",
+      "voice": "Connexions, déconnexions, déplacements et sourdines serveur.",
+      "invites": "Invitations créées, supprimées et invitation utilisée par chaque arrivant.",
+      "protection": "Alertes antiraid, antinuke et automod. Vide : salon Modération.",
+      "tickets": "Ouverture, fermeture et transcriptions des tickets. Vide : salon Modération."
+    },
+    "filters": {
+      "title": "Filtres",
+      "ignored": "Salons ignorés",
+      "ignoredHelp": "Les messages et l'activité vocale de ces salons (ou catégories) ne sont pas enregistrés.",
+      "ignoreBots": "Ignorer les messages des bots",
+      "ignoreBotsHelp": "Recommandé : les bots modifient souvent leurs messages."
+    },
+    "actions": {
+      "test": "Envoyer un log de test"
+    }
+  },
+  "events": {
+    "empty": "*(vide)*",
+    "ids": "Utilisateur {user} · Message {message}",
+    "unknown": "inconnu",
+    "none": "Aucun",
+    "noReason": "Aucune raison",
+    "before": "Avant",
+    "after": "Après",
+    "unlimited": "Illimité",
+    "never": "Jamais",
+    "messages": {
+      "attachments": "Pièces jointes",
+      "edited": "Message modifié",
+      "editedDesc": "{user} a modifié un message dans {channel} — [voir le message]({url})",
+      "before": "Avant",
+      "after": "Après",
+      "deleted": "Message supprimé",
+      "deletedUncached": "Un message ancien a été supprimé dans {channel} (`{id}`). Son contenu n'était pas en mémoire.",
+      "deletedDesc": "Message de {user} supprimé dans {channel}",
+      "content": "Contenu",
+      "bulk": "Suppression en masse",
+      "bulkDesc": "{count} messages supprimés dans {channel}. {known} sont dans le fichier joint."
+    },
+    "members": {
+      "created": "Compte créé",
+      "count": "Membres",
+      "warning": "Attention",
+      "newAccount": "Compte récent : créé il y a {age}.",
+      "botJoined": "Bot ajouté",
+      "joined": "Membre arrivé",
+      "joinedAt": "Arrivé le",
+      "roles": "Rôles",
+      "left": "Membre parti",
+      "nickname": "Pseudo modifié",
+      "rolesAdded": "Rôles ajoutés",
+      "rolesRemoved": "Rôles retirés",
+      "rolesChanged": "Rôles modifiés",
+      "boost": "Nouveau boost du serveur"
+    },
+    "moderation": {
+      "kick": "Membre expulsé",
+      "target": "Membre",
+      "by": "Par",
+      "reason": "Raison",
+      "until": "Jusqu'au",
+      "timeout": "Membre exclu temporairement",
+      "untimeout": "Exclusion temporaire levée",
+      "ban": "Membre banni",
+      "unban": "Membre débanni"
+    },
+    "invites": {
+      "usedInvite": "{user} est arrivé avec l'invitation `{code}` de {inviter} ({uses} utilisations).",
+      "usedVanity": "{user} est arrivé avec le lien personnalisé `{code}` ({uses} utilisations).",
+      "untracked": "{user} est arrivé, mais je ne peux pas lire les invitations : il me faut la permission « Gérer le serveur ».",
+      "unknownInvite": "{user} est arrivé, mais l'invitation utilisée n'a pas pu être déterminée.",
+      "inviterTotal": "Total de l'invitant : {joins} arrivées, {left} départs, {net} au total.",
+      "joinTitle": "Invitation utilisée",
+      "leaveTitle": "Départ d'un invité",
+      "leftInvited": "{user} est parti. Il avait été invité par {inviter} (`{code}`).",
+      "code": "Code",
+      "channel": "Salon",
+      "maxUses": "Utilisations max",
+      "expires": "Expire",
+      "creator": "Créée par",
+      "created": "Invitation créée",
+      "deleted": "Invitation supprimée"
+    },
+    "voice": {
+      "join": "Connexion vocale",
+      "joinDesc": "{user} a rejoint {channel}",
+      "leave": "Déconnexion vocale",
+      "leaveDesc": "{user} a quitté {channel}",
+      "move": "Changement de salon vocal",
+      "moveDesc": "{user} est passé de {from} à {to}",
+      "mute": "Micro coupé par le serveur",
+      "muteDesc": "{user} a été rendu muet dans {channel}",
+      "unmute": "Micro rétabli par le serveur",
+      "unmuteDesc": "{user} n'est plus muet dans {channel}",
+      "deaf": "Son coupé par le serveur",
+      "deafDesc": "{user} a été mis en sourdine dans {channel}",
+      "undeaf": "Son rétabli par le serveur",
+      "undeafDesc": "{user} n'est plus en sourdine dans {channel}"
+    },
+    "server": {
+      "channelCreate": "Salon créé",
+      "channelDesc": "{channel} · {name} ({type})",
+      "channelDelete": "Salon supprimé",
+      "channelUpdate": "Salon modifié",
+      "overwritesChanged": "**Permissions** : modifiées",
+      "permsAdded": "Permissions ajoutées",
+      "permsRemoved": "Permissions retirées",
+      "roleCreate": "Rôle créé",
+      "roleDelete": "Rôle supprimé",
+      "roleUpdate": "Rôle modifié",
+      "emojiCreate": "Émoji ajouté",
+      "emojiDelete": "Émoji supprimé",
+      "emojiUpdate": "Émoji renommé",
+      "guildUpdate": "Serveur modifié"
+    }
+  },
+  "fields": {
+    "name": "Nom",
+    "topic": "Sujet",
+    "nsfw": "NSFW",
+    "slowmode": "Mode lent (s)",
+    "category": "Catégorie",
+    "bitrate": "Débit",
+    "userLimit": "Limite d'utilisateurs",
+    "color": "Couleur",
+    "hoist": "Affiché séparément",
+    "mentionable": "Mentionnable",
+    "icon": "Icône",
+    "banner": "Bannière",
+    "vanity": "Lien personnalisé",
+    "verificationLevel": "Niveau de vérification",
+    "owner": "Propriétaire",
+    "afkChannel": "Salon AFK",
+    "systemChannel": "Salon système"
+  },
+  "channelTypes": {
+    "GuildText": "textuel",
+    "GuildVoice": "vocal",
+    "GuildCategory": "catégorie",
+    "GuildAnnouncement": "annonces",
+    "GuildStageVoice": "conférence",
+    "GuildForum": "forum",
+    "GuildMedia": "médias",
+    "PublicThread": "fil public",
+    "PrivateThread": "fil privé",
+    "AnnouncementThread": "fil d'annonces",
+    "Other": "autre"
+  }
+}

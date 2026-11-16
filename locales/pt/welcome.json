@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "Configurar a mensagem de boas-vindas",
+      "options": {
+        "set": { "description": "Escolher o canal de boas-vindas e ativar", "options": { "channel": "Canal onde os novos membros são recebidos" } },
+        "message": { "description": "Alterar a mensagem de boas-vindas", "options": { "text": "Modelo: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = nova linha", "embed": "Enviar em um embed (sim por padrão)" } },
+        "dm": { "description": "Mensagem de boas-vindas no privado", "options": { "enabled": "Enviar uma mensagem privada aos novos membros", "text": "Modelo da mensagem privada (mesmas variáveis)" } },
+        "test": { "description": "Testar a mensagem com você mesmo" },
+        "show": { "description": "Mostrar a configuração de boas-vindas" },
+        "disable": { "description": "Desativar as mensagens de boas-vindas" }
+      }
+    },
+    "goodbye": {
+      "description": "Configurar a mensagem de saída",
+      "options": {
+        "set": { "description": "Escolher o canal de saídas e ativar", "options": { "channel": "Canal onde as saídas são anunciadas" } },
+        "message": { "description": "Alterar a mensagem de saída", "options": { "text": "Modelo: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = nova linha", "embed": "Enviar em um embed (sim por padrão)" } },
+        "test": { "description": "Testar a mensagem com você mesmo" },
+        "show": { "description": "Mostrar a configuração de saídas" },
+        "disable": { "description": "Desativar as mensagens de saída" }
+      }
+    },
+    "autorole": {
+      "description": "Cargos dados automaticamente na entrada",
+      "options": {
+        "add": { "description": "Adicionar um cargo automático", "options": { "role": "Cargo a dar", "type": { "description": "Membros afetados (humanos por padrão)", "choices": { "humans": "Humanos", "bots": "Bots" } } } },
+        "remove": { "description": "Remover um cargo automático", "options": { "role": "Cargo a remover", "type": { "description": "Membros afetados (ambos por padrão)", "choices": { "humans": "Humanos", "bots": "Bots" } } } },
+        "list": { "description": "Listar os cargos automáticos" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "Boas-vindas, {user}, ao **{server}**! Agora somos {count}.",
+    "goodbye": "**{username}** saiu do **{server}**. Agora somos {count}.",
+    "dm": "Boas-vindas ao **{server}**, {displayname}! Não esqueça de ler as regras do servidor."
+  },
+  "welcome": {
+    "setTitle": "Boas-vindas ativadas",
+    "setDone": "Os novos membros serão recebidos em {channel}. Personalize o texto com `/welcome message`.",
+    "messageTitle": "Mensagem de boas-vindas alterada",
+    "messageDone": "Veja como ela vai ficar.",
+    "showTitle": "Configuração de boas-vindas",
+    "disabledTitle": "Boas-vindas desativadas",
+    "disabledDone": "Nenhuma mensagem de boas-vindas (canal ou privado) será enviada.",
+    "dmTitle": "Mensagem privada",
+    "dmOn": "Os novos membros receberão esta mensagem no privado (se aceitarem mensagens privadas do servidor).",
+    "dmOff": "A mensagem de boas-vindas privada está desativada."
+  },
+  "goodbye": {
+    "setTitle": "Saídas ativadas",
+    "setDone": "As saídas serão anunciadas em {channel}. Personalize o texto com `/goodbye message`.",
+    "messageTitle": "Mensagem de saída alterada",
+    "messageDone": "Veja como ela vai ficar.",
+    "showTitle": "Configuração de saídas",
+    "disabledTitle": "Saídas desativadas",
+    "disabledDone": "Nenhuma mensagem de saída será enviada."
+  },
+  "common": {
+    "preview": "Prévia",
+    "unknownVars": "Variáveis desconhecidas (mantidas como estão)",
+    "variables": "Variáveis disponíveis",
+    "testTitle": "Teste enviado",
+    "testSent": "A mensagem foi enviada em {channel}.",
+    "testDmSent": "A mensagem privada foi enviada para você.",
+    "testDmFailed": "Não foi possível enviar a mensagem privada: suas mensagens privadas devem estar fechadas.",
+    "testDisabledNote": "Atenção: esta mensagem está desativada, os novos membros de verdade não vão recebê-la.",
+    "on": "Ativado",
+    "off": "Desativado",
+    "status": "Estado",
+    "channel": "Canal",
+    "embed": "Embed",
+    "template": "Modelo",
+    "none": "Nenhum"
+  },
+  "errors": {
+    "title": "Não é possível",
+    "missingPerms": "Estão me faltando estas permissões em {channel}: {perms}. Adicione-as e tente de novo.",
+    "noChannel": "Nenhum canal está configurado (ou ele foi apagado). Use primeiro `{command}`.",
+    "sendFailed": "Não foi possível enviar a mensagem. Verifique minhas permissões no canal configurado."
+  },
+  "autorole": {
+    "reason": "Cargo automático na entrada",
+    "types": { "humans": "Humanos", "bots": "Bots" },
+    "deletedRole": "Cargo apagado (`{id}`)",
+    "problems": {
+      "managed": "Este cargo é gerenciado por uma integração (bot, impulso) e não pode ser dado.",
+      "everyone": "O cargo @everyone não pode ser dado.",
+      "hierarchy": "Este cargo está acima do meu cargo mais alto: suba meu cargo nas configurações do servidor.",
+      "noPermission": "Está me faltando a permissão \"Gerenciar cargos\"."
+    },
+    "listTitle": "Cargos automáticos",
+    "listDesc": "Dados em cada entrada (após aceitar as regras, se a triagem de membros estiver ativa).",
+    "title": "Cargos automáticos",
+    "dangerous": "{role} dá permissões de moderação ou administração: dá-lo a cada recém-chegado seria perigoso.",
+    "already": "{role} já é dado a: {type}.",
+    "limit": "No máximo {max} cargos automáticos por tipo.",
+    "added": "{role} será dado automaticamente a: {type}.",
+    "notFound": "{role} não é um cargo automático.",
+    "removed": "{role} não é mais dado automaticamente."
+  },
+  "dashboard": {
+    "welcome": { "title": "Boas-vindas", "description": "Mensagem enviada quando um membro entra no servidor. Variáveis: {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "Saídas" },
+    "autorole": { "title": "Cargos automáticos", "description": "Cargos dados na entrada. Precisam estar abaixo do cargo do bot." },
+    "fields": {
+      "enabled": "Ativado",
+      "channel": "Canal",
+      "message": "Mensagem",
+      "messageHelp": "Vazio: mensagem padrão. Variáveis: {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "Enviar em um embed",
+      "dmEnabled": "Mensagem privada de boas-vindas",
+      "dmMessage": "Texto da mensagem privada",
+      "humans": "Cargos para humanos",
+      "bots": "Cargos para bots"
+    },
+    "actions": { "test": "Testar a mensagem de boas-vindas" },
+    "results": {
+      "notMember": "Você não é membro deste servidor.",
+      "noChannel": "Nenhum canal de boas-vindas está configurado.",
+      "failed": "Não foi possível enviar a mensagem: verifique as permissões do bot.",
+      "sent": "Mensagem de teste enviada."
+    }
+  }
+}

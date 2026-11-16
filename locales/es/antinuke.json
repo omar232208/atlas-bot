@@ -1,0 +1,381 @@
+{
+  "commands": {
+    "antinuke": {
+      "description": "Configurar la protección antinuke",
+      "options": {
+        "status": {
+          "description": "Mostrar los ajustes antinuke"
+        },
+        "enable": {
+          "description": "Activar la protección antinuke"
+        },
+        "disable": {
+          "description": "Desactivar la protección antinuke"
+        },
+        "limit": {
+          "description": "Ajustar el límite de una acción",
+          "options": {
+            "action": {
+              "description": "Acción vigilada",
+              "choices": {
+                "channelDelete": "Eliminación de canales",
+                "channelCreate": "Creación de canales",
+                "roleDelete": "Eliminación de roles",
+                "roleCreate": "Creación de roles",
+                "rolePermGrant": "Permiso peligroso dado a un rol",
+                "memberRoleGrant": "Rol peligroso dado a un miembro",
+                "ban": "Baneos",
+                "kick": "Expulsiones",
+                "prune": "Purga de miembros",
+                "webhookCreate": "Creación de webhooks",
+                "webhookSpam": "Spam por webhook",
+                "guildUpdate": "Cambio de los ajustes del servidor",
+                "vanity": "Cambio de la URL personalizada",
+                "emojiDelete": "Eliminación de emojis",
+                "stickerDelete": "Eliminación de stickers"
+              }
+            },
+            "limit": "Acciones toleradas dentro de la ventana",
+            "window": "Ventana en segundos"
+          }
+        },
+        "punishment": {
+          "description": "Elegir la sanción",
+          "options": {
+            "type": {
+              "description": "Sanción",
+              "choices": {
+                "quarantine": "Cuarentena (roles retirados + rol de cuarentena)",
+                "strip": "Retirar los roles",
+                "kick": "Expulsión",
+                "ban": "Baneo",
+                "timeout": "Aislamiento y retirada de roles"
+              }
+            },
+            "quarantine_role": "Rol asignado en cuarentena",
+            "timeout_minutes": "Duración del aislamiento en minutos"
+          }
+        },
+        "settings": {
+          "description": "Opciones de restauración y de pánico",
+          "options": {
+            "restore": "Deshacer lo que se ha hecho",
+            "auto_panic": "Iniciar el modo pánico cuando se detecta un nuke",
+            "panic_minutes": "Duración por defecto del modo pánico",
+            "panic_strip_roles": "Quitar los permisos peligrosos de los roles durante el pánico"
+          }
+        },
+        "release": {
+          "description": "Devolver los roles retirados a un miembro",
+          "options": {
+            "user": "Miembro"
+          }
+        },
+        "quarantined": {
+          "description": "Listar los miembros a los que se retiraron los roles"
+        }
+      }
+    },
+    "whitelist": {
+      "description": "Personas de confianza exentas del antinuke y del automod",
+      "options": {
+        "add": {
+          "description": "Confiar en un usuario o un bot",
+          "options": {
+            "user": "Usuario o bot (también vale un ID)"
+          }
+        },
+        "remove": {
+          "description": "Dejar de confiar en un usuario",
+          "options": {
+            "user": "Usuario"
+          }
+        },
+        "list": {
+          "description": "Mostrar las personas de confianza"
+        }
+      }
+    },
+    "panic": {
+      "description": "Modo pánico: bloquearlo todo desde la primera acción sospechosa",
+      "options": {
+        "on": {
+          "description": "Activar el modo pánico",
+          "options": {
+            "minutes": "Duración del modo pánico en minutos"
+          }
+        },
+        "off": {
+          "description": "Detener el modo pánico"
+        }
+      }
+    }
+  },
+  "actions": {
+    "channelDelete": "Eliminación de canales",
+    "channelCreate": "Creación de canales",
+    "roleDelete": "Eliminación de roles",
+    "roleCreate": "Creación de roles",
+    "rolePermGrant": "Permiso peligroso dado a un rol",
+    "memberRoleGrant": "Rol peligroso dado a un miembro",
+    "ban": "Baneos",
+    "kick": "Expulsiones",
+    "prune": "Purga de miembros",
+    "webhookCreate": "Creación de webhooks",
+    "webhookSpam": "Spam por webhook",
+    "guildUpdate": "Cambio de los ajustes del servidor",
+    "vanity": "Cambio de la URL personalizada",
+    "emojiDelete": "Eliminación de emojis",
+    "stickerDelete": "Eliminación de stickers"
+  },
+  "punishments": {
+    "quarantine": "Cuarentena (roles retirados + rol de cuarentena)",
+    "strip": "Retirar los roles",
+    "kick": "Expulsión",
+    "ban": "Baneo",
+    "timeout": "Aislamiento y retirada de roles"
+  },
+  "perms": {
+    "ViewAuditLog": "Ver el registro de auditoría",
+    "ManageRoles": "Gestionar roles",
+    "ManageChannels": "Gestionar canales",
+    "BanMembers": "Banear miembros",
+    "KickMembers": "Expulsar miembros",
+    "ModerateMembers": "Aislar temporalmente a miembros",
+    "ManageWebhooks": "Gestionar webhooks",
+    "ManageGuildExpressions": "Gestionar expresiones"
+  },
+  "reason": "Antinuke: {action}",
+  "alert": {
+    "title": "Nuke bloqueado",
+    "description": "{user} ha superado el límite: {action}.\n{count} acciones en {seconds} s (límite: {limit}).",
+    "punishment": "Sanción",
+    "restore": "Restauración",
+    "panic": "Modo pánico",
+    "panicNo": "No",
+    "panicAlready": "Ya activo",
+    "panicStarted": "Activado automáticamente",
+    "restoreValue": "{restored} de {total} deshechas, {failed} fallos",
+    "restoreOff": "Desactivada"
+  },
+  "punish": {
+    "results": {
+      "ban": "Baneado",
+      "kick": "Expulsado",
+      "timeout": "Aislado, roles retirados",
+      "quarantine": "En cuarentena",
+      "strip": "Roles retirados",
+      "partial": "Roles retirados en parte: un rol por encima del mío conserva permisos peligrosos",
+      "failed": "Imposible: coloca mi rol arriba del todo en la lista",
+      "gone": "Ya ha salido del servidor",
+      "fallbackStrip": "Sanción imposible, se le retiraron los roles en su lugar"
+    }
+  },
+  "panic": {
+    "startTitle": "Modo pánico activado",
+    "endTitle": "Modo pánico terminado",
+    "auto": "Activado automáticamente tras un nuke ({reason}). Cualquier acción sensible de un miembro no autorizado se bloquea desde la primera.",
+    "manual": "Activado por {user}. Cualquier acción sensible de un miembro no autorizado se bloquea desde la primera.",
+    "onReply": "Cualquier acción sensible de un miembro fuera de la lista blanca se bloquea ahora desde la primera. Usa /panic off para pararlo.",
+    "ends": "Fin prevista",
+    "rolesField": "Roles",
+    "rolesValue": "{stripped} roles sin sus permisos peligrosos, {failed} fallos.",
+    "restoredValue": "{restored} roles recuperaron sus permisos, {failed} fallos.",
+    "endedBy": "Modo pánico detenido por {user}.",
+    "expired": "El modo pánico ha llegado a su fin.",
+    "auditStart": "Antinuke: modo pánico",
+    "auditEnd": "Antinuke: fin del modo pánico",
+    "notActive": "El modo pánico no está activo.",
+    "alreadyActive": "El modo pánico ya está activo."
+  },
+  "webhook": {
+    "title": "Spam por webhook bloqueado",
+    "description": "El webhook {name} envió {count} mensajes en {seconds} s en {channel}.",
+    "deleted": "Webhook eliminado",
+    "removed": "Mensajes borrados",
+    "yes": "Sí",
+    "no": "No (¿falta el permiso Gestionar webhooks?)"
+  },
+  "status": {
+    "title": "Protección antinuke",
+    "enabled": "La protección está activada.",
+    "disabled": "La protección está desactivada.",
+    "on": "Sí",
+    "off": "No",
+    "punishment": "Sanción",
+    "restore": "Restauración",
+    "autoPanic": "Pánico automático",
+    "panic": "Modo pánico",
+    "panicActive": "Activo, termina {until}",
+    "whitelist": "Personas de confianza",
+    "limits": "Límites (acciones toleradas / ventana)",
+    "limitLine": "{action}: {limit} / {seconds} s",
+    "missing": "Permisos que faltan",
+    "missingValue": "Me falta: {perms}. La protección no puede bloquearlo todo sin ellos.",
+    "tip": "Consejo",
+    "tipValue": "Coloca mi rol arriba del todo en la lista de roles: solo puedo sancionar a miembros cuyo rol esté por debajo del mío."
+  },
+  "set": {
+    "saved": "Ajustes guardados",
+    "enabled": "Antinuke activado",
+    "enabledHelp": "Se vigilan las acciones sensibles de los miembros fuera de la lista blanca. Añade a tu equipo de confianza con /whitelist add.",
+    "disabled": "Antinuke desactivado",
+    "disabledHelp": "Ya no se vigila ninguna acción.",
+    "limitDone": "{action}: {limit} toleradas cada {seconds} s.",
+    "punishmentDone": "Sanción: {punishment}.",
+    "nothing": "No se ha indicado ningún ajuste."
+  },
+  "errors": {
+    "ownerOnly": "Solo para el propietario",
+    "ownerOnlyHelp": "Solo el propietario del servidor puede cambiar el antinuke y la lista blanca, para que una cuenta de administrador hackeada no pueda desactivarlos.",
+    "badRole": "Rol no válido",
+    "badRoleHelp": "Elige un rol normal situado por debajo del mío.",
+    "needRole": "Falta el rol de cuarentena",
+    "needRoleHelp": "Indica quarantine_role: un rol sin permisos que solo ve un canal de explicación."
+  },
+  "release": {
+    "audit": "Antinuke: roles devueltos por {user}",
+    "none": "{user} no tiene roles guardados que devolver.",
+    "gone": "{user} ya no está en el servidor.",
+    "title": "Roles devueltos",
+    "done": "{user} recuperó {restored} roles ({failed} no se pudieron devolver).",
+    "empty": "Ningún miembro en cuarentena.",
+    "line": "- {user}: {roles} roles retirados {at}",
+    "listTitle": "Miembros en cuarentena"
+  },
+  "whitelist": {
+    "title": "Lista blanca",
+    "ownerLine": "- {user} (propietario, siempre de confianza)",
+    "empty": "Nadie más por ahora.",
+    "footer": "{count} / {max} personas",
+    "isOwner": "El propietario siempre es de confianza.",
+    "already": "{user} ya está en la lista blanca.",
+    "full": "La lista blanca está llena ({max} personas).",
+    "added": "{user} ahora es de confianza",
+    "addedHelp": "El antinuke y el automod ya no controlan sus acciones. Concédelo solo a personas seguras.",
+    "notIn": "{user} no está en la lista blanca.",
+    "removed": "{user} ya no es de confianza"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Antinuke",
+      "description": "Bloquea las eliminaciones y cambios masivos hechos por miembros no autorizados."
+    },
+    "panic": {
+      "title": "Modo pánico",
+      "description": "Lo bloquea todo en cuanto se detecta un nuke."
+    },
+    "limits": {
+      "title": "Límites por acción",
+      "description": "Acciones toleradas dentro de la ventana; una más activa la protección."
+    },
+    "fields": {
+      "enabled": {
+        "label": "Protección activada",
+        "help": "Vigila las acciones sensibles de los miembros fuera de la lista blanca."
+      },
+      "punishment": {
+        "label": "Sanción",
+        "help": "Se aplica a quien supera un límite."
+      },
+      "quarantineRoleId": {
+        "label": "Rol de cuarentena",
+        "help": "Se asigna en cuarentena: un rol sin permisos que solo ve un canal."
+      },
+      "timeoutMinutes": {
+        "label": "Duración del aislamiento (minutos)",
+        "help": "Se usa cuando la sanción es un aislamiento temporal."
+      },
+      "restore": {
+        "label": "Restauración automática",
+        "help": "Vuelve a crear canales y roles eliminados, desbanea y borra lo creado."
+      },
+      "whitelist": {
+        "label": "Lista blanca (ID)",
+        "help": "Personas de confianza exentas. Resérvalo al propietario."
+      },
+      "autoPanic": {
+        "label": "Pánico automático",
+        "help": "Inicia el modo pánico en cuanto se bloquea un nuke."
+      },
+      "panicMinutes": {
+        "label": "Duración del pánico (minutos)",
+        "help": "El modo pánico se detiene solo tras este plazo."
+      },
+      "panicStripRoles": {
+        "label": "Quitar los permisos peligrosos",
+        "help": "Durante el pánico, los roles pierden sus permisos peligrosos y los recuperan al final."
+      }
+    },
+    "actions": {
+      "panicOn": "Activar el modo pánico",
+      "panicOff": "Detener el modo pánico"
+    },
+    "results": {
+      "panicOn": "Modo pánico activado.",
+      "panicOff": "Modo pánico detenido."
+    },
+    "limitFields": {
+      "channelDelete": {
+        "limit": "Eliminación de canales: acciones toleradas",
+        "window": "Eliminación de canales: ventana (segundos)"
+      },
+      "channelCreate": {
+        "limit": "Creación de canales: acciones toleradas",
+        "window": "Creación de canales: ventana (segundos)"
+      },
+      "roleDelete": {
+        "limit": "Eliminación de roles: acciones toleradas",
+        "window": "Eliminación de roles: ventana (segundos)"
+      },
+      "roleCreate": {
+        "limit": "Creación de roles: acciones toleradas",
+        "window": "Creación de roles: ventana (segundos)"
+      },
+      "rolePermGrant": {
+        "limit": "Permiso peligroso dado a un rol: acciones toleradas",
+        "window": "Permiso peligroso dado a un rol: ventana (segundos)"
+      },
+      "memberRoleGrant": {
+        "limit": "Rol peligroso dado a un miembro: acciones toleradas",
+        "window": "Rol peligroso dado a un miembro: ventana (segundos)"
+      },
+      "ban": {
+        "limit": "Baneos: acciones toleradas",
+        "window": "Baneos: ventana (segundos)"
+      },
+      "kick": {
+        "limit": "Expulsiones: acciones toleradas",
+        "window": "Expulsiones: ventana (segundos)"
+      },
+      "prune": {
+        "limit": "Purga de miembros: acciones toleradas",
+        "window": "Purga de miembros: ventana (segundos)"
+      },
+      "webhookCreate": {
+        "limit": "Creación de webhooks: acciones toleradas",
+        "window": "Creación de webhooks: ventana (segundos)"
+      },
+      "webhookSpam": {
+        "limit": "Spam por webhook: acciones toleradas",
+        "window": "Spam por webhook: ventana (segundos)"
+      },
+      "guildUpdate": {
+        "limit": "Cambio de los ajustes del servidor: acciones toleradas",
+        "window": "Cambio de los ajustes del servidor: ventana (segundos)"
+      },
+      "vanity": {
+        "limit": "Cambio de la URL personalizada: acciones toleradas",
+        "window": "Cambio de la URL personalizada: ventana (segundos)"
+      },
+      "emojiDelete": {
+        "limit": "Eliminación de emojis: acciones toleradas",
+        "window": "Eliminación de emojis: ventana (segundos)"
+      },
+      "stickerDelete": {
+        "limit": "Eliminación de stickers: acciones toleradas",
+        "window": "Eliminación de stickers: ventana (segundos)"
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "إعداد رسالة الترحيب",
+      "options": {
+        "set": { "description": "اختيار قناة الترحيب وتفعيلها", "options": { "channel": "القناة التي يُرحب فيها بالأعضاء الجدد" } },
+        "message": { "description": "تغيير رسالة الترحيب", "options": { "text": "قالب: {user} {username} {displayname} {userid} {server} {count} {created}، \\n = سطر جديد", "embed": "إرسال كإيمبد (نعم افتراضياً)" } },
+        "dm": { "description": "رسالة ترحيب خاصة", "options": { "enabled": "إرسال رسالة خاصة للأعضاء الجدد", "text": "قالب رسالة خاصة (نفس المتغيرات)" } },
+        "test": { "description": "اختبار الرسالة على نفسك" },
+        "show": { "description": "عرض إعدادات الترحيب" },
+        "disable": { "description": "تعطيل رسائل الترحيب" }
+      }
+    },
+    "goodbye": {
+      "description": "إعداد رسالة الوداع",
+      "options": {
+        "set": { "description": "اختيار قناة الوداع وتفعيلها", "options": { "channel": "القناة التي تُعلن فيها المغادرات" } },
+        "message": { "description": "تغيير رسالة الوداع", "options": { "text": "قالب: {user} {username} {displayname} {userid} {server} {count} {created}، \\n = سطر جديد", "embed": "إرسال كإيمبد (نعم افتراضياً)" } },
+        "test": { "description": "اختبار الرسالة على نفسك" },
+        "show": { "description": "عرض إعدادات الوداع" },
+        "disable": { "description": "تعطيل رسائل الوداع" }
+      }
+    },
+    "autorole": {
+      "description": "رتب تُعطى تلقائياً عند الانضمام",
+      "options": {
+        "add": { "description": "إضافة أوتورول", "options": { "role": "الرتبة المراد إعطاؤها", "type": { "description": "الأعضاء المعنيون (البشر افتراضياً)", "choices": { "humans": "بشر", "bots": "بوتات" } } } },
+        "remove": { "description": "إزالة أوتورول", "options": { "role": "الرتبة المراد إزالتها", "type": { "description": "الأعضاء المعنيون (الكل افتراضياً)", "choices": { "humans": "بشر", "bots": "بوتات" } } } },
+        "list": { "description": "عرض الأوتورولز" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "أهلاً {user} في **{server}**! أصبحنا {count}.",
+    "goodbye": "**{username}** غادر **{server}**. أصبحنا {count}.",
+    "dm": "أهلاً في **{server}**، {displayname}! تذكر قراءة قواعد السيرفر."
+  },
+  "welcome": {
+    "setTitle": "تم تفعيل الترحيب",
+    "setDone": "الأعضاء الجدد سيتم ترحيبهم في {channel}. خصص النص بـ `/welcome message`.",
+    "messageTitle": "تم تغيير رسالة الترحيب",
+    "messageDone": "إليك كيف ستبدو.",
+    "showTitle": "إعدادات الترحيب",
+    "disabledTitle": "تم تعطيل الترحيب",
+    "disabledDone": "لن تُرسل أي رسالة ترحيب (قناة أو خاصة) بعد الآن.",
+    "dmTitle": "الرسالة الخاصة",
+    "dmOn": "الأعضاء الجدد سيحصلون على هذه الرسالة خاصة (إذا كانوا يقبلون الرسائل الخاصة من السيرفر).",
+    "dmOff": "رسالة الترحيب الخاصة معطلة."
+  },
+  "goodbye": {
+    "setTitle": "تم تفعيل الوداع",
+    "setDone": "المغادرات ستُعلن في {channel}. خصص النص بـ `/goodbye message`.",
+    "messageTitle": "تم تغيير رسالة الوداع",
+    "messageDone": "إليك كيف ستبدو.",
+    "showTitle": "إعدادات الوداع",
+    "disabledTitle": "تم تعطيل الوداع",
+    "disabledDone": "لن تُرسل أي رسالة وداع بعد الآن."
+  },
+  "common": {
+    "preview": "معاينة",
+    "unknownVars": "متغيرات غير معروفة (بقيت كما هي)",
+    "variables": "المتغيرات المتاحة",
+    "testTitle": "تم إرسال الاختبار",
+    "testSent": "تم إرسال الرسالة إلى {channel}.",
+    "testDmSent": "تم إرسال الرسالة الخاصة إليك.",
+    "testDmFailed": "تعذر إرسال الرسالة الخاصة: رسائلك الخاصة غالباً مغلقة.",
+    "testDisabledNote": "ملاحظة: هذه الرسالة معطلة، الأعضاء الجدد الحقيقيون لن يحصلوا عليها.",
+    "on": "مفعل",
+    "off": "معطل",
+    "status": "الحالة",
+    "channel": "القناة",
+    "embed": "إيمبد",
+    "template": "القالب",
+    "none": "لا شيء"
+  },
+  "errors": {
+    "title": "غير ممكن",
+    "missingPerms": "أفتقر لهذه الصلاحيات في {channel}: {perms}. أضفها وحاول مرة أخرى.",
+    "noChannel": "لا توجد قناة مضبوطة (أو حُذفت). استخدم `{command}` أولاً.",
+    "sendFailed": "تعذر إرسال الرسالة. تحقق من صلاحياتي في القناة المضبوطة."
+  },
+  "autorole": {
+    "reason": "أوتورول عند الانضمام",
+    "types": { "humans": "بشر", "bots": "بوتات" },
+    "deletedRole": "رتبة محذوفة (`{id}`)",
+    "problems": {
+      "managed": "هذه الرتبة تدار بتكامل (بوت، بوست) ولا يمكن إعطاؤها.",
+      "everyone": "رتبة @everyone لا يمكن إعطاؤها.",
+      "hierarchy": "هذه الرتبة فوق أعلى رتبتي: انقل رتبتي لأعلى في إعدادات السيرفر.",
+      "noPermission": "أفتقر لصلاحية \"إدارة الرتب\"."
+    },
+    "listTitle": "الأوتورولز",
+    "listDesc": "تُعطى عند كل انضمام (بعد قبول القواعد إذا كان فحص العضوية مفعل).",
+    "title": "الأوتورولز",
+    "dangerous": "{role} تعطي صلاحيات مودراشن أو مدير: إعطاؤها لكل الوافدين خطير.",
+    "already": "{role} تُعطى بالفعل لـ {type}.",
+    "limit": "{max} أوتورولز كحد أقصى لكل نوع.",
+    "added": "{role} ستُعطى تلقائياً لـ {type}.",
+    "notFound": "{role} ليست أوتورول.",
+    "removed": "{role} لم تعد تُعطى تلقائياً."
+  },
+  "dashboard": {
+    "welcome": { "title": "الترحيب", "description": "رسالة تُرسل عند انضمام عضو. متغيرات: {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "الوداع" },
+    "autorole": { "title": "الأوتورولز", "description": "رتب تُعطى عند الانضمام. يجب أن تكون تحت رتبة البوت." },
+    "fields": {
+      "enabled": "مفعل",
+      "channel": "القناة",
+      "message": "الرسالة",
+      "messageHelp": "فارغ: الرسالة الافتراضية. متغيرات: {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "إرسال كإيمبد",
+      "dmEnabled": "رسالة ترحيب خاصة",
+      "dmMessage": "نص الرسالة الخاصة",
+      "humans": "رتب للبشر",
+      "bots": "رتب للبوتات"
+    },
+    "actions": { "test": "اختبار رسالة الترحيب" },
+    "results": {
+      "notMember": "لست عضواً في هذا السيرفر.",
+      "noChannel": "لا توجد قناة ترحيب مضبوطة.",
+      "failed": "تعذر إرسال الرسالة: تحقق من صلاحيات البوت.",
+      "sent": "تم إرسال رسالة الاختبار."
+    }
+  }
+}

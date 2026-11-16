@@ -1,0 +1,316 @@
+{
+  "defaults": {
+    "currency": "monedas"
+  },
+  "errors": {
+    "title": "Error",
+    "botTarget": "Los bots no tienen cartera.",
+    "notEnough": "No tienes suficientes monedas para esto.",
+    "invalidAmount": "Cantidad no válida. Usa un número entero positivo o \"all\".",
+    "cooldown": "Espera {time} más.",
+    "alreadyPlaying": "Ya tienes una partida de blackjack en curso. Termínala primero.",
+    "gameExpired": "Esta partida ya no existe.",
+    "notYourGame": "Esta mesa no es tuya. Empieza la tuya con /blackjack.",
+    "adminOnly": "Esta acción necesita el permiso Gestionar el servidor."
+  },
+  "balance": {
+    "title": "Saldo de {user}",
+    "wallet": "Cartera",
+    "bank": "Banco",
+    "total": "Total"
+  },
+  "daily": {
+    "title": "Recompensa diaria",
+    "done": "Recibes {amount}.",
+    "streak": "Racha (días)"
+  },
+  "weekly": {
+    "title": "Recompensa semanal",
+    "done": "Recibes {amount}. Vuelve dentro de 7 días."
+  },
+  "work": {
+    "title": "Jornada de trabajo",
+    "jobs": {
+      "0": "Repartiste paquetes todo el día: {amount}.",
+      "1": "Arreglaste la bici de un vecino: {amount}.",
+      "2": "Serviste cafés en la barra: {amount}.",
+      "3": "Echaste una mano en una obra: {amount}.",
+      "4": "Cuidaste el gato de una familia: {amount}."
+    }
+  },
+  "pay": {
+    "title": "Transferencia",
+    "done": "Enviaste {amount} a {user}.",
+    "self": "No puedes enviarte monedas a ti mismo."
+  },
+  "deposit": {
+    "title": "Depósito",
+    "done": "{amount} pasan al banco."
+  },
+  "withdraw": {
+    "title": "Retirada",
+    "done": "{amount} pasan a tu cartera."
+  },
+  "rob": {
+    "title": "Robo",
+    "self": "No puedes robarte a ti mismo.",
+    "tooPoor": "Necesitas al menos {min} en la cartera para intentar un robo.",
+    "victimBroke": "{user} no tiene nada en la cartera que robar.",
+    "success": "Te llevaste {amount} de {user}.",
+    "failed": "Te pillaron y pagas una multa de {amount}."
+  },
+  "shop": {
+    "title": "Tienda",
+    "empty": "La tienda está vacía. Un administrador puede añadir artículos con /shop add.",
+    "givesRole": "Da el rol {role}",
+    "added": "Artículo añadido",
+    "addedText": "\"{name}\" ya está a la venta.",
+    "badName": "Este nombre no tiene letras ni cifras válidas.",
+    "exists": "Ya existe un artículo llamado \"{name}\".",
+    "full": "La tienda está llena (máximo {max} artículos).",
+    "roleUnusable": "Este rol no se puede asignar (lo gestiona una integración, o es @everyone).",
+    "botNeedsRoles": "Me falta el permiso Gestionar roles.",
+    "roleTooHigh": "No puedo dar {role}: está por encima de mi rol más alto.",
+    "notFound": "Este artículo no existe (o ya no).",
+    "removed": "Artículo retirado",
+    "removedText": "\"{name}\" ya no está a la venta. Quien lo compró antes lo conserva.",
+    "roleMissing": "El rol de este artículo se borró. Pide a un administrador que lo corrija.",
+    "roleFailed": "No pude darte el rol. Tu compra ha sido reembolsada.",
+    "alreadyOwned": "Ya tienes \"{name}\".",
+    "bought": "Compra realizada",
+    "boughtText": "Compraste \"{name}\" por {amount}."
+  },
+  "inventory": {
+    "title": "Inventario",
+    "empty": "Aún no has comprado nada. Prueba /shop list.",
+    "removed": "Artículo retirado ×{qty}"
+  },
+  "richest": {
+    "title": "Los más ricos",
+    "empty": "Nadie tiene monedas en este servidor todavía."
+  },
+  "coinflip": {
+    "title": "Cara o cruz",
+    "won": "La moneda cae en {result}. Ganas {amount}.",
+    "lost": "La moneda cae en {result}. Pierdes {amount}.",
+    "sides": {
+      "heads": "cara",
+      "tails": "cruz"
+    }
+  },
+  "slots": {
+    "title": "Tragaperras",
+    "reels": "Rodillos",
+    "won": "Ganas {amount}.",
+    "even": "Recuperas tu apuesta.",
+    "lost": "Pierdes {amount}."
+  },
+  "blackjack": {
+    "title": "Blackjack",
+    "turn": "Pide carta, plántate o dobla tu apuesta.",
+    "dealer": "Crupier",
+    "you": "Tú",
+    "bet": "Apuesta",
+    "buttons": {
+      "hit": "Pedir",
+      "stand": "Plantarse",
+      "double": "Doblar"
+    },
+    "outcome": {
+      "blackjack": {
+        "title": "¡Blackjack!",
+        "text": "Ganas {amount}. Pago 3 a 2."
+      },
+      "win": {
+        "title": "Ganaste",
+        "text": "Ganas {amount}."
+      },
+      "push": {
+        "title": "Empate",
+        "text": "Tu apuesta te es devuelta."
+      },
+      "lose": {
+        "title": "Perdiste",
+        "text": "Pierdes {amount}."
+      },
+      "bust": {
+        "title": "Te pasaste",
+        "text": "Más de 21: pierdes {amount}."
+      }
+    }
+  },
+  "config": {
+    "title": "Ajustes de la economía",
+    "saved": "Ajustes guardados",
+    "minAboveMax": "El pago mínimo del trabajo no puede superar al máximo.",
+    "currency": "Moneda",
+    "symbol": "Símbolo",
+    "daily": "Diaria",
+    "weekly": "Semanal",
+    "work": "Trabajo",
+    "robFail": "Fallo de un robo"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Economía",
+      "description": "Importes de las recompensas y reglas de la moneda.",
+      "currency": {
+        "label": "Nombre de la moneda",
+        "help": "Vacío = nombre por defecto en el idioma del servidor."
+      },
+      "symbol": {
+        "label": "Símbolo",
+        "help": "Se muestra tras cada importe."
+      },
+      "daily": {
+        "label": "Recompensa diaria",
+        "help": "Importe de /daily, antes del bono de racha."
+      },
+      "weekly": {
+        "label": "Recompensa semanal",
+        "help": "Importe de /weekly."
+      },
+      "workMin": {
+        "label": "Trabajo: pago mínimo",
+        "help": "Límite inferior de /work."
+      },
+      "workMax": {
+        "label": "Trabajo: pago máximo",
+        "help": "Límite superior de /work."
+      },
+      "robFailPercent": {
+        "label": "Robos fallidos (%)",
+        "help": "Probabilidad de que un robo falle y cueste una multa."
+      }
+    }
+  },
+  "commands": {
+    "balance": {
+      "description": "Muestra tu cartera y tu banco",
+      "options": {
+        "user": "Miembro a consultar"
+      }
+    },
+    "work": {
+      "description": "Trabaja para ganar dinero (una vez por hora)"
+    },
+    "pay": {
+      "description": "Envía monedas de tu cartera a otro miembro",
+      "options": {
+        "user": "Destinatario",
+        "amount": "Cantidad, o \"all\""
+      }
+    },
+    "shop": {
+      "description": "Explorar y comprar artículos",
+      "options": {
+        "list": {
+          "description": "Muestra los artículos de la tienda"
+        },
+        "buy": {
+          "description": "Comprar un artículo",
+          "options": {
+            "item": "Artículo a comprar"
+          }
+        },
+        "add": {
+          "description": "Añade un artículo a la tienda (Gestionar el servidor)",
+          "options": {
+            "name": "Nombre del artículo",
+            "price": "Precio",
+            "description": "Descripción corta",
+            "role": "Rol que se da al comprar"
+          }
+        },
+        "remove": {
+          "description": "Quita un artículo de la tienda (Gestionar el servidor)",
+          "options": {
+            "item": "Artículo a quitar"
+          }
+        }
+      }
+    },
+    "bank": {
+      "description": "Depositar y retirar monedas",
+      "options": {
+        "deposit": {
+          "description": "Pasa monedas de tu cartera al banco",
+          "options": {
+            "amount": "Cantidad, o \"all\""
+          }
+        },
+        "withdraw": {
+          "description": "Pasa monedas del banco a tu cartera",
+          "options": {
+            "amount": "Cantidad, o \"all\""
+          }
+        }
+      }
+    },
+    "gamble": {
+      "description": "Juegos de azar",
+      "options": {
+        "coinflip": {
+          "description": "Apuesta a cara o cruz (50/50)",
+          "options": {
+            "amount": "Apuesta, o \"all\"",
+            "side": {
+              "description": "Tu elección",
+              "choices": {
+                "heads": "Cara",
+                "tails": "Cruz"
+              }
+            }
+          }
+        },
+        "slots": {
+          "description": "Gira la tragaperras",
+          "options": {
+            "amount": "Apuesta, o \"all\""
+          }
+        },
+        "blackjack": {
+          "description": "Juega al blackjack contra el crupier",
+          "options": {
+            "amount": "Apuesta, o \"all\""
+          }
+        }
+      }
+    },
+    "eco": {
+      "description": "Economía: recompensas, robos, inventario y ajustes",
+      "options": {
+        "daily": {
+          "description": "Reclama tu recompensa diaria"
+        },
+        "weekly": {
+          "description": "Reclama tu recompensa semanal"
+        },
+        "rob": {
+          "description": "Intenta robar a otro miembro (arriesgado)",
+          "options": {
+            "user": "Miembro a robar"
+          }
+        },
+        "inventory": {
+          "description": "Muestra los artículos que compraste"
+        },
+        "richest": {
+          "description": "Muestra los miembros más ricos"
+        },
+        "config": {
+          "description": "Muestra o cambia los ajustes (Gestionar el servidor)",
+          "options": {
+            "currency": "Nombre de la moneda",
+            "symbol": "Símbolo de la moneda",
+            "daily": "Recompensa diaria",
+            "weekly": "Recompensa semanal",
+            "work_min": "Pago mínimo del trabajo",
+            "work_max": "Pago máximo del trabajo",
+            "rob_fail": "Probabilidad (%) de fallo de un robo"
+          }
+        }
+      }
+    }
+  }
+}

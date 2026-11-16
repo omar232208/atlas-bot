@@ -1,0 +1,162 @@
+{
+  "commands": {
+    "dashboard": {
+      "description": "Abrir el panel web del servidor"
+    }
+  },
+  "command": {
+    "title": "Panel",
+    "noPermission": "Necesitas el permiso Gestionar servidor para abrir el panel.",
+    "notRunning": "El panel web no está activado. Define DASHBOARD_PORT (o PORT) en el archivo .env y reinicia el bot.",
+    "noUrl": "El panel funciona en el puerto {port}, pero su dirección pública es desconocida. Añade DASHBOARD_URL al archivo .env (en ACLClouds: copia la dirección HTTPS de la pestaña \"Puerto / Dirección\"), o abre esa dirección una vez en tu navegador, y vuelve a usar /dashboard.",
+    "body": "[Abrir el panel]({url})\n\nEste enlace es personal, de un solo uso y caduca en 10 minutos. No lo compartas.",
+    "button": "Abrir el panel",
+    "footer": "La sesión dura 7 días en este navegador"
+  },
+  "console": {
+    "disabled": "Panel web desactivado: define DASHBOARD_PORT (o PORT) en .env para activarlo.",
+    "listenFailed": "El panel no pudo escuchar en el puerto {port}: {error}",
+    "started": "Panel web en línea en el puerto {port}: {url}",
+    "startedNoUrl": "Panel web en línea en el puerto {port}. Define DASHBOARD_URL para que /dashboard pueda enviar enlaces de acceso."
+  },
+  "log": {
+    "none": "ninguno",
+    "on": "activado",
+    "off": "desactivado",
+    "more": "y {count} cambios más",
+    "configTitle": "Ajustes cambiados desde el panel",
+    "by": "Por {user} ({tag})",
+    "actionTitle": "Acción ejecutada desde el panel",
+    "actionBy": "{user} ({tag}) ejecutó «{action}»."
+  },
+  "api": {
+    "actionFailed": "La acción falló. Revisa los permisos del bot e inténtalo de nuevo.",
+    "actionDone": "Hecho.",
+    "ownerOnly": "Solo el propietario del servidor (o un propietario del bot) puede cambiar estos ajustes."
+  },
+  "modules": {
+    "core-commands": "General",
+    "antiraid": "Anti-raid",
+    "antinuke": "Anti-nuke",
+    "automod": "Automoderación",
+    "moderation": "Moderación",
+    "logs": "Registros",
+    "welcome": "Bienvenida",
+    "verification": "Verificación",
+    "tickets": "Tickets",
+    "roles": "Roles",
+    "utility": "Utilidades",
+    "giveaways": "Sorteos",
+    "levels": "Niveles",
+    "backup": "Copias de seguridad",
+    "economy": "Economía",
+    "fun": "Juegos",
+    "community": "Comunidad",
+    "music": "Música",
+    "dashboard": "Panel"
+  },
+  "ui": {
+    "title": "Panel de ACLClouds Bot",
+    "server": "Servidor",
+    "chooseServer": "Elegir un servidor",
+    "language": "Idioma",
+    "menu": "Menú",
+    "logout": "Cerrar sesión",
+    "navigation": "Navegación",
+    "overview": "Resumen",
+    "modules": "Módulos",
+    "enableModule": "Activar {module}",
+    "hostedBy": "Alojado gratis en",
+    "unsavedRegion": "Cambios sin guardar",
+    "unsavedOne": "1 cambio sin guardar",
+    "unsavedMany": "{count} cambios sin guardar",
+    "reset": "Descartar",
+    "save": "Guardar",
+    "saved": "Cambios guardados.",
+    "saveFailed": "Algunos valores no son válidos. Corrígelos e inténtalo de nuevo.",
+    "discardTitle": "¿Descartar los cambios?",
+    "discardBody": "Se perderán los cambios sin guardar de este servidor.",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "enabled": "Activado",
+    "disabled": "Desactivado",
+    "protections": "Protecciones",
+    "noProtections": "No hay ningún módulo de protección cargado.",
+    "recentChanges": "Cambios recientes",
+    "otherModules": "Otros módulos",
+    "members": "{count} miembros",
+    "stats": {
+      "members": "Miembros",
+      "channels": "Canales",
+      "roles": "Roles",
+      "tickets": "Tickets abiertos"
+    },
+    "history": {
+      "config": "{user} cambió {module}",
+      "action": "{user} ejecutó una acción en {module}",
+      "empty": "Todavía no hay cambios."
+    },
+    "actions": "Acciones",
+    "actionConfirm": "Esta acción no se puede deshacer. ¿Quieres continuar?",
+    "actionDone": "Hecho.",
+    "actionFailed": "La acción falló.",
+    "moduleOff": "Este módulo está desactivado. Tus ajustes se conservan.",
+    "notFound": "Esta página no existe.",
+    "loading": "Cargando...",
+    "forbidden": "Ya no tienes acceso a este servidor. Se necesita el permiso Gestionar servidor.",
+    "loadFailed": "No se pudo cargar este servidor.",
+    "retry": "Reintentar",
+    "picker": {
+      "title": "Tus servidores",
+      "subtitle": "Elige el servidor que quieres configurar.",
+      "empty": "No hay servidores disponibles. Escribe este comando en tu servidor para recibir un enlace de acceso:"
+    },
+    "login": {
+      "title": "Acceder al panel",
+      "signingIn": "Iniciando sesión...",
+      "howTo": "Escribe este comando en tu servidor de Discord para recibir un enlace de acceso personal:",
+      "or": "o",
+      "discord": "Iniciar sesión con Discord",
+      "linkInvalid": "Este enlace ha caducado o ya se usó. Vuelve a usar /dashboard para obtener uno nuevo.",
+      "rateLimited": "Demasiados intentos. Espera un minuto e inténtalo de nuevo.",
+      "oauthFailed": "El inicio de sesión con Discord falló. Inténtalo de nuevo."
+    },
+    "field": {
+      "voice": "voz",
+      "none": "Ninguno",
+      "missing": "No encontrado (¿eliminado?)",
+      "emptyList": "Sin elementos",
+      "remove": "Quitar",
+      "add": "Añadir",
+      "addChannel": "Añadir un canal...",
+      "addRole": "Añadir un rol...",
+      "addItem": "Nuevo elemento",
+      "unit": "Unidad",
+      "units": {
+        "d": "días",
+        "h": "horas",
+        "m": "minutos",
+        "s": "segundos"
+      }
+    },
+    "errors": {
+      "type": "Valor no válido.",
+      "required": "Este campo es obligatorio.",
+      "min": "El mínimo es {min}.",
+      "max": "El máximo es {max}.",
+      "maxLength": "{max} caracteres como máximo.",
+      "minLength": "{min} caracteres como mínimo.",
+      "option": "Opción no válida.",
+      "unknownChannel": "Este canal ya no existe.",
+      "wrongChannelType": "Este tipo de canal no se acepta aquí.",
+      "unknownRole": "Este rol ya no existe.",
+      "tooMany": "{max} elementos como máximo.",
+      "tooFew": "{min} elementos como mínimo.",
+      "unknownField": "Este ajuste ya no existe.",
+      "empty": "No hay nada que guardar.",
+      "rateLimited": "Demasiadas solicitudes. Espera un minuto.",
+      "ownerOnly": "Solo para el propietario del servidor."
+    },
+    "ownerOnly": "Solo para el propietario del servidor."
+  }
+}

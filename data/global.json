@@ -1,0 +1,44 @@
+{
+  "scheduler": {
+    "jobs": {
+      "0e443a04-13b8-4321-924e-95de39334f3c": {
+        "id": "0e443a04-13b8-4321-924e-95de39334f3c",
+        "type": "giveaways:end",
+        "runAt": 1794922952270,
+        "payload": {
+          "guildId": "1446465451155521642",
+          "giveawayId": "88410d4b"
+        }
+      },
+      "66ce1c9e-da6d-4e3f-8f90-77b14e8cc245": {
+        "id": "66ce1c9e-da6d-4e3f-8f90-77b14e8cc245",
+        "type": "backup:tick",
+        "runAt": 1794840190604,
+        "payload": null
+      },
+      "c6d20e9c-ced3-46cc-8c78-09a06734f8fd": {
+        "id": "c6d20e9c-ced3-46cc-8c78-09a06734f8fd",
+        "type": "community:birthdays",
+        "runAt": 1794841205000,
+        "payload": null
+      }
+    }
+  },
+  "dashboard": {
+    "secret": "gL85IAcyMiZPRTlQqEk69BP3HDuX4_EicSaxlAiqvM67rFroo5bacOtOvEjHnTWq",
+    "sessions": {
+      "t03F3EKq0wfjOmWsHhWBxYa2M8mD-jp2zcul81Xryjo": {
+        "userId": "1366747566020231168",
+        "guilds": [
+          "1446465451155521642",
+          "1571529741163303035",
+          "1561144358915547278"
+        ],
+        "oauth": null,
+        "csrf": "qrpGOwUhdw03aF_2dbqquEv4WGhUNcew",
+        "createdAt": 1794749072436,
+        "expiresAt": 1795353872436
+      }
+    }
+  }
+}

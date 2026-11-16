@@ -1,0 +1,149 @@
+{
+  "errors": {
+    "title": "Erro",
+    "botTarget": "Os bots não ganham XP.",
+    "adminOnly": "Esta ação precisa da permissão Gerir servidor.",
+    "roleUnusable": "Este cargo não pode ser atribuído (gerido por uma integração, ou @everyone).",
+    "botNeedsRoles": "Falta-me a permissão Gerir cargos.",
+    "roleTooHigh": "Não consigo dar {role}: está acima do meu cargo mais alto.",
+    "botMissing": "Falta-me uma permissão nesse canal: {perms}.",
+    "tooManyRewards": "Não pode haver mais de {max} recompensas de nível.",
+    "noReward": "Não há recompensa para o nível {level}."
+  },
+  "rank": {
+    "title": "Nível de {user}",
+    "disabled": "Os níveis não estão ativados neste servidor. Um administrador pode usar /levels enable.",
+    "none": "Ainda não tens XP. Escreve algumas mensagens!",
+    "level": "Nível",
+    "rank": "Posição",
+    "xp": "XP total",
+    "progress": "{current} / {required} XP para o próximo nível"
+  },
+  "leaderboard": {
+    "title": "Classificação de níveis",
+    "empty": "Ninguém ganhou XP ainda.",
+    "line": "**#{rank}** {user} · nível {level} · {xp} XP"
+  },
+  "levelUp": {
+    "title": "Subiste de nível!",
+    "text": "{user} chegou ao nível {level}."
+  },
+  "enable": {
+    "title": "Níveis ativados",
+    "done": "Os membros passam a ganhar XP ao escrever."
+  },
+  "disable": {
+    "title": "Níveis desativados",
+    "done": "Os membros deixam de ganhar XP. Os dados são mantidos."
+  },
+  "config": {
+    "title": "Definições de níveis",
+    "saved": "Definições guardadas",
+    "minAboveMax": "O XP mínimo não pode ser superior ao máximo.",
+    "enabled": "Ativados",
+    "announce": "Mensagens de subida de nível",
+    "channel": "Canal de anúncios",
+    "sameChannel": "Mesmo canal da mensagem",
+    "cooldown": "Intervalo entre dois ganhos",
+    "xp": "XP por mensagem",
+    "on": "sim",
+    "off": "não"
+  },
+  "reset": {
+    "title": "XP reposto",
+    "done": "O XP de {user} foi reposto a zero."
+  },
+  "reward": {
+    "addedTitle": "Recompensa adicionada",
+    "added": "O cargo {role} é dado no nível {level}.",
+    "removedTitle": "Recompensa removida",
+    "removed": "Já não é dado nenhum cargo no nível {level}.",
+    "listTitle": "Recompensas de nível",
+    "none": "Ainda não há recompensas de cargo.",
+    "line": "Nível {level}: {role}"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Níveis",
+      "description": "XP por mensagem e mensagens de subida de nível.",
+      "enabled": {
+        "label": "Ativar níveis",
+        "help": "Os membros ganham XP ao escrever mensagens."
+      },
+      "cooldown": {
+        "label": "Intervalo entre dois ganhos (segundos)",
+        "help": "Um membro só ganha XP uma vez por intervalo."
+      },
+      "xpMin": {
+        "label": "XP mínimo por mensagem",
+        "help": "Limite inferior do ganho aleatório."
+      },
+      "xpMax": {
+        "label": "XP máximo por mensagem",
+        "help": "Limite superior do ganho aleatório."
+      },
+      "announce": {
+        "label": "Anunciar subidas de nível",
+        "help": "Envia uma mensagem em cada subida de nível."
+      },
+      "announceChannel": {
+        "label": "Canal de anúncios",
+        "help": "Vazio = o canal da mensagem que causou a subida."
+      }
+    }
+  },
+  "commands": {
+    "rank": {
+      "description": "Mostra o teu nível e a tua posição",
+      "options": {
+        "user": "Membro a consultar"
+      }
+    },
+    "leaderboard": {
+      "description": "Mostra os membros mais ativos"
+    },
+    "levels": {
+      "description": "Configurar níveis e recompensas",
+      "options": {
+        "enable": {
+          "description": "Ativa o XP por mensagens (Gerir servidor)"
+        },
+        "disable": {
+          "description": "Desativa o XP por mensagens (Gerir servidor)"
+        },
+        "config": {
+          "description": "Mostra ou altera as definições (Gerir servidor)",
+          "options": {
+            "channel": "Canal das mensagens de nível",
+            "announce": "Anunciar subidas de nível",
+            "cooldown": "Segundos entre dois ganhos de XP",
+            "xp_min": "XP mínimo por mensagem",
+            "xp_max": "XP máximo por mensagem"
+          }
+        },
+        "reset": {
+          "description": "Repõe o XP de um membro a zero (Gerir servidor)",
+          "options": {
+            "user": "Membro"
+          }
+        },
+        "reward-add": {
+          "description": "Dá um cargo ao atingir um nível (Gerir servidor)",
+          "options": {
+            "level": "Nível",
+            "role": "Cargo a dar"
+          }
+        },
+        "reward-remove": {
+          "description": "Remove a recompensa de um nível (Gerir servidor)",
+          "options": {
+            "level": "Nível"
+          }
+        },
+        "reward-list": {
+          "description": "Lista as recompensas de cargo"
+        }
+      }
+    }
+  }
+}

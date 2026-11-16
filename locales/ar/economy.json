@@ -1,0 +1,316 @@
+{
+  "defaults": {
+    "currency": "عملات"
+  },
+  "errors": {
+    "title": "خطأ",
+    "botTarget": "البوتات ليس لديها محفظة.",
+    "notEnough": "ليس لديك عملات كافية لهذا.",
+    "invalidAmount": "مبلغ غير صالح. استخدم رقماً صحيحاً موجباً أو \"all\".",
+    "cooldown": "انتظر {time} أكثر.",
+    "alreadyPlaying": "لديك لعبة بلاك جاك جارية. أنهِها أولاً.",
+    "gameExpired": "هذه اللعبة لم تعد موجودة.",
+    "notYourGame": "هذه الطاولة ليست لك. ابدأ لعبتك بـ /blackjack.",
+    "adminOnly": "هذا الإجراء يحتاج صلاحية إدارة السيرفر."
+  },
+  "balance": {
+    "title": "رصيد {user}",
+    "wallet": "المحفظة",
+    "bank": "البنك",
+    "total": "الإجمالي"
+  },
+  "daily": {
+    "title": "مكافأة يومية",
+    "done": "حصلت على {amount}.",
+    "streak": "سلسلة (أيام)"
+  },
+  "weekly": {
+    "title": "مكافأة أسبوعية",
+    "done": "حصلت على {amount}. عد بعد 7 أيام."
+  },
+  "work": {
+    "title": "يوم عمل",
+    "jobs": {
+      "0": "سلمت طروداً طوال اليوم: {amount}.",
+      "1": "أصلحت دراجة جار: {amount}.",
+      "2": "قدمت قهوة عند الكاونتر: {amount}.",
+      "3": "ساعدت في موقع بناء: {amount}.",
+      "4": "رعيت قطة عائلة: {amount}."
+    }
+  },
+  "pay": {
+    "title": "تحويل",
+    "done": "أرسلت {amount} لـ {user}.",
+    "self": "لا يمكنك إرسال عملات لنفسك."
+  },
+  "deposit": {
+    "title": "إيداع",
+    "done": "تم نقل {amount} لبنكك."
+  },
+  "withdraw": {
+    "title": "سحب",
+    "done": "تم نقل {amount} لمحفظتك."
+  },
+  "rob": {
+    "title": "سرقة",
+    "self": "لا يمكنك سرقة نفسك.",
+    "tooPoor": "تحتاج {min} على الأقل في محفظتك لمحاولة سرقة.",
+    "victimBroke": "محفظته {user} فارغة.",
+    "success": "هربت بـ {amount} من {user}.",
+    "failed": "أمسكوا بك وتدفع غرامة {amount}."
+  },
+  "shop": {
+    "title": "المتجر",
+    "empty": "المتجر فارغ. مدير يستطيع إضافة عناصر بـ /shop add.",
+    "givesRole": "تعطي الرتبة {role}",
+    "added": "تمت إضافة العنصر",
+    "addedText": "الآن \"{name}\" للبيع.",
+    "badName": "هذا الاسم لا يحتوي حروفاً أو أرقاماً صالحة.",
+    "exists": "عنصر اسمه \"{name}\" موجود بالفعل.",
+    "full": "المتجر ممتلئ ({max} عناصر كحد أقصى).",
+    "roleUnusable": "هذه الرتبة لا يمكن إعطاؤها (مُدارت بتكامل، أو @everyone).",
+    "botNeedsRoles": "أفتقر لصلاحية إدارة الرتب.",
+    "roleTooHigh": "لا أستطيع إعطاء {role}: فوق أعلى رتبتي.",
+    "notFound": "هذا العنصر غير موجود (بعد الآن).",
+    "removed": "تمت إزالة العنصر",
+    "removedText": "\"name}\" لم تعد للبيع. من اشتروها سابقاً يحتفظون بها.",
+    "roleMissing": "رتبة هذا العنصر حُذفت. اطلب من مدير إصلاح العنصر.",
+    "roleFailed": "لم أستطع إعطاؤك الرتبة. تم رد مبلغ شرائك.",
+    "alreadyOwned": "تملك \"{name}\" بالفعل.",
+    "bought": "اكتمل الشراء",
+    "boughtText": "اشتريت \"{name}\" بـ {amount}."
+  },
+  "inventory": {
+    "title": "المخزن",
+    "empty": "لم تشترِ شيئاً بعد. جرب /shop list.",
+    "removed": "تمت إزالة العنصر ×{qty}"
+  },
+  "richest": {
+    "title": "الأغنى",
+    "empty": "لا أحد لديه عملات في هذا السيرفر بعد."
+  },
+  "coinflip": {
+    "title": "قلب العملة",
+    "won": "العملة وقعت على {result}. ربحت {amount}.",
+    "lost": "العملة وقعت على {result}. خسرت {amount}.",
+    "sides": {
+      "heads": "وجه",
+      "tails": "كتابة"
+    }
+  },
+  "slots": {
+    "title": "آلة القمار",
+    "reels": "البكرات",
+    "won": "ربحت {amount}.",
+    "even": "استعدت رهانك.",
+    "lost": "خسرت {amount}."
+  },
+  "blackjack": {
+    "title": "بلاك جاك",
+    "turn": "اطلب ورقة، قف، أو ضعف رهانك.",
+    "dealer": "الموزع",
+    "you": "أنت",
+    "bet": "الرهان",
+    "buttons": {
+      "hit": "ورقة",
+      "stand": "قف",
+      "double": "ضعف"
+    },
+    "outcome": {
+      "blackjack": {
+        "title": "بلاك جاك!",
+        "text": "ربحت {amount}. يدفع 3 إلى 2."
+      },
+      "win": {
+        "title": "ربحت",
+        "text": "ربحت {amount}."
+      },
+      "push": {
+        "title": "تعادل",
+        "text": "رهانك أُعيد."
+      },
+      "lose": {
+        "title": "خسرت",
+        "text": "خسرت {amount}."
+      },
+      "bust": {
+        "title": "احترقت",
+        "text": "أكثر من 21: خسرت {amount}."
+      }
+    }
+  },
+  "config": {
+    "title": "إعدادات الاقتصاد",
+    "saved": "تم حفظ الإعدادات",
+    "minAboveMax": "حد العمل الأدنى لا يمكن أن يكون فوق الأعلى.",
+    "currency": "العملة",
+    "symbol": "الرمز",
+    "daily": "يومي",
+    "weekly": "أسبوعي",
+    "work": "عمل",
+    "robFail": "فشل السرقة"
+  },
+  "dashboard": {
+    "general": {
+      "title": "الاقتصاد",
+      "description": "مبالغ المكافآت وقواعد العملة.",
+      "currency": {
+        "label": "اسم العملة",
+        "help": "فارغ = الاسم الافتراضي بلغة السيرفر."
+      },
+      "symbol": {
+        "label": "الرمز",
+        "help": "يُعرض بعد كل مبلغ."
+      },
+      "daily": {
+        "label": "مكافأة يومية",
+        "help": "مبلغ /daily، قبل مكافأة السلسلة."
+      },
+      "weekly": {
+        "label": "مكافأة أسبوعية",
+        "help": "مبلغ /weekly."
+      },
+      "workMin": {
+        "label": "عمل: حد أدنى",
+        "help": "الحد الأدنى لـ /work."
+      },
+      "workMax": {
+        "label": "عمل: حد أقصى",
+        "help": "الحد الأقصى لـ /work."
+      },
+      "robFailPercent": {
+        "label": "فشل السرقات (%)",
+        "help": "احتمال فشل السرقة وتكلفة غرامة."
+      }
+    }
+  },
+  "commands": {
+    "balance": {
+      "description": "عرض محفظتك ورصيد بنكك",
+      "options": {
+        "user": "العضو للاطلاع"
+      }
+    },
+    "work": {
+      "description": "اعمل لبعض المال (مرة في الساعة)"
+    },
+    "pay": {
+      "description": "أعطِ عملات من محفظتك لعضو آخر",
+      "options": {
+        "user": "المستلم",
+        "amount": "المبلغ، أو \"all\""
+      }
+    },
+    "shop": {
+      "description": "تصفح واشترِ عناصر",
+      "options": {
+        "list": {
+          "description": "عرض عناصر المتجر"
+        },
+        "buy": {
+          "description": "اشترِ عنصر",
+          "options": {
+            "item": "العنصر للشراء"
+          }
+        },
+        "add": {
+          "description": "أضف عنصر للمتجر (إدارة السيرفر)",
+          "options": {
+            "name": "اسم العنصر",
+            "price": "السعر",
+            "description": "وصف قصير",
+            "role": "الرتبة المعطاة عند الشراء"
+          }
+        },
+        "remove": {
+          "description": "أزل عنصر من المتجر (إدارة السيرفر)",
+          "options": {
+            "item": "العنصر للإزالة"
+          }
+        }
+      }
+    },
+    "bank": {
+      "description": "إيداع وسحب عملات",
+      "options": {
+        "deposit": {
+          "description": "نقل عملات من محفظتك لبنكك",
+          "options": {
+            "amount": "المبلغ، أو \"all\""
+          }
+        },
+        "withdraw": {
+          "description": "نقل عملات من بنكك لمحفظتك",
+          "options": {
+            "amount": "المبلغ، أو \"all\""
+          }
+        }
+      }
+    },
+    "gamble": {
+      "description": "ألعاب قمار",
+      "options": {
+        "coinflip": {
+          "description": "راهن على وجه أو كتابة (50/50)",
+          "options": {
+            "amount": "الرهان، أو \"all\"",
+            "side": {
+              "description": "اختيارك",
+              "choices": {
+                "heads": "وجه",
+                "tails": "كتابة"
+              }
+            }
+          }
+        },
+        "slots": {
+          "description": "ادور آلة القمار",
+          "options": {
+            "amount": "الرهان، أو \"all\""
+          }
+        },
+        "blackjack": {
+          "description": "العب بلاك جاك ضد الموزع",
+          "options": {
+            "amount": "الرهان، أو \"all\""
+          }
+        }
+      }
+    },
+    "eco": {
+      "description": "الاقتصاد: مكافآت، سرقة، مخزن وإعدادات",
+      "options": {
+        "daily": {
+          "description": "اطلب مكافأتك اليومية"
+        },
+        "weekly": {
+          "description": "اطلب مكافأتك الأسبوعية"
+        },
+        "rob": {
+          "description": "حاول سرقة عضو آخر (مخاطرة)",
+          "options": {
+            "user": "العضو للسرقة"
+          }
+        },
+        "inventory": {
+          "description": "عرض العناصر التي اشتريتها"
+        },
+        "richest": {
+          "description": "عرض الأغنى"
+        },
+        "config": {
+          "description": "عرض أو تغيير الإعدادات (إدارة السيرفر)",
+          "options": {
+            "currency": "اسم العملة",
+            "symbol": "رمز العملة",
+            "daily": "مكافأة يومية",
+            "weekly": "مكافأة أسبوعية",
+            "work_min": "حد أدنى أجر العمل",
+            "work_max": "حد أقصى أجر العمل",
+            "rob_fail": "احتمال (%) فشل السرقة"
+          }
+        }
+      }
+    }
+  }
+}

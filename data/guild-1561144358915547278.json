@@ -1,0 +1,510 @@
+{
+  "language": "ar",
+  "logs": {
+    "channels": {
+      "messages": "1571711870488940685",
+      "members": "1571711870488940685",
+      "moderation": "1571711870488940685",
+      "server": "1571711870488940685",
+      "voice": "1571711870488940685",
+      "invites": "1571711870488940685",
+      "protection": "1571711870488940685",
+      "tickets": "1571711870488940685"
+    }
+  },
+  "antiraid": {
+    "enabled": true
+  },
+  "antinuke": {
+    "enabled": true
+  },
+  "automod": {
+    "enabled": true
+  },
+  "setup": {
+    "completedAt": 1794822333528,
+    "by": "1366747566020231168"
+  },
+  "economy": {
+    "config": {
+      "currency": "Dollar"
+    }
+  },
+  "dashboard": {
+    "history": [
+      {
+        "at": 1794838179237,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager",
+          "admin-commands"
+        ],
+        "paths": [
+          "commands.play.keywords",
+          "adminCommands.play.role"
+        ]
+      },
+      {
+        "at": 1794835343552,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ban.keywords"
+        ]
+      },
+      {
+        "at": 1794835171867,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.unban.keywords",
+          "commands.unban.allowedRoles"
+        ]
+      },
+      {
+        "at": 1794834525537,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.kick.keywords"
+        ]
+      },
+      {
+        "at": 1794834517358,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ban.keywords"
+        ]
+      },
+      {
+        "at": 1794834083518,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.warn.keywords"
+        ]
+      },
+      {
+        "at": 1794833833805,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ban.allowedRoles"
+        ]
+      },
+      {
+        "at": 1794833823947,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ban.keywords"
+        ]
+      },
+      {
+        "at": 1794832935790,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ping.keywords"
+        ]
+      },
+      {
+        "at": 1794832888739,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.logs.keywords",
+          "commands.logs.allowedRoles"
+        ]
+      },
+      {
+        "at": 1794832861491,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.ping.allowedRoles",
+          "commands.ping.keywords"
+        ]
+      },
+      {
+        "at": 1794832276209,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.help.allowedRoles",
+          "commands.help.keywords"
+        ]
+      },
+      {
+        "at": 1794831267993,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "commands-manager"
+        ],
+        "paths": [
+          "commands.warn.allowedRoles",
+          "commands.warn.keywords"
+        ]
+      },
+      {
+        "at": 1794823209781,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "welcome"
+        ],
+        "action": "test"
+      },
+      {
+        "at": 1794823204701,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "welcome"
+        ],
+        "paths": [
+          "goodbye.enabled",
+          "goodbye.channelId",
+          "goodbye.message",
+          "autorole.humans"
+        ]
+      },
+      {
+        "at": 1794823109645,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "welcome"
+        ],
+        "paths": [
+          "welcome.channelId",
+          "welcome.dmEnabled",
+          "welcome.message",
+          "welcome.dmMessage"
+        ]
+      },
+      {
+        "at": 1794822991345,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "verification"
+        ],
+        "action": "panel"
+      },
+      {
+        "at": 1794822966092,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "verification",
+          "welcome"
+        ],
+        "paths": [
+          "verification.enabled",
+          "welcome.enabled",
+          "verification.roleId",
+          "verification.unverifiedRoleId",
+          "verification.channelId",
+          "verification.kickAfter"
+        ]
+      },
+      {
+        "at": 1794822855935,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "utility"
+        ],
+        "paths": [
+          "utility.snipe.enabled"
+        ]
+      },
+      {
+        "at": 1794822847394,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "tickets"
+        ],
+        "paths": [
+          "tickets.config.staffRoleIds",
+          "tickets.config.logChannelId",
+          "tickets.config.askReason",
+          "tickets.config.ratings"
+        ]
+      },
+      {
+        "at": 1794822797223,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "roles"
+        ],
+        "action": "refreshMenus"
+      },
+      {
+        "at": 1794822764689,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "levels",
+          "moderation",
+          "music"
+        ],
+        "paths": [
+          "levels.enabled",
+          "levels.config.announceChannel",
+          "moderation.dmShowModerator",
+          "moderation.requireReason",
+          "music.djRole",
+          "music.stay247",
+          "music.announceChannel"
+        ]
+      },
+      {
+        "at": 1794822628617,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "economy"
+        ],
+        "paths": [
+          "economy.config.currency"
+        ]
+      }
+    ]
+  },
+  "levels": {
+    "enabled": true,
+    "config": {
+      "announceChannel": "1571711894044155945"
+    },
+    "users": {
+      "1366747566020231168": {
+        "xp": 646,
+        "last": 1794838730668
+      },
+      "1189603105524961391": {
+        "xp": 171,
+        "last": 1794838299930
+      }
+    }
+  },
+  "moderation": {
+    "dmShowModerator": true,
+    "requireReason": false,
+    "nextCase": 3,
+    "cases": {
+      "1": {
+        "id": 1,
+        "type": "warn",
+        "userId": "762217899355013120",
+        "userTag": "TempVoice#5646",
+        "moderatorId": "1366747566020231168",
+        "moderatorTag": "e2t9",
+        "reason": "سبام",
+        "createdAt": 1794832205554,
+        "active": true
+      },
+      "2": {
+        "id": 2,
+        "type": "kick",
+        "userId": "1571480093212278784",
+        "userTag": "Bot Ses#2888",
+        "moderatorId": "1366747566020231168",
+        "moderatorTag": "e2t9",
+        "reason": null,
+        "createdAt": 1794834780111
+      },
+      "3": {
+        "id": 3,
+        "type": "kick",
+        "userId": "762217899355013120",
+        "userTag": "TempVoice#5646",
+        "moderatorId": "1366747566020231168",
+        "moderatorTag": "e2t9",
+        "reason": null,
+        "createdAt": 1794835912418
+      }
+    }
+  },
+  "music": {
+    "djRole": "1570126325220642980",
+    "stay247": true,
+    "announceChannel": "1571711984184070284"
+  },
+  "tickets": {
+    "config": {
+      "staffRoleIds": [
+        "1569883853047463937"
+      ],
+      "logChannelId": "1571711981411639356",
+      "askReason": true,
+      "ratings": true
+    }
+  },
+  "utility": {
+    "snipe": {
+      "enabled": true
+    }
+  },
+  "verification": {
+    "enabled": true,
+    "roleId": "1569883873003839498",
+    "unverifiedRoleId": "1569883885112926279",
+    "channelId": "1571711877581639852",
+    "kickAfter": 6000000,
+    "messageId": "1571826293429903453"
+  },
+  "welcome": {
+    "enabled": true,
+    "channelId": "1571711889254387732",
+    "dmEnabled": true,
+    "message": "╭・✦ أهلاً وسهلاً بك! ✦・╮\n\nمرحباً {user} 💙\n\nنورت سيرفر **{server}** بانضمامك إلينا!\nأنت العضو رقم **#{count}** 🎉\n\nنتمنى لك وقتاً ممتعاً بيننا، ولا تنسَ الاطلاع على القوانين والتعرف على أقسام السيرفر.\n\nاستمتع بوقتك، فنحن سعداء بوجودك معنا! ✨\n\n╰・نتمنى لك إقامة ممتعة・╯",
+    "dmMessage": "╭・✦ أهلاً بك في عائلتنا! ✦・╮\n\nأهلاً {displayname}! 💙\n\nيسعدنا انضمامك إلى **{server}**.\n\nنحن سعداء بوجودك معنا، ونتمنى أن تجد هنا مجتمعاً ممتعاً وتجربة مميزة.\n\n📌 لا تنسَ:\n• قراءة قوانين السيرفر.\n• التعرف على الأقسام والقنوات.\n• المشاركة والتفاعل مع الأعضاء.\n\nنتمنى لك رحلة ممتعة معنا! 🚀\n\n**شكراً لانضمامك إلينا!**"
+  },
+  "goodbye": {
+    "enabled": true,
+    "channelId": "1571711968233127957",
+    "message": "╭・✦ وداعاً! ✦・╮\n\nغادرنا العضو {user} 💔\n\nكان من الجميل وجودك معنا في **{server}**.\n\nنتمنى لك التوفيق والسعادة أينما كنت، وستبقى أبوابنا مفتوحة لك دائماً! 💙\n\n📊 عدد الأعضاء الحالي: {count}\n\nنراك على خير! 👋\n\n╰・ستبقى ذكرياتك معنا・╯"
+  },
+  "autorole": {
+    "humans": [
+      "1569883873003839498"
+    ]
+  },
+  "community": {
+    "afk": {
+      "users": {}
+    }
+  },
+  "commands": {
+    "globalEnabled": true,
+    "bypassOwner": true,
+    "bypassAdmin": true,
+    "warn": {
+      "allowedRoles": [
+        "1571427399323615293"
+      ],
+      "keywords": [
+        "خد",
+        "تحذير"
+      ]
+    },
+    "help": {
+      "allowedRoles": [
+        "1571427399323615293"
+      ],
+      "keywords": [
+        "مساعده"
+      ]
+    },
+    "ping": {
+      "allowedRoles": [
+        "1571427399323615293"
+      ],
+      "keywords": [
+        "بينج"
+      ]
+    },
+    "logs": {
+      "keywords": [
+        "اللوجو"
+      ],
+      "allowedRoles": [
+        "1571427399323615293"
+      ]
+    },
+    "ban": {
+      "keywords": [
+        "تايلند"
+      ],
+      "allowedRoles": [
+        "1571427399323615293"
+      ]
+    },
+    "kick": {
+      "keywords": [
+        "برا"
+      ]
+    },
+    "unban": {
+      "keywords": [
+        "رحمتك"
+      ],
+      "allowedRoles": [
+        "1571427399323615293"
+      ]
+    },
+    "play": {
+      "keywords": [
+        "شغل"
+      ]
+    }
+  },
+  "adminCommands": {
+    "play": {
+      "role": "1571427399323615293"
+    }
+  }
+}

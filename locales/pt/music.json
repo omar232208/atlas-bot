@@ -1,0 +1,271 @@
+{
+  "commands": {
+    "play": {
+      "description": "Tocar uma URL de áudio, uma rádio ou um arquivo",
+      "options": {
+        "url": "URL de áudio direta (mp3, ogg, flac, wav, m3u, pls, transmissão de rádio) ou nome da rádio",
+        "file": "Arquivo de áudio para tocar",
+        "next": "Tocar logo depois da faixa atual"
+      }
+    },
+    "radio": {
+      "description": "Ouvir uma rádio web integrada (sem argumento: a lista)",
+      "options": {
+        "station": "Nome da estação ou gênero",
+        "next": "Tocar logo depois da faixa atual"
+      }
+    },
+    "pause": { "description": "Pausar a música" },
+    "resume": { "description": "Retomar a música" },
+    "skip": {
+      "description": "Pular a faixa atual",
+      "options": { "to": "Ir direto para esta posição da fila" }
+    },
+    "stop": { "description": "Parar a música e esvaziar a fila" },
+    "queue": {
+      "description": "Ver ou editar a fila",
+      "options": {
+        "view": { "description": "Ver a fila" },
+        "remove": {
+          "description": "Remover uma faixa da fila",
+          "options": { "position": "Posição na fila" }
+        },
+        "move": {
+          "description": "Mover uma faixa na fila",
+          "options": { "from": "Posição atual", "to": "Nova posição" }
+        },
+        "clear": { "description": "Limpar as próximas faixas" },
+        "shuffle": { "description": "Embaralhar a fila" }
+      }
+    },
+    "nowplaying": { "description": "Ver a faixa atual com os controles" },
+    "loop": {
+      "description": "Repetir a faixa ou a fila",
+      "options": {
+        "mode": {
+          "description": "Modo de repetição",
+          "choices": { "off": "Desativada", "track": "Faixa", "queue": "Fila inteira" }
+        }
+      }
+    },
+    "volume": {
+      "description": "Ver ou mudar o volume",
+      "options": { "level": "Volume em porcentagem (0-150)" }
+    },
+    "seek": {
+      "description": "Ir para um ponto da faixa",
+      "options": { "position": "Por exemplo 1:30, 90, 2m10s, +30 ou -10" }
+    },
+    "music": {
+      "description": "Conexão de voz e configurações de música",
+      "options": {
+        "join": { "description": "Trazer o bot para o seu canal de voz" },
+        "leave": { "description": "Desconectar o bot do canal de voz" },
+        "show": { "description": "Ver as configurações de música" },
+        "config": {
+          "description": "Mudar as configurações de música",
+          "options": {
+            "dj_role": "Cargo que pode pular, parar e editar a fila",
+            "remove_dj_role": "Remover o cargo de DJ: todo o canal pode controlar",
+            "max_queue": "Número máximo de faixas na fila",
+            "default_volume": "Volume quando o bot entra (0-150)",
+            "stay_247": "Ficar no canal de voz 24/7",
+            "announce": "Anunciar cada nova faixa",
+            "announce_channel": "Canal de anúncios",
+            "announce_here": "Anunciar onde a faixa foi pedida",
+            "allow_files": "Permitir tocar arquivos anexados"
+          }
+        },
+        "reset": { "description": "Restaurar as configurações padrão" }
+      }
+    }
+  },
+  "genres": {
+    "eclectic": "Eclética",
+    "chill": "Chill",
+    "rock": "Rock",
+    "world": "Músicas do mundo",
+    "jazz": "Jazz",
+    "electronic": "Eletrônica",
+    "hiphop": "Hip-hop",
+    "metal": "Metal",
+    "pop": "Pop",
+    "reggae": "Reggae",
+    "classical": "Clássica",
+    "indie": "Indie",
+    "vaporwave": "Vaporwave",
+    "synthwave": "Synthwave"
+  },
+  "loopModes": { "off": "desativada", "track": "faixa", "queue": "fila" },
+  "ui": {
+    "live": "Ao vivo",
+    "unknownDuration": "duração desconhecida",
+    "queueLine": "`{index}.` {title} · {duration} · {user}",
+    "onAir": "No ar: {title}",
+    "requestedBy": "Pedido por",
+    "volume": "Volume",
+    "loop": "Repetição",
+    "duration": "Duração",
+    "upNext": "A seguir",
+    "inQueue": "{count} na fila",
+    "queueEmpty": "A fila está vazia.",
+    "buttons": {
+      "pause": "Pausar",
+      "resume": "Retomar",
+      "skip": "Próxima",
+      "stop": "Parar",
+      "loop": "Repetição: {mode}",
+      "refresh": "Atualizar"
+    }
+  },
+  "nowplaying": { "title": "Tocando agora", "pausedTitle": "Pausado" },
+  "queue": {
+    "title": "Fila",
+    "current": "**Agora:** {title} · {duration}",
+    "summary": "{count} faixa(s) a seguir · {duration} · repetição {loop}",
+    "remove": { "done": "Faixa removida", "details": "{title} (posição {position}) foi removida da fila." },
+    "move": { "done": "Faixa movida", "details": "{title} passou da posição {from} para {to}." },
+    "clear": { "done": "Fila limpa", "details": "{count} faixa(s) removida(s). A faixa atual continua tocando." },
+    "shuffle": { "done": "Fila embaralhada", "details": "{count} faixas foram embaralhadas." }
+  },
+  "play": {
+    "addedTitle": "Adicionado à fila",
+    "added": "{title} · {duration}\nPosição na fila: **{position}**",
+    "addedPlaylist": "**{count}** faixas adicionadas a partir da posição **{position}**.",
+    "addedMany": "+ {count} faixa(s) adicionada(s) à fila",
+    "truncatedTitle": "Fila cheia",
+    "truncated": "{count} faixa(s) não adicionada(s): a fila é limitada a {max}."
+  },
+  "radio": {
+    "listTitle": "Rádios integradas",
+    "listHelp": "{count} rádios públicas e gratuitas. Toque uma com `/radio station:` (o preenchimento automático busca por nome ou gênero)."
+  },
+  "pause": { "done": "Música pausada", "hint": "Use `/resume` ou o botão Retomar para continuar." },
+  "resume": { "done": "Reprodução retomada" },
+  "skip": {
+    "done": "Faixa pulada",
+    "next": "{skipped} foi pulada.\nAgora: {next}",
+    "end": "{skipped} foi pulada. A fila terminou.",
+    "queueEnded": "A fila terminou."
+  },
+  "stop": {
+    "done": "Música parada",
+    "details": "A fila foi esvaziada ({count} faixa(s) removida(s)).",
+    "by": "Parada por {user}. A fila foi esvaziada."
+  },
+  "loop": {
+    "done": "Repetição alterada",
+    "off": "A repetição está desativada.",
+    "track": "A faixa atual vai se repetir.",
+    "queue": "A fila inteira vai se repetir."
+  },
+  "volume": {
+    "title": "Volume",
+    "current": "O volume está em **{volume}%**.",
+    "set": "Volume ajustado para **{volume}%**."
+  },
+  "seek": { "done": "Posição alterada", "details": "Tocando a partir de **{position}**." },
+  "join": { "done": "Conectado", "details": "Estou em {channel}. Coloque uma música com `/play` ou `/radio`." },
+  "leave": { "done": "Saí do canal de voz" },
+  "player": {
+    "errorTitle": "Não foi possível tocar",
+    "infoTitle": "Música",
+    "trackFailed": "**{title}**: {reason}",
+    "leftIdle": "Sem música há 2 minutos, então saí do canal de voz. Ative o modo 24/7 com `/music config` para eu ficar.",
+    "leftAlone": "Ninguém estava ouvindo há 2 minutos, então saí do canal de voz."
+  },
+  "config": {
+    "title": "Configurações de música",
+    "saved": "Configurações salvas",
+    "resetDone": "Configurações padrão restauradas",
+    "yes": "Sim",
+    "no": "Não",
+    "noDj": "Nenhum (todo o canal controla)",
+    "sameChannel": "Canal do comando",
+    "footer": "Membros com \"Gerenciar servidor\" sempre têm direitos de DJ.",
+    "fields": {
+      "djRole": "Cargo de DJ",
+      "maxQueue": "Fila máxima",
+      "defaultVolume": "Volume padrão",
+      "stay247": "Modo 24/7",
+      "announce": "Anúncios",
+      "announceChannel": "Canal de anúncios",
+      "allowFiles": "Arquivos anexados"
+    }
+  },
+  "errors": {
+    "title": "Música",
+    "unexpected": "Ocorreu um erro inesperado. Tente de novo em instantes.",
+    "discordPermissions": "O Discord recusou a ação: falta uma permissão minha neste canal.",
+    "unavailable": "O módulo de música está desativado neste bot (dependências de voz ausentes).",
+    "notInVoice": "Entre primeiro em um canal de voz.",
+    "sameChannel": "Você precisa estar no meu canal de voz ({channel}) para controlar a música.",
+    "nothingPlaying": "Nada está tocando.",
+    "notConnected": "Não estou conectado a nenhum canal de voz.",
+    "djOnly": "Esta ação é reservada ao cargo {role} ou a membros que podem gerenciar o servidor.",
+    "manageGuild": "Você precisa da permissão \"Gerenciar servidor\" para mudar as configurações de música.",
+    "botMissing": "Faltam permissões minhas em {channel}: {perms}.",
+    "channelFull": "O canal {channel} está cheio.",
+    "connectFailed": "Não consegui me conectar ao canal de voz. Tente de novo em instantes.",
+    "playUsage": "Informe uma URL de áudio (`url:`) ou anexe um arquivo (`file:`). Para as rádios integradas, use `/radio`.",
+    "notUrl": "Isso não é uma URL nem uma rádio integrada. Buscas no YouTube e no Spotify não são suportadas: envie um link direto para um arquivo ou transmissão de áudio.",
+    "invalidUrl": "Esta URL não é válida.",
+    "protocol": "Só URLs http e https são aceitas.",
+    "blocked": "Este endereço não é permitido (rede local ou privada).",
+    "dns": "Este nome de domínio não foi encontrado.",
+    "network": "O servidor de áudio não está respondendo corretamente ({reason}).",
+    "timeout": "O servidor de áudio demorou demais para responder.",
+    "aborted": "A reprodução foi interrompida.",
+    "http": "O servidor de áudio respondeu com o erro HTTP {status}.",
+    "redirects": "Redirecionamentos demais para esta URL.",
+    "notAudio": "Este link não aponta para áudio (tipo recebido: {type}). Precisa ser um link direto para um arquivo ou transmissão, não uma página web.",
+    "notAudioFile": "O arquivo {name} não é um arquivo de áudio.",
+    "filesDisabled": "Tocar arquivos anexados está desativado neste servidor.",
+    "hls": "Transmissões HLS (m3u8 dividido em segmentos) não são suportadas. Use a URL MP3 ou AAC direta da rádio.",
+    "emptyPlaylist": "Esta playlist não contém nenhum link reproduzível.",
+    "playlistTooBig": "Esta playlist é grande demais.",
+    "decode": "Não foi possível decodificar o áudio (formato não suportado ou transmissão vazia).",
+    "tooManyFailures": "Várias faixas seguidas não puderam ser tocadas, então a fila foi parada.",
+    "radioNotFound": "Nenhuma rádio corresponde a \"{query}\". Digite `/radio` sem argumento para ver a lista.",
+    "queueFull": "A fila está cheia (no máximo {max} faixas).",
+    "queueEmpty": "Não há próximas faixas na fila.",
+    "queueTooShort": "São necessárias pelo menos 2 faixas a seguir para embaralhar.",
+    "badPosition": "Posição inválida. A fila tem {max} faixa(s) a seguir.",
+    "alreadyPaused": "A música já está pausada.",
+    "notPaused": "A música não está pausada.",
+    "seekLive": "Não é possível avançar ou voltar em uma transmissão ao vivo.",
+    "badTime": "Ponto inválido. Exemplos: 1:30, 90, 2m10s, +30, -10.",
+    "seekBeyond": "Esse ponto passa do fim da faixa ({duration})."
+  },
+  "dashboard": {
+    "controls": {
+      "title": "Controle da música",
+      "description": "Quem pode comandar a música e como ela é tocada."
+    },
+    "presence": {
+      "title": "Presença e anúncios",
+      "description": "Comportamento do bot no canal de voz e mensagens de \"tocando agora\"."
+    },
+    "fields": {
+      "djRole": { "label": "Cargo de DJ", "help": "Reservado a este cargo: pular, parar, repetir, volume, posição e editar a fila. Vazio: todo o canal de voz pode." },
+      "maxQueue": { "label": "Tamanho máximo da fila", "help": "Número máximo de faixas em espera (1 a 1000)." },
+      "defaultVolume": { "label": "Volume padrão (%)", "help": "Volume usado quando o bot entra em um canal (0 a 150)." },
+      "allowFiles": { "label": "Permitir arquivos anexados", "help": "Permite `/play file:` com um arquivo de áudio enviado no Discord." },
+      "stay247": { "label": "Modo 24/7", "help": "O bot fica no canal mesmo sozinho ou sem música, e retoma a rádio depois de reiniciar." },
+      "announce": { "label": "Anunciar cada faixa", "help": "Publica uma mensagem de \"tocando agora\" com botões a cada nova faixa." },
+      "announceChannel": { "label": "Canal de anúncios", "help": "Vazio: os anúncios vão para o canal onde a faixa foi pedida." }
+    },
+    "actions": {
+      "unavailable": "O módulo de música está desativado (dependências de voz ausentes).",
+      "disconnect": {
+        "label": "Parar a música e desconectar o bot",
+        "done": "Música parada, bot desconectado do canal de voz.",
+        "notConnected": "O bot não está conectado a nenhum canal de voz neste servidor."
+      }
+    }
+  },
+  "console": {
+    "disabled": "Módulo de música desativado: não foi possível carregar a dependência \"{dependency}\" ({reason}). Execute \"npm install\" para instalar as dependências opcionais (@discordjs/voice, prism-media, ffmpeg-static). O resto do bot funciona normalmente.",
+    "noVoiceIntent": "Módulo de música: o intent GuildVoiceStates não está ativo, o bot não vê quem está nos canais de voz e a música não vai funcionar."
+  }
+}

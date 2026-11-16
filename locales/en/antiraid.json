@@ -1,0 +1,189 @@
+{
+  "commands": {
+    "antiraid": {
+      "description": "Configure raid protection",
+      "options": {
+        "status": { "description": "Show raid protection settings" },
+        "enable": { "description": "Enable raid protection" },
+        "disable": { "description": "Disable raid protection" },
+        "set": {
+          "description": "Change raid protection settings",
+          "options": {
+            "join_threshold": "Number of joins that triggers raid mode",
+            "join_window": "Detection window in seconds",
+            "raid_action": { "description": "Action on joiners during raid mode", "choices": { "kick": "Kick", "ban": "Ban", "timeout": "Timeout" } },
+            "timeout_minutes": "Timeout length in minutes",
+            "raid_duration": "Raid mode length in minutes",
+            "punish_burst": "Also punish the joins that triggered detection",
+            "auto_lockdown": "Lock channels when a raid starts",
+            "min_account_age": "Minimum account age (e.g. 7d, 0 = off)",
+            "no_avatar": "Filter accounts without an avatar",
+            "filter_action": { "description": "Action on filtered accounts", "choices": { "kick": "Kick", "ban": "Ban", "timeout": "Timeout" } },
+            "anti_bot": "Kick bots added by an untrusted member",
+            "allow_verified_bots": "Let verified bots in",
+            "bot_adder_action": { "description": "Action on the person who added the bot", "choices": { "none": "None", "strip": "Remove their roles", "kick": "Kick", "ban": "Ban" } },
+            "dm_notice": "Send a DM before a kick or ban"
+          }
+        }
+      }
+    },
+    "raidmode": {
+      "description": "Turn raid mode on or off by hand",
+      "options": {
+        "on": { "description": "Turn raid mode on", "options": { "duration": "Duration (e.g. 30m, 2h)" } },
+        "off": { "description": "Turn raid mode off" }
+      }
+    },
+    "lockdown": {
+      "description": "Lock or unlock every public channel",
+      "options": {
+        "start": { "description": "Lock every public channel", "options": { "reason": "Reason shown in logs", "announce": "Post a notice in each locked text channel" } },
+        "end": { "description": "Restore channel permissions as they were" }
+      }
+    }
+  },
+  "perms": {
+    "ManageChannels": "Manage Channels",
+    "ManageRoles": "Manage Roles",
+    "BanMembers": "Ban Members",
+    "KickMembers": "Kick Members",
+    "ModerateMembers": "Timeout Members"
+  },
+  "actions": {
+    "kick": "Kick",
+    "ban": "Ban",
+    "timeout": "Timeout",
+    "none": "None",
+    "strip": "Remove roles"
+  },
+  "reasons": {
+    "raid": "Antiraid: joined during a raid",
+    "accountAge": "Antiraid: account too new",
+    "noAvatar": "Antiraid: account without avatar",
+    "bot": "Antiraid: bot added without permission"
+  },
+  "dm": {
+    "title": "Message from {server}",
+    "kick": "You were kicked automatically by the server protection ({reason}). You can come back a bit later.",
+    "ban": "You were banned automatically by the server protection ({reason}). Contact the staff if this is a mistake."
+  },
+  "raid": {
+    "startTitle": "Raid mode on",
+    "endTitle": "Raid mode ended",
+    "detected": "{count} joins in {seconds} seconds: raid detected. New members are punished automatically.",
+    "manual": "Raid mode turned on by {user}. New members are punished automatically.",
+    "onReply": "Raid mode is on for {duration}. Action on joiners: {action}. Use /raidmode off to stop it earlier.",
+    "ends": "Ends",
+    "since": "Started",
+    "punished": "Joiners punished",
+    "endedBy": "Raid mode stopped by {user}.",
+    "expired": "Raid mode reached its end.",
+    "noLockdown": "No",
+    "auditReason": "Antiraid: raid mode",
+    "notActive": "Raid mode is not on.",
+    "alreadyActive": "Raid mode is already on."
+  },
+  "filter": {
+    "title": "Join filtered",
+    "description": "{user} was punished on join.\nReason: {reason}\nAction: {action}"
+  },
+  "bot": {
+    "title": "Unauthorized bot",
+    "description": "The bot {bot} was added by {adder}, who is not whitelisted.",
+    "botField": "Bot",
+    "adderField": "Added by",
+    "kicked": "Kicked",
+    "kickFailed": "Could not kick it (permissions or hierarchy)",
+    "adderUnknown": "Unknown (audit log unavailable)",
+    "adderNone": "No action",
+    "adderFailed": "Could not punish (permissions or hierarchy)"
+  },
+  "lockdown": {
+    "title": "Lockdown",
+    "startTitle": "Server locked",
+    "endTitle": "Lockdown ended",
+    "summary": "{locked} channels locked, {failed} failed.",
+    "endHint": "Use /lockdown end to restore everything as it was.",
+    "endSummary": "{restored} channels restored, {failed} failed, {missing} channels deleted meanwhile.",
+    "startLog": "Lockdown started by {user}.\nReason: {reason}\n{locked} channels locked, {failed} failed.",
+    "endLog": "Lockdown lifted by {user}. {restored} channels restored, {failed} failed.",
+    "noticeTitle": "Channel locked",
+    "notice": "The server is temporarily locked by the staff. Please wait.",
+    "noticeReason": "The server is temporarily locked by the staff.\nReason: {reason}",
+    "auditStart": "Lockdown by {user}",
+    "auditEnd": "Lockdown ended by {user}",
+    "auditDashboard": "Lockdown ended from the dashboard",
+    "notActive": "No lockdown in progress.",
+    "alreadyActive": "A lockdown is already in progress. Use /lockdown end to lift it."
+  },
+  "status": {
+    "title": "Raid protection",
+    "enabled": "Protection is enabled.",
+    "disabled": "Protection is disabled. Manual raid mode and lockdown are still available.",
+    "on": "Yes",
+    "off": "No",
+    "detection": "Detection",
+    "detectionValue": "{count} joins in {seconds} s",
+    "raidAction": "Raid mode action",
+    "raidDuration": "Raid mode length",
+    "punishBurst": "Punish the burst",
+    "autoLockdown": "Auto lockdown",
+    "dmNotice": "DM notice",
+    "accountAge": "Minimum account age",
+    "noAvatar": "No-avatar filter",
+    "filterAction": "Filter action",
+    "antiBot": "Anti-bot",
+    "verifiedBots": "Verified bots allowed",
+    "botAdder": "Bot adder action",
+    "raidMode": "Raid mode",
+    "raidActive": "On, ends {until}",
+    "lockActive": "On ({count} channels)"
+  },
+  "set": {
+    "enabled": "Antiraid enabled",
+    "enabledHelp": "Joins are now watched. Check the settings with /antiraid status.",
+    "disabled": "Antiraid disabled",
+    "disabledHelp": "No more automatic detection. Manual raid mode is still possible.",
+    "saved": "Settings saved",
+    "nothing": "No setting given."
+  },
+  "errors": {
+    "badDuration": "Invalid duration",
+    "badDurationHelp": "Valid examples: 30m, 2h, 7d, 1w. Use 0 to turn it off.",
+    "missingPerms": "Missing permission",
+    "missingPermsHelp": "I am missing: {perms}. Give me these permissions in the server settings."
+  },
+  "dashboard": {
+    "detection": { "title": "Raid detection", "description": "Spots waves of joins and turns raid mode on." },
+    "filters": { "title": "Join filters", "description": "Keeps suspicious accounts out, even outside a raid." },
+    "bots": { "title": "Bot protection", "description": "Stops untrusted members from adding bots." },
+    "fields": {
+      "enabled": { "label": "Protection enabled", "help": "Turns on detection, filters and anti-bot." },
+      "joinThreshold": { "label": "Join threshold", "help": "Number of joins inside the window that triggers raid mode." },
+      "joinWindowSec": { "label": "Detection window (seconds)", "help": "Time span over which joins are counted." },
+      "raidAction": { "label": "Raid mode action", "help": "Applied to every new member while raid mode is on." },
+      "timeoutMinutes": { "label": "Timeout length (minutes)", "help": "Used when the action is a timeout." },
+      "raidDurationMin": { "label": "Raid mode length (minutes)", "help": "Raid mode stops by itself after this delay." },
+      "punishBurst": { "label": "Punish the burst", "help": "Also punishes the accounts that joined right before detection." },
+      "autoLockdown": { "label": "Auto lockdown", "help": "Locks public channels during the raid, then restores them." },
+      "dmNotice": { "label": "DM before punishing", "help": "Tells the person why they are kicked or banned." },
+      "minAccountAgeMs": { "label": "Minimum account age", "help": "Newer accounts are punished on join. 0 to turn off." },
+      "noAvatar": { "label": "Filter accounts without avatar", "help": "Many raid accounts have no avatar." },
+      "filterAction": { "label": "Filter action", "help": "Applied to accounts that are too new or have no avatar." },
+      "antiBot": { "label": "Anti-bot", "help": "Kicks a bot added by someone who is not whitelisted." },
+      "allowVerifiedBots": { "label": "Allow verified bots", "help": "Bots verified by Discord can join without checks." },
+      "botAdderAction": { "label": "Bot adder action", "help": "What happens to the person who added the bot." }
+    },
+    "actions": {
+      "raidOn": "Turn raid mode on",
+      "raidOff": "Stop raid mode",
+      "lockdownEnd": "Lift the lockdown"
+    },
+    "results": {
+      "raidOn": "Raid mode turned on.",
+      "raidOff": "Raid mode stopped.",
+      "lockdownEnd": "Lockdown lifted, permissions restored.",
+      "lockdownPartial": "Lockdown partly lifted: some channels could not be restored, try again."
+    }
+  }
+}

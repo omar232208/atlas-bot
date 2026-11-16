@@ -1,0 +1,217 @@
+{
+  "commands": {
+    "help": {
+      "description": "عرض أوامر كل الوحدات",
+      "options": {
+        "command": "عرض تفاصيل أمر واحد"
+      }
+    },
+    "ping": {
+      "description": "عرض سرعة استجابة البوت"
+    },
+    "botinfo": {
+      "description": "عرض معلومات عن البوت"
+    },
+    "config": {
+      "description": "إعدادات البوت لهذا السيرفر",
+      "options": {
+        "language": {
+          "description": "تغيير لغة البوت في هذا السيرفر",
+          "options": {
+            "value": "اللغة"
+          }
+        },
+        "show": {
+          "description": "عرض الإعدادات الحالية"
+        },
+        "reset": {
+          "description": "إعادة تعيين كل إعدادات هذا السيرفر"
+        }
+      }
+    },
+    "setup": {
+      "description": "إعداد موجه لأول مرة للبوت"
+    }
+  },
+  "modules": {
+    "core-commands": {
+      "name": "عام",
+      "description": "مساعدة، سرعة استجابة، معلومات وإعدادات البوت"
+    },
+    "antiraid": {
+      "name": "أنتي رايد",
+      "description": "كشف موجات الانضمام، وضع الرايد، والإقفال"
+    },
+    "antinuke": {
+      "name": "أنتي نيوك",
+      "description": "يمنع الحذف الجماعي ويستعيد السيرفر"
+    },
+    "automod": {
+      "name": "أوتو مود",
+      "description": "فلاتر للروابط، الدعوات، السبام، الحروف الكبيرة والكلمات المحظورة"
+    },
+    "moderation": {
+      "name": "مودراشن",
+      "description": "العقوبات، التحذيرات، التنظيف وسجل القضايا"
+    },
+    "logs": {
+      "name": "السجلات",
+      "description": "سجلات للرسائل، الأعضاء، العقوبات، السيرفر والصوت"
+    },
+    "welcome": {
+      "name": "الترحيب",
+      "description": "رسائل ترحيب ووداع، رتب تلقائية"
+    },
+    "verification": {
+      "name": "التحقق",
+      "description": "كابتشا بالزر قبل الدخول للسيرفر"
+    },
+    "tickets": {
+      "name": "التذاكر",
+      "description": "دعم عبر قنوات خاصة مع ترانسكريبت"
+    },
+    "roles": {
+      "name": "الرتب",
+      "description": "قوائم رتب، رتب مؤقتة وإدارة"
+    },
+    "utility": {
+      "name": "أدوات",
+      "description": "معلومات، استطلاعات، تذكيرات، إمبدز ودعوات"
+    },
+    "giveaways": {
+      "name": "الهدايا",
+      "description": "هدايا بدخول بالزر ومتطلبات"
+    },
+    "levels": {
+      "name": "المستويات",
+      "description": "خبرة، ليدربورد ورتب مكافآت"
+    },
+    "backup": {
+      "name": "النسخ الاحتياطية",
+      "description": "حفظ واستعادة الرتب والقنوات"
+    },
+    "economy": {
+      "name": "الاقتصاد",
+      "description": "عملة، متجر، عمل وألعاب كازينو"
+    },
+    "fun": {
+      "name": "ترفيه",
+      "description": "ألعاب مصغرة بالزر، ترافيا وأوامر ترفيهية"
+    },
+    "community": {
+      "name": "المجتمع",
+      "description": "اقتراحات، ستاربورد، أعياد ميلاد، تاجز وصوتيات مؤقتة"
+    },
+    "music": {
+      "name": "الموسيقى",
+      "description": "راديوهات ويب، روابط صوتية وملفات في القنوات الصوتية"
+    },
+    "dashboard": {
+      "name": "الداشبورد",
+      "description": "إعدادات السيرفر من المتصفح"
+    }
+  },
+  "help": {
+    "title": "المساعدة",
+    "intro": "اختر وحدة من القائمة لرؤية أوامرها، أو استخدم `/help command:<name>` لتفاصيل أمر واحد.",
+    "footer": "{count} أمر متاح",
+    "placeholder": "اختر وحدة",
+    "commandCount": "{count} أمر(أوامر)",
+    "moduleTitle": "وحدة {module}",
+    "noCommands": "هذه الوحدة لا تحتوي أوامر.",
+    "home": "الرئيسية",
+    "module": "وحدة",
+    "permissions": "الصلاحية المطلوبة",
+    "cooldown": "فترة انتظار",
+    "required": "مطلوب",
+    "optional": "اختياري",
+    "options": "خيارات",
+    "subcommands": "أوامر فرعية",
+    "notFound": "لا يوجد أمر يسمى `{name}`."
+  },
+  "ping": {
+    "measuring": "جاري القياس…",
+    "title": "بونغ",
+    "ms": "{value} ملي ثانية",
+    "roundTrip": "رحلة ذهاب وإياب",
+    "gateway": "بوابة ديسكورد"
+  },
+  "botinfo": {
+    "title": "Atlas",
+    "description": "بوت ديسكورد متعدد الأغراض مفتوح المصدر: حماية، مودراشن، تذاكر، موسيقى، مستويات، اقتصاد والمزيد.\nالمبرمج: Omar",
+    "uptime": "مدة التشغيل",
+    "memory": "الذاكرة",
+    "memoryValue": "{rss} MB (heap: {heap} MB)",
+    "latency": "الزمن المستغرق",
+    "servers": "السيرفرات",
+    "members": "الأعضاء",
+    "modules": "الوحدات",
+    "modulesValue": "{modules} وحدات، {commands} أوامر",
+    "versions": "الإصدارات",
+    "hosting": "الاستضافة",
+    "hostingValue": "تريد نسختك الخاصة؟ استضفها مجاناً على ACLClouds: https://aclclouds.com",
+    "footer": "Atlas - برمجة Omar، برنامج حر تحت رخصة MIT"
+  },
+  "config": {
+    "showTitle": "إعدادات {server}",
+    "language": "اللغة",
+    "default": "افتراضي",
+    "whitelist": "القائمة البيضاء",
+    "whitelistValue": "{count} عضو(أعضاء)",
+    "setup": "إعداد موجه",
+    "setupDone": "تم في {date} بواسطة {user}",
+    "setupNever": "لم يتم بعد: شغّل /setup",
+    "logs": "قنوات السجلات",
+    "protections": "الحمايات",
+    "dashboard": "داشبورد الويب",
+    "languageSetTitle": "تم تغيير اللغة",
+    "languageSet": "البوت الآن يتحدث {language} في هذا السيرفر. أوصاف الأوامر تتبع لغة ديسكورد لكل مستخدم.",
+    "resetConfirm": "سيتم مسح كل إعدادات هذا السيرفر (اللغة، السجلات، الحمايات، القائمة البيضاء، بيانات الوحدات). لا يمكن التراجع.",
+    "resetTitle": "تم إعادة تعيين الإعدادات",
+    "resetDone": "السيرفر يبدأ من الصفر. شغّل /setup لإعداده مرة أخرى."
+  },
+  "protections": {
+    "antiraid": "أنتي رايد",
+    "antinuke": "أنتي نيوك",
+    "automod": "أوتو مود"
+  },
+  "protectionsHelp": {
+    "antiraid": "يكشف موجات الانضمام ويمنع الحسابات الجديدة",
+    "antinuke": "يعاقب على الحذف الجماعي للقنوات والرتب",
+    "automod": "يفلتر السبام، الدعوات والروابط"
+  },
+  "setup": {
+    "step": "خطوة {step} من {total}",
+    "languageTitle": "لغة البوت",
+    "languageIntro": "أهلاً! هذا الإعداد يستغرق دقيقة. أولاً اختر اللغة التي يستخدمها البوت في هذا السيرفر.",
+    "languagePlaceholder": "اختر لغة",
+    "logsTitle": "قناة السجلات",
+    "logsIntro": "اختر القناة التي يسجل فيها البوت ما يحدث (العقوبات، الحمايات، الرسائل المحذوفة…). يمكنك تقسيم الفئات لاحقاً بـ /logs set.",
+    "logsPlaceholder": "اختر قناة",
+    "protectionsTitle": "الحمايات",
+    "protectionsIntro": "اختر الحمايات لتفعيلها. الإعدادات الافتراضية تناسب معظم السيرفرات؛ يمكن تخصيص كل وحدة بأمرها الخاص.",
+    "protectionsPlaceholder": "الحمايات المراد تفعيلها",
+    "doneTitle": "اكتمل الإعداد",
+    "doneIntro": "البوت جاهز في هذا السيرفر.",
+    "doneLanguage": "اللغة: {language}",
+    "doneLogs": "السجلات: {channel}",
+    "doneProtections": "الحمايات المفعلة: {list}",
+    "doneNext": "انقل رولتي فوق رتب الأعضاء لتعمل الحمايات. التالي: /help لاكتشاف الأوامر، /config show لمراجعة هذه الإعدادات."
+  },
+  "languages": {
+    "ar": "العربية",
+    "en": "English"
+  },
+  "dashboard": {
+    "general": {
+      "title": "عام",
+      "description": "إعدادات البوت الأساسية لهذا السيرفر.",
+      "language": "لغة البوت",
+      "languageHelp": "لغة الردود، الرسائل التلقائية والسجلات."
+    },
+    "actions": {
+      "reset": "إعادة تعيين كل الإعدادات",
+      "resetDone": "تم مسح كل إعدادات السيرفر."
+    }
+  }
+}

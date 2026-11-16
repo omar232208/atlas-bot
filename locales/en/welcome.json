@@ -1,0 +1,125 @@
+{
+  "commands": {
+    "welcome": {
+      "description": "Configure the welcome message",
+      "options": {
+        "set": { "description": "Choose the welcome channel and enable", "options": { "channel": "Channel where new members are greeted" } },
+        "message": { "description": "Change the welcome message", "options": { "text": "Template: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = new line", "embed": "Send as an embed (yes by default)" } },
+        "dm": { "description": "Private welcome message", "options": { "enabled": "Send a private message to new members", "text": "Private message template (same variables)" } },
+        "test": { "description": "Test the message on yourself" },
+        "show": { "description": "Show the welcome configuration" },
+        "disable": { "description": "Disable welcome messages" }
+      }
+    },
+    "goodbye": {
+      "description": "Configure the goodbye message",
+      "options": {
+        "set": { "description": "Choose the goodbye channel and enable", "options": { "channel": "Channel where departures are announced" } },
+        "message": { "description": "Change the goodbye message", "options": { "text": "Template: {user} {username} {displayname} {userid} {server} {count} {created}, \\n = new line", "embed": "Send as an embed (yes by default)" } },
+        "test": { "description": "Test the message on yourself" },
+        "show": { "description": "Show the goodbye configuration" },
+        "disable": { "description": "Disable goodbye messages" }
+      }
+    },
+    "autorole": {
+      "description": "Roles given automatically on join",
+      "options": {
+        "add": { "description": "Add an autorole", "options": { "role": "Role to give", "type": { "description": "Members concerned (humans by default)", "choices": { "humans": "Humans", "bots": "Bots" } } } },
+        "remove": { "description": "Remove an autorole", "options": { "role": "Role to remove", "type": { "description": "Members concerned (both by default)", "choices": { "humans": "Humans", "bots": "Bots" } } } },
+        "list": { "description": "List autoroles" }
+      }
+    }
+  },
+  "defaults": {
+    "welcome": "Welcome {user} to **{server}**! We are now {count}.",
+    "goodbye": "**{username}** left **{server}**. We are now {count}.",
+    "dm": "Welcome to **{server}**, {displayname}! Remember to read the server rules."
+  },
+  "welcome": {
+    "setTitle": "Welcome enabled",
+    "setDone": "New members will be greeted in {channel}. Customise the text with `/welcome message`.",
+    "messageTitle": "Welcome message changed",
+    "messageDone": "Here is how it will look.",
+    "showTitle": "Welcome configuration",
+    "disabledTitle": "Welcome disabled",
+    "disabledDone": "No welcome message (channel or private) will be sent anymore.",
+    "dmTitle": "Private message",
+    "dmOn": "New members will get this message privately (if they accept DMs from the server).",
+    "dmOff": "The private welcome message is disabled."
+  },
+  "goodbye": {
+    "setTitle": "Goodbye enabled",
+    "setDone": "Departures will be announced in {channel}. Customise the text with `/goodbye message`.",
+    "messageTitle": "Goodbye message changed",
+    "messageDone": "Here is how it will look.",
+    "showTitle": "Goodbye configuration",
+    "disabledTitle": "Goodbye disabled",
+    "disabledDone": "No goodbye message will be sent anymore."
+  },
+  "common": {
+    "preview": "Preview",
+    "unknownVars": "Unknown variables (left as they are)",
+    "variables": "Available variables",
+    "testTitle": "Test sent",
+    "testSent": "The message was sent to {channel}.",
+    "testDmSent": "The private message was sent to you.",
+    "testDmFailed": "The private message could not be sent: your DMs are probably closed.",
+    "testDisabledNote": "Note: this message is disabled, real new members will not get it.",
+    "on": "Enabled",
+    "off": "Disabled",
+    "status": "Status",
+    "channel": "Channel",
+    "embed": "Embed",
+    "template": "Template",
+    "none": "None"
+  },
+  "errors": {
+    "title": "Not possible",
+    "missingPerms": "I am missing these permissions in {channel}: {perms}. Add them and try again.",
+    "noChannel": "No channel is configured (or it was deleted). Use `{command}` first.",
+    "sendFailed": "The message could not be sent. Check my permissions in the configured channel."
+  },
+  "autorole": {
+    "reason": "Autorole on join",
+    "types": { "humans": "Humans", "bots": "Bots" },
+    "deletedRole": "Deleted role (`{id}`)",
+    "problems": {
+      "managed": "This role is managed by an integration (bot, boost) and cannot be given.",
+      "everyone": "The @everyone role cannot be given.",
+      "hierarchy": "This role is above my highest role: move my role higher in the server settings.",
+      "noPermission": "I am missing the \"Manage Roles\" permission."
+    },
+    "listTitle": "Autoroles",
+    "listDesc": "Given on every join (after rules acceptance if membership screening is on).",
+    "title": "Autoroles",
+    "dangerous": "{role} grants moderation or admin permissions: giving it to every newcomer would be dangerous.",
+    "already": "{role} is already given to {type}.",
+    "limit": "At most {max} autoroles per type.",
+    "added": "{role} will be given automatically to {type}.",
+    "notFound": "{role} is not an autorole.",
+    "removed": "{role} is no longer given automatically."
+  },
+  "dashboard": {
+    "welcome": { "title": "Welcome", "description": "Message sent when a member joins the server. Variables: {user} {username} {displayname} {userid} {server} {count} {created}." },
+    "goodbye": { "title": "Goodbye" },
+    "autorole": { "title": "Autoroles", "description": "Roles given on join. They must be below the bot's role." },
+    "fields": {
+      "enabled": "Enabled",
+      "channel": "Channel",
+      "message": "Message",
+      "messageHelp": "Empty: default message. Variables: {user} {username} {displayname} {userid} {server} {count} {created}.",
+      "embed": "Send as an embed",
+      "dmEnabled": "Private welcome message",
+      "dmMessage": "Private message text",
+      "humans": "Roles for humans",
+      "bots": "Roles for bots"
+    },
+    "actions": { "test": "Test the welcome message" },
+    "results": {
+      "notMember": "You are not a member of this server.",
+      "noChannel": "No welcome channel is configured.",
+      "failed": "The message could not be sent: check the bot's permissions.",
+      "sent": "Test message sent."
+    }
+  }
+}

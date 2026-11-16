@@ -1,0 +1,162 @@
+{
+  "commands": {
+    "dashboard": {
+      "description": "Abrir o painel web do servidor"
+    }
+  },
+  "command": {
+    "title": "Painel",
+    "noPermission": "Você precisa da permissão Gerenciar servidor para abrir o painel.",
+    "notRunning": "O painel web não está ativado. Defina DASHBOARD_PORT (ou PORT) no arquivo .env e reinicie o bot.",
+    "noUrl": "O painel roda na porta {port}, mas seu endereço público é desconhecido. Adicione DASHBOARD_URL ao arquivo .env (na ACLClouds: copie o endereço HTTPS da aba \"Porta / Endereço\"), ou abra esse endereço uma vez no navegador, e use /dashboard de novo.",
+    "body": "[Abrir o painel]({url})\n\nEste link é pessoal, de uso único e expira em 10 minutos. Não o compartilhe.",
+    "button": "Abrir o painel",
+    "footer": "O login dura 7 dias neste navegador"
+  },
+  "console": {
+    "disabled": "Painel web desativado: defina DASHBOARD_PORT (ou PORT) no .env para ativá-lo.",
+    "listenFailed": "O painel não conseguiu escutar na porta {port}: {error}",
+    "started": "Painel web online na porta {port}: {url}",
+    "startedNoUrl": "Painel web online na porta {port}. Defina DASHBOARD_URL para que /dashboard possa enviar links de login."
+  },
+  "log": {
+    "none": "nenhum",
+    "on": "ativado",
+    "off": "desativado",
+    "more": "e mais {count} alterações",
+    "configTitle": "Configurações alteradas pelo painel",
+    "by": "Por {user} ({tag})",
+    "actionTitle": "Ação executada pelo painel",
+    "actionBy": "{user} ({tag}) executou \"{action}\"."
+  },
+  "api": {
+    "actionFailed": "A ação falhou. Verifique as permissões do bot e tente novamente.",
+    "actionDone": "Feito.",
+    "ownerOnly": "Somente o dono do servidor (ou um dono do bot) pode alterar estas configurações."
+  },
+  "modules": {
+    "core-commands": "Geral",
+    "antiraid": "Anti-raid",
+    "antinuke": "Anti-nuke",
+    "automod": "Automoderação",
+    "moderation": "Moderação",
+    "logs": "Registros",
+    "welcome": "Boas-vindas",
+    "verification": "Verificação",
+    "tickets": "Tickets",
+    "roles": "Cargos",
+    "utility": "Utilidades",
+    "giveaways": "Sorteios",
+    "levels": "Níveis",
+    "backup": "Backups",
+    "economy": "Economia",
+    "fun": "Jogos",
+    "community": "Comunidade",
+    "music": "Música",
+    "dashboard": "Painel"
+  },
+  "ui": {
+    "title": "Painel do ACLClouds Bot",
+    "server": "Servidor",
+    "chooseServer": "Escolher um servidor",
+    "language": "Idioma",
+    "menu": "Menu",
+    "logout": "Sair",
+    "navigation": "Navegação",
+    "overview": "Visão geral",
+    "modules": "Módulos",
+    "enableModule": "Ativar {module}",
+    "hostedBy": "Hospedado gratuitamente na",
+    "unsavedRegion": "Alterações não salvas",
+    "unsavedOne": "1 alteração não salva",
+    "unsavedMany": "{count} alterações não salvas",
+    "reset": "Descartar",
+    "save": "Salvar",
+    "saved": "Alterações salvas.",
+    "saveFailed": "Alguns valores são inválidos. Corrija-os e tente novamente.",
+    "discardTitle": "Descartar as alterações?",
+    "discardBody": "As alterações não salvas deste servidor serão perdidas.",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "enabled": "Ativado",
+    "disabled": "Desativado",
+    "protections": "Proteções",
+    "noProtections": "Nenhum módulo de proteção carregado.",
+    "recentChanges": "Alterações recentes",
+    "otherModules": "Outros módulos",
+    "members": "{count} membros",
+    "stats": {
+      "members": "Membros",
+      "channels": "Canais",
+      "roles": "Cargos",
+      "tickets": "Tickets abertos"
+    },
+    "history": {
+      "config": "{user} alterou {module}",
+      "action": "{user} executou uma ação em {module}",
+      "empty": "Nenhuma alteração ainda."
+    },
+    "actions": "Ações",
+    "actionConfirm": "Esta ação não pode ser desfeita. Deseja continuar?",
+    "actionDone": "Feito.",
+    "actionFailed": "A ação falhou.",
+    "moduleOff": "Este módulo está desativado. Suas configurações são mantidas.",
+    "notFound": "Esta página não existe.",
+    "loading": "Carregando...",
+    "forbidden": "Você não tem mais acesso a este servidor. É necessária a permissão Gerenciar servidor.",
+    "loadFailed": "Não foi possível carregar este servidor.",
+    "retry": "Tentar novamente",
+    "picker": {
+      "title": "Seus servidores",
+      "subtitle": "Escolha o servidor que deseja configurar.",
+      "empty": "Nenhum servidor disponível. Digite este comando no seu servidor para receber um link de login:"
+    },
+    "login": {
+      "title": "Entrar no painel",
+      "signingIn": "Entrando...",
+      "howTo": "Digite este comando no seu servidor do Discord para receber um link de login pessoal:",
+      "or": "ou",
+      "discord": "Entrar com o Discord",
+      "linkInvalid": "Este link expirou ou já foi usado. Use /dashboard de novo para obter um novo.",
+      "rateLimited": "Muitas tentativas. Aguarde um minuto e tente novamente.",
+      "oauthFailed": "O login com o Discord falhou. Tente novamente."
+    },
+    "field": {
+      "voice": "voz",
+      "none": "Nenhum",
+      "missing": "Não encontrado (excluído?)",
+      "emptyList": "Nenhum item",
+      "remove": "Remover",
+      "add": "Adicionar",
+      "addChannel": "Adicionar um canal...",
+      "addRole": "Adicionar um cargo...",
+      "addItem": "Novo item",
+      "unit": "Unidade",
+      "units": {
+        "d": "dias",
+        "h": "horas",
+        "m": "minutos",
+        "s": "segundos"
+      }
+    },
+    "errors": {
+      "type": "Valor inválido.",
+      "required": "Este campo é obrigatório.",
+      "min": "O mínimo é {min}.",
+      "max": "O máximo é {max}.",
+      "maxLength": "No máximo {max} caracteres.",
+      "minLength": "No mínimo {min} caracteres.",
+      "option": "Opção inválida.",
+      "unknownChannel": "Este canal não existe mais.",
+      "wrongChannelType": "Este tipo de canal não é aceito aqui.",
+      "unknownRole": "Este cargo não existe mais.",
+      "tooMany": "No máximo {max} itens.",
+      "tooFew": "No mínimo {min} itens.",
+      "unknownField": "Esta configuração não existe mais.",
+      "empty": "Nada para salvar.",
+      "rateLimited": "Muitas solicitações. Aguarde um minuto.",
+      "ownerOnly": "Somente o dono do servidor."
+    },
+    "ownerOnly": "Somente o dono do servidor."
+  }
+}

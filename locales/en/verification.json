@@ -1,0 +1,130 @@
+{
+  "commands": {
+    "verification": {
+      "description": "Captcha verification for new members",
+      "options": {
+        "setup": {
+          "description": "Configure verification and post the panel",
+          "options": {
+            "role": "Role given once verified",
+            "channel": "Channel where the verification panel is posted",
+            "kick_after": "Kick unverified members after (e.g. 30m, 2h; 0 = never)",
+            "unverified_role": "Role given on join and removed once verified",
+            "code_length": "Code length (4 to 8)",
+            "attempts": "Wrong answers allowed before a 5 minute lock",
+            "message": "Panel text (\\n = new line)"
+          }
+        },
+        "panel": { "description": "Post the verification panel again" },
+        "disable": { "description": "Disable verification" },
+        "status": { "description": "Show the verification configuration" }
+      }
+    }
+  },
+  "panel": {
+    "title": "Verification",
+    "description": "To access the server, click the button below and type the code shown. This protects us from bots and raids.",
+    "button": "Verify me"
+  },
+  "modal": {
+    "title": "Verification",
+    "label": "Type this code: {code}",
+    "placeholder": "Upper or lower case, with or without spaces"
+  },
+  "verify": {
+    "title": "Verification",
+    "disabled": "Verification is disabled on this server.",
+    "noRole": "The verification role no longer exists. Please tell an administrator.",
+    "already": "You are already verified.",
+    "locked": "Too many mistakes. Try again in {time}.",
+    "expired": "This code has expired. Click the button again to get a new one.",
+    "wrong": "Wrong code. Click the button again for a new code ({left} attempt(s) left).",
+    "grantFailed": "Correct code, but I could not give you the role. Please tell an administrator (permissions or position of the bot's role).",
+    "success": "Welcome to **{server}**! You now have access to the server."
+  },
+  "reasons": {
+    "verified": "Verification passed",
+    "unverified": "New member waiting for verification",
+    "kick": "Not verified after {time}"
+  },
+  "kick": {
+    "dmTitle": "Kicked from {server}",
+    "dm": "You were kicked from **{server}** because you did not verify within {time} of joining. You can come back with an invite and click the verification button."
+  },
+  "logs": {
+    "lockedTitle": "Verification locked",
+    "locked": "{user} entered a wrong code too many times and is locked for 5 minutes.",
+    "verifiedTitle": "Member verified",
+    "verified": "{user} passed verification.",
+    "kickedTitle": "Unverified member kicked",
+    "kicked": "{user} was kicked: not verified after {time}."
+  },
+  "errors": {
+    "title": "Not possible",
+    "badDuration": "Invalid duration. Use for example `10m`, `2h` or `1d` (between {min} and {max}), or `0` to never kick.",
+    "role": {
+      "managed": "{role} is managed by an integration and cannot be given.",
+      "everyone": "The @everyone role cannot be used.",
+      "hierarchy": "{role} is above my highest role: move my role higher in the server settings.",
+      "noPermission": "I am missing the \"Manage Roles\" permission."
+    },
+    "sameRole": "The verified role and the unverified role must be different.",
+    "missingPerms": "I am missing these permissions in {channel}: {perms}.",
+    "panelFailed": "The panel could not be posted. Check that the channel exists and that I can write and embed links there.",
+    "notEnabled": "Verification is not enabled. Use `/verification setup` first."
+  },
+  "setup": {
+    "title": "Verification enabled",
+    "done": "The panel is posted: {url}",
+    "noKickPerm": "Warning: I am missing the \"Kick Members\" permission, unverified members will not be kicked.",
+    "channelTip": "Tip: remove \"View Channels\" from @everyone on your channels and grant it to {role}, keeping {channel} visible to everyone. Members already here are not affected.",
+    "reposted": "The panel was posted again: {url}"
+  },
+  "disable": {
+    "title": "Verification disabled",
+    "done": "Verification is disabled and the panel deleted. {count} scheduled kick(s) cancelled."
+  },
+  "status": {
+    "on": "Enabled",
+    "off": "Disabled",
+    "none": "None",
+    "title": "Verification configuration",
+    "state": "Status",
+    "role": "Verified role",
+    "unverifiedRole": "Unverified role",
+    "channel": "Panel channel",
+    "kickAfter": "Kick after",
+    "never": "Never",
+    "code": "Code",
+    "codeValue": "{length} characters, {attempts} attempt(s)",
+    "pending": "Scheduled kicks"
+  },
+  "dashboard": {
+    "main": {
+      "title": "Verification",
+      "description": "New members click a button and type a code to get access. After changing the channel or the text, post the panel again."
+    },
+    "fields": {
+      "enabled": "Enabled",
+      "role": "Verified role",
+      "unverifiedRole": "Unverified role",
+      "channel": "Panel channel",
+      "kickAfter": "Kick unverified members after",
+      "codeLength": "Code length",
+      "maxAttempts": "Attempts before lock",
+      "panelMessage": "Panel text"
+    },
+    "help": {
+      "enabled": "Turns verification on for newcomers.",
+      "role": "Given after passing the captcha. It must be below the bot's role.",
+      "unverifiedRole": "Optional: given on join, removed after verification.",
+      "channel": "Channel visible to everyone that holds the button.",
+      "kickAfter": "0: never. Otherwise between 1 minute and 7 days.",
+      "codeLength": "Between 4 and 8 characters.",
+      "maxAttempts": "After this many mistakes the member is locked for 5 minutes.",
+      "panelMessage": "Empty: default text."
+    },
+    "actions": { "panel": "Post the panel again" },
+    "results": { "posted": "Panel posted." }
+  }
+}

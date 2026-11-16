@@ -1,0 +1,241 @@
+{
+  "commands": {
+    "ticket": {
+      "description": "نظام التذاكر: لوحة، إدارة وإعدادات",
+      "options": {
+        "panel": {
+          "description": "نشر لوحة فتح التذكرة",
+          "options": {
+            "channel": "القناة لنشر اللوحة فيها (افتراضي: هذه)",
+            "title": "عنوان اللوحة",
+            "description": "نص اللوحة"
+          }
+        },
+        "close": { "description": "إغلاق تذكرة هذه القناة", "options": { "reason": "سبب الإغلاق" } },
+        "add": { "description": "إضافة عضو لهذه التذكرة", "options": { "user": "العضو للإضافة" } },
+        "remove": { "description": "إزالة عضو من هذه التذكرة", "options": { "user": "للإزالة" } },
+        "claim": { "description": "المطالبة بهذه التذكرة (أو التخلي عنها)" },
+        "rename": { "description": "إعادة تسمية قناة التذكرة", "options": { "name": "الاسم الجديد" } },
+        "transcript": { "description": "الحصول على ترانسكريبت هذه التذكرة خاصاً" },
+        "config": {
+          "description": "إعداد التذاكر",
+          "options": {
+            "show": { "description": "عرض الإعدادات والإحصائيات" },
+            "staff": {
+              "description": "إضافة أو إزالة رتبة موظفين",
+              "options": {
+                "role": "رتبة موظفين",
+                "action": { "description": "إضافة أو إزالة", "choices": { "add": "إضافة", "remove": "إزالة" } }
+              }
+            },
+            "logs": { "description": "قناة للسجلات والترانسكريبتس", "options": { "channel": "القناة (فارغ للتعطيل)" } },
+            "parent": { "description": "فئة ديسكورد حيث تُنشأ التذاكر", "options": { "category": "فئة (فارغ لللا فئة)" } },
+            "limit": { "description": "أقصى تذاكر مفتوحة لكل عضو", "options": { "max": "الحد الأقصى (1 إلى 10)" } },
+            "options": {
+              "description": "خيارات نظام التذاكر",
+              "options": {
+                "ratings": "طلب تقييم بعد الإغلاق",
+                "dm_transcript": "إرسال الترانسكريبت للمؤلف بالخاص",
+                "ask_reason": "طلب سبب قبل الفتح",
+                "owner_close": "المؤلف يستطيع إغلاق تذكرته",
+                "name_format": "تنسيق الاسم: {number}, {user}, {category}",
+                "welcome_message": "رسالة ترحيب ({user})، \"-\" للافتراضية"
+              }
+            }
+          }
+        },
+        "category": {
+          "description": "إدارة فئات التذاكر",
+          "options": {
+            "add": {
+              "description": "إضافة فئة",
+              "options": {
+                "name": "اسم الفئة",
+                "description": "وصف قصير",
+                "emoji": "إيموجي يُعرض في القائمة",
+                "parent": "فئة ديسكورد مخصصة",
+                "staff_role": "رتبة موظفين مخصصة"
+              }
+            },
+            "remove": { "description": "حذف فئة", "options": { "name": "الفئة للحذف" } },
+            "list": { "description": "عرض الفئات" }
+          }
+        }
+      }
+    }
+  },
+  "errors": {
+    "title": "لا يمكن فعل ذلك",
+    "discordPermission": "ديسكورد رفض الإجراء: تحقق أن رتبتي عالية بما يكفي وأن لدي الصلاحيات اللازمة في هذه القناة.",
+    "unexpected": "حدث خطأ غير متوقع. حاول مرة أخرى بعد لحظة.",
+    "botMissing": "أفتقر لهذه الصلاحيات: {perms}.",
+    "categoryGone": "هذه الفئة لم تعد موجودة. اطلب من الموظفين نشر اللوحة مرة أخرى.",
+    "tooMany": "لديك بالفعل {max} تذكرة(ات) مفتوحة: {channels}",
+    "notTicket": "هذه القناة ليست تذكرة.",
+    "alreadyClosed": "هذه التذكرة مغلقة بالفعل.",
+    "alreadyOpen": "هذه التذكرة مفتوحة بالفعل.",
+    "notAllowedClose": "الموظفون فقط يستطيعون إغلاق هذه التذكرة.",
+    "staffOnly": "الموظفون فقط يستطيعون فعل هذا.",
+    "claimedByOther": "هذه التذكرة محجوزة بالفعل بواسطة {user}.",
+    "notSelf": "أنا بالفعل جزء من التذكرة.",
+    "cannotRemoveOwner": "مؤلف التذكرة لا يمكن إزالته.",
+    "alreadyIn": "{user} لديه بالفعل وصول لهذه التذكرة.",
+    "notIn": "{user} لم يُضف لهذه التذكرة.",
+    "ratingExpired": "طلب التقييم هذا لم يعد صالحاً.",
+    "manageGuild": "تحتاج لصلاحية إدارة السيرفر.",
+    "everyoneRole": "رتبة @everyone لا يمكن أن تكون رتبة موظفين.",
+    "nothingChanged": "لم يُعطَ خيار: لم يتغير شيء.",
+    "tooManyCategories": "{max} فئات كحد أقصى (حد قائمة ديسكورد).",
+    "categoryExists": "الفئة \"{name}\" موجودة بالفعل.",
+    "badEmoji": "إيموجي غير صالح: استخدم إيموجي قياسي أو من هذا السيرفر.",
+    "categoryUnknown": "لا توجد فئة \"{name}\"."
+  },
+  "panel": {
+    "defaultTitle": "بحاجة مساعدة؟",
+    "defaultDescription": "اضغط بالأسفل لفتح تذكرة خاصة مع الموظفين.",
+    "button": "فتح تذكرة",
+    "select": "اختر موضوع طلبك",
+    "postedTitle": "تم نشر اللوحة",
+    "posted": "لوحة التذاكر نشطة في {channel}."
+  },
+  "modal": {
+    "title": "فتح تذكرة",
+    "label": "ما هو طلبك؟",
+    "placeholder": "صف مشكلتك في جمل قليلة"
+  },
+  "channel": {
+    "topic": "تذكرة #{number} بواسطة {user} ({id})",
+    "auditReason": "تذكرة فُتحت بواسطة {user}"
+  },
+  "welcome": {
+    "title": "تذكرة #{number}",
+    "description": "شكراً لفتح تذكرة. صف طلبك وسيجيبك موظف.",
+    "owner": "المؤلف",
+    "category": "الفئة",
+    "reason": "السبب"
+  },
+  "buttons": {
+    "close": "إغلاق",
+    "claim": "مطالبة",
+    "reopen": "إعادة فتح",
+    "transcript": "ترانسكريبت",
+    "delete": "حذف",
+    "confirmClose": "نعم، أغلق",
+    "cancel": "إلغاء"
+  },
+  "open": { "title": "تذكرة فُتحت", "done": "تذكرتك جاهزة: {channel}" },
+  "close": {
+    "confirmTitle": "إغلاق التذكرة؟",
+    "confirm": "القناة ستُخفى عن المؤلف وسيُحفظ ترانسكريبت.",
+    "cancelled": "تم إلغاء الإغلاق.",
+    "auditReason": "تذكرة أُغلقت",
+    "closedTitle": "تذكرة أُغلقت",
+    "closed": "أُغلقت بواسطة {user}.\nالسبب: {reason}",
+    "doneTitle": "تذكرة أُغلقت",
+    "done": "التذكرة مغلقة وترانسكريبتها محفوظ."
+  },
+  "reopen": { "title": "تذكرة فُتحت مجدداً", "done": "فُتحت بواسطة {user}.", "ok": "التذكرة متاحة مرة أخرى." },
+  "delete": { "title": "جاري الحذف", "soon": "هذه القناة ستُحذف خلال {seconds} ثوانٍ.", "auditReason": "تذكرة حُذفت بواسطة {user}" },
+  "claim": {
+    "title": "مطالبة",
+    "claimed": "{user} يتعامل مع هذه التذكرة.",
+    "released": "{user} تخلى عن هذه التذكرة.",
+    "claimedSelf": "طالبت بهذه التذكرة.",
+    "releasedSelf": "تخلّيت عن هذه التذكرة."
+  },
+  "members": { "title": "أعضاء التذكرة", "added": "تمت إضافة {user} بواسطة {by}.", "removed": "تمت إزالة {user} بواسطة {by}." },
+  "rename": { "title": "أعيد تسمية التذكرة", "done": "الاسم الجديد: {name}" },
+  "transcript": {
+    "title": "ترانسكريبت التذكرة",
+    "server": "السيرفر",
+    "channel": "القناة",
+    "opened": "فُتحت",
+    "closed": "أُغلقت",
+    "owner": "المؤلف",
+    "category": "الفئة",
+    "claimed": "طُولبت بواسطة",
+    "reason": "السبب",
+    "messages": "الرسائل",
+    "attachment": "مرفق",
+    "embed": "إيمبد",
+    "none": "لا شيء",
+    "readyTitle": "ترانسكريبت",
+    "ready": "إليك الترانسكريبت الحالي للتذكرة."
+  },
+  "dm": {
+    "title": "تذكرة أُغلقت",
+    "closed": "تذكرتك #{number} في **{server}** أُغلقت.\nالسبب: {reason}",
+    "rate": "كيف كانت؟ قيم تجربتك من 1 إلى 5 نجوم."
+  },
+  "rating": { "thanksTitle": "شكراً", "thanks": "تم حفظ تقييمك ({stars})." },
+  "log": {
+    "openedTitle": "تذكرة فُتحت",
+    "opened": "{user} فتح تذكرة #{number}: {channel}",
+    "closedTitle": "تذكرة #{number} أُغلقت",
+    "closedBy": "أُغلقت بواسطة",
+    "claimedBy": "طُولبت بواسطة",
+    "deletedTitle": "تذكرة حُذفت",
+    "deleted": "تذكرة #{number} حُذفت بواسطة {user}.",
+    "ratedTitle": "تقييم جديد",
+    "rated": "{user} قيم تذكرة #{number}: {stars}"
+  },
+  "config": {
+    "title": "إعدادات التذاكر",
+    "yes": "نعم",
+    "no": "لا",
+    "fields": {
+      "staff": "رتب الموظفين",
+      "logs": "قناة السجلات",
+      "parent": "فئة ديسكورد",
+      "limit": "أقصى تذاكر لكل عضو",
+      "ratings": "التقييمات",
+      "dmTranscript": "ترانسكريبت بالخاص",
+      "askReason": "يُطلب السبب",
+      "ownerClose": "المؤلف يغلق",
+      "nameFormat": "تنسيق الاسم",
+      "categories": "الفئات",
+      "stats": "الإحصائيات"
+    },
+    "statsValue": "{open} مفتوحة الآن، {opened} فُتحت إجمالاً، {closed} أُغلقت. متوسط التقييم: {avg} ({count} مراجعة).",
+    "staffAdded": "{role} أصبح جزءاً من موظفي التذاكر.",
+    "staffRemoved": "{role} لم يعد جزءاً من موظفي التذاكر.",
+    "logsSet": "السجلات والترانسكريبتس ستذهب لـ {channel}.",
+    "logsCleared": "قناة السجلات أُزيلت: قناة السجلات العامة ستُستخدم إذا وُجدت.",
+    "parentSet": "التذاكر ستُنشأ في فئة {category}.",
+    "parentCleared": "التذاكر ستُنشأ خارج أي فئة.",
+    "limitSet": "كل عضو يمكنه {max} تذكرة(ات) مفتوحة.",
+    "optionsSaved": "تم حفظ {count} خيار(ات)."
+  },
+  "category": {
+    "title": "الفئات",
+    "listTitle": "فئات التذاكر",
+    "empty": "لا فئة: اللوحة تعرض زراً واحداً.",
+    "added": "فئة \"{name}\" أُضيفت. انشر اللوحة مرة أخرى لإظهارها.",
+    "removed": "فئة \"{name}\" حُذفت. انشر اللوحة مرة أخرى لإزالتها."
+  },
+  "dashboard": {
+    "general": { "title": "التذاكر", "description": "الموظفون، القنوات والحدود لنظام التذاكر." },
+    "behaviour": { "title": "السلوك" },
+    "fields": {
+      "staffRoleIds": "رتب الموظفين",
+      "logChannelId": "قناة السجلات",
+      "parentId": "فئة ديسكورد للتذاكر",
+      "maxOpen": "أقصى تذاكر مفتوحة لكل عضو",
+      "nameFormat": "تنسيق اسم القناة",
+      "askReason": "طلب سبب عند الفتح",
+      "ownerCanClose": "المؤلف يستطيع إغلاق تذكرته",
+      "dmTranscript": "ترانسكريبت يُرسل بالخاص",
+      "ratings": "التقييمات بعد الإغلاق",
+      "welcomeMessage": "رسالة الترحيب"
+    },
+    "help": {
+      "staffRoleIds": "هذه الرتب ترى كل التذاكر وتستطيع إدارتها.",
+      "logChannelId": "تستقبل الفتحات، الإغلاقات، التقييمات وترانسكريبتس .txt.",
+      "parentId": "اتركه فارغاً لإنشاء تذاكر خارج أي فئة.",
+      "nameFormat": "متغيرات: {number}, {user}, {category}.",
+      "ratings": "المؤلف يحصل على أزرار 1-5 نجوم بالخاص.",
+      "welcomeMessage": "فارغ للرسالة الافتراضية. متغير: {user}."
+    },
+    "actions": { "resetStats": "إعادة تعيين الإحصائيات", "resetStatsDone": "تم مسح الإحصائيات والتقييمات." }
+  }
+}

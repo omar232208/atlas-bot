@@ -1,0 +1,217 @@
+{
+  "commands": {
+    "help": {
+      "description": "List the commands of every module",
+      "options": {
+        "command": "Show the details of one command"
+      }
+    },
+    "ping": {
+      "description": "Show the bot latency"
+    },
+    "botinfo": {
+      "description": "Show information about the bot"
+    },
+    "config": {
+      "description": "Bot settings for this server",
+      "options": {
+        "language": {
+          "description": "Change the bot language on this server",
+          "options": {
+            "value": "Language"
+          }
+        },
+        "show": {
+          "description": "Show the current settings"
+        },
+        "reset": {
+          "description": "Reset every setting of this server"
+        }
+      }
+    },
+    "setup": {
+      "description": "Guided first-time setup of the bot"
+    }
+  },
+  "modules": {
+    "core-commands": {
+      "name": "General",
+      "description": "Help, latency, information and bot settings"
+    },
+    "antiraid": {
+      "name": "Antiraid",
+      "description": "Join wave detection, raid mode and lockdown"
+    },
+    "antinuke": {
+      "name": "Antinuke",
+      "description": "Stops mass deletions and restores the server"
+    },
+    "automod": {
+      "name": "Automod",
+      "description": "Link, invite, spam, caps and banned word filters"
+    },
+    "moderation": {
+      "name": "Moderation",
+      "description": "Sanctions, warnings, purge and case history"
+    },
+    "logs": {
+      "name": "Logs",
+      "description": "Logs for messages, members, sanctions, server and voice"
+    },
+    "welcome": {
+      "name": "Welcome",
+      "description": "Welcome and goodbye messages, automatic roles"
+    },
+    "verification": {
+      "name": "Verification",
+      "description": "Button captcha before server access"
+    },
+    "tickets": {
+      "name": "Tickets",
+      "description": "Support through private channels with transcripts"
+    },
+    "roles": {
+      "name": "Roles",
+      "description": "Role menus, temporary roles and management"
+    },
+    "utility": {
+      "name": "Utility",
+      "description": "Info, polls, reminders, embeds and invites"
+    },
+    "giveaways": {
+      "name": "Giveaways",
+      "description": "Giveaways with button entry and requirements"
+    },
+    "levels": {
+      "name": "Levels",
+      "description": "Experience, leaderboard and reward roles"
+    },
+    "backup": {
+      "name": "Backups",
+      "description": "Save and restore roles and channels"
+    },
+    "economy": {
+      "name": "Economy",
+      "description": "Currency, shop, work and casino games"
+    },
+    "fun": {
+      "name": "Fun",
+      "description": "Button mini-games, trivia and fun commands"
+    },
+    "community": {
+      "name": "Community",
+      "description": "Suggestions, starboard, birthdays, tags and temporary voice"
+    },
+    "music": {
+      "name": "Music",
+      "description": "Web radios, audio links and files in voice"
+    },
+    "dashboard": {
+      "name": "Dashboard",
+      "description": "Server settings from the browser"
+    }
+  },
+  "help": {
+    "title": "Help",
+    "intro": "Pick a module in the menu to see its commands, or use `/help command:<name>` for the details of one command.",
+    "footer": "{count} commands available",
+    "placeholder": "Pick a module",
+    "commandCount": "{count} command(s)",
+    "moduleTitle": "{module} module",
+    "noCommands": "This module has no command.",
+    "home": "Home",
+    "module": "Module",
+    "permissions": "Required permission",
+    "cooldown": "Cooldown",
+    "required": "required",
+    "optional": "optional",
+    "options": "Options",
+    "subcommands": "Subcommands",
+    "notFound": "No command named `{name}`."
+  },
+  "ping": {
+    "measuring": "Measuring…",
+    "title": "Pong",
+    "ms": "{value} ms",
+    "roundTrip": "Round trip",
+    "gateway": "Discord gateway"
+  },
+  "botinfo": {
+    "title": "Atlas",
+    "description": "Open-source multi-purpose Discord bot: protection, moderation, tickets, music, levels, economy and more.\nProgrammer: Omar",
+    "uptime": "Uptime",
+    "memory": "Memory",
+    "memoryValue": "{rss} MB (heap: {heap} MB)",
+    "latency": "Latency",
+    "servers": "Servers",
+    "members": "Members",
+    "modules": "Modules",
+    "modulesValue": "{modules} modules, {commands} commands",
+    "versions": "Versions",
+    "hosting": "Hosting",
+    "hostingValue": "Want your own copy? Host it for free on ACLClouds: https://aclclouds.com",
+    "footer": "Atlas - Coded by Omar, free software under the MIT license"
+  },
+  "config": {
+    "showTitle": "Settings of {server}",
+    "language": "Language",
+    "default": "default",
+    "whitelist": "Whitelist",
+    "whitelistValue": "{count} member(s)",
+    "setup": "Guided setup",
+    "setupDone": "Done on {date} by {user}",
+    "setupNever": "Not done yet: run /setup",
+    "logs": "Log channels",
+    "protections": "Protections",
+    "dashboard": "Web dashboard",
+    "languageSetTitle": "Language changed",
+    "languageSet": "The bot now speaks {language} on this server. Command descriptions follow each user's Discord language.",
+    "resetConfirm": "Every setting of this server will be erased (language, logs, protections, whitelist, module data). This cannot be undone.",
+    "resetTitle": "Settings reset",
+    "resetDone": "The server starts from scratch. Run /setup to configure it again."
+  },
+  "protections": {
+    "antiraid": "Antiraid",
+    "antinuke": "Antinuke",
+    "automod": "Automod"
+  },
+  "protectionsHelp": {
+    "antiraid": "Spots join waves and blocks new accounts",
+    "antinuke": "Punishes mass channel and role deletions",
+    "automod": "Filters spam, invites and links"
+  },
+  "setup": {
+    "step": "Step {step} of {total}",
+    "languageTitle": "Bot language",
+    "languageIntro": "Welcome! This setup takes a minute. First pick the language the bot uses on this server.",
+    "languagePlaceholder": "Pick a language",
+    "logsTitle": "Log channel",
+    "logsIntro": "Pick the channel where the bot records what happens (sanctions, protections, deleted messages…). You can split categories later with /logs set.",
+    "logsPlaceholder": "Pick a channel",
+    "protectionsTitle": "Protections",
+    "protectionsIntro": "Tick the protections to turn on. The defaults suit most servers; each module can then be tuned with its own command.",
+    "protectionsPlaceholder": "Protections to turn on",
+    "doneTitle": "Setup complete",
+    "doneIntro": "The bot is ready on this server.",
+    "doneLanguage": "Language: {language}",
+    "doneLogs": "Logs: {channel}",
+    "doneProtections": "Active protections: {list}",
+    "doneNext": "Move my role above the members' roles so protections can act. Next: /help to discover the commands, /config show to review these settings."
+  },
+  "languages": {
+    "ar": "العربية",
+    "en": "English"
+  },
+  "dashboard": {
+    "general": {
+      "title": "General",
+      "description": "Basic bot settings for this server.",
+      "language": "Bot language",
+      "languageHelp": "Language of replies, automatic messages and logs."
+    },
+    "actions": {
+      "reset": "Reset every setting",
+      "resetDone": "Every server setting was erased."
+    }
+  }
+}

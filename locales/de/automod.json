@@ -1,0 +1,519 @@
+{
+  "commands": {
+    "automod": {
+      "description": "Filter der automatischen Moderation",
+      "options": {
+        "status": {
+          "description": "Automod-Konfiguration anzeigen"
+        },
+        "enable": {
+          "description": "Automod einschalten"
+        },
+        "disable": {
+          "description": "Automod ausschalten"
+        },
+        "filter": {
+          "description": "Einen Filter ein- oder ausschalten",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Verbotene Wörter",
+                "invites": "Einladungen",
+                "links": "Links",
+                "mentions": "Massenerwähnungen",
+                "spam": "Nachrichtenspam",
+                "duplicates": "Wiederholte Nachrichten",
+                "attachments": "Dateispam",
+                "zalgo": "Zalgo-Text",
+                "caps": "Großbuchstaben",
+                "emojis": "Emoji-Spam",
+                "newlines": "Zeilenspam"
+              }
+            },
+            "enabled": "Ein oder aus"
+          }
+        },
+        "action": {
+          "description": "Festlegen, was ein Filter tut",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Verbotene Wörter",
+                "invites": "Einladungen",
+                "links": "Links",
+                "mentions": "Massenerwähnungen",
+                "spam": "Nachrichtenspam",
+                "duplicates": "Wiederholte Nachrichten",
+                "attachments": "Dateispam",
+                "zalgo": "Zalgo-Text",
+                "caps": "Großbuchstaben",
+                "emojis": "Emoji-Spam",
+                "newlines": "Zeilenspam"
+              }
+            },
+            "action": {
+              "description": "Aktion",
+              "choices": {
+                "delete": "Nachricht löschen",
+                "warn": "Löschen und verwarnen",
+                "timeout": "Löschen und Timeout geben",
+                "kick": "Löschen und kicken",
+                "ban": "Löschen und bannen"
+              }
+            },
+            "duration": "Für einen Timeout oder temporären Bann, z. B. 10m (leerer Bann = dauerhaft)"
+          }
+        },
+        "set": {
+          "description": "Schwellenwerte eines Filters anpassen",
+          "options": {
+            "filter": {
+              "description": "Filter",
+              "choices": {
+                "badwords": "Verbotene Wörter",
+                "invites": "Einladungen",
+                "links": "Links",
+                "mentions": "Massenerwähnungen",
+                "spam": "Nachrichtenspam",
+                "duplicates": "Wiederholte Nachrichten",
+                "attachments": "Dateispam",
+                "zalgo": "Zalgo-Text",
+                "caps": "Großbuchstaben",
+                "emojis": "Emoji-Spam",
+                "newlines": "Zeilenspam"
+              }
+            },
+            "limit": "Limit (Bedeutung hängt vom Filter ab, siehe /automod status)",
+            "seconds": "Zeitfenster in Sekunden (Spam, Wiederholungen, Dateien)",
+            "percent": "Anteil der Großbuchstaben in % (caps)",
+            "min_length": "Mindestanzahl Buchstaben vor der Prüfung auf Großbuchstaben (caps)",
+            "allow_own": "Einladungen zu diesem Server erlauben (invites)"
+          }
+        },
+        "exempt": {
+          "description": "Rolle oder Kanal von allen Filtern oder einem Filter ausnehmen",
+          "options": {
+            "mode": {
+              "description": "Hinzufügen oder entfernen",
+              "choices": {
+                "add": "Hinzufügen",
+                "remove": "Entfernen"
+              }
+            },
+            "role": "Rolle",
+            "channel": "Kanal oder Kategorie",
+            "filter": {
+              "description": "Nur für diesen Filter (leer = alle Filter)",
+              "choices": {
+                "badwords": "Verbotene Wörter",
+                "invites": "Einladungen",
+                "links": "Links",
+                "mentions": "Massenerwähnungen",
+                "spam": "Nachrichtenspam",
+                "duplicates": "Wiederholte Nachrichten",
+                "attachments": "Dateispam",
+                "zalgo": "Zalgo-Text",
+                "caps": "Großbuchstaben",
+                "emojis": "Emoji-Spam",
+                "newlines": "Zeilenspam"
+              }
+            }
+          }
+        },
+        "settings": {
+          "description": "Allgemeine Automod-Einstellungen",
+          "options": {
+            "notify": "Kurzen Hinweis im Kanal posten",
+            "ignore_staff": "Mitglieder ignorieren, die Nachrichten verwalten dürfen",
+            "strike_window": "Wie lange ein Verstoß zählt, z. B. 24h, oder \"off\" für immer"
+          }
+        },
+        "test": {
+          "description": "Prüfen, welche Filter ein Text auslösen würde",
+          "options": {
+            "text": "Zu testender Text"
+          }
+        },
+        "escalation": {
+          "description": "Härtere Strafen nach wiederholten Verstößen",
+          "options": {
+            "add": {
+              "description": "Stufe hinzufügen oder ersetzen",
+              "options": {
+                "strikes": "Anzahl der Verstöße",
+                "action": {
+                  "description": "Strafe",
+                  "choices": {
+                    "warn": "Löschen und verwarnen",
+                    "timeout": "Löschen und Timeout geben",
+                    "kick": "Löschen und kicken",
+                    "ban": "Löschen und bannen"
+                  }
+                },
+                "duration": "Für einen Timeout (Standard 10m) oder temporären Bann"
+              }
+            },
+            "remove": {
+              "description": "Stufe entfernen",
+              "options": {
+                "strikes": "Anzahl der Verstöße"
+              }
+            }
+          }
+        },
+        "strikes": {
+          "description": "Verstöße eines Mitglieds",
+          "options": {
+            "view": {
+              "description": "Verstöße eines Mitglieds anzeigen",
+              "options": {
+                "user": "Mitglied"
+              }
+            },
+            "reset": {
+              "description": "Verstöße eines Mitglieds zurücksetzen",
+              "options": {
+                "user": "Mitglied"
+              }
+            }
+          }
+        }
+      }
+    },
+    "badwords": {
+      "description": "Verbotene Wörter des Automods",
+      "options": {
+        "add": {
+          "description": "Wörter hinzufügen (kommagetrennt, * = Platzhalter)",
+          "options": {
+            "words": "z. B. wort, wort*, *wort*"
+          }
+        },
+        "remove": {
+          "description": "Wörter entfernen (kommagetrennt)",
+          "options": {
+            "words": "Zu entfernende Wörter"
+          }
+        },
+        "list": {
+          "description": "Verbotene Wörter anzeigen (nur für dich)"
+        },
+        "clear": {
+          "description": "Alle verbotenen Wörter entfernen"
+        }
+      }
+    },
+    "links": {
+      "description": "Erlaubte und blockierte Domains des Linkfilters",
+      "options": {
+        "allow": {
+          "description": "Eine Domain und ihre Subdomains erlauben",
+          "options": {
+            "domain": "z. B. youtube.com"
+          }
+        },
+        "deny": {
+          "description": "Eine Domain und ihre Subdomains immer blockieren",
+          "options": {
+            "domain": "z. B. example.com"
+          }
+        },
+        "remove": {
+          "description": "Eine Domain aus beiden Listen entfernen",
+          "options": {
+            "domain": "Domain"
+          }
+        },
+        "mode": {
+          "description": "Alle Links außer erlaubten blockieren oder nur blockierte",
+          "options": {
+            "mode": {
+              "description": "Modus",
+              "choices": {
+                "allowlist": "Erlaubnisliste (alle anderen Links werden blockiert)",
+                "denylist": "Sperrliste (nur gelistete Domains werden blockiert)"
+              }
+            }
+          }
+        },
+        "list": {
+          "description": "Beide Listen anzeigen"
+        }
+      }
+    }
+  },
+  "filters": {
+    "badwords": {
+      "name": "Verbotene Wörter",
+      "description": "Wörter aus /badwords, mit *-Platzhaltern. Akzente, Leetspeak (b4d) und gesperrte Buchstaben (b a d) werden erkannt.",
+      "threshold": "Liste aus /badwords"
+    },
+    "invites": {
+      "name": "Einladungen",
+      "description": "Discord-Einladungen zu anderen Servern, auch wenn sie als \"discord . gg / code\" geschrieben sind.",
+      "threshold": "eigener Server erlaubt: {allowOwn}"
+    },
+    "links": {
+      "name": "Links",
+      "description": "Links, je nach erlaubten und blockierten Domains in /links.",
+      "threshold": "siehe /links"
+    },
+    "mentions": {
+      "name": "Massenerwähnungen",
+      "description": "Limit = in einer Nachricht erwähnte Nutzer und Rollen.",
+      "threshold": "{limit} Erwähnungen"
+    },
+    "spam": {
+      "name": "Nachrichtenspam",
+      "description": "Limit = im Zeitfenster gesendete Nachrichten.",
+      "threshold": "{limit} Nachrichten / {seconds} s"
+    },
+    "duplicates": {
+      "name": "Wiederholte Nachrichten",
+      "description": "Limit = identische Nachrichten im Zeitfenster.",
+      "threshold": "{limit} Kopien / {seconds} s"
+    },
+    "attachments": {
+      "name": "Dateispam",
+      "description": "Limit = im Zeitfenster gesendete Dateien und Sticker.",
+      "threshold": "{limit} Dateien / {seconds} s"
+    },
+    "zalgo": {
+      "name": "Zalgo-Text",
+      "description": "Limit = übereinander gestapelte Akzentzeichen auf einem Zeichen.",
+      "threshold": "{limit} gestapelte Zeichen"
+    },
+    "caps": {
+      "name": "Großbuchstaben",
+      "description": "Anteil der Großbuchstaben, geprüft sobald die Nachricht genug Buchstaben hat.",
+      "threshold": "{percent} % ab {minLength} Buchstaben"
+    },
+    "emojis": {
+      "name": "Emoji-Spam",
+      "description": "Limit = Emojis in einer Nachricht.",
+      "threshold": "{limit} Emojis"
+    },
+    "newlines": {
+      "name": "Zeilenspam",
+      "description": "Limit = Zeilenumbrüche in einer Nachricht.",
+      "threshold": "{limit} Zeilen"
+    }
+  },
+  "reasons": {
+    "badwords": "Verbotenes Wort",
+    "invites": "Einladung zu einem anderen Server ({codes})",
+    "links": "Link nicht erlaubt ({domains})",
+    "mentions": "Zu viele Erwähnungen ({count})",
+    "spam": "Spam: {count} Nachrichten in {seconds} s",
+    "duplicates": "Gleiche Nachricht {count}-mal wiederholt",
+    "attachments": "Zu viele Dateien: {count} in {seconds} s",
+    "zalgo": "Zalgo-Text",
+    "caps": "Zu viele Großbuchstaben ({percent} %)",
+    "emojis": "Zu viele Emojis ({count})",
+    "newlines": "Zu viele Zeilen ({count})"
+  },
+  "actions": {
+    "delete": "Löschen",
+    "warn": "Löschen + Verwarnung",
+    "timeout": "Löschen + Timeout",
+    "kick": "Löschen + Kick",
+    "ban": "Löschen + Bann"
+  },
+  "linkModes": {
+    "allowlist": "Erlaubnisliste (alle anderen Links werden blockiert)",
+    "denylist": "Sperrliste (nur gelistete Domains werden blockiert)"
+  },
+  "notice": {
+    "title": "Nachricht entfernt",
+    "delete": "{user}, deine Nachricht wurde entfernt: {reason}.",
+    "warn": "{user}, deine Nachricht wurde entfernt und du hast eine Verwarnung erhalten: {reason}.",
+    "timeout": "{user} hat einen Timeout erhalten: {reason}.",
+    "kick": "{user} wurde gekickt: {reason}.",
+    "ban": "{user} wurde gebannt: {reason}."
+  },
+  "status": {
+    "title": "Automod",
+    "enabled": "Automod ist **an**.",
+    "disabled": "Automod ist **aus**: schalte ihn mit /automod enable ein.",
+    "filters": "Filter",
+    "on": "an",
+    "off": "aus",
+    "escalation": "Eskalation",
+    "step": "{strikes} Verstöße → {action}",
+    "strikeWindow": "Verstöße zählen für",
+    "never": "Für immer",
+    "ignoreStaff": "Team ignoriert",
+    "notify": "Hinweis im Kanal",
+    "yes": "Ja",
+    "no": "Nein",
+    "none": "Keine",
+    "exemptRoles": "Ausgenommene Rollen",
+    "exemptChannels": "Ausgenommene Kanäle",
+    "exemptCount": "{count} Ausnahme(n)",
+    "lists": "Listen",
+    "listsValue": "{words} verbotene(s) Wort/Wörter · {allow} erlaubte Domain(s) · {deny} blockierte Domain(s) · Modus: {mode}"
+  },
+  "errors": {
+    "title": "Aktion nicht möglich",
+    "badDuration": "Ungültige Dauer. Beispiele: 10m, 2h, 7d (höchstens 28 Tage für einen Timeout).",
+    "noStep": "Es gibt keine Stufe bei {count} Verstößen.",
+    "tooManySteps": "Höchstens {max} Stufen. Entferne zuerst eine.",
+    "exemptNothing": "Wähle eine Rolle oder einen Kanal.",
+    "setNothing": "Gib mindestens einen Wert zum Ändern an.",
+    "setWrongParam": "Dieser Filter hat keine Einstellung \"{param}\". Filter, die sie haben: {filters}.",
+    "setRange": "\"{param}\" muss zwischen {min} und {max} liegen.",
+    "noWords": "Kein gültiges Wort. Wörter werden durch Kommas getrennt und sind höchstens {max} Zeichen lang.",
+    "tooManyWords": "Höchstens {max} verbotene Wörter.",
+    "badDomain": "Das ist keine gültige Domain. Beispiel: youtube.com",
+    "domainUnknown": "{domain} steht in keiner der beiden Listen.",
+    "tooManyDomains": "Höchstens {max} Domains pro Liste."
+  },
+  "strikes": {
+    "title": "Verstöße",
+    "count": "{user} hat **{count}** aktive(n) Verstoß/Verstöße.",
+    "last": "Letzter Verstoß: {when}",
+    "next": "Nächste Stufe bei {count} Verstößen: {action}",
+    "reset": "Verstöße von {user} zurückgesetzt."
+  },
+  "test": {
+    "title": "Automod-Test",
+    "clean": "Dieser Text löst keinen Filter aus.",
+    "disabled": "Filter aus",
+    "note": "Frequenzfilter (Spam, wiederholte Nachrichten, Dateien) brauchen mehrere Nachrichten und werden hier nicht getestet."
+  },
+  "badwords": {
+    "title": "Verbotene Wörter",
+    "added": "{count} Wort/Wörter hinzugefügt ({total} insgesamt).",
+    "removed": "{count} Wort/Wörter entfernt ({total} übrig).",
+    "empty": "Die Liste ist leer.",
+    "listTitle": "Verbotene Wörter ({count})",
+    "help": "wort = ganzes Wort · wort* = beginnt mit · *wort* = irgendwo",
+    "clearConfirm": "Alle {count} verbotenen Wörter entfernen?",
+    "cleared": "Die Liste ist jetzt leer.",
+    "filterOff": "Der Filter für verbotene Wörter ist aus: /automod filter badwords on."
+  },
+  "links": {
+    "title": "Linkfilter",
+    "mode": "Modus",
+    "allowed": "Erlaubte Domains ({count})",
+    "denied": "Blockierte Domains ({count})",
+    "saved": "Listen aktualisiert.",
+    "filterOff": "Der Linkfilter ist aus: /automod filter links on.",
+    "modeHelp": {
+      "allowlist": "Alle Links werden blockiert, außer von erlaubten Domains.",
+      "denylist": "Nur blockierte Domains werden entfernt; andere Links gehen durch."
+    }
+  },
+  "log": {
+    "title": "Automod",
+    "user": "Nutzer",
+    "channel": "Kanal",
+    "filter": "Filter",
+    "action": "Aktion",
+    "strikes": "Verstöße",
+    "strikesShort": "Verstoß {count}",
+    "escalated": "eskaliert",
+    "reason": "Grund",
+    "content": "Nachricht"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Allgemein",
+      "description": "Hauptschalter, wer ignoriert wird und wie lange Verstöße zählen."
+    },
+    "lists": {
+      "title": "Listen",
+      "description": "Verbotene Wörter und Link-Domains."
+    },
+    "fields": {
+      "enabled": {
+        "label": "Automod aktiviert",
+        "help": "Hauptschalter für alle Filter."
+      },
+      "ignoreStaff": {
+        "label": "Team ignorieren",
+        "help": "Mitglieder mit Nachrichten verwalten, Server verwalten oder Administrator werden nie geprüft."
+      },
+      "notify": {
+        "label": "Hinweis im Kanal",
+        "help": "Eine kurze Nachricht, die nach ein paar Sekunden gelöscht wird, erklärt dem Mitglied, warum seine Nachricht entfernt wurde."
+      },
+      "exemptRoles": {
+        "label": "Ausgenommene Rollen",
+        "help": "Mitglieder mit einer dieser Rollen werden nie geprüft."
+      },
+      "exemptChannels": {
+        "label": "Ausgenommene Kanäle",
+        "help": "Kanäle oder Kategorien, in denen Automod nichts tut."
+      },
+      "strikeWindow": {
+        "label": "Verstöße zählen für",
+        "help": "Jede Regelverletzung gibt einen Verstoß; Eskalationsstufen zählen die Verstöße in diesem Zeitraum. 0 = für immer."
+      },
+      "badwords": {
+        "label": "Verbotene Wörter",
+        "help": "Eines pro Eintrag. wort = ganzes Wort, wort* = beginnt mit, *wort* = irgendwo."
+      },
+      "linkMode": {
+        "label": "Linkmodus",
+        "help": "Die Erlaubnisliste blockiert alle Links außer erlaubten Domains; die Sperrliste blockiert nur gelistete Domains."
+      },
+      "linkAllow": {
+        "label": "Erlaubte Domains",
+        "help": "Subdomains sind eingeschlossen (youtube.com deckt m.youtube.com ab)."
+      },
+      "linkDeny": {
+        "label": "Blockierte Domains",
+        "help": "Immer blockiert, unabhängig vom Modus."
+      }
+    },
+    "filter": {
+      "enabled": {
+        "label": "Aktiviert",
+        "help": "Diesen Filter einschalten."
+      },
+      "action": {
+        "label": "Aktion",
+        "help": "Die Nachricht wird immer gelöscht; die Aktion kann eine Strafe hinzufügen."
+      },
+      "duration": {
+        "label": "Dauer",
+        "help": "Dauer eines Timeouts oder temporären Banns. 0 bei einem Bann = dauerhaft."
+      },
+      "allowOwn": {
+        "label": "Eigene Einladungen erlauben",
+        "help": "Einladungen zu diesem Server werden nicht entfernt."
+      },
+      "limit": {
+        "label": "Limit",
+        "help": "Greift, sobald diese Zahl erreicht ist (siehe Beschreibung oben)."
+      },
+      "seconds": {
+        "label": "Zeitfenster (Sekunden)",
+        "help": "Nachrichten werden über so viele Sekunden gezählt."
+      },
+      "percent": {
+        "label": "Großbuchstaben (%)",
+        "help": "Anteil der Großbuchstaben, der den Filter auslöst."
+      },
+      "minLength": {
+        "label": "Mindestanzahl Buchstaben",
+        "help": "Kurze Nachrichten (\"OK\", \"LOL\") werden nicht geprüft."
+      },
+      "exemptRoles": {
+        "label": "Ausgenommene Rollen",
+        "help": "Rollen, die dieser Filter ignoriert."
+      },
+      "exemptChannels": {
+        "label": "Ausgenommene Kanäle",
+        "help": "Kanäle oder Kategorien, die dieser Filter ignoriert."
+      }
+    },
+    "actions": {
+      "resetStrikes": "Alle Verstöße zurücksetzen",
+      "resetStrikesDone": "Alle Verstöße wurden zurückgesetzt."
+    }
+  }
+}

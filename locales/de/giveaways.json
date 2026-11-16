@@ -1,0 +1,122 @@
+{
+  "errors": {
+    "title": "Fehler",
+    "adminOnly": "Für diese Aktion brauchst du die Berechtigung Server verwalten.",
+    "badDuration": "Ungültige Dauer. Beispiele: 30m, 2h, 1d 12h.",
+    "tooShort": "Die Mindestdauer beträgt eine Minute.",
+    "tooLong": "Die Höchstdauer beträgt {max} Tage.",
+    "notFound": "Dieses Gewinnspiel existiert nicht.",
+    "notActive": "Dieses Gewinnspiel ist nicht mehr aktiv.",
+    "notEnded": "Nur ein beendetes Gewinnspiel kann neu ausgelost werden.",
+    "noAlternative": "Es gibt niemanden sonst zum Auslosen.",
+    "botMissing": "In diesem Kanal fehlt mir eine Berechtigung: {perms}.",
+    "postFailed": "Ich konnte das Gewinnspiel in diesem Kanal nicht veröffentlichen."
+  },
+  "start": {
+    "title": "Gewinnspiel gestartet",
+    "done": "Das Gewinnspiel ist veröffentlicht ({link}). Endet {time}. Kennung: `{id}`."
+  },
+  "end": {
+    "title": "Gewinnspiel beendet",
+    "done": "\"{prize}\" ist beendet. Die Gewinner wurden bekannt gegeben."
+  },
+  "reroll": {
+    "title": "Neue Auslosung",
+    "done": "Neue Gewinner: {winners}"
+  },
+  "cancel": {
+    "title": "Gewinnspiel abgebrochen",
+    "done": "\"{prize}\" wurde abgebrochen. Niemand gewinnt."
+  },
+  "list": {
+    "title": "Gewinnspiele",
+    "empty": "Auf diesem Server gibt es kein Gewinnspiel.",
+    "entries": "{count} Teilnehmer"
+  },
+  "status": {
+    "active": "läuft",
+    "ended": "beendet",
+    "cancelled": "abgebrochen"
+  },
+  "embed": {
+    "host": "Veranstaltet von",
+    "winners": "Gewinner",
+    "entries": "Teilnahmen",
+    "requirements": "Voraussetzungen",
+    "requireRole": "Die Rolle {role} haben",
+    "requireAge": "Konto ist mindestens {days} Tag(e) alt",
+    "instructions": "Drück auf den Knopf, um teilzunehmen. Drück noch einmal, um auszutreten.",
+    "ends": "Endet {time}",
+    "ended": "Gewinner: {winners}",
+    "cancelled": "Dieses Gewinnspiel wurde abgebrochen."
+  },
+  "buttons": {
+    "enter": "Teilnehmen ({count})",
+    "over": "Gewinnspiel vorbei"
+  },
+  "entry": {
+    "joined": "Du nimmst am Gewinnspiel teil. Viel Glück!",
+    "left": "Du nimmst nicht mehr am Gewinnspiel teil.",
+    "needRole": "Du brauchst die Rolle {role}, um teilzunehmen.",
+    "needAge": "Dein Konto muss mindestens {days} Tag(e) alt sein, um teilzunehmen."
+  },
+  "ended": {
+    "announce": "Glückwunsch zu \"{prize}\": {winners}!",
+    "noWinners": "Niemand hat bei \"{prize}\" mitgemacht.",
+    "dmTitle": "Du hast gewonnen!",
+    "dm": "Du hast \"{prize}\" auf dem Server gewonnen. Melde dich bei den Veranstaltern, um deinen Preis zu erhalten."
+  },
+  "dashboard": {
+    "general": {
+      "title": "Gewinnspiele",
+      "description": "Regeln für alle Gewinnspiele des Servers.",
+      "maxDays": {
+        "label": "Maximale Dauer (Tage)",
+        "help": "Ein Gewinnspiel darf nicht länger laufen als das."
+      },
+      "dmWinners": {
+        "label": "Gewinner per Direktnachricht benachrichtigen",
+        "help": "Schickt jedem Gewinner beim Ende zusätzlich eine Direktnachricht."
+      }
+    }
+  },
+  "commands": {
+    "giveaway": {
+      "description": "Gewinnspiele veranstalten",
+      "options": {
+        "start": {
+          "description": "Startet ein Gewinnspiel",
+          "options": {
+            "prize": "Was verlost wird",
+            "duration": "Dauer, z. B. 1h oder 2d 4h",
+            "winners": "Anzahl der Gewinner",
+            "channel": "Kanal für das Gewinnspiel",
+            "role": "Rolle, die zur Teilnahme nötig ist",
+            "min_account_days": "Mindestalter des Kontos (Tage)"
+          }
+        },
+        "end": {
+          "description": "Beendet ein Gewinnspiel sofort und lost die Gewinner aus",
+          "options": {
+            "id": "Gewinnspiel"
+          }
+        },
+        "reroll": {
+          "description": "Lost neue Gewinner für ein beendetes Gewinnspiel aus",
+          "options": {
+            "id": "Gewinnspiel"
+          }
+        },
+        "cancel": {
+          "description": "Bricht ein Gewinnspiel ohne Gewinner ab",
+          "options": {
+            "id": "Gewinnspiel"
+          }
+        },
+        "list": {
+          "description": "Listet aktuelle Gewinnspiele auf"
+        }
+      }
+    }
+  }
+}

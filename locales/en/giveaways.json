@@ -1,0 +1,122 @@
+{
+  "errors": {
+    "title": "Error",
+    "adminOnly": "This action needs the Manage Server permission.",
+    "badDuration": "Invalid duration. Examples: 30m, 2h, 1d 12h.",
+    "tooShort": "The minimum duration is one minute.",
+    "tooLong": "The maximum duration is {max} days.",
+    "notFound": "This giveaway does not exist.",
+    "notActive": "This giveaway is no longer active.",
+    "notEnded": "Only an ended giveaway can be rerolled.",
+    "noAlternative": "There is nobody else to draw.",
+    "botMissing": "I am missing a permission in that channel: {perms}.",
+    "postFailed": "I could not post the giveaway in that channel."
+  },
+  "start": {
+    "title": "Giveaway started",
+    "done": "The giveaway is posted ({link}). Ends {time}. ID: `{id}`."
+  },
+  "end": {
+    "title": "Giveaway ended",
+    "done": "\"{prize}\" has ended. The winners have been announced."
+  },
+  "reroll": {
+    "title": "New draw",
+    "done": "New winners: {winners}"
+  },
+  "cancel": {
+    "title": "Giveaway cancelled",
+    "done": "\"{prize}\" is cancelled. Nobody wins."
+  },
+  "list": {
+    "title": "Giveaways",
+    "empty": "No giveaway on this server.",
+    "entries": "{count} entrant(s)"
+  },
+  "status": {
+    "active": "running",
+    "ended": "ended",
+    "cancelled": "cancelled"
+  },
+  "embed": {
+    "host": "Hosted by",
+    "winners": "Winners",
+    "entries": "Entries",
+    "requirements": "Requirements",
+    "requireRole": "Have the role {role}",
+    "requireAge": "Account at least {days} day(s) old",
+    "instructions": "Press the button to enter. Press it again to leave.",
+    "ends": "Ends {time}",
+    "ended": "Winner(s): {winners}",
+    "cancelled": "This giveaway was cancelled."
+  },
+  "buttons": {
+    "enter": "Enter ({count})",
+    "over": "Giveaway over"
+  },
+  "entry": {
+    "joined": "You have entered the giveaway. Good luck!",
+    "left": "You have left the giveaway.",
+    "needRole": "You need the role {role} to enter.",
+    "needAge": "Your account must be at least {days} day(s) old to enter."
+  },
+  "ended": {
+    "announce": "Congratulations on \"{prize}\": {winners}!",
+    "noWinners": "Nobody entered \"{prize}\".",
+    "dmTitle": "You won!",
+    "dm": "You won \"{prize}\" on the server. Contact the hosts to claim your prize."
+  },
+  "dashboard": {
+    "general": {
+      "title": "Giveaways",
+      "description": "Rules applied to every giveaway on the server.",
+      "maxDays": {
+        "label": "Maximum duration (days)",
+        "help": "A giveaway cannot run longer than this."
+      },
+      "dmWinners": {
+        "label": "Send winners a private message",
+        "help": "Also DM each winner when a giveaway ends."
+      }
+    }
+  },
+  "commands": {
+    "giveaway": {
+      "description": "Run giveaways",
+      "options": {
+        "start": {
+          "description": "Start a giveaway",
+          "options": {
+            "prize": "What is given away",
+            "duration": "How long, e.g. 1h or 2d 4h",
+            "winners": "Number of winners",
+            "channel": "Channel for the giveaway",
+            "role": "Role required to enter",
+            "min_account_days": "Minimum account age in days"
+          }
+        },
+        "end": {
+          "description": "End a giveaway now and draw winners",
+          "options": {
+            "id": "Giveaway"
+          }
+        },
+        "reroll": {
+          "description": "Draw new winners for an ended giveaway",
+          "options": {
+            "id": "Giveaway"
+          }
+        },
+        "cancel": {
+          "description": "Cancel a giveaway without winners",
+          "options": {
+            "id": "Giveaway"
+          }
+        },
+        "list": {
+          "description": "List recent giveaways"
+        }
+      }
+    }
+  }
+}

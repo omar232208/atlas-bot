@@ -1,0 +1,149 @@
+{
+  "errors": {
+    "title": "Fehler",
+    "botTarget": "Bots sammeln keine XP.",
+    "adminOnly": "Für diese Aktion brauchst du die Berechtigung Server verwalten.",
+    "roleUnusable": "Diese Rolle kann nicht vergeben werden (von einer Integration verwaltet oder @everyone).",
+    "botNeedsRoles": "Mir fehlt die Berechtigung Rollen verwalten.",
+    "roleTooHigh": "Ich kann {role} nicht vergeben: sie steht über meiner höchsten Rolle.",
+    "botMissing": "In diesem Kanal fehlt mir eine Berechtigung: {perms}.",
+    "tooManyRewards": "Es kann nicht mehr als {max} Stufenbelohnungen geben.",
+    "noReward": "Für Stufe {level} gibt es keine Belohnung."
+  },
+  "rank": {
+    "title": "Stufe von {user}",
+    "disabled": "Stufen sind auf diesem Server nicht aktiviert. Ein Administrator kann /levels enable verwenden.",
+    "none": "Noch keine XP. Schreib ein paar Nachrichten!",
+    "level": "Stufe",
+    "rank": "Rang",
+    "xp": "XP gesamt",
+    "progress": "{current} / {required} XP bis zur nächsten Stufe"
+  },
+  "leaderboard": {
+    "title": "Stufen-Rangliste",
+    "empty": "Noch niemand hat XP gesammelt.",
+    "line": "**#{rank}** {user} · Stufe {level} · {xp} XP"
+  },
+  "levelUp": {
+    "title": "Stufenaufstieg!",
+    "text": "{user} erreicht Stufe {level}."
+  },
+  "enable": {
+    "title": "Stufen aktiviert",
+    "done": "Mitglieder sammeln jetzt XP, wenn sie schreiben."
+  },
+  "disable": {
+    "title": "Stufen deaktiviert",
+    "done": "Mitglieder sammeln keine XP mehr. Die Daten bleiben erhalten."
+  },
+  "config": {
+    "title": "Stufen-Einstellungen",
+    "saved": "Einstellungen gespeichert",
+    "minAboveMax": "Die minimalen XP dürfen nicht über den maximalen XP liegen.",
+    "enabled": "Aktiviert",
+    "announce": "Stufenmeldungen",
+    "channel": "Ankündigungskanal",
+    "sameChannel": "Gleicher Kanal wie die Nachricht",
+    "cooldown": "Wartezeit zwischen zwei Gewinnen",
+    "xp": "XP pro Nachricht",
+    "on": "ja",
+    "off": "nein"
+  },
+  "reset": {
+    "title": "XP zurückgesetzt",
+    "done": "Die XP von {user} wurden auf null gesetzt."
+  },
+  "reward": {
+    "addedTitle": "Belohnung hinzugefügt",
+    "added": "Die Rolle {role} wird ab Stufe {level} vergeben.",
+    "removedTitle": "Belohnung entfernt",
+    "removed": "Für Stufe {level} wird keine Rolle mehr vergeben.",
+    "listTitle": "Stufenbelohnungen",
+    "none": "Noch keine Rollenbelohnungen.",
+    "line": "Stufe {level}: {role}"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Stufen",
+      "description": "XP pro Nachricht und Stufenmeldungen.",
+      "enabled": {
+        "label": "Stufen aktivieren",
+        "help": "Mitglieder sammeln XP, wenn sie schreiben."
+      },
+      "cooldown": {
+        "label": "Wartezeit zwischen zwei Gewinnen (Sekunden)",
+        "help": "Ein Mitglied bekommt nur einmal pro Wartezeit XP."
+      },
+      "xpMin": {
+        "label": "Minimale XP pro Nachricht",
+        "help": "Untergrenze des zufälligen Gewinns."
+      },
+      "xpMax": {
+        "label": "Maximale XP pro Nachricht",
+        "help": "Obergrenze des zufälligen Gewinns."
+      },
+      "announce": {
+        "label": "Stufenaufstiege ankündigen",
+        "help": "Sendet bei jedem Stufenaufstieg eine Nachricht."
+      },
+      "announceChannel": {
+        "label": "Ankündigungskanal",
+        "help": "Leer = der Kanal der Nachricht, die den Aufstieg ausgelöst hat."
+      }
+    }
+  },
+  "commands": {
+    "rank": {
+      "description": "Zeigt deine Stufe und deinen Rang",
+      "options": {
+        "user": "Mitglied, das angezeigt werden soll"
+      }
+    },
+    "leaderboard": {
+      "description": "Zeigt die aktivsten Mitglieder"
+    },
+    "levels": {
+      "description": "Stufen und Rollenbelohnungen konfigurieren",
+      "options": {
+        "enable": {
+          "description": "Schaltet XP für Nachrichten ein (Server verwalten)"
+        },
+        "disable": {
+          "description": "Schaltet XP für Nachrichten aus (Server verwalten)"
+        },
+        "config": {
+          "description": "Zeigt oder ändert die Einstellungen (Server verwalten)",
+          "options": {
+            "channel": "Kanal für Stufenmeldungen",
+            "announce": "Stufenaufstiege ankündigen",
+            "cooldown": "Sekunden zwischen zwei XP-Gewinnen",
+            "xp_min": "Minimale XP pro Nachricht",
+            "xp_max": "Maximale XP pro Nachricht"
+          }
+        },
+        "reset": {
+          "description": "Setzt die XP eines Mitglieds zurück (Server verwalten)",
+          "options": {
+            "user": "Mitglied"
+          }
+        },
+        "reward-add": {
+          "description": "Vergibt eine Rolle beim Erreichen einer Stufe (Server verwalten)",
+          "options": {
+            "level": "Stufe",
+            "role": "Rolle, die vergeben wird"
+          }
+        },
+        "reward-remove": {
+          "description": "Entfernt die Belohnung einer Stufe (Server verwalten)",
+          "options": {
+            "level": "Stufe"
+          }
+        },
+        "reward-list": {
+          "description": "Listet die Rollenbelohnungen auf"
+        }
+      }
+    }
+  }
+}

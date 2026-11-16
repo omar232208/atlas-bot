@@ -1,0 +1,519 @@
+{
+  "commands": {
+    "automod": {
+      "description": "فلاتر المودراشن التلقائي",
+      "options": {
+        "status": {
+          "description": "عرض إعدادات الأوتو مود"
+        },
+        "enable": {
+          "description": "تفعيل الأوتو مود"
+        },
+        "disable": {
+          "description": "تعطيل الأوتو مود"
+        },
+        "filter": {
+          "description": "تفعيل أو تعطيل فلتر واحد",
+          "options": {
+            "filter": {
+              "description": "الفلتر",
+              "choices": {
+                "badwords": "كلمات محظورة",
+                "invites": "دعوات",
+                "links": "روابط",
+                "mentions": "منشنات جماعية",
+                "spam": "سبام رسائل",
+                "duplicates": "رسائل مكررة",
+                "attachments": "سبام ملفات",
+                "zalgo": "نص زالجو",
+                "caps": "حروف كبيرة",
+                "emojis": "سبام إيموجي",
+                "newlines": "سبام أسطر"
+              }
+            },
+            "enabled": "مفعل أو معطل"
+          }
+        },
+        "action": {
+          "description": "اختيار إجراء الفلتر",
+          "options": {
+            "filter": {
+              "description": "الفلتر",
+              "choices": {
+                "badwords": "كلمات محظورة",
+                "invites": "دعوات",
+                "links": "روابط",
+                "mentions": "منشنات جماعية",
+                "spam": "سبام رسائل",
+                "duplicates": "رسائل مكررة",
+                "attachments": "سبام ملفات",
+                "zalgo": "نص زالجو",
+                "caps": "حروف كبيرة",
+                "emojis": "سبام إيموجي",
+                "newlines": "سبام أسطر"
+              }
+            },
+            "action": {
+              "description": "الإجراء",
+              "choices": {
+                "delete": "حذف الرسالة",
+                "warn": "حذف + تحذير",
+                "timeout": "حذف + تايم آوت",
+                "kick": "حذف + طرد",
+                "ban": "حذف + حظر"
+              }
+            },
+            "duration": "للتايم آوت أو حظر مؤقت، مثال: 10m (فارغ للحظر = دائم)"
+          }
+        },
+        "set": {
+          "description": "ضبط حدود الفلتر",
+          "options": {
+            "filter": {
+              "description": "الفلتر",
+              "choices": {
+                "badwords": "كلمات محظورة",
+                "invites": "دعوات",
+                "links": "روابط",
+                "mentions": "منشنات جماعية",
+                "spam": "سبام رسائل",
+                "duplicates": "رسائل مكررة",
+                "attachments": "سبام ملفات",
+                "zalgo": "نص زالجو",
+                "caps": "حروف كبيرة",
+                "emojis": "سبام إيموجي",
+                "newlines": "سبام أسطر"
+              }
+            },
+            "limit": "الحد (يختلف حسب الفلتر، راجع /automod status)",
+            "seconds": "نافذة زمنية بالثواني (سبام، تكرار، ملفات)",
+            "percent": "نسبة الحروف الكبيرة (caps)",
+            "min_length": "أقل عدد حروف قبل فحص الكابس",
+            "allow_own": "السماح بدعوات هذا السيرفر (دعوات)"
+          }
+        },
+        "exempt": {
+          "description": "إعفاء رتبة أو قناة، من كل الفلاتر أو من واحد",
+          "options": {
+            "mode": {
+              "description": "إضافة أو إزالة",
+              "choices": {
+                "add": "إضافة",
+                "remove": "إزالة"
+              }
+            },
+            "role": "رتبة",
+            "channel": "قناة أو فئة",
+            "filter": {
+              "description": "لهذا الفلتر فقط (فارغ = كل الفلاتر)",
+              "choices": {
+                "badwords": "كلمات محظورة",
+                "invites": "دعوات",
+                "links": "روابط",
+                "mentions": "منشنات جماعية",
+                "spam": "سبام رسائل",
+                "duplicates": "رسائل مكررة",
+                "attachments": "سبام ملفات",
+                "zalgo": "نص زالجو",
+                "caps": "حروف كبيرة",
+                "emojis": "سبام إيموجي",
+                "newlines": "سبام أسطر"
+              }
+            }
+          }
+        },
+        "settings": {
+          "description": "إعدادات أوتو مود عامة",
+          "options": {
+            "notify": "نشر تنبيه قصير في القناة",
+            "ignore_staff": "تجاهل الأعضاء الذين يديرون الرسائل",
+            "strike_window": "مدة احتساب الضربة، مثال: 24h، أو \"off\" للأبد"
+          }
+        },
+        "test": {
+          "description": "فحص أي الفلاتر سيسري على نص",
+          "options": {
+            "text": "النص للاختبار"
+          }
+        },
+        "escalation": {
+          "description": "إجراءات أقسى بعد ضربات متكررة",
+          "options": {
+            "add": {
+              "description": "إضافة أو استبدال خطوة",
+              "options": {
+                "strikes": "عدد الضربات",
+                "action": {
+                  "description": "العقوبة",
+                  "choices": {
+                    "warn": "حذف + تحذير",
+                    "timeout": "حذف + تايم آوت",
+                    "kick": "حذف + طرد",
+                    "ban": "حذف + حظر"
+                  }
+                },
+                "duration": "للتايم آوت (افتراضي 10m) أو حظر مؤقت"
+              }
+            },
+            "remove": {
+              "description": "إزالة خطوة",
+              "options": {
+                "strikes": "عدد الضربات"
+              }
+            }
+          }
+        },
+        "strikes": {
+          "description": "ضربات عضو",
+          "options": {
+            "view": {
+              "description": "عرض ضربات عضو",
+              "options": {
+                "user": "العضو"
+              }
+            },
+            "reset": {
+              "description": "إعادة تعيين ضربات عضو",
+              "options": {
+                "user": "العضو"
+              }
+            }
+          }
+        }
+      }
+    },
+    "badwords": {
+      "description": "كلمات الأوتو مود المحظورة",
+      "options": {
+        "add": {
+          "description": "إضافة كلمات (مفصولة بفواصل، * = بديل)",
+          "options": {
+            "words": "مثال: كلمة، كلمة*، *كلمة*"
+          }
+        },
+        "remove": {
+          "description": "إزالة كلمات (مفصولة بفواصل)",
+          "options": {
+            "words": "الكلمات للإزالة"
+          }
+        },
+        "list": {
+          "description": "عرض الكلمات المحظورة (لك فقط)"
+        },
+        "clear": {
+          "description": "إزالة كل الكلمات المحظورة"
+        }
+      }
+    },
+    "links": {
+      "description": "النطاقات المسموحة والمحظورة لفلتر الروابط",
+      "options": {
+        "allow": {
+          "description": "السماح بنطاق ونطاقاته الفرعية",
+          "options": {
+            "domain": "مثال: youtube.com"
+          }
+        },
+        "deny": {
+          "description": "حظر نطاق ونطاقاته الفرعية دائماً",
+          "options": {
+            "domain": "مثال: example.com"
+          }
+        },
+        "remove": {
+          "description": "إزالة نطاق من القائمتين",
+          "options": {
+            "domain": "النطاق"
+          }
+        },
+        "mode": {
+          "description": "حظر كل الروابط إلا المسموحة، أو المحظورة فقط",
+          "options": {
+            "mode": {
+              "description": "الوضع",
+              "choices": {
+                "allowlist": "قائمة مسموحة (كل رابط آخر محظور)",
+                "denylist": "قائمة محظورة (النطاقات المذكورة فقط محظورة)"
+              }
+            }
+          }
+        },
+        "list": {
+          "description": "عرض القائمتين"
+        }
+      }
+    }
+  },
+  "filters": {
+    "badwords": {
+      "name": "كلمات محظورة",
+      "description": "كلمات من /badwords، مع بدائل *. اللهجات، اللِيت سبك (b4d) والحروف المتباعدة (ب ا د) يتم كشفها.",
+      "threshold": "قائمة من /badwords"
+    },
+    "invites": {
+      "name": "دعوات",
+      "description": "دعوات ديسكورد لسيرفرات أخرى، حتى مكتوبة \"discord . gg / كود\".",
+      "threshold": "سيرفرنا مسموح: {allowOwn}"
+    },
+    "links": {
+      "name": "روابط",
+      "description": "روابط، حسب النطاقات المسموحة والمحظورة في /links.",
+      "threshold": "راجع /links"
+    },
+    "mentions": {
+      "name": "منشنات جماعية",
+      "description": "الحد = المستخدمين والرتب المذكورة في رسالة واحدة.",
+      "threshold": "{limit} منشن"
+    },
+    "spam": {
+      "name": "سبام رسائل",
+      "description": "الحد = رسائل مرسلة خلال النافذة الزمنية.",
+      "threshold": "{limit} رسائل / {seconds} ث"
+    },
+    "duplicates": {
+      "name": "رسائل مكررة",
+      "description": "الحد = رسائل متطابقة خلال النافذة الزمنية.",
+      "threshold": "{limit} نسخ / {seconds} ث"
+    },
+    "attachments": {
+      "name": "سبام ملفات",
+      "description": "الحد = ملفات وملصقات مرسلة خلال النافذة الزمنية.",
+      "threshold": "{limit} ملفات / {seconds} ث"
+    },
+    "zalgo": {
+      "name": "نص زالجو",
+      "description": "الحد = علامات تراكيب فوق حرف واحد.",
+      "threshold": "{limit} علامات متراكمة"
+    },
+    "caps": {
+      "name": "حروف كبيرة",
+      "description": "نسبة الحروف الكبيرة، يتم فحصها عند وجود حروف كافية في الرسالة.",
+      "threshold": "{percent}% من {minLength} حروف"
+    },
+    "emojis": {
+      "name": "سبام إيموجي",
+      "description": "الحد = إيموجيز في رسالة واحدة.",
+      "threshold": "{limit} إيموجي"
+    },
+    "newlines": {
+      "name": "سبام أسطر",
+      "description": "الحد = فواصل أسطر في رسالة واحدة.",
+      "threshold": "{limit} أسطر"
+    }
+  },
+  "reasons": {
+    "badwords": "كلمة محظورة",
+    "invites": "دعوة لسيرفر آخر ({codes})",
+    "links": "رابط غير مسموح ({domains})",
+    "mentions": "منشنات كثيرة ({count})",
+    "spam": "سبام: {count} رسائل في {seconds} ث",
+    "duplicates": "نفس الرسالة مكررة {count} مرات",
+    "attachments": "ملفات كثيرة: {count} في {seconds} ث",
+    "zalgo": "نص زالجو",
+    "caps": "حروف كبيرة كثيرة ({percent}%)",
+    "emojis": "إيموجيز كثيرة ({count})",
+    "newlines": "أسطر كثيرة ({count})"
+  },
+  "actions": {
+    "delete": "حذف",
+    "warn": "حذف + تحذير",
+    "timeout": "حذف + تايم آوت",
+    "kick": "حذف + طرد",
+    "ban": "حذف + حظر"
+  },
+  "linkModes": {
+    "allowlist": "قائمة مسموحة (كل رابط آخر محظور)",
+    "denylist": "قائمة محظورة (النطاقات المذكورة فقط محظورة)"
+  },
+  "notice": {
+    "title": "تمت إزالة الرسالة",
+    "delete": "{user}، تمت إزالة رسالتك: {reason}.",
+    "warn": "{user}، تمت إزالة رسالتك وتلقيت تحذيراً: {reason}.",
+    "timeout": "تم إعطاء {user} تايم آوت: {reason}.",
+    "kick": "تم طرد {user}: {reason}.",
+    "ban": "تم حظر {user}: {reason}."
+  },
+  "status": {
+    "title": "أوتو مود",
+    "enabled": "الأوتو مود **مفعل**.",
+    "disabled": "الأوتو مود **معطل**: فعّله بـ /automod enable.",
+    "filters": "الفلاتر",
+    "on": "مفعل",
+    "off": "معطل",
+    "escalation": "تصعيد",
+    "step": "{strikes} ضربات → {action}",
+    "strikeWindow": "الضربات تحتسب لـ",
+    "never": "أبداً",
+    "ignoreStaff": "الموظفون متجاهلون",
+    "notify": "تنبيه القناة",
+    "yes": "نعم",
+    "no": "لا",
+    "none": "لا شيء",
+    "exemptRoles": "رتب معفاة",
+    "exemptChannels": "قنوات معفاة",
+    "exemptCount": "{count} إعفاء(ات)",
+    "lists": "القوائم",
+    "listsValue": "{words} كلمة محظورة · {allow} نطاق مسموح · {deny} نطاق محظور · الوضع: {mode}"
+  },
+  "errors": {
+    "title": "إجراء مستحيل",
+    "badDuration": "مدة غير صالحة. أمثلة: 10m، 2h، 7d (28 يوماً كحد أقصى للتايم آوت).",
+    "noStep": "لا توجد خطوة عند {count} ضربات.",
+    "tooManySteps": "{max} خطوات كحد أقصى. احذف واحدة أولاً.",
+    "exemptNothing": "اختر رتبة أو قناة.",
+    "setNothing": "أعطِ قيمة واحدة على الأقل للتغيير.",
+    "setWrongParam": "هذا الفلتر ليس له إعداد \"{param}\". الفلاتر التي تملكه: {filters}.",
+    "setRange": "\"{param}\" يجب أن يكون بين {min} و {max}.",
+    "noWords": "لا توجد كلمة صالحة. الكلمات مفصولة بفواصل وأقصاها {max} حروف.",
+    "tooManyWords": "{max} كلمات محظورة كحد أقصى.",
+    "badDomain": "هذا ليس نطاق صالح. مثال: youtube.com",
+    "domainUnknown": "{domain} في غير قائمة.",
+    "tooManyDomains": "{max} نطاقات كحد أقصى لكل قائمة."
+  },
+  "strikes": {
+    "title": "الضربات",
+    "count": "{user} لديه **{count}** ضربة(ات) نشطة.",
+    "last": "آخر ضربة: {when}",
+    "next": "الخطوة التالية عند {count} ضربات: {action}",
+    "reset": "تم إعادة تعيين ضربات {user}."
+  },
+  "test": {
+    "title": "اختبار أوتو مود",
+    "clean": "هذا النص لا يسري عليه فلتر.",
+    "disabled": "الفلتر معطل",
+    "note": "فلترات المعدل (سبام، رسائل مكررة، ملفات) تحتاج عدة رسائل ولا تُختبر هنا."
+  },
+  "badwords": {
+    "title": "الكلمات المحظورة",
+    "added": "تمت إضافة {count} كلمة(ات) ({total} إجمالاً).",
+    "removed": "تمت إزالة {count} كلمة(ات) ({total} متبقية).",
+    "empty": "القائمة فارغة.",
+    "listTitle": "الكلمات المحظورة ({count})",
+    "help": "كلمة = الكلمة كاملة · كلمة* = تبدأ بـ · *كلمة* = في أي مكان",
+    "clearConfirm": "إزالة كل {count} كلمات محظورة؟",
+    "cleared": "القائمة الآن فارغة.",
+    "filterOff": "فلتر الكلمات المحظورة معطل: /automod filter badwords on."
+  },
+  "links": {
+    "title": "فلتر الروابط",
+    "mode": "الوضع",
+    "allowed": "نطاقات مسموحة ({count})",
+    "denied": "نطاقات محظورة ({count})",
+    "saved": "تم تحديث القوائم.",
+    "filterOff": "فلتر الروابط معطل: /automod filter links on.",
+    "modeHelp": {
+      "allowlist": "كل رابط محظور إلا النطاقات المسموحة.",
+      "denylist": "النطاقات المحظورة فقط تُحذف؛ الروابط الأخرى تمر."
+    }
+  },
+  "log": {
+    "title": "أوتو مود",
+    "user": "المستخدم",
+    "channel": "القناة",
+    "filter": "الفلتر",
+    "action": "الإجراء",
+    "strikes": "الضربات",
+    "strikesShort": "ضربة {count}",
+    "escalated": "متصاعد",
+    "reason": "السبب",
+    "content": "الرسالة"
+  },
+  "dashboard": {
+    "general": {
+      "title": "عام",
+      "description": "المفتاح الرئيسي، من يُتجاهل، ومدة بقاء الضربات."
+    },
+    "lists": {
+      "title": "القوائم",
+      "description": "الكلمات المحظورة ونطاقات الروابط."
+    },
+    "fields": {
+      "enabled": {
+        "label": "أوتو مود مفعل",
+        "help": "مفتاح رئيسي لكل الفلاتر."
+      },
+      "ignoreStaff": {
+        "label": "تجاهل الموظفين",
+        "help": "الأعضاء بصلاحية إدارة رسائل، إدارة سيرفر أو مدير لا يُفحصون أبداً."
+      },
+      "notify": {
+        "label": "تنبيه القناة",
+        "help": "رسالة قصيرة، تُحذف بعد ثوانٍ، تخبر العضو لماذا أُزيلت رسالتهم."
+      },
+      "exemptRoles": {
+        "label": "رتب معفاة",
+        "help": "الأعضاء بواحدة من هذه الرتب لا يُفحصون أبداً."
+      },
+      "exemptChannels": {
+        "label": "قنوات معفاة",
+        "help": "قنوات أو فئات لا يعمل فيها الأوتو مود."
+      },
+      "strikeWindow": {
+        "label": "الضربات تحتسب لـ",
+        "help": "كل مخالفة تضيف ضربة؛ خطوات التصعيد تستخدم الضربات خلال هذا الوقت. 0 = للأبد."
+      },
+      "badwords": {
+        "label": "الكلمات المحظورة",
+        "help": "واحدة في كل إدخال. كلمة = الكلمة كاملة، كلمة* = تبدأ بـ، *كلمة* = في أي مكان."
+      },
+      "linkMode": {
+        "label": "وضع الروابط",
+        "help": "قائمة مسموحة تحظر كل رابط إلا النطاقات المسموحة؛ قائمة محظورة تحظر النطاقات المذكورة فقط."
+      },
+      "linkAllow": {
+        "label": "النطاقات المسموحة",
+        "help": "النطاقات الفرعية مشمولة (youtube.com يغطي m.youtube.com)."
+      },
+      "linkDeny": {
+        "label": "النطاقات المحظورة",
+        "help": "دائماً محظورة، مهما كان الوضع."
+      }
+    },
+    "filter": {
+      "enabled": {
+        "label": "مفعل",
+        "help": "تفعيل هذا الفلتر."
+      },
+      "action": {
+        "label": "الإجراء",
+        "help": "الرسالة تُحذف دائماً؛ الإجراء يمكن أن يضيف عقوبة."
+      },
+      "duration": {
+        "label": "المدة",
+        "help": "مدة تايم آوت أو حظر مؤقت. 0 للحظر = دائم."
+      },
+      "allowOwn": {
+        "label": "السماح بدعواتنا",
+        "help": "دعوات هذا السيرفر لا تُحذف."
+      },
+      "limit": {
+        "label": "الحد",
+        "help": "يسري عند الوصول لهذا العدد (انظر الوصف أعلاه)."
+      },
+      "seconds": {
+        "label": "نافذة زمنية (ثواني)",
+        "help": "الرسائل محسوبة على هذه الثواني."
+      },
+      "percent": {
+        "label": "الحروف الكبيرة (%)",
+        "help": "نسبة الحروف الكبيرة التي تسري الفلتر."
+      },
+      "minLength": {
+        "label": "أقل حروف",
+        "help": "الرسائل القصيرة (\"OK\"، \"LOL\") لا تُفحص."
+      },
+      "exemptRoles": {
+        "label": "رتب معفاة",
+        "help": "الرتب التي يتجاهلها هذا الفلتر."
+      },
+      "exemptChannels": {
+        "label": "قنوات معفاة",
+        "help": "قنوات أو فئات يتجاهلها هذا الفلتر."
+      }
+    },
+    "actions": {
+      "resetStrikes": "إعادة تعيين كل الضربات",
+      "resetStrikesDone": "تم إعادة تعيين كل الضربات."
+    }
+  }
+}

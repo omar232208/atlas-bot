@@ -1,0 +1,130 @@
+{
+  "commands": {
+    "verification": {
+      "description": "Verificación de nuevos miembros con captcha",
+      "options": {
+        "setup": {
+          "description": "Configurar la verificación y publicar el panel",
+          "options": {
+            "role": "Rol dado una vez verificado",
+            "channel": "Canal donde se publica el panel de verificación",
+            "kick_after": "Expulsar a los no verificados tras (ej. 30m, 2h; 0 = nunca)",
+            "unverified_role": "Rol dado al entrar y quitado una vez verificado",
+            "code_length": "Longitud del código (4 a 8)",
+            "attempts": "Errores permitidos antes de un bloqueo de 5 minutos",
+            "message": "Texto del panel (\\n = salto de línea)"
+          }
+        },
+        "panel": { "description": "Volver a publicar el panel de verificación" },
+        "disable": { "description": "Desactivar la verificación" },
+        "status": { "description": "Mostrar la configuración de la verificación" }
+      }
+    }
+  },
+  "panel": {
+    "title": "Verificación",
+    "description": "Para acceder al servidor, pulsa el botón de abajo y escribe el código que aparece. Así nos protegemos de bots y raids.",
+    "button": "Verificarme"
+  },
+  "modal": {
+    "title": "Verificación",
+    "label": "Escribe este código: {code}",
+    "placeholder": "Mayúsculas o minúsculas, con o sin espacios"
+  },
+  "verify": {
+    "title": "Verificación",
+    "disabled": "La verificación está desactivada en este servidor.",
+    "noRole": "El rol de verificación ya no existe. Avisa a un administrador.",
+    "already": "Ya estás verificado.",
+    "locked": "Demasiados errores. Vuelve a intentarlo en {time}.",
+    "expired": "Este código ha caducado. Pulsa de nuevo el botón para obtener otro.",
+    "wrong": "Código incorrecto. Pulsa de nuevo el botón para obtener otro código ({left} intento(s) restante(s)).",
+    "grantFailed": "Código correcto, pero no pude darte el rol. Avisa a un administrador (permisos o posición del rol del bot).",
+    "success": "¡Bienvenido/a a **{server}**! Ya tienes acceso al servidor."
+  },
+  "reasons": {
+    "verified": "Verificación superada",
+    "unverified": "Nuevo miembro pendiente de verificación",
+    "kick": "Sin verificar tras {time}"
+  },
+  "kick": {
+    "dmTitle": "Expulsado de {server}",
+    "dm": "Has sido expulsado de **{server}** porque no te verificaste en un plazo de {time} tras tu llegada. Puedes volver con una invitación y pulsar el botón de verificación."
+  },
+  "logs": {
+    "lockedTitle": "Verificación bloqueada",
+    "locked": "{user} se equivocó de código demasiadas veces y queda bloqueado 5 minutos.",
+    "verifiedTitle": "Miembro verificado",
+    "verified": "{user} superó la verificación.",
+    "kickedTitle": "No verificado expulsado",
+    "kicked": "{user} fue expulsado: sin verificar tras {time}."
+  },
+  "errors": {
+    "title": "No es posible",
+    "badDuration": "Duración no válida. Usa por ejemplo `10m`, `2h` o `1d` (entre {min} y {max}), o `0` para no expulsar nunca.",
+    "role": {
+      "managed": "{role} lo gestiona una integración y no se puede dar.",
+      "everyone": "No se puede usar el rol @everyone.",
+      "hierarchy": "{role} está por encima de mi rol más alto: sube mi rol en los ajustes del servidor.",
+      "noPermission": "Me falta el permiso «Gestionar roles»."
+    },
+    "sameRole": "El rol verificado y el rol no verificado deben ser distintos.",
+    "missingPerms": "Me faltan estos permisos en {channel}: {perms}.",
+    "panelFailed": "No se pudo publicar el panel. Comprueba que el canal existe y que puedo escribir e insertar enlaces en él.",
+    "notEnabled": "La verificación no está activada. Usa primero `/verification setup`."
+  },
+  "setup": {
+    "title": "Verificación activada",
+    "done": "El panel está publicado: {url}",
+    "noKickPerm": "Atención: me falta el permiso «Expulsar miembros», los no verificados no serán expulsados.",
+    "channelTip": "Consejo: quita «Ver canales» a @everyone en tus canales y dáselo a {role}, dejando {channel} visible para todos. Los miembros que ya están no se ven afectados.",
+    "reposted": "El panel se ha publicado de nuevo: {url}"
+  },
+  "disable": {
+    "title": "Verificación desactivada",
+    "done": "La verificación está desactivada y el panel borrado. {count} expulsión(es) programada(s) cancelada(s)."
+  },
+  "status": {
+    "on": "Activada",
+    "off": "Desactivada",
+    "none": "Ninguno",
+    "title": "Configuración de la verificación",
+    "state": "Estado",
+    "role": "Rol verificado",
+    "unverifiedRole": "Rol no verificado",
+    "channel": "Canal del panel",
+    "kickAfter": "Expulsión tras",
+    "never": "Nunca",
+    "code": "Código",
+    "codeValue": "{length} caracteres, {attempts} intento(s)",
+    "pending": "Expulsiones programadas"
+  },
+  "dashboard": {
+    "main": {
+      "title": "Verificación",
+      "description": "Los nuevos miembros pulsan un botón y escriben un código para obtener acceso. Tras cambiar el canal o el texto, vuelve a publicar el panel."
+    },
+    "fields": {
+      "enabled": "Activada",
+      "role": "Rol verificado",
+      "unverifiedRole": "Rol no verificado",
+      "channel": "Canal del panel",
+      "kickAfter": "Expulsar a los no verificados tras",
+      "codeLength": "Longitud del código",
+      "maxAttempts": "Intentos antes del bloqueo",
+      "panelMessage": "Texto del panel"
+    },
+    "help": {
+      "enabled": "Activa la verificación para los recién llegados.",
+      "role": "Se da tras superar el captcha. Debe estar por debajo del rol del bot.",
+      "unverifiedRole": "Opcional: se da al entrar y se quita tras la verificación.",
+      "channel": "Canal visible para todos donde está el botón.",
+      "kickAfter": "0: nunca. Si no, entre 1 minuto y 7 días.",
+      "codeLength": "Entre 4 y 8 caracteres.",
+      "maxAttempts": "Tras este número de errores, el miembro queda bloqueado 5 minutos.",
+      "panelMessage": "Vacío: texto por defecto."
+    },
+    "actions": { "panel": "Volver a publicar el panel" },
+    "results": { "posted": "Panel publicado." }
+  }
+}

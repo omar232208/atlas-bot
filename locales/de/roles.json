@@ -1,0 +1,190 @@
+{
+  "commands": {
+    "rolemenu": {
+      "description": "Rollenmenüs zur Selbstbedienung (Buttons oder Auswahlliste)",
+      "options": {
+        "create": {
+          "description": "Ein Rollenmenü erstellen",
+          "options": {
+            "name": "Interner Name des Menüs",
+            "type": { "description": "Buttons oder Auswahlliste", "choices": { "buttons": "Buttons", "select": "Auswahlliste" } },
+            "mode": { "description": "Verhalten des Menüs", "choices": { "toggle": "Hinzufügen und entfernen", "unique": "Nur eine Rolle", "add": "Nur hinzufügen", "remove": "Nur entfernen" } },
+            "title": "Angezeigter Titel",
+            "description": "Text über den Rollen",
+            "required_role": "Rolle, die zur Nutzung nötig ist",
+            "max": "Höchstens gleichzeitig wählbare Rollen (Liste)"
+          }
+        },
+        "add": {
+          "description": "Eine Rolle zu einem Menü hinzufügen",
+          "options": {
+            "menu": "Menü",
+            "role": "Angebotene Rolle",
+            "label": "Text des Buttons oder der Option",
+            "emoji": "Emoji",
+            "description": "Beschreibung (Auswahlliste)",
+            "style": { "description": "Farbe des Buttons", "choices": { "primary": "Blau", "secondary": "Grau", "success": "Grün", "danger": "Rot" } }
+          }
+        },
+        "remove": { "description": "Eine Rolle aus einem Menü entfernen", "options": { "menu": "Menü", "role": "Zu entfernende Rolle" } },
+        "edit": {
+          "description": "Ein Menü bearbeiten",
+          "options": {
+            "menu": "Menü",
+            "title": "Neuer Titel (\"-\" zum Leeren)",
+            "description": "Neuer Text (\"-\" zum Leeren)",
+            "mode": { "description": "Neues Verhalten", "choices": { "toggle": "Hinzufügen und entfernen", "unique": "Nur eine Rolle", "add": "Nur hinzufügen", "remove": "Nur entfernen" } },
+            "required_role": "Neue benötigte Rolle",
+            "clear_required": "Benötigte Rolle entfernen",
+            "max": "Höchstens gleichzeitig wählbare Rollen (Liste)"
+          }
+        },
+        "post": { "description": "Ein Menü in einem Kanal posten", "options": { "menu": "Menü", "channel": "Kanal (Standard: dieser)" } },
+        "list": { "description": "Rollenmenüs auflisten" },
+        "delete": { "description": "Ein Menü und seine Nachrichten löschen", "options": { "menu": "Menü" } }
+      }
+    },
+    "role": {
+      "description": "Rollen von Mitgliedern verwalten",
+      "options": {
+        "add": {
+          "description": "Eine Rolle vergeben, auf Wunsch befristet",
+          "options": { "member": "Mitglied", "role": "Rolle", "duration": "Dauer (z. B. 2h, 7d) für eine befristete Rolle", "reason": "Grund" }
+        },
+        "remove": { "description": "Eine Rolle entfernen", "options": { "member": "Mitglied", "role": "Rolle", "reason": "Grund" } },
+        "all": {
+          "description": "Eine Rolle dem ganzen Server geben oder nehmen",
+          "options": {
+            "role": "Rolle",
+            "action": { "description": "Geben oder nehmen", "choices": { "add": "Geben", "remove": "Nehmen" } },
+            "target": { "description": "Betroffene Mitglieder", "choices": { "all": "Alle", "humans": "Menschen", "bots": "Bots" } }
+          }
+        },
+        "info": { "description": "Informationen zu einer Rolle", "options": { "role": "Rolle" } },
+        "temp": { "description": "Laufende befristete Rollen auflisten", "options": { "member": "Nach Mitglied filtern" } }
+      }
+    }
+  },
+  "errors": {
+    "title": "Nicht möglich",
+    "roleGone": "Diese Rolle gibt es nicht mehr.",
+    "everyone": "Die Rolle @everyone kann hier nicht verwendet werden.",
+    "managed": "{role} wird von einer Integration verwaltet und kann nicht vergeben werden.",
+    "botHierarchy": "{role} steht über meiner Rolle: Schiebe meine Rolle in den Servereinstellungen höher.",
+    "userHierarchy": "{role} steht über deiner höchsten Rolle.",
+    "dangerous": "{role} gibt Moderations- oder Adminrechte: Sie kann nicht per Selbstbedienung vergeben werden.",
+    "discordPermission": "Discord hat die Aktion abgelehnt: Prüfe, ob ich „Rollen verwalten“ habe und meine Rolle hoch genug ist.",
+    "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Versuche es gleich noch einmal.",
+    "botMissing": "Mir fehlen diese Berechtigungen: {perms}.",
+    "tooManyMenus": "Höchstens {max} Menüs pro Server.",
+    "menuExists": "Ein Menü mit diesem Namen gibt es schon.",
+    "menuGone": "Dieses Menü wurde gelöscht.",
+    "requiredRole": "Du brauchst die Rolle {role}, um dieses Menü zu nutzen.",
+    "menuUnknown": "Menü nicht gefunden.",
+    "tooManyItems": "Ein Menü enthält höchstens {max} Rollen.",
+    "itemExists": "{role} ist bereits in diesem Menü.",
+    "badEmoji": "Ungültiges Emoji: Nutze ein Standard-Emoji oder eines dieses Servers.",
+    "itemUnknown": "{role} ist nicht in diesem Menü.",
+    "nothingChanged": "Keine Option angegeben: nichts geändert.",
+    "emptyMenu": "Dieses Menü enthält noch keine Rolle: Füge welche mit /rolemenu add hinzu.",
+    "notMember": "Dieses Mitglied ist nicht auf dem Server.",
+    "badDuration": "Ungültige Dauer: zwischen 1 Minute und 366 Tagen (z. B. 30m, 2h, 7d).",
+    "alreadyHas": "{user} hat {role} bereits.",
+    "doesNotHave": "{user} hat {role} nicht.",
+    "manageGuild": "Du brauchst die Berechtigung „Server verwalten“.",
+    "massRunning": "Auf diesem Server läuft bereits eine Massenaktion."
+  },
+  "menu": {
+    "hint": {
+      "toggle": "Klicke, um eine Rolle zu erhalten, und erneut, um sie zu entfernen.",
+      "unique": "Du kannst nur eine dieser Rollen haben.",
+      "add": "Klicke, um eine Rolle zu erhalten.",
+      "remove": "Klicke, um eine Rolle zu entfernen."
+    },
+    "requires": "Nur für die Rolle {role}",
+    "placeholder": "Wähle deine Rollen",
+    "auditReason": "Rollenmenü „{menu}“",
+    "added": "Hinzugefügt: {roles}",
+    "removed": "Entfernt: {roles}",
+    "skipped": "Kann ich nicht verwalten: {roles}",
+    "nothing": "Keine Änderung.",
+    "updatedTitle": "Rollen aktualisiert"
+  },
+  "log": {
+    "menuTitle": "Rollenmenü",
+    "menu": "{user} über „{menu}“ - hinzugefügt: {added}; entfernt: {removed}",
+    "expiredTitle": "Befristete Rolle abgelaufen",
+    "expired": "{role} wurde {user} entzogen.",
+    "roleTitle": "Rolle geändert",
+    "by": "Von {user}",
+    "massTitle": "Massenrolle"
+  },
+  "temp": {
+    "auditReason": "Befristete Rolle abgelaufen",
+    "dmTitle": "Rolle abgelaufen",
+    "dm": "Deine Rolle „{role}“ auf **{server}** ist abgelaufen.",
+    "listTitle": "Befristete Rollen",
+    "empty": "Keine befristete Rolle aktiv.",
+    "line": "{user} - {role} - läuft ab {when}",
+    "more": "… und {count} weitere"
+  },
+  "rolemenu": {
+    "title": "Rollenmenüs",
+    "refreshed": "{count} gepostete Nachricht(en) aktualisiert.",
+    "listTitle": "Rollenmenüs",
+    "empty": "Noch kein Menü. Erstelle eines mit /rolemenu create.",
+    "listLine": "**{name}** - {type}, {mode} - {count} Rolle(n), {posts} Beitrag/Beiträge",
+    "types": { "buttons": "Buttons", "select": "Liste" },
+    "modes": { "toggle": "hinzufügen und entfernen", "unique": "nur eine Rolle", "add": "nur hinzufügen", "remove": "nur entfernen" },
+    "created": "Menü „{name}“ erstellt. Füge Rollen mit /rolemenu add hinzu und poste es mit /rolemenu post.",
+    "itemAdded": "{role} zum Menü „{name}“ hinzugefügt.",
+    "itemRemoved": "{role} aus dem Menü „{name}“ entfernt.",
+    "edited": "Menü „{name}“ geändert.",
+    "deleted": "Menü „{name}“ samt Nachrichten gelöscht.",
+    "posted": "Menü „{name}“ in {channel} gepostet."
+  },
+  "role": {
+    "title": "Rollen",
+    "auditReason": "Angefordert von {user}",
+    "added": "{role} an {user} vergeben.",
+    "addedTemp": "{role} an {user} für {duration} vergeben (Entzug {when}).",
+    "removed": "{role} wurde {user} entzogen."
+  },
+  "mass": {
+    "title": "Massenrolle",
+    "nobody": "Kein Mitglied ist betroffen.",
+    "confirmTitle": "Massenaktion bestätigen",
+    "confirm": {
+      "add": "{role} an {count} Mitglied(er) vergeben?",
+      "remove": "{role} {count} Mitglied(ern) entziehen?"
+    },
+    "auditReason": "Massenaktion von {user}",
+    "progress": "{done} / {total}\n{bar}",
+    "done": "Fertig für {role}: {done} erfolgreich, {failed} fehlgeschlagen."
+  },
+  "info": {
+    "title": "Rolle {name}",
+    "id": "ID",
+    "color": "Farbe",
+    "position": "Position",
+    "members": "Mitglieder",
+    "hoist": "Separat angezeigt",
+    "mentionable": "Erwähnbar",
+    "managed": "Von einer Integration verwaltet",
+    "created": "Erstellt am",
+    "temps": "Befristete Vergaben",
+    "permissions": "Berechtigungen",
+    "yes": "Ja",
+    "no": "Nein",
+    "none": "Keine"
+  },
+  "dashboard": {
+    "general": { "title": "Rollen", "description": "Rollenmenüs und befristete Rollen." },
+    "fields": { "tempRoleDm": "Per DM über den Ablauf informieren", "logChanges": "Rollenänderungen protokollieren" },
+    "help": {
+      "tempRoleDm": "Das Mitglied erhält eine DM, wenn seine befristete Rolle entfernt wird.",
+      "logChanges": "Sendet Menüklicks, befristete Rollen und Massenaktionen in die Mitglieder-Logs."
+    },
+    "actions": { "refreshMenus": "Gepostete Menüs aktualisieren", "refreshMenusDone": "Gepostete Menüs aktualisiert." }
+  }
+}

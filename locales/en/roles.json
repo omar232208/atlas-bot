@@ -1,0 +1,190 @@
+{
+  "commands": {
+    "rolemenu": {
+      "description": "Self-service role menus (buttons or dropdown)",
+      "options": {
+        "create": {
+          "description": "Create a role menu",
+          "options": {
+            "name": "Internal menu name",
+            "type": { "description": "Buttons or dropdown", "choices": { "buttons": "Buttons", "select": "Dropdown" } },
+            "mode": { "description": "Menu behaviour", "choices": { "toggle": "Add and remove", "unique": "Only one role", "add": "Add only", "remove": "Remove only" } },
+            "title": "Displayed title",
+            "description": "Text shown above the roles",
+            "required_role": "Role needed to use the menu",
+            "max": "Maximum roles picked at once (dropdown)"
+          }
+        },
+        "add": {
+          "description": "Add a role to a menu",
+          "options": {
+            "menu": "Menu",
+            "role": "Role to offer",
+            "label": "Button or option text",
+            "emoji": "Emoji",
+            "description": "Description (dropdown)",
+            "style": { "description": "Button colour", "choices": { "primary": "Blue", "secondary": "Grey", "success": "Green", "danger": "Red" } }
+          }
+        },
+        "remove": { "description": "Remove a role from a menu", "options": { "menu": "Menu", "role": "Role to remove" } },
+        "edit": {
+          "description": "Edit a menu",
+          "options": {
+            "menu": "Menu",
+            "title": "New title (\"-\" to clear)",
+            "description": "New text (\"-\" to clear)",
+            "mode": { "description": "New behaviour", "choices": { "toggle": "Add and remove", "unique": "Only one role", "add": "Add only", "remove": "Remove only" } },
+            "required_role": "New required role",
+            "clear_required": "Remove the required role",
+            "max": "Maximum roles picked at once (dropdown)"
+          }
+        },
+        "post": { "description": "Post a menu in a channel", "options": { "menu": "Menu", "channel": "Channel (default: this one)" } },
+        "list": { "description": "List role menus" },
+        "delete": { "description": "Delete a menu and its messages", "options": { "menu": "Menu" } }
+      }
+    },
+    "role": {
+      "description": "Manage member roles",
+      "options": {
+        "add": {
+          "description": "Give a role, optionally temporary",
+          "options": { "member": "Member", "role": "Role", "duration": "Duration (e.g. 2h, 7d) for a temporary role", "reason": "Reason" }
+        },
+        "remove": { "description": "Remove a role", "options": { "member": "Member", "role": "Role", "reason": "Reason" } },
+        "all": {
+          "description": "Give or remove a role for the whole server",
+          "options": {
+            "role": "Role",
+            "action": { "description": "Give or remove", "choices": { "add": "Give", "remove": "Remove" } },
+            "target": { "description": "Targeted members", "choices": { "all": "Everyone", "humans": "Humans", "bots": "Bots" } }
+          }
+        },
+        "info": { "description": "Information about a role", "options": { "role": "Role" } },
+        "temp": { "description": "List running temporary roles", "options": { "member": "Filter by member" } }
+      }
+    }
+  },
+  "errors": {
+    "title": "Cannot do that",
+    "roleGone": "This role no longer exists.",
+    "everyone": "The @everyone role cannot be used here.",
+    "managed": "{role} is managed by an integration and cannot be assigned.",
+    "botHierarchy": "{role} is above my role: move my role higher in the server settings.",
+    "userHierarchy": "{role} is above your highest role.",
+    "dangerous": "{role} grants moderation or admin permissions: it cannot be self-service.",
+    "discordPermission": "Discord refused the action: check that I have Manage Roles and that my role is high enough.",
+    "unexpected": "Something unexpected went wrong. Please try again in a moment.",
+    "botMissing": "I am missing these permissions: {perms}.",
+    "tooManyMenus": "At most {max} menus per server.",
+    "menuExists": "A menu already has this name.",
+    "menuGone": "This menu was deleted.",
+    "requiredRole": "You need the {role} role to use this menu.",
+    "menuUnknown": "Menu not found.",
+    "tooManyItems": "A menu holds at most {max} roles.",
+    "itemExists": "{role} is already in this menu.",
+    "badEmoji": "Invalid emoji: use a standard emoji or one from this server.",
+    "itemUnknown": "{role} is not in this menu.",
+    "nothingChanged": "No option given: nothing changed.",
+    "emptyMenu": "This menu has no role yet: add some with /rolemenu add.",
+    "notMember": "This member is not on the server.",
+    "badDuration": "Invalid duration: between 1 minute and 366 days (e.g. 30m, 2h, 7d).",
+    "alreadyHas": "{user} already has {role}.",
+    "doesNotHave": "{user} does not have {role}.",
+    "manageGuild": "You need the Manage Server permission.",
+    "massRunning": "A mass action is already running on this server."
+  },
+  "menu": {
+    "hint": {
+      "toggle": "Click to get a role, click again to remove it.",
+      "unique": "You can only have one of these roles.",
+      "add": "Click to get a role.",
+      "remove": "Click to remove a role."
+    },
+    "requires": "Restricted to the {role} role",
+    "placeholder": "Pick your roles",
+    "auditReason": "Role menu \"{menu}\"",
+    "added": "Added: {roles}",
+    "removed": "Removed: {roles}",
+    "skipped": "I cannot manage: {roles}",
+    "nothing": "No change.",
+    "updatedTitle": "Roles updated"
+  },
+  "log": {
+    "menuTitle": "Role menu",
+    "menu": "{user} via \"{menu}\" - added: {added}; removed: {removed}",
+    "expiredTitle": "Temporary role expired",
+    "expired": "{role} was removed from {user}.",
+    "roleTitle": "Role changed",
+    "by": "By {user}",
+    "massTitle": "Mass role"
+  },
+  "temp": {
+    "auditReason": "Temporary role expired",
+    "dmTitle": "Role expired",
+    "dm": "Your role \"{role}\" on **{server}** has expired.",
+    "listTitle": "Temporary roles",
+    "empty": "No temporary role running.",
+    "line": "{user} - {role} - expires {when}",
+    "more": "… and {count} more"
+  },
+  "rolemenu": {
+    "title": "Role menus",
+    "refreshed": "{count} posted message(s) updated.",
+    "listTitle": "Role menus",
+    "empty": "No menu yet. Create one with /rolemenu create.",
+    "listLine": "**{name}** - {type}, {mode} - {count} role(s), {posts} post(s)",
+    "types": { "buttons": "buttons", "select": "dropdown" },
+    "modes": { "toggle": "add and remove", "unique": "only one role", "add": "add only", "remove": "remove only" },
+    "created": "Menu \"{name}\" created. Add roles with /rolemenu add, then post it with /rolemenu post.",
+    "itemAdded": "{role} added to menu \"{name}\".",
+    "itemRemoved": "{role} removed from menu \"{name}\".",
+    "edited": "Menu \"{name}\" updated.",
+    "deleted": "Menu \"{name}\" deleted along with its messages.",
+    "posted": "Menu \"{name}\" posted in {channel}."
+  },
+  "role": {
+    "title": "Roles",
+    "auditReason": "Requested by {user}",
+    "added": "{role} given to {user}.",
+    "addedTemp": "{role} given to {user} for {duration} (removed {when}).",
+    "removed": "{role} removed from {user}."
+  },
+  "mass": {
+    "title": "Mass role",
+    "nobody": "No member is concerned.",
+    "confirmTitle": "Confirm the mass action",
+    "confirm": {
+      "add": "Give {role} to {count} member(s)?",
+      "remove": "Remove {role} from {count} member(s)?"
+    },
+    "auditReason": "Mass action by {user}",
+    "progress": "{done} / {total}\n{bar}",
+    "done": "Finished for {role}: {done} succeeded, {failed} failed."
+  },
+  "info": {
+    "title": "Role {name}",
+    "id": "ID",
+    "color": "Colour",
+    "position": "Position",
+    "members": "Members",
+    "hoist": "Displayed separately",
+    "mentionable": "Mentionable",
+    "managed": "Managed by an integration",
+    "created": "Created",
+    "temps": "Temporary grants",
+    "permissions": "Permissions",
+    "yes": "Yes",
+    "no": "No",
+    "none": "None"
+  },
+  "dashboard": {
+    "general": { "title": "Roles", "description": "Role menus and temporary roles." },
+    "fields": { "tempRoleDm": "DM the member when a role expires", "logChanges": "Log role changes" },
+    "help": {
+      "tempRoleDm": "The member gets a DM when their temporary role is removed.",
+      "logChanges": "Sends menu clicks, temporary roles and mass actions to the member logs."
+    },
+    "actions": { "refreshMenus": "Refresh posted menus", "refreshMenusDone": "Posted menus refreshed." }
+  }
+}

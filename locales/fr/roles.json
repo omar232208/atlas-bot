@@ -1,0 +1,190 @@
+{
+  "commands": {
+    "rolemenu": {
+      "description": "Menus de rôles en libre-service (boutons ou liste)",
+      "options": {
+        "create": {
+          "description": "Créer un menu de rôles",
+          "options": {
+            "name": "Nom interne du menu",
+            "type": { "description": "Boutons ou liste déroulante", "choices": { "buttons": "Boutons", "select": "Liste déroulante" } },
+            "mode": { "description": "Comportement du menu", "choices": { "toggle": "Ajouter et retirer", "unique": "Un seul rôle", "add": "Ajout seulement", "remove": "Retrait seulement" } },
+            "title": "Titre affiché",
+            "description": "Texte affiché au-dessus des rôles",
+            "required_role": "Rôle nécessaire pour utiliser le menu",
+            "max": "Rôles choisis au maximum en une fois (liste)"
+          }
+        },
+        "add": {
+          "description": "Ajouter un rôle à un menu",
+          "options": {
+            "menu": "Menu",
+            "role": "Rôle à proposer",
+            "label": "Texte du bouton ou de l'option",
+            "emoji": "Emoji",
+            "description": "Description (liste déroulante)",
+            "style": { "description": "Couleur du bouton", "choices": { "primary": "Bleu", "secondary": "Gris", "success": "Vert", "danger": "Rouge" } }
+          }
+        },
+        "remove": { "description": "Retirer un rôle d'un menu", "options": { "menu": "Menu", "role": "Rôle à retirer" } },
+        "edit": {
+          "description": "Modifier un menu",
+          "options": {
+            "menu": "Menu",
+            "title": "Nouveau titre (« - » pour effacer)",
+            "description": "Nouveau texte (« - » pour effacer)",
+            "mode": { "description": "Nouveau comportement", "choices": { "toggle": "Ajouter et retirer", "unique": "Un seul rôle", "add": "Ajout seulement", "remove": "Retrait seulement" } },
+            "required_role": "Nouveau rôle nécessaire",
+            "clear_required": "Supprimer le rôle nécessaire",
+            "max": "Rôles choisis au maximum en une fois (liste)"
+          }
+        },
+        "post": { "description": "Publier un menu dans un salon", "options": { "menu": "Menu", "channel": "Salon (par défaut : celui-ci)" } },
+        "list": { "description": "Lister les menus de rôles" },
+        "delete": { "description": "Supprimer un menu et ses messages", "options": { "menu": "Menu" } }
+      }
+    },
+    "role": {
+      "description": "Gérer les rôles des membres",
+      "options": {
+        "add": {
+          "description": "Donner un rôle, éventuellement temporaire",
+          "options": { "member": "Membre", "role": "Rôle", "duration": "Durée (ex. 2h, 7d) pour un rôle temporaire", "reason": "Raison" }
+        },
+        "remove": { "description": "Retirer un rôle", "options": { "member": "Membre", "role": "Rôle", "reason": "Raison" } },
+        "all": {
+          "description": "Donner ou retirer un rôle à tout le serveur",
+          "options": {
+            "role": "Rôle",
+            "action": { "description": "Donner ou retirer", "choices": { "add": "Donner", "remove": "Retirer" } },
+            "target": { "description": "Membres visés", "choices": { "all": "Tout le monde", "humans": "Humains", "bots": "Bots" } }
+          }
+        },
+        "info": { "description": "Informations sur un rôle", "options": { "role": "Rôle" } },
+        "temp": { "description": "Lister les rôles temporaires en cours", "options": { "member": "Filtrer par membre" } }
+      }
+    }
+  },
+  "errors": {
+    "title": "Action impossible",
+    "roleGone": "Ce rôle n'existe plus.",
+    "everyone": "Le rôle @everyone ne peut pas être utilisé ici.",
+    "managed": "{role} est géré par une intégration et ne peut pas être attribué.",
+    "botHierarchy": "{role} est au-dessus de mon rôle : placez mon rôle plus haut dans les paramètres du serveur.",
+    "userHierarchy": "{role} est au-dessus de votre rôle le plus haut.",
+    "dangerous": "{role} donne des permissions de modération ou d'administration : il ne peut pas être en libre-service.",
+    "discordPermission": "Discord a refusé l'action : vérifiez que j'ai « Gérer les rôles » et que mon rôle est assez haut.",
+    "unexpected": "Une erreur inattendue est survenue. Réessayez dans un instant.",
+    "botMissing": "Il me manque ces permissions : {perms}.",
+    "tooManyMenus": "Maximum {max} menus par serveur.",
+    "menuExists": "Un menu porte déjà ce nom.",
+    "menuGone": "Ce menu a été supprimé.",
+    "requiredRole": "Il faut le rôle {role} pour utiliser ce menu.",
+    "menuUnknown": "Menu introuvable.",
+    "tooManyItems": "Un menu contient au maximum {max} rôles.",
+    "itemExists": "{role} est déjà dans ce menu.",
+    "badEmoji": "Emoji invalide : utilisez un emoji standard ou un emoji du serveur.",
+    "itemUnknown": "{role} n'est pas dans ce menu.",
+    "nothingChanged": "Aucune option fournie : rien n'a changé.",
+    "emptyMenu": "Ce menu ne contient aucun rôle : ajoutez-en avec /rolemenu add.",
+    "notMember": "Ce membre n'est pas sur le serveur.",
+    "badDuration": "Durée invalide : entre 1 minute et 366 jours (ex. 30m, 2h, 7d).",
+    "alreadyHas": "{user} a déjà {role}.",
+    "doesNotHave": "{user} n'a pas {role}.",
+    "manageGuild": "Il faut la permission « Gérer le serveur ».",
+    "massRunning": "Une action de masse est déjà en cours sur ce serveur."
+  },
+  "menu": {
+    "hint": {
+      "toggle": "Cliquez pour obtenir un rôle, cliquez à nouveau pour le retirer.",
+      "unique": "Vous ne pouvez avoir qu'un seul de ces rôles.",
+      "add": "Cliquez pour obtenir un rôle.",
+      "remove": "Cliquez pour retirer un rôle."
+    },
+    "requires": "Réservé au rôle {role}",
+    "placeholder": "Choisissez vos rôles",
+    "auditReason": "Menu de rôles « {menu} »",
+    "added": "Ajouté : {roles}",
+    "removed": "Retiré : {roles}",
+    "skipped": "Impossible à gérer pour moi : {roles}",
+    "nothing": "Aucun changement.",
+    "updatedTitle": "Rôles mis à jour"
+  },
+  "log": {
+    "menuTitle": "Menu de rôles",
+    "menu": "{user} via « {menu} » - ajouté : {added} ; retiré : {removed}",
+    "expiredTitle": "Rôle temporaire expiré",
+    "expired": "{role} a été retiré à {user}.",
+    "roleTitle": "Rôle modifié",
+    "by": "Par {user}",
+    "massTitle": "Rôle en masse"
+  },
+  "temp": {
+    "auditReason": "Rôle temporaire expiré",
+    "dmTitle": "Rôle expiré",
+    "dm": "Votre rôle « {role} » sur **{server}** a expiré.",
+    "listTitle": "Rôles temporaires",
+    "empty": "Aucun rôle temporaire en cours.",
+    "line": "{user} - {role} - expire {when}",
+    "more": "… et {count} autre(s)"
+  },
+  "rolemenu": {
+    "title": "Menus de rôles",
+    "refreshed": "{count} message(s) publié(s) mis à jour.",
+    "listTitle": "Menus de rôles",
+    "empty": "Aucun menu. Créez-en un avec /rolemenu create.",
+    "listLine": "**{name}** - {type}, {mode} - {count} rôle(s), {posts} publication(s)",
+    "types": { "buttons": "boutons", "select": "liste" },
+    "modes": { "toggle": "ajouter et retirer", "unique": "un seul rôle", "add": "ajout seulement", "remove": "retrait seulement" },
+    "created": "Menu « {name} » créé. Ajoutez des rôles avec /rolemenu add puis publiez-le avec /rolemenu post.",
+    "itemAdded": "{role} ajouté au menu « {name} ».",
+    "itemRemoved": "{role} retiré du menu « {name} ».",
+    "edited": "Menu « {name} » modifié.",
+    "deleted": "Menu « {name} » supprimé avec ses messages.",
+    "posted": "Menu « {name} » publié dans {channel}."
+  },
+  "role": {
+    "title": "Rôles",
+    "auditReason": "Demandé par {user}",
+    "added": "{role} donné à {user}.",
+    "addedTemp": "{role} donné à {user} pour {duration} (retrait {when}).",
+    "removed": "{role} retiré à {user}."
+  },
+  "mass": {
+    "title": "Rôle en masse",
+    "nobody": "Aucun membre n'est concerné.",
+    "confirmTitle": "Confirmer l'action de masse",
+    "confirm": {
+      "add": "Donner {role} à {count} membre(s) ?",
+      "remove": "Retirer {role} à {count} membre(s) ?"
+    },
+    "auditReason": "Action de masse par {user}",
+    "progress": "{done} / {total}\n{bar}",
+    "done": "Terminé pour {role} : {done} réussi(s), {failed} échec(s)."
+  },
+  "info": {
+    "title": "Rôle {name}",
+    "id": "ID",
+    "color": "Couleur",
+    "position": "Position",
+    "members": "Membres",
+    "hoist": "Affiché à part",
+    "mentionable": "Mentionnable",
+    "managed": "Géré par une intégration",
+    "created": "Créé le",
+    "temps": "Attributions temporaires",
+    "permissions": "Permissions",
+    "yes": "Oui",
+    "no": "Non",
+    "none": "Aucune"
+  },
+  "dashboard": {
+    "general": { "title": "Rôles", "description": "Menus de rôles et rôles temporaires." },
+    "fields": { "tempRoleDm": "Prévenir en MP à l'expiration", "logChanges": "Journaliser les changements de rôles" },
+    "help": {
+      "tempRoleDm": "Le membre reçoit un MP quand son rôle temporaire est retiré.",
+      "logChanges": "Envoie les clics sur les menus, les rôles temporaires et les actions de masse dans les logs des membres."
+    },
+    "actions": { "refreshMenus": "Actualiser les menus publiés", "refreshMenusDone": "Menus publiés actualisés." }
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "commands": {
+    "verification": {
+      "description": "Vérification des nouveaux membres par captcha",
+      "options": {
+        "setup": {
+          "description": "Configurer la vérification et publier le panneau",
+          "options": {
+            "role": "Rôle donné une fois vérifié",
+            "channel": "Salon où publier le panneau de vérification",
+            "kick_after": "Expulser les non vérifiés après (ex. 30m, 2h ; 0 = jamais)",
+            "unverified_role": "Rôle donné à l'arrivée et retiré une fois vérifié",
+            "code_length": "Longueur du code (4 à 8)",
+            "attempts": "Erreurs permises avant un blocage de 5 minutes",
+            "message": "Texte du panneau (\\n = retour à la ligne)"
+          }
+        },
+        "panel": { "description": "Publier à nouveau le panneau de vérification" },
+        "disable": { "description": "Désactiver la vérification" },
+        "status": { "description": "Afficher la configuration de la vérification" }
+      }
+    }
+  },
+  "panel": {
+    "title": "Vérification",
+    "description": "Pour accéder au serveur, cliquez sur le bouton ci-dessous et recopiez le code affiché. Cela nous protège des bots et des raids.",
+    "button": "Me vérifier"
+  },
+  "modal": {
+    "title": "Vérification",
+    "label": "Recopiez ce code : {code}",
+    "placeholder": "Majuscules ou minuscules, avec ou sans espaces"
+  },
+  "verify": {
+    "title": "Vérification",
+    "disabled": "La vérification est désactivée sur ce serveur.",
+    "noRole": "Le rôle de vérification n'existe plus. Prévenez un administrateur.",
+    "already": "Vous êtes déjà vérifié.",
+    "locked": "Trop d'erreurs. Réessayez dans {time}.",
+    "expired": "Ce code a expiré. Cliquez à nouveau sur le bouton pour en obtenir un nouveau.",
+    "wrong": "Code incorrect. Cliquez à nouveau sur le bouton pour un nouveau code ({left} essai(s) restant(s)).",
+    "grantFailed": "Code correct, mais je n'ai pas pu vous donner le rôle. Prévenez un administrateur (permissions ou position du rôle du bot).",
+    "success": "Bienvenue sur **{server}** ! Vous avez maintenant accès au serveur."
+  },
+  "reasons": {
+    "verified": "Vérification réussie",
+    "unverified": "Nouveau membre en attente de vérification",
+    "kick": "Non vérifié après {time}"
+  },
+  "kick": {
+    "dmTitle": "Expulsé de {server}",
+    "dm": "Vous avez été expulsé de **{server}** car vous ne vous êtes pas vérifié dans un délai de {time} après votre arrivée. Vous pouvez revenir avec une invitation et cliquer sur le bouton de vérification."
+  },
+  "logs": {
+    "lockedTitle": "Vérification bloquée",
+    "locked": "{user} s'est trompé trop de fois de code et est bloqué 5 minutes.",
+    "verifiedTitle": "Membre vérifié",
+    "verified": "{user} a réussi la vérification.",
+    "kickedTitle": "Non vérifié expulsé",
+    "kicked": "{user} a été expulsé : pas de vérification après {time}."
+  },
+  "errors": {
+    "title": "Impossible",
+    "badDuration": "Durée invalide. Utilisez par exemple `10m`, `2h` ou `1d` (entre {min} et {max}), ou `0` pour ne jamais expulser.",
+    "role": {
+      "managed": "{role} est géré par une intégration et ne peut pas être donné.",
+      "everyone": "Le rôle @everyone ne peut pas être utilisé.",
+      "hierarchy": "{role} est au-dessus de mon rôle le plus haut : placez mon rôle plus haut dans les paramètres du serveur.",
+      "noPermission": "Il me manque la permission « Gérer les rôles »."
+    },
+    "sameRole": "Le rôle vérifié et le rôle non vérifié doivent être différents.",
+    "missingPerms": "Il me manque ces permissions dans {channel} : {perms}.",
+    "panelFailed": "Le panneau n'a pas pu être publié. Vérifiez que le salon existe et que je peux y écrire et intégrer des liens.",
+    "notEnabled": "La vérification n'est pas activée. Utilisez d'abord `/verification setup`."
+  },
+  "setup": {
+    "title": "Vérification activée",
+    "done": "Le panneau est publié : {url}",
+    "noKickPerm": "Attention : il me manque la permission « Expulser des membres », les non vérifiés ne seront pas expulsés.",
+    "channelTip": "Conseil : retirez « Voir les salons » à @everyone sur vos salons et donnez-le à {role}, en laissant {channel} visible par tous. Les membres déjà présents ne sont pas concernés.",
+    "reposted": "Le panneau a été publié à nouveau : {url}"
+  },
+  "disable": {
+    "title": "Vérification désactivée",
+    "done": "La vérification est désactivée et le panneau supprimé. {count} expulsion(s) programmée(s) annulée(s)."
+  },
+  "status": {
+    "on": "Activée",
+    "off": "Désactivée",
+    "none": "Aucun",
+    "title": "Configuration de la vérification",
+    "state": "État",
+    "role": "Rôle vérifié",
+    "unverifiedRole": "Rôle non vérifié",
+    "channel": "Salon du panneau",
+    "kickAfter": "Expulsion après",
+    "never": "Jamais",
+    "code": "Code",
+    "codeValue": "{length} caractères, {attempts} essai(s)",
+    "pending": "Expulsions programmées"
+  },
+  "dashboard": {
+    "main": {
+      "title": "Vérification",
+      "description": "Les nouveaux membres cliquent sur un bouton et recopient un code pour obtenir l'accès. Après un changement de salon ou de texte, publiez à nouveau le panneau."
+    },
+    "fields": {
+      "enabled": "Activée",
+      "role": "Rôle vérifié",
+      "unverifiedRole": "Rôle non vérifié",
+      "channel": "Salon du panneau",
+      "kickAfter": "Expulser les non vérifiés après",
+      "codeLength": "Longueur du code",
+      "maxAttempts": "Essais avant blocage",
+      "panelMessage": "Texte du panneau"
+    },
+    "help": {
+      "enabled": "Active la vérification pour les nouveaux arrivants.",
+      "role": "Donné après la réussite du captcha. Il doit être sous le rôle du bot.",
+      "unverifiedRole": "Facultatif : donné à l'arrivée, retiré après la vérification.",
+      "channel": "Salon visible par tous où se trouve le bouton.",
+      "kickAfter": "0 : jamais. Sinon entre 1 minute et 7 jours.",
+      "codeLength": "Entre 4 et 8 caractères.",
+      "maxAttempts": "Après ce nombre d'erreurs, le membre est bloqué 5 minutes.",
+      "panelMessage": "Vide : texte par défaut."
+    },
+    "actions": { "panel": "Publier à nouveau le panneau" },
+    "results": { "posted": "Panneau publié." }
+  }
+}

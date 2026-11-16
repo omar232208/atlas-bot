@@ -1,0 +1,261 @@
+{
+  "commands": {
+    "info": {
+      "description": "Informationen zu Mitgliedern, Rollen, Kanälen und dem Server",
+      "options": {
+        "user": {
+          "description": "Zeigt Informationen zu einem Mitglied",
+          "options": {
+            "user": "Das Mitglied (standardmäßig du)"
+          }
+        },
+        "server": {
+          "description": "Zeigt Informationen zu diesem Server"
+        },
+        "avatar": {
+          "description": "Zeigt den Avatar eines Mitglieds in voller Größe",
+          "options": {
+            "user": "Das Mitglied (standardmäßig du)"
+          }
+        },
+        "role": {
+          "description": "Zeigt Informationen zu einer Rolle",
+          "options": {
+            "role": "Die Rolle"
+          }
+        },
+        "channel": {
+          "description": "Zeigt Informationen zu einem Kanal",
+          "options": {
+            "channel": "Der Kanal (standardmäßig dieser)"
+          }
+        },
+        "members": {
+          "description": "Zählt die Mitglieder dieses Servers"
+        },
+        "invites": {
+          "description": "Rangliste der Mitglieder, die die meisten Leute eingeladen haben",
+          "options": {
+            "user": "Zeigt zusätzlich die Zahl dieses Mitglieds"
+          }
+        }
+      }
+    },
+    "poll": {
+      "description": "Startet eine Umfrage mit Knöpfen und Live-Zählung",
+      "options": {
+        "question": "Die Frage",
+        "options": "Optionen, getrennt durch | (2 bis 5)",
+        "duration": "Wie lange sie offen bleibt, z. B. 30m, 2h, 1d (höchstens 7d, Standard 1d)"
+      }
+    },
+    "remind": {
+      "description": "Lass dich später an etwas erinnern",
+      "options": {
+        "delay": "Wann, z. B. 10m, 2h30m oder 3d",
+        "text": "Woran du erinnert werden möchtest"
+      }
+    },
+    "say": {
+      "description": "Lässt den Bot eine Nachricht posten",
+      "options": {
+        "message": "Die Nachricht (Erwähnungen sind deaktiviert)",
+        "channel": "Kanal zum Posten (standardmäßig dieser)"
+      }
+    },
+    "embed": {
+      "description": "Schreibe ein Embed über ein Formular und veröffentliche es",
+      "options": {
+        "channel": "Kanal zum Veröffentlichen (standardmäßig dieser)"
+      }
+    },
+    "snipe": {
+      "description": "Liest kürzlich gelöschte Nachrichten (standardmäßig aus)",
+      "options": {
+        "show": {
+          "description": "Zeigt eine kürzlich gelöschte Nachricht",
+          "options": {
+            "channel": "Kanal zum Suchen (standardmäßig dieser)",
+            "index": "1 = die neueste"
+          }
+        },
+        "enable": {
+          "description": "Gelöschte Nachrichten für /snipe speichern (Server verwalten)"
+        },
+        "disable": {
+          "description": "Gelöschte Nachrichten nicht mehr speichern (Server verwalten)"
+        }
+      }
+    }
+  },
+  "userinfo": {
+    "title": "Benutzer: {name}",
+    "id": "ID",
+    "type": "Art",
+    "bot": "Bot",
+    "human": "Mensch",
+    "created": "Konto erstellt",
+    "joined": "Dem Server beigetreten",
+    "topRole": "Oberste Rolle",
+    "roles": "Rollen ({count})",
+    "none": "Keine",
+    "notMember": "Kein Mitglied dieses Servers"
+  },
+  "serverinfo": {
+    "title": "Server: {name}",
+    "id": "ID",
+    "owner": "Eigentümer",
+    "created": "Erstellt",
+    "members": "Mitglieder",
+    "humans": "Menschen (zwischengespeichert)",
+    "bots": "Bots (zwischengespeichert)",
+    "channels": "Kanäle",
+    "roles": "Rollen",
+    "boosts": "Boosts",
+    "boostLevel": "Stufe {level}",
+    "verification": "Verifizierung",
+    "verificationLevels": {
+      "0": "Keine",
+      "1": "Niedrig",
+      "2": "Mittel",
+      "3": "Hoch",
+      "4": "Sehr hoch"
+    }
+  },
+  "avatar": {
+    "title": "Avatar von {name}",
+    "open": "Vollständiges Bild öffnen"
+  },
+  "roleinfo": {
+    "title": "Rolle: {name}",
+    "id": "ID",
+    "color": "Farbe",
+    "position": "Position",
+    "members": "Mitglieder (zwischengespeichert)",
+    "mentionable": "Erwähnbar",
+    "hoisted": "Getrennt angezeigt",
+    "admin": "Administrator",
+    "permissions": "Erteilte Berechtigungen",
+    "created": "Erstellt",
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "channelinfo": {
+    "title": "Kanal: {name}",
+    "id": "ID",
+    "type": "Art",
+    "types": {
+      "text": "Text",
+      "voice": "Sprache",
+      "category": "Kategorie",
+      "announcement": "Ankündigungen",
+      "forum": "Forum",
+      "stage": "Bühne",
+      "thread": "Thread",
+      "other": "Andere"
+    },
+    "category": "Kategorie",
+    "position": "Position",
+    "created": "Erstellt",
+    "nsfw": "NSFW",
+    "slowmode": "Slowmode",
+    "seconds": "{count} s",
+    "topic": "Thema",
+    "yes": "Ja",
+    "no": "Nein",
+    "none": "Keins"
+  },
+  "membercount": {
+    "title": "Mitglieder von {name}",
+    "total": "Gesamt",
+    "humans": "Menschen",
+    "bots": "Bots",
+    "partial": "Menschen und Bots werden aus den vom Bot zwischengespeicherten Mitgliedern gezählt, die Aufteilung kann also unter der Gesamtzahl liegen."
+  },
+  "invites": {
+    "title": "Einladungs-Rangliste",
+    "empty": "Noch wurde kein Einladungslink benutzt.",
+    "entry": "{rank}. {user}: **{count}** Einladung(en)",
+    "yours": "{user} hat mit den aktiven Links **{count}** Mitglied(er) gebracht."
+  },
+  "poll": {
+    "ends": "Endet <t:{unix}:R>",
+    "noVotes": "niemand hat abgestimmt",
+    "tie": "Gleichstand",
+    "winner": "Führende Option: {option}",
+    "results": "Ergebnis",
+    "totalVotes": "Stimmen insgesamt: {total}",
+    "recorded": "Stimme gezählt",
+    "yourChoice": "Du hast für **{option}** gestimmt. Klicke auf eine andere Option, um deine Stimme zu ändern."
+  },
+  "remind": {
+    "title": "Erinnerung gesetzt",
+    "set": "Ich erinnere dich <t:{when}:R>: {text}",
+    "reminderTitle": "Erinnerung",
+    "ping": "{user}, hier ist deine Erinnerung."
+  },
+  "say": {
+    "title": "Nachricht gepostet",
+    "sent": "Nachricht in {channel} gepostet."
+  },
+  "embed": {
+    "modalTitle": "Embed erstellen",
+    "fields": {
+      "title": "Titel",
+      "description": "Beschreibung",
+      "color": "Farbe (Hex, z. B. #3b6fd4)",
+      "footer": "Fußzeile",
+      "image": "Bildlink (https://)"
+    },
+    "title": "Embed veröffentlicht",
+    "sent": "Embed in {channel} veröffentlicht."
+  },
+  "snipe": {
+    "title": "Gelöschte Nachricht",
+    "author": "Autor",
+    "when": "Gelöscht",
+    "attachments": "Anhänge ({count})",
+    "noText": "(kein Text)",
+    "none": "Keine gelöschte Nachricht in den letzten 10 Minuten.",
+    "off": "Snipe ist auf diesem Server aus. Schalte es mit /snipe enable ein.",
+    "enabled": "Snipe ist an: Gelöschte Nachrichten werden 10 Minuten im Speicher behalten.",
+    "disabled": "Snipe ist aus. Gelöschte Nachrichten werden nicht mehr behalten.",
+    "position": "Nachricht {index}/{total} in #{channel}"
+  },
+  "errors": {
+    "missingBotPerm": "Ich brauche die Berechtigung **{perm}**, um das zu tun.",
+    "missingUserPerm": "Du brauchst die Berechtigung **{perm}**, um das zu tun.",
+    "permSendMessages": "Nachrichten senden",
+    "permEmbedLinks": "Links einbetten",
+    "permManageGuild": "Server verwalten",
+    "inviteFetch": "Ich konnte die Einladungslinks dieses Servers nicht lesen.",
+    "pollClosed": "Diese Umfrage ist geschlossen.",
+    "pollDuplicate": "Zwei Optionen sind identisch.",
+    "pollOptionLong": "Jede Option darf höchstens {max} Zeichen haben.",
+    "pollOptions": "Gib zwischen 2 und {max} Optionen an, getrennt durch |.",
+    "pollTooLong": "Eine Umfrage darf höchstens 7 Tage dauern.",
+    "invalidDuration": "Ungültige Dauer. Beispiele: 10m, 2h30m, 1d.",
+    "remindTooLong": "Eine Erinnerung kann höchstens {max} Tage im Voraus gesetzt werden.",
+    "embedEmpty": "Das Embed braucht einen Titel oder eine Beschreibung.",
+    "invalidColor": "Ungültige Farbe. Verwende #RRGGBB.",
+    "invalidUrl": "Ungültiger Bildlink. Er muss mit https:// beginnen."
+  },
+  "dashboard": {
+    "snipe": {
+      "title": "Gelöschte Nachrichten (/snipe)",
+      "description": "Gelöschte Nachrichten werden 10 Minuten im Speicher behalten, damit Moderatoren sie lesen können.",
+      "enabled": {
+        "label": "Gelöschte Nachrichten behalten",
+        "help": "Aus Datenschutzgründen standardmäßig aus. Wenn aus, wird nichts gespeichert."
+      }
+    },
+    "remind": {
+      "title": "Erinnerungen",
+      "description": "Wie weit im Voraus eine Erinnerung gesetzt werden kann.",
+      "maxDays": {
+        "label": "Maximale Erinnerungsdauer (Tage)",
+        "help": "Erinnerungen, die weiter entfernt liegen, werden abgelehnt."
+      }
+    }
+  }
+}

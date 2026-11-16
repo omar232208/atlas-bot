@@ -1,0 +1,149 @@
+{
+  "errors": {
+    "title": "Error",
+    "botTarget": "Bots do not earn XP.",
+    "adminOnly": "This action needs the Manage Server permission.",
+    "roleUnusable": "This role cannot be given (managed by an integration, or @everyone).",
+    "botNeedsRoles": "I am missing the Manage Roles permission.",
+    "roleTooHigh": "I cannot give {role}: it is above my highest role.",
+    "botMissing": "I am missing a permission in that channel: {perms}.",
+    "tooManyRewards": "There cannot be more than {max} level rewards.",
+    "noReward": "There is no reward for level {level}."
+  },
+  "rank": {
+    "title": "Level of {user}",
+    "disabled": "Levels are not enabled on this server. An administrator can use /levels enable.",
+    "none": "No XP yet. Send a few messages!",
+    "level": "Level",
+    "rank": "Rank",
+    "xp": "Total XP",
+    "progress": "{current} / {required} XP to the next level"
+  },
+  "leaderboard": {
+    "title": "Level leaderboard",
+    "empty": "Nobody has earned XP yet.",
+    "line": "**#{rank}** {user} · level {level} · {xp} XP"
+  },
+  "levelUp": {
+    "title": "Level up!",
+    "text": "{user} reached level {level}."
+  },
+  "enable": {
+    "title": "Levels enabled",
+    "done": "Members now earn XP by chatting."
+  },
+  "disable": {
+    "title": "Levels disabled",
+    "done": "Members no longer earn XP. Existing data is kept."
+  },
+  "config": {
+    "title": "Level settings",
+    "saved": "Settings saved",
+    "minAboveMax": "The minimum XP cannot be above the maximum XP.",
+    "enabled": "Enabled",
+    "announce": "Level-up messages",
+    "channel": "Announcement channel",
+    "sameChannel": "Same channel as the message",
+    "cooldown": "Delay between two gains",
+    "xp": "XP per message",
+    "on": "yes",
+    "off": "no"
+  },
+  "reset": {
+    "title": "XP reset",
+    "done": "The XP of {user} has been reset to zero."
+  },
+  "reward": {
+    "addedTitle": "Reward added",
+    "added": "The role {role} is given at level {level}.",
+    "removedTitle": "Reward removed",
+    "removed": "No role is given at level {level} any more.",
+    "listTitle": "Level rewards",
+    "none": "No role rewards yet.",
+    "line": "Level {level}: {role}"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Levels",
+      "description": "XP per message and level-up messages.",
+      "enabled": {
+        "label": "Enable levels",
+        "help": "Members earn XP by writing messages."
+      },
+      "cooldown": {
+        "label": "Delay between two gains (seconds)",
+        "help": "A member earns XP only once per delay."
+      },
+      "xpMin": {
+        "label": "Minimum XP per message",
+        "help": "Lower bound of the random gain."
+      },
+      "xpMax": {
+        "label": "Maximum XP per message",
+        "help": "Upper bound of the random gain."
+      },
+      "announce": {
+        "label": "Announce level-ups",
+        "help": "Send a message on every level-up."
+      },
+      "announceChannel": {
+        "label": "Announcement channel",
+        "help": "Empty = the channel of the message that caused the level-up."
+      }
+    }
+  },
+  "commands": {
+    "rank": {
+      "description": "Show your level and rank",
+      "options": {
+        "user": "Member to look up"
+      }
+    },
+    "leaderboard": {
+      "description": "Show the most active members"
+    },
+    "levels": {
+      "description": "Configure levels and role rewards",
+      "options": {
+        "enable": {
+          "description": "Turn on XP for messages (Manage Server)"
+        },
+        "disable": {
+          "description": "Turn off XP for messages (Manage Server)"
+        },
+        "config": {
+          "description": "Show or change the settings (Manage Server)",
+          "options": {
+            "channel": "Channel for level-up messages",
+            "announce": "Announce level-ups",
+            "cooldown": "Seconds between two XP gains",
+            "xp_min": "Minimum XP per message",
+            "xp_max": "Maximum XP per message"
+          }
+        },
+        "reset": {
+          "description": "Reset the XP of a member (Manage Server)",
+          "options": {
+            "user": "Member"
+          }
+        },
+        "reward-add": {
+          "description": "Give a role when a level is reached (Manage Server)",
+          "options": {
+            "level": "Level",
+            "role": "Role to give"
+          }
+        },
+        "reward-remove": {
+          "description": "Remove the role reward of a level (Manage Server)",
+          "options": {
+            "level": "Level"
+          }
+        },
+        "reward-list": {
+          "description": "List the role rewards"
+        }
+      }
+    }
+  }
+}

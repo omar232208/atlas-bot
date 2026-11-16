@@ -1,0 +1,271 @@
+{
+  "commands": {
+    "play": {
+      "description": "Eine Audio-URL, ein Radio oder eine Datei abspielen",
+      "options": {
+        "url": "Direkte Audio-URL (mp3, ogg, flac, wav, m3u, pls, Radiostream) oder Radioname",
+        "file": "Abzuspielende Audiodatei",
+        "next": "Direkt nach dem aktuellen Titel abspielen"
+      }
+    },
+    "radio": {
+      "description": "Ein eingebautes Webradio hören (ohne Angabe: die Liste)",
+      "options": {
+        "station": "Sendername oder Genre",
+        "next": "Direkt nach dem aktuellen Titel abspielen"
+      }
+    },
+    "pause": { "description": "Musik pausieren" },
+    "resume": { "description": "Musik fortsetzen" },
+    "skip": {
+      "description": "Aktuellen Titel überspringen",
+      "options": { "to": "Direkt zu dieser Position der Warteschlange springen" }
+    },
+    "stop": { "description": "Musik stoppen und Warteschlange leeren" },
+    "queue": {
+      "description": "Warteschlange anzeigen oder bearbeiten",
+      "options": {
+        "view": { "description": "Warteschlange anzeigen" },
+        "remove": {
+          "description": "Einen Titel aus der Warteschlange entfernen",
+          "options": { "position": "Position in der Warteschlange" }
+        },
+        "move": {
+          "description": "Einen Titel in der Warteschlange verschieben",
+          "options": { "from": "Aktuelle Position", "to": "Neue Position" }
+        },
+        "clear": { "description": "Kommende Titel entfernen" },
+        "shuffle": { "description": "Warteschlange mischen" }
+      }
+    },
+    "nowplaying": { "description": "Aktuellen Titel mit Steuerung anzeigen" },
+    "loop": {
+      "description": "Titel oder Warteschlange wiederholen",
+      "options": {
+        "mode": {
+          "description": "Wiederholungsmodus",
+          "choices": { "off": "Aus", "track": "Titel", "queue": "Ganze Warteschlange" }
+        }
+      }
+    },
+    "volume": {
+      "description": "Lautstärke anzeigen oder ändern",
+      "options": { "level": "Lautstärke in Prozent (0-150)" }
+    },
+    "seek": {
+      "description": "Zu einer Stelle im Titel springen",
+      "options": { "position": "Zum Beispiel 1:30, 90, 2m10s, +30 oder -10" }
+    },
+    "music": {
+      "description": "Sprachverbindung und Musikeinstellungen",
+      "options": {
+        "join": { "description": "Den Bot in deinen Sprachkanal holen" },
+        "leave": { "description": "Den Bot vom Sprachkanal trennen" },
+        "show": { "description": "Musikeinstellungen anzeigen" },
+        "config": {
+          "description": "Musikeinstellungen ändern",
+          "options": {
+            "dj_role": "Rolle, die überspringen, stoppen und die Warteschlange bearbeiten darf",
+            "remove_dj_role": "DJ-Rolle entfernen: alle im Kanal dürfen steuern",
+            "max_queue": "Maximale Anzahl Titel in der Warteschlange",
+            "default_volume": "Lautstärke beim Beitritt des Bots (0-150)",
+            "stay_247": "Rund um die Uhr im Sprachkanal bleiben",
+            "announce": "Jeden neuen Titel ankündigen",
+            "announce_channel": "Kanal für Ankündigungen",
+            "announce_here": "Dort ankündigen, wo der Titel angefragt wurde",
+            "allow_files": "Abspielen angehängter Dateien erlauben"
+          }
+        },
+        "reset": { "description": "Standardeinstellungen wiederherstellen" }
+      }
+    }
+  },
+  "genres": {
+    "eclectic": "Gemischt",
+    "chill": "Chill",
+    "rock": "Rock",
+    "world": "Weltmusik",
+    "jazz": "Jazz",
+    "electronic": "Elektronisch",
+    "hiphop": "Hip-Hop",
+    "metal": "Metal",
+    "pop": "Pop",
+    "reggae": "Reggae",
+    "classical": "Klassik",
+    "indie": "Indie",
+    "vaporwave": "Vaporwave",
+    "synthwave": "Synthwave"
+  },
+  "loopModes": { "off": "aus", "track": "Titel", "queue": "Warteschlange" },
+  "ui": {
+    "live": "Live",
+    "unknownDuration": "Dauer unbekannt",
+    "queueLine": "`{index}.` {title} · {duration} · {user}",
+    "onAir": "Läuft gerade: {title}",
+    "requestedBy": "Angefragt von",
+    "volume": "Lautstärke",
+    "loop": "Wiederholung",
+    "duration": "Dauer",
+    "upNext": "Als Nächstes",
+    "inQueue": "{count} in der Warteschlange",
+    "queueEmpty": "Die Warteschlange ist leer.",
+    "buttons": {
+      "pause": "Pause",
+      "resume": "Fortsetzen",
+      "skip": "Weiter",
+      "stop": "Stopp",
+      "loop": "Wiederholung: {mode}",
+      "refresh": "Aktualisieren"
+    }
+  },
+  "nowplaying": { "title": "Läuft gerade", "pausedTitle": "Pausiert" },
+  "queue": {
+    "title": "Warteschlange",
+    "current": "**Läuft:** {title} · {duration}",
+    "summary": "{count} kommende(r) Titel · {duration} · Wiederholung {loop}",
+    "remove": { "done": "Titel entfernt", "details": "{title} (Position {position}) wurde aus der Warteschlange entfernt." },
+    "move": { "done": "Titel verschoben", "details": "{title} wurde von Position {from} nach {to} verschoben." },
+    "clear": { "done": "Warteschlange geleert", "details": "{count} Titel entfernt. Der aktuelle Titel läuft weiter." },
+    "shuffle": { "done": "Warteschlange gemischt", "details": "{count} Titel wurden gemischt." }
+  },
+  "play": {
+    "addedTitle": "Zur Warteschlange hinzugefügt",
+    "added": "{title} · {duration}\nPosition in der Warteschlange: **{position}**",
+    "addedPlaylist": "**{count}** Titel ab Position **{position}** hinzugefügt.",
+    "addedMany": "+ {count} weitere(r) Titel zur Warteschlange hinzugefügt",
+    "truncatedTitle": "Warteschlange voll",
+    "truncated": "{count} Titel nicht hinzugefügt: die Warteschlange ist auf {max} begrenzt."
+  },
+  "radio": {
+    "listTitle": "Eingebaute Radios",
+    "listHelp": "{count} kostenlose öffentliche Radios. Starte eines mit `/radio station:` (die Autovervollständigung sucht nach Name oder Genre)."
+  },
+  "pause": { "done": "Musik pausiert", "hint": "Mit `/resume` oder der Schaltfläche Fortsetzen geht es weiter." },
+  "resume": { "done": "Wiedergabe fortgesetzt" },
+  "skip": {
+    "done": "Titel übersprungen",
+    "next": "{skipped} wurde übersprungen.\nJetzt: {next}",
+    "end": "{skipped} wurde übersprungen. Die Warteschlange ist zu Ende.",
+    "queueEnded": "Die Warteschlange ist zu Ende."
+  },
+  "stop": {
+    "done": "Musik gestoppt",
+    "details": "Die Warteschlange wurde geleert ({count} Titel entfernt).",
+    "by": "Gestoppt von {user}. Die Warteschlange wurde geleert."
+  },
+  "loop": {
+    "done": "Wiederholung geändert",
+    "off": "Die Wiederholung ist aus.",
+    "track": "Der aktuelle Titel wird wiederholt.",
+    "queue": "Die ganze Warteschlange wird wiederholt."
+  },
+  "volume": {
+    "title": "Lautstärke",
+    "current": "Die Lautstärke steht auf **{volume} %**.",
+    "set": "Lautstärke auf **{volume} %** gesetzt."
+  },
+  "seek": { "done": "Position geändert", "details": "Wiedergabe ab **{position}**." },
+  "join": { "done": "Verbunden", "details": "Ich bin in {channel}. Starte Musik mit `/play` oder `/radio`." },
+  "leave": { "done": "Sprachkanal verlassen" },
+  "player": {
+    "errorTitle": "Wiedergabe nicht möglich",
+    "infoTitle": "Musik",
+    "trackFailed": "**{title}**: {reason}",
+    "leftIdle": "Seit 2 Minuten keine Musik, daher habe ich den Sprachkanal verlassen. Aktiviere den 24/7-Modus mit `/music config`, damit ich bleibe.",
+    "leftAlone": "Seit 2 Minuten hat niemand mehr zugehört, daher habe ich den Sprachkanal verlassen."
+  },
+  "config": {
+    "title": "Musikeinstellungen",
+    "saved": "Einstellungen gespeichert",
+    "resetDone": "Standardeinstellungen wiederhergestellt",
+    "yes": "Ja",
+    "no": "Nein",
+    "noDj": "Keine (alle im Kanal steuern)",
+    "sameChannel": "Kanal des Befehls",
+    "footer": "Mitglieder mit „Server verwalten“ haben immer DJ-Rechte.",
+    "fields": {
+      "djRole": "DJ-Rolle",
+      "maxQueue": "Max. Warteschlange",
+      "defaultVolume": "Standardlautstärke",
+      "stay247": "24/7-Modus",
+      "announce": "Ankündigungen",
+      "announceChannel": "Ankündigungskanal",
+      "allowFiles": "Angehängte Dateien"
+    }
+  },
+  "errors": {
+    "title": "Musik",
+    "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Versuche es gleich noch einmal.",
+    "discordPermissions": "Discord hat die Aktion abgelehnt: mir fehlt eine Berechtigung in diesem Kanal.",
+    "unavailable": "Das Musikmodul ist auf diesem Bot deaktiviert (Sprach-Abhängigkeiten fehlen).",
+    "notInVoice": "Tritt zuerst einem Sprachkanal bei.",
+    "sameChannel": "Du musst in meinem Sprachkanal ({channel}) sein, um die Musik zu steuern.",
+    "nothingPlaying": "Es läuft gerade nichts.",
+    "notConnected": "Ich bin mit keinem Sprachkanal verbunden.",
+    "djOnly": "Diese Aktion ist der Rolle {role} oder Mitgliedern mit Serververwaltung vorbehalten.",
+    "manageGuild": "Du brauchst die Berechtigung „Server verwalten“, um die Musikeinstellungen zu ändern.",
+    "botMissing": "Mir fehlen Berechtigungen in {channel}: {perms}.",
+    "channelFull": "Der Kanal {channel} ist voll.",
+    "connectFailed": "Ich konnte mich nicht mit dem Sprachkanal verbinden. Versuche es gleich noch einmal.",
+    "playUsage": "Gib eine Audio-URL an (`url:`) oder hänge eine Datei an (`file:`). Für die eingebauten Radios nutze `/radio`.",
+    "notUrl": "Das ist weder eine URL noch ein eingebautes Radio. Suchen auf YouTube und Spotify werden nicht unterstützt: gib einen direkten Link zu einer Audiodatei oder einem Stream an.",
+    "invalidUrl": "Diese URL ist ungültig.",
+    "protocol": "Nur http- und https-URLs werden akzeptiert.",
+    "blocked": "Diese Adresse ist nicht erlaubt (lokales oder privates Netzwerk).",
+    "dns": "Dieser Domainname wurde nicht gefunden.",
+    "network": "Der Audioserver antwortet nicht richtig ({reason}).",
+    "timeout": "Der Audioserver hat zu lange für eine Antwort gebraucht.",
+    "aborted": "Die Wiedergabe wurde unterbrochen.",
+    "http": "Der Audioserver hat mit dem HTTP-Fehler {status} geantwortet.",
+    "redirects": "Zu viele Weiterleitungen für diese URL.",
+    "notAudio": "Dieser Link führt nicht zu Audio (erhaltener Typ: {type}). Es muss ein direkter Link zu einer Datei oder einem Stream sein, keine Webseite.",
+    "notAudioFile": "Die Datei {name} ist keine Audiodatei.",
+    "filesDisabled": "Das Abspielen angehängter Dateien ist auf diesem Server deaktiviert.",
+    "hls": "HLS-Streams (in Segmente aufgeteiltes m3u8) werden nicht unterstützt. Nutze die direkte MP3- oder AAC-URL des Radios.",
+    "emptyPlaylist": "Diese Playlist enthält keinen abspielbaren Link.",
+    "playlistTooBig": "Diese Playlist ist zu groß.",
+    "decode": "Der Ton konnte nicht dekodiert werden (nicht unterstütztes Format oder leerer Stream).",
+    "tooManyFailures": "Mehrere Titel hintereinander konnten nicht abgespielt werden, daher wurde die Warteschlange gestoppt.",
+    "radioNotFound": "Kein Radio passt zu „{query}“. Gib `/radio` ohne Angabe ein, um die Liste zu sehen.",
+    "queueFull": "Die Warteschlange ist voll (höchstens {max} Titel).",
+    "queueEmpty": "Es gibt keine kommenden Titel in der Warteschlange.",
+    "queueTooShort": "Zum Mischen braucht es mindestens 2 kommende Titel.",
+    "badPosition": "Ungültige Position. Die Warteschlange enthält {max} kommende(n) Titel.",
+    "alreadyPaused": "Die Musik ist bereits pausiert.",
+    "notPaused": "Die Musik ist nicht pausiert.",
+    "seekLive": "In einem Livestream kann nicht gespult werden.",
+    "badTime": "Ungültige Stelle. Beispiele: 1:30, 90, 2m10s, +30, -10.",
+    "seekBeyond": "Diese Stelle liegt nach dem Ende des Titels ({duration})."
+  },
+  "dashboard": {
+    "controls": {
+      "title": "Musiksteuerung",
+      "description": "Wer die Musik steuern darf und wie sie abgespielt wird."
+    },
+    "presence": {
+      "title": "Anwesenheit und Ankündigungen",
+      "description": "Verhalten des Bots im Sprachkanal und „Läuft gerade“-Nachrichten."
+    },
+    "fields": {
+      "djRole": { "label": "DJ-Rolle", "help": "Dieser Rolle vorbehalten: überspringen, stoppen, wiederholen, Lautstärke, Position und Warteschlange bearbeiten. Leer: alle im Sprachkanal dürfen das." },
+      "maxQueue": { "label": "Maximale Größe der Warteschlange", "help": "Höchstzahl wartender Titel (1 bis 1000)." },
+      "defaultVolume": { "label": "Standardlautstärke (%)", "help": "Lautstärke, wenn der Bot einem Kanal beitritt (0 bis 150)." },
+      "allowFiles": { "label": "Angehängte Dateien erlauben", "help": "Erlaubt `/play file:` mit einer auf Discord hochgeladenen Audiodatei." },
+      "stay247": { "label": "24/7-Modus", "help": "Der Bot bleibt im Kanal, auch allein oder ohne Musik, und setzt das Radio nach einem Neustart fort." },
+      "announce": { "label": "Jeden Titel ankündigen", "help": "Postet bei jedem neuen Titel eine „Läuft gerade“-Nachricht mit Schaltflächen." },
+      "announceChannel": { "label": "Ankündigungskanal", "help": "Leer: Ankündigungen gehen in den Kanal, in dem der Titel angefragt wurde." }
+    },
+    "actions": {
+      "unavailable": "Das Musikmodul ist deaktiviert (Sprach-Abhängigkeiten fehlen).",
+      "disconnect": {
+        "label": "Musik stoppen und Bot trennen",
+        "done": "Musik gestoppt, Bot vom Sprachkanal getrennt.",
+        "notConnected": "Der Bot ist auf diesem Server mit keinem Sprachkanal verbunden."
+      }
+    }
+  },
+  "console": {
+    "disabled": "Musikmodul deaktiviert: die Abhängigkeit „{dependency}“ konnte nicht geladen werden ({reason}). Führe „npm install“ aus, um die optionalen Abhängigkeiten zu installieren (@discordjs/voice, prism-media, ffmpeg-static). Der Rest des Bots funktioniert normal.",
+    "noVoiceIntent": "Musikmodul: der Intent GuildVoiceStates ist nicht aktiv, der Bot sieht nicht, wer in Sprachkanälen ist, und Musik funktioniert nicht."
+  }
+}

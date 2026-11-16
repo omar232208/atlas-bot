@@ -1,0 +1,130 @@
+{
+  "commands": {
+    "verification": {
+      "description": "Verificação de novos membros por captcha",
+      "options": {
+        "setup": {
+          "description": "Configurar a verificação e publicar o painel",
+          "options": {
+            "role": "Cargo dado após a verificação",
+            "channel": "Canal onde o painel de verificação é publicado",
+            "kick_after": "Expulsar não verificados após (ex. 30m, 2h; 0 = nunca)",
+            "unverified_role": "Cargo dado na entrada e removido após a verificação",
+            "code_length": "Tamanho do código (4 a 8)",
+            "attempts": "Erros permitidos antes de um bloqueio de 5 minutos",
+            "message": "Texto do painel (\\n = nova linha)"
+          }
+        },
+        "panel": { "description": "Publicar o painel de verificação de novo" },
+        "disable": { "description": "Desativar a verificação" },
+        "status": { "description": "Mostrar a configuração da verificação" }
+      }
+    }
+  },
+  "panel": {
+    "title": "Verificação",
+    "description": "Para acessar o servidor, clique no botão abaixo e digite o código exibido. Isso nos protege de bots e raids.",
+    "button": "Verificar"
+  },
+  "modal": {
+    "title": "Verificação",
+    "label": "Digite este código: {code}",
+    "placeholder": "Maiúsculas ou minúsculas, com ou sem espaços"
+  },
+  "verify": {
+    "title": "Verificação",
+    "disabled": "A verificação está desativada neste servidor.",
+    "noRole": "O cargo de verificação não existe mais. Avise um administrador.",
+    "already": "Você já está verificado.",
+    "locked": "Erros demais. Tente de novo em {time}.",
+    "expired": "Este código expirou. Clique no botão de novo para receber outro.",
+    "wrong": "Código incorreto. Clique no botão de novo para receber outro código ({left} tentativa(s) restante(s)).",
+    "grantFailed": "Código correto, mas não consegui dar o cargo a você. Avise um administrador (permissões ou posição do cargo do bot).",
+    "success": "Boas-vindas ao **{server}**! Agora você tem acesso ao servidor."
+  },
+  "reasons": {
+    "verified": "Verificação concluída",
+    "unverified": "Novo membro aguardando verificação",
+    "kick": "Não verificado após {time}"
+  },
+  "kick": {
+    "dmTitle": "Expulso de {server}",
+    "dm": "Você foi expulso de **{server}** porque não se verificou em até {time} após entrar. Você pode voltar com um convite e clicar no botão de verificação."
+  },
+  "logs": {
+    "lockedTitle": "Verificação bloqueada",
+    "locked": "{user} errou o código vezes demais e está bloqueado por 5 minutos.",
+    "verifiedTitle": "Membro verificado",
+    "verified": "{user} concluiu a verificação.",
+    "kickedTitle": "Não verificado expulso",
+    "kicked": "{user} foi expulso: não verificado após {time}."
+  },
+  "errors": {
+    "title": "Não é possível",
+    "badDuration": "Duração inválida. Use por exemplo `10m`, `2h` ou `1d` (entre {min} e {max}), ou `0` para nunca expulsar.",
+    "role": {
+      "managed": "{role} é gerenciado por uma integração e não pode ser dado.",
+      "everyone": "O cargo @everyone não pode ser usado.",
+      "hierarchy": "{role} está acima do meu cargo mais alto: suba meu cargo nas configurações do servidor.",
+      "noPermission": "Está me faltando a permissão \"Gerenciar cargos\"."
+    },
+    "sameRole": "O cargo verificado e o cargo não verificado precisam ser diferentes.",
+    "missingPerms": "Estão me faltando estas permissões em {channel}: {perms}.",
+    "panelFailed": "Não foi possível publicar o painel. Verifique se o canal existe e se posso escrever e inserir links nele.",
+    "notEnabled": "A verificação não está ativada. Use primeiro `/verification setup`."
+  },
+  "setup": {
+    "title": "Verificação ativada",
+    "done": "O painel foi publicado: {url}",
+    "noKickPerm": "Atenção: está me faltando a permissão \"Expulsar membros\", os não verificados não serão expulsos.",
+    "channelTip": "Dica: tire \"Ver canais\" do @everyone nos seus canais e dê ao {role}, deixando {channel} visível para todos. Quem já está no servidor não é afetado.",
+    "reposted": "O painel foi publicado de novo: {url}"
+  },
+  "disable": {
+    "title": "Verificação desativada",
+    "done": "A verificação está desativada e o painel foi apagado. {count} expulsão(ões) agendada(s) cancelada(s)."
+  },
+  "status": {
+    "on": "Ativada",
+    "off": "Desativada",
+    "none": "Nenhum",
+    "title": "Configuração da verificação",
+    "state": "Estado",
+    "role": "Cargo verificado",
+    "unverifiedRole": "Cargo não verificado",
+    "channel": "Canal do painel",
+    "kickAfter": "Expulsão após",
+    "never": "Nunca",
+    "code": "Código",
+    "codeValue": "{length} caracteres, {attempts} tentativa(s)",
+    "pending": "Expulsões agendadas"
+  },
+  "dashboard": {
+    "main": {
+      "title": "Verificação",
+      "description": "Novos membros clicam em um botão e digitam um código para ter acesso. Depois de mudar o canal ou o texto, publique o painel de novo."
+    },
+    "fields": {
+      "enabled": "Ativada",
+      "role": "Cargo verificado",
+      "unverifiedRole": "Cargo não verificado",
+      "channel": "Canal do painel",
+      "kickAfter": "Expulsar não verificados após",
+      "codeLength": "Tamanho do código",
+      "maxAttempts": "Tentativas antes do bloqueio",
+      "panelMessage": "Texto do painel"
+    },
+    "help": {
+      "enabled": "Ativa a verificação para quem chega.",
+      "role": "Dado após passar no captcha. Precisa estar abaixo do cargo do bot.",
+      "unverifiedRole": "Opcional: dado na entrada, removido após a verificação.",
+      "channel": "Canal visível para todos onde fica o botão.",
+      "kickAfter": "0: nunca. Senão, entre 1 minuto e 7 dias.",
+      "codeLength": "Entre 4 e 8 caracteres.",
+      "maxAttempts": "Depois desse número de erros, o membro fica bloqueado por 5 minutos.",
+      "panelMessage": "Vazio: texto padrão."
+    },
+    "actions": { "panel": "Publicar o painel de novo" },
+    "results": { "posted": "Painel publicado." }
+  }
+}

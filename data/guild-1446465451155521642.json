@@ -1,0 +1,382 @@
+{
+  "community": {
+    "afk": {
+      "users": {}
+    },
+    "suggestions": {
+      "channelId": "1448269275994521783"
+    }
+  },
+  "verification": {
+    "enabled": true
+  },
+  "welcome": {
+    "enabled": true
+  },
+  "dashboard": {
+    "history": [
+      {
+        "at": 1794751737479,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.filters.spam.limit"
+        ]
+      },
+      {
+        "at": 1794751708343,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.filters.mentions.exemptRoles"
+        ]
+      },
+      {
+        "at": 1794751699346,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.filters.links.enabled",
+          "automod.filters.links.exemptRoles"
+        ]
+      },
+      {
+        "at": 1794751679778,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.filters.badwords.enabled",
+          "automod.filters.badwords.action"
+        ]
+      },
+      {
+        "at": 1794751656533,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.badwords"
+        ]
+      },
+      {
+        "at": 1794751562066,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "antinuke"
+        ],
+        "paths": [
+          "antinuke.punishment",
+          "antinuke.quarantineRoleId",
+          "whitelist"
+        ]
+      },
+      {
+        "at": 1794751084837,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "core-commands"
+        ],
+        "paths": [
+          "language"
+        ]
+      },
+      {
+        "at": 1794750523523,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "logs"
+        ],
+        "action": "test"
+      },
+      {
+        "at": 1794750522003,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "logs"
+        ],
+        "action": "test"
+      },
+      {
+        "at": 1794750520875,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "action",
+        "modules": [
+          "logs"
+        ],
+        "action": "test"
+      },
+      {
+        "at": 1794750516189,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "logs"
+        ],
+        "paths": [
+          "logs.channels.messages",
+          "logs.channels.members",
+          "logs.channels.moderation",
+          "logs.channels.server",
+          "logs.channels.voice",
+          "logs.channels.invites",
+          "logs.channels.protection"
+        ]
+      },
+      {
+        "at": 1794750380057,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "tickets"
+        ],
+        "paths": [
+          "tickets.config.staffRoleIds",
+          "tickets.config.logChannelId",
+          "tickets.config.parentId",
+          "tickets.config.askReason",
+          "tickets.config.welcomeMessage"
+        ]
+      },
+      {
+        "at": 1794749232726,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "community"
+        ],
+        "paths": [
+          "community.suggestions.channelId"
+        ]
+      },
+      {
+        "at": 1794749222097,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "antiraid"
+        ],
+        "paths": [
+          "antiraid.enabled"
+        ]
+      },
+      {
+        "at": 1794749216246,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "antinuke"
+        ],
+        "paths": [
+          "antinuke.enabled"
+        ]
+      },
+      {
+        "at": 1794749205711,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "automod"
+        ],
+        "paths": [
+          "automod.enabled",
+          "automod.exemptRoles"
+        ]
+      },
+      {
+        "at": 1794749118225,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "levels"
+        ],
+        "paths": [
+          "levels.config.announceChannel"
+        ]
+      },
+      {
+        "at": 1794749096801,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "levels"
+        ],
+        "paths": [
+          "levels.enabled"
+        ]
+      },
+      {
+        "at": 1794749092012,
+        "userId": "1366747566020231168",
+        "user": "e2t9",
+        "kind": "config",
+        "modules": [
+          "verification",
+          "welcome"
+        ],
+        "paths": [
+          "verification.enabled",
+          "welcome.enabled"
+        ]
+      }
+    ]
+  },
+  "levels": {
+    "enabled": true,
+    "config": {
+      "announceChannel": "1448269275994521783"
+    },
+    "users": {
+      "1366747566020231168": {
+        "xp": 95,
+        "last": 1794838662234
+      }
+    }
+  },
+  "automod": {
+    "enabled": true,
+    "exemptRoles": [
+      "1448268923970519264"
+    ],
+    "badwords": [
+      "كلب",
+      "حيوان",
+      "عرص",
+      "خول",
+      "منيوك"
+    ],
+    "filters": {
+      "badwords": {
+        "enabled": true,
+        "action": "timeout"
+      },
+      "links": {
+        "enabled": true,
+        "exemptRoles": [
+          "1448268923970519264"
+        ]
+      },
+      "mentions": {
+        "exemptRoles": [
+          "1448268923970519264"
+        ]
+      },
+      "spam": {
+        "limit": 3
+      }
+    }
+  },
+  "antinuke": {
+    "enabled": true,
+    "punishment": "timeout",
+    "quarantineRoleId": "1448269076102119568"
+  },
+  "antiraid": {
+    "enabled": true
+  },
+  "giveaways": {
+    "items": {
+      "88410d4b": {
+        "id": "88410d4b",
+        "guildId": "1446465451155521642",
+        "channelId": "1448269275994521783",
+        "messageId": "1571520786005495921",
+        "prize": "Nitro",
+        "winnersCount": 1,
+        "hostId": "1366747566020231168",
+        "createdAt": 1794750152270,
+        "endsAt": 1794922952270,
+        "requiredRoleId": null,
+        "minAccountDays": 0,
+        "entries": {
+          "1366747566020231168": true
+        },
+        "status": "active",
+        "winnerIds": [],
+        "jobId": "0e443a04-13b8-4321-924e-95de39334f3c"
+      }
+    }
+  },
+  "tickets": {
+    "config": {
+      "staffRoleIds": [
+        "1448268923970519264"
+      ],
+      "logChannelId": "1448269381590323232",
+      "parentId": "1448269206503292939",
+      "askReason": true,
+      "welcomeMessage": "أهلاً بك في سيرفرنا! تم فتح التيكت بنجاح، وسيتم الرد عليك من قِبل فريق الإدارة في أقرب وقت ممكن.\n\n⚬ يرجى كتابة تفاصيل مشكلتك أو استفسارك بالكامل لتسريع الخدمة.\n⚬ نرجو التحلي بالصبر وعدم الإشارة إلى الإدارة (منشن) بدون داعٍ."
+    }
+  },
+  "logs": {
+    "channels": {
+      "messages": "1448269377198620715",
+      "members": "1448269367430221877",
+      "moderation": "1448269375994859622",
+      "server": "1448269374807998515",
+      "voice": "1448269374807998515",
+      "invites": "1448269367430221877",
+      "protection": "1448269365932724358"
+    }
+  },
+  "language": "ar",
+  "economy": {
+    "users": {
+      "1366747566020231168": {
+        "wallet": 500,
+        "bank": 0,
+        "daily": {
+          "last": 1794751163261,
+          "streak": 1
+        },
+        "weekly": 0,
+        "work": 0,
+        "rob": 0,
+        "inventory": {}
+      }
+    }
+  },
+  "whitelist": [
+    "<@1366747566020231168>"
+  ],
+  "commands": {
+    "globalEnabled": true,
+    "bypassOwner": true,
+    "bypassAdmin": true
+  }
+}

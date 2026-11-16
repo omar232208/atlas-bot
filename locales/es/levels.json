@@ -1,0 +1,149 @@
+{
+  "errors": {
+    "title": "Error",
+    "botTarget": "Los bots no ganan XP.",
+    "adminOnly": "Esta acción necesita el permiso Gestionar el servidor.",
+    "roleUnusable": "Este rol no se puede asignar (lo gestiona una integración, o es @everyone).",
+    "botNeedsRoles": "Me falta el permiso Gestionar roles.",
+    "roleTooHigh": "No puedo dar {role}: está por encima de mi rol más alto.",
+    "botMissing": "Me falta un permiso en ese canal: {perms}.",
+    "tooManyRewards": "No puede haber más de {max} recompensas de nivel.",
+    "noReward": "No hay recompensa para el nivel {level}."
+  },
+  "rank": {
+    "title": "Nivel de {user}",
+    "disabled": "Los niveles no están activados en este servidor. Un administrador puede usar /levels enable.",
+    "none": "Aún no tienes XP. ¡Escribe algunos mensajes!",
+    "level": "Nivel",
+    "rank": "Posición",
+    "xp": "XP total",
+    "progress": "{current} / {required} XP para el siguiente nivel"
+  },
+  "leaderboard": {
+    "title": "Clasificación de niveles",
+    "empty": "Nadie ha ganado XP todavía.",
+    "line": "**#{rank}** {user} · nivel {level} · {xp} XP"
+  },
+  "levelUp": {
+    "title": "¡Subida de nivel!",
+    "text": "{user} alcanza el nivel {level}."
+  },
+  "enable": {
+    "title": "Niveles activados",
+    "done": "Ahora los miembros ganan XP al escribir."
+  },
+  "disable": {
+    "title": "Niveles desactivados",
+    "done": "Los miembros ya no ganan XP. Los datos se conservan."
+  },
+  "config": {
+    "title": "Ajustes de niveles",
+    "saved": "Ajustes guardados",
+    "minAboveMax": "El XP mínimo no puede superar al máximo.",
+    "enabled": "Activados",
+    "announce": "Mensajes de subida de nivel",
+    "channel": "Canal de anuncios",
+    "sameChannel": "Mismo canal que el mensaje",
+    "cooldown": "Espera entre dos ganancias",
+    "xp": "XP por mensaje",
+    "on": "sí",
+    "off": "no"
+  },
+  "reset": {
+    "title": "XP reiniciada",
+    "done": "El XP de {user} se ha puesto a cero."
+  },
+  "reward": {
+    "addedTitle": "Recompensa añadida",
+    "added": "Se da el rol {role} al llegar al nivel {level}.",
+    "removedTitle": "Recompensa retirada",
+    "removed": "Ya no se da ningún rol en el nivel {level}.",
+    "listTitle": "Recompensas de nivel",
+    "none": "Aún no hay recompensas de rol.",
+    "line": "Nivel {level}: {role}"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Niveles",
+      "description": "XP por mensaje y mensajes de subida de nivel.",
+      "enabled": {
+        "label": "Activar niveles",
+        "help": "Los miembros ganan XP al escribir mensajes."
+      },
+      "cooldown": {
+        "label": "Espera entre dos ganancias (segundos)",
+        "help": "Un miembro solo gana XP una vez por espera."
+      },
+      "xpMin": {
+        "label": "XP mínimo por mensaje",
+        "help": "Límite inferior de la ganancia aleatoria."
+      },
+      "xpMax": {
+        "label": "XP máximo por mensaje",
+        "help": "Límite superior de la ganancia aleatoria."
+      },
+      "announce": {
+        "label": "Anunciar subidas de nivel",
+        "help": "Envía un mensaje en cada subida de nivel."
+      },
+      "announceChannel": {
+        "label": "Canal de anuncios",
+        "help": "Vacío = el canal del mensaje que subió de nivel."
+      }
+    }
+  },
+  "commands": {
+    "rank": {
+      "description": "Muestra tu nivel y tu posición",
+      "options": {
+        "user": "Miembro a consultar"
+      }
+    },
+    "leaderboard": {
+      "description": "Muestra los miembros más activos"
+    },
+    "levels": {
+      "description": "Configurar niveles y recompensas",
+      "options": {
+        "enable": {
+          "description": "Activa el XP por mensajes (Gestionar el servidor)"
+        },
+        "disable": {
+          "description": "Desactiva el XP por mensajes (Gestionar el servidor)"
+        },
+        "config": {
+          "description": "Muestra o cambia los ajustes (Gestionar el servidor)",
+          "options": {
+            "channel": "Canal de anuncios de nivel",
+            "announce": "Anunciar subidas de nivel",
+            "cooldown": "Segundos entre dos ganancias de XP",
+            "xp_min": "XP mínimo por mensaje",
+            "xp_max": "XP máximo por mensaje"
+          }
+        },
+        "reset": {
+          "description": "Pone a cero el XP de un miembro (Gestionar el servidor)",
+          "options": {
+            "user": "Miembro"
+          }
+        },
+        "reward-add": {
+          "description": "Da un rol al alcanzar un nivel (Gestionar el servidor)",
+          "options": {
+            "level": "Nivel",
+            "role": "Rol a dar"
+          }
+        },
+        "reward-remove": {
+          "description": "Quita la recompensa de un nivel (Gestionar el servidor)",
+          "options": {
+            "level": "Nivel"
+          }
+        },
+        "reward-list": {
+          "description": "Lista las recompensas de rol"
+        }
+      }
+    }
+  }
+}

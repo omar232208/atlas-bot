@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "locale": "es-ES"
+  },
+  "common": {
+    "on": "Activado",
+    "off": "Desactivado",
+    "none": "Ninguno",
+    "state": "Estado"
+  },
+  "errors": {
+    "title": "No se puede hacer",
+    "botMissing": "Me faltan permisos: {perms} (canal: {channel}). Dáselos a mi rol y vuelve a intentarlo.",
+    "memberMissing": "Necesitas el permiso {perms} para hacer esto.",
+    "apiPermission": "Discord rechazó la acción: me falta un permiso o mi rol está demasiado bajo en la lista de roles.",
+    "notFound": "Este canal o mensaje ya no existe.",
+    "unexpected": "Ha ocurrido un error inesperado. Inténtalo de nuevo en un momento.",
+    "expired": "Este botón ya no es válido.",
+    "cooldown": "Más despacio: podrás volver a hacerlo {time}.",
+    "roleTooHigh": "No puedo gestionar el rol {role}: lo gestiona una integración o está por encima del mío."
+  },
+  "commands": {
+    "suggest": {
+      "description": "Proponer una idea para el servidor",
+      "options": {
+        "idea": "Tu idea, explicada con claridad",
+        "anonymous": "Ocultar tu nombre en la sugerencia"
+      }
+    },
+    "suggestion": {
+      "description": "Gestionar las sugerencias (equipo)",
+      "options": {
+        "accept": {
+          "description": "Aceptar una sugerencia",
+          "options": {
+            "id": "Número de la sugerencia",
+            "reason": "Respuesta visible para todos"
+          }
+        },
+        "deny": {
+          "description": "Rechazar una sugerencia",
+          "options": {
+            "id": "Número de la sugerencia",
+            "reason": "Respuesta visible para todos"
+          }
+        },
+        "consider": {
+          "description": "Marcar una sugerencia en estudio",
+          "options": {
+            "id": "Número de la sugerencia",
+            "reason": "Respuesta visible para todos"
+          }
+        },
+        "implement": {
+          "description": "Marcar una sugerencia como realizada",
+          "options": {
+            "id": "Número de la sugerencia",
+            "reason": "Respuesta visible para todos"
+          }
+        },
+        "delete": {
+          "description": "Eliminar una sugerencia y su mensaje",
+          "options": {
+            "id": "Número de la sugerencia"
+          }
+        },
+        "list": {
+          "description": "Listar las sugerencias",
+          "options": {
+            "status": {
+              "description": "Filtrar por estado",
+              "choices": {
+                "pending": "Pendiente",
+                "considered": "En estudio",
+                "accepted": "Aceptada",
+                "denied": "Rechazada",
+                "implemented": "Realizada"
+              }
+            }
+          }
+        },
+        "config": {
+          "description": "Configurar las sugerencias",
+          "options": {
+            "channel": "Canal donde se publican las sugerencias",
+            "anonymous": "Hacer anónimas todas las sugerencias",
+            "threads": "Abrir un hilo de debate por sugerencia",
+            "dm": "Avisar al autor por MD cuando el equipo responde",
+            "cooldown": "Espera entre dos sugerencias de un miembro (segundos)"
+          }
+        }
+      }
+    },
+    "starboard": {
+      "description": "Configurar el starboard",
+      "options": {
+        "set": {
+          "description": "Elegir el canal y las reglas del starboard",
+          "options": {
+            "channel": "Canal del starboard",
+            "threshold": "Número de estrellas necesarias",
+            "emoji": "Emoji que se cuenta (por defecto ⭐)",
+            "selfstar": "Contar la estrella del autor del mensaje"
+          }
+        },
+        "ignore": {
+          "description": "Ignorar o volver a incluir un canal",
+          "options": {
+            "channel": "Canal que ignorar o volver a incluir"
+          }
+        },
+        "disable": {
+          "description": "Desactivar el starboard"
+        },
+        "status": {
+          "description": "Ver la configuración del starboard"
+        }
+      }
+    },
+    "birthday": {
+      "description": "Cumpleaños de los miembros",
+      "options": {
+        "set": {
+          "description": "Guardar tu cumpleaños",
+          "options": {
+            "day": "Día (1-31)",
+            "month": "Mes (1-12)",
+            "year": "Año de nacimiento (opcional, se mantiene privado)",
+            "user": "Miembro afectado (solo equipo)"
+          }
+        },
+        "remove": {
+          "description": "Eliminar un cumpleaños",
+          "options": {
+            "user": "Miembro afectado (solo equipo)"
+          }
+        },
+        "view": {
+          "description": "Ver el cumpleaños de un miembro",
+          "options": {
+            "user": "Miembro que consultar"
+          }
+        },
+        "list": {
+          "description": "Próximos cumpleaños del servidor"
+        },
+        "config": {
+          "description": "Configurar los anuncios de cumpleaños (equipo)",
+          "options": {
+            "enabled": "Activar o desactivar los anuncios",
+            "channel": "Canal de los anuncios",
+            "role": "Rol que se da durante el día del cumpleaños",
+            "clear-role": "Dejar de dar un rol",
+            "hour": "Hora local del anuncio (0-23)",
+            "utc-offset": "Diferencia horaria del servidor respecto a UTC (ej. 1 para Madrid en invierno)",
+            "message": "Mensaje personalizado ({user}, {username}, {age}, {server}) o - para el predeterminado"
+          }
+        }
+      }
+    },
+    "afk": {
+      "description": "Marcarte como ausente (o volver)",
+      "options": {
+        "reason": "Motivo que verán quienes te mencionen"
+      }
+    },
+    "tag": {
+      "description": "Respuestas guardadas del servidor",
+      "options": {
+        "use": {
+          "description": "Mostrar una etiqueta",
+          "options": {
+            "name": "Nombre de la etiqueta",
+            "user": "Miembro al que mencionar"
+          }
+        },
+        "create": {
+          "description": "Crear una etiqueta",
+          "options": {
+            "name": "Nombre de la nueva etiqueta"
+          }
+        },
+        "edit": {
+          "description": "Editar una etiqueta",
+          "options": {
+            "name": "Nombre de la etiqueta"
+          }
+        },
+        "delete": {
+          "description": "Eliminar una etiqueta",
+          "options": {
+            "name": "Nombre de la etiqueta"
+          }
+        },
+        "info": {
+          "description": "Detalles de una etiqueta",
+          "options": {
+            "name": "Nombre de la etiqueta"
+          }
+        },
+        "list": {
+          "description": "Listar las etiquetas"
+        }
+      }
+    },
+    "tempvoice": {
+      "description": "Canales de voz temporales",
+      "options": {
+        "setup": {
+          "description": "Crear un canal «unirse para crear»",
+          "options": {
+            "category": "Categoría de los canales creados",
+            "name": "Nombre del canal de acceso"
+          }
+        },
+        "remove": {
+          "description": "Quitar un canal de acceso",
+          "options": {
+            "hub": "Canal de acceso",
+            "delete": "Eliminar también el canal (sí por defecto)"
+          }
+        },
+        "list": {
+          "description": "Ver los canales de acceso y los canales activos"
+        },
+        "panel": {
+          "description": "Mostrar el panel de control de tu canal"
+        }
+      }
+    },
+    "community": {
+      "description": "Herramientas de comunidad: canales de estadística, mensajes fijos, respuestas automáticas",
+      "options": {
+        "stats": {
+          "description": "Canales de voz que muestran estadísticas",
+          "options": {
+            "add": {
+              "description": "Crear un canal de estadística",
+              "options": {
+                "type": {
+                  "description": "Valor mostrado",
+                  "choices": {
+                    "members": "Miembros",
+                    "humans": "Humanos",
+                    "bots": "Bots",
+                    "boosts": "Mejoras",
+                    "tier": "Nivel de mejora",
+                    "channels": "Canales",
+                    "roles": "Roles"
+                  }
+                },
+                "template": "Nombre del canal, con {count} para el valor",
+                "category": "Categoría donde crear el canal"
+              }
+            },
+            "remove": {
+              "description": "Detener un canal de estadística",
+              "options": {
+                "channel": "Canal de estadística",
+                "delete": "Eliminar también el canal (sí por defecto)"
+              }
+            },
+            "list": {
+              "description": "Listar los canales de estadística"
+            },
+            "refresh": {
+              "description": "Actualizar los canales ahora"
+            }
+          }
+        },
+        "sticky": {
+          "description": "Mensajes fijados al final de un canal",
+          "options": {
+            "set": {
+              "description": "Crear o editar el mensaje fijo",
+              "options": {
+                "channel": "Canal (este por defecto)"
+              }
+            },
+            "remove": {
+              "description": "Quitar el mensaje fijo",
+              "options": {
+                "channel": "Canal (este por defecto)"
+              }
+            },
+            "list": {
+              "description": "Listar los mensajes fijos"
+            }
+          }
+        },
+        "autoresponder": {
+          "description": "Respuestas automáticas a palabras clave",
+          "options": {
+            "add": {
+              "description": "Añadir una respuesta automática",
+              "options": {
+                "trigger": "Texto que la activa",
+                "response": "Respuesta ({user}, {server}, {channel}; \\n para un salto de línea)",
+                "match": {
+                  "description": "Forma de comparar (por defecto: contiene)",
+                  "choices": {
+                    "exact": "Mensaje exacto",
+                    "contains": "Contiene",
+                    "startswith": "Empieza por",
+                    "word": "Palabra completa"
+                  }
+                },
+                "channel": "Limitar a un canal"
+              }
+            },
+            "remove": {
+              "description": "Eliminar una respuesta automática",
+              "options": {
+                "id": "Número de la respuesta"
+              }
+            },
+            "list": {
+              "description": "Listar las respuestas automáticas"
+            },
+            "test": {
+              "description": "Probar qué activador respondería a un mensaje",
+              "options": {
+                "message": "Mensaje que probar"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "suggestions": {
+    "status": {
+      "pending": "Pendiente",
+      "considered": "En estudio",
+      "accepted": "Aceptada",
+      "denied": "Rechazada",
+      "implemented": "Realizada"
+    },
+    "side": {
+      "up": "a favor",
+      "down": "en contra"
+    },
+    "buttons": {
+      "up": "A favor · {count}",
+      "down": "En contra · {count}"
+    },
+    "embed": {
+      "title": "Sugerencia n.º {number}",
+      "status": "Estado",
+      "votes": "Votos",
+      "voteLine": "{up} a favor · {down} en contra\n{bar}",
+      "response": "Respuesta del equipo",
+      "responseLine": "{staff}: {reason}",
+      "by": "Propuesta por {user}",
+      "anonymous": "Sugerencia anónima"
+    },
+    "noReason": "Sin detalles.",
+    "notConfigured": "Las sugerencias no están configuradas. Un administrador debe usar /suggestion config.",
+    "posted": "Sugerencia n.º {number} publicada",
+    "postedDesc": "¡Gracias! Puedes verla aquí: {url}",
+    "threadName": "Debate – sugerencia n.º {number}",
+    "notFound": "No existe la sugerencia n.º {number}.",
+    "closed": "La votación está cerrada: el equipo ya ha respondido.",
+    "voteSaved": "Voto «{side}» guardado",
+    "voteRemoved": "Voto «{side}» retirado",
+    "decided": "Sugerencia n.º {number}: {status}",
+    "decidedDesc": "El mensaje público se ha actualizado.",
+    "decidedNoMessage": "Estado guardado, pero el mensaje público ya no existe.",
+    "deleted": "Sugerencia n.º {number} eliminada",
+    "listEmpty": "Todavía no hay sugerencias.",
+    "listTitle": "Sugerencias ({count})",
+    "listLine": "**n.º {number}** · {status} · {up} a favor / {down} en contra — {text}",
+    "dm": {
+      "title": "Tu sugerencia n.º {number} en {server}",
+      "body": "Nuevo estado: **{status}**\nRespuesta: {reason}\n{url}"
+    },
+    "configTitle": "Sugerencias configuradas",
+    "configChannel": "Canal",
+    "configAnonymous": "Anonimato obligatorio",
+    "configThreads": "Hilos de debate",
+    "configDm": "MD al autor",
+    "configCooldown": "Espera (s)"
+  },
+  "starboard": {
+    "header": "{emoji} **{count}** · {channel}",
+    "source": "Mensaje original",
+    "jump": "[Ir al mensaje]({url})",
+    "attachments": "Archivos",
+    "badEmoji": "Este emoji no es válido. Usa un emoji estándar o un emoji de este servidor.",
+    "saved": "Starboard activado",
+    "savedDesc": "Los mensajes que lleguen a {threshold} {emoji} se copiarán en {channel}.",
+    "ignored": "Canal ignorado",
+    "unignored": "Canal incluido de nuevo",
+    "alreadyOff": "El starboard ya está desactivado.",
+    "disabled": "Starboard desactivado",
+    "statusTitle": "Starboard",
+    "channel": "Canal",
+    "threshold": "Umbral",
+    "emoji": "Emoji",
+    "selfStar": "Estrella del autor",
+    "posts": "Mensajes mostrados",
+    "ignoredList": "Canales ignorados"
+  },
+  "birthdays": {
+    "noBots": "Los bots no tienen cumpleaños.",
+    "invalidDate": "Esta fecha no existe. Revisa el día, el mes y el año.",
+    "saved": "Cumpleaños guardado",
+    "savedDesc": "{user}: el {date}, dentro de {days} día(s).",
+    "removed": "Cumpleaños eliminado",
+    "none": "No hay cumpleaños guardado para {user}.",
+    "listEmpty": "No hay cumpleaños guardados. Añade el tuyo con /birthday set.",
+    "listTitle": "Próximos cumpleaños ({count})",
+    "listLine": "{user} · {date} · {when}{age}",
+    "today": "**hoy**",
+    "inDays": "en {days} d",
+    "ageSuffix": " · cumple {age}",
+    "viewTitle": "Cumpleaños",
+    "viewDesc": "{user} celebra su cumpleaños el **{date}**, dentro de {days} día(s).",
+    "announceTitle": "¡Feliz cumpleaños!",
+    "announce": "¡Feliz cumpleaños, {user}! Todo {server} te desea un gran día.",
+    "announceAge": "¡Feliz cumpleaños, {user}, que hoy cumple {age} años!",
+    "configTitle": "Cumpleaños configurados",
+    "configHelp": "Los anuncios se envían cada día a la hora elegida, según la diferencia horaria del servidor.",
+    "channel": "Canal",
+    "role": "Rol del día",
+    "hour": "Hora",
+    "offset": "Zona horaria",
+    "message": "Mensaje",
+    "defaultMessage": "Mensaje predeterminado"
+  },
+  "stats": {
+    "types": {
+      "members": "Miembros",
+      "humans": "Humanos",
+      "bots": "Bots",
+      "boosts": "Mejoras",
+      "tier": "Nivel de mejora",
+      "channels": "Canales",
+      "roles": "Roles"
+    },
+    "defaults": {
+      "members": "Miembros: {count}",
+      "humans": "Humanos: {count}",
+      "bots": "Bots: {count}",
+      "boosts": "Mejoras: {count}",
+      "tier": "Nivel: {count}",
+      "channels": "Canales: {count}",
+      "roles": "Roles: {count}"
+    },
+    "tooMany": "Has alcanzado el límite de {max} canales de estadística.",
+    "needCount": "El nombre debe contener {count}, que se sustituye por el valor.",
+    "auditReason": "Canal de estadística",
+    "added": "Canal de estadística creado",
+    "addedDesc": "{channel} mostrará «{type}». Se actualiza solo.",
+    "notStat": "Este canal no es un canal de estadística.",
+    "removed": "Canal de estadística retirado",
+    "listEmpty": "No hay canales de estadística.",
+    "listTitle": "Canales de estadística",
+    "listLine": "{channel} · {type} · `{template}`",
+    "rateNote": "Discord solo permite 2 cambios de nombre cada 10 minutos por canal: las actualizaciones pueden tardar unos minutos.",
+    "refreshed": "Actualización iniciada",
+    "refreshedDesc": "{count} canal(es) renombrado(s).",
+    "refreshedWaiting": "{count} canal(es) renombrado(s). Los demás esperan el límite de Discord y se actualizarán solos."
+  },
+  "sticky": {
+    "footer": "Mensaje fijo",
+    "modalTitle": "Mensaje fijo",
+    "modalTitleField": "Título (opcional)",
+    "modalContentField": "Contenido",
+    "badChannel": "Elige un canal de texto.",
+    "tooMany": "Has alcanzado el límite de {max} mensajes fijos.",
+    "saved": "Mensaje fijo guardado en {channel}",
+    "removed": "Mensaje fijo quitado de {channel}",
+    "none": "No hay mensaje fijo en {channel}.",
+    "listEmpty": "No hay mensajes fijos.",
+    "listTitle": "Mensajes fijos ({count})"
+  },
+  "afk": {
+    "disabled": "El estado AFK está desactivado en este servidor.",
+    "set": "Estás AFK",
+    "setDesc": "Motivo: {reason}\nTu apodo muestra [AFK]. Escribe un mensaje para volver.",
+    "setDescNoNick": "Motivo: {reason}\nEscribe un mensaje para volver.",
+    "cleared": "Bienvenido de nuevo, ya no estás AFK",
+    "backTitle": "Bienvenido de nuevo, {user}",
+    "backDesc": "Ausente desde {since}. Menciones recibidas: {count}.",
+    "pingLine": "{user} {time} · [ver]({url})",
+    "noticeTitle": "Miembro ausente",
+    "isAfk": "{user} está AFK desde {since}.",
+    "isAfkReason": "{user} está AFK desde {since}: {reason}"
+  },
+  "tags": {
+    "badName": "Nombre no válido: de 1 a 32 caracteres, minúsculas, cifras, - o _.",
+    "notFound": "No hay ninguna etiqueta llamada «{name}».",
+    "exists": "La etiqueta «{name}» ya existe.",
+    "tooMany": "Has alcanzado el límite de {max} etiquetas.",
+    "noPermission": "Gestionar etiquetas requiere el permiso Gestionar mensajes o el rol de gestión de etiquetas.",
+    "modalTitle": {
+      "create": "Nueva etiqueta: {name}",
+      "edit": "Editar: {name}"
+    },
+    "modalField": "Contenido de la etiqueta",
+    "modalPlaceholder": "Variables: {user} {target} {server} {channel} {membercount}",
+    "created": "Creada",
+    "createdDesc": "Úsala con /tag use name:{name}",
+    "edited": "Etiqueta «{name}» editada",
+    "confirmDelete": "¿Eliminar definitivamente la etiqueta «{name}»?",
+    "deleted": "Etiqueta «{name}» eliminada",
+    "footer": "Etiqueta: {name}",
+    "listEmpty": "Todavía no hay etiquetas.",
+    "listTitle": "Etiquetas ({count})",
+    "listLine": "`{name}` · {uses} uso(s)",
+    "infoTitle": "Etiqueta «{name}»",
+    "owner": "Creada por",
+    "uses": "Usos",
+    "variables": "Variables",
+    "variablesList": "{user} {username} {displayname} {target} {server} {channel} {membercount}"
+  },
+  "tempvoice": {
+    "hubName": "Unirse para crear",
+    "defaultName": "Canal de {user}",
+    "auditHub": "Canal de acceso de voz temporal",
+    "auditCreate": "Canal temporal de {user}",
+    "auditDelete": "Canal temporal vacío",
+    "tooManyHubs": "Has alcanzado el límite de {max} canales de acceso.",
+    "hubCreated": "Canal de acceso creado",
+    "hubCreatedDesc": "Al unirse a {channel} se crea un canal de voz personal, que se elimina cuando se vacía.",
+    "notHub": "Este canal no es un canal de acceso.",
+    "hubRemoved": "Canal de acceso retirado",
+    "noHubs": "No hay canales de acceso. Crea uno con /tempvoice setup.",
+    "listTitle": "Canales de voz temporales",
+    "hubs": "Canales de acceso",
+    "active": "Canales activos ({count})",
+    "notInTemp": "Primero únete a tu canal de voz temporal.",
+    "notOwner": "Solo el propietario ({owner}) puede hacer esto.",
+    "alreadyOwner": "Este canal ya es tuyo.",
+    "joinFirst": "Únete a este canal de voz para reclamarlo.",
+    "ownerPresent": "El propietario sigue en el canal.",
+    "claimed": "{user} es ahora el propietario del canal",
+    "gone": "Este canal temporal ya no existe.",
+    "panelTitle": "Tu canal de voz",
+    "panelDesc": "Propietario: {owner}\nUsa los botones para gestionar este canal. Se eliminará cuando todos se hayan ido.",
+    "buttons": {
+      "rename": "Renombrar",
+      "limit": "Límite",
+      "lock": "Bloquear",
+      "hide": "Ocultar",
+      "permit": "Permitir",
+      "kick": "Expulsar",
+      "claim": "Reclamar"
+    },
+    "renameTitle": "Renombrar el canal",
+    "renameLabel": "Nuevo nombre",
+    "limitTitle": "Límite de miembros",
+    "limitLabel": "Número máximo (0 = ilimitado)",
+    "badName": "El nombre no puede estar vacío.",
+    "badLimit": "Introduce un número entre 0 y 99.",
+    "renameLimit": "Discord solo permite 2 cambios de nombre cada 10 minutos. Inténtalo de nuevo {time}.",
+    "renamed": "Canal renombrado a «{name}»",
+    "limitSet": "Límite fijado en {limit} miembro(s)",
+    "limitRemoved": "Límite retirado",
+    "locked": {
+      "on": "Canal bloqueado: solo pueden entrar los miembros permitidos",
+      "off": "Canal desbloqueado"
+    },
+    "hidden": {
+      "on": "Canal oculto",
+      "off": "Canal visible de nuevo"
+    },
+    "permitPrompt": "Elige los miembros que pueden unirse.",
+    "kickPrompt": "Elige los miembros que expulsar del canal.",
+    "selectUsers": "Elegir miembros",
+    "permitted": "Permitidos: {users}",
+    "kicked": "Expulsados: {users}"
+  },
+  "autoresponder": {
+    "modes": {
+      "exact": "mensaje exacto",
+      "contains": "contiene",
+      "startswith": "empieza por",
+      "word": "palabra completa"
+    },
+    "tooMany": "Has alcanzado el límite de {max} respuestas automáticas.",
+    "tooShort": "El activador debe tener al menos 2 caracteres.",
+    "duplicate": "Este activador ya existe con el mismo modo.",
+    "added": "Respuesta automática n.º {id} añadida",
+    "addedDesc": "Activador: «{trigger}» ({mode}).",
+    "notFound": "No existe la respuesta automática n.º {id}.",
+    "removed": "Respuesta automática n.º {id} eliminada",
+    "listEmpty": "No hay respuestas automáticas.",
+    "listTitle": "Respuestas automáticas ({count})",
+    "listLine": "**n.º {id}** · {mode} · `{trigger}` · {where}\n→ {response}",
+    "everywhere": "en todas partes",
+    "noMatch": "Ningún activador coincide con este mensaje.",
+    "match": "Coincidencia encontrada",
+    "matchDesc": "Se enviaría la respuesta n.º {id} («{trigger}»)."
+  },
+  "dashboard": {
+    "suggestions": {
+      "title": "Sugerencias",
+      "description": "Ideas propuestas por los miembros, con votos."
+    },
+    "starboard": {
+      "title": "Starboard",
+      "description": "Destacar los mensajes que reciben más estrellas."
+    },
+    "birthdays": {
+      "title": "Cumpleaños",
+      "description": "Anuncio diario y rol del día."
+    },
+    "afk": {
+      "title": "AFK",
+      "description": "Estado de ausencia mostrado cuando te mencionan."
+    },
+    "tags": {
+      "title": "Etiquetas",
+      "description": "Respuestas guardadas que se usan con /tag use."
+    },
+    "sticky": {
+      "title": "Mensajes fijos",
+      "description": "Mensajes publicados de nuevo al final de los canales elegidos."
+    },
+    "tempvoice": {
+      "title": "Voz temporal",
+      "description": "Canales de voz creados bajo demanda."
+    },
+    "autoresponder": {
+      "title": "Respuestas automáticas",
+      "description": "Respuestas enviadas cuando un mensaje contiene un activador."
+    },
+    "fields": {
+      "suggestionsChannel": {
+        "label": "Canal de sugerencias",
+        "help": "Canal donde /suggest publica las ideas."
+      },
+      "suggestionsAnonymous": {
+        "label": "Anonimato obligatorio",
+        "help": "Oculta el autor de todas las sugerencias."
+      },
+      "suggestionsThreads": {
+        "label": "Hilos de debate",
+        "help": "Abre un hilo bajo cada sugerencia."
+      },
+      "suggestionsDm": {
+        "label": "Avisar al autor",
+        "help": "Envía un MD al autor cuando el equipo cambia el estado."
+      },
+      "suggestionsCooldown": {
+        "label": "Espera entre sugerencias (s)",
+        "help": "0 para no esperar."
+      },
+      "starboardEnabled": {
+        "label": "Starboard activado",
+        "help": "Copia los mensajes populares en el canal del starboard."
+      },
+      "starboardChannel": {
+        "label": "Canal del starboard",
+        "help": "Canal donde se copian los mensajes."
+      },
+      "starboardThreshold": {
+        "label": "Umbral de estrellas",
+        "help": "Número de reacciones necesarias."
+      },
+      "starboardEmoji": {
+        "label": "Emoji",
+        "help": "Emoji estándar, o emoji del servidor con el formato <:nombre:id>."
+      },
+      "starboardSelfStar": {
+        "label": "Estrella del autor",
+        "help": "Contar la reacción del autor en su propio mensaje."
+      },
+      "starboardIgnored": {
+        "label": "Canales ignorados",
+        "help": "Los mensajes de estos canales nunca llegan al starboard."
+      },
+      "birthdaysEnabled": {
+        "label": "Anuncios activados",
+        "help": "Anuncia cada día los cumpleaños de los miembros."
+      },
+      "birthdaysChannel": {
+        "label": "Canal de anuncios",
+        "help": "Canal donde se felicitan los cumpleaños."
+      },
+      "birthdaysRole": {
+        "label": "Rol del día",
+        "help": "Rol que se da durante el cumpleaños y luego se retira."
+      },
+      "birthdaysHour": {
+        "label": "Hora del anuncio",
+        "help": "Hora local, de 0 a 23."
+      },
+      "birthdaysOffset": {
+        "label": "Diferencia UTC",
+        "help": "Por ejemplo 1 para Madrid en invierno, 2 en verano, -5 para Bogotá."
+      },
+      "birthdaysMessage": {
+        "label": "Mensaje personalizado",
+        "help": "Variables: {user} {username} {age} {server}. Vacío para el mensaje predeterminado."
+      },
+      "afkEnabled": {
+        "label": "AFK activado",
+        "help": "Permite usar /afk."
+      },
+      "afkNickname": {
+        "label": "Prefijo [AFK]",
+        "help": "Añade [AFK] al apodo durante la ausencia."
+      },
+      "tagsManager": {
+        "label": "Rol de gestión de etiquetas",
+        "help": "Este rol puede crear y editar etiquetas sin el permiso Gestionar mensajes."
+      },
+      "stickyDelay": {
+        "label": "Espera antes de republicar (s)",
+        "help": "Tiempo tras el último mensaje antes de republicar, de 2 a 60."
+      },
+      "tempvoiceLimit": {
+        "label": "Límite predeterminado",
+        "help": "Máximo de miembros en un canal nuevo (0 = ilimitado)."
+      },
+      "tempvoiceName": {
+        "label": "Nombre de los canales",
+        "help": "Usa {user} para el apodo. Vacío para el nombre predeterminado."
+      },
+      "autoresponderEnabled": {
+        "label": "Respuestas automáticas activadas",
+        "help": "Requiere el intent Message Content."
+      },
+      "autoresponderCooldown": {
+        "label": "Espera por canal (s)",
+        "help": "Tiempo mínimo entre dos respuestas iguales en un canal."
+      }
+    },
+    "actions": {
+      "refreshStats": {
+        "label": "Actualizar los canales de estadística",
+        "none": "No hay canales de estadística configurados.",
+        "done": "Canales de estadística actualizados.",
+        "waiting": "Actualización parcial; el resto llegará tras el límite de Discord."
+      },
+      "clearAfk": {
+        "label": "Borrar todos los estados AFK",
+        "done": "Se han borrado todos los estados AFK."
+      },
+      "cleanupTempvoice": {
+        "label": "Limpiar los canales de voz temporales",
+        "done": "Se han eliminado los canales temporales vacíos."
+      }
+    }
+  }
+}

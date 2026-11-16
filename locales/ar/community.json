@@ -1,0 +1,749 @@
+{
+  "meta": {
+    "locale": "ar-SA"
+  },
+  "common": {
+    "on": "مفعل",
+    "off": "معطل",
+    "none": "لا شيء",
+    "state": "الحالة"
+  },
+  "errors": {
+    "title": "لا يمكن فعل ذلك",
+    "botMissing": "أفتقر لصلاحيات: {perms} (القناة: {channel}). أعطها لرتبتي وحاول مرة أخرى.",
+    "memberMissing": "تحتاج لصلاحية {perms} لفعل هذا.",
+    "apiPermission": "ديسكورد رفض الإجراء: أفتقر لصلاحية أو رتبتي منخفضة في القائمة.",
+    "notFound": "هذه القناة أو الرسالة لم تعد موجودة.",
+    "unexpected": "حدث خطأ غير متوقع. حاول مرة أخرى بعد لحظة.",
+    "expired": "هذا الزر لم يعد صالحاً.",
+    "cooldown": "تهدئة: يمكنك فعل هذا مرة أخرى {time}.",
+    "roleTooHigh": "لا أستطيع إدارة {role}: مدارة بتكامل أو فوق رتبتي."
+  },
+  "commands": {
+    "suggest": {
+      "description": "اقتراح فكرة للسيرفر",
+      "options": {
+        "idea": "فكرتك، موضحة بوضوح",
+        "anonymous": "إخفاء اسمك في الاقتراح"
+      }
+    },
+    "suggestion": {
+      "description": "إدارة الاقتراحات (الموظفون)",
+      "options": {
+        "accept": {
+          "description": "قبول اقتراح",
+          "options": {
+            "id": "رقم الاقتراح",
+            "reason": "رد يُظهر للجميع"
+          }
+        },
+        "deny": {
+          "description": "رفض اقتراح",
+          "options": {
+            "id": "رقم الاقتراح",
+            "reason": "رد يُظهر للجميع"
+          }
+        },
+        "consider": {
+          "description": "وصف اقتراح كقيد الدراسة",
+          "options": {
+            "id": "رقم الاقتراح",
+            "reason": "رد يُظهر للجميع"
+          }
+        },
+        "implement": {
+          "description": "وصف اقتراح كمُنفذ",
+          "options": {
+            "id": "رقم الاقتراح",
+            "reason": "رد يُظهر للجميع"
+          }
+        },
+        "delete": {
+          "description": "حذف اقتراح ورسالته",
+          "options": {
+            "id": "رقم الاقتراح"
+          }
+        },
+        "list": {
+          "description": "عرض الاقتراحات",
+          "options": {
+            "status": {
+              "description": "تصفية بالحالة",
+              "choices": {
+                "pending": "قيد الانتظار",
+                "considered": "قيد الدراسة",
+                "accepted": "مقبول",
+                "denied": "مرفوض",
+                "implemented": "مُنفذ"
+              }
+            }
+          }
+        },
+        "config": {
+          "description": "إعداد الاقتراحات",
+          "options": {
+            "channel": "القناة التي تُنشر فيها الاقتراحات",
+            "anonymous": "جعل كل الاقتراحات مجهولة",
+            "threads": "فتح ثريد نقاش لكل اقتراح",
+            "dm": "رسالة خاصة للمؤلف عند رد الموظفين",
+            "cooldown": "تأخير بين اقتراحين من عضو (ثواني)"
+          }
+        }
+      }
+    },
+    "starboard": {
+      "description": "إعداد الستاربورد",
+      "options": {
+        "set": {
+          "description": "اختيار قناة الستاربورد والقواعد",
+          "options": {
+            "channel": "قناة الستاربورد",
+            "threshold": "عدد النجوم المطلوب",
+            "emoji": "الإيموجي للعد (افتراضي ⭐)",
+            "selfstar": "عد نجمة مؤلف الرسالة"
+          }
+        },
+        "ignore": {
+          "description": "تجاهل أو تضمين قناة مجدداً",
+          "options": {
+            "channel": "القناة للتجاهل أو التضمين"
+          }
+        },
+        "disable": {
+          "description": "تعطيل الستاربورد"
+        },
+        "status": {
+          "description": "عرض إعدادات الستاربورد"
+        }
+      }
+    },
+    "birthday": {
+      "description": "أعياد ميلاد الأعضاء",
+      "options": {
+        "set": {
+          "description": "حفظ عيد ميلادك",
+          "options": {
+            "day": "اليوم (1-31)",
+            "month": "الشهر (1-12)",
+            "year": "سنة الميلاد (اختياري، تُحفظ سراً)",
+            "user": "العضو المعني (الموظفون فقط)"
+          }
+        },
+        "remove": {
+          "description": "إزالة عيد ميلاد",
+          "options": {
+            "user": "العضو المعني (الموظفون فقط)"
+          }
+        },
+        "view": {
+          "description": "عرض عيد ميلاد عضو",
+          "options": {
+            "user": "العضو للاطلاع"
+          }
+        },
+        "list": {
+          "description": "أعياد الميلاد القادمة في السيرفر"
+        },
+        "config": {
+          "description": "إعداد إعلانات أعياد الميلاد (الموظفون)",
+          "options": {
+            "enabled": "تفعيل أو تعطيل الإعلانات",
+            "channel": "قناة الإعلانات",
+            "role": "رتبة تُعطى أثناء عيد الميلاد",
+            "clear-role": "إيقاف إعطاء رتبة",
+            "hour": "ساعة الإعلان المحلية (0-23)",
+            "utc-offset": "إزاحة وقت السيرفر من UTC (مثال: -5 لنيويورك شتاء)",
+            "message": "رسالة مخصصة ({user}، {username}، {age}، {server}) أو - للافتراضية"
+          }
+        }
+      }
+    },
+    "afk": {
+      "description": "وضع نفسك بعيداً (أو العودة)",
+      "options": {
+        "reason": "السبب يُظهر لمن يذكرونك"
+      }
+    },
+    "tag": {
+      "description": "ردود سيرفر محفوظة",
+      "options": {
+        "use": {
+          "description": "عرض تاج",
+          "options": {
+            "name": "اسم التاج",
+            "user": "العضو للمنشنة"
+          }
+        },
+        "create": {
+          "description": "إنشاء تاج",
+          "options": {
+            "name": "اسم التاج الجديد"
+          }
+        },
+        "edit": {
+          "description": "تعديل تاج",
+          "options": {
+            "name": "اسم التاج"
+          }
+        },
+        "delete": {
+          "description": "حذف تاج",
+          "options": {
+            "name": "اسم التاج"
+          }
+        },
+        "info": {
+          "description": "تفاصيل تاج",
+          "options": {
+            "name": "اسم التاج"
+          }
+        },
+        "list": {
+          "description": "عرض التاجز"
+        }
+      }
+    },
+    "tempvoice": {
+      "description": "قنوات صوتية مؤقتة",
+      "options": {
+        "setup": {
+          "description": "إنشاء قناة \"ادخل للإنشاء\"",
+          "options": {
+            "category": "فئة القنوات المُنشأة",
+            "name": "اسم قناة الهاب"
+          }
+        },
+        "remove": {
+          "description": "إزالة قناة هاب",
+          "options": {
+            "hub": "قناة الهاب",
+            "delete": "حذف القناة أيضاً (نعم افتراضياً)"
+          }
+        },
+        "list": {
+          "description": "عرض قنوات الهاب والقنوات النشطة"
+        },
+        "panel": {
+          "description": "عرض لوحة تحكم قناتك"
+        }
+      }
+    },
+    "community": {
+      "description": "أدوات المجتمع: قنوات إحصائيات، رسائل لاصقة، ردود تلقائية",
+      "options": {
+        "stats": {
+          "description": "قنوات صوتية تعرض إحصائيات السيرفر",
+          "options": {
+            "add": {
+              "description": "إنشاء قناة إحصائيات",
+              "options": {
+                "type": {
+                  "description": "القيمة المعروضة",
+                  "choices": {
+                    "members": "أعضاء",
+                    "humans": "بشر",
+                    "bots": "بوتات",
+                    "boosts": "بوستات",
+                    "tier": "مستوى البوست",
+                    "channels": "قنوات",
+                    "roles": "رتب"
+                  }
+                },
+                "template": "اسم القناة، مع {count} للقيمة",
+                "category": "فئة لإنشاء القناة فيها"
+              }
+            },
+            "remove": {
+              "description": "إيقاف قناة إحصائيات",
+              "options": {
+                "channel": "قناة الإحصائيات",
+                "delete": "حذف القناة أيضاً (نعم افتراضياً)"
+              }
+            },
+            "list": {
+              "description": "عرض قنوات الإحصائيات"
+            },
+            "refresh": {
+              "description": "تحديث القنوات الآن"
+            }
+          }
+        },
+        "sticky": {
+          "description": "رسائل تُبقي في أسفل القناة",
+          "options": {
+            "set": {
+              "description": "إنشاء أو تعديل الرسالة اللاصقة",
+              "options": {
+                "channel": "القناة (هذه افتراضياً)"
+              }
+            },
+            "remove": {
+              "description": "إزالة الرسالة اللاصقة",
+              "options": {
+                "channel": "القناة (هذه افتراضياً)"
+              }
+            },
+            "list": {
+              "description": "عرض الرسائل اللاصقة"
+            }
+          }
+        },
+        "autoresponder": {
+          "description": "ردود تلقائية للكلمات المفتاحية",
+          "options": {
+            "add": {
+              "description": "إضافة رد تلقائي",
+              "options": {
+                "trigger": "نص المحفز",
+                "response": "الرد ({user}، {server}، {channel}؛ \\n لسطر جديد)",
+                "match": {
+                  "description": "كيف للمقارنة (افتراضي: يحتوي)",
+                  "choices": {
+                    "exact": "رسالة مطابقة تماماً",
+                    "contains": "يحتوي",
+                    "startswith": "يبدأ بـ",
+                    "word": "كلمة كاملة"
+                  }
+                },
+                "channel": "تحديد قناة واحدة"
+              }
+            },
+            "remove": {
+              "description": "إزالة رد تلقائي",
+              "options": {
+                "id": "رقم الرد"
+              }
+            },
+            "list": {
+              "description": "عرض الردود التلقائية"
+            },
+            "test": {
+              "description": "اختبار أي محفز سيجيب على رسالة",
+              "options": {
+                "message": "الرسالة للاختبار"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "suggestions": {
+    "status": {
+      "pending": "قيد الانتظار",
+      "considered": "قيد الدراسة",
+      "accepted": "مقبول",
+      "denied": "مرفوض",
+      "implemented": "مُنفذ"
+    },
+    "side": {
+      "up": "مع",
+      "down": "ضد"
+    },
+    "buttons": {
+      "up": "مع · {count}",
+      "down": "ضد · {count}"
+    },
+    "embed": {
+      "title": "اقتراح #{number}",
+      "status": "الحالة",
+      "votes": "الأصوات",
+      "voteLine": "{up} مع · {down} ضد\n{bar}",
+      "response": "رد الموظفين",
+      "responseLine": "{staff}: {reason}",
+      "by": "مقترح بواسطة {user}",
+      "anonymous": "اقتراح مجهول"
+    },
+    "noReason": "لا تفاصيل معطاة.",
+    "notConfigured": "الاقتراحات غير مضبوطة. مدير يجب أن يستخدم /suggestion config.",
+    "posted": "اقتراح #{number} نُشر",
+    "postedDesc": "شكراً! يمكنك رؤيته هنا: {url}",
+    "threadName": "نقاش – اقتراح #{number}",
+    "notFound": "لا يوجد اقتراح #{number}.",
+    "closed": "التصويت مغلق: الموظفون ردوا بالفعل.",
+    "voteSaved": "تم حفظ تصويت \"{side}\"",
+    "voteRemoved": "تم إزالة تصويت \"{side}\"",
+    "decided": "اقتراح #{number}: {status}",
+    "decidedDesc": "الرسالة العامة حُدثت.",
+    "decidedNoMessage": "الحالة حُفظت، لكن الرسالة العامة لم تعد موجودة.",
+    "deleted": "اقتراح #{number} حُذف",
+    "listEmpty": "لا اقتراحات بعد.",
+    "listTitle": "الاقتراحات ({count})",
+    "listLine": "**#{number}** · {status} · {up} مع / {down} ضد — {text}",
+    "dm": {
+      "title": "اقتراحك #{number} في {server}",
+      "body": "حالة جديدة: **{status}**\nالرد: {reason}\n{url}"
+    },
+    "configTitle": "تم إعداد الاقتراحات",
+    "configChannel": "القناة",
+    "configAnonymous": "إخفاء إجباري",
+    "configThreads": "ثريدز النقاش",
+    "configDm": "رسالة خاصة للمؤلف",
+    "configCooldown": "تأخير (ث)"
+  },
+  "starboard": {
+    "header": "{emoji} **{count}** · {channel}",
+    "source": "الرسالة الأصلية",
+    "jump": "[الانتقال للرسالة]({url})",
+    "attachments": "ملفات",
+    "badEmoji": "هذا الإيموجي غير صالح. استخدم إيموجي قياسي أو من هذا السيرفر.",
+    "saved": "تم تفعيل الستاربورد",
+    "savedDesc": "الرسائل التي تصل {threshold} {emoji} ستُنسخ لـ {channel}.",
+    "ignored": "تم تجاهل القناة",
+    "unignored": "تم تضمين القناة مجدداً",
+    "alreadyOff": "الستاربورد معطل بالفعل.",
+    "disabled": "تم تعطيل الستاربورد",
+    "statusTitle": "الستاربورد",
+    "channel": "القناة",
+    "threshold": "العتبة",
+    "emoji": "الإيموجي",
+    "selfStar": "نجمة المؤلف",
+    "posts": "الرسائل المعروضة",
+    "ignoredList": "القنوات المتجاهلة"
+  },
+  "birthdays": {
+    "noBots": "البوتات ليس لها أعياد ميلاد.",
+    "invalidDate": "هذا التاريخ غير موجود. تحقق من اليوم، الشهر والسنة.",
+    "saved": "تم حفظ عيد الميلاد",
+    "savedDesc": "{user}: في {date}، بعد {days} يوم(أيام).",
+    "removed": "تمت إزالة عيد الميلاد",
+    "none": "لا عيد ميلاد محفوظ لـ {user}.",
+    "listEmpty": "لا أعياد ميلاد محفوظة. أضف yours بـ /birthday set.",
+    "listTitle": "أعياد ميلاد قادمة ({count})",
+    "listLine": "{user} · {date} · {when}{age}",
+    "today": "**اليوم**",
+    "inDays": "بعد {days} ي",
+    "ageSuffix": " · يصبح {age}",
+    "viewTitle": "عيد ميلاد",
+    "viewDesc": "{user} يحتفل بعيد ميلاده في **{date}**، بعد {days} يوم(أيام).",
+    "announceTitle": "عيد ميلاد سعيد!",
+    "announce": "عيد ميلاد سعيد {user}! الجميع في {server} يتمنون لك يوماً رائعاً.",
+    "announceAge": "عيد ميلاد سعيد {user}، الذي يصبح {age} اليوم!",
+    "configTitle": "تم إعداد أعياد الميلاد",
+    "configHelp": "الإعلانات تخرج كل يوم في الساعة المختارة، باستخدام إزاحة وقت السيرفر.",
+    "channel": "القناة",
+    "role": "رتبة عيد الميلاد",
+    "hour": "الساعة",
+    "offset": "المنطقة الزمنية",
+    "message": "الرسالة",
+    "defaultMessage": "الرسالة الافتراضية"
+  },
+  "stats": {
+    "types": {
+      "members": "أعضاء",
+      "humans": "بشر",
+      "bots": "بوتات",
+      "boosts": "بوستات",
+      "tier": "مستوى البوست",
+      "channels": "قنوات",
+      "roles": "رتب"
+    },
+    "defaults": {
+      "members": "أعضاء: {count}",
+      "humans": "بشر: {count}",
+      "bots": "بوتات: {count}",
+      "boosts": "بوستات: {count}",
+      "tier": "مستوى: {count}",
+      "channels": "قنوات: {count}",
+      "roles": "رتب: {count}"
+    },
+    "tooMany": "وصلت لحد {max} قنوات إحصائيات.",
+    "needCount": "الاسم يجب أن يحتوي {count}، يستبدل بالقيمة.",
+    "auditReason": "قناة إحصائيات",
+    "added": "تم إنشاء قناة إحصائيات",
+    "addedDesc": "{channel} ستعرض \"{type}\". تُحدث نفسها.",
+    "notStat": "هذه القناة ليست قناة إحصائيات.",
+    "removed": "تمت إزالة قناة إحصائيات",
+    "listEmpty": "لا قنوات إحصائيات.",
+    "listTitle": "قنوات الإحصائيات",
+    "listLine": "{channel} · {type} · `{template}`",
+    "rateNote": "ديسكورد يسمح بـ 2 إعادة تسمية كل 10 دقائق لكل قناة، لذا التحديثات قد تستغرق دقائق.",
+    "refreshed": "بدأ التحديث",
+    "refreshedDesc": "{count} قناة(ات) أُعيدت تسميتها.",
+    "refreshedWaiting": "{count} قناة(ات) أُعيدت تسميتها. الباقي ينتظر حد ديسكورد وسيتبع تلقائياً."
+  },
+  "sticky": {
+    "footer": "رسالة لاصقة",
+    "modalTitle": "رسالة لاصقة",
+    "modalTitleField": "عنوان (اختياري)",
+    "modalContentField": "المحتوى",
+    "badChannel": "اختر قناة نصية.",
+    "tooMany": "وصلت لحد {max} رسائل لاصقة.",
+    "saved": "تم حفظ الرسالة اللاصقة في {channel}",
+    "removed": "تمت إزالة الرسالة اللاصقة من {channel}",
+    "none": "لا رسالة لاصقة في {channel}.",
+    "listEmpty": "لا رسائل لاصقة.",
+    "listTitle": "الرسائل اللاصقة ({count})"
+  },
+  "afk": {
+    "disabled": "حالة AFK معطلة في هذا السيرفر.",
+    "set": "أنت AFK",
+    "setDesc": "السبب: {reason}\nلقبك يظهر [AFK]. أرسل رسالة للعودة.",
+    "setDescNoNick": "السبب: {reason}\nأرسل رسالة للعودة.",
+    "cleared": "أهلاً بعودتك، لم تعد AFK",
+    "backTitle": "أهلاً بعودتك، {user}",
+    "backDesc": "بعيداً منذ {since}. منشورات مستلمة: {count}.",
+    "pingLine": "{user} {time} · [عرض]({url})",
+    "noticeTitle": "عضو بعيد",
+    "isAfk": "{user} في AFK منذ {since}.",
+    "isAfkReason": "{user} في AFK منذ {since}: {reason}"
+  },
+  "tags": {
+    "badName": "اسم غير صالح: 1 إلى 32 حرفاً، حروف صغيرة، أرقام، - أو _.",
+    "notFound": "لا تاج باسم \"{name}\".",
+    "exists": "التاج \"{name}\" موجود بالفعل.",
+    "tooMany": "وصلت لحد {max} تاجز.",
+    "noPermission": "إدارة التاجز تحتاج صلاحية إدارة الرسائل أو رتبة مدير التاجز.",
+    "modalTitle": {
+      "create": "تاج جديد: {name}",
+      "edit": "تعديل: {name}"
+    },
+    "modalField": "محتوى التاج",
+    "modalPlaceholder": "متغيرات: {user} {target} {server} {channel} {membercount}",
+    "created": "تم الإنشاء",
+    "createdDesc": "استخدمه بـ /tag use name:{name}",
+    "edited": "تاج \"{name}\" حُدث",
+    "confirmDelete": "حذف التاج \"{name}\" نهائياً؟",
+    "deleted": "تاج \"{name}\" حُذف",
+    "footer": "تاج: {name}",
+    "listEmpty": "لا تاجز بعد.",
+    "listTitle": "التاجز ({count})",
+    "listLine": "`{name}` · استُخدم {uses} مرة(ات)",
+    "infoTitle": "تاج \"{name}\"",
+    "owner": "أنشئه",
+    "uses": "استخدامات",
+    "variables": "متغيرات",
+    "variablesList": "{user} {username} {displayname} {target} {server} {channel} {membercount}"
+  },
+  "tempvoice": {
+    "hubName": "ادخل للإنشاء",
+    "defaultName": "قناة {user}",
+    "auditHub": "قناة هاب صوتية مؤقتة",
+    "auditCreate": "قناة مؤقتة لـ {user}",
+    "auditDelete": "قناة مؤقتة فارغة",
+    "tooManyHubs": "وصلت لحد {max} قنوات هاب.",
+    "hubCreated": "تم إنشاء قناة هاب",
+    "hubCreatedDesc": "دخول {channel} ينشئ قناة صوتية شخصية، تُحذف عند الفراغ.",
+    "notHub": "هذه القناة ليست هاب.",
+    "hubRemoved": "تمت إزالة قناة هاب",
+    "noHubs": "لا قنوات هاب. أنشئ واحدة بـ /tempvoice setup.",
+    "listTitle": "قنوات صوتية مؤقتة",
+    "hubs": "قنوات هاب",
+    "active": "قنوات نشطة ({count})",
+    "notInTemp": "ادخل قناتك الصوتية المؤقتة أولاً.",
+    "notOwner": "المالك فقط ({owner}) يستطيع فعل هذا.",
+    "alreadyOwner": "هذه القناة ملكك بالفعل.",
+    "joinFirst": "ادخل هذه القناة الصوتية لامتلاكها.",
+    "ownerPresent": "المالك لا يزال في القناة.",
+    "claimed": "{user} الآن يملك هذه القناة",
+    "gone": "هذه القناة المؤقتة لم تعد موجودة.",
+    "panelTitle": "قناتك الصوتية",
+    "panelDesc": "المالك: {owner}\nاستخدم الأزرار لإدارة القناة. تُحذف بمجرد مغادرة الجميع.",
+    "buttons": {
+      "rename": "إعادة تسمية",
+      "limit": "حد",
+      "lock": "قفل",
+      "hide": "إخفاء",
+      "permit": "سماح",
+      "kick": "طرد",
+      "claim": "مطالبة"
+    },
+    "renameTitle": "إعادة تسمية القناة",
+    "renameLabel": "الاسم الجديد",
+    "limitTitle": "حد الأعضاء",
+    "limitLabel": "أقصى عدد (0 = غير محدود)",
+    "badName": "الاسم لا يمكن أن يكون فارغاً.",
+    "badLimit": "أدخل رقماً بين 0 و 99.",
+    "renameLimit": "ديسكورد يسمح بـ 2 إعادة تسمية كل 10 دقائق. حاول {time}.",
+    "renamed": "أعيد تسمية القناة لـ \"{name}\"",
+    "limitSet": "الحد عُين لـ {limit} عضو(ين)",
+    "limitRemoved": "الحد أُزيل",
+    "locked": {
+      "on": "القناة مقفلة: الأعضاء المسموحون فقط يدخلون",
+      "off": "القناة فُتحت"
+    },
+    "hidden": {
+      "on": "القناة مخفية",
+      "off": "القناة مرئية مجدداً"
+    },
+    "permitPrompt": "اختر الأعضاء المسموحين بالدخول.",
+    "kickPrompt": "اختر الأعضاء للطرد من القناة.",
+    "selectUsers": "اختر أعضاء",
+    "permitted": "مسموح: {users}",
+    "kicked": "طُرد: {users}"
+  },
+  "autoresponder": {
+    "modes": {
+      "exact": "رسالة مطابقة",
+      "contains": "يحتوي",
+      "startswith": "يبدأ بـ",
+      "word": "كلمة كاملة"
+    },
+    "tooMany": "وصلت لحد {max} ردود تلقائية.",
+    "tooShort": "المحفز يجب أن يكون حرفين على الأقل.",
+    "duplicate": "هذا المحفز موجود بنفس الوضع بالفعل.",
+    "added": "تم إضافة رد تلقائي #{id}",
+    "addedDesc": "محفز: \"{trigger}\" ({mode}).",
+    "notFound": "لا رد تلقائي #{id}.",
+    "removed": "تمت إزالة رد تلقائي #{id}",
+    "listEmpty": "لا ردود تلقائية.",
+    "listTitle": "الردود التلقائية ({count})",
+    "listLine": "**#{id}** · {mode} · `{trigger}` · {where}\n→ {response}",
+    "everywhere": "في كل مكان",
+    "noMatch": "لا محفز يطابق هذه الرسالة.",
+    "match": "محفز موجود",
+    "matchDesc": "رد #{id} (\"{trigger}\") سيرسل."
+  },
+  "dashboard": {
+    "suggestions": {
+      "title": "الاقتراحات",
+      "description": "أفكار يقترحها الأعضاء، مع تصويت."
+    },
+    "starboard": {
+      "title": "الستاربورد",
+      "description": "إبراز الرسائل التي تحصل على أكثر النجوم."
+    },
+    "birthdays": {
+      "title": "أعياد الميلاد",
+      "description": "إعلان يومي ورتبة عيد ميلاد."
+    },
+    "afk": {
+      "title": "AFK",
+      "description": "حالة غياب تظهر عند منشنك."
+    },
+    "tags": {
+      "title": "التاجز",
+      "description": "ردود محفوظة تستخدم بـ /tag use."
+    },
+    "sticky": {
+      "title": "الرسائل اللاصقة",
+      "description": "رسائل تُنشر مجدداً في أسفل القنوات المختارة."
+    },
+    "tempvoice": {
+      "title": "صوتيات مؤقتة",
+      "description": "قنوات صوتية تُنشأ عند الطلب."
+    },
+    "autoresponder": {
+      "title": "الردود التلقائية",
+      "description": "ردود تُرسل عندما تحتوي رسالة على محفز."
+    },
+    "fields": {
+      "suggestionsChannel": {
+        "label": "قناة الاقتراحات",
+        "help": "القناة التي ينشر فيها /suggest الأفكار."
+      },
+      "suggestionsAnonymous": {
+        "label": "إخفاء إجباري",
+        "help": "يخفي مؤلف كل اقتراح."
+      },
+      "suggestionsThreads": {
+        "label": "ثريدز النقاش",
+        "help": "يفتح ثريد تحت كل اقتراح."
+      },
+      "suggestionsDm": {
+        "label": "تنبيه المؤلف",
+        "help": "رسالة خاصة للمؤلف عند تغيير الموظفين للحالة."
+      },
+      "suggestionsCooldown": {
+        "label": "تأخير بين الاقتراحات (ث)",
+        "help": "0 لعدم التأخير."
+      },
+      "starboardEnabled": {
+        "label": "الستاربورد مفعل",
+        "help": "ينسخ الرسائل الشائعة لقناة الستاربورد."
+      },
+      "starboardChannel": {
+        "label": "قناة الستاربورد",
+        "help": "القناة التي تُنسخ لها الرسائل."
+      },
+      "starboardThreshold": {
+        "label": "عتبة النجوم",
+        "help": "عدد التفاعلات المطلوبة."
+      },
+      "starboardEmoji": {
+        "label": "الإيموجي",
+        "help": "إيموجي قياسي، أو إيموجي سيرفر كـ <:name:id>."
+      },
+      "starboardSelfStar": {
+        "label": "نجمة المؤلف",
+        "help": "عد تفاعل المؤلف على رسالته."
+      },
+      "starboardIgnored": {
+        "label": "القنوات المتجاهلة",
+        "help": "رسائل هذه القنوات لا تصل للستاربورد أبداً."
+      },
+      "birthdaysEnabled": {
+        "label": "الإعلانات مفعلة",
+        "help": "يعلن أعياد ميلاد الأعضاء كل يوم."
+      },
+      "birthdaysChannel": {
+        "label": "قناة الإعلانات",
+        "help": "القناة التي يُحتفل فيها بأعياد الميلاد."
+      },
+      "birthdaysRole": {
+        "label": "رتبة عيد الميلاد",
+        "help": "رتبة تُعطى أثناء عيد الميلاد، ثم تُزال."
+      },
+      "birthdaysHour": {
+        "label": "ساعة الإعلان",
+        "help": "الساعة المحلية، من 0 إلى 23."
+      },
+      "birthdaysOffset": {
+        "label": "إزاحة UTC",
+        "help": "مثلاً 0 للندن شتاء، 1 صيفاً، -5 لنيويورك."
+      },
+      "birthdaysMessage": {
+        "label": "رسالة مخصصة",
+        "help": "متغيرات: {user} {username} {age} {server}. فارغ للرسالة الافتراضية."
+      },
+      "afkEnabled": {
+        "label": "AFK مفعل",
+        "help": "يسمح باستخدام /afk."
+      },
+      "afkNickname": {
+        "label": "بادئة [AFK]",
+        "help": "يضيف [AFK] للقب أثناء الغياب."
+      },
+      "tagsManager": {
+        "label": "رتبة مدير التاجز",
+        "help": "هذه الرتبة تستطيع إنشاء وتعديل التاجز بدون صلاحية إدارة الرسائل."
+      },
+      "stickyDelay": {
+        "label": "تأخير قبل إعادة النشر (ث)",
+        "help": "انتظر بعد آخر رسالة قبل إعادة النشر، من 2 إلى 60."
+      },
+      "tempvoiceLimit": {
+        "label": "الحد الافتراضي",
+        "help": "أقصى أعضاء في قناة جديدة (0 = غير محدود)."
+      },
+      "tempvoiceName": {
+        "label": "اسم القناة",
+        "help": "استخدم {user} للقب. فارغ للاسم الافتراضي."
+      },
+      "autoresponderEnabled": {
+        "label": "الردود التلقائية مفعلة",
+        "help": "تتطلب نية Message Content."
+      },
+      "autoresponderCooldown": {
+        "label": "تأخير لكل قناة (ث)",
+        "help": "أقل وقت بين ردين متطابقين في قناة."
+      }
+    },
+    "actions": {
+      "refreshStats": {
+        "label": "تحديث قنوات الإحصائيات",
+        "none": "لا قناة إحصائيات مضبوطة.",
+        "done": "تم تحديث قنوات الإحصائيات.",
+        "waiting": "تم تحديث جزئي؛ الباقي سيتبع بعد حد ديسكورد."
+      },
+      "clearAfk": {
+        "label": "مسح كل حالات AFK",
+        "done": "تم مسح كل حالات AFK."
+      },
+      "cleanupTempvoice": {
+        "label": "تنظيف قنوات صوتية مؤقتة",
+        "done": "تم حذف القنوات المؤقتة الفارغة."
+      }
+    }
+  }
+}

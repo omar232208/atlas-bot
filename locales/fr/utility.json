@@ -1,0 +1,261 @@
+{
+  "commands": {
+    "info": {
+      "description": "Informations sur les membres, rôles, salons et le serveur",
+      "options": {
+        "user": {
+          "description": "Affiche les informations d'un membre",
+          "options": {
+            "user": "Le membre à consulter (toi par défaut)"
+          }
+        },
+        "server": {
+          "description": "Affiche les informations de ce serveur"
+        },
+        "avatar": {
+          "description": "Affiche l'avatar d'un membre en taille réelle",
+          "options": {
+            "user": "Le membre (toi par défaut)"
+          }
+        },
+        "role": {
+          "description": "Affiche les informations d'un rôle",
+          "options": {
+            "role": "Le rôle à consulter"
+          }
+        },
+        "channel": {
+          "description": "Affiche les informations d'un salon",
+          "options": {
+            "channel": "Le salon (celui-ci par défaut)"
+          }
+        },
+        "members": {
+          "description": "Compte les membres de ce serveur"
+        },
+        "invites": {
+          "description": "Classement des membres qui ont invité le plus de monde",
+          "options": {
+            "user": "Affiche aussi le total de ce membre"
+          }
+        }
+      }
+    },
+    "poll": {
+      "description": "Lance un sondage avec des boutons et des compteurs en direct",
+      "options": {
+        "question": "La question",
+        "options": "Options séparées par | (2 à 5)",
+        "duration": "Durée d'ouverture, ex. 30m, 2h, 1d (7 jours max, 1d par défaut)"
+      }
+    },
+    "remind": {
+      "description": "Être rappelé de quelque chose plus tard",
+      "options": {
+        "delay": "Quand, ex. 10m, 2h30m ou 3d",
+        "text": "De quoi te rappeler"
+      }
+    },
+    "say": {
+      "description": "Fait poster un message par le bot",
+      "options": {
+        "message": "Le message à poster (les mentions sont désactivées)",
+        "channel": "Salon où poster (celui-ci par défaut)"
+      }
+    },
+    "embed": {
+      "description": "Rédige et publie un embed avec un formulaire",
+      "options": {
+        "channel": "Salon où publier (celui-ci par défaut)"
+      }
+    },
+    "snipe": {
+      "description": "Lit les messages supprimés récemment (désactivé par défaut)",
+      "options": {
+        "show": {
+          "description": "Affiche un message supprimé récemment",
+          "options": {
+            "channel": "Salon où chercher (celui-ci par défaut)",
+            "index": "1 = le plus récent"
+          }
+        },
+        "enable": {
+          "description": "Garder les messages supprimés pour /snipe (Gérer le serveur)"
+        },
+        "disable": {
+          "description": "Ne plus garder les messages supprimés (Gérer le serveur)"
+        }
+      }
+    }
+  },
+  "userinfo": {
+    "title": "Utilisateur : {name}",
+    "id": "ID",
+    "type": "Type",
+    "bot": "Bot",
+    "human": "Humain",
+    "created": "Compte créé",
+    "joined": "Arrivé sur le serveur",
+    "topRole": "Rôle le plus haut",
+    "roles": "Rôles ({count})",
+    "none": "Aucun",
+    "notMember": "Ce n'est pas un membre de ce serveur"
+  },
+  "serverinfo": {
+    "title": "Serveur : {name}",
+    "id": "ID",
+    "owner": "Propriétaire",
+    "created": "Créé le",
+    "members": "Membres",
+    "humans": "Humains (en cache)",
+    "bots": "Bots (en cache)",
+    "channels": "Salons",
+    "roles": "Rôles",
+    "boosts": "Boosts",
+    "boostLevel": "Niveau {level}",
+    "verification": "Vérification",
+    "verificationLevels": {
+      "0": "Aucune",
+      "1": "Faible",
+      "2": "Moyenne",
+      "3": "Élevée",
+      "4": "Très élevée"
+    }
+  },
+  "avatar": {
+    "title": "Avatar de {name}",
+    "open": "Ouvrir l'image complète"
+  },
+  "roleinfo": {
+    "title": "Rôle : {name}",
+    "id": "ID",
+    "color": "Couleur",
+    "position": "Position",
+    "members": "Membres (en cache)",
+    "mentionable": "Mentionnable",
+    "hoisted": "Affiché à part",
+    "admin": "Administrateur",
+    "permissions": "Permissions accordées",
+    "created": "Créé le",
+    "yes": "Oui",
+    "no": "Non"
+  },
+  "channelinfo": {
+    "title": "Salon : {name}",
+    "id": "ID",
+    "type": "Type",
+    "types": {
+      "text": "Textuel",
+      "voice": "Vocal",
+      "category": "Catégorie",
+      "announcement": "Annonces",
+      "forum": "Forum",
+      "stage": "Scène",
+      "thread": "Fil",
+      "other": "Autre"
+    },
+    "category": "Catégorie",
+    "position": "Position",
+    "created": "Créé le",
+    "nsfw": "NSFW",
+    "slowmode": "Mode lent",
+    "seconds": "{count} s",
+    "topic": "Sujet",
+    "yes": "Oui",
+    "no": "Non",
+    "none": "Aucun"
+  },
+  "membercount": {
+    "title": "Membres de {name}",
+    "total": "Total",
+    "humans": "Humains",
+    "bots": "Bots",
+    "partial": "Humains et bots sont comptés parmi les membres en cache du bot, le détail peut donc être inférieur au total."
+  },
+  "invites": {
+    "title": "Classement des invitations",
+    "empty": "Aucun lien d'invitation n'a encore été utilisé.",
+    "entry": "{rank}. {user} : **{count}** invitation(s)",
+    "yours": "{user} a amené **{count}** membre(s) avec les liens actifs."
+  },
+  "poll": {
+    "ends": "Se termine <t:{unix}:R>",
+    "noVotes": "personne n'a voté",
+    "tie": "égalité",
+    "winner": "option en tête : {option}",
+    "results": "Résultat",
+    "totalVotes": "Votes au total : {total}",
+    "recorded": "Vote enregistré",
+    "yourChoice": "Tu as voté pour **{option}**. Clique sur une autre option pour changer ton vote."
+  },
+  "remind": {
+    "title": "Rappel programmé",
+    "set": "Je te rappellerai <t:{when}:R> : {text}",
+    "reminderTitle": "Rappel",
+    "ping": "{user}, voici ton rappel."
+  },
+  "say": {
+    "title": "Message posté",
+    "sent": "Message posté dans {channel}."
+  },
+  "embed": {
+    "modalTitle": "Créer un embed",
+    "fields": {
+      "title": "Titre",
+      "description": "Description",
+      "color": "Couleur (hex, ex. #3b6fd4)",
+      "footer": "Pied de page",
+      "image": "Lien de l'image (https://)"
+    },
+    "title": "Embed publié",
+    "sent": "Embed publié dans {channel}."
+  },
+  "snipe": {
+    "title": "Message supprimé",
+    "author": "Auteur",
+    "when": "Supprimé",
+    "attachments": "Pièces jointes ({count})",
+    "noText": "(sans texte)",
+    "none": "Aucun message supprimé dans les 10 dernières minutes.",
+    "off": "Snipe est désactivé sur ce serveur. Active-le avec /snipe enable.",
+    "enabled": "Snipe est activé : les messages supprimés sont gardés en mémoire 10 minutes.",
+    "disabled": "Snipe est désactivé. Les messages supprimés ne sont plus gardés.",
+    "position": "Message {index}/{total} dans #{channel}"
+  },
+  "errors": {
+    "missingBotPerm": "J'ai besoin de la permission **{perm}** pour faire cela.",
+    "missingUserPerm": "Tu as besoin de la permission **{perm}** pour faire cela.",
+    "permSendMessages": "Envoyer des messages",
+    "permEmbedLinks": "Intégrer des liens",
+    "permManageGuild": "Gérer le serveur",
+    "inviteFetch": "Je n'ai pas pu lire les liens d'invitation de ce serveur.",
+    "pollClosed": "Ce sondage est clos.",
+    "pollDuplicate": "Deux options sont identiques.",
+    "pollOptionLong": "Chaque option peut faire au maximum {max} caractères.",
+    "pollOptions": "Donne entre 2 et {max} options, séparées par |.",
+    "pollTooLong": "Un sondage peut durer au maximum 7 jours.",
+    "invalidDuration": "Durée invalide. Exemples : 10m, 2h30m, 1d.",
+    "remindTooLong": "Un rappel peut être programmé au maximum {max} jours à l'avance.",
+    "embedEmpty": "L'embed a besoin d'un titre ou d'une description.",
+    "invalidColor": "Couleur invalide. Utilise #RRGGBB.",
+    "invalidUrl": "Lien d'image invalide. Il doit commencer par https://."
+  },
+  "dashboard": {
+    "snipe": {
+      "title": "Messages supprimés (/snipe)",
+      "description": "Les messages supprimés sont gardés en mémoire 10 minutes pour que les modérateurs puissent les lire.",
+      "enabled": {
+        "label": "Garder les messages supprimés",
+        "help": "Désactivé par défaut, pour la vie privée. Désactivé, rien n'est gardé."
+      }
+    },
+    "remind": {
+      "title": "Rappels",
+      "description": "Jusqu'à quand un rappel peut être programmé.",
+      "maxDays": {
+        "label": "Délai maximum d'un rappel (jours)",
+        "help": "Les rappels plus lointains sont refusés."
+      }
+    }
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "commands": {
+    "help": {
+      "description": "Listet die Befehle aller Module auf",
+      "options": {
+        "command": "Zeigt die Details eines Befehls"
+      }
+    },
+    "ping": {
+      "description": "Zeigt die Latenz des Bots"
+    },
+    "botinfo": {
+      "description": "Zeigt Informationen über den Bot"
+    },
+    "config": {
+      "description": "Bot-Einstellungen für diesen Server",
+      "options": {
+        "language": {
+          "description": "Ändert die Sprache des Bots auf diesem Server",
+          "options": {
+            "value": "Sprache"
+          }
+        },
+        "show": {
+          "description": "Zeigt die aktuellen Einstellungen"
+        },
+        "reset": {
+          "description": "Setzt alle Einstellungen dieses Servers zurück"
+        }
+      }
+    },
+    "setup": {
+      "description": "Geführte Ersteinrichtung des Bots"
+    }
+  },
+  "modules": {
+    "core-commands": {
+      "name": "Allgemein",
+      "description": "Hilfe, Latenz, Infos und Bot-Einstellungen"
+    },
+    "antiraid": {
+      "name": "Antiraid",
+      "description": "Erkennung von Beitrittswellen, Raid-Modus und Sperre"
+    },
+    "antinuke": {
+      "name": "Antinuke",
+      "description": "Stoppt Massenlöschungen und stellt den Server wieder her"
+    },
+    "automod": {
+      "name": "Automod",
+      "description": "Filter für Links, Einladungen, Spam, Großbuchstaben und verbotene Wörter"
+    },
+    "moderation": {
+      "name": "Moderation",
+      "description": "Strafen, Verwarnungen, Löschen und Fallverlauf"
+    },
+    "logs": {
+      "name": "Logs",
+      "description": "Logs für Nachrichten, Mitglieder, Strafen, Server und Sprache"
+    },
+    "welcome": {
+      "name": "Willkommen",
+      "description": "Willkommens- und Abschiedsnachrichten, automatische Rollen"
+    },
+    "verification": {
+      "name": "Verifizierung",
+      "description": "Button-Captcha vor dem Serverzugang"
+    },
+    "tickets": {
+      "name": "Tickets",
+      "description": "Support über private Kanäle mit Transkript"
+    },
+    "roles": {
+      "name": "Rollen",
+      "description": "Rollenmenüs, temporäre Rollen und Verwaltung"
+    },
+    "utility": {
+      "name": "Werkzeuge",
+      "description": "Infos, Umfragen, Erinnerungen, Embeds und Einladungen"
+    },
+    "giveaways": {
+      "name": "Gewinnspiele",
+      "description": "Gewinnspiele mit Teilnahme per Button und Bedingungen"
+    },
+    "levels": {
+      "name": "Level",
+      "description": "Erfahrung, Rangliste und Belohnungsrollen"
+    },
+    "backup": {
+      "name": "Backups",
+      "description": "Rollen und Kanäle sichern und wiederherstellen"
+    },
+    "economy": {
+      "name": "Wirtschaft",
+      "description": "Währung, Shop, Arbeit und Casinospiele"
+    },
+    "fun": {
+      "name": "Spaß",
+      "description": "Minispiele mit Buttons, Quiz und lustige Befehle"
+    },
+    "community": {
+      "name": "Community",
+      "description": "Vorschläge, Starboard, Geburtstage, Tags und temporäre Sprachkanäle"
+    },
+    "music": {
+      "name": "Musik",
+      "description": "Webradios, Audio-Links und Dateien im Sprachkanal"
+    },
+    "dashboard": {
+      "name": "Dashboard",
+      "description": "Servereinstellungen im Browser"
+    }
+  },
+  "help": {
+    "title": "Hilfe",
+    "intro": "Wähle im Menü ein Modul, um seine Befehle zu sehen, oder nutze `/help command:<name>` für die Details eines Befehls.",
+    "footer": "{count} Befehle verfügbar",
+    "placeholder": "Modul wählen",
+    "commandCount": "{count} Befehl(e)",
+    "moduleTitle": "Modul {module}",
+    "noCommands": "Dieses Modul hat keine Befehle.",
+    "home": "Übersicht",
+    "module": "Modul",
+    "permissions": "Benötigte Berechtigung",
+    "cooldown": "Abklingzeit",
+    "required": "erforderlich",
+    "optional": "optional",
+    "options": "Optionen",
+    "subcommands": "Unterbefehle",
+    "notFound": "Kein Befehl namens `{name}`."
+  },
+  "ping": {
+    "measuring": "Wird gemessen…",
+    "title": "Pong",
+    "ms": "{value} ms",
+    "roundTrip": "Hin und zurück",
+    "gateway": "Discord-Gateway"
+  },
+  "botinfo": {
+    "title": "{name}",
+    "description": "Open-Source-Multifunktions-Bot für Discord: Schutz, Moderation, Tickets, Musik, Level, Wirtschaft und mehr.",
+    "uptime": "Laufzeit",
+    "memory": "Arbeitsspeicher",
+    "memoryValue": "{rss} MB (Heap: {heap} MB)",
+    "latency": "Latenz",
+    "servers": "Server",
+    "members": "Mitglieder",
+    "modules": "Module",
+    "modulesValue": "{modules} Module, {commands} Befehle",
+    "versions": "Versionen",
+    "hosting": "Hosting",
+    "hostingValue": "Du willst deine eigene Kopie? Hoste sie kostenlos bei ACLClouds: https://aclclouds.com",
+    "footer": "ACLClouds Bot, freie Software unter MIT-Lizenz"
+  },
+  "config": {
+    "showTitle": "Einstellungen von {server}",
+    "language": "Sprache",
+    "default": "Standard",
+    "whitelist": "Whitelist",
+    "whitelistValue": "{count} Mitglied(er)",
+    "setup": "Geführte Einrichtung",
+    "setupDone": "Erledigt am {date} von {user}",
+    "setupNever": "Noch nicht erledigt: nutze /setup",
+    "logs": "Log-Kanäle",
+    "protections": "Schutzfunktionen",
+    "dashboard": "Web-Dashboard",
+    "languageSetTitle": "Sprache geändert",
+    "languageSet": "Der Bot spricht jetzt {language} auf diesem Server. Befehlsbeschreibungen folgen der Discord-Sprache jedes Nutzers.",
+    "resetConfirm": "Alle Einstellungen dieses Servers werden gelöscht (Sprache, Logs, Schutzfunktionen, Whitelist, Moduldaten). Das kann nicht rückgängig gemacht werden.",
+    "resetTitle": "Einstellungen zurückgesetzt",
+    "resetDone": "Der Server beginnt von vorn. Nutze /setup, um ihn neu einzurichten."
+  },
+  "protections": {
+    "antiraid": "Antiraid",
+    "antinuke": "Antinuke",
+    "automod": "Automod"
+  },
+  "protectionsHelp": {
+    "antiraid": "Erkennt Beitrittswellen und blockiert neue Konten",
+    "antinuke": "Bestraft Massenlöschungen von Kanälen und Rollen",
+    "automod": "Filtert Spam, Einladungen und Links"
+  },
+  "setup": {
+    "step": "Schritt {step} von {total}",
+    "languageTitle": "Sprache des Bots",
+    "languageIntro": "Willkommen! Die Einrichtung dauert eine Minute. Wähle zuerst die Sprache, die der Bot auf diesem Server verwendet.",
+    "languagePlaceholder": "Sprache wählen",
+    "logsTitle": "Log-Kanal",
+    "logsIntro": "Wähle den Kanal, in dem der Bot alles festhält (Strafen, Schutz, gelöschte Nachrichten…). Die Kategorien kannst du später mit /logs set aufteilen.",
+    "logsPlaceholder": "Kanal wählen",
+    "protectionsTitle": "Schutzfunktionen",
+    "protectionsIntro": "Wähle die Schutzfunktionen aus, die du aktivieren willst. Die Standardwerte passen für die meisten Server; jedes Modul lässt sich danach mit seinem Befehl anpassen.",
+    "protectionsPlaceholder": "Zu aktivierende Schutzfunktionen",
+    "doneTitle": "Einrichtung abgeschlossen",
+    "doneIntro": "Der Bot ist auf diesem Server bereit.",
+    "doneLanguage": "Sprache: {language}",
+    "doneLogs": "Logs: {channel}",
+    "doneProtections": "Aktive Schutzfunktionen: {list}",
+    "doneNext": "Schiebe meine Rolle über die Rollen der Mitglieder, damit die Schutzfunktionen greifen. Danach: /help für alle Befehle, /config show für diese Einstellungen."
+  },
+  "languages": {
+    "fr": "Français",
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "pt": "Português"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Allgemein",
+      "description": "Grundeinstellungen des Bots für diesen Server.",
+      "language": "Sprache des Bots",
+      "languageHelp": "Sprache der Antworten, automatischen Nachrichten und Logs."
+    },
+    "actions": {
+      "reset": "Alle Einstellungen zurücksetzen",
+      "resetDone": "Alle Servereinstellungen wurden gelöscht."
+    }
+  }
+}

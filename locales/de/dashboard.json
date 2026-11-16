@@ -1,0 +1,162 @@
+{
+  "commands": {
+    "dashboard": {
+      "description": "Web-Dashboard des Servers öffnen"
+    }
+  },
+  "command": {
+    "title": "Dashboard",
+    "noPermission": "Du brauchst die Berechtigung Server verwalten, um das Dashboard zu öffnen.",
+    "notRunning": "Das Web-Dashboard ist nicht aktiviert. Setze DASHBOARD_PORT (oder PORT) in der Datei .env und starte den Bot neu.",
+    "noUrl": "Das Dashboard läuft auf Port {port}, aber seine öffentliche Adresse ist unbekannt. Füge DASHBOARD_URL in die Datei .env ein (bei ACLClouds: kopiere die HTTPS-Adresse aus dem Tab „Port / Adresse“) oder öffne diese Adresse einmal im Browser, dann führe /dashboard erneut aus.",
+    "body": "[Dashboard öffnen]({url})\n\nDieser Link ist persönlich, nur einmal gültig und läuft in 10 Minuten ab. Teile ihn nicht.",
+    "button": "Dashboard öffnen",
+    "footer": "Die Anmeldung gilt 7 Tage in diesem Browser"
+  },
+  "console": {
+    "disabled": "Web-Dashboard deaktiviert: setze DASHBOARD_PORT (oder PORT) in .env, um es zu aktivieren.",
+    "listenFailed": "Das Dashboard konnte nicht auf Port {port} lauschen: {error}",
+    "started": "Web-Dashboard online auf Port {port}: {url}",
+    "startedNoUrl": "Web-Dashboard online auf Port {port}. Setze DASHBOARD_URL, damit /dashboard Anmeldelinks senden kann."
+  },
+  "log": {
+    "none": "keine",
+    "on": "an",
+    "off": "aus",
+    "more": "und {count} weitere Änderungen",
+    "configTitle": "Einstellungen im Dashboard geändert",
+    "by": "Von {user} ({tag})",
+    "actionTitle": "Aktion im Dashboard ausgeführt",
+    "actionBy": "{user} ({tag}) hat „{action}“ ausgeführt."
+  },
+  "api": {
+    "actionFailed": "Die Aktion ist fehlgeschlagen. Prüfe die Berechtigungen des Bots und versuche es erneut.",
+    "actionDone": "Erledigt.",
+    "ownerOnly": "Nur der Serverbesitzer (oder ein Bot-Besitzer) kann diese Einstellungen ändern."
+  },
+  "modules": {
+    "core-commands": "Allgemein",
+    "antiraid": "Anti-Raid",
+    "antinuke": "Anti-Nuke",
+    "automod": "Automod",
+    "moderation": "Moderation",
+    "logs": "Protokolle",
+    "welcome": "Willkommen",
+    "verification": "Verifizierung",
+    "tickets": "Tickets",
+    "roles": "Rollen",
+    "utility": "Werkzeuge",
+    "giveaways": "Gewinnspiele",
+    "levels": "Level",
+    "backup": "Sicherungen",
+    "economy": "Wirtschaft",
+    "fun": "Spiele",
+    "community": "Community",
+    "music": "Musik",
+    "dashboard": "Dashboard"
+  },
+  "ui": {
+    "title": "ACLClouds Bot Dashboard",
+    "server": "Server",
+    "chooseServer": "Server auswählen",
+    "language": "Sprache",
+    "menu": "Menü",
+    "logout": "Abmelden",
+    "navigation": "Navigation",
+    "overview": "Übersicht",
+    "modules": "Module",
+    "enableModule": "{module} aktivieren",
+    "hostedBy": "Kostenlos gehostet auf",
+    "unsavedRegion": "Ungespeicherte Änderungen",
+    "unsavedOne": "1 ungespeicherte Änderung",
+    "unsavedMany": "{count} ungespeicherte Änderungen",
+    "reset": "Verwerfen",
+    "save": "Speichern",
+    "saved": "Änderungen gespeichert.",
+    "saveFailed": "Einige Werte sind ungültig. Korrigiere sie und versuche es erneut.",
+    "discardTitle": "Änderungen verwerfen?",
+    "discardBody": "Ungespeicherte Änderungen für diesen Server gehen verloren.",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "enabled": "Aktiv",
+    "disabled": "Inaktiv",
+    "protections": "Schutz",
+    "noProtections": "Kein Schutzmodul geladen.",
+    "recentChanges": "Letzte Änderungen",
+    "otherModules": "Weitere Module",
+    "members": "{count} Mitglieder",
+    "stats": {
+      "members": "Mitglieder",
+      "channels": "Kanäle",
+      "roles": "Rollen",
+      "tickets": "Offene Tickets"
+    },
+    "history": {
+      "config": "{user} hat {module} geändert",
+      "action": "{user} hat eine Aktion in {module} ausgeführt",
+      "empty": "Noch keine Änderungen."
+    },
+    "actions": "Aktionen",
+    "actionConfirm": "Diese Aktion kann nicht rückgängig gemacht werden. Fortfahren?",
+    "actionDone": "Erledigt.",
+    "actionFailed": "Die Aktion ist fehlgeschlagen.",
+    "moduleOff": "Dieses Modul ist deaktiviert. Deine Einstellungen bleiben erhalten.",
+    "notFound": "Diese Seite existiert nicht.",
+    "loading": "Wird geladen...",
+    "forbidden": "Du hast keinen Zugriff mehr auf diesen Server. Die Berechtigung Server verwalten ist erforderlich.",
+    "loadFailed": "Dieser Server konnte nicht geladen werden.",
+    "retry": "Erneut versuchen",
+    "picker": {
+      "title": "Deine Server",
+      "subtitle": "Wähle den Server, den du einrichten möchtest.",
+      "empty": "Kein Server verfügbar. Gib diesen Befehl in deinem Server ein, um einen Anmeldelink zu erhalten:"
+    },
+    "login": {
+      "title": "Beim Dashboard anmelden",
+      "signingIn": "Anmeldung läuft...",
+      "howTo": "Gib diesen Befehl in deinem Discord-Server ein, um einen persönlichen Anmeldelink zu erhalten:",
+      "or": "oder",
+      "discord": "Mit Discord anmelden",
+      "linkInvalid": "Dieser Link ist abgelaufen oder wurde bereits benutzt. Führe /dashboard erneut aus, um einen neuen zu erhalten.",
+      "rateLimited": "Zu viele Versuche. Warte eine Minute und versuche es erneut.",
+      "oauthFailed": "Die Anmeldung mit Discord ist fehlgeschlagen. Versuche es erneut."
+    },
+    "field": {
+      "voice": "Sprachkanal",
+      "none": "Keiner",
+      "missing": "Nicht gefunden (gelöscht?)",
+      "emptyList": "Keine Einträge",
+      "remove": "Entfernen",
+      "add": "Hinzufügen",
+      "addChannel": "Kanal hinzufügen...",
+      "addRole": "Rolle hinzufügen...",
+      "addItem": "Neuer Eintrag",
+      "unit": "Einheit",
+      "units": {
+        "d": "Tage",
+        "h": "Stunden",
+        "m": "Minuten",
+        "s": "Sekunden"
+      }
+    },
+    "errors": {
+      "type": "Ungültiger Wert.",
+      "required": "Dieses Feld ist erforderlich.",
+      "min": "Das Minimum ist {min}.",
+      "max": "Das Maximum ist {max}.",
+      "maxLength": "Höchstens {max} Zeichen.",
+      "minLength": "Mindestens {min} Zeichen.",
+      "option": "Ungültige Auswahl.",
+      "unknownChannel": "Dieser Kanal existiert nicht mehr.",
+      "wrongChannelType": "Diese Kanalart ist hier nicht erlaubt.",
+      "unknownRole": "Diese Rolle existiert nicht mehr.",
+      "tooMany": "Höchstens {max} Einträge.",
+      "tooFew": "Mindestens {min} Einträge.",
+      "unknownField": "Diese Einstellung existiert nicht mehr.",
+      "empty": "Nichts zu speichern.",
+      "rateLimited": "Zu viele Anfragen. Warte eine Minute.",
+      "ownerOnly": "Nur für den Serverbesitzer."
+    },
+    "ownerOnly": "Nur für den Serverbesitzer."
+  }
+}

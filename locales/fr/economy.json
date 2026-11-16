@@ -1,0 +1,316 @@
+{
+  "defaults": {
+    "currency": "pièces"
+  },
+  "errors": {
+    "title": "Erreur",
+    "botTarget": "Les bots n'ont pas de portefeuille.",
+    "notEnough": "Tu n'as pas assez de pièces pour cette opération.",
+    "invalidAmount": "Montant invalide. Indique un nombre entier positif ou « all ».",
+    "cooldown": "Il faudra attendre encore {time}.",
+    "alreadyPlaying": "Tu as déjà une partie de blackjack en cours. Termine-la d'abord.",
+    "gameExpired": "Cette partie n'existe plus.",
+    "notYourGame": "Cette table n'est pas la tienne. Lance la tienne avec /blackjack.",
+    "adminOnly": "Cette action demande la permission Gérer le serveur."
+  },
+  "balance": {
+    "title": "Solde de {user}",
+    "wallet": "Portefeuille",
+    "bank": "Banque",
+    "total": "Total"
+  },
+  "daily": {
+    "title": "Récompense quotidienne",
+    "done": "Tu reçois {amount}.",
+    "streak": "Série (jours)"
+  },
+  "weekly": {
+    "title": "Récompense hebdomadaire",
+    "done": "Tu reçois {amount}. Reviens dans 7 jours."
+  },
+  "work": {
+    "title": "Journée de travail",
+    "jobs": {
+      "0": "Tu as livré des colis toute la journée : {amount}.",
+      "1": "Tu as réparé un vélo pour un voisin : {amount}.",
+      "2": "Tu as servi des cafés au comptoir : {amount}.",
+      "3": "Tu as donné un coup de main sur un chantier : {amount}.",
+      "4": "Tu as gardé le chat d'une famille : {amount}."
+    }
+  },
+  "pay": {
+    "title": "Virement",
+    "done": "Tu as envoyé {amount} à {user}.",
+    "self": "Tu ne peux pas t'envoyer de l'argent à toi-même."
+  },
+  "deposit": {
+    "title": "Dépôt",
+    "done": "{amount} sont désormais à la banque."
+  },
+  "withdraw": {
+    "title": "Retrait",
+    "done": "{amount} sont désormais dans ton portefeuille."
+  },
+  "rob": {
+    "title": "Vol",
+    "self": "Tu ne peux pas te voler toi-même.",
+    "tooPoor": "Il faut avoir au moins {min} dans son portefeuille pour tenter un vol.",
+    "victimBroke": "{user} n'a rien dans son portefeuille à voler.",
+    "success": "Tu as réussi et pris {amount} à {user}.",
+    "failed": "Tu t'es fait prendre. Tu paies une amende de {amount}."
+  },
+  "shop": {
+    "title": "Boutique",
+    "empty": "La boutique est vide. Un administrateur peut ajouter des articles avec /shop add.",
+    "givesRole": "Donne le rôle {role}",
+    "added": "Article ajouté",
+    "addedText": "« {name} » est maintenant en vente.",
+    "badName": "Ce nom ne contient pas de lettres ou de chiffres utilisables.",
+    "exists": "Un article « {name} » existe déjà.",
+    "full": "La boutique est pleine ({max} articles maximum).",
+    "roleUnusable": "Ce rôle ne peut pas être attribué (rôle géré par une intégration ou @everyone).",
+    "botNeedsRoles": "Il me manque la permission Gérer les rôles.",
+    "roleTooHigh": "Je ne peux pas attribuer {role} : il est au-dessus de mon rôle le plus élevé.",
+    "notFound": "Cet article n'existe pas (ou plus).",
+    "removed": "Article retiré",
+    "removedText": "« {name} » n'est plus en vente. Les personnes qui l'ont déjà gardent leur achat.",
+    "roleMissing": "Le rôle de cet article a été supprimé. Demande à un administrateur de corriger l'article.",
+    "roleFailed": "Je n'ai pas pu te donner le rôle. Ton achat a été remboursé.",
+    "alreadyOwned": "Tu possèdes déjà « {name} ».",
+    "bought": "Achat réussi",
+    "boughtText": "Tu as acheté « {name} » pour {amount}."
+  },
+  "inventory": {
+    "title": "Inventaire",
+    "empty": "Tu n'as encore rien acheté. Essaie /shop list.",
+    "removed": "Article retiré ×{qty}"
+  },
+  "richest": {
+    "title": "Les plus riches",
+    "empty": "Personne n'a encore de pièces sur ce serveur."
+  },
+  "coinflip": {
+    "title": "Pile ou face",
+    "won": "La pièce tombe sur {result}. Tu gagnes {amount}.",
+    "lost": "La pièce tombe sur {result}. Tu perds {amount}.",
+    "sides": {
+      "heads": "face",
+      "tails": "pile"
+    }
+  },
+  "slots": {
+    "title": "Machine à sous",
+    "reels": "Rouleaux",
+    "won": "Tu gagnes {amount}.",
+    "even": "Tu récupères ta mise.",
+    "lost": "Tu perds {amount}."
+  },
+  "blackjack": {
+    "title": "Blackjack",
+    "turn": "Tire une carte, reste, ou double ta mise.",
+    "dealer": "Croupier",
+    "you": "Toi",
+    "bet": "Mise",
+    "buttons": {
+      "hit": "Tirer",
+      "stand": "Rester",
+      "double": "Doubler"
+    },
+    "outcome": {
+      "blackjack": {
+        "title": "Blackjack !",
+        "text": "Tu gagnes {amount}. Paiement 3 pour 2."
+      },
+      "win": {
+        "title": "Gagné",
+        "text": "Tu gagnes {amount}."
+      },
+      "push": {
+        "title": "Égalité",
+        "text": "Ta mise t'est rendue."
+      },
+      "lose": {
+        "title": "Perdu",
+        "text": "Tu perds {amount}."
+      },
+      "bust": {
+        "title": "Dépassé",
+        "text": "Plus de 21 : tu perds {amount}."
+      }
+    }
+  },
+  "config": {
+    "title": "Réglages de l'économie",
+    "saved": "Réglages enregistrés",
+    "minAboveMax": "Le gain minimum du travail ne peut pas dépasser le maximum.",
+    "currency": "Monnaie",
+    "symbol": "Symbole",
+    "daily": "Quotidien",
+    "weekly": "Hebdomadaire",
+    "work": "Travail",
+    "robFail": "Échec d'un vol"
+  },
+  "dashboard": {
+    "general": {
+      "title": "Économie",
+      "description": "Montants des récompenses et règles de la monnaie.",
+      "currency": {
+        "label": "Nom de la monnaie",
+        "help": "Vide = nom par défaut dans la langue du serveur."
+      },
+      "symbol": {
+        "label": "Symbole",
+        "help": "Affiché après chaque montant."
+      },
+      "daily": {
+        "label": "Récompense quotidienne",
+        "help": "Montant de /daily, avant le bonus de série."
+      },
+      "weekly": {
+        "label": "Récompense hebdomadaire",
+        "help": "Montant de /weekly."
+      },
+      "workMin": {
+        "label": "Travail : gain minimum",
+        "help": "Borne basse de /work."
+      },
+      "workMax": {
+        "label": "Travail : gain maximum",
+        "help": "Borne haute de /work."
+      },
+      "robFailPercent": {
+        "label": "Échec des vols (%)",
+        "help": "Chance qu'un vol échoue et coûte une amende."
+      }
+    }
+  },
+  "commands": {
+    "balance": {
+      "description": "Affiche le portefeuille et la banque",
+      "options": {
+        "user": "Membre à consulter"
+      }
+    },
+    "work": {
+      "description": "Travaille pour gagner de l'argent (une fois par heure)"
+    },
+    "pay": {
+      "description": "Envoie des pièces de ton portefeuille à un membre",
+      "options": {
+        "user": "Destinataire",
+        "amount": "Montant, ou « all »"
+      }
+    },
+    "shop": {
+      "description": "Parcourir et acheter des articles",
+      "options": {
+        "list": {
+          "description": "Affiche les articles de la boutique"
+        },
+        "buy": {
+          "description": "Acheter un article",
+          "options": {
+            "item": "Article à acheter"
+          }
+        },
+        "add": {
+          "description": "Ajoute un article à la boutique (Gérer le serveur)",
+          "options": {
+            "name": "Nom de l'article",
+            "price": "Prix",
+            "description": "Courte description",
+            "role": "Rôle donné à l'achat"
+          }
+        },
+        "remove": {
+          "description": "Retire un article de la boutique (Gérer le serveur)",
+          "options": {
+            "item": "Article à retirer"
+          }
+        }
+      }
+    },
+    "bank": {
+      "description": "Déposer et retirer des pièces",
+      "options": {
+        "deposit": {
+          "description": "Déplace des pièces du portefeuille vers la banque",
+          "options": {
+            "amount": "Montant, ou « all »"
+          }
+        },
+        "withdraw": {
+          "description": "Déplace des pièces de la banque vers le portefeuille",
+          "options": {
+            "amount": "Montant, ou « all »"
+          }
+        }
+      }
+    },
+    "gamble": {
+      "description": "Jeux d'argent",
+      "options": {
+        "coinflip": {
+          "description": "Parie sur pile ou face (50/50)",
+          "options": {
+            "amount": "Mise, ou « all »",
+            "side": {
+              "description": "Ton choix",
+              "choices": {
+                "heads": "Face",
+                "tails": "Pile"
+              }
+            }
+          }
+        },
+        "slots": {
+          "description": "Lance la machine à sous",
+          "options": {
+            "amount": "Mise, ou « all »"
+          }
+        },
+        "blackjack": {
+          "description": "Joue au blackjack contre le croupier",
+          "options": {
+            "amount": "Mise, ou « all »"
+          }
+        }
+      }
+    },
+    "eco": {
+      "description": "Économie : récompenses, vols, inventaire et réglages",
+      "options": {
+        "daily": {
+          "description": "Réclame ta récompense quotidienne"
+        },
+        "weekly": {
+          "description": "Réclame ta récompense hebdomadaire"
+        },
+        "rob": {
+          "description": "Tente de voler un autre membre (risqué)",
+          "options": {
+            "user": "Membre à voler"
+          }
+        },
+        "inventory": {
+          "description": "Affiche les articles que tu as achetés"
+        },
+        "richest": {
+          "description": "Affiche les membres les plus riches"
+        },
+        "config": {
+          "description": "Affiche ou modifie les réglages (Gérer le serveur)",
+          "options": {
+            "currency": "Nom de la monnaie",
+            "symbol": "Symbole de la monnaie",
+            "daily": "Récompense quotidienne",
+            "weekly": "Récompense hebdomadaire",
+            "work_min": "Gain minimum du travail",
+            "work_max": "Gain maximum du travail",
+            "rob_fail": "Échec des vols (%)"
+          }
+        }
+      }
+    }
+  }
+}
